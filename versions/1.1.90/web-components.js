@@ -1389,6 +1389,20 @@ var HMWC = (() => {
     watch("span")
   ], HMWCComponent.prototype, "spanChanged", null);
 
+  // dist/models/form/form.styles.js
+  var formStyles = i`
+  :host([required]) [part='label']::after {
+    content: var(--hmwc-input-required-content, '*');
+    margin-inline-start: var(--hmwc-input-required-content-offset, 2px);
+    color: var(--hmwc-input-required-content-color, var(--hmwc-color-danger-500));
+    font-size: var(--hmwc-input-required-content-font-size, inherit);
+    font-weight: var(--hmwc-input-required-content-font-weight, var(--hmwc-font-weight-semibold, 600));
+    line-height: 1;
+    vertical-align: middle;
+    pointer-events: none;
+  }
+`;
+
   // dist/models/form/form.component.js
   var __decorate2 = function(decorators, target, key, desc) {
     var c5 = arguments.length, r7 = c5 < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d3;
@@ -1397,6 +1411,13 @@ var HMWC = (() => {
     return c5 > 3 && r7 && Object.defineProperty(target, key, r7), r7;
   };
   var HMWCFormComponent = class extends HMWCComponent {
+    static get styles() {
+      const baseStyles = super.styles;
+      return [...Array.isArray(baseStyles) ? baseStyles : [baseStyles], formStyles];
+    }
+    static set styles(styles52) {
+      super.styles = styles52;
+    }
     get() {
       if (this.toggleComponent)
         return this.checked;
@@ -5185,15 +5206,6 @@ var HMWC = (() => {
         cursor: not-allowed;
       }
     }
-
-    &.required {
-      & .checkbox__label {
-        &::after {
-          content: var(--hmwc-input-required-content);
-          margin-inline-start: var(--hmwc-input-required-content-offset);
-        }
-      }
-    }
   }
 `;
   var check = b2`
@@ -6764,18 +6776,6 @@ var HMWC = (() => {
       this.open = false;
       this._calendarLoseFocus = null;
     }
-    handleLabelChange() {
-      if (this.required) {
-        if (!this.label)
-          return;
-        this.label = `${this.label} *`;
-      } else {
-        const chars = Array.from(this.label);
-        if (chars[chars.length - 1] === "*") {
-          this.label = chars.slice(0, chars.length - 1).join("");
-        }
-      }
-    }
     handleValueChange() {
       if (this.type === "tel") {
         const numbers = this.value.toString().split("").filter((n7) => n7 !== "-");
@@ -7537,9 +7537,6 @@ var HMWC = (() => {
   __decorate14([
     e5("hmwc-calendar")
   ], Input.prototype, "datepicker", void 0);
-  __decorate14([
-    watch("label")
-  ], Input.prototype, "handleLabelChange", null);
   __decorate14([
     watch("value")
   ], Input.prototype, "handleValueChange", null);
@@ -12000,7 +11997,7 @@ var HMWC = (() => {
           padding: var(--hmwc-spacing-x-small) var(--hmwc-spacing-small);
           color: var(--data-table-header-color);
           font-family: var(--hmwc-font-sans);
-          font-size: calc(0.9 * var(--hmwc-font-size-small));
+          font-size: var(--hmwc-font-size-small);
           font-weight: var(--hmwc-font-weight-bold);
           letter-spacing: var(--hmwc-letter-spacing-loose);
           text-transform: uppercase;
@@ -12058,7 +12055,7 @@ var HMWC = (() => {
               hmwc-icon {
                 display: flex;
                 opacity: 0;
-                --icon-size: var(--hmwc-font-size-2x-small);
+                --icon-size: var(--hmwc-font-size-x-small);
                 --icon-color: var(--data-table-sort-icon-color);
                 transition: opacity 0.15s ease-out;
               }
@@ -12072,13 +12069,13 @@ var HMWC = (() => {
 
               & .data-table__col-filter-icon {
                 --button-padding: 0;
-                --icon-size: var(--hmwc-font-size-2x-small);
-                --icon-color: var(--data-table-sort-icon-color);
-                opacity: 0.35;
+                --icon-size: var(--hmwc-font-size-small);
+                --icon-color: var(--data-table-header-color);
+                opacity: 0.65;
                 transition: opacity 0.15s ease-out;
 
                 &:hover {
-                  opacity: 0.8;
+                  opacity: 1;
                 }
 
                 &.active {
@@ -12132,7 +12129,10 @@ var HMWC = (() => {
                 & hmwc-input {
                   flex: 1;
                   min-width: 0;
-                  overflow: hidden;
+
+                  &::part(suffix) {
+                    right: 5%;
+                  }
                 }
               }
 
@@ -12215,7 +12215,7 @@ var HMWC = (() => {
           }
 
           &:hover .data-table__col-filter-icon {
-            opacity: 0.6;
+            opacity: 0.85;
           }
 
           & .data-table__col-resize {
@@ -12262,7 +12262,7 @@ var HMWC = (() => {
             padding: var(--hmwc-spacing-x-small) var(--hmwc-spacing-small);
             color: var(--data-table-color);
             font-family: var(--hmwc-font-sans);
-            font-size: var(--hmwc-font-size-small);
+            font-size: var(--hmwc-font-size-medium);
             white-space: nowrap;
             border-bottom: 1px solid var(--hmwc-color-neutral-100);
 
@@ -12349,7 +12349,7 @@ var HMWC = (() => {
         & .data-table__table-head {
           & .data-table__col-head {
             padding: var(--hmwc-spacing-3x-small) var(--hmwc-spacing-x-small);
-            font-size: calc(0.85 * var(--hmwc-font-size-small));
+            font-size: calc(0.9 * var(--hmwc-font-size-small));
             letter-spacing: var(--hmwc-letter-spacing-loose);
           }
         }
@@ -12367,7 +12367,7 @@ var HMWC = (() => {
       & .data-table__footer {
         padding-top: var(--hmwc-spacing-x-small);
         & .data-table__info {
-          font-size: calc(0.9 * var(--hmwc-font-size-small));
+          font-size: var(--hmwc-font-size-small);
         }
       }
     }
@@ -13115,6 +13115,8 @@ var HMWC = (() => {
         field,
         startX: e8.clientX,
         startWidth: th.offsetWidth,
+        minWidth: 40,
+        maxWidth: Infinity,
         th,
         table,
         activated: false
@@ -13129,10 +13131,62 @@ var HMWC = (() => {
         return;
       this._resizing.activated = true;
       const { table, th } = this._resizing;
-      const heads = Array.from(table.querySelectorAll("th.data-table__col-head"));
-      heads.forEach((h3) => {
-        h3.style.width = `${h3.offsetWidth}px`;
-      });
+      const allHeads = Array.from(table.querySelectorAll("th.data-table__col-head"));
+      const allFields = this.action ? [...this.fieldKeys, this.action.field] : this.fieldKeys;
+      const fieldOffset = this.selectable ? 1 : 0;
+      let sumOtherFixed = 0;
+      let sumOtherMins = 0;
+      for (let i7 = 0; i7 < allHeads.length; i7++) {
+        const head = allHeads[i7];
+        const field = allFields[i7 - fieldOffset];
+        const isUserResized = field && this._columnWidths[field] && head !== th;
+        if (isUserResized) {
+          sumOtherFixed += head.offsetWidth;
+          continue;
+        }
+        const headStyle = getComputedStyle(head);
+        const padX = parseFloat(headStyle.paddingLeft) + parseFloat(headStyle.paddingRight);
+        const borX = parseFloat(headStyle.borderLeftWidth) + parseFloat(headStyle.borderRightWidth);
+        let minW = 40;
+        const content = head.querySelector(".data-table__col-head-content");
+        if (content) {
+          const liveFilter = content.querySelector(".data-table__col-filter");
+          const filterW = liveFilter ? liveFilter.offsetWidth : 0;
+          const contentGap = liveFilter ? parseFloat(getComputedStyle(content).gap || "0") : 0;
+          const clone = content.cloneNode(true);
+          clone.style.cssText = "position:absolute;visibility:hidden;width:min-content;pointer-events:none;";
+          const clonedFilter = clone.querySelector(".data-table__col-filter");
+          if (clonedFilter)
+            clonedFilter.remove();
+          content.parentElement.appendChild(clone);
+          const resizeHandle = head.querySelector(".data-table__col-resize");
+          const resizeW = resizeHandle ? resizeHandle.offsetWidth * 2 : 0;
+          minW = clone.offsetWidth + filterW + contentGap + padX + borX + resizeW;
+          clone.remove();
+        }
+        if (head === th) {
+          this._resizing.minWidth = minW;
+        } else {
+          sumOtherMins += minW;
+        }
+      }
+      const nonFieldHeads = Array.from(table.querySelectorAll("th:not(.data-table__col-head)"));
+      for (const nfh of nonFieldHeads) {
+        sumOtherFixed += nfh.offsetWidth;
+      }
+      const tableWidth = table.offsetWidth;
+      this._resizing.maxWidth = Math.max(this._resizing.minWidth, tableWidth - sumOtherFixed - sumOtherMins);
+      for (let i7 = 0; i7 < allHeads.length; i7++) {
+        const head = allHeads[i7];
+        if (head === th)
+          continue;
+        const field = allFields[i7 - fieldOffset];
+        if (field && this._columnWidths[field])
+          continue;
+        head.style.removeProperty("width");
+      }
+      table.style.width = `${tableWidth}px`;
+      th.style.width = `${th.offsetWidth}px`;
       table.style.tableLayout = "fixed";
       this._resizing.startWidth = th.offsetWidth;
       document.body.style.cursor = "col-resize";
@@ -13147,16 +13201,22 @@ var HMWC = (() => {
           return;
         this.activateResize();
       }
-      const newWidth = Math.max(40, this._resizing.startWidth + diff);
+      const newWidth = Math.min(this._resizing.maxWidth, Math.max(this._resizing.minWidth, this._resizing.startWidth + diff));
       this._resizing.th.style.width = `${newWidth}px`;
     }
     handleResizeEnd() {
       if (!this._resizing)
         return;
       if (this._resizing.activated) {
+        const { table } = this._resizing;
         this._didResize = true;
         this._columnWidths[this._resizing.field] = this._resizing.th.offsetWidth;
         this.saveColumnWidths();
+        const allHeads = Array.from(table.querySelectorAll("th.data-table__col-head"));
+        for (const head of allHeads) {
+          head.style.width = `${head.offsetWidth}px`;
+        }
+        table.style.width = "";
       }
       if (this._boundResizeMove) {
         document.removeEventListener("mousemove", this._boundResizeMove);
@@ -16739,13 +16799,6 @@ var HMWC = (() => {
       }
     }
 
-    &.required {
-      .radiogroup__label::after {
-        content: var(--sl-input-required-content);
-        margin-inline-start: var(--sl-input-required-content-offset);
-      }
-    }
-
     .radiogroup__control {
       position: relative;
       border: none;
@@ -17455,11 +17508,6 @@ var HMWC = (() => {
       cursor: not-allowed;
     }
 
-    &.required .switch__label::after {
-      content: var(--hmwc-input-required-content);
-      margin-inline-start: var(--hmwc-input-required-content-offset);
-    }
-
     &.label {
       .switch__label {
         display: inline-block;
@@ -17563,9 +17611,9 @@ var HMWC = (() => {
       this.emit("hmwc-blur");
     }
     handleKeyDown(event) {
-      event.preventDefault();
       if (!["ArrowLeft", "ArrowRight"].includes(event.key))
         return;
+      event.preventDefault();
       this.checked = event.key === "ArrowRight";
       this.emit("hmwc-change", { detail: { value: this.checked } });
       this.emit("hmwc-input");

@@ -336,8 +336,10 @@
   --hmwc-input-border-color-invalid-focus: var(--hmwc-color-danger-600);
   --hmwc-input-border-width: 1.5px;
   --hmwc-input-required-content: "*";
-  --hmwc-input-required-content-offset: -2px;
-  --hmwc-input-required-content-color: var(--hmwc-input-label-color);
+  --hmwc-input-required-content-offset: 2px;
+  --hmwc-input-required-content-color: var(--hmwc-color-danger-500);
+  --hmwc-input-required-content-font-size: inherit;
+  --hmwc-input-required-content-font-weight: var(--hmwc-font-weight-semibold);
   --hmwc-input-border-radius-small: var(--hmwc-border-radius-medium);
   --hmwc-input-border-radius-medium: var(--hmwc-border-radius-medium);
   --hmwc-input-border-radius-large: var(--hmwc-border-radius-large);
