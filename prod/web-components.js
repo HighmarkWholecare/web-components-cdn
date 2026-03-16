@@ -1662,7 +1662,27 @@ var HMWC = (() => {
     submit(e8) {
       if (e8 && e8.key !== "Enter")
         return;
+      let valid = true;
+      this.components.forEach((el) => {
+        if (el.hasAttribute("formGroup"))
+          return;
+        if (this.stepComponents.length) {
+          if (el.step === this.step) {
+            if (el.checkValidity && !el.checkValidity())
+              valid = false;
+          }
+        } else {
+          if (el.checkValidity && !el.checkValidity())
+            valid = false;
+        }
+      });
+      if (!valid) {
+        this.validate();
+        return;
+      }
       const formData = this.getFormData(e8);
+      if (!formData)
+        return;
       this.host.emit("submit", { detail: { value: formData } });
       this.editing = false;
       this.snapshot = null;
@@ -2040,6 +2060,17 @@ var HMWC = (() => {
      * Updates the live `data` property with current form values.
      * Called automatically when form elements receive input.
      */
+    /**
+     * Handles keydown events on the host element. Submits
+     * the form when Enter is pressed inside an input.
+     */
+    handleKeydown(e8) {
+      if (e8.key !== "Enter")
+        return;
+      if (this.HMWCName(document.activeElement || void 0) !== "input")
+        return;
+      this.submit(e8);
+    }
     updateData() {
       const formData = this.getFormData();
       if (formData) {
@@ -2357,6 +2388,7 @@ var HMWC = (() => {
       this.root.append(form);
       this.initializeTemplates();
       this.updateStepUI();
+      this.host.addEventListener("keydown", this.boundKeydownHandler);
       this.setupObserver();
     }
     hostDisconnected() {
@@ -2364,6 +2396,7 @@ var HMWC = (() => {
         this.observer.disconnect();
         this.observer = null;
       }
+      this.host.removeEventListener("keydown", this.boundKeydownHandler);
     }
     constructor(host) {
       this.initialized = false;
@@ -2371,6 +2404,7 @@ var HMWC = (() => {
       this.FORM_COMPONENTS = ["input", "dropdown", "checkbox", "switch", "radio-group", "calendar"];
       this.observer = null;
       this.listenerMap = /* @__PURE__ */ new WeakMap();
+      this.boundKeydownHandler = this.handleKeydown.bind(this);
       this.templates = /* @__PURE__ */ new Map();
       this.editing = false;
       this.snapshot = null;
@@ -2968,6 +3002,10 @@ var HMWC = (() => {
       width: var(--container-width);
       box-shadow: var(--container-shadow);
       background: var(--container-background);
+
+      /* Promote nested surface level so child panels (cards, etc.)
+         automatically contrast against the accordion background. */
+      --hmwc-panel-background-color: var(--hmwc-input-background-color);
     }
 
     &.disabled {
@@ -5496,20 +5534,81 @@ var HMWC = (() => {
 
     & .calendar__header {
       display: flex;
-      gap: var(--hmwc-spacing-medium);
-      padding-inline: var(--hmwc-spacing-large);
+      gap: var(--hmwc-spacing-2x-small);
+      padding-inline: var(--hmwc-spacing-x-small);
       align-items: center;
       justify-content: space-between;
 
       & .calendar__label {
-        gap: calc(0.9 * var(--hmwc-spacing-x-small));
+        gap: var(--hmwc-spacing-3x-small);
         display: flex;
+        align-items: center;
         color: var(--calendar-label-color);
         font-size: var(--calendar-label-size);
         font-weight: var(--calendar-label-weight);
+
+        & .clickable {
+          cursor: pointer;
+          border-radius: var(--hmwc-border-radius-medium);
+          transition: background-color 150ms ease-in-out;
+
+          &::part(base) {
+            gap: var(--hmwc-spacing-3x-small);
+            color: var(--calendar-label-color);
+            font-size: var(--calendar-label-size);
+            font-weight: var(--calendar-label-weight);
+            padding: var(--hmwc-spacing-3x-small) var(--hmwc-spacing-x-small);
+            border-radius: var(--hmwc-border-radius-medium);
+            transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
+          }
+
+          &:hover::part(base) {
+            background-color: var(--hmwc-color-neutral-100);
+          }
+        }
+      }
+
+      & .calendar__month-picker,
+      & .calendar__year-picker {
+        & hmwc-menu {
+          --menu-width: fit-content;
+          --menu-padding: var(--hmwc-spacing-3x-small) 0;
+          --menu-label-size: var(--hmwc-font-size-small);
+          --menu-label-weight: var(--hmwc-font-weight-semibold);
+          --menu-border-radius: var(--hmwc-border-radius-large);
+          --menu-border: solid var(--hmwc-color-panel-border-weight, 1px) var(--hmwc-color-panel-border-color);
+          --menu-shadow: var(--hmwc-shadow-x-large);
+          --menu-item-placeholder-display: none;
+
+          & hmwc-menu-item {
+            --menu-item-spacing-override: var(--hmwc-spacing-3x-small) var(--hmwc-spacing-medium);
+          }
+        }
+      }
+
+      & .calendar__month-picker hmwc-menu {
+        min-width: 150px;
+        --menu-max-height: 220px;
+      }
+
+      & .calendar__year-picker hmwc-menu {
+        min-width: 120px;
+        --menu-max-height: 220px;
+
+        & hmwc-menu-item {
+          --menu-item-spacing-override: var(--hmwc-spacing-3x-small) var(--hmwc-spacing-medium);
+        }
       }
 
       & .calendar__navigation {
+        flex-shrink: 0;
+        border-radius: var(--hmwc-border-radius-medium);
+        transition: background-color 150ms ease-in-out;
+
+        &:hover {
+          background-color: var(--hmwc-color-neutral-100);
+        }
+
         &::part(icon) {
           --icon-color: var(--calendar-navigation-color);
         }
@@ -5568,7 +5667,7 @@ var HMWC = (() => {
           color: var(--calendar-date-selected-color);
           background: var(--calendar-date-selected-background);
           box-shadow: var(--hmwc-shadow-x-small);
-
+          border: 1px solid var(--hmwc-color-neutral-600);
           &:not([current]) {
             color: var(--calendar-date-selected-inactive-color);
             background: var(--calendar-date-selected-inactive-background);
@@ -5636,6 +5735,8 @@ var HMWC = (() => {
       this.placeholder = [];
       this.month = (/* @__PURE__ */ new Date()).getMonth();
       this.year = (/* @__PURE__ */ new Date()).getFullYear();
+      this.yearRange = 100;
+      this.yearRangeFuture = 10;
       this.valueUpdate = () => this.parseDates();
       this.selectionUpdate = () => this.emit("hmwc-change", { detail: { value: this.selection } });
       this.dateUpdate = () => this.dates = this.getDates();
@@ -5656,6 +5757,52 @@ var HMWC = (() => {
       }
       this.month = month;
       this.year = year;
+    }
+    /**
+     * Returns the list of years to display in the year
+     * navigation menu, based on the current real-world year
+     * and the configured `yearRange`.
+     *
+     * The range is anchored to the actual current year so
+     * it remains stable regardless of which year the
+     * calendar is currently displaying.
+     */
+    getYearOptions() {
+      const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
+      const years = [];
+      const start = currentYear - this.yearRange;
+      const end = currentYear + this.yearRangeFuture;
+      for (let y3 = start; y3 <= end; y3++) {
+        years.push(y3);
+      }
+      return years;
+    }
+    /**
+     * Handles month selection from the navigation menu.
+     * Closes the month picker attachment after selection.
+     */
+    handleMonthSelect(e8) {
+      const month = parseInt(e8.detail?.value);
+      if (!isNaN(month))
+        this.navigate(month, this.year);
+    }
+    /**
+     * Handles year selection from the navigation menu.
+     */
+    handleYearSelect(e8) {
+      const year = parseInt(e8.detail?.value);
+      if (!isNaN(year))
+        this.navigate(this.month, year);
+    }
+    /**
+     * Closes the sibling picker when one is opened, ensuring
+     * only one picker (month or year) is open at a time.
+     */
+    closeSiblingPicker(openedPicker) {
+      const sibling = openedPicker === "month" ? "calendar__year-picker" : "calendar__month-picker";
+      const attachment = this.renderRoot.querySelector(`.${sibling}`);
+      if (attachment?.active)
+        attachment.hide();
     }
     /**
      * Selects/deselects the provided date and updates the
@@ -5789,8 +5936,47 @@ var HMWC = (() => {
           </hmwc-button>
 
           <div slot="label" part="label" class="calendar__label">
-            <div part="month" class="calendar__label-month">${this.MONTHS[this.month]}</div>
-            <div part="year" class="calendar__label-year">${this.year}</div>
+            ${this.navigation ? b2`
+                  <hmwc-attachment
+                    class="calendar__month-picker"
+                    placement="bottom-start"
+                    .distance=${4}
+                    @hmwc-select=${(e8) => this.handleMonthSelect(e8)}>
+                    <hmwc-button
+                      slot="anchor"
+                      basic
+                      sm
+                      part="month"
+                      class="calendar__label-month clickable"
+                      label=${this.MONTHS[this.month]}
+                      @hmwc-click=${() => this.closeSiblingPicker("month")}>
+                    </hmwc-button>
+                    <hmwc-menu active-value=${this.month}>
+                      ${this.MONTHS.map((month, index) => b2` <hmwc-menu-item sm label=${month} value=${index}> </hmwc-menu-item> `)}
+                    </hmwc-menu>
+                  </hmwc-attachment>
+                  <hmwc-attachment
+                    class="calendar__year-picker"
+                    placement="bottom-start"
+                    .distance=${4}
+                    @hmwc-select=${(e8) => this.handleYearSelect(e8)}>
+                    <hmwc-button
+                      slot="anchor"
+                      basic
+                      sm
+                      part="year"
+                      class="calendar__label-year clickable"
+                      label=${this.year}
+                      @hmwc-click=${() => this.closeSiblingPicker("year")}>
+                    </hmwc-button>
+                    <hmwc-menu active-value=${this.year} align="center">
+                      ${this.getYearOptions().map((year) => b2` <hmwc-menu-item sm label=${year} value=${year}> </hmwc-menu-item> `)}
+                    </hmwc-menu>
+                  </hmwc-attachment>
+                ` : b2`
+                  <div part="month" class="calendar__label-month">${this.MONTHS[this.month]}</div>
+                  <div part="year" class="calendar__label-year">${this.year}</div>
+                `}
           </div>
 
           <hmwc-button
@@ -5862,6 +6048,12 @@ var HMWC = (() => {
   __decorate13([
     n5({ type: Boolean, reflect: true })
   ], Calendar.prototype, "basic", void 0);
+  __decorate13([
+    n5({ type: Number, attribute: "year-range" })
+  ], Calendar.prototype, "yearRange", void 0);
+  __decorate13([
+    n5({ type: Number, attribute: "year-range-future" })
+  ], Calendar.prototype, "yearRangeFuture", void 0);
   __decorate13([
     watch("value")
   ], Calendar.prototype, "valueUpdate", void 0);
@@ -6554,6 +6746,7 @@ var HMWC = (() => {
       this.autoFocusLost = false;
       this.isManuallyTyping = false;
       this._isDeleting = false;
+      this.lockCalendarNavigation = false;
       this.dates = [];
       this.type = "text";
       this.labelPos = "top";
@@ -6793,6 +6986,9 @@ var HMWC = (() => {
         this.parseAndUpdateDate();
         this.isManuallyTyping = false;
       }
+      if (this.type === "email" && this.value) {
+        this.validateEmail();
+      }
       this.emit("hmwc-blur");
       this.autoFocusLost = true;
     }
@@ -6821,6 +7017,9 @@ var HMWC = (() => {
       }
       if (this.type === "date") {
         this.parseAndUpdateDate();
+      }
+      if (this.type === "email" && this.value) {
+        this.validateEmail();
       }
       this.emit("hmwc-change");
     }
@@ -6869,6 +7068,24 @@ var HMWC = (() => {
       } else {
         this.invalid = true;
         this.error = `Invalid date format. Try ${this.dateFormat}`;
+      }
+    }
+    /**
+     * Validates the current value as an email address.
+     * Sets invalid state and error message if the value is not a valid email.
+     */
+    validateEmail() {
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      const value = this.value.trim();
+      if (!value)
+        return;
+      if (emailRegex.test(value)) {
+        this.invalid = false;
+        this.error = "";
+      } else {
+        this.invalid = true;
+        this.error = "Please enter a valid email address";
+        this.emit("hmwc-invalid");
       }
     }
     /**
@@ -7014,6 +7231,9 @@ var HMWC = (() => {
       if (this.type === "tel") {
         this.pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}|[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}";
       }
+      if (this.type === "email" && !this.pattern) {
+        this.pattern = "[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}";
+      }
       if (!this.sm && !this.md && !this.lg)
         this.md = true;
       if (this.type === "password" && this.minlength === void 0) {
@@ -7023,6 +7243,9 @@ var HMWC = (() => {
         this.autoFocusLost = true;
       if (this.type === "date" && !this.placeholder) {
         this.placeholder = this.dateFormat;
+      }
+      if (this.month || this.month && this.year) {
+        this.lockCalendarNavigation = true;
       }
     }
     disconnectedCallback() {
@@ -7165,7 +7388,7 @@ var HMWC = (() => {
                       .value=${this.dates instanceof Array ? this.dates : [this.dates]}
                       month=${o6(this.month)}
                       year=${o6(this.year)}
-                      ?navigation=${this.month && this.year ? false : true}
+                      ?navigation=${!this.lockCalendarNavigation}
                       @hmwc-change=${this.handleCalendarChange}
                       @blur=${() => this.emit("hmwc-hide")}></hmwc-calendar>
                   </div>` : ""}
@@ -7190,6 +7413,9 @@ var HMWC = (() => {
   __decorate14([
     r5()
   ], Input.prototype, "_isDeleting", void 0);
+  __decorate14([
+    r5()
+  ], Input.prototype, "lockCalendarNavigation", void 0);
   __decorate14([
     n5({ type: Array, reflect: true })
   ], Input.prototype, "dates", void 0);
@@ -7437,8 +7663,22 @@ var HMWC = (() => {
       }
     }
 
+    &.active {
+      background-color: var(--hmwc-color-primary-50, hsl(from var(--hmwc-color-primary-600) h s l / 0.08));
+      color: var(--hmwc-color-primary-700);
+
+      & .menu-item__label {
+        color: var(--hmwc-color-primary-700);
+        font-weight: var(--hmwc-font-weight-bold);
+      }
+
+      &:hover:not(.disabled, :focus-visible) {
+        background-color: var(--hmwc-color-primary-100, hsl(from var(--hmwc-color-primary-600) h s l / 0.14));
+      }
+    }
+
     &.small {
-      --menu-item-spacing: var(--hmwc-spacing-3x-small);
+      --menu-item-spacing: var(--menu-item-spacing-override, var(--hmwc-spacing-3x-small));
       --menu-item-letter-spacing: var(--hmwc-letter-spacing-normal);
       --menu-item-font-size: var(--hmwc-font-size-small);
     }
@@ -7524,7 +7764,10 @@ var HMWC = (() => {
       };
       this.handleMouseOver = (event) => {
         event.stopPropagation();
-        this.focus();
+        const parentMenu = this.closest("hmwc-menu");
+        if (!parentMenu?.isTypeaheadActive) {
+          this.focus();
+        }
         this.emit("focus", {
           detail: {
             value: this
@@ -7561,6 +7804,7 @@ var HMWC = (() => {
         loading: !!this.loading,
         center: !!this.center,
         disabled: !!this.disabled,
+        active: !!this.active,
         prefix: !!this.prefix || this.controllers.slot.test("prefix"),
         suffix: !!this.suffix || this.controllers.slot.test("suffix"),
         submenu: popup,
@@ -7641,6 +7885,9 @@ var HMWC = (() => {
   ], MenuItem.prototype, "sm", void 0);
   __decorate15([
     n5({ type: Boolean, reflect: true })
+  ], MenuItem.prototype, "active", void 0);
+  __decorate15([
+    n5({ type: Boolean, reflect: true })
   ], MenuItem.prototype, "center", void 0);
   __decorate15([
     e5(".menu-item")
@@ -7674,6 +7921,7 @@ var HMWC = (() => {
 
     display: contents;
     border-radius: var(--menu-border-radius);
+    outline: none;
   }
 
   .menu {
@@ -7690,6 +7938,7 @@ var HMWC = (() => {
     overscroll-behavior: none;
     overflow: hidden;
     flex-direction: column;
+    outline: none;
 
     & .menu__toolbar {
       display: flex;
@@ -7752,6 +8001,28 @@ var HMWC = (() => {
       --input-width: 100%;
       --input-height: 1.5rem;
       --input-font-size: var(--hmwc-font-size-x-small);
+    }
+
+    & .menu__search--always {
+      padding: var(--menu-search-padding, var(--hmwc-spacing-x-small) var(--hmwc-spacing-x-small) var(--hmwc-spacing-2x-small));
+      flex-shrink: 0;
+      contain: inline-size;
+
+      --input-width: 100%;
+      --input-height: var(--menu-search-height, 1.75rem);
+      --input-font-size: var(--menu-search-font-size, var(--hmwc-font-size-small));
+      --input-radius: var(--menu-search-border-radius, var(--hmwc-border-radius-medium));
+      --input-background: var(--menu-search-background, var(--hmwc-color-neutral-50));
+      --input-border: var(--menu-search-border, 1px solid var(--hmwc-color-neutral-200));
+      --input-border-color: var(--menu-search-border-color, var(--hmwc-color-neutral-200));
+      --input-shadow: none;
+
+      transition: all var(--hmwc-transition-fast) ease;
+    }
+
+    & .menu__search--always:focus-within {
+      --input-border: var(--menu-search-focus-border, 1px solid var(--hmwc-color-primary-400));
+      --input-border-color: var(--menu-search-focus-border-color, var(--hmwc-color-primary-400));
     }
 
     & .menu__items {
@@ -7835,7 +8106,14 @@ var HMWC = (() => {
       this.menuItems = [];
       this._hasSlottedItems = false;
       this._searchVisible = false;
+      this._typeaheadBuffer = "";
+      this._typeaheadMatchIndex = 0;
+      this._boundHandleTypeahead = this.handleTypeahead.bind(this);
       this.align = "start";
+    }
+    /** Whether the typeahead buffer is actively accumulating keystrokes. */
+    get isTypeaheadActive() {
+      return this._typeaheadBuffer.length > 0;
     }
     /**
      * Activates the menu, making sure it is visible to the
@@ -7951,9 +8229,190 @@ var HMWC = (() => {
         this._searchVisible = false;
       }
     }
+    /**
+     * Applies the `active` attribute to the menu-item whose
+     * value matches `activeValue`, and removes it from all others.
+     */
+    applyActiveState() {
+      this.menuItems.forEach((item) => {
+        if (!(item instanceof MenuItem))
+          return;
+        const isActive = this.activeValue !== void 0 && String(item.value) === String(this.activeValue);
+        item.active = isActive;
+      });
+    }
+    /**
+     * Scrolls the menu's item container so that the active
+     * (or matching `activeValue`) item is visible, centered
+     * within the scroll area.
+     *
+     * Polls via rAF until the container is actually visible
+     * (non-zero height) before scrolling — this handles the
+     * case where a parent attachment has not yet toggled its
+     * CSS classes when the menu becomes active.
+     */
+    scrollToActive() {
+      let attempts = 0;
+      const maxAttempts = 20;
+      const tryScroll = () => {
+        const container = this.shadowRoot?.querySelector(".menu__items");
+        if (!container)
+          return;
+        if (container.clientHeight === 0 && attempts < maxAttempts) {
+          attempts++;
+          requestAnimationFrame(tryScroll);
+          return;
+        }
+        const items = this._hasSlottedItems ? Array.from(this.querySelectorAll("hmwc-menu-item")) : Array.from(container.querySelectorAll("hmwc-menu-item"));
+        const activeIndex = items.findIndex((el) => {
+          const menuItem = el;
+          return this.activeValue !== void 0 && String(menuItem.value) === String(this.activeValue);
+        });
+        if (activeIndex >= 0 && items.length > 0) {
+          const itemHeight = container.scrollHeight / items.length;
+          const targetOffset = activeIndex * itemHeight;
+          container.scrollTop = targetOffset - container.clientHeight / 2 + itemHeight / 2;
+        }
+      };
+      requestAnimationFrame(tryScroll);
+    }
+    /**
+     * Handles keyboard input for typeahead navigation.
+     *
+     * Printable characters are accumulated into a buffer and the
+     * first matching item is selected **immediately** on every
+     * keystroke (no debounce). The buffer clears after 1 s of
+     * inactivity, matching the behaviour of native `<select>`,
+     * Shoelace, and React Aria.
+     *
+     * Special keys:
+     *  - Backspace  – removes the last character and re-searches.
+     *  - Space      – contributes to the search when the buffer
+     *                 is non-empty (ignored when empty).
+     *  - Tab / Shift+Tab – cycles to the next / previous match.
+     *  - Escape     – clears the buffer immediately.
+     *
+     * Ignored when a search input is visible.
+     */
+    handleTypeahead(e8) {
+      if (this.filter !== void 0 && (this.searchOpen || this._searchVisible))
+        return;
+      if (e8.key === "Escape") {
+        this._typeaheadBuffer = "";
+        this._typeaheadMatchIndex = 0;
+        clearTimeout(this._typeaheadTimeout);
+        return;
+      }
+      if (e8.key === "Tab" && this._typeaheadBuffer) {
+        e8.preventDefault();
+        const matches2 = this.getTypeaheadMatches(this._typeaheadBuffer.toLowerCase());
+        if (matches2.length > 1) {
+          this._typeaheadMatchIndex = e8.shiftKey ? (this._typeaheadMatchIndex - 1 + matches2.length) % matches2.length : (this._typeaheadMatchIndex + 1) % matches2.length;
+          this.selectTypeaheadMatch(matches2[this._typeaheadMatchIndex]);
+          this.resetTypeaheadBufferTimer();
+        }
+        return;
+      }
+      if (e8.key === "Backspace") {
+        if (!this._typeaheadBuffer)
+          return;
+        e8.preventDefault();
+        this._typeaheadBuffer = this._typeaheadBuffer.slice(0, -1);
+        this._typeaheadMatchIndex = 0;
+        if (this._typeaheadBuffer) {
+          const matches2 = this.getTypeaheadMatches(this._typeaheadBuffer.toLowerCase());
+          if (matches2.length)
+            this.selectTypeaheadMatch(matches2[0]);
+        }
+        this.resetTypeaheadBufferTimer();
+        return;
+      }
+      if (e8.key === " " && !this._typeaheadBuffer)
+        return;
+      if (e8.key.length !== 1 || e8.ctrlKey || e8.metaKey || e8.altKey)
+        return;
+      e8.preventDefault();
+      this._typeaheadBuffer += e8.key;
+      this._typeaheadMatchIndex = 0;
+      const matches = this.getTypeaheadMatches(this._typeaheadBuffer.toLowerCase());
+      if (matches.length) {
+        this.selectTypeaheadMatch(matches[0]);
+      }
+      this.resetTypeaheadBufferTimer();
+    }
+    /** Returns all visible menu-items whose label starts with the query. */
+    getTypeaheadMatches(query) {
+      const items = this._hasSlottedItems ? Array.from(this.querySelectorAll("hmwc-menu-item")).filter((el) => !el.hidden) : (this.filter !== void 0 ? this.filteredItems : this.menuItems).filter((el) => el instanceof MenuItem);
+      return items.filter((el) => {
+        const label = (el.label ?? el.value ?? "").toString().toLowerCase();
+        return label.startsWith(query);
+      });
+    }
+    /**
+     * Highlights and scrolls a matched menu-item into view.
+     *
+     * IMPORTANT: This does NOT set `this.activeValue` because
+     * that would trigger a Lit re-render on the menu, which
+     * causes the focused base div to lose focus and breaks
+     * multi-keystroke typeahead.  Instead we manipulate
+     * `item.active` directly on the menu-item elements (a
+     * different component, so its re-render cannot steal our
+     * focus) and scroll imperatively.
+     */
+    selectTypeaheadMatch(match) {
+      this.menuItems.forEach((item) => {
+        if (item instanceof MenuItem)
+          item.active = false;
+      });
+      match.active = true;
+      const container = this.shadowRoot?.querySelector(".menu__items");
+      if (container && container.scrollHeight > container.clientHeight) {
+        const allItems = this._hasSlottedItems ? Array.from(this.querySelectorAll("hmwc-menu-item")) : Array.from(container.querySelectorAll("hmwc-menu-item"));
+        const matchIndex = allItems.indexOf(match);
+        if (matchIndex >= 0 && allItems.length > 0) {
+          const itemHeight = container.scrollHeight / allItems.length;
+          const targetOffset = matchIndex * itemHeight;
+          container.scrollTop = targetOffset - container.clientHeight / 2 + itemHeight / 2;
+        }
+      }
+      requestAnimationFrame(() => this._focusBase());
+    }
+    /** Resets (or restarts) the 1 s inactivity timer that clears the typeahead buffer. */
+    resetTypeaheadBufferTimer() {
+      clearTimeout(this._typeaheadTimeout);
+      this._typeaheadTimeout = setTimeout(() => {
+        this._typeaheadBuffer = "";
+        this._typeaheadMatchIndex = 0;
+        this.applyActiveState();
+      }, 1e3);
+    }
+    /**
+     * Handles the Enter key in the search input, emitting
+     * `hmwc-search-submit` with the current filter value.
+     */
+    handleSearchKeydown(e8) {
+      if (e8.key === "Enter") {
+        e8.preventDefault();
+        this.emit("hmwc-search-submit", { detail: { value: this.filter ?? "" } });
+      }
+    }
     openUpdate() {
       this.playAnimation();
       this.emit(this.active ? "hmwc-show" : "hmwc-hide");
+      if (!this.active) {
+        this._typeaheadBuffer = "";
+        this._typeaheadMatchIndex = 0;
+        clearTimeout(this._typeaheadTimeout);
+      }
+      if (this.active && this.searchOpen && this.filter !== void 0) {
+        this.updateComplete.then(() => {
+          const input = this.shadowRoot?.querySelector(".menu__search");
+          input?.focus();
+        });
+      }
+    }
+    activeValueUpdate() {
+      this.applyActiveState();
     }
     itemsUpdate() {
       if (this.items && !this.items.length)
@@ -7968,6 +8427,10 @@ var HMWC = (() => {
       const select = (e8) => this.select(e8.target?.value || "");
       this.menuItems?.forEach((item) => item.removeEventListener("hmwc-select", select));
       this.menuItems?.forEach((item) => item.addEventListener("hmwc-select", select));
+      if (this.activeValue !== void 0)
+        this.applyActiveState();
+      if (this.align && this.align !== "start")
+        this.alignUpdate();
     }
     prefixUpdate() {
       setTimeout(() => {
@@ -7978,6 +8441,15 @@ var HMWC = (() => {
             return;
           item.prefix = this.prefix;
           item.suffix = this.suffix;
+        });
+      }, 1);
+    }
+    alignUpdate() {
+      setTimeout(() => {
+        this.menuItems.forEach((item) => {
+          if (!(item instanceof MenuItem))
+            return;
+          item.center = this.align === "center";
         });
       }, 1);
     }
@@ -7994,6 +8466,11 @@ var HMWC = (() => {
         this.filterItems();
       }
     }
+    disconnectedCallback() {
+      super.disconnectedCallback();
+      clearTimeout(this._typeaheadTimeout);
+      this.removeEventListener("keydown", this._boundHandleTypeahead);
+    }
     connectedCallback() {
       super.connectedCallback();
       this.itemsUpdate();
@@ -8001,6 +8478,31 @@ var HMWC = (() => {
       if (this.active === void 0)
         this.active = true;
       if (this.parentElement?.tagName === "HMWC-ATTACHMENT") {
+      }
+      this.addEventListener("keydown", this._boundHandleTypeahead);
+    }
+    /** Returns the shadow DOM base div that receives focus and keydown events. */
+    get _baseDiv() {
+      return this.shadowRoot?.querySelector('[part="base"]');
+    }
+    /** Focuses the base div so it can receive keyboard events. */
+    _focusBase() {
+      const base = this._baseDiv;
+      if (base && this.active)
+        base.focus({ preventScroll: true });
+    }
+    /**
+     * Called after every render. Triggers auto-scroll to the
+     * active item when the menu transitions to visible, and
+     * focuses the base div so it can receive keyboard events.
+     */
+    updated(changedProperties) {
+      super.updated(changedProperties);
+      if (changedProperties.has("active") && this.active) {
+        if (this.activeValue !== void 0) {
+          this.scrollToActive();
+        }
+        requestAnimationFrame(() => this._focusBase());
       }
     }
     render() {
@@ -8012,9 +8514,25 @@ var HMWC = (() => {
         "select-all": !!this.selectAll
       });
       const items = this.filter !== void 0 ? this.filteredItems : this.menuItems;
+      const showSearchAlways = this.searchOpen && this.filter !== void 0;
+      const showToolbar = this.selectAll || this.filter !== void 0 && !this.searchOpen;
+      const showSearchToggle = this.filter !== void 0 && !this.searchOpen;
+      const showSearchInput = this.filter !== void 0 && (this._searchVisible || showSearchAlways);
       return b2`
-      <div part="base" class=${classifier} @focus=${() => this.emit("hmwc-focus")} @blur=${() => this.emit("hmwc-blur")}>
-        ${this.selectAll || this.filter !== void 0 ? b2`
+      <div part="base" class=${classifier} tabindex="-1" @focus=${() => this.emit("hmwc-focus")} @blur=${() => this.emit("hmwc-blur")}>
+        ${showSearchAlways ? b2`
+              <hmwc-input
+                part="search"
+                class="menu__search menu__search--always"
+                sm
+                fluid
+                placeholder=${this.searchPlaceholder ?? "Search..."}
+                .value=${this.filter ?? ""}
+                @hmwc-input=${this.handleSearch}
+                @keydown=${this.handleSearchKeydown}></hmwc-input>
+              <hmwc-divider></hmwc-divider>
+            ` : ""}
+        ${showToolbar ? b2`
               <div class="menu__toolbar">
                 ${this.selectAll ? b2`
                       <div class="menu__select-all" @click=${this.handleSelectAll}>
@@ -8022,23 +8540,24 @@ var HMWC = (() => {
                         <span class="menu__select-all-label">${this.areAllChecked() ? "Deselect All" : "Select All"}</span>
                       </div>
                     ` : ""}
-                ${this.filter !== void 0 ? b2`
+                ${showSearchToggle ? b2`
                       <hmwc-icon
                         class="menu__search-toggle ${this._searchVisible ? "active" : ""}"
                         src="search"
                         @click=${this.toggleSearch}></hmwc-icon>
                     ` : ""}
               </div>
-              ${this.filter !== void 0 && this._searchVisible ? b2`
+              ${showSearchInput ? b2`
                     <hmwc-input
                       part="search"
                       class="menu__search"
                       sm
                       fluid
                       underline
-                      .value=${this.filter}
+                      .value=${this.filter ?? ""}
                       @hmwc-input=${this.handleSearch}
-                      @hmwc-blur=${this.hideSearch}></hmwc-input>
+                      @hmwc-blur=${this.hideSearch}
+                      @keydown=${this.handleSearchKeydown}></hmwc-input>
                   ` : ""}
               <hmwc-divider></hmwc-divider>
             ` : ""}
@@ -8074,6 +8593,15 @@ var HMWC = (() => {
     n5({ type: String, reflect: true })
   ], Menu.prototype, "filter", void 0);
   __decorate16([
+    n5({ type: Boolean, attribute: "search-open", reflect: true })
+  ], Menu.prototype, "searchOpen", void 0);
+  __decorate16([
+    n5({ type: String, attribute: "search-placeholder" })
+  ], Menu.prototype, "searchPlaceholder", void 0);
+  __decorate16([
+    n5({ attribute: "active-value" })
+  ], Menu.prototype, "activeValue", void 0);
+  __decorate16([
     n5({ type: Boolean, reflect: true })
   ], Menu.prototype, "selectAll", void 0);
   __decorate16([
@@ -8089,6 +8617,9 @@ var HMWC = (() => {
     watch("active")
   ], Menu.prototype, "openUpdate", null);
   __decorate16([
+    watch("activeValue")
+  ], Menu.prototype, "activeValueUpdate", null);
+  __decorate16([
     watch("items")
   ], Menu.prototype, "itemsUpdate", null);
   __decorate16([
@@ -8097,6 +8628,9 @@ var HMWC = (() => {
   __decorate16([
     watch(["prefix", "suffix"])
   ], Menu.prototype, "prefixUpdate", null);
+  __decorate16([
+    watch("align")
+  ], Menu.prototype, "alignUpdate", null);
 
   // dist/components/menu/index.js
   Menu.define("hmwc-menu", Menu);

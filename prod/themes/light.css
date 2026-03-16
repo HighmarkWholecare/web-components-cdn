@@ -313,7 +313,7 @@
   --hmwc-navbar-width: 3.5rem;
   --hmwc-navbar-width-open: 18rem;
 
-  --hmwc-menu-background: hsl(222deg 39% 13%);
+  --hmwc-menu-background: var(--hmwc-color-neutral-0);
 
   --hmwc-button-icon-stroke: 0.01rem;
   --hmwc-button-font-size-small: var(--hmwc-font-size-small);
