@@ -962,6 +962,21 @@ var HMWC = (() => {
     display: none !important;
   }
 
+  @keyframes hmwc-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  :host(.hmwc-reveal) {
+    animation: hmwc-reveal 0.3s cubic-bezier(0.2, 0, 0.13, 1.5) both;
+  }
+
   :host {
     form {
       display: contents;
@@ -1122,6 +1137,45 @@ var HMWC = (() => {
         this._ensureStackContainer();
       if (this.tooltip)
         this._setupTooltip();
+      this._revealObserver = new MutationObserver((mutations) => {
+        for (const m3 of mutations) {
+          if (m3.attributeName === "hidden" && !this.hasAttribute("hidden")) {
+            this._playReveal();
+          }
+        }
+      });
+      this._revealObserver.observe(this, { attributes: true, attributeFilter: ["hidden"] });
+    }
+    /**
+     * Plays a staggered "build-in" reveal animation on the
+     * component's direct child elements. Each child slides up
+     * and fades in sequentially, giving the appearance that
+     * the page is being assembled component by component.
+     *
+     * If the element has no children it falls back to the
+     * simple `hmwc-reveal` CSS class on itself.
+     */
+    _playReveal() {
+      const children = Array.from(this.children).filter((el) => el instanceof HTMLElement && !el.classList.contains("hmwc-notification-stack"));
+      if (!children.length) {
+        this.classList.add("hmwc-reveal");
+        this.addEventListener("animationend", () => this.classList.remove("hmwc-reveal"), { once: true });
+        return;
+      }
+      const staggerMs = 50;
+      const durationMs = 350;
+      const easing = "cubic-bezier(0.2, 0, 0.13, 1.5)";
+      children.forEach((child, i7) => {
+        child.animate([
+          { opacity: 0, transform: "translateY(12px)", filter: "blur(2px)" },
+          { opacity: 1, transform: "translateY(0)", filter: "blur(0)" }
+        ], {
+          duration: durationMs,
+          delay: i7 * staggerMs,
+          easing,
+          fill: "both"
+        });
+      });
     }
     /** Creates the notification stack container for this host. */
     _ensureStackContainer() {
@@ -1259,6 +1313,7 @@ var HMWC = (() => {
     disconnectedCallback() {
       super.disconnectedCallback();
       this._teardownTooltip();
+      this._revealObserver?.disconnect();
     }
     constructor() {
       super();
@@ -1395,10 +1450,11 @@ var HMWC = (() => {
     content: var(--hmwc-input-required-content, '*');
     margin-inline-start: var(--hmwc-input-required-content-offset, 2px);
     color: var(--hmwc-input-required-content-color, var(--hmwc-color-danger-500));
-    font-size: var(--hmwc-input-required-content-font-size, inherit);
+    font-size: var(--hmwc-input-required-content-font-size, 1em);
     font-weight: var(--hmwc-input-required-content-font-weight, var(--hmwc-font-weight-semibold, 600));
     line-height: 1;
     vertical-align: middle;
+    align-self: center;
     pointer-events: none;
   }
 `;
@@ -1816,7 +1872,13 @@ var HMWC = (() => {
       if (["checkbox", "switch"].includes(this.HMWCName(component))) {
         return this.binary ? component.checked ? 1 : 0 : component.checked;
       }
-      const raw = decodeURIComponent(String(component.value ?? ""));
+      const rawValue = String(component.value ?? "");
+      let raw;
+      try {
+        raw = decodeURIComponent(rawValue);
+      } catch {
+        raw = rawValue;
+      }
       if (this.HMWCName(component) === "input" && component.getAttribute("type") === "number") {
         if (raw === "")
           return void 0;
@@ -3722,7 +3784,7 @@ var HMWC = (() => {
     cursor: pointer;
     box-shadow: var(--button-shadow);
     transition: var(--hmwc-transition-x-fast) background-color, var(--hmwc-transition-x-fast) color, var(--hmwc-transition-x-fast) border,
-      var(--hmwc-transition-x-fast) box-shadow;
+      var(--hmwc-transition-x-fast) box-shadow, var(--hmwc-transition-x-fast) transform ease;
 
     .button__prefix,
     .button__suffix {
@@ -4093,11 +4155,14 @@ var HMWC = (() => {
       --button-color: var(--hmwc-color-neutral-0);
       --button-background: var(--hmwc-color-primary-500);
       --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-primary-500);
+      transform: translateY(-1px);
+      --button-shadow: 0 2px 8px hsl(from var(--hmwc-color-primary-500) h s l / 0.25);
 
       &.primary {
         --button-color: var(--hmwc-color-neutral-0);
         --button-background: var(--hmwc-color-primary-500);
         --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-primary-500);
+        --button-shadow: 0 2px 8px hsl(from var(--hmwc-color-primary-500) h s l / 0.3);
 
         &.outline {
           --button-color: var(--hmwc-color-neutral-0);
@@ -4111,6 +4176,7 @@ var HMWC = (() => {
         --button-color: var(--hmwc-color-neutral-0);
         --button-background: var(--hmwc-color-success-500);
         --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-success-500);
+        --button-shadow: 0 2px 8px hsl(from var(--hmwc-color-success-500) h s l / 0.3);
 
         &.outline {
           --button-color: var(--hmwc-color-neutral-0);
@@ -4125,6 +4191,7 @@ var HMWC = (() => {
         --button-color: var(--hmwc-color-neutral-0);
         --button-background: var(--hmwc-color-neutral-500);
         --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-neutral-500);
+        --button-shadow: 0 2px 8px hsl(from var(--hmwc-color-neutral-500) h s l / 0.25);
 
         &.outline {
           --button-color: var(--hmwc-color-neutral-0);
@@ -4139,6 +4206,7 @@ var HMWC = (() => {
         --button-color: var(--hmwc-color-neutral-0);
         --button-background: var(--hmwc-color-warning-500);
         --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-warning-500);
+        --button-shadow: 0 2px 8px hsl(from var(--hmwc-color-warning-500) h s l / 0.3);
 
         &.outline {
           --button-color: var(--hmwc-color-neutral-0);
@@ -4153,6 +4221,7 @@ var HMWC = (() => {
         --button-color: var(--hmwc-color-neutral-0);
         --button-background: var(--hmwc-color-danger-500);
         --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-danger-500);
+        --button-shadow: 0 2px 8px hsl(from var(--hmwc-color-danger-500) h s l / 0.3);
 
         &.outline {
           --button-color: var(--hmwc-color-neutral-0);
@@ -4167,19 +4236,24 @@ var HMWC = (() => {
         --button-color: var(--hmwc-color-primary-500);
         --button-background: transparent;
         --button-border: none;
+        --button-shadow: none;
+        transform: none;
       }
 
       &.invert {
         --button-color: var(--hmwc-color-neutral-800);
         --button-background: var(--hmwc-color-neutral-100);
         --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-neutral-500);
+        --button-shadow: 0 2px 8px hsl(from var(--hmwc-color-neutral-500) h s l / 0.2);
       }
     }
 
     &:active:not(.disabled) {
+      transform: translateY(0);
       --button-color: var(--hmwc-color-primary-700);
       --button-background: var(--hmwc-color-primary-100);
       --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-primary-400);
+      --button-shadow: var(--hmwc-shadow-x-small);
 
       &.primary {
         --button-color: var(--hmwc-color-primary-700);
@@ -5084,6 +5158,21 @@ var HMWC = (() => {
     display: flex;
   }
 
+  @keyframes checkmark-pop {
+    0% {
+      opacity: 0;
+      scale: 0.5;
+    }
+    60% {
+      opacity: 1;
+      scale: 1.15;
+    }
+    100% {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
   .checkbox {
     position: relative;
     display: inline-flex;
@@ -5107,7 +5196,7 @@ var HMWC = (() => {
       background-color: var(--hmwc-input-background-color);
       color: var(--hmwc-color-neutral-0);
       transition: var(--hmwc-transition-fast) border-color, var(--hmwc-transition-fast) background-color, var(--hmwc-transition-fast) color,
-        var(--hmwc-transition-fast) box-shadow;
+        var(--hmwc-transition-fast) box-shadow, var(--hmwc-transition-fast) scale ease;
 
       & > * {
         display: inline-flex;
@@ -5136,6 +5225,10 @@ var HMWC = (() => {
       & .checkbox__control {
         border-color: var(--hmwc-color-primary-600);
         background-color: var(--hmwc-color-primary-600);
+
+        & > * {
+          animation: checkmark-pop 250ms cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+        }
       }
 
       &:not(.disabled) {
@@ -5143,6 +5236,8 @@ var HMWC = (() => {
           &:hover {
             border-color: var(--hmwc-color-primary-700);
             background-color: var(--hmwc-color-primary-700);
+            scale: 1.05;
+            box-shadow: 0 0 0 3px hsl(from var(--hmwc-color-primary-600) h s l / 0.2);
           }
         }
 
@@ -5160,6 +5255,8 @@ var HMWC = (() => {
         &:hover {
           border-color: var(--hmwc-input-border-color-hover);
           background-color: var(--hmwc-input-background-color-hover);
+          scale: 1.05;
+          box-shadow: 0 0 0 3px hsl(from var(--hmwc-color-neutral-400) h s l / 0.2);
         }
       }
 
@@ -6262,6 +6359,11 @@ var HMWC = (() => {
           &::-ms-reveal {
             display: none;
           }
+
+          &::-webkit-inner-spin-button,
+          &::-webkit-outer-spin-button {
+            background: transparent;
+          }
         }
 
         & .input__prefix,
@@ -6475,7 +6577,7 @@ var HMWC = (() => {
           }
         }
         & .input__control {
-          height: var(--hmwc-input-height-small);
+          height: calc(var(--hmwc-input-height-small) - var(--hmwc-input-border-width) * 2);
           padding: 0 var(--hmwc-input-spacing-small);
         }
       }
@@ -7562,7 +7664,7 @@ var HMWC = (() => {
   .menu-item {
     position: relative;
     display: flex;
-    align-items: stretch;
+    align-items: center;
     font-family: var(--hmwc-font-sans);
     font-size: var(--menu-item-font-size);
     font-weight: var(--hmwc-font-weight-semibold);
@@ -7965,7 +8067,7 @@ var HMWC = (() => {
       font-size: var(--hmwc-font-size-x-small);
       color: var(--hmwc-color-neutral-500);
       border-radius: var(--hmwc-border-radius-small);
-      padding: var(--hmwc-spacing-3x-small);
+      padding: var(--hmwc-spacing-3x-small) var(--hmwc-spacing-3x-small) var(--hmwc-spacing-3x-small) var(--hmwc-spacing-x-small);
       transition: background-color var(--hmwc-transition-fast) ease, color var(--hmwc-transition-fast) ease;
 
       &:hover {
@@ -7984,9 +8086,11 @@ var HMWC = (() => {
     }
 
     & .menu__search-toggle {
-      --icon-size: var(--hmwc-font-size-2x-small);
+      --icon-size: var(--hmwc-font-size-x-small);
       --icon-color: var(--hmwc-color-neutral-400);
       cursor: pointer;
+      display: flex;
+      align-items: center;
       padding: var(--hmwc-spacing-3x-small);
       border-radius: var(--hmwc-border-radius-small);
       transition: color var(--hmwc-transition-fast) ease, background-color var(--hmwc-transition-fast) ease;
@@ -8676,13 +8780,14 @@ var HMWC = (() => {
   .attachment__arrow {
     display: none;
     position: fixed;
-    z-index: calc(var(--hmwc-z-index-dialog) + 1);
+    z-index: calc(var(--hmwc-z-index-dialog) + 2);
     width: var(--attachment-arrow-size);
     height: var(--attachment-arrow-size);
     background: var(--hmwc-menu-background, var(--hmwc-color-neutral-0));
     border: solid var(--hmwc-panel-border-width) var(--hmwc-panel-border-color);
     transform: rotate(45deg);
     pointer-events: none;
+    clip-path: none;
   }
 
   .attachment.arrow.active .attachment__arrow {
@@ -10612,6 +10717,9 @@ var HMWC = (() => {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
+      width: var(--card-prefix-icon-size);
+      height: var(--card-prefix-icon-size);
       line-height: 0;
     }
 
@@ -10653,8 +10761,11 @@ var HMWC = (() => {
         hmwc-icon {
           --icon-color: var(--card-icon-color);
           --icon-size: var(--card-prefix-icon-size);
+          flex-shrink: 0;
           &::part(base) {
             display: flex;
+            align-items: center;
+            justify-content: center;
           }
         }
       }
@@ -10673,8 +10784,11 @@ var HMWC = (() => {
       hmwc-icon {
         --icon-color: var(--card-icon-color);
         --icon-size: var(--card-prefix-icon-size);
+        flex-shrink: 0;
         &::part(base) {
           display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
 
@@ -11727,17 +11841,42 @@ var HMWC = (() => {
       display: flex;
 
       &.nav {
-        margin: 0 var(--hmwc-spacing-2x-small);
+        margin: 0 var(--hmwc-spacing-small);
         --icon-size: 0.8rem;
+        transition: var(--hmwc-transition-fast) scale ease;
+
+        &:hover:not([disabled]) {
+          scale: 1.08;
+        }
+
+        &:active:not([disabled]) {
+          scale: 0.95;
+        }
       }
 
-      &:not(.nav):not(.elipsis)::part(base) {
-        border: var(--hmwc-input-border-width) solid var(--hmwc-panel-border-color);
+      &:not(.nav):not(.elipsis) {
+        transition: var(--hmwc-transition-fast) scale ease;
+
+        &::part(base) {
+          border: var(--hmwc-input-border-width) solid var(--hmwc-panel-border-color);
+        }
+
+        &:hover:not(.active) {
+          scale: 1.05;
+          --button-shadow: 0 0 0 3px hsl(from var(--pagination-color) h s l / 0.15);
+          z-index: 1;
+        }
+
+        &:active:not(.active) {
+          scale: 0.95;
+        }
       }
 
       &.active {
         --button-background: var(--pagination-color);
         --button-color: var(--hmwc-color-primary-100);
+        --button-border: var(--hmwc-input-border-width) solid var(--pagination-color);
+        --button-shadow: 0 0 0 3px hsl(from var(--pagination-color) h s l / 0.2);
       }
 
       &.elipsis {
@@ -11756,7 +11895,7 @@ var HMWC = (() => {
         margin: 0;
 
         &.nav {
-          margin: 0 var(--hmwc-spacing-3x-small);
+          margin: 0 var(--hmwc-spacing-x-small);
           --icon-size: 0.75rem;
         }
 
@@ -12070,8 +12209,8 @@ var HMWC = (() => {
               & .data-table__col-filter-icon {
                 --button-padding: 0;
                 --icon-size: var(--hmwc-font-size-small);
-                --icon-color: var(--data-table-header-color);
-                opacity: 0.65;
+                --icon-color: var(--data-table-filter-icon-color, var(--data-table-header-color));
+                opacity: 0.45;
                 transition: opacity 0.15s ease-out;
 
                 &:hover {
@@ -12332,7 +12471,7 @@ var HMWC = (() => {
       & .data-table__info {
         color: var(--hmwc-color-neutral-600);
         font-family: var(--hmwc-font-sans);
-        font-size: var(--hmwc-font-size-small);
+        font-size: calc(1.05 * var(--hmwc-font-size-small));
         font-weight: var(--hmwc-font-weight-normal);
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -12349,7 +12488,7 @@ var HMWC = (() => {
         & .data-table__table-head {
           & .data-table__col-head {
             padding: var(--hmwc-spacing-3x-small) var(--hmwc-spacing-x-small);
-            font-size: calc(0.9 * var(--hmwc-font-size-small));
+            font-size: var(--hmwc-font-size-x-small);
             letter-spacing: var(--hmwc-letter-spacing-loose);
           }
         }
@@ -17458,6 +17597,8 @@ var HMWC = (() => {
           .switch__thumb {
             background-color: var(--hmwc-color-neutral-0);
             border-color: var(--hmwc-color-primary-600);
+            scale: 1.1;
+            box-shadow: 0 0 0 3px hsl(from var(--hmwc-color-primary-600) h s l / 0.2);
           }
         }
         .switch__input:focus-visible ~ .switch__control {
@@ -17489,6 +17630,8 @@ var HMWC = (() => {
         .switch__thumb {
           background-color: var(--hmwc-color-neutral-0);
           border-color: var(--hmwc-color-neutral-400);
+          scale: 1.1;
+          box-shadow: 0 0 0 3px hsl(from var(--hmwc-color-neutral-400) h s l / 0.2);
         }
       }
       .switch__input:focus-visible ~ .switch__control {
@@ -17535,7 +17678,7 @@ var HMWC = (() => {
         border: solid var(--hmwc-input-border-width) var(--hmwc-color-neutral-400);
         translate: calc((var(--width) - var(--height)) / -2);
         transition: var(--hmwc-transition-fast) translate ease, var(--hmwc-transition-fast) background-color, var(--hmwc-transition-fast) border-color,
-          var(--hmwc-transition-fast) box-shadow;
+          var(--hmwc-transition-fast) box-shadow, var(--hmwc-transition-fast) scale ease;
       }
     }
     .switch__input {
