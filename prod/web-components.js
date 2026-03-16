@@ -5571,6 +5571,8 @@ var HMWC = (() => {
       & .calendar__month-picker,
       & .calendar__year-picker {
         & hmwc-menu {
+          width: fit-content;
+          box-shadow: none;
           --menu-width: fit-content;
           --menu-padding: var(--hmwc-spacing-3x-small) 0;
           --menu-label-size: var(--hmwc-font-size-small);
@@ -5783,16 +5785,23 @@ var HMWC = (() => {
      */
     handleMonthSelect(e8) {
       const month = parseInt(e8.detail?.value);
-      if (!isNaN(month))
+      if (!isNaN(month)) {
         this.navigate(month, this.year);
+        const attachment = this.renderRoot.querySelector(".calendar__month-picker");
+        attachment?.hide();
+      }
     }
     /**
      * Handles year selection from the navigation menu.
+     * Closes the year picker attachment after selection.
      */
     handleYearSelect(e8) {
       const year = parseInt(e8.detail?.value);
-      if (!isNaN(year))
+      if (!isNaN(year)) {
         this.navigate(this.month, year);
+        const attachment = this.renderRoot.querySelector(".calendar__year-picker");
+        attachment?.hide();
+      }
     }
     /**
      * Closes the sibling picker when one is opened, ensuring
@@ -6087,6 +6096,7 @@ var HMWC = (() => {
     display: block;
     flex: var(--input-flex, 1 1 18ch);
     min-width: var(--input-min-width, 10ch);
+    max-height: fit-content;
   }
 
   :host([fluid]) {
@@ -11997,7 +12007,7 @@ var HMWC = (() => {
           text-align: left;
           white-space: nowrap;
           cursor: pointer;
-          border-bottom: 2px solid var(--data-table-header-border-color);
+          border-bottom: 0.125rem solid var(--data-table-header-border-color);
           border-right: 1px solid var(--hmwc-color-neutral-200);
           transition: background-color var(--hmwc-transition-fast) ease;
 
@@ -12078,8 +12088,8 @@ var HMWC = (() => {
               }
 
               hmwc-menu {
-                --menu-width: 220px;
-                --menu-max-height: 280px;
+                --menu-width: 13.75rem;
+                --menu-max-height: 17.5rem;
                 --menu-padding: var(--hmwc-spacing-3x-small) 0;
                 --menu-label-size: var(--hmwc-font-size-small);
                 --menu-label-weight: var(--hmwc-font-weight-normal);
@@ -12211,8 +12221,8 @@ var HMWC = (() => {
           & .data-table__col-resize {
             position: absolute;
             top: 0;
-            right: -3px;
-            width: 6px;
+            right: -0.1875rem;
+            width: 0.375rem;
             height: 100%;
             cursor: ew-resize;
             z-index: 1;
@@ -12273,10 +12283,10 @@ var HMWC = (() => {
 
             &[percent='true'] {
               & hmwc-progress {
-                --progress-track: 4px;
+                --progress-track: 0.25rem;
 
                 &::part(base) {
-                  height: 10px;
+                  height: 0.625rem;
                   background-color: var(--hmwc-color-neutral-50);
                 }
               }
@@ -12303,7 +12313,7 @@ var HMWC = (() => {
 
           &:hover {
             filter: brightness(0.96);
-            box-shadow: inset 3px 0 0 0 var(--data-table-header-border-color);
+            box-shadow: inset 0.1875rem 0 0 0 var(--data-table-header-border-color);
 
             & .data-table__item:not(.action) {
               color: var(--hmwc-color-neutral-700);
@@ -12349,7 +12359,7 @@ var HMWC = (() => {
 
         &.percent {
           & hmwc-progress {
-            --progress-track: 3px;
+            --progress-track: 0.1875rem;
           }
         }
       }
