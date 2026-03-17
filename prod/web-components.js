@@ -1446,7 +1446,7 @@ var HMWC = (() => {
 
   // dist/models/form/form.styles.js
   var formStyles = i`
-  :host([required]) [part='label']::after {
+  :host([required][required-indicator]) [part='label']::after {
     content: var(--hmwc-input-required-content, '*');
     margin-inline-start: var(--hmwc-input-required-content-offset, 2px);
     color: var(--hmwc-input-required-content-color, var(--hmwc-color-danger-500));
@@ -1456,6 +1456,53 @@ var HMWC = (() => {
     vertical-align: middle;
     align-self: center;
     pointer-events: none;
+  }
+
+  /* ── Label positioning ── */
+
+  :host([label-pos='top']) [part='base'] {
+    display: grid;
+    align-content: end;
+  }
+
+  :host([label-pos='top']) [part='label'] {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  :host([label-pos='bottom']) [part='base'] {
+    display: grid;
+  }
+
+  :host([label-pos='bottom']) [part='label'] {
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  :host([label-pos='left']) [part='base'] {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 1rem;
+    align-items: center;
+  }
+
+  :host([label-pos='left']) [part='label'] {
+    grid-row: 1;
+    grid-column: 1;
+    text-align: end;
+  }
+
+  :host([label-pos='right']) [part='base'] {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 1rem;
+    align-items: center;
+  }
+
+  :host([label-pos='right']) [part='label'] {
+    grid-row: 1;
+    grid-column: 2;
+    text-align: end;
   }
 `;
 
@@ -1496,7 +1543,7 @@ var HMWC = (() => {
      * Returns true when valid and false when invalid.
      */
     checkValidity() {
-      if (this.required && !this.value)
+      if (this.required && !String(this.value ?? "").trim())
         return false;
       else
         return true;
@@ -1506,7 +1553,7 @@ var HMWC = (() => {
      * message if the control is invalid.
      */
     reportValidity() {
-      if (this.required && !this.value)
+      if (this.required && !String(this.value ?? "").trim())
         return false;
       else
         return true;
@@ -1535,6 +1582,9 @@ var HMWC = (() => {
     n5({ type: Boolean, reflect: true })
   ], HMWCFormComponent.prototype, "required", void 0);
   __decorate2([
+    n5({ type: Boolean, reflect: true, attribute: "required-indicator" })
+  ], HMWCFormComponent.prototype, "requiredIndicator", void 0);
+  __decorate2([
     n5({ type: Boolean, reflect: true })
   ], HMWCFormComponent.prototype, "disabled", void 0);
   __decorate2([
@@ -1546,6 +1596,9 @@ var HMWC = (() => {
   __decorate2([
     n5({ type: String })
   ], HMWCFormComponent.prototype, "label", void 0);
+  __decorate2([
+    n5({ type: String, reflect: true, attribute: "label-pos" })
+  ], HMWCFormComponent.prototype, "labelPos", void 0);
   __decorate2([
     n5({ type: Boolean, reflect: true })
   ], HMWCFormComponent.prototype, "sm", void 0);
@@ -1740,19 +1793,44 @@ var HMWC = (() => {
       if (e8 && e8.key !== "Enter")
         return;
       let valid = true;
-      this.components.forEach((el) => {
-        if (el.hasAttribute("formGroup"))
-          return;
-        if (this.stepComponents.length) {
-          if (el.step === this.step) {
+      if (this.accordionGroups.size > 0) {
+        for (let s4 = 1; s4 <= this.steps; s4++) {
+          if (!this.validateStep(s4)) {
+            valid = false;
+            const accordion = this.getAccordionForStep(s4);
+            if (accordion) {
+              this.getComponentsInAccordion(accordion).forEach((comp) => {
+                this.validateEl(comp);
+              });
+            }
+            this.updateAccordionErrorIndicator(s4);
+            this.changeStep(s4);
+            break;
+          }
+        }
+        if (valid) {
+          this.getOuterFormComponents().forEach((comp) => {
+            if (comp.checkValidity && !comp.checkValidity()) {
+              valid = false;
+              this.validateEl(comp);
+            }
+          });
+        }
+      } else {
+        this.components.forEach((el) => {
+          if (el.hasAttribute("formGroup"))
+            return;
+          if (this.stepComponents.length) {
+            if (el.step === this.step) {
+              if (el.checkValidity && !el.checkValidity())
+                valid = false;
+            }
+          } else {
             if (el.checkValidity && !el.checkValidity())
               valid = false;
           }
-        } else {
-          if (el.checkValidity && !el.checkValidity())
-            valid = false;
-        }
-      });
+        });
+      }
       if (!valid) {
         this.validate();
         return;
@@ -1775,13 +1853,50 @@ var HMWC = (() => {
       if (this.step === void 0)
         return;
       if (this.step < this.steps) {
+        if (this.accordionGroups.size > 0) {
+          const isMultiple = this.isAccordionMultipleMode();
+          if (isMultiple) {
+            let allOpenValid = true;
+            this.accordionGroups.forEach((accordions) => {
+              accordions.forEach((accordion) => {
+                if (accordion.active && accordion.step !== void 0) {
+                  if (!this.validateStep(accordion.step)) {
+                    allOpenValid = false;
+                    this.getComponentsInAccordion(accordion).forEach((comp) => {
+                      this.validateEl(comp);
+                    });
+                    this.updateAccordionErrorIndicator(accordion.step);
+                  }
+                }
+              });
+            });
+            if (!allOpenValid)
+              return;
+            const nextStep = this.findNextInactiveStep();
+            if (nextStep !== void 0) {
+              this.changeStep(nextStep);
+            }
+            return;
+          }
+          if (!this.validateStep(this.step)) {
+            const accordion = this.getAccordionForStep(this.step);
+            if (accordion) {
+              this.getComponentsInAccordion(accordion).forEach((comp) => {
+                this.validateEl(comp);
+              });
+            }
+            this.updateAccordionErrorIndicator(this.step);
+            return;
+          }
+        }
         this.changeStep(this.step + 1);
       }
     }
     decrement() {
       if (this.step === void 0)
         return;
-      if (this.step > 0) {
+      const minStep = this.accordionGroups.size > 0 ? 1 : 0;
+      if (this.step > minStep) {
         this.changeStep(this.step - 1);
       }
     }
@@ -2140,6 +2255,235 @@ var HMWC = (() => {
       });
     }
     /**
+     * Initializes accordion groups by finding all hmwc-accordion-group
+     * elements, storing their accordion children, and auto-assigning
+     * step numbers to accordions that don't have one manually set.
+     *
+     * When accordion groups are present, the form automatically enters
+     * accordion-step mode where each accordion represents a step.
+     *
+     * - **Single mode** (`multiple` not set): only one accordion is open
+     *   at a time; the current step determines which one.
+     * - **Multiple mode** (`multiple`): several accordions may be open;
+     *   the "active step" is the highest-numbered open accordion and
+     *   `increment()` opens the next un-opened accordion.
+     *
+     * When `accordionStepLock` is `false` (default), users can click any
+     * accordion header.  Skipped steps with validation errors will
+     * display an error indicator icon in the accordion summary.
+     */
+    initializeAccordionGroups() {
+      this.accordionGroups.clear();
+      const groups = this.host.querySelectorAll("hmwc-accordion-group");
+      groups.forEach((group) => {
+        const accordionGroup = group;
+        const accordions = Array.from(group.querySelectorAll("hmwc-accordion"));
+        if (accordions.length === 0)
+          return;
+        accordions.forEach((accordion, index) => {
+          if (accordion.step === void 0) {
+            accordion.step = index + 1;
+          }
+        });
+        this.accordionGroups.set(accordionGroup, accordions);
+        this.steps = accordions.length;
+        if (this.step === void 0 || this.step === 0) {
+          this.step = 1;
+        }
+        accordions.forEach((accordion) => {
+          if (this.listenerMap.has(accordion))
+            return;
+          this.listenerMap.set(accordion, true);
+          accordion.addEventListener("hmwc-expand", () => {
+            if (accordion.step === void 0)
+              return;
+            if (this.accordionStepLock && accordion.step !== this.step) {
+              accordion.hide();
+              return;
+            }
+            if (accordion.step > this.step) {
+              for (let s4 = this.step; s4 < accordion.step; s4++) {
+                this.updateAccordionErrorIndicator(s4);
+              }
+            }
+            this.changeStep(accordion.step);
+          });
+        });
+      });
+      if (this.accordionGroups.size > 0) {
+        this.updateAccordionStepUI();
+      }
+    }
+    /**
+     * Returns all form components inside a specific accordion.
+     * Used for per-step validation in accordion-based forms.
+     */
+    getComponentsInAccordion(accordion) {
+      return this.components.filter((comp) => {
+        if (comp.hasAttribute("formGroup"))
+          return false;
+        if (!this.FORM_COMPONENTS.includes(this.HMWCName(comp)))
+          return false;
+        return accordion.contains(comp);
+      });
+    }
+    /**
+     * Returns all form components that are inside the form host
+     * but NOT inside any accordion group. These "outer" components
+     * are validated alongside accordion steps on final submission.
+     */
+    getOuterFormComponents() {
+      return this.components.filter((comp) => {
+        if (comp.hasAttribute("formGroup"))
+          return false;
+        if (!this.FORM_COMPONENTS.includes(this.HMWCName(comp)))
+          return false;
+        for (const [group] of this.accordionGroups) {
+          if (group.contains(comp))
+            return false;
+        }
+        return true;
+      });
+    }
+    /**
+     * Validates all form components within the accordion
+     * corresponding to the given step number.
+     *
+     * @param step The step number to validate.
+     * @returns `true` if all components in the step are valid.
+     */
+    validateStep(step) {
+      const accordion = this.getAccordionForStep(step);
+      if (!accordion)
+        return true;
+      const components = this.getComponentsInAccordion(accordion);
+      let valid = true;
+      components.forEach((comp) => {
+        if (comp.checkValidity && !comp.checkValidity()) {
+          valid = false;
+        }
+      });
+      return valid;
+    }
+    /**
+     * Returns the accordion element for a given step number.
+     */
+    getAccordionForStep(step) {
+      for (const [, accordions] of this.accordionGroups) {
+        const match = accordions.find((a4) => a4.step === step);
+        if (match)
+          return match;
+      }
+      return void 0;
+    }
+    /**
+     * Returns `true` when at least one accordion group uses
+     * `multiple` mode.
+     */
+    isAccordionMultipleMode() {
+      for (const [group] of this.accordionGroups) {
+        if (group.multiple)
+          return true;
+      }
+      return false;
+    }
+    /**
+     * In multiple mode, finds the next step whose accordion
+     * is not currently active (expanded).
+     * Returns `undefined` when every accordion is already open.
+     */
+    findNextInactiveStep() {
+      for (const [, accordions] of this.accordionGroups) {
+        const sorted = [...accordions].sort((a4, b3) => (a4.step ?? 0) - (b3.step ?? 0));
+        for (const accordion of sorted) {
+          if (!accordion.active && accordion.step !== void 0) {
+            return accordion.step;
+          }
+        }
+      }
+      return void 0;
+    }
+    /**
+     * Adds or removes a validation error indicator icon in the
+     * given step's accordion header.  The icon is placed in the
+     * accordion's `controls` slot and includes a tooltip.
+     */
+    updateAccordionErrorIndicator(step) {
+      const accordion = this.getAccordionForStep(step);
+      if (!accordion)
+        return;
+      const isValid = this.validateStep(step);
+      const existing = this.accordionErrorIndicators.get(accordion);
+      if (!isValid && !existing) {
+        const icon = document.createElement("hmwc-icon");
+        icon.setAttribute("src", "exclamation-circle");
+        icon.setAttribute("slot", "controls");
+        icon.setAttribute("tooltip", "This step has validation errors");
+        icon.setAttribute("style", "color: var(--hmwc-color-danger-600); font-size: 1.1em;");
+        accordion.appendChild(icon);
+        this.accordionErrorIndicators.set(accordion, icon);
+      } else if (isValid && existing) {
+        existing.remove();
+        this.accordionErrorIndicators.delete(accordion);
+      }
+    }
+    /**
+     * Refreshes error indicators for all accordion steps.
+     * Called when form data changes to keep indicators in sync.
+     */
+    refreshAccordionErrorIndicators() {
+      this.accordionGroups.forEach((accordions) => {
+        accordions.forEach((accordion) => {
+          if (accordion.step !== void 0) {
+            this.updateAccordionErrorIndicator(accordion.step);
+          }
+        });
+      });
+    }
+    /**
+     * Updates the accordion-group UI based on the current step.
+     *
+     * - **Single mode**: expands the active step's accordion and
+     *   collapses all others. When `accordionStepLock` is true,
+     *   forward steps are disabled.
+     * - **Multiple mode**: opens the current step accordion without
+     *   closing previously opened ones.
+     */
+    updateAccordionStepUI() {
+      if (this.step === void 0)
+        return;
+      this.accordionGroups.forEach((accordions, group) => {
+        const isMultiple = group.multiple;
+        accordions.forEach((accordion) => {
+          if (accordion.step === this.step) {
+            accordion.show();
+            accordion.disabled = false;
+          } else if (isMultiple) {
+            if (this.accordionStepLock) {
+              if (accordion.step !== void 0 && accordion.step > this.step) {
+                accordion.disabled = true;
+              } else {
+                accordion.disabled = false;
+              }
+            } else {
+              accordion.disabled = false;
+            }
+          } else {
+            accordion.hide();
+            if (this.accordionStepLock) {
+              if (accordion.step !== void 0 && accordion.step > this.step) {
+                accordion.disabled = true;
+              } else {
+                accordion.disabled = false;
+              }
+            } else {
+              accordion.disabled = false;
+            }
+          }
+        });
+      });
+    }
+    /**
      * Updates the live `data` property with current form values.
      * Called automatically when form elements receive input.
      */
@@ -2174,19 +2518,36 @@ var HMWC = (() => {
      */
     updateButtonState() {
       let allowSubmit = true;
-      this.components.forEach((el) => {
-        if (el.hasAttribute("formGroup"))
-          return;
-        if (this.stepComponents.length) {
-          if (el.step === this.step) {
+      if (this.accordionGroups.size > 0) {
+        for (let s4 = 1; s4 <= this.steps; s4++) {
+          if (!this.validateStep(s4)) {
+            allowSubmit = false;
+            break;
+          }
+        }
+        if (allowSubmit) {
+          this.getOuterFormComponents().forEach((comp) => {
+            if (comp.checkValidity && !comp.checkValidity()) {
+              allowSubmit = false;
+            }
+          });
+        }
+        this.refreshAccordionErrorIndicators();
+      } else {
+        this.components.forEach((el) => {
+          if (el.hasAttribute("formGroup"))
+            return;
+          if (this.stepComponents.length) {
+            if (el.step === this.step) {
+              if (el.checkValidity && !el.checkValidity())
+                allowSubmit = false;
+            }
+          } else {
             if (el.checkValidity && !el.checkValidity())
               allowSubmit = false;
           }
-        } else {
-          if (el.checkValidity && !el.checkValidity())
-            allowSubmit = false;
-        }
-      });
+        });
+      }
       if (allowSubmit && this.editing && !this.isDirty()) {
         allowSubmit = false;
       }
@@ -2208,6 +2569,9 @@ var HMWC = (() => {
         else
           el.setAttribute("hidden", "true");
       });
+      if (this.accordionGroups.size > 0) {
+        this.updateAccordionStepUI();
+      }
       const begin = this.controls.find((c5) => c5.begin);
       const increment = this.controls.find((c5) => c5.increment);
       const decrement = this.controls.find((c5) => c5.decrement);
@@ -2220,7 +2584,11 @@ var HMWC = (() => {
       } else if (this.step < this.steps) {
         begin?.setAttribute("hidden", "true");
         increment?.removeAttribute("hidden");
-        decrement?.removeAttribute("hidden");
+        if (this.accordionGroups.size > 0 && this.step === 1) {
+          decrement?.setAttribute("hidden", "true");
+        } else {
+          decrement?.removeAttribute("hidden");
+        }
         submit?.setAttribute("hidden", "true");
       } else if (this.step === this.steps) {
         begin?.setAttribute("hidden", "true");
@@ -2483,6 +2851,7 @@ var HMWC = (() => {
       form.append(base);
       this.root.append(form);
       this.initializeTemplates();
+      this.initializeAccordionGroups();
       this.updateStepUI();
       this.host.addEventListener("keydown", this.boundKeydownHandler);
       this.setupObserver();
@@ -2503,6 +2872,9 @@ var HMWC = (() => {
       this.boundKeydownHandler = this.handleKeydown.bind(this);
       this.lastActionTime = /* @__PURE__ */ new WeakMap();
       this.templates = /* @__PURE__ */ new Map();
+      this.accordionGroups = /* @__PURE__ */ new Map();
+      this.accordionStepLock = false;
+      this.accordionErrorIndicators = /* @__PURE__ */ new WeakMap();
       this.editing = false;
       this.snapshot = null;
       this.components = [];
@@ -2837,6 +3209,9 @@ var HMWC = (() => {
     font-size: var(--icon-size);
     height: fit-content;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 
     &.primary {
       --icon-color: var(--hmwc-color-primary-600);
@@ -2975,7 +3350,7 @@ var HMWC = (() => {
     --accordion-font-weight: var(--hmwc-font-weight-normal);
     --accordion-icon-color: var(--hmwc-color-neutral-700);
     --accordion-icon-size: var(--accordion-font-size);
-    --accordion-trigger-size: var(--hmwc-font-size-small);
+    --accordion-trigger-size: 0.75rem;
     --accordion-trigger-color: var(--hmwc-color-neutral-700);
     --accordion-summary-padding: var(--hmwc-spacing-medium) var(--hmwc-spacing-large) var(--hmwc-spacing-small);
 
@@ -3050,7 +3425,8 @@ var HMWC = (() => {
         align-items: center;
         font-size: var(--accordion-trigger-size);
         color: var(--accordion-trigger-color);
-        transition: var(--hmwc-transition-medium) rotate ease, var(--hmwc-transition-fast) color ease;
+        transition: var(--hmwc-transition-medium) rotate ease, var(--hmwc-transition-fast) color ease, var(--hmwc-transition-fast) translate ease;
+        translate: 0;
       }
     }
 
@@ -3061,6 +3437,13 @@ var HMWC = (() => {
 
       & .accordion__trigger {
         color: var(--hmwc-color-neutral-900);
+        translate: var(--hmwc-spacing-2x-small);
+      }
+    }
+
+    &:not(.disabled).active .accordion__summary:hover {
+      & .accordion__trigger {
+        translate: 0 var(--hmwc-spacing-2x-small);
       }
     }
 
@@ -3135,7 +3518,7 @@ var HMWC = (() => {
     &.basic {
       --accordion-background: none;
       --accordion-border-color: none;
-      --accordion-trigger-size: 0.75rem;
+      --accordion-trigger-size: 0.625rem;
       --accordion-summary-padding: 0;
       --container-padding: var(--hmwc-spacing-medium) 0;
     }
@@ -3239,6 +3622,7 @@ var HMWC = (() => {
           role="button"
           aria-expanded=${o6(this.active)}
           aria-controls="content"
+          aria-label=${o6(this.label)}
           aria-disabled=${this.disabled ? "true" : "false"}
           tabindex=${this.disabled ? "-1" : "0"}
           @keydown=${this.handleKeyboardInput}
@@ -3255,7 +3639,7 @@ var HMWC = (() => {
             <hmwc-icon part="summary-icon" src="chevron-right"></hmwc-icon>
           </slot>
         </summary>
-        <div class="accordion__body" part="body" role="region" aria-labelledby="summary">
+        <div id="content" class="accordion__body" part="body" role="region" aria-labelledby="summary">
           <slot></slot>
         </div>
       </details>
@@ -4432,14 +4816,14 @@ var HMWC = (() => {
         part='base'
         class='${classifier}'
         type=${this.submit ? "submit" : this.reset ? "reset" : "button"}
-        title=${this.title}
+        title=${o6(this.title || void 0)}
         target=${o6(this.isLink() ? this.target : void 0)}
         download=${o6(this.isLink() ? this.download : void 0)}
         href=${o6(this.isLink() ? this.href : void 0)}
         value=${o6(this.isLink() ? void 0 : this.value)}
         role=${o6(this.isLink() ? void 0 : "button")}
         aria-disabled=${o6(this.disabled)}
-        aria-label=${o6(this.label)}
+        aria-label=${o6(this.label || void 0)}
         tabindex=${o6(this.disabled) ? "-1" : "0"}
         @click=${this.handleClick}
         @blur=${this.handleBlur}
@@ -4602,6 +4986,13 @@ var HMWC = (() => {
     gap: var(--accordion-group-spacing);
     border: var(--hmwc-panel-border-width) solid var(--accordion-group-border-color);
     border-radius: var(--accordion-group-border-radius);
+    align-items: var(--container-alignment);
+    justify-content: var(--container-justification);
+    padding: var(--container-padding);
+    box-shadow: var(--container-shadow);
+    background: var(--container-background);
+    background-size: cover;
+    aspect-ratio: var(--container-aspect-ratio);
   }
 `;
 
@@ -4612,7 +5003,7 @@ var HMWC = (() => {
     else for (var i7 = decorators.length - 1; i7 >= 0; i7--) if (d3 = decorators[i7]) r7 = (c5 < 3 ? d3(r7) : c5 > 3 ? d3(target, key, r7) : d3(target, key)) || r7;
     return c5 > 3 && r7 && Object.defineProperty(target, key, r7), r7;
   };
-  var AccordionGroup = class extends HMWCComponent {
+  var AccordionGroup = class extends HMWCContainerComponent {
     constructor() {
       super(...arguments);
       this.index = -1;
@@ -6206,6 +6597,16 @@ var HMWC = (() => {
 
   // dist/components/input/input.styles.js
   var styles12 = i`
+  @keyframes icon-sheen {
+    0%,
+    100% {
+      color: var(--hmwc-input-icon-color);
+    }
+    50% {
+      color: color-mix(in srgb, var(--hmwc-input-icon-color) 60%, var(--hmwc-color-primary-600));
+    }
+  }
+
   :host {
     --input-background: var(--hmwc-input-background-color);
     --input-color: var(--hmwc-input-color);
@@ -6316,7 +6717,7 @@ var HMWC = (() => {
         overflow: hidden;
         cursor: text;
         transition: var(--hmwc-transition-fast) color, var(--hmwc-transition-fast) border, var(--hmwc-transition-fast) box-shadow,
-          var(--hmwc-transition-fast) background-color;
+          var(--hmwc-transition-fast) background-color, var(--hmwc-transition-fast) transform ease;
 
         & .input__clear,
         & .input__toggle {
@@ -6396,15 +6797,13 @@ var HMWC = (() => {
             &::part(base) {
               display: block;
             }
-            position: relative;
-            top: 1px;
           }
         }
 
         & .input__prefix {
-          left: var(--hmwc-spacing-medium);
+          left: 0;
           right: initial;
-          margin: auto;
+          padding-inline-start: var(--hmwc-input-spacing-medium);
         }
 
         & .input__prefix,
@@ -6413,6 +6812,7 @@ var HMWC = (() => {
           flex: 0 0 auto;
           align-items: center;
           cursor: default;
+          --icon-size: 0.875em;
 
           &::slotted(hmwc-icon),
           & hmwc-icon {
@@ -6423,6 +6823,7 @@ var HMWC = (() => {
         & .input__suffix {
           height: 100%;
           right: 0;
+          padding-inline-end: var(--hmwc-input-spacing-medium);
         }
 
         & .input__units {
@@ -6446,12 +6847,27 @@ var HMWC = (() => {
 
       & .input__calendar_toggle {
         display: flex;
+        align-items: stretch;
         & hmwc-button {
           --button-padding: 0 var(--hmwc-spacing-small);
+          --icon-color: var(--hmwc-input-icon-color);
+          display: flex;
+          align-items: stretch;
           &::part(base) {
-            border: none;
-            border-radius: 0;
-            box-shadow: none;
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            background: transparent !important;
+            transform: none !important;
+            color: var(--hmwc-input-icon-color) !important;
+            --icon-color: var(--hmwc-input-icon-color) !important;
+            --button-color: var(--hmwc-input-icon-color) !important;
+            transition: var(--hmwc-transition-fast) color ease !important;
+          }
+          &:hover::part(base) {
+            color: var(--hmwc-color-primary-400) !important;
+            --icon-color: var(--hmwc-color-primary-400) !important;
+            --button-color: var(--hmwc-color-primary-400) !important;
           }
         }
       }
@@ -6474,16 +6890,36 @@ var HMWC = (() => {
         box-shadow: var(--input-shadow);
         background-color: var(--input-background);
         overflow: hidden;
+        transition: var(--hmwc-transition-fast) border, var(--hmwc-transition-fast) box-shadow, var(--hmwc-transition-fast) background-color;
       }
 
       & .input__calendar_toggle {
+        align-self: stretch;
+        display: flex;
+        align-items: stretch;
+        grid-row: 1 / -1;
         border-inline-end: var(--hmwc-input-border-width) solid var(--input-border-color);
+        transition: var(--hmwc-transition-fast) border-color;
+
+        & hmwc-button {
+          align-self: stretch;
+
+          &::part(base) {
+            min-height: 0;
+            height: 100%;
+            border-radius: 0;
+          }
+        }
       }
 
       & .input__field {
         border: none;
         border-radius: 0;
         box-shadow: none;
+      }
+
+      & .input__help {
+        grid-column: 1 / -1;
       }
     }
 
@@ -6494,6 +6930,32 @@ var HMWC = (() => {
         --input-background: var(--hmwc-input-background-color-hover);
         --input-border: var(--hmwc-input-border-width) solid var(--hmwc-input-border-color-hover);
         --input-border-color: var(--hmwc-input-border-color-hover);
+
+        & .input__field {
+          transform: translateY(-0.5px);
+          box-shadow: 0 2px 8px hsl(from var(--hmwc-color-primary-600) h s l / 0.2);
+        }
+
+        &.date .input__field {
+          transform: none;
+          box-shadow: none;
+        }
+
+        &.date .input__wrapper {
+          box-shadow: 0 4px 12px hsl(from var(--hmwc-color-primary-600) h s l / 0.2);
+        }
+
+        &.underline {
+          --input-background: transparent;
+          --input-border: none;
+          --input-shadow: none;
+
+          & .input__field {
+            transform: none;
+            border-bottom: 1px solid var(--hmwc-input-border-color-hover);
+            box-shadow: 0 2px 4px -2px hsl(from var(--hmwc-color-primary-600) h s l / 0.3);
+          }
+        }
 
         &.filled {
           --input-background: var(--hmwc-input-filled-background-color-hover);
@@ -6507,8 +6969,66 @@ var HMWC = (() => {
         --input-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color);
         --input-outline: var(--hmwc-focus-ring-style) var(--hmwc-focus-ring-width) var(--hmwc-focus-ring-color);
 
+        & .input__field {
+          transform: none;
+          box-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color);
+        }
+
+        & .input__prefix,
+        & .input__suffix {
+          &::slotted(hmwc-icon),
+          & hmwc-icon {
+            --icon-color: inherit;
+            animation: icon-sheen 3s ease-in-out infinite;
+          }
+        }
+
+        &.date .input__field {
+          box-shadow: none;
+        }
+
+        &.date .input__wrapper {
+          box-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color);
+        }
+
+        &.underline {
+          --input-background: transparent;
+          --input-border: none;
+          --input-shadow: none;
+          --input-outline: none;
+
+          & .input__field {
+            border-bottom: 1px solid var(--hmwc-color-primary-600);
+            box-shadow: 0 2px 6px -2px var(--hmwc-input-focus-ring-color);
+          }
+        }
+
         &.filled {
           --input-background: var(--hmwc-input-filled-background-color-focus);
+        }
+
+        &.invalid {
+          --input-border: var(--hmwc-input-border-width) solid var(--hmwc-input-border-color-invalid);
+          --input-border-color: var(--hmwc-input-border-color-invalid);
+          --input-outline: var(--hmwc-focus-ring-style) var(--hmwc-focus-ring-width) var(--hmwc-focus-ring-color-invalid);
+          --input-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
+
+          & .input__field {
+            box-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
+          }
+
+          &.date .input__field {
+            box-shadow: none;
+          }
+
+          &.date .input__wrapper {
+            box-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
+          }
+
+          &.underline .input__field {
+            border-bottom: 1px solid var(--hmwc-input-border-color-invalid);
+            box-shadow: 0 2px 6px -2px var(--hmwc-input-focus-ring-color-invalid);
+          }
         }
       }
     }
@@ -6582,6 +7102,19 @@ var HMWC = (() => {
       }
 
       &:not(.textarea) {
+        & .input__field {
+          height: var(--hmwc-input-height-small);
+        }
+
+        &.date .input__field {
+          height: auto;
+        }
+
+        &.date .input__wrapper {
+          height: var(--hmwc-input-height-small);
+          box-sizing: border-box;
+        }
+
         &.prefix {
           & .input__control {
             padding-left: var(--hmwc-spacing-2x-large);
@@ -6607,6 +7140,19 @@ var HMWC = (() => {
         }
       }
 
+      &.no-spin {
+        & .input__control {
+          &::-webkit-inner-spin-button,
+          &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            appearance: none;
+            margin: 0;
+          }
+
+          -moz-appearance: textfield;
+        }
+      }
+
       &.pill {
         --input-radius: var(--hmwc-input-height-small);
       }
@@ -6616,14 +7162,12 @@ var HMWC = (() => {
         min-height: var(--hmwc-input-height-small);
       }
 
-      & .input__prefix::slotted(*),
-      & .input__prefix hmwc-icon {
-        margin-inline-start: var(--hmwc-input-spacing-small);
+      & .input__prefix {
+        padding-inline-start: var(--hmwc-input-spacing-small);
       }
 
-      & .input__suffix::slotted(*),
-      & .input__suffix hmwc-icon {
-        margin-inline-end: var(--hmwc-input-spacing-small);
+      & .input__suffix {
+        padding-inline-end: var(--hmwc-input-spacing-small);
       }
 
       &.clearable .input__clear,
@@ -6635,10 +7179,12 @@ var HMWC = (() => {
         & hmwc-button {
           --icon-size: reset;
           display: flex;
+          align-self: stretch;
 
           &::part(base) {
             padding-top: 0.075rem;
             padding-bottom: 0.075rem;
+            height: 100%;
           }
         }
       }
@@ -6652,6 +7198,19 @@ var HMWC = (() => {
       }
 
       &:not(.textarea) {
+        & .input__field {
+          height: var(--hmwc-input-height-medium);
+        }
+
+        &.date .input__field {
+          height: auto;
+        }
+
+        &.date .input__wrapper {
+          height: var(--hmwc-input-height-medium);
+          box-sizing: border-box;
+        }
+
         &.prefix {
           & .input__control {
             padding-left: var(--hmwc-spacing-3x-large);
@@ -6679,14 +7238,12 @@ var HMWC = (() => {
         min-height: var(--hmwc-input-height-medium);
       }
 
-      & .input__prefix::slotted(*),
-      & .input__prefix hmwc-icon {
-        margin-inline-start: var(--hmwc-input-spacing-medium);
+      & .input__prefix {
+        padding-inline-start: var(--hmwc-input-spacing-medium);
       }
 
-      & .input__suffix::slotted(*),
-      & .input__suffix hmwc-icon {
-        margin-inline-end: var(--hmwc-input-spacing-medium);
+      & .input__suffix {
+        padding-inline-end: var(--hmwc-input-spacing-medium);
       }
 
       &.clearable .input__clear,
@@ -6705,6 +7262,19 @@ var HMWC = (() => {
       }
 
       &:not(.textarea) {
+        & .input__field {
+          height: var(--hmwc-input-height-large);
+        }
+
+        &.date .input__field {
+          height: auto;
+        }
+
+        &.date .input__wrapper {
+          height: var(--hmwc-input-height-large);
+          box-sizing: border-box;
+        }
+
         &.prefix {
           & .input__control {
             padding-left: var(--hmwc-spacing-3x-large);
@@ -6732,14 +7302,12 @@ var HMWC = (() => {
         min-height: var(--hmwc-input-height-large);
       }
 
-      & .input__prefix::slotted(*),
-      & .input__prefix hmwc-icon {
-        margin-inline-start: var(--hmwc-input-spacing-large);
+      & .input__prefix {
+        padding-inline-start: var(--hmwc-input-spacing-large);
       }
 
-      & .input__suffix::slotted(*),
-      & .input__suffix hmwc-icon {
-        margin-inline-end: var(--hmwc-input-spacing-large);
+      & .input__suffix {
+        padding-inline-end: var(--hmwc-input-spacing-large);
       }
 
       &.clearable .input__clear,
@@ -6790,15 +7358,16 @@ var HMWC = (() => {
         --input-border-color: var(--hmwc-input-border-color-invalid-hover);
       }
 
-      &:focus-within {
-        --input-border: var(--hmwc-input-border-width) solid var(--hmwc-input-border-color-invalid);
-        --input-border-color: var(--hmwc-input-border-color-invalid);
-        --input-outline: var(--hmwc-focus-ring-style) var(--hmwc-focus-ring-width) var(--hmwc-focus-ring-color-invalid);
-        --input-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
-      }
-
       & .input__help {
         color: var(--hmwc-input-border-color-invalid);
+      }
+
+      & .input__prefix,
+      & .input__suffix {
+        &::slotted(hmwc-icon),
+        & hmwc-icon {
+          --icon-color: var(--hmwc-input-border-color-invalid);
+        }
       }
     }
 
@@ -6811,63 +7380,6 @@ var HMWC = (() => {
     &.calendar {
       & .input__calendar {
         display: block;
-      }
-    }
-
-    &.label-top {
-      align-content: end;
-      & .input__wrapper {
-        grid-row: 2;
-        grid-column: 1;
-      }
-
-      & .input__label {
-        grid-row: 1;
-        grid-column: 1;
-      }
-    }
-
-    &.label-bottom {
-      & .input__wrapper {
-        grid-row: 1;
-        grid-column: 1;
-      }
-
-      & .input__label {
-        grid-row: 2;
-        grid-column: 1;
-      }
-    }
-
-    &.label-left {
-      grid-template-columns: auto 1fr;
-      column-gap: 1rem;
-
-      & .input__wrapper {
-        grid-row: 1;
-        grid-column: 2;
-      }
-
-      & .input__label {
-        grid-row: 1;
-        grid-column: 1;
-        text-align: end;
-      }
-    }
-
-    &.label-right {
-      grid-template-columns: 1fr auto;
-      column-gap: 1rem;
-
-      & .input__wrapper {
-        grid-row: 1;
-        grid-column: 1;
-      }
-
-      & .input__label {
-        grid-row: 1;
-        grid-column: 2;
-        text-align: end;
       }
     }
   }
@@ -6890,7 +7402,6 @@ var HMWC = (() => {
       this.lockCalendarNavigation = false;
       this.dates = [];
       this.type = "text";
-      this.labelPos = "top";
       this.dateFormat = "MM/DD/YYYY";
       this.open = false;
       this._calendarLoseFocus = null;
@@ -6980,15 +7491,31 @@ var HMWC = (() => {
     /**
      * Checks for validity but does not show a validation message.
      * Returns true when valid and false when invalid.
+     *
+     * For required fields, whitespace-only values are treated as
+     * empty so that users cannot bypass validation by entering
+     * spaces.
      */
     checkValidity() {
+      if (this.required && !String(this.value ?? "").trim()) {
+        return false;
+      }
       return this.input?.checkValidity();
     }
     /**
      * Checks for validity and shows the browser's validation
      * message if the control is invalid.
+     *
+     * For required fields, whitespace-only values are treated as
+     * empty so that users cannot bypass validation by entering
+     * spaces.
      */
     reportValidity() {
+      if (this.required && !String(this.value ?? "").trim()) {
+        this.invalid = true;
+        this.emit("hmwc-invalid");
+        return false;
+      }
       return this.input?.reportValidity();
     }
     get validationMessage() {
@@ -7126,10 +7653,20 @@ var HMWC = (() => {
         this.isManuallyTyping = false;
       }
       if (this.type === "email" && this.value) {
+        const trimmed = String(this.value).trim();
+        if (trimmed !== this.value) {
+          this.value = trimmed;
+          if (this.input)
+            this.input.value = trimmed;
+        }
         this.validateEmail();
       }
-      if (this.type === "filepath" && this.value) {
+      if (this.type === "filepath") {
         this.validateFilePath();
+      }
+      if (this.required && !String(this.value ?? "").trim()) {
+        this.invalid = true;
+        this.emit("hmwc-invalid");
       }
       this.emit("hmwc-blur");
       this.autoFocusLost = true;
@@ -7156,6 +7693,7 @@ var HMWC = (() => {
         this.sanitizeAutofill();
       }
       this.enforceMaxLength();
+      this.checkDesiredLength();
       this.emit("hmwc-input", { detail: { value: this.value } });
     }
     handleChange() {
@@ -7332,6 +7870,23 @@ var HMWC = (() => {
       return true;
     }
     /**
+     * When `minlength` and `maxlength` are both set to the same
+     * value, the field expects an exact character count.  Auto-set
+     * `valid` when the input reaches that length and clear it when
+     * the value no longer matches.
+     */
+    checkDesiredLength() {
+      if (this.minlength == null || this.maxlength == null || this.minlength !== this.maxlength)
+        return;
+      const len = String(this.value ?? "").length;
+      if (len === this.minlength) {
+        this.valid = true;
+        this.invalid = false;
+      } else {
+        this.valid = false;
+      }
+    }
+    /**
      * Detects browser autofill and validates the injected value
      * against the input's type constraints.  When the autofilled
      * content is clearly corrupt (e.g. an address stuffed into
@@ -7345,8 +7900,7 @@ var HMWC = (() => {
       const raw = String(this.value ?? "");
       if (!raw)
         return;
-      if (this.enforceMaxLength())
-        return;
+      this.enforceMaxLength();
       switch (this.type) {
         case "email": {
           const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -7600,13 +8154,10 @@ var HMWC = (() => {
         disabled: !!this.disabled,
         date: this.type === "date",
         number: this.type === "number",
+        "no-spin": this.type === "number" && (!this.max || Number(this.max) > 100),
         calendar: this.open,
         valid: !!this.valid,
-        invalid: !!this.invalid,
-        "label-top": this.labelPos === "top",
-        "label-right": this.labelPos === "right",
-        "label-bottom": this.labelPos === "bottom",
-        "label-left": this.labelPos === "left"
+        invalid: !!this.invalid
       });
       return u3`
       <div part='base' class=${classifier}>
@@ -7775,9 +8326,6 @@ var HMWC = (() => {
   __decorate14([
     n5({ type: Boolean, reflect: true })
   ], Input.prototype, "underline", void 0);
-  __decorate14([
-    n5({ type: String })
-  ], Input.prototype, "labelPos", void 0);
   __decorate14([
     n5({ type: String })
   ], Input.prototype, "prefix", void 0);
@@ -8156,6 +8704,7 @@ var HMWC = (() => {
         part="base"
         class=${classifier}
         role="menuitem"
+        aria-label=${o6(this.label || void 0)}
         aria-haspopup=${popup ? "true" : "false"}
         aria-expanded=${popup && this.isExpanded() ? "true" : "false"}
         aria-disabled=${this.disabled ? "true" : "false"}
@@ -8862,7 +9411,7 @@ var HMWC = (() => {
       const showSearchToggle = this.filter !== void 0 && !this.searchOpen;
       const showSearchInput = this.filter !== void 0 && (this._searchVisible || showSearchAlways);
       return b2`
-      <div part="base" class=${classifier} tabindex="-1" @focus=${() => this.emit("hmwc-focus")} @blur=${() => this.emit("hmwc-blur")}>
+      <div part="base" class=${classifier} role="menu" tabindex="-1" @focus=${() => this.emit("hmwc-focus")} @blur=${() => this.emit("hmwc-blur")}>
         ${showSearchAlways ? b2`
               <hmwc-input
                 part="search"
@@ -11503,7 +12052,6 @@ var HMWC = (() => {
       display: flex;
       position: absolute;
       align-items: center;
-      opacity: 0.5;
       left: 0;
       width: 100%;
       font-size: var(--hmwc-font-size-x-small);
@@ -11523,6 +12071,7 @@ var HMWC = (() => {
         height: 0;
         border-bottom: 0.1px solid var(--hmwc-color-neutral-300);
         margin-left: 1rem;
+        opacity: 0.5;
       }
     }
 
@@ -11697,7 +12246,8 @@ var HMWC = (() => {
   .dropdown {
     box-sizing: border-box;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     gap: var(--hmwc-spacing-3x-small);
     --menu-item-placeholder-display: none;
 
@@ -11833,19 +12383,6 @@ var HMWC = (() => {
         }
       }
     }
-
-    &.label-top,
-    &.label-bottom {
-      flex-direction: column;
-    }
-
-    &.label-left,
-    &.label-right {
-      & .dropdown__label {
-        width: fit-content;
-      }
-      gap: var(--hmwc-spacing-small);
-    }
   }
 `;
 
@@ -11860,13 +12397,13 @@ var HMWC = (() => {
     constructor() {
       super(...arguments);
       this.active = false;
+      this.labelPos = "top";
       this.items = [];
       this.placeholder = "";
       this.placement = "bottom-start";
       this.sync = true;
       this.distance = 1;
       this.skidding = this.prefix ? 8 : 0;
-      this.labelPos = "top";
     }
     /**
      * Activates the dropdown menu, making sure it is visible
@@ -11940,10 +12477,6 @@ var HMWC = (() => {
         label: !!this.label,
         pill: !!this.pill,
         invalid: !!this.invalid,
-        "label-top": this.labelPos === "top",
-        "label-right": this.labelPos === "right",
-        "label-bottom": this.labelPos === "bottom",
-        "label-left": this.labelPos === "left",
         top: this.placement === "top",
         "top-start": this.placement === "top-start",
         "top-end": this.placement === "top-end",
@@ -11959,7 +12492,7 @@ var HMWC = (() => {
       });
       return b2`
       <div part="base" class=${classifier} @click=${() => this.active = !this.active}>
-        ${["top", "left"].includes(this.labelPos) ? b2` <slot name="label" part="label" class="dropdown__label">${this.label}</slot> ` : ""}
+        <slot name="label" part="label" class="dropdown__label">${this.label}</slot>
 
         <hmwc-attachment .?distance=${this.distance} .?skidding=${this.skidding} ?sync=${this.sync} ?active=${this.active}>
           ${this.items.length ? b2` <hmwc-menu
@@ -11984,8 +12517,6 @@ var HMWC = (() => {
             suffix="chevron-down"></hmwc-button>
         </hmwc-attachment>
 
-        ${["bottom", "right"].includes(this.labelPos) ? b2` <slot name="label" part="label" class="dropdown__label"> ${this.label} </slot> ` : ""}
-
         <!-- Help Text -->
         <slot name="help" part="help" class="dropdown__help" aria-hidden=${!this.help}> ${this.invalid && this.error || this.help} </slot>
       </div>
@@ -11998,6 +12529,9 @@ var HMWC = (() => {
   __decorate28([
     n5({ type: Boolean, reflect: true })
   ], Dropdown.prototype, "active", void 0);
+  __decorate28([
+    n5({ type: String, reflect: true, attribute: "label-pos" })
+  ], Dropdown.prototype, "labelPos", void 0);
   __decorate28([
     n5({ type: Array, reflect: true })
   ], Dropdown.prototype, "items", void 0);
@@ -12032,9 +12566,6 @@ var HMWC = (() => {
     n5({ type: Boolean, reflect: true })
   ], Dropdown.prototype, "fluid", void 0);
   __decorate28([
-    n5({ type: String })
-  ], Dropdown.prototype, "labelPos", void 0);
-  __decorate28([
     e5(".dropdown__trigger")
   ], Dropdown.prototype, "trigger", void 0);
   __decorate28([
@@ -12062,7 +12593,6 @@ var HMWC = (() => {
     display: flex;
     gap: var(--hmwc-spacing-x-small);
     align-items: center;
-    list-style-type: none;
     padding: 0;
     margin: 0;
 
@@ -12215,56 +12745,65 @@ var HMWC = (() => {
         danger: !!this.danger
       });
       return b2`
-      <ul part="base" class=${classifier}>
-        <slot name="nav-back" part="nav" class="pagination-page nav">
-          <hmwc-button
-            ?sm=${!!this.sm}
-            ?md=${!!this.md}
-            ?lg=${!!this.lg}
-            basic
-            icon="chevron-left"
-            ?primary=${!!this.primary}
-            ?success=${!!this.success}
-            ?neutral=${!!this.neutral}
-            ?warning=${!!this.warning}
-            ?danger=${!!this.danger}
-            ?disabled=${!this.count || this.page === 1}
-            @hmwc-click=${() => this.page--}></hmwc-button>
-        </slot>
+      <nav part="base" class=${classifier} aria-label="Pagination">
+        <div class="pagination-page nav">
+          <slot name="nav-back" part="nav">
+            <hmwc-button
+              ?sm=${!!this.sm}
+              ?md=${!!this.md}
+              ?lg=${!!this.lg}
+              basic
+              icon="chevron-left"
+              label="Previous page"
+              title="Previous page"
+              ?primary=${!!this.primary}
+              ?success=${!!this.success}
+              ?neutral=${!!this.neutral}
+              ?warning=${!!this.warning}
+              ?danger=${!!this.danger}
+              ?disabled=${!this.count || this.page === 1}
+              @hmwc-click=${() => this.page--}></hmwc-button>
+          </slot>
+        </div>
 
-        ${this.range.map((page) => page === -1 ? b2`<hmwc-icon sm part="elipsis" class="pagination-page elipsis" src="three-dots"></hmwc-icon>` : b2`
-                <hmwc-button
-                  part="page page-${this.page === page ? "active" : "inactive"}"
-                  class="pagination-page ${this.page === page ? "active" : ""}"
-                  circle
-                  ?sm=${!!this.sm}
-                  ?md=${!!this.md}
-                  ?lg=${!!this.lg}
-                  ?primary=${!!this.primary && page === this.page}
-                  ?success=${!!this.success && page === this.page}
-                  ?neutral=${!!this.neutral && page === this.page}
-                  ?warning=${!!this.warning && page === this.page}
-                  ?danger=${!!this.danger && page === this.page}
-                  label=${page}
-                  @hmwc-click=${() => this.page = page}></hmwc-button>
+        ${this.range.map((page) => page === -1 ? b2`<div class="pagination-page elipsis"><hmwc-icon sm part="elipsis" src="three-dots"></hmwc-icon></div>` : b2`
+                <div class="pagination-page ${this.page === page ? "active" : ""}">
+                  <hmwc-button
+                    part="page page-${this.page === page ? "active" : "inactive"}"
+                    circle
+                    ?sm=${!!this.sm}
+                    ?md=${!!this.md}
+                    ?lg=${!!this.lg}
+                    ?primary=${!!this.primary && page === this.page}
+                    ?success=${!!this.success && page === this.page}
+                    ?neutral=${!!this.neutral && page === this.page}
+                    ?warning=${!!this.warning && page === this.page}
+                    ?danger=${!!this.danger && page === this.page}
+                    label=${page}
+                    @hmwc-click=${() => this.page = page}></hmwc-button>
+                </div>
               `)}
 
-        <slot name="nav-forward" part="nav" class="pagination-page nav">
-          <hmwc-button
-            ?sm=${!!this.sm}
-            ?md=${!!this.md}
-            ?lg=${!!this.lg}
-            basic
-            icon="chevron-right"
-            ?primary=${!!this.primary}
-            ?success=${!!this.success}
-            ?neutral=${!!this.neutral}
-            ?warning=${!!this.warning}
-            ?danger=${!!this.danger}
-            ?disabled=${!this.count || this.page === this.count}
-            @hmwc-click=${() => this.page++}></hmwc-button>
-        </slot>
-      </ul>
+        <div class="pagination-page nav">
+          <slot name="nav-forward" part="nav">
+            <hmwc-button
+              ?sm=${!!this.sm}
+              ?md=${!!this.md}
+              ?lg=${!!this.lg}
+              basic
+              icon="chevron-right"
+              label="Next page"
+              title="Next page"
+              ?primary=${!!this.primary}
+              ?success=${!!this.success}
+              ?neutral=${!!this.neutral}
+              ?warning=${!!this.warning}
+              ?danger=${!!this.danger}
+              ?disabled=${!this.count || this.page === this.count}
+              @hmwc-click=${() => this.page++}></hmwc-button>
+          </slot>
+        </div>
+      </nav>
     `;
     }
   };
@@ -12321,6 +12860,18 @@ var HMWC = (() => {
 
   // dist/components/data-table/data-table.styles.js
   var styles28 = i`
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
   :host {
     --data-table-background: transparent;
     --data-table-background-alt: var(--hmwc-panel-background-color);
@@ -13794,6 +14345,7 @@ var HMWC = (() => {
                     ` : ""}
               ${this.fieldKeys.length && this.isSkeletonField(this.fieldKeys[0]) ? b2`
                       <th part="field" colspan=${this.fieldKeys.length} class="data-table__col-head skeleton">
+                        <span class="visually-hidden">Loading data</span>
                         <hmwc-skeleton></hmwc-skeleton>
                       </th>
                     ` : (this.action ? [...this.fieldKeys, this.action.field] : this.fieldKeys).map((field) => b2`
@@ -15540,21 +16092,35 @@ var HMWC = (() => {
 
           <div part="controls" class="header__controls">
             <hmwc-tooltip arrow label="Search" placement="bottom-end" distance="7" delay="400">
-              <hmwc-button part="control" class="header__control" sm basic icon="search"></hmwc-button>
+              <hmwc-button part="control" class="header__control" sm basic icon="search" label="Search"></hmwc-button>
             </hmwc-tooltip>
 
             <hmwc-tooltip arrow label="Secure Messaging" placement="bottom-end" distance="7" delay="400">
-              <hmwc-button part="control" class="header__control" sm basic disabled icon="chat">
+              <hmwc-button part="control" class="header__control" sm basic disabled icon="chat" label="Secure Messaging">
                 <hmwc-badge small primary pill slot="badge">1</hmwc-badge>
               </hmwc-button>
             </hmwc-tooltip>
 
             <hmwc-tooltip arrow label="Help / FAQ" placement="bottom-end" distance="7" delay="400">
-              <hmwc-button part="control" class="header__control" sm basic icon="question-circle" @hmwc-click=${this.navigateFAQ}></hmwc-button>
+              <hmwc-button
+                part="control"
+                class="header__control"
+                sm
+                basic
+                icon="question-circle"
+                label="Help / FAQ"
+                @hmwc-click=${this.navigateFAQ}></hmwc-button>
             </hmwc-tooltip>
 
             <hmwc-tooltip arrow label="Settings" placement="bottom-end" distance="7" delay="400">
-              <hmwc-button part="control" class="header__control" sm basic icon="gear" @hmwc-click=${this.handleSettingsClick}></hmwc-button>
+              <hmwc-button
+                part="control"
+                class="header__control"
+                sm
+                basic
+                icon="gear"
+                label="Settings"
+                @hmwc-click=${this.handleSettingsClick}></hmwc-button>
             </hmwc-tooltip>
           </div>
         </div>
@@ -15656,7 +16222,7 @@ var HMWC = (() => {
       return b2`
       <div part="base" class=${classifier}>
         <slot>
-          <img src=${o6(this.src)} alt=${o6(this.alt)} />
+          <img src=${o6(this.src)} alt=${this.alt ?? ""} />
         </slot>
       </div>
     `;
@@ -17100,8 +17666,9 @@ var HMWC = (() => {
         class=${classifier}
         role="radio"
         tabindex=${this.checked ? "0" : "-1"}
-        aria-checked="${o6(this.checked)}"
+        aria-checked="${this.checked ? "true" : "false"}"
         aria-disabled="${o6(this.disabled)}"
+        aria-label="${o6(this.label || this.value || void 0)}"
         @click=${this.handleClick}
         @focus=${this.handleFocus}
         @blur=${this.handleBlur}>
@@ -18714,6 +19281,7 @@ var HMWC = (() => {
     }
     connectedCallback() {
       super.connectedCallback();
+      this.setAttribute("role", "tablist");
       this.tabs = this.getTabs();
       this.content = this.getContent();
       if (!this.tabs && !this.content)
@@ -18740,7 +19308,7 @@ var HMWC = (() => {
                 </hmwc-button>
               ` : ""}
           <div part="navigation" class="tab-group__nav">
-            <div part="tabs" class="tab-group__tabs" role="tablist">
+            <div part="tabs" class="tab-group__tabs">
               <div part="indicator" class="tab-group__indicator"></div>
               <slot name="tab" @slotchange=${this.handlePlacementChange}></slot>
             </div>
