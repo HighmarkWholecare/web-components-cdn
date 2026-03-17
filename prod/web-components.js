@@ -1560,7 +1560,7 @@ var HMWC = (() => {
   ], HMWCFormComponent.prototype, "autofocus", void 0);
 
   // dist/controllers/form.js
-  var FormController = class {
+  var FormController = class _FormController {
     /**
      * Enters edit mode by populating the form with data and
      * capturing a snapshot. The submit button stays disabled
@@ -2317,24 +2317,37 @@ var HMWC = (() => {
     }
     /**
      * Adds listeners to a specific control element.
+     * Wraps each action with a cooldown guard to prevent
+     * accidental double-clicks from triggering the action
+     * more than once.
      */
     addControlListeners(control) {
       if (this.listenerMap.has(control))
         return;
       this.listenerMap.set(control, true);
       const buttonControl = control;
+      const guarded = (fn) => {
+        return () => {
+          const now = Date.now();
+          const last = this.lastActionTime.get(control) ?? 0;
+          if (now - last < _FormController.ACTION_COOLDOWN_MS)
+            return;
+          this.lastActionTime.set(control, now);
+          fn();
+        };
+      };
       if (buttonControl.begin) {
-        control.addEventListener("hmwc-click", () => this.increment());
+        control.addEventListener("hmwc-click", guarded(() => this.increment()));
       } else if (buttonControl.increment) {
-        control.addEventListener("hmwc-click", () => this.increment());
+        control.addEventListener("hmwc-click", guarded(() => this.increment()));
       } else if (buttonControl.decrement) {
-        control.addEventListener("hmwc-click", () => this.decrement());
+        control.addEventListener("hmwc-click", guarded(() => this.decrement()));
       } else if (buttonControl.submit) {
-        control.addEventListener("hmwc-click", () => this.submit());
+        control.addEventListener("hmwc-click", guarded(() => this.submit()));
       } else if (buttonControl.templateAdd) {
-        control.addEventListener("hmwc-click", () => this.handleTemplateAdd(control));
+        control.addEventListener("hmwc-click", guarded(() => this.handleTemplateAdd(control)));
       } else if (buttonControl.templateRemove) {
-        control.addEventListener("hmwc-click", () => this.handleTemplateRemove(control));
+        control.addEventListener("hmwc-click", guarded(() => this.handleTemplateRemove(control)));
       }
     }
     /**
@@ -2488,6 +2501,7 @@ var HMWC = (() => {
       this.observer = null;
       this.listenerMap = /* @__PURE__ */ new WeakMap();
       this.boundKeydownHandler = this.handleKeydown.bind(this);
+      this.lastActionTime = /* @__PURE__ */ new WeakMap();
       this.templates = /* @__PURE__ */ new Map();
       this.editing = false;
       this.snapshot = null;
@@ -2503,6 +2517,8 @@ var HMWC = (() => {
       host.addController(this);
     }
   };
+  FormController.ACTION_COOLDOWN_MS = 500;
+  var form_default = FormController;
 
   // dist/models/container/container.styles.js
   var containerStyles = i`
@@ -2685,7 +2701,7 @@ var HMWC = (() => {
     connectedCallback() {
       super.connectedCallback();
       if (this.form)
-        this.controllers.form = new FormController(this);
+        this.controllers.form = new form_default(this);
       if (this.img)
         this.style.setProperty(`--image-url`, `url(${this.img})`);
       if (this.label) {
@@ -6235,7 +6251,8 @@ var HMWC = (() => {
   }
 
   :host([type='email']),
-  :host([type='url']) {
+  :host([type='url']),
+  :host([type='filepath']) {
     flex: var(--input-flex, 1.25 1 22ch);
     min-width: var(--input-min-width, 14ch);
   }
@@ -6863,7 +6880,7 @@ var HMWC = (() => {
     else for (var i7 = decorators.length - 1; i7 >= 0; i7--) if (d3 = decorators[i7]) r7 = (c5 < 3 ? d3(r7) : c5 > 3 ? d3(target, key, r7) : d3(target, key)) || r7;
     return c5 > 3 && r7 && Object.defineProperty(target, key, r7), r7;
   };
-  var Input = class extends HMWCFormComponent {
+  var Input = class _Input extends HMWCFormComponent {
     constructor() {
       super(...arguments);
       this.initialValueDateParsed = false;
@@ -6909,6 +6926,16 @@ var HMWC = (() => {
         const date = new Date(this.value);
         this.updateDates([date]);
       }
+    }
+    /**
+     * Programmatic value changes (e.g. autofill, `.value = …`)
+     * call the @watch handler above.  Guard against oversized
+     * values here so they're caught regardless of the source.
+     */
+    handleValueMaxLength() {
+      if (this.type === "date")
+        return;
+      this.enforceMaxLength();
     }
     handleCalendarToggle() {
       if (this.type !== "date")
@@ -7101,10 +7128,13 @@ var HMWC = (() => {
       if (this.type === "email" && this.value) {
         this.validateEmail();
       }
+      if (this.type === "filepath" && this.value) {
+        this.validateFilePath();
+      }
       this.emit("hmwc-blur");
       this.autoFocusLost = true;
     }
-    handleInput() {
+    handleInput(e8) {
       if (this.type === "date" && this.isManuallyTyping) {
         const rawValue = this.input.value;
         const cursorPos = this.input.selectionStart ?? rawValue.length;
@@ -7121,17 +7151,26 @@ var HMWC = (() => {
       } else {
         this.value = this.input.value;
       }
+      const inputType = e8?.inputType;
+      if (inputType === "insertReplacementText" || inputType === "insertFromPaste") {
+        this.sanitizeAutofill();
+      }
+      this.enforceMaxLength();
       this.emit("hmwc-input", { detail: { value: this.value } });
     }
     handleChange() {
       if (this.input.value) {
         this.value = this.input.value;
       }
+      this.enforceMaxLength();
       if (this.type === "date") {
         this.parseAndUpdateDate();
       }
       if (this.type === "email" && this.value) {
         this.validateEmail();
+      }
+      if (this.type === "filepath" && this.value) {
+        this.validateFilePath();
       }
       this.emit("hmwc-change");
     }
@@ -7183,6 +7222,65 @@ var HMWC = (() => {
       }
     }
     /**
+     * Validates the current value as a file path.
+     * Supports Windows absolute (C:\...), UNC (\\server\share), Unix absolute (/...),
+     * and relative paths (./..., ../..., folder/...).
+     * Sets invalid state and error message if the value is not a valid file path.
+     */
+    validateFilePath() {
+      const rawValue = this.value;
+      if (!rawValue || !rawValue.trim()) {
+        this.invalid = true;
+        this.error = "File path cannot be blank or whitespace only";
+        this.emit("hmwc-invalid");
+        return;
+      }
+      const value = rawValue.trim();
+      const emojiRegex = /[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{FE00}-\u{FE0F}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{200D}\u{20E3}\u{E0020}-\u{E007F}]/u;
+      if (emojiRegex.test(value)) {
+        this.invalid = true;
+        this.error = "File path cannot contain emojis";
+        this.emit("hmwc-invalid");
+        return;
+      }
+      const invalidChars = /[<>"|?*]/;
+      if (invalidChars.test(value) || value.includes("\0")) {
+        this.invalid = true;
+        this.error = 'Path contains invalid characters: < > " | ? *';
+        this.emit("hmwc-invalid");
+        return;
+      }
+      const normalized = value.replace(/\\/g, "/");
+      const isWindowsAbsolute = /^[a-zA-Z]:\//.test(normalized);
+      const isUnc = normalized.startsWith("//");
+      const isUnixAbsolute = normalized.startsWith("/") && !isUnc;
+      const isRelative = /^\.{0,2}\//.test(normalized) || /^[^/]/.test(normalized);
+      if (!(isWindowsAbsolute || isUnc || isUnixAbsolute || isRelative)) {
+        this.invalid = true;
+        this.error = "Please enter a valid file path";
+        this.emit("hmwc-invalid");
+        return;
+      }
+      const segmentPart = isUnc ? normalized.slice(2) : isWindowsAbsolute ? normalized.slice(3) : isUnixAbsolute ? normalized.slice(1) : normalized;
+      if (/\/{2,}/.test(segmentPart)) {
+        this.invalid = true;
+        this.error = "Path contains empty segments";
+        this.emit("hmwc-invalid");
+        return;
+      }
+      if (isUnc) {
+        const uncParts = normalized.slice(2).split("/").filter(Boolean);
+        if (uncParts.length < 2) {
+          this.invalid = true;
+          this.error = "UNC path must include a server and share name (e.g. \\\\server\\share)";
+          this.emit("hmwc-invalid");
+          return;
+        }
+      }
+      this.invalid = false;
+      this.error = "";
+    }
+    /**
      * Validates the current value as an email address.
      * Sets invalid state and error message if the value is not a valid email.
      */
@@ -7198,6 +7296,106 @@ var HMWC = (() => {
         this.invalid = true;
         this.error = "Please enter a valid email address";
         this.emit("hmwc-invalid");
+      }
+    }
+    // ── Max-length & autofill protection ──────────────────
+    /**
+     * Returns the effective maximum length for the current input.
+     * Uses the explicit `maxlength` attribute when provided;
+     * otherwise falls back to the type-specific default or
+     * the global DEFAULT_MAX_LENGTH.
+     */
+    getEffectiveMaxLength() {
+      if (this.maxlength != null)
+        return this.maxlength;
+      return _Input.MAX_LENGTH_BY_TYPE[this.type] ?? _Input.DEFAULT_MAX_LENGTH;
+    }
+    /**
+     * Truncates the current value when it exceeds the
+     * effective max length.  Updates both the component
+     * property and the underlying DOM input so the two
+     * stay in sync.  Returns `true` when truncation was
+     * applied.
+     */
+    enforceMaxLength() {
+      const max = this.getEffectiveMaxLength();
+      const raw = String(this.value ?? "");
+      if (raw.length <= max)
+        return false;
+      const truncated = raw.slice(0, max);
+      this.value = truncated;
+      if (this.input)
+        this.input.value = truncated;
+      this.invalid = true;
+      this.error = `Value exceeds maximum length of ${max} characters`;
+      this.emit("hmwc-invalid");
+      return true;
+    }
+    /**
+     * Detects browser autofill and validates the injected value
+     * against the input's type constraints.  When the autofilled
+     * content is clearly corrupt (e.g. an address stuffed into
+     * an email field) the value is cleared and the field is
+     * marked invalid.
+     *
+     * Call this from `handleInput` / `handleChange` when an
+     * autofill `inputType` is detected.
+     */
+    sanitizeAutofill() {
+      const raw = String(this.value ?? "");
+      if (!raw)
+        return;
+      if (this.enforceMaxLength())
+        return;
+      switch (this.type) {
+        case "email": {
+          const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+          if (!emailRegex.test(raw.trim())) {
+            this.value = this.input.value = "";
+            this.invalid = true;
+            this.error = "Autofill value is not a valid email address";
+            this.emit("hmwc-invalid");
+          }
+          break;
+        }
+        case "tel": {
+          if (!/^[\d\s+().-]+$/.test(raw)) {
+            this.value = this.input.value = "";
+            this.invalid = true;
+            this.error = "Autofill value is not a valid phone number";
+            this.emit("hmwc-invalid");
+          }
+          break;
+        }
+        case "number": {
+          if (isNaN(Number(raw))) {
+            this.value = this.input.value = "";
+            this.invalid = true;
+            this.error = "Autofill value is not a valid number";
+            this.emit("hmwc-invalid");
+          }
+          break;
+        }
+        case "filepath": {
+          this.validateFilePath();
+          if (this.invalid) {
+            this.value = this.input.value = "";
+          }
+          break;
+        }
+        case "url": {
+          try {
+            new URL(raw);
+          } catch {
+            this.value = this.input.value = "";
+            this.invalid = true;
+            this.error = "Autofill value is not a valid URL";
+            this.emit("hmwc-invalid");
+          }
+          break;
+        }
+        default:
+          break;
       }
     }
     /**
@@ -7346,6 +7544,12 @@ var HMWC = (() => {
       if (this.type === "email" && !this.pattern) {
         this.pattern = "[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}";
       }
+      if (this.type === "filepath" && !this.pattern) {
+        this.pattern = '([a-zA-Z]:\\\\|\\\\\\\\|/|\\.\\.?/|[^<>"|?*\\x00])([^<>"|?*\\x00]*)';
+      }
+      if (this.type === "filepath" && !this.placeholder) {
+        this.placeholder = "C:\\folder\\file.txt or /path/to/file";
+      }
       if (!this.sm && !this.md && !this.lg)
         this.md = true;
       if (this.type === "password" && this.minlength === void 0) {
@@ -7359,6 +7563,15 @@ var HMWC = (() => {
       if (this.month || this.month && this.year) {
         this.lockCalendarNavigation = true;
       }
+      if (this.maxlength == null) {
+        this.maxlength = _Input.MAX_LENGTH_BY_TYPE[this.type] ?? _Input.DEFAULT_MAX_LENGTH;
+      }
+      if (this.autocomplete == null) {
+        const noAutofillTypes = ["filepath", "number"];
+        if (noAutofillTypes.includes(this.type)) {
+          this.autocomplete = "off";
+        }
+      }
     }
     disconnectedCallback() {
       super.disconnectedCallback();
@@ -7369,7 +7582,7 @@ var HMWC = (() => {
     }
     render() {
       const tag = this.textarea ? i6`textarea` : i6`input`;
-      const typeOverride = this.type === "password" && this.visible || this.type === "date";
+      const typeOverride = this.type === "password" && this.visible || this.type === "date" || this.type === "filepath";
       const classifier = e7({
         input: true,
         small: !!this.sm,
@@ -7447,6 +7660,7 @@ var HMWC = (() => {
                 max=${o6(this.max)}
                 rows=${o6(this.rows)}
                 autocapitalize=${o6(this.autocapitalize)}
+                autocomplete=${o6(this.autocomplete)}
                 autocorrect=${o6(this.autocorrect)}
                 spellcheck=${o6(this.spellcheck)}
                 aria-describedby="help"
@@ -7513,6 +7727,21 @@ var HMWC = (() => {
   };
   Input.styles = styles12;
   Input.dependencies = [Icon, Button, Calendar, Spinner];
+  Input.DEFAULT_MAX_LENGTH = 2e3;
+  Input.MAX_LENGTH_BY_TYPE = {
+    email: 254,
+    // RFC 5321
+    tel: 17,
+    // E.164 + dashes
+    url: 2083,
+    // Widely adopted browser limit
+    filepath: 4096,
+    // Linux PATH_MAX
+    number: 20,
+    // Reasonable numeric string
+    password: 128
+    // Generous password limit
+  };
   __decorate14([
     r5()
   ], Input.prototype, "initialValueDateParsed", void 0);
@@ -7642,6 +7871,9 @@ var HMWC = (() => {
   __decorate14([
     watch("value")
   ], Input.prototype, "handleValueChange", null);
+  __decorate14([
+    watch("value")
+  ], Input.prototype, "handleValueMaxLength", null);
   __decorate14([
     watch("open")
   ], Input.prototype, "handleCalendarToggle", null);
