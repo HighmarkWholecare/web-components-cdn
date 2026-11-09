@@ -308,6 +308,9 @@
   --hmwc-panel-border-width: 1px;
   --hmwc-panel-transparency: 75%;
 
+  --hmwc-tab-track-width: 2px;
+  --hmwc-tab-indicator-width: 3px;
+
   --hmwc-focus-ring-color: var(--hmwc-color-primary-700);
   --hmwc-focus-ring-style: solid;
   --hmwc-focus-ring-width: 2px;
@@ -315,26 +318,26 @@
     var(--hmwc-focus-ring-color);
   --hmwc-focus-ring-offset: 0px;
 
-  --hmwc-navbar-width: 3.5rem;
-  --hmwc-navbar-width-open: 18rem;
+  --hmwc-navbar-width: calc(3.5 * var(--hmwc-rem, 1rem));
+  --hmwc-navbar-width-open: calc(18 * var(--hmwc-rem, 1rem));
 
   --hmwc-menu-background: hsl(222deg 39% 13%);
 
   --hmwc-button-font-size-small: var(--hmwc-font-size-small);
   --hmwc-button-font-size-medium: var(--hmwc-font-size-medium);
   --hmwc-button-font-size-large: var(--hmwc-font-size-medium);
-  --hmwc-button-icon-stroke: 0.01rem;
+  --hmwc-button-icon-stroke: calc(0.01 * var(--hmwc-rem, 1rem));
 
-  --hmwc-input-height-small: 1.875rem;
-  --hmwc-input-height-medium: 2.5rem;
-  --hmwc-input-height-large: 3rem;
+  --hmwc-input-height-small: calc(1.875 * var(--hmwc-rem, 1rem));
+  --hmwc-input-height-medium: calc(2.5 * var(--hmwc-rem, 1rem));
+  --hmwc-input-height-large: calc(3 * var(--hmwc-rem, 1rem));
   --hmwc-input-background-color: var(--hmwc-color-neutral-0);
   --hmwc-input-background-color-hover: var(--hmwc-input-background-color);
   --hmwc-input-background-color-focus: var(--hmwc-input-background-color);
   --hmwc-input-background-color-disabled: var(--hmwc-color-neutral-100);
   --hmwc-input-border-color: var(--hmwc-color-neutral-200);
-  --hmwc-input-border-color-hover: var(--hmwc-color-neutral-300);
-  --hmwc-input-border-color-focus: var(--hmwc-color-primary-500);
+  --hmwc-input-border-color-hover: var(--hmwc-color-neutral-400);
+  --hmwc-input-border-color-focus: var(--hmwc-color-primary-600);
   --hmwc-input-border-color-disabled: var(--hmwc-color-neutral-300);
   --hmwc-input-border-color-invalid: var(--hmwc-color-danger-400);
   --hmwc-input-border-color-invalid-hover: var(--hmwc-color-danger-700);
@@ -366,8 +369,10 @@
   --hmwc-input-spacing-small: var(--hmwc-spacing-small);
   --hmwc-input-spacing-medium: var(--hmwc-spacing-medium);
   --hmwc-input-spacing-large: var(--hmwc-spacing-large);
-  --hmwc-input-focus-ring-color: hsl(198.6 88.7% 48.4% / 90%);
-  --hmwc-input-focus-ring-color-invalid: hsl(6.6 80% 50% / 75%);
+
+  --hmwc-input-focus-ring-width: 3px;
+  --hmwc-input-focus-ring-color: hsl(198.6 88.7% 48.4% / 35%);
+  --hmwc-input-focus-ring-color-invalid: hsl(6.6 80% 50% / 35%);
   --hmwc-input-focus-ring-offset: 0;
   --hmwc-input-filled-background-color: var(--hmwc-color-neutral-100);
   --hmwc-input-filled-background-color-hover: var(--hmwc-color-neutral-100);
@@ -386,9 +391,9 @@
   --hmwc-input-help-text-font-size-large: var(--hmwc-font-size-medium);
   --hmwc-input-help-text-color: var(--hmwc-color-neutral-300);
 
-  --hmwc-toggle-size-small: 0.875rem;
-  --hmwc-toggle-size-medium: 1.125rem;
-  --hmwc-toggle-size-large: 1.375rem;
+  --hmwc-toggle-size-small: calc(0.875 * var(--hmwc-rem, 1rem));
+  --hmwc-toggle-size-medium: calc(1.125 * var(--hmwc-rem, 1rem));
+  --hmwc-toggle-size-large: calc(1.375 * var(--hmwc-rem, 1rem));
 
   --hmwc-tooltip-border-radius: var(--hmwc-border-radius-medium);
   --hmwc-tooltip-background-color: var(--hmwc-color-neutral-800);
@@ -406,21 +411,21 @@
 :host,
 .theme-dark,
 .theme-light {
-  --hmwc-spacing-3x-small: 0.125rem;
-  --hmwc-spacing-2x-small: 0.25rem;
-  --hmwc-spacing-x-small: 0.5rem;
-  --hmwc-spacing-small: 0.75rem;
-  --hmwc-spacing-medium: 1rem;
-  --hmwc-spacing-large: 1.25rem;
-  --hmwc-spacing-x-large: 1.75rem;
-  --hmwc-spacing-2x-large: 2.25rem;
-  --hmwc-spacing-3x-large: 3rem;
-  --hmwc-spacing-4x-large: 4.5rem;
+  --hmwc-spacing-3x-small: calc(0.125 * var(--hmwc-rem, 1rem));
+  --hmwc-spacing-2x-small: calc(0.25 * var(--hmwc-rem, 1rem));
+  --hmwc-spacing-x-small: calc(0.5 * var(--hmwc-rem, 1rem));
+  --hmwc-spacing-small: calc(0.75 * var(--hmwc-rem, 1rem));
+  --hmwc-spacing-medium: calc(1 * var(--hmwc-rem, 1rem));
+  --hmwc-spacing-large: calc(1.25 * var(--hmwc-rem, 1rem));
+  --hmwc-spacing-x-large: calc(1.75 * var(--hmwc-rem, 1rem));
+  --hmwc-spacing-2x-large: calc(2.25 * var(--hmwc-rem, 1rem));
+  --hmwc-spacing-3x-large: calc(3 * var(--hmwc-rem, 1rem));
+  --hmwc-spacing-4x-large: calc(4.5 * var(--hmwc-rem, 1rem));
 
-  --hmwc-border-radius-small: 0.1875rem;
-  --hmwc-border-radius-medium: 0.25rem;
-  --hmwc-border-radius-large: 0.5rem;
-  --hmwc-border-radius-x-large: 1rem;
+  --hmwc-border-radius-small: calc(0.1875 * var(--hmwc-rem, 1rem));
+  --hmwc-border-radius-medium: calc(0.25 * var(--hmwc-rem, 1rem));
+  --hmwc-border-radius-large: calc(0.5 * var(--hmwc-rem, 1rem));
+  --hmwc-border-radius-x-large: calc(1 * var(--hmwc-rem, 1rem));
   --hmwc-border-radius-circle: 50%;
   --hmwc-border-radius-pill: 9999px;
 
@@ -456,13 +461,13 @@
 .hmwc-notification-stack {
   display: flex;
   flex-direction: column;
-  gap: var(--hmwc-spacing-small, 0.75rem);
-  padding: var(--hmwc-spacing-small, 0.75rem);
+  gap: var(--hmwc-spacing-small, calc(0.75 * var(--hmwc-rem, 1rem)));
+  padding: var(--hmwc-spacing-small, calc(0.75 * var(--hmwc-rem, 1rem)));
   position: absolute;
   top: 0;
   inset-inline-end: 0;
   z-index: var(--hmwc-z-index-toast);
-  width: 28rem;
+  width: calc(28 * var(--hmwc-rem, 1rem));
   max-width: 100%;
   max-height: 100%;
   overflow: auto;
@@ -489,15 +494,15 @@
 :host,
 .theme-dark,
 .theme-light {
-  --hmwc-font-size-2x-small: 0.625rem;
-  --hmwc-font-size-x-small: 0.75rem;
-  --hmwc-font-size-small: 0.875rem;
-  --hmwc-font-size-medium: 1rem;
-  --hmwc-font-size-large: 1.25rem;
-  --hmwc-font-size-x-large: 1.5rem;
-  --hmwc-font-size-2x-large: 2.25rem;
-  --hmwc-font-size-3x-large: 3rem;
-  --hmwc-font-size-4x-large: 4.5rem;
+  --hmwc-font-size-2x-small: calc(0.625 * var(--hmwc-rem, 1rem));
+  --hmwc-font-size-x-small: calc(0.75 * var(--hmwc-rem, 1rem));
+  --hmwc-font-size-small: calc(0.875 * var(--hmwc-rem, 1rem));
+  --hmwc-font-size-medium: calc(1 * var(--hmwc-rem, 1rem));
+  --hmwc-font-size-large: calc(1.25 * var(--hmwc-rem, 1rem));
+  --hmwc-font-size-x-large: calc(1.5 * var(--hmwc-rem, 1rem));
+  --hmwc-font-size-2x-large: calc(2.25 * var(--hmwc-rem, 1rem));
+  --hmwc-font-size-3x-large: calc(3 * var(--hmwc-rem, 1rem));
+  --hmwc-font-size-4x-large: calc(4.5 * var(--hmwc-rem, 1rem));
 
   --hmwc-font-weight-light: 300;
   --hmwc-font-weight-normal: 400;

@@ -1,6 +1,6 @@
-"use strict";var HMWC=(()=>{var fr=Object.defineProperty;var jo=Object.getOwnPropertyDescriptor;var No=Object.getOwnPropertyNames;var Io=Object.prototype.hasOwnProperty;var Lo=(s,t)=>{for(var e in t)fr(s,e,{get:t[e],enumerable:!0})},Uo=(s,t,e,r)=>{if(t&&typeof t=="object"||typeof t=="function")for(let i of No(t))!Io.call(s,i)&&i!==e&&fr(s,i,{get:()=>t[i],enumerable:!(r=jo(t,i))||r.enumerable});return s};var Ho=s=>Uo(fr({},"__esModule",{value:!0}),s);var ka={};Lo(ka,{Accordion:()=>Q,AccordionGroup:()=>vt,Alert:()=>H,AlertPresets:()=>Sr,Attachment:()=>O,Avatar:()=>F,Badge:()=>Y,Banner:()=>Ut,Breadcrumb:()=>U,Breadcrumbs:()=>mt,Button:()=>y,Calendar:()=>G,Card:()=>rt,Chart:()=>nt,Checkbox:()=>ct,Col:()=>Lt,Combobox:()=>L,DataTable:()=>$,Divider:()=>K,Dropdown:()=>V,Grid:()=>ut,HMWCAlert:()=>ca,HMWCComponent:()=>u,HMWCContainerComponent:()=>I,HMWCFormComponent:()=>P,HMWCPopup:()=>ya,Header:()=>yt,Icon:()=>_,Image:()=>ot,Input:()=>x,List:()=>ne,Menu:()=>S,MenuItem:()=>E,Navbar:()=>zt,Page:()=>Et,Pagination:()=>Z,Popup:()=>T,PopupPresets:()=>Br,Progress:()=>q,Radio:()=>Xt,RadioGroup:()=>Wt,Row:()=>re,Skeleton:()=>$t,Spinner:()=>X,Stepper:()=>Pt,Switch:()=>he,Tab:()=>ft,TabContent:()=>Ft,TabGroup:()=>pt,Table:()=>Vt,TableCell:()=>st,TableField:()=>Ct,TableRow:()=>St,Tag:()=>tt,Text:()=>k,Tooltip:()=>W,Tree:()=>Jt,TreeItem:()=>gt});var Qe=globalThis,Ze=Qe.ShadowRoot&&(Qe.ShadyCSS===void 0||Qe.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,gr=Symbol(),Fr=new WeakMap,Fe=class{constructor(t,e,r){if(this._$cssResult$=!0,r!==gr)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=t,this.t=e}get styleSheet(){let t=this.o,e=this.t;if(Ze&&t===void 0){let r=e!==void 0&&e.length===1;r&&(t=Fr.get(e)),t===void 0&&((this.o=t=new CSSStyleSheet).replaceSync(this.cssText),r&&Fr.set(e,t))}return t}toString(){return this.cssText}},jr=s=>new Fe(typeof s=="string"?s:s+"",void 0,gr),m=(s,...t)=>{let e=s.length===1?s[0]:t.reduce((r,i,o)=>r+(n=>{if(n._$cssResult$===!0)return n.cssText;if(typeof n=="number")return n;throw Error("Value passed to 'css' function must be a 'css' function result: "+n+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(i)+s[o+1],s[0]);return new Fe(e,s,gr)},Nr=(s,t)=>{if(Ze)s.adoptedStyleSheets=t.map(e=>e instanceof CSSStyleSheet?e:e.styleSheet);else for(let e of t){let r=document.createElement("style"),i=Qe.litNonce;i!==void 0&&r.setAttribute("nonce",i),r.textContent=e.cssText,s.appendChild(r)}},vr=Ze?s=>s:s=>s instanceof CSSStyleSheet?(t=>{let e="";for(let r of t.cssRules)e+=r.cssText;return jr(e)})(s):s;var{is:Wo,defineProperty:Vo,getOwnPropertyDescriptor:qo,getOwnPropertyNames:Go,getOwnPropertySymbols:Ko,getPrototypeOf:Yo}=Object,tr=globalThis,Ir=tr.trustedTypes,Xo=Ir?Ir.emptyScript:"",Jo=tr.reactiveElementPolyfillSupport,je=(s,t)=>s,Ne={toAttribute(s,t){switch(t){case Boolean:s=s?Xo:null;break;case Object:case Array:s=s==null?s:JSON.stringify(s)}return s},fromAttribute(s,t){let e=s;switch(t){case Boolean:e=s!==null;break;case Number:e=s===null?null:Number(s);break;case Object:case Array:try{e=JSON.parse(s)}catch{e=null}}return e}},er=(s,t)=>!Wo(s,t),Lr={attribute:!0,type:String,converter:Ne,reflect:!1,useDefault:!1,hasChanged:er};Symbol.metadata??=Symbol("metadata"),tr.litPropertyMetadata??=new WeakMap;var de=class extends HTMLElement{static addInitializer(t){this._$Ei(),(this.l??=[]).push(t)}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(t,e=Lr){if(e.state&&(e.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(t)&&((e=Object.create(e)).wrapped=!0),this.elementProperties.set(t,e),!e.noAccessor){let r=Symbol(),i=this.getPropertyDescriptor(t,r,e);i!==void 0&&Vo(this.prototype,t,i)}}static getPropertyDescriptor(t,e,r){let{get:i,set:o}=qo(this.prototype,t)??{get(){return this[e]},set(n){this[e]=n}};return{get:i,set(n){let l=i?.call(this);o?.call(this,n),this.requestUpdate(t,l,r)},configurable:!0,enumerable:!0}}static getPropertyOptions(t){return this.elementProperties.get(t)??Lr}static _$Ei(){if(this.hasOwnProperty(je("elementProperties")))return;let t=Yo(this);t.finalize(),t.l!==void 0&&(this.l=[...t.l]),this.elementProperties=new Map(t.elementProperties)}static finalize(){if(this.hasOwnProperty(je("finalized")))return;if(this.finalized=!0,this._$Ei(),this.hasOwnProperty(je("properties"))){let e=this.properties,r=[...Go(e),...Ko(e)];for(let i of r)this.createProperty(i,e[i])}let t=this[Symbol.metadata];if(t!==null){let e=litPropertyMetadata.get(t);if(e!==void 0)for(let[r,i]of e)this.elementProperties.set(r,i)}this._$Eh=new Map;for(let[e,r]of this.elementProperties){let i=this._$Eu(e,r);i!==void 0&&this._$Eh.set(i,e)}this.elementStyles=this.finalizeStyles(this.styles)}static finalizeStyles(t){let e=[];if(Array.isArray(t)){let r=new Set(t.flat(1/0).reverse());for(let i of r)e.unshift(vr(i))}else t!==void 0&&e.push(vr(t));return e}static _$Eu(t,e){let r=e.attribute;return r===!1?void 0:typeof r=="string"?r:typeof t=="string"?t.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Em=null,this._$Ev()}_$Ev(){this._$ES=new Promise(t=>this.enableUpdating=t),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(t=>t(this))}addController(t){(this._$EO??=new Set).add(t),this.renderRoot!==void 0&&this.isConnected&&t.hostConnected?.()}removeController(t){this._$EO?.delete(t)}_$E_(){let t=new Map,e=this.constructor.elementProperties;for(let r of e.keys())this.hasOwnProperty(r)&&(t.set(r,this[r]),delete this[r]);t.size>0&&(this._$Ep=t)}createRenderRoot(){let t=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return Nr(t,this.constructor.elementStyles),t}connectedCallback(){this.renderRoot??=this.createRenderRoot(),this.enableUpdating(!0),this._$EO?.forEach(t=>t.hostConnected?.())}enableUpdating(t){}disconnectedCallback(){this._$EO?.forEach(t=>t.hostDisconnected?.())}attributeChangedCallback(t,e,r){this._$AK(t,r)}_$ET(t,e){let r=this.constructor.elementProperties.get(t),i=this.constructor._$Eu(t,r);if(i!==void 0&&r.reflect===!0){let o=(r.converter?.toAttribute!==void 0?r.converter:Ne).toAttribute(e,r.type);this._$Em=t,o==null?this.removeAttribute(i):this.setAttribute(i,o),this._$Em=null}}_$AK(t,e){let r=this.constructor,i=r._$Eh.get(t);if(i!==void 0&&this._$Em!==i){let o=r.getPropertyOptions(i),n=typeof o.converter=="function"?{fromAttribute:o.converter}:o.converter?.fromAttribute!==void 0?o.converter:Ne;this._$Em=i;let l=n.fromAttribute(e,o.type);this[i]=l??this._$Ej?.get(i)??l,this._$Em=null}}requestUpdate(t,e,r,i=!1,o){if(t!==void 0){let n=this.constructor;if(i===!1&&(o=this[t]),r??=n.getPropertyOptions(t),!((r.hasChanged??er)(o,e)||r.useDefault&&r.reflect&&o===this._$Ej?.get(t)&&!this.hasAttribute(n._$Eu(t,r))))return;this.C(t,e,r)}this.isUpdatePending===!1&&(this._$ES=this._$EP())}C(t,e,{useDefault:r,reflect:i,wrapped:o},n){r&&!(this._$Ej??=new Map).has(t)&&(this._$Ej.set(t,n??e??this[t]),o!==!0||n!==void 0)||(this._$AL.has(t)||(this.hasUpdated||r||(e=void 0),this._$AL.set(t,e)),i===!0&&this._$Em!==t&&(this._$Eq??=new Set).add(t))}async _$EP(){this.isUpdatePending=!0;try{await this._$ES}catch(e){Promise.reject(e)}let t=this.scheduleUpdate();return t!=null&&await t,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??=this.createRenderRoot(),this._$Ep){for(let[i,o]of this._$Ep)this[i]=o;this._$Ep=void 0}let r=this.constructor.elementProperties;if(r.size>0)for(let[i,o]of r){let{wrapped:n}=o,l=this[i];n!==!0||this._$AL.has(i)||l===void 0||this.C(i,void 0,o,l)}}let t=!1,e=this._$AL;try{t=this.shouldUpdate(e),t?(this.willUpdate(e),this._$EO?.forEach(r=>r.hostUpdate?.()),this.update(e)):this._$EM()}catch(r){throw t=!1,this._$EM(),r}t&&this._$AE(e)}willUpdate(t){}_$AE(t){this._$EO?.forEach(e=>e.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(t)),this.updated(t)}_$EM(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(t){return!0}update(t){this._$Eq&&=this._$Eq.forEach(e=>this._$ET(e,this[e])),this._$EM()}updated(t){}firstUpdated(t){}};de.elementStyles=[],de.shadowRootOptions={mode:"open"},de[je("elementProperties")]=new Map,de[je("finalized")]=new Map,Jo?.({ReactiveElement:de}),(tr.reactiveElementVersions??=[]).push("2.1.2");var wr=globalThis,Ur=s=>s,rr=wr.trustedTypes,Hr=rr?rr.createPolicy("lit-html",{createHTML:s=>s}):void 0,yr="$lit$",pe=`lit$${Math.random().toFixed(9).slice(2)}$`,_r="?"+pe,Qo=`<${_r}>`,$e=document,Le=()=>$e.createComment(""),Ue=s=>s===null||typeof s!="object"&&typeof s!="function",xr=Array.isArray,Yr=s=>xr(s)||typeof s?.[Symbol.iterator]=="function",br=`[ 	
-\f\r]`,Ie=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,Wr=/-->/g,Vr=/>/g,xe=RegExp(`>|${br}(?:([^\\s"'>=/]+)(${br}*=${br}*(?:[^ 	
-\f\r"'\`<>=]|("|')|))|$)`,"g"),qr=/'/g,Gr=/"/g,Xr=/^(?:script|style|textarea|title)$/i,kr=s=>(t,...e)=>({_$litType$:s,strings:t,values:e}),c=kr(1),Jr=kr(2),Qr=kr(3),At=Symbol.for("lit-noChange"),A=Symbol.for("lit-nothing"),Kr=new WeakMap,ke=$e.createTreeWalker($e,129);function Zr(s,t){if(!xr(s)||!s.hasOwnProperty("raw"))throw Error("invalid template strings array");return Hr!==void 0?Hr.createHTML(t):t}var ti=(s,t)=>{let e=s.length-1,r=[],i,o=t===2?"<svg>":t===3?"<math>":"",n=Ie;for(let l=0;l<e;l++){let h=s[l],d,g,b=-1,j=0;for(;j<h.length&&(n.lastIndex=j,g=n.exec(h),g!==null);)j=n.lastIndex,n===Ie?g[1]==="!--"?n=Wr:g[1]!==void 0?n=Vr:g[2]!==void 0?(Xr.test(g[2])&&(i=RegExp("</"+g[2],"g")),n=xe):g[3]!==void 0&&(n=xe):n===xe?g[0]===">"?(n=i??Ie,b=-1):g[1]===void 0?b=-2:(b=n.lastIndex-g[2].length,d=g[1],n=g[3]===void 0?xe:g[3]==='"'?Gr:qr):n===Gr||n===qr?n=xe:n===Wr||n===Vr?n=Ie:(n=xe,i=void 0);let _t=n===xe&&s[l+1].startsWith("/>")?" ":"";o+=n===Ie?h+Qo:b>=0?(r.push(d),h.slice(0,b)+yr+h.slice(b)+pe+_t):h+pe+(b===-2?l:_t)}return[Zr(s,o+(s[e]||"<?>")+(t===2?"</svg>":t===3?"</math>":"")),r]},He=class s{constructor({strings:t,_$litType$:e},r){let i;this.parts=[];let o=0,n=0,l=t.length-1,h=this.parts,[d,g]=ti(t,e);if(this.el=s.createElement(d,r),ke.currentNode=this.el.content,e===2||e===3){let b=this.el.content.firstChild;b.replaceWith(...b.childNodes)}for(;(i=ke.nextNode())!==null&&h.length<l;){if(i.nodeType===1){if(i.hasAttributes())for(let b of i.getAttributeNames())if(b.endsWith(yr)){let j=g[n++],_t=i.getAttribute(b).split(pe),z=/([.?@])?(.*)/.exec(j);h.push({type:1,index:o,name:z[2],strings:_t,ctor:z[1]==="."?or:z[1]==="?"?ar:z[1]==="@"?nr:Se}),i.removeAttribute(b)}else b.startsWith(pe)&&(h.push({type:6,index:o}),i.removeAttribute(b));if(Xr.test(i.tagName)){let b=i.textContent.split(pe),j=b.length-1;if(j>0){i.textContent=rr?rr.emptyScript:"";for(let _t=0;_t<j;_t++)i.append(b[_t],Le()),ke.nextNode(),h.push({type:2,index:++o});i.append(b[j],Le())}}}else if(i.nodeType===8)if(i.data===_r)h.push({type:2,index:o});else{let b=-1;for(;(b=i.data.indexOf(pe,b+1))!==-1;)h.push({type:7,index:o}),b+=pe.length-1}o++}}static createElement(t,e){let r=$e.createElement("template");return r.innerHTML=t,r}};function Ce(s,t,e=s,r){if(t===At)return t;let i=r!==void 0?e._$Co?.[r]:e._$Cl,o=Ue(t)?void 0:t._$litDirective$;return i?.constructor!==o&&(i?._$AO?.(!1),o===void 0?i=void 0:(i=new o(s),i._$AT(s,e,r)),r!==void 0?(e._$Co??=[])[r]=i:e._$Cl=i),i!==void 0&&(t=Ce(s,i._$AS(s,t.values),i,r)),t}var ir=class{constructor(t,e){this._$AV=[],this._$AN=void 0,this._$AD=t,this._$AM=e}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(t){let{el:{content:e},parts:r}=this._$AD,i=(t?.creationScope??$e).importNode(e,!0);ke.currentNode=i;let o=ke.nextNode(),n=0,l=0,h=r[0];for(;h!==void 0;){if(n===h.index){let d;h.type===2?d=new Me(o,o.nextSibling,this,t):h.type===1?d=new h.ctor(o,h.name,h.strings,this,t):h.type===6&&(d=new sr(o,this,t)),this._$AV.push(d),h=r[++l]}n!==h?.index&&(o=ke.nextNode(),n++)}return ke.currentNode=$e,i}p(t){let e=0;for(let r of this._$AV)r!==void 0&&(r.strings!==void 0?(r._$AI(t,r,e),e+=r.strings.length-2):r._$AI(t[e])),e++}},Me=class s{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(t,e,r,i){this.type=2,this._$AH=A,this._$AN=void 0,this._$AA=t,this._$AB=e,this._$AM=r,this.options=i,this._$Cv=i?.isConnected??!0}get parentNode(){let t=this._$AA.parentNode,e=this._$AM;return e!==void 0&&t?.nodeType===11&&(t=e.parentNode),t}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(t,e=this){t=Ce(this,t,e),Ue(t)?t===A||t==null||t===""?(this._$AH!==A&&this._$AR(),this._$AH=A):t!==this._$AH&&t!==At&&this._(t):t._$litType$!==void 0?this.$(t):t.nodeType!==void 0?this.T(t):Yr(t)?this.k(t):this._(t)}O(t){return this._$AA.parentNode.insertBefore(t,this._$AB)}T(t){this._$AH!==t&&(this._$AR(),this._$AH=this.O(t))}_(t){this._$AH!==A&&Ue(this._$AH)?this._$AA.nextSibling.data=t:this.T($e.createTextNode(t)),this._$AH=t}$(t){let{values:e,_$litType$:r}=t,i=typeof r=="number"?this._$AC(t):(r.el===void 0&&(r.el=He.createElement(Zr(r.h,r.h[0]),this.options)),r);if(this._$AH?._$AD===i)this._$AH.p(e);else{let o=new ir(i,this),n=o.u(this.options);o.p(e),this.T(n),this._$AH=o}}_$AC(t){let e=Kr.get(t.strings);return e===void 0&&Kr.set(t.strings,e=new He(t)),e}k(t){xr(this._$AH)||(this._$AH=[],this._$AR());let e=this._$AH,r,i=0;for(let o of t)i===e.length?e.push(r=new s(this.O(Le()),this.O(Le()),this,this.options)):r=e[i],r._$AI(o),i++;i<e.length&&(this._$AR(r&&r._$AB.nextSibling,i),e.length=i)}_$AR(t=this._$AA.nextSibling,e){for(this._$AP?.(!1,!0,e);t!==this._$AB;){let r=Ur(t).nextSibling;Ur(t).remove(),t=r}}setConnected(t){this._$AM===void 0&&(this._$Cv=t,this._$AP?.(t))}},Se=class{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(t,e,r,i,o){this.type=1,this._$AH=A,this._$AN=void 0,this.element=t,this.name=e,this._$AM=i,this.options=o,r.length>2||r[0]!==""||r[1]!==""?(this._$AH=Array(r.length-1).fill(new String),this.strings=r):this._$AH=A}_$AI(t,e=this,r,i){let o=this.strings,n=!1;if(o===void 0)t=Ce(this,t,e,0),n=!Ue(t)||t!==this._$AH&&t!==At,n&&(this._$AH=t);else{let l=t,h,d;for(t=o[0],h=0;h<o.length-1;h++)d=Ce(this,l[r+h],e,h),d===At&&(d=this._$AH[h]),n||=!Ue(d)||d!==this._$AH[h],d===A?t=A:t!==A&&(t+=(d??"")+o[h+1]),this._$AH[h]=d}n&&!i&&this.j(t)}j(t){t===A?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,t??"")}},or=class extends Se{constructor(){super(...arguments),this.type=3}j(t){this.element[this.name]=t===A?void 0:t}},ar=class extends Se{constructor(){super(...arguments),this.type=4}j(t){this.element.toggleAttribute(this.name,!!t&&t!==A)}},nr=class extends Se{constructor(t,e,r,i,o){super(t,e,r,i,o),this.type=5}_$AI(t,e=this){if((t=Ce(this,t,e,0)??A)===At)return;let r=this._$AH,i=t===A&&r!==A||t.capture!==r.capture||t.once!==r.once||t.passive!==r.passive,o=t!==A&&(r===A||i);i&&this.element.removeEventListener(this.name,this,r),o&&this.element.addEventListener(this.name,this,t),this._$AH=t}handleEvent(t){typeof this._$AH=="function"?this._$AH.call(this.options?.host??this.element,t):this._$AH.handleEvent(t)}},sr=class{constructor(t,e,r){this.element=t,this.type=6,this._$AN=void 0,this._$AM=e,this.options=r}get _$AU(){return this._$AM._$AU}_$AI(t){Ce(this,t)}},ei={M:yr,P:pe,A:_r,C:1,L:ti,R:ir,D:Yr,V:Ce,I:Me,H:Se,N:ar,U:nr,B:or,F:sr},Zo=wr.litHtmlPolyfillSupport;Zo?.(He,Me),(wr.litHtmlVersions??=[]).push("3.3.2");var ri=(s,t,e)=>{let r=e?.renderBefore??t,i=r._$litPart$;if(i===void 0){let o=e?.renderBefore??null;r._$litPart$=i=new Me(t.insertBefore(Le(),o),o,void 0,e??{})}return i._$AI(s),i};var $r=globalThis,me=class extends de{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){let t=super.createRenderRoot();return this.renderOptions.renderBefore??=t.firstChild,t}update(t){let e=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(t),this._$Do=ri(e,this.renderRoot,this.renderOptions)}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(!0)}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(!1)}render(){return At}};me._$litElement$=!0,me.finalized=!0,$r.litElementHydrateSupport?.({LitElement:me});var ta=$r.litElementPolyfillSupport;ta?.({LitElement:me});($r.litElementVersions??=[]).push("4.2.2");var ea={attribute:!0,type:String,converter:Ne,reflect:!1,hasChanged:er},ra=(s=ea,t,e)=>{let{kind:r,metadata:i}=e,o=globalThis.litPropertyMetadata.get(i);if(o===void 0&&globalThis.litPropertyMetadata.set(i,o=new Map),r==="setter"&&((s=Object.create(s)).wrapped=!0),o.set(e.name,s),r==="accessor"){let{name:n}=e;return{set(l){let h=t.get.call(this);t.set.call(this,l),this.requestUpdate(n,h,s,!0,l)},init(l){return l!==void 0&&this.C(n,void 0,s,l),l}}}if(r==="setter"){let{name:n}=e;return function(l){let h=this[n];t.call(this,l),this.requestUpdate(n,h,s,!0,l)}}throw Error("Unsupported decorator location: "+r)};function a(s){return(t,e)=>typeof e=="object"?ra(s,t,e):((r,i,o)=>{let n=i.hasOwnProperty(o);return i.constructor.createProperty(o,r),n?Object.getOwnPropertyDescriptor(i,o):void 0})(s,t,e)}function v(s){return a({...s,state:!0,attribute:!1})}var Ae=(s,t,e)=>(e.configurable=!0,e.enumerable=!0,Reflect.decorate&&typeof t!="object"&&Object.defineProperty(s,t,e),e);function R(s,t){return(e,r,i)=>{let o=n=>n.renderRoot?.querySelector(s)??null;if(t){let{get:n,set:l}=typeof r=="object"?e:i??(()=>{let h=Symbol();return{get(){return this[h]},set(d){this[h]=d}}})();return Ae(e,r,{get(){let h=n.call(this);return h===void 0&&(h=o(this),(h!==null||this.hasUpdated)&&l.call(this,h)),h}})}return Ae(e,r,{get(){return o(this)}})}}var We={class:"hmwc-scroll-lock",prop:"--hmwc-scroll-lock-size"},lr=class s{get scrollbarWidth(){let t=document.documentElement.clientWidth;return Math.abs(window.innerWidth-t)}lockBodyScrolling(t){if(s.locks.add(t),document.body.classList.contains(We.class))return;let e=this.scrollbarWidth;document.body.classList.add(We.class),document.body.style.setProperty(We.prop,`${e}px`)}unlockBodyScrolling(t){s.locks.delete(t),!(s.locks.size>0)&&(document.body.classList.remove(We.class),document.body.style.removeProperty(We.prop))}scrollIntoView(t,e,r="vertical",i="smooth"){let o={top:Math.round(t.getBoundingClientRect().top-e.getBoundingClientRect().top),left:Math.round(t.getBoundingClientRect().left-e.getBoundingClientRect().left)},n=o.top+e.scrollTop,l=o.left+e.scrollLeft,h=e.scrollLeft,d=e.scrollLeft+e.offsetWidth,g=e.scrollTop,b=e.scrollTop+e.offsetHeight;(r==="horizontal"||r==="both")&&(l<h?e.scrollTo({left:l,behavior:i}):l+t.clientWidth>d&&e.scrollTo({left:l-e.offsetWidth+t.clientWidth,behavior:i})),(r==="vertical"||r==="both")&&(n<g?e.scrollTo({top:n,behavior:i}):n+t.clientHeight>b&&e.scrollTo({top:n-e.offsetHeight+t.clientHeight,behavior:i}))}constructor(t){this.host=t,t.addController(this)}hostConnected(){}hostDisconnected(){}};lr.locks=new Set;var ii=lr;var Ve=class{hasDefaultSlot(){return Array.from(this.host.childNodes).some(t=>{let e=t.nodeType===t.TEXT_NODE,r=t.nodeType===t.ELEMENT_NODE,i=t.textContent.trim()==="",o=t.parentElement?.hasAttribute("slot");return e&&!i||r&&!o})}hasNamedSlot(t){let e=`[slot="${t}"]`;return this.host.querySelector(e)!==null}getDefaultSlot(){return Array.from(this.host.children).filter(t=>{let e=t.nodeType===t.TEXT_NODE,r=t.nodeType===t.ELEMENT_NODE,i=t.textContent.trim()==="",o=t.parentElement?.hasAttribute("slot");return t.slot?!1:e&&!i||r&&!o})}getNamedSlot(t){let e=`[slot="${t}"]`;return this.host.querySelector(e)}insert(t,e){let r=Array.from(this.host.shadowRoot?.querySelectorAll("slot")||[]);e?r.find(i=>i.name===e)?.appendChild(t):r.filter(i=>!i.name)[0]?.appendChild(t)}prepend(t,e){let r=Array.from(this.host.shadowRoot?.querySelectorAll("slot")||[]);e?r.find(i=>i.name===e)?.prepend(t):r.filter(i=>!i.name)[0]?.prepend(t)}test(t){return t?this.hasNamedSlot(t):this.hasDefaultSlot()}get(t){if(t){let e=this.getNamedSlot(t);return e?[e]:[]}else return this.getDefaultSlot()}constructor(t){this.slots=[],this.handleUpdate=e=>{let r=e.target,i=this.slots.includes("[default]")&&!r.name,o=r.name&&this.slots.includes(r.name);!i&&!o||this.host.requestUpdate()},this.host=t,this.slots=t.constructor.slots,t.addController(this)}hostConnected(){this.root=this.host.shadowRoot,this.root?.addEventListener("slotchange",this.handleUpdate)}hostDisconnected(){this.root?.removeEventListener("slotchange",this.handleUpdate)}};function p(s,t){let e={waitUntilFirstUpdate:!1,...t};return(r,i)=>{let{update:o}=r,n=Array.isArray(s)?s:[s];r.update=function(l){l&&(n.forEach(h=>{let d=h;if(l.has(d)){let g=l.get(d),b=this[d];g!==b&&(!e.waitUntilFirstUpdate||this.hasUpdated)&&this[i](g,b)}}),o.call(this,l))}}}var oi=m`
+"use strict";var HMWC=(()=>{var Hr=Object.defineProperty;var qa=Object.getOwnPropertyDescriptor;var Wa=Object.getOwnPropertyNames;var Va=Object.prototype.hasOwnProperty;var Ka=(s,e)=>{for(var t in e)Hr(s,t,{get:e[t],enumerable:!0})},Ga=(s,e,t,r)=>{if(e&&typeof e=="object"||typeof e=="function")for(let i of Wa(e))!Va.call(s,i)&&i!==t&&Hr(s,i,{get:()=>e[i],enumerable:!(r=qa(e,i))||r.enumerable});return s};var Ya=s=>Ga(Hr({},"__esModule",{value:!0}),s);var rn={};Ka(rn,{Accordion:()=>J,AccordionGroup:()=>de,Alert:()=>U,AlertPresets:()=>ti,Attachment:()=>P,Avatar:()=>W,Badge:()=>Q,Banner:()=>rt,Breadcrumb:()=>Y,Breadcrumbs:()=>Ae,Button:()=>k,Calendar:()=>re,Card:()=>se,Chart:()=>ye,Checkbox:()=>we,CheckboxGroup:()=>De,Col:()=>tt,Combobox:()=>V,ContextMenu:()=>Fe,DataTable:()=>S,Description:()=>ue,DescriptionList:()=>Ne,Divider:()=>H,Dropdown:()=>q,EmptyState:()=>Ke,Feed:()=>Ye,FeedItem:()=>ne,Grid:()=>ce,HMWCAlert:()=>ri,HMWCComponent:()=>g,HMWCContainerComponent:()=>L,HMWCFormComponent:()=>N,HMWCPopup:()=>va,Header:()=>Te,Icon:()=>$,Image:()=>fe,Input:()=>C,List:()=>bt,Menu:()=>O,MenuItem:()=>M,Navbar:()=>Le,Page:()=>je,Pagination:()=>ae,Popup:()=>D,PopupPresets:()=>mi,Progress:()=>X,Radio:()=>Xe,RadioGroup:()=>Ue,Row:()=>ht,Skeleton:()=>oe,Spinner:()=>ie,Stepper:()=>Qe,Switch:()=>gt,Tab:()=>_e,TabContent:()=>Je,TabGroup:()=>Z,Table:()=>at,TableCell:()=>xe,TableField:()=>Be,TableRow:()=>Pe,Tag:()=>he,Text:()=>z,Tooltip:()=>K,Tree:()=>dt,TreeItem:()=>ee,ensureIconFont:()=>Gi,shortcutModifier:()=>Xt});var _r=globalThis,xr=_r.ShadowRoot&&(_r.ShadyCSS===void 0||_r.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,qr=Symbol(),bi=new WeakMap,ar=class{constructor(e,t,r){if(this._$cssResult$=!0,r!==qr)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=e,this.t=t}get styleSheet(){let e=this.o,t=this.t;if(xr&&e===void 0){let r=t!==void 0&&t.length===1;r&&(e=bi.get(t)),e===void 0&&((this.o=e=new CSSStyleSheet).replaceSync(this.cssText),r&&bi.set(t,e))}return e}toString(){return this.cssText}},wi=s=>new ar(typeof s=="string"?s:s+"",void 0,qr),f=(s,...e)=>{let t=s.length===1?s[0]:e.reduce((r,i,o)=>r+(a=>{if(a._$cssResult$===!0)return a.cssText;if(typeof a=="number")return a;throw Error("Value passed to 'css' function must be a 'css' function result: "+a+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(i)+s[o+1],s[0]);return new ar(t,s,qr)},yi=(s,e)=>{if(xr)s.adoptedStyleSheets=e.map(t=>t instanceof CSSStyleSheet?t:t.styleSheet);else for(let t of e){let r=document.createElement("style"),i=_r.litNonce;i!==void 0&&r.setAttribute("nonce",i),r.textContent=t.cssText,s.appendChild(r)}},Wr=xr?s=>s:s=>s instanceof CSSStyleSheet?(e=>{let t="";for(let r of e.cssRules)t+=r.cssText;return wi(t)})(s):s;var{is:Xa,defineProperty:Qa,getOwnPropertyDescriptor:Ja,getOwnPropertyNames:Za,getOwnPropertySymbols:es,getPrototypeOf:ts}=Object,kr=globalThis,_i=kr.trustedTypes,rs=_i?_i.emptyScript:"",is=kr.reactiveElementPolyfillSupport,sr=(s,e)=>s,nr={toAttribute(s,e){switch(e){case Boolean:s=s?rs:null;break;case Object:case Array:s=s==null?s:JSON.stringify(s)}return s},fromAttribute(s,e){let t=s;switch(e){case Boolean:t=s!==null;break;case Number:t=s===null?null:Number(s);break;case Object:case Array:try{t=JSON.parse(s)}catch{t=null}}return t}},$r=(s,e)=>!Xa(s,e),xi={attribute:!0,type:String,converter:nr,reflect:!1,useDefault:!1,hasChanged:$r};Symbol.metadata??=Symbol("metadata"),kr.litPropertyMetadata??=new WeakMap;var Ct=class extends HTMLElement{static addInitializer(e){this._$Ei(),(this.l??=[]).push(e)}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(e,t=xi){if(t.state&&(t.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(e)&&((t=Object.create(t)).wrapped=!0),this.elementProperties.set(e,t),!t.noAccessor){let r=Symbol(),i=this.getPropertyDescriptor(e,r,t);i!==void 0&&Qa(this.prototype,e,i)}}static getPropertyDescriptor(e,t,r){let{get:i,set:o}=Ja(this.prototype,e)??{get(){return this[t]},set(a){this[t]=a}};return{get:i,set(a){let l=i?.call(this);o?.call(this,a),this.requestUpdate(e,l,r)},configurable:!0,enumerable:!0}}static getPropertyOptions(e){return this.elementProperties.get(e)??xi}static _$Ei(){if(this.hasOwnProperty(sr("elementProperties")))return;let e=ts(this);e.finalize(),e.l!==void 0&&(this.l=[...e.l]),this.elementProperties=new Map(e.elementProperties)}static finalize(){if(this.hasOwnProperty(sr("finalized")))return;if(this.finalized=!0,this._$Ei(),this.hasOwnProperty(sr("properties"))){let t=this.properties,r=[...Za(t),...es(t)];for(let i of r)this.createProperty(i,t[i])}let e=this[Symbol.metadata];if(e!==null){let t=litPropertyMetadata.get(e);if(t!==void 0)for(let[r,i]of t)this.elementProperties.set(r,i)}this._$Eh=new Map;for(let[t,r]of this.elementProperties){let i=this._$Eu(t,r);i!==void 0&&this._$Eh.set(i,t)}this.elementStyles=this.finalizeStyles(this.styles)}static finalizeStyles(e){let t=[];if(Array.isArray(e)){let r=new Set(e.flat(1/0).reverse());for(let i of r)t.unshift(Wr(i))}else e!==void 0&&t.push(Wr(e));return t}static _$Eu(e,t){let r=t.attribute;return r===!1?void 0:typeof r=="string"?r:typeof e=="string"?e.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Em=null,this._$Ev()}_$Ev(){this._$ES=new Promise(e=>this.enableUpdating=e),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(e=>e(this))}addController(e){(this._$EO??=new Set).add(e),this.renderRoot!==void 0&&this.isConnected&&e.hostConnected?.()}removeController(e){this._$EO?.delete(e)}_$E_(){let e=new Map,t=this.constructor.elementProperties;for(let r of t.keys())this.hasOwnProperty(r)&&(e.set(r,this[r]),delete this[r]);e.size>0&&(this._$Ep=e)}createRenderRoot(){let e=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return yi(e,this.constructor.elementStyles),e}connectedCallback(){this.renderRoot??=this.createRenderRoot(),this.enableUpdating(!0),this._$EO?.forEach(e=>e.hostConnected?.())}enableUpdating(e){}disconnectedCallback(){this._$EO?.forEach(e=>e.hostDisconnected?.())}attributeChangedCallback(e,t,r){this._$AK(e,r)}_$ET(e,t){let r=this.constructor.elementProperties.get(e),i=this.constructor._$Eu(e,r);if(i!==void 0&&r.reflect===!0){let o=(r.converter?.toAttribute!==void 0?r.converter:nr).toAttribute(t,r.type);this._$Em=e,o==null?this.removeAttribute(i):this.setAttribute(i,o),this._$Em=null}}_$AK(e,t){let r=this.constructor,i=r._$Eh.get(e);if(i!==void 0&&this._$Em!==i){let o=r.getPropertyOptions(i),a=typeof o.converter=="function"?{fromAttribute:o.converter}:o.converter?.fromAttribute!==void 0?o.converter:nr;this._$Em=i;let l=a.fromAttribute(t,o.type);this[i]=l??this._$Ej?.get(i)??l,this._$Em=null}}requestUpdate(e,t,r,i=!1,o){if(e!==void 0){let a=this.constructor;if(i===!1&&(o=this[e]),r??=a.getPropertyOptions(e),!((r.hasChanged??$r)(o,t)||r.useDefault&&r.reflect&&o===this._$Ej?.get(e)&&!this.hasAttribute(a._$Eu(e,r))))return;this.C(e,t,r)}this.isUpdatePending===!1&&(this._$ES=this._$EP())}C(e,t,{useDefault:r,reflect:i,wrapped:o},a){r&&!(this._$Ej??=new Map).has(e)&&(this._$Ej.set(e,a??t??this[e]),o!==!0||a!==void 0)||(this._$AL.has(e)||(this.hasUpdated||r||(t=void 0),this._$AL.set(e,t)),i===!0&&this._$Em!==e&&(this._$Eq??=new Set).add(e))}async _$EP(){this.isUpdatePending=!0;try{await this._$ES}catch(t){Promise.reject(t)}let e=this.scheduleUpdate();return e!=null&&await e,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??=this.createRenderRoot(),this._$Ep){for(let[i,o]of this._$Ep)this[i]=o;this._$Ep=void 0}let r=this.constructor.elementProperties;if(r.size>0)for(let[i,o]of r){let{wrapped:a}=o,l=this[i];a!==!0||this._$AL.has(i)||l===void 0||this.C(i,void 0,o,l)}}let e=!1,t=this._$AL;try{e=this.shouldUpdate(t),e?(this.willUpdate(t),this._$EO?.forEach(r=>r.hostUpdate?.()),this.update(t)):this._$EM()}catch(r){throw e=!1,this._$EM(),r}e&&this._$AE(t)}willUpdate(e){}_$AE(e){this._$EO?.forEach(t=>t.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(e)),this.updated(e)}_$EM(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(e){return!0}update(e){this._$Eq&&=this._$Eq.forEach(t=>this._$ET(t,this[t])),this._$EM()}updated(e){}firstUpdated(e){}};Ct.elementStyles=[],Ct.shadowRootOptions={mode:"open"},Ct[sr("elementProperties")]=new Map,Ct[sr("finalized")]=new Map,is?.({ReactiveElement:Ct}),(kr.reactiveElementVersions??=[]).push("2.1.2");var Kr=globalThis,ki=s=>s,Cr=Kr.trustedTypes,$i=Cr?Cr.createPolicy("lit-html",{createHTML:s=>s}):void 0,Gr="$lit$",St=`lit$${Math.random().toFixed(9).slice(2)}$`,Yr="?"+St,os=`<${Yr}>`,Ft=document,cr=()=>Ft.createComment(""),hr=s=>s===null||typeof s!="object"&&typeof s!="function",Xr=Array.isArray,Ti=s=>Xr(s)||typeof s?.[Symbol.iterator]=="function",Vr=`[ 	
+\f\r]`,lr=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,Ci=/-->/g,Si=/>/g,Pt=RegExp(`>|${Vr}(?:([^\\s"'>=/]+)(${Vr}*=${Vr}*(?:[^ 	
+\f\r"'\`<>=]|("|')|))|$)`,"g"),Ai=/'/g,Ei=/"/g,Oi=/^(?:script|style|textarea|title)$/i,Qr=s=>(e,...t)=>({_$litType$:s,strings:e,values:t}),c=Qr(1),Mi=Qr(2),Ri=Qr(3),Ee=Symbol.for("lit-noChange"),x=Symbol.for("lit-nothing"),zi=new WeakMap,It=Ft.createTreeWalker(Ft,129);function Di(s,e){if(!Xr(s)||!s.hasOwnProperty("raw"))throw Error("invalid template strings array");return $i!==void 0?$i.createHTML(e):e}var Bi=(s,e)=>{let t=s.length-1,r=[],i,o=e===2?"<svg>":e===3?"<math>":"",a=lr;for(let l=0;l<t;l++){let h=s[l],d,p,m=-1,y=0;for(;y<h.length&&(a.lastIndex=y,p=a.exec(h),p!==null);)y=a.lastIndex,a===lr?p[1]==="!--"?a=Ci:p[1]!==void 0?a=Si:p[2]!==void 0?(Oi.test(p[2])&&(i=RegExp("</"+p[2],"g")),a=Pt):p[3]!==void 0&&(a=Pt):a===Pt?p[0]===">"?(a=i??lr,m=-1):p[1]===void 0?m=-2:(m=a.lastIndex-p[2].length,d=p[1],a=p[3]===void 0?Pt:p[3]==='"'?Ei:Ai):a===Ei||a===Ai?a=Pt:a===Ci||a===Si?a=lr:(a=Pt,i=void 0);let _=a===Pt&&s[l+1].startsWith("/>")?" ":"";o+=a===lr?h+os:m>=0?(r.push(d),h.slice(0,m)+Gr+h.slice(m)+St+_):h+St+(m===-2?l:_)}return[Di(s,o+(s[t]||"<?>")+(e===2?"</svg>":e===3?"</math>":"")),r]},dr=class s{constructor({strings:e,_$litType$:t},r){let i;this.parts=[];let o=0,a=0,l=e.length-1,h=this.parts,[d,p]=Bi(e,t);if(this.el=s.createElement(d,r),It.currentNode=this.el.content,t===2||t===3){let m=this.el.content.firstChild;m.replaceWith(...m.childNodes)}for(;(i=It.nextNode())!==null&&h.length<l;){if(i.nodeType===1){if(i.hasAttributes())for(let m of i.getAttributeNames())if(m.endsWith(Gr)){let y=p[a++],_=i.getAttribute(m).split(St),A=/([.?@])?(.*)/.exec(y);h.push({type:1,index:o,name:A[2],strings:_,ctor:A[1]==="."?Ar:A[1]==="?"?Er:A[1]==="@"?zr:Lt}),i.removeAttribute(m)}else m.startsWith(St)&&(h.push({type:6,index:o}),i.removeAttribute(m));if(Oi.test(i.tagName)){let m=i.textContent.split(St),y=m.length-1;if(y>0){i.textContent=Cr?Cr.emptyScript:"";for(let _=0;_<y;_++)i.append(m[_],cr()),It.nextNode(),h.push({type:2,index:++o});i.append(m[y],cr())}}}else if(i.nodeType===8)if(i.data===Yr)h.push({type:2,index:o});else{let m=-1;for(;(m=i.data.indexOf(St,m+1))!==-1;)h.push({type:7,index:o}),m+=St.length-1}o++}}static createElement(e,t){let r=Ft.createElement("template");return r.innerHTML=e,r}};function Nt(s,e,t=s,r){if(e===Ee)return e;let i=r!==void 0?t._$Co?.[r]:t._$Cl,o=hr(e)?void 0:e._$litDirective$;return i?.constructor!==o&&(i?._$AO?.(!1),o===void 0?i=void 0:(i=new o(s),i._$AT(s,t,r)),r!==void 0?(t._$Co??=[])[r]=i:t._$Cl=i),i!==void 0&&(e=Nt(s,i._$AS(s,e.values),i,r)),e}var Sr=class{constructor(e,t){this._$AV=[],this._$AN=void 0,this._$AD=e,this._$AM=t}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(e){let{el:{content:t},parts:r}=this._$AD,i=(e?.creationScope??Ft).importNode(t,!0);It.currentNode=i;let o=It.nextNode(),a=0,l=0,h=r[0];for(;h!==void 0;){if(a===h.index){let d;h.type===2?d=new Kt(o,o.nextSibling,this,e):h.type===1?d=new h.ctor(o,h.name,h.strings,this,e):h.type===6&&(d=new Tr(o,this,e)),this._$AV.push(d),h=r[++l]}a!==h?.index&&(o=It.nextNode(),a++)}return It.currentNode=Ft,i}p(e){let t=0;for(let r of this._$AV)r!==void 0&&(r.strings!==void 0?(r._$AI(e,r,t),t+=r.strings.length-2):r._$AI(e[t])),t++}},Kt=class s{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(e,t,r,i){this.type=2,this._$AH=x,this._$AN=void 0,this._$AA=e,this._$AB=t,this._$AM=r,this.options=i,this._$Cv=i?.isConnected??!0}get parentNode(){let e=this._$AA.parentNode,t=this._$AM;return t!==void 0&&e?.nodeType===11&&(e=t.parentNode),e}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(e,t=this){e=Nt(this,e,t),hr(e)?e===x||e==null||e===""?(this._$AH!==x&&this._$AR(),this._$AH=x):e!==this._$AH&&e!==Ee&&this._(e):e._$litType$!==void 0?this.$(e):e.nodeType!==void 0?this.T(e):Ti(e)?this.k(e):this._(e)}O(e){return this._$AA.parentNode.insertBefore(e,this._$AB)}T(e){this._$AH!==e&&(this._$AR(),this._$AH=this.O(e))}_(e){this._$AH!==x&&hr(this._$AH)?this._$AA.nextSibling.data=e:this.T(Ft.createTextNode(e)),this._$AH=e}$(e){let{values:t,_$litType$:r}=e,i=typeof r=="number"?this._$AC(e):(r.el===void 0&&(r.el=dr.createElement(Di(r.h,r.h[0]),this.options)),r);if(this._$AH?._$AD===i)this._$AH.p(t);else{let o=new Sr(i,this),a=o.u(this.options);o.p(t),this.T(a),this._$AH=o}}_$AC(e){let t=zi.get(e.strings);return t===void 0&&zi.set(e.strings,t=new dr(e)),t}k(e){Xr(this._$AH)||(this._$AH=[],this._$AR());let t=this._$AH,r,i=0;for(let o of e)i===t.length?t.push(r=new s(this.O(cr()),this.O(cr()),this,this.options)):r=t[i],r._$AI(o),i++;i<t.length&&(this._$AR(r&&r._$AB.nextSibling,i),t.length=i)}_$AR(e=this._$AA.nextSibling,t){for(this._$AP?.(!1,!0,t);e!==this._$AB;){let r=ki(e).nextSibling;ki(e).remove(),e=r}}setConnected(e){this._$AM===void 0&&(this._$Cv=e,this._$AP?.(e))}},Lt=class{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(e,t,r,i,o){this.type=1,this._$AH=x,this._$AN=void 0,this.element=e,this.name=t,this._$AM=i,this.options=o,r.length>2||r[0]!==""||r[1]!==""?(this._$AH=Array(r.length-1).fill(new String),this.strings=r):this._$AH=x}_$AI(e,t=this,r,i){let o=this.strings,a=!1;if(o===void 0)e=Nt(this,e,t,0),a=!hr(e)||e!==this._$AH&&e!==Ee,a&&(this._$AH=e);else{let l=e,h,d;for(e=o[0],h=0;h<o.length-1;h++)d=Nt(this,l[r+h],t,h),d===Ee&&(d=this._$AH[h]),a||=!hr(d)||d!==this._$AH[h],d===x?e=x:e!==x&&(e+=(d??"")+o[h+1]),this._$AH[h]=d}a&&!i&&this.j(e)}j(e){e===x?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,e??"")}},Ar=class extends Lt{constructor(){super(...arguments),this.type=3}j(e){this.element[this.name]=e===x?void 0:e}},Er=class extends Lt{constructor(){super(...arguments),this.type=4}j(e){this.element.toggleAttribute(this.name,!!e&&e!==x)}},zr=class extends Lt{constructor(e,t,r,i,o){super(e,t,r,i,o),this.type=5}_$AI(e,t=this){if((e=Nt(this,e,t,0)??x)===Ee)return;let r=this._$AH,i=e===x&&r!==x||e.capture!==r.capture||e.once!==r.once||e.passive!==r.passive,o=e!==x&&(r===x||i);i&&this.element.removeEventListener(this.name,this,r),o&&this.element.addEventListener(this.name,this,e),this._$AH=e}handleEvent(e){typeof this._$AH=="function"?this._$AH.call(this.options?.host??this.element,e):this._$AH.handleEvent(e)}},Tr=class{constructor(e,t,r){this.element=e,this.type=6,this._$AN=void 0,this._$AM=t,this.options=r}get _$AU(){return this._$AM._$AU}_$AI(e){Nt(this,e)}},Pi={M:Gr,P:St,A:Yr,C:1,L:Bi,R:Sr,D:Ti,V:Nt,I:Kt,H:Lt,N:Er,U:zr,B:Ar,F:Tr},as=Kr.litHtmlPolyfillSupport;as?.(dr,Kt),(Kr.litHtmlVersions??=[]).push("3.3.2");var Ii=(s,e,t)=>{let r=t?.renderBefore??e,i=r._$litPart$;if(i===void 0){let o=t?.renderBefore??null;r._$litPart$=i=new Kt(e.insertBefore(cr(),o),o,void 0,t??{})}return i._$AI(s),i};var Jr=globalThis,At=class extends Ct{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){let e=super.createRenderRoot();return this.renderOptions.renderBefore??=e.firstChild,e}update(e){let t=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(e),this._$Do=Ii(t,this.renderRoot,this.renderOptions)}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(!0)}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(!1)}render(){return Ee}};At._$litElement$=!0,At.finalized=!0,Jr.litElementHydrateSupport?.({LitElement:At});var ss=Jr.litElementPolyfillSupport;ss?.({LitElement:At});(Jr.litElementVersions??=[]).push("4.2.2");var ns={attribute:!0,type:String,converter:nr,reflect:!1,hasChanged:$r},ls=(s=ns,e,t)=>{let{kind:r,metadata:i}=t,o=globalThis.litPropertyMetadata.get(i);if(o===void 0&&globalThis.litPropertyMetadata.set(i,o=new Map),r==="setter"&&((s=Object.create(s)).wrapped=!0),o.set(t.name,s),r==="accessor"){let{name:a}=t;return{set(l){let h=e.get.call(this);e.set.call(this,l),this.requestUpdate(a,h,s,!0,l)},init(l){return l!==void 0&&this.C(a,void 0,s,l),l}}}if(r==="setter"){let{name:a}=t;return function(l){let h=this[a];e.call(this,l),this.requestUpdate(a,h,s,!0,l)}}throw Error("Unsupported decorator location: "+r)};function n(s){return(e,t)=>typeof t=="object"?ls(s,e,t):((r,i,o)=>{let a=i.hasOwnProperty(o);return i.constructor.createProperty(o,r),a?Object.getOwnPropertyDescriptor(i,o):void 0})(s,e,t)}function b(s){return n({...s,state:!0,attribute:!1})}var jt=(s,e,t)=>(t.configurable=!0,t.enumerable=!0,Reflect.decorate&&typeof e!="object"&&Object.defineProperty(s,e,t),t);function I(s,e){return(t,r,i)=>{let o=a=>a.renderRoot?.querySelector(s)??null;if(e){let{get:a,set:l}=typeof r=="object"?t:i??(()=>{let h=Symbol();return{get(){return this[h]},set(d){this[h]=d}}})();return jt(t,r,{get(){let h=a.call(this);return h===void 0&&(h=o(this),(h!==null||this.hasUpdated)&&l.call(this,h)),h}})}return jt(t,r,{get(){return o(this)}})}}var pr={class:"hmwc-scroll-lock",prop:"--hmwc-scroll-lock-size"},Or=class s{get scrollbarWidth(){let e=document.documentElement.clientWidth;return Math.abs(window.innerWidth-e)}lockBodyScrolling(e){if(s.locks.add(e),document.body.classList.contains(pr.class))return;let t=this.scrollbarWidth;document.body.classList.add(pr.class),document.body.style.setProperty(pr.prop,`${t}px`)}unlockBodyScrolling(e){s.locks.delete(e),!(s.locks.size>0)&&(document.body.classList.remove(pr.class),document.body.style.removeProperty(pr.prop))}scrollIntoView(e,t,r="vertical",i="smooth"){let o={top:Math.round(e.getBoundingClientRect().top-t.getBoundingClientRect().top),left:Math.round(e.getBoundingClientRect().left-t.getBoundingClientRect().left)},a=o.top+t.scrollTop,l=o.left+t.scrollLeft,h=t.scrollLeft,d=t.scrollLeft+t.offsetWidth,p=t.scrollTop,m=t.scrollTop+t.offsetHeight;(r==="horizontal"||r==="both")&&(l<h?t.scrollTo({left:l,behavior:i}):l+e.clientWidth>d&&t.scrollTo({left:l-t.offsetWidth+e.clientWidth,behavior:i})),(r==="vertical"||r==="both")&&(a<p?t.scrollTo({top:a,behavior:i}):a+e.clientHeight>m&&t.scrollTo({top:a-t.offsetHeight+e.clientHeight,behavior:i}))}constructor(e){this.host=e,e.addController(this)}hostConnected(){}hostDisconnected(){}};Or.locks=new Set;var Fi=Or;var mr=class{isNamedSlotContent(e){return e.nodeType===e.ELEMENT_NODE&&!!e.getAttribute("slot")}hasDefaultSlot(){return Array.from(this.host.childNodes).some(e=>{let t=e.nodeType===e.TEXT_NODE,r=e.nodeType===e.ELEMENT_NODE,i=e.textContent.trim()==="";return t&&!i||r&&!this.isNamedSlotContent(e)})}hasNamedSlot(e){let t=`[slot="${e}"]`;return this.host.querySelector(t)!==null}getDefaultSlot(){return Array.from(this.host.children).filter(e=>!this.isNamedSlotContent(e))}getNamedSlot(e){let t=`[slot="${e}"]`;return this.host.querySelector(t)}insert(e,t){let r=Array.from(this.host.shadowRoot?.querySelectorAll("slot")||[]);t?r.find(i=>i.name===t)?.appendChild(e):r.filter(i=>!i.name)[0]?.appendChild(e)}prepend(e,t){let r=Array.from(this.host.shadowRoot?.querySelectorAll("slot")||[]);t?r.find(i=>i.name===t)?.prepend(e):r.filter(i=>!i.name)[0]?.prepend(e)}test(e){return e?this.hasNamedSlot(e):this.hasDefaultSlot()}get(e){if(e){let t=this.getNamedSlot(e);return t?[t]:[]}else return this.getDefaultSlot()}constructor(e){this.slots=[],this.handleUpdate=t=>{let r=t.target,i=this.slots.includes("[default]")&&!r.name,o=r.name&&this.slots.includes(r.name);!i&&!o||this.host.requestUpdate()},this.host=e,this.slots=e.constructor.slots,e.addController(this)}hostConnected(){this.root=this.host.shadowRoot,this.root?.addEventListener("slotchange",this.handleUpdate)}hostDisconnected(){this.root?.removeEventListener("slotchange",this.handleUpdate)}};function u(s,e){let t={waitUntilFirstUpdate:!1,...e};return(r,i)=>{let{update:o}=r,a=Array.isArray(s)?s:[s];r.update=function(l){l&&(a.forEach(h=>{let d=h;if(l.has(d)){let p=l.get(d),m=this[d];p!==m&&(!t.waitUntilFirstUpdate||this.hasUpdated)&&this[i](p,m)}}),o.call(this,l))}}}var Ni=f`
   *,
   *::before,
   *::after,
@@ -92,7 +92,58 @@
       display: contents;
     }
   }
-`;var xt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},ia=function(s,t,e,r){if(e==="a"&&!r)throw new TypeError("Private accessor was defined without a getter");if(typeof t=="function"?s!==t||!r:!t.has(s))throw new TypeError("Cannot read private member from an object whose class did not declare it");return e==="m"?r:e==="a"?r.call(s):r?r.value:t.get(s)},oa=function(s,t,e,r,i){if(r==="m")throw new TypeError("Private method is not writable");if(r==="a"&&!i)throw new TypeError("Private accessor was defined without a setter");if(typeof t=="function"?s!==t||!i:!t.has(s))throw new TypeError("Cannot write private member to an object whose class did not declare it");return r==="a"?i.call(s,e):i?i.value=e:t.set(s,e),e},cr,u=class extends me{static get styles(){let t=this._styles?this._styles:[];return[oi,...Array.isArray(t)?t:[t]]}static set styles(t){let e=this._styles?this._styles:[];this._styles=[e,t]}tooltipChanged(){this.tooltip?this._tooltipEl?this._tooltipEl.textContent=this.tooltip:this._setupTooltip():this._teardownTooltip()}spanChanged(){this.span?this.reposition():(this.style.removeProperty("--colspan"),this.style.removeProperty("--rowspan"))}emit(t,e){let r=new CustomEvent(t,{bubbles:!0,cancelable:!1,composed:!0,detail:{},...e});return this.dispatchEvent(r),r}changeStep(t){this.controllers.form?.changeStep(t)}static define(t,e=this){customElements.get(t)||customElements.define(t,class extends e{})}reposition(){let t=this.parentElement,e={cols:1,rows:1};this.span===!0?e.cols=t.cols:this.span instanceof Array?(e.cols=this.span[0]===!0?t.cols:this.span[0]||1,e.rows=this.span[1]===!0?t.rows:this.span[1]||1):e.cols=this.span||e.cols,e.cols>1&&this.style.setProperty("--colspan",`${e.cols}`),e.rows>1&&this.style.setProperty("--rowspan",`${e.rows+1}`),["col","row","justify"].forEach(i=>{let o=this[i];o&&this.style.setProperty(`--${i}`,`${o}`)})}applyStyles(){let t={xxs:"0.125rem",xs:"var(--hmwc-spacing-3x-small)",sm:"var(--hmwc-spacing-2x-small)",md:"var(--hmwc-spacing-x-small)",lg:"var(--hmwc-spacing-large)",xl:"var(--hmwc-spacing-x-large)",xxl:"var(--hmwc-spacing-2x-large)",auto:"auto"};this.top&&this.style.setProperty("--top",`${t[this.top]}`),this.bottom&&this.style.setProperty("--bottom",`${t[this.bottom]}`)}applyAnimation(){["HMWC-CARD","HMWC-ALERT","HMWC-ACCORDION","HMWC-ACCORDION-GROUP"].includes(this.tagName)&&this.style.setProperty("--animation","scale-in"),this.animation&&(this.animation instanceof Object?(this.animation.name&&this.style.setProperty("--animation",`${this.animation.name}`),this.animation.duration&&this.style.setProperty("--animation-duration",`${this.animation.duration}ms`),this.animation.easing&&this.style.setProperty("--animation-easing",`${this.animation.easing}`)):this.style.setProperty("--animation",`${this.animation}`))}firstUpdated(t){super.firstUpdated(t)}connectedCallback(){super.connectedCallback(),this.parentElement?.tagName==="HMWC-GRID"&&this.reposition(),this.applyStyles(),this.applyAnimation(),this.notificationStack&&this._ensureStackContainer(),this.tooltip&&this._setupTooltip(),this._revealObserver=new MutationObserver(t=>{for(let e of t)e.attributeName==="hidden"&&!this.hasAttribute("hidden")&&this._playReveal()}),this._revealObserver.observe(this,{attributes:!0,attributeFilter:["hidden"]})}_playReveal(){let t=Array.from(this.children).filter(o=>o instanceof HTMLElement&&!o.classList.contains("hmwc-notification-stack"));if(!t.length){this.classList.add("hmwc-reveal"),this.addEventListener("animationend",()=>this.classList.remove("hmwc-reveal"),{once:!0});return}let e=50,r=350,i="cubic-bezier(0.2, 0, 0.13, 1.5)";t.forEach((o,n)=>{o.animate([{opacity:0,transform:"translateY(12px)",filter:"blur(2px)"},{opacity:1,transform:"translateY(0)",filter:"blur(0)"}],{duration:r,delay:n*e,easing:i,fill:"both"})})}_ensureStackContainer(){this._stackContainer||(this._stackContainer=Object.assign(document.createElement("div"),{className:"hmwc-notification-stack"}),this.global||(this.style.position="relative"),this.appendChild(this._stackContainer))}_positionTooltip(){if(!this._tooltipEl)return;let t=this.getBoundingClientRect(),e=this._tooltipEl.getBoundingClientRect(),r=this.tooltipPlacement||"top",i=6,o=0,n=0;switch(r){case"top":default:o=t.top-e.height-i,n=t.left+t.width/2-e.width/2;break;case"top-start":o=t.top-e.height-i,n=t.left;break;case"top-end":o=t.top-e.height-i,n=t.right-e.width;break;case"bottom":o=t.bottom+i,n=t.left+t.width/2-e.width/2;break;case"bottom-start":o=t.bottom+i,n=t.left;break;case"bottom-end":o=t.bottom+i,n=t.right-e.width;break;case"left":o=t.top+t.height/2-e.height/2,n=t.left-e.width-i;break;case"left-start":o=t.top,n=t.left-e.width-i;break;case"left-end":o=t.bottom-e.height,n=t.left-e.width-i;break;case"right":o=t.top+t.height/2-e.height/2,n=t.right+i;break;case"right-start":o=t.top,n=t.right+i;break;case"right-end":o=t.bottom-e.height,n=t.right+i;break}this._tooltipEl.style.top=`${o}px`,this._tooltipEl.style.left=`${n}px`}_setupTooltip(){if(this._tooltipEl)return;let t=document.createElement("div");t.setAttribute("role","tooltip"),t.setAttribute("aria-live","off"),t.textContent=this.tooltip||"",Object.assign(t.style,{display:"none",position:"fixed",width:"max-content",maxWidth:"20rem",borderRadius:"var(--hmwc-tooltip-border-radius)",backgroundColor:"var(--hmwc-tooltip-background-color)",fontFamily:"var(--hmwc-tooltip-font-family)",fontSize:"var(--hmwc-tooltip-font-size)",fontWeight:"var(--hmwc-tooltip-font-weight)",lineHeight:"var(--hmwc-tooltip-line-height)",color:"var(--hmwc-tooltip-color)",padding:"var(--hmwc-tooltip-padding)",pointerEvents:"none",userSelect:"none",zIndex:"var(--hmwc-z-index-tooltip)"}),this._tooltipEl=t,document.body.appendChild(t),this.addEventListener("mouseenter",this._tooltipShow),this.addEventListener("mouseleave",this._tooltipHide),this.addEventListener("focusin",this._tooltipShow),this.addEventListener("focusout",this._tooltipHide),document.addEventListener("keydown",this._tooltipKeyDown)}_teardownTooltip(){this._tooltipEl&&(this._tooltipEl.remove(),this._tooltipEl=void 0),clearTimeout(this._tooltipTimeout),this.removeEventListener("mouseenter",this._tooltipShow),this.removeEventListener("mouseleave",this._tooltipHide),this.removeEventListener("focusin",this._tooltipShow),this.removeEventListener("focusout",this._tooltipHide),document.removeEventListener("keydown",this._tooltipKeyDown)}disconnectedCallback(){super.disconnectedCallback(),this._teardownTooltip(),this._revealObserver?.disconnect()}constructor(){super(),this.controllers=this._createControllers(),this._tooltipShow=()=>{this._tooltipEl&&(clearTimeout(this._tooltipTimeout),this._tooltipTimeout=window.setTimeout(()=>{this._tooltipEl&&(this._tooltipEl.style.display="block",this._tooltipEl.setAttribute("aria-live","polite"),this._positionTooltip())},150))},this._tooltipHide=()=>{this._tooltipEl&&(clearTimeout(this._tooltipTimeout),this._tooltipTimeout=window.setTimeout(()=>{this._tooltipEl&&(this._tooltipEl.style.display="none",this._tooltipEl.setAttribute("aria-live","off"))},150))},this._tooltipKeyDown=t=>{t.key==="Escape"&&this._tooltipEl&&(this._tooltipEl.style.display="none")},cr.set(this,!1),this.initialReflectedProperties=new Map}_createControllers(){let t,e,r=this;return{get slot(){return t??=new Ve(r)},get scroll(){return e??=new ii(r)}}}attributeChangedCallback(t,e,r){ia(this,cr,"f")||(this.constructor.elementProperties.forEach((i,o)=>{i.reflect&&this[o]!=null&&this.initialReflectedProperties.set(o,this[o])}),oa(this,cr,!0,"f")),super.attributeChangedCallback(t,e,r)}willUpdate(t){super.willUpdate(t),this.initialReflectedProperties.forEach((e,r)=>{t.has(r)&&this[r]==null&&(this[r]=e)})}};cr=new WeakMap;u.dependencies=[];u.slots=[];xt([a({type:String})],u.prototype,"tooltip",void 0);xt([a({type:String,attribute:"tooltip-placement"})],u.prototype,"tooltipPlacement",void 0);xt([p("tooltip")],u.prototype,"tooltipChanged",null);xt([a({type:Boolean,reflect:!0})],u.prototype,"notificationStack",void 0);xt([a({type:Boolean,reflect:!0})],u.prototype,"global",void 0);xt([a({type:Boolean})],u.prototype,"formTemplate",void 0);xt([a({type:Boolean})],u.prototype,"formGroup",void 0);xt([a({type:String})],u.prototype,"name",void 0);xt([a({type:Number})],u.prototype,"step",void 0);xt([a({type:Object})],u.prototype,"animation",void 0);xt([a({type:Number})],u.prototype,"span",void 0);xt([a({type:Number})],u.prototype,"col",void 0);xt([a({type:Number})],u.prototype,"row",void 0);xt([a({type:String})],u.prototype,"justify",void 0);xt([a({type:String})],u.prototype,"top",void 0);xt([a({type:String})],u.prototype,"bottom",void 0);xt([p("span")],u.prototype,"spanChanged",null);var ai=m`
+
+  /* Input groups ("hmwc-row attached"). The row sets --hmwc-attached on each
+     child (first, middle or last). A component whose base part draws its
+     border then squares the corners that meet a neighbour, whatever radius
+     its own size classes set. The base part resets the property so it does
+     not reach components nested further in. Browsers without style queries
+     keep the rounded corners. */
+  [part~='base'] {
+    --hmwc-attached: initial;
+  }
+
+  @container style(--hmwc-attached: first) {
+    [part~='base'] {
+      border-start-end-radius: 0 !important;
+      border-end-end-radius: 0 !important;
+    }
+  }
+
+  @container style(--hmwc-attached: middle) {
+    [part~='base'] {
+      border-radius: 0 !important;
+    }
+  }
+
+  @container style(--hmwc-attached: last) {
+    [part~='base'] {
+      border-start-start-radius: 0 !important;
+      border-end-start-radius: 0 !important;
+    }
+  }
+`,pt=f`
+  :host {
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    font-feature-settings: inherit;
+    user-select: text;
+  }
+
+  [part~='label'],
+  [part~='summary'],
+  [part~='header'],
+  [part~='footer'] {
+    user-select: none;
+    font-size: var(--settings-font-size, 16px);
+    font-feature-settings: 'c2sc', 'smcp';
+    font-family: var(--hmwc-font-sans);
+    line-height: var(--hmwc-line-height-normal);
+    letter-spacing: var(--hmwc-letter-spacing-normal);
+  }
+`;var Oe=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},cs=function(s,e,t,r){if(t==="a"&&!r)throw new TypeError("Private accessor was defined without a getter");if(typeof e=="function"?s!==e||!r:!e.has(s))throw new TypeError("Cannot read private member from an object whose class did not declare it");return t==="m"?r:t==="a"?r.call(s):r?r.value:e.get(s)},hs=function(s,e,t,r,i){if(r==="m")throw new TypeError("Private method is not writable");if(r==="a"&&!i)throw new TypeError("Private accessor was defined without a setter");if(typeof e=="function"?s!==e||!i:!e.has(s))throw new TypeError("Cannot write private member to an object whose class did not declare it");return r==="a"?i.call(s,t):i?i.value=t:e.set(s,t),t},Mr,g=class extends At{static get styles(){let e=this._styles?this._styles:[];return[Ni,...Array.isArray(e)?e:[e]]}static set styles(e){let t=this._styles?this._styles:[];this._styles=[t,e]}tooltipChanged(){this.tooltip?this._tooltipEl?this._tooltipEl.textContent=this.tooltip:this._setupTooltip():this._teardownTooltip()}spanChanged(){this.span?this.reposition():(this.style.removeProperty("--colspan"),this.style.removeProperty("--rowspan"))}emit(e,t){let r=new CustomEvent(e,{bubbles:!0,cancelable:!1,composed:!0,detail:{},...t});return this.dispatchEvent(r),r}contextMenuItems(e){return[]}changeStep(e){this.controllers.form?.changeStep(e)}static define(e,t=this){customElements.get(e)||customElements.define(e,class extends t{})}reposition(){let e=this.parentElement,t={cols:1,rows:1};this.span===!0?t.cols=e.cols:this.span instanceof Array?(t.cols=this.span[0]===!0?e.cols:this.span[0]||1,t.rows=this.span[1]===!0?e.rows:this.span[1]||1):t.cols=this.span||t.cols,t.cols>1&&this.style.setProperty("--colspan",`${t.cols}`),t.rows>1&&this.style.setProperty("--rowspan",`${t.rows+1}`),["col","row","justify"].forEach(i=>{let o=this[i];o&&this.style.setProperty(`--${i}`,`${o}`)})}applyStyles(){let e={xxs:"0.125rem",xs:"var(--hmwc-spacing-3x-small)",sm:"var(--hmwc-spacing-2x-small)",md:"var(--hmwc-spacing-x-small)",lg:"var(--hmwc-spacing-large)",xl:"var(--hmwc-spacing-x-large)",xxl:"var(--hmwc-spacing-2x-large)",auto:"auto"};this.top&&this.style.setProperty("--top",`${e[this.top]}`),this.bottom&&this.style.setProperty("--bottom",`${e[this.bottom]}`)}applyAnimation(){["HMWC-CARD","HMWC-ALERT","HMWC-ACCORDION","HMWC-ACCORDION-GROUP"].includes(this.tagName)&&this.style.setProperty("--animation","scale-in"),this.animation&&(this.animation instanceof Object?(this.animation.name&&this.style.setProperty("--animation",`${this.animation.name}`),this.animation.duration&&this.style.setProperty("--animation-duration",`${this.animation.duration}ms`),this.animation.easing&&this.style.setProperty("--animation-easing",`${this.animation.easing}`)):this.style.setProperty("--animation",`${this.animation}`))}firstUpdated(e){super.firstUpdated(e)}connectedCallback(){super.connectedCallback(),this.parentElement?.tagName==="HMWC-GRID"&&this.reposition(),this.applyStyles(),this.applyAnimation(),this.notificationStack&&this._ensureStackContainer(),this.tooltip&&this._setupTooltip(),this._revealObserver=new MutationObserver(e=>{for(let t of e)t.attributeName==="hidden"&&!this.hasAttribute("hidden")&&this._playReveal()}),this._revealObserver.observe(this,{attributes:!0,attributeFilter:["hidden"]})}_playReveal(){let e=Array.from(this.children).filter(o=>o instanceof HTMLElement&&!o.classList.contains("hmwc-notification-stack"));if(!e.length){this.classList.add("hmwc-reveal"),this.addEventListener("animationend",()=>this.classList.remove("hmwc-reveal"),{once:!0});return}let t=50,r=350,i="cubic-bezier(0.2, 0, 0.13, 1.5)";e.forEach((o,a)=>{o.animate([{opacity:0,transform:"translateY(12px)",filter:"blur(2px)"},{opacity:1,transform:"translateY(0)",filter:"blur(0)"}],{duration:r,delay:a*t,easing:i,fill:"both"})})}_ensureStackContainer(){this._stackContainer||(this._stackContainer=Object.assign(document.createElement("div"),{className:"hmwc-notification-stack"}),this.global||(this.style.position="relative"),this.appendChild(this._stackContainer))}_positionTooltip(){if(!this._tooltipEl)return;let e=this.getBoundingClientRect(),t=this._tooltipEl.getBoundingClientRect(),r=this.tooltipPlacement||"top",i=6,o=0,a=0;switch(r){case"top":default:o=e.top-t.height-i,a=e.left+e.width/2-t.width/2;break;case"top-start":o=e.top-t.height-i,a=e.left;break;case"top-end":o=e.top-t.height-i,a=e.right-t.width;break;case"bottom":o=e.bottom+i,a=e.left+e.width/2-t.width/2;break;case"bottom-start":o=e.bottom+i,a=e.left;break;case"bottom-end":o=e.bottom+i,a=e.right-t.width;break;case"left":o=e.top+e.height/2-t.height/2,a=e.left-t.width-i;break;case"left-start":o=e.top,a=e.left-t.width-i;break;case"left-end":o=e.bottom-t.height,a=e.left-t.width-i;break;case"right":o=e.top+e.height/2-t.height/2,a=e.right+i;break;case"right-start":o=e.top,a=e.right+i;break;case"right-end":o=e.bottom-t.height,a=e.right+i;break}this._tooltipEl.style.top=`${o}px`,this._tooltipEl.style.left=`${a}px`}_setupTooltip(){if(this._tooltipEl)return;let e=document.createElement("div");e.setAttribute("role","tooltip"),e.setAttribute("aria-live","off"),e.textContent=this.tooltip||"",Object.assign(e.style,{display:"none",position:"fixed",width:"max-content",maxWidth:"20rem",borderRadius:"var(--hmwc-tooltip-border-radius)",backgroundColor:"var(--hmwc-tooltip-background-color)",fontFamily:"var(--hmwc-tooltip-font-family)",fontSize:"var(--hmwc-tooltip-font-size)",fontWeight:"var(--hmwc-tooltip-font-weight)",lineHeight:"var(--hmwc-tooltip-line-height)",color:"var(--hmwc-tooltip-color)",padding:"var(--hmwc-tooltip-padding)",pointerEvents:"none",userSelect:"none",zIndex:"var(--hmwc-z-index-tooltip)"}),this._tooltipEl=e,document.body.appendChild(e),this.addEventListener("mouseenter",this._tooltipShow),this.addEventListener("mouseleave",this._tooltipHide),this.addEventListener("focusin",this._tooltipShow),this.addEventListener("focusout",this._tooltipHide),document.addEventListener("keydown",this._tooltipKeyDown)}_teardownTooltip(){this._tooltipEl&&(this._tooltipEl.remove(),this._tooltipEl=void 0),clearTimeout(this._tooltipTimeout),this.removeEventListener("mouseenter",this._tooltipShow),this.removeEventListener("mouseleave",this._tooltipHide),this.removeEventListener("focusin",this._tooltipShow),this.removeEventListener("focusout",this._tooltipHide),document.removeEventListener("keydown",this._tooltipKeyDown)}disconnectedCallback(){super.disconnectedCallback(),this._teardownTooltip(),this._revealObserver?.disconnect()}constructor(){super(),this.controllers=this._createControllers(),this._tooltipShow=()=>{this._tooltipEl&&(clearTimeout(this._tooltipTimeout),this._tooltipTimeout=window.setTimeout(()=>{this._tooltipEl&&(this._tooltipEl.style.display="block",this._tooltipEl.setAttribute("aria-live","polite"),this._positionTooltip())},150))},this._tooltipHide=()=>{this._tooltipEl&&(clearTimeout(this._tooltipTimeout),this._tooltipTimeout=window.setTimeout(()=>{this._tooltipEl&&(this._tooltipEl.style.display="none",this._tooltipEl.setAttribute("aria-live","off"))},150))},this._tooltipKeyDown=e=>{e.key==="Escape"&&this._tooltipEl&&(this._tooltipEl.style.display="none")},Mr.set(this,!1),this.initialReflectedProperties=new Map}_createControllers(){let e,t,r=this;return{get slot(){return e??=new mr(r)},get scroll(){return t??=new Fi(r)}}}attributeChangedCallback(e,t,r){cs(this,Mr,"f")||(this.constructor.elementProperties.forEach((i,o)=>{i.reflect&&this[o]!=null&&this.initialReflectedProperties.set(o,this[o])}),hs(this,Mr,!0,"f")),super.attributeChangedCallback(e,t,r)}willUpdate(e){super.willUpdate(e),this.initialReflectedProperties.forEach((t,r)=>{e.has(r)&&this[r]==null&&(this[r]=t)})}};Mr=new WeakMap;g.dependencies=[];g.slots=[];Oe([n({type:String})],g.prototype,"tooltip",void 0);Oe([n({type:String,attribute:"tooltip-placement"})],g.prototype,"tooltipPlacement",void 0);Oe([u("tooltip")],g.prototype,"tooltipChanged",null);Oe([n({type:Boolean,reflect:!0})],g.prototype,"notificationStack",void 0);Oe([n({type:Boolean,reflect:!0})],g.prototype,"global",void 0);Oe([n({type:Boolean})],g.prototype,"formTemplate",void 0);Oe([n({type:Boolean})],g.prototype,"formGroup",void 0);Oe([n({type:String})],g.prototype,"name",void 0);Oe([n({type:Number})],g.prototype,"step",void 0);Oe([n({type:Object})],g.prototype,"animation",void 0);Oe([n({type:Number})],g.prototype,"span",void 0);Oe([n({type:Number})],g.prototype,"col",void 0);Oe([n({type:Number})],g.prototype,"row",void 0);Oe([n({type:String})],g.prototype,"justify",void 0);Oe([n({type:String})],g.prototype,"top",void 0);Oe([n({type:String})],g.prototype,"bottom",void 0);Oe([u("span")],g.prototype,"spanChanged",null);var Li=f`
   :host([required][required-indicator]) [part='label']::after {
     content: var(--hmwc-input-required-content, '*');
     margin-inline-start: var(--hmwc-input-required-content-offset, 2px);
@@ -129,7 +180,7 @@
   :host([label-pos='left']) [part='base'] {
     display: grid;
     grid-template-columns: auto 1fr;
-    column-gap: 1rem;
+    column-gap: var(--hmwc-spacing-medium);
     align-items: center;
   }
 
@@ -142,7 +193,7 @@
   :host([label-pos='right']) [part='base'] {
     display: grid;
     grid-template-columns: 1fr auto;
-    column-gap: 1rem;
+    column-gap: var(--hmwc-spacing-medium);
     align-items: center;
   }
 
@@ -206,7 +257,9 @@
   @media (prefers-reduced-motion: reduce) {
     /* No transitions on error appearance — values render instantly. */
   }
-`;var It=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},P=class extends u{static get styles(){let t=super.styles;return[...Array.isArray(t)?t:[t],ai]}static set styles(t){super.styles=t}get(){return this.toggleComponent?this.checked:this.value}set(t){this.toggleComponent?this.checked=!!t:this.value=t}get validity(){return{...this._validity}}_isEmpty(){return this.toggleComponent?!this.checked:!String(this.value??"").trim()}_focusableControl(){return this}_resolveError(){return this._validity.customError&&this._customError?this._customError:this._validity.valueMissing?"Please fill out this field.":"Invalid value."}_resetValidity(){this._validity={valid:!0,valueMissing:!1,tooShort:!1,tooLong:!1,patternMismatch:!1,rangeUnderflow:!1,rangeOverflow:!1,typeMismatch:!1,badInput:!1,customError:!1}}validate(){return this.reportValidity()}showValidity(){}checkValidity(){return this._resetValidity(),this.disabled?!0:(this._customError!==null&&(this._validity.customError=!0),this.required&&this._isEmpty()&&(this._validity.valueMissing=!0),this._validity.valid=!(this._validity.valueMissing||this._validity.tooShort||this._validity.tooLong||this._validity.patternMismatch||this._validity.rangeUnderflow||this._validity.rangeOverflow||this._validity.typeMismatch||this._validity.badInput||this._validity.customError),this._validity.valid)}reportValidity(){let t=!!this.invalid;return this.checkValidity()?(t&&(this.invalid=!1,this.error=void 0,this._emitValid()),!0):(this.invalid=!0,this.error=this._resolveError(),this._focusableControl()?.focus(),this._emitInvalid(),!1)}setCustomError(t){this._customError=t,this._validity.customError=!0,this._validity.valid=!1,this.invalid=!0,this.error=t,this._emitInvalid()}setCustomValidity(t){t?this.setCustomError(t):this.clearValidity()}clearValidity(){let t=!!this.invalid;this._customError=null,this._resetValidity(),this.invalid=!1,this.error=void 0,t&&this._emitValid()}hideValidation(){}willUpdate(t){this._customError!==null&&(this.invalid=!0,this.error=this._customError),super.willUpdate(t)}_emitInvalid(){let t={field:this.name??this.id??"",value:this.toggleComponent?this.checked:this.value,error:this.error??"",validity:{...this._validity}};this.emit("hmwc-invalid",{detail:t})}_emitValid(){let t={field:this.name??this.id??"",value:this.toggleComponent?this.checked:this.value};this.emit("hmwc-valid",{detail:t})}_errorId(){return`${this.id||"hmwc-form"}-error`}_ariaInvalid(){return this.invalid?"true":"false"}_ariaErrorMessage(){if(this.invalid&&this.error)return this._errorId()}_renderError(){if(!this.invalid||!this.error)return A;let t=c`<hmwc-icon part="error-icon" class="hmwc-error__icon" src="exclamation-circle-fill" aria-hidden="true"></hmwc-icon>`;return c` <div part="error" class="hmwc-error" id=${this._errorId()} role="alert" aria-live="polite">${t}${this.error}</div> `}_renderRequiredIndicator(){return!this.required||!this.requiredIndicator?A:c`<span part="required-indicator" class="hmwc-required-indicator" aria-hidden="true">*</span>`}connectedCallback(){super.connectedCallback()}constructor(){super(),this.value="",this._validity={valid:!0,valueMissing:!1,tooShort:!1,tooLong:!1,patternMismatch:!1,rangeUnderflow:!1,rangeOverflow:!1,typeMismatch:!1,badInput:!1,customError:!1},this._customError=null}};P.formComponent=!0;It([a({type:String,reflect:!0})],P.prototype,"name",void 0);It([a({type:String,reflect:!0})],P.prototype,"value",void 0);It([a({type:Boolean,reflect:!0})],P.prototype,"checked",void 0);It([a({type:Boolean,reflect:!0})],P.prototype,"required",void 0);It([a({type:Boolean,reflect:!0,attribute:"required-indicator"})],P.prototype,"requiredIndicator",void 0);It([a({type:Boolean,reflect:!0})],P.prototype,"disabled",void 0);It([a({type:Boolean,reflect:!0})],P.prototype,"invalid",void 0);It([a({type:String})],P.prototype,"error",void 0);It([a({type:String})],P.prototype,"label",void 0);It([a({type:String,reflect:!0,attribute:"label-pos"})],P.prototype,"labelPos",void 0);It([a({type:Boolean,reflect:!0})],P.prototype,"sm",void 0);It([a({type:Boolean,reflect:!0})],P.prototype,"md",void 0);It([a({type:Boolean,reflect:!0})],P.prototype,"lg",void 0);It([a({type:Boolean})],P.prototype,"autofocus",void 0);var ni="data-auto-disabled",hr=class s{edit(t){this.setAll(t),this.editing=!0,this.accordionGroups.size>0&&this.accordionGroups.forEach(e=>{e.forEach(r=>r.hide())}),queueMicrotask(()=>{this.snapshot=this.getFormData()??null,this.updateButtonState()})}cancelEdit(){this.editing=!1,this.snapshot=null,this.updateButtonState(),this.host.emit("hmwc-cancel")}isDirty(){if(!this.editing||!this.snapshot)return!0;let t=this.getFormData();return t?JSON.stringify(t)!==JSON.stringify(this.snapshot):!1}set(t,e){if(!e)return;let r;try{r=JSON.parse(e)}catch{r=e}let i=l=>this.components.find(h=>h.getAttribute("name")===l),o=(l,h)=>{if(h&&typeof h=="object"&&!Array.isArray(h)&&l.hasAttribute("formGroup")&&Array.from(l.children).forEach(d=>{let g=d;if(!g.hasAttribute("name"))return;let b=g.getAttribute("name");b&&o(g,h[b])}),!this.FORM_COMPONENTS.includes(this.HMWCName(l))&&(typeof h!="object"||h===null)){this.getFormComponentsInElement(l).forEach(g=>o(g,h));return}if(["checkbox","switch"].includes(this.HMWCName(l)))h===!0||h==="true"||h===1||h==="1"?l.setAttribute("checked","true"):l.removeAttribute("checked");else{let d=typeof h=="string"?decodeURIComponent(h):String(h??"");if(d==null||d==="null"||d==='""')return;this.HMWCName(l)==="input"&&l.getAttribute("type")==="date"&&(l.initialValueDateParsed=!1),l.setAttribute("value",d)}},n=i(t);if(n)if(n.hasAttribute("formGroup"))if(Array.isArray(r)){let l=Array.from(n.children).find(h=>h.formTemplate);l?(Array.from(n.children).forEach(h=>{!h.formTemplate&&this.HMWCName(h)!=="button"&&h.remove()}),r.length>0&&o(l,r[0]),r.length>1&&this.addFromTemplate(l,r.length-1).forEach((d,g)=>{o(d,r[g+1])})):Array.from(n.children).forEach((h,d)=>{o(h,r[d])})}else r&&typeof r=="object"&&Object.keys(r).forEach(l=>{let h=i(l);h&&o(h,r[l])});else o(n,r)}setAll(t){let e={};Object.keys(t).forEach(r=>{e[r]=JSON.stringify(t[r])}),this.components.forEach(r=>{let i=r.name??r.id;i&&Object.keys(t).includes(i)&&this.set(i,e[i])})}validate(){let t=[];this.components.forEach(r=>{if(this.FORM_COMPONENTS.includes(this.HMWCName(r))&&r.checkValidity){if(r.checkValidity()){r.invalid=!1;return}r.reportValidity?.(),r.invalid=!0,t.push(r)}});let e=t.sort((r,i)=>r.compareDocumentPosition(i)&Node.DOCUMENT_POSITION_FOLLOWING?-1:1)[0];e&&(e.scrollIntoView({behavior:"smooth",block:"center",inline:"nearest"}),e.focus({preventScroll:!0})),this.updateButtonState()}validateEl(t){t?.checkValidity&&(t.invalid=!t.checkValidity()),this.updateButtonState()}clear(){this.editing=!1,this.snapshot=null,this.removeAllFromTemplates(),this.components.forEach(t=>{t.setAttribute("value",""),t.removeAttribute("value"),t.removeAttribute("checked"),t.removeAttribute("invalid")}),this.host.emit("hmwc-reset")}submit(t){if(t&&t.key!=="Enter")return;let e=!0;if(this.accordionGroups.size>0){for(let i=1;i<=this.steps;i++)if(!this.validateStep(i)){e=!1;let o=this.getAccordionForStep(i);o&&this.getComponentsInAccordion(o).forEach(n=>{this.validateEl(n)}),this.updateAccordionErrorIndicator(i),this.changeStep(i);break}e&&this.getOuterFormComponents().forEach(i=>{i.checkValidity&&!i.checkValidity()&&(e=!1,this.validateEl(i))})}else this.components.forEach(i=>{i.hasAttribute("formGroup")||(this.stepComponents.length?i.step===this.step&&i.checkValidity&&!i.checkValidity()&&(e=!1):i.checkValidity&&!i.checkValidity()&&(e=!1))});if(!e){this.validate();return}let r=this.getFormData(t);if(r)return this.host.emit("submit",{detail:{value:r}}),this.host.emit("hmwc-submit",{detail:{data:r}}),this.editing=!1,this.snapshot=null,r}changeStep(t){let e=this.step??0;this.step=t,this.updateStepUI(),this.updateButtonState(),this.host.emit("hmwc-change",{detail:{value:this.getFormData()}}),this.host.emit("hmwc-step",{detail:{from:e,to:t}})}increment(){if(this.step!==void 0&&this.step<this.steps){if(this.accordionGroups.size>0){if(this.isAccordionMultipleMode()){let e=!0;if(this.accordionGroups.forEach(i=>{i.forEach(o=>{o.active&&o.step!==void 0&&(this.validateStep(o.step)||(e=!1,this.getComponentsInAccordion(o).forEach(n=>{this.validateEl(n)}),this.updateAccordionErrorIndicator(o.step)))})}),!e)return;let r=this.findNextInactiveStep();r!==void 0&&this.changeStep(r);return}if(!this.validateStep(this.step)){let e=this.getAccordionForStep(this.step);e&&this.getComponentsInAccordion(e).forEach(r=>{this.validateEl(r)}),this.updateAccordionErrorIndicator(this.step);return}}this.changeStep(this.step+1)}}decrement(){if(this.step===void 0)return;let t=this.accordionGroups.size>0?1:0;this.step>t&&this.changeStep(this.step-1)}canPerform(t,e){switch(t){case"submit":return!(this.editing&&!this.isDirty());case"reset":return!(!this.data||Object.keys(this.data).length===0);case"cancel":return this.editing;case"next":return this.step===void 0?!1:this.step<this.steps;case"previous":{if(this.step===void 0)return!1;let r=this.accordionGroups.size>0?1:0;return this.step>r}case"add":{if(!e)return this.templates.size>0;let r=this.findTemplate(e);if(!r)return!1;let i=this.templateLimit(r,"max");return i===void 0||this.templateRowCount(r)<i}case"remove":{if(!e)return this.templates.size>0;let r=this.findTemplateRow(e);if(!r||r.formTemplate)return!1;let i=this.findTemplate(r);if(!i)return!0;let o=this.templateLimit(i,"min")??1;return this.templateRowCount(i)>o}default:return!1}}templateLimit(t,e){let r=t.parentElement?.getAttribute(`template-${e}`);if(r==null||r==="")return;let i=Number(r);return Number.isInteger(i)&&i>=1?i:void 0}templateRowCount(t){let e=t.parentElement;return e?1+Array.from(e.children).filter(r=>r.hasAttribute("data-template-clone")).length:1}async perform(t,e){if(!this.canPerform(t,e))return!1;if(e&&this.cooldownMs>0){let r=Date.now(),i=this.lastActionTime.get(e)??0;if(r-i<this.cooldownMs)return!1;this.lastActionTime.set(e,r)}switch(t){case"submit":return!!this.submit();case"reset":return this.clear(),!0;case"cancel":return this.cancelEdit(),!0;case"next":return this.increment(),!0;case"previous":return this.decrement(),!0;case"add":return e?(this.handleTemplateAdd(e),!0):(console.warn('FormController.perform("add"): a source element is required.'),!1);case"remove":return e?(this.handleTemplateRemove(e),!0):(console.warn('FormController.perform("remove"): a source element is required.'),!1);default:return!1}}getFormData(t){if(t&&t?.key!=="Enter"||t&&!this.SUBMIT_ON_ENTER.includes(this.HMWCName(document.activeElement||void 0)))return;t&&t.preventDefault();let e={},r=new Set;return this.components.forEach(i=>{if(i.hasAttribute("formGroup")){if(r.has(i)||this.findFormGroup(i))return;r.add(i);let l=i.name;l&&(e[l]=this.collectGroupData(i));return}if(!this.FORM_COMPONENTS.includes(this.HMWCName(i)))return;let o=this.findFormGroup(i);if(o){if(r.has(o))return;if(this.findFormGroup(o)){r.add(o);return}r.add(o);let l=this.collectGroupData(o),h=o.name;h&&(e[h]=l)}else{if(!i.name)return;let n=this.getComponentValue(i);if(Object.keys(e).includes(i.name)){let l=e[i.name];e[i.name]=[...Array.isArray(l)?l:[l],n]}else e[i.name]=n}}),e}findFormGroup(t){let e=t.parentElement;for(;e&&e!==this.host;){if(e.hasAttribute("formGroup"))return e;e=e.parentElement}return null}getComponentValue(t){if(["checkbox","switch"].includes(this.HMWCName(t)))return this.binary?t.checked?1:0:t.checked;let e=String(t.value??""),r;try{r=decodeURIComponent(e)}catch{r=e}if(this.HMWCName(t)==="input"&&t.getAttribute("type")==="number"){if(r==="")return;let i=Number(r);return isNaN(i)?r:i}if(!(this.HMWCName(t)==="input"&&t.getAttribute("type")==="date"&&r===""))return r}collectGroupData(t){let e=Array.from(t.children);return this.shouldCollectAsArray(e)?e.map(i=>this.collectRowData(i)).filter(i=>!(i==null||typeof i=="object"&&!Array.isArray(i)&&Object.keys(i).length===0)):this.collectObjectData(t)}shouldCollectAsArray(t){if(t.length===0)return!1;let e=t[0];return this.FORM_COMPONENTS.includes(this.HMWCName(e))&&e.name?!1:this.FORM_COMPONENTS.includes(this.HMWCName(e))?t.every(o=>!o.name):!0}collectRowData(t){let e={};return this.FORM_COMPONENTS.includes(this.HMWCName(t))?this.getComponentValue(t):(this.getFormComponentsInElement(t).forEach(i=>{i.name&&(e[i.name]=this.getComponentValue(i))}),this.collectNestedFormGroups(t,e),e)}collectObjectData(t){let e={};return this.getFormComponentsInElement(t).forEach(i=>{i.name&&(e[i.name]=this.getComponentValue(i))}),this.collectNestedFormGroups(t,e),e}collectNestedFormGroups(t,e){let r=i=>{Array.from(i.children).forEach(o=>{if(o.hasAttribute("formGroup")){let n=o.name;n&&(e[n]=this.collectGroupData(o))}else this.FORM_COMPONENTS.includes(this.HMWCName(o))||r(o)})};r(t)}getFormComponentsInElement(t){let e=[],r=i=>{Array.from(i.children).forEach(o=>{o.hasAttribute("formGroup")||(this.FORM_COMPONENTS.includes(this.HMWCName(o))?e.push(o):r(o))})};return r(t),e}addFromTemplate(t,e=1,r=!1){let i=this.findTemplate(t);if(!i)return console.warn("FormController: No formTemplate found"),[];let o=i.parentElement;if(!o)return[];let n=this.templateLimit(i,"max");n!==void 0&&(e=Math.min(e,n-this.templateRowCount(i)));let l=[];for(let d=0;d<e;d++){let g=i.cloneNode(!0);g.removeAttribute("formTemplate"),g.formTemplate=!1,g.setAttribute("data-template-clone",""),g.style.display="",g.removeAttribute("hidden"),r||this.clearElementValues(g);let b=o.lastElementChild;b&&this.HMWCName(b)==="button"?o.insertBefore(g,b):o.appendChild(g),l.push(g)}this.refreshHMWCFormComponents(),this.updateData();let h=this.resolveTemplateGroup(i);return l.forEach(d=>{let g=d.parentElement,b=g?Array.prototype.indexOf.call(g.children,d):-1;this.host.emit("hmwc-template-add",{detail:{group:h,index:b}})}),l}addTemplateRow(t){let e=this.addFromTemplate(t);return e.length>0?e[0]:null}findTemplate(t){let e=t.parentElement;if(e){let o=Array.from(e.children).find(n=>n.formTemplate);if(o)return o}let r=t.closest("[formGroup]");if(r){let o=r.querySelector("[formTemplate]");if(o)return o}let i=e;for(;i&&i!==this.host;){let o=Array.from(i.children).find(n=>n.formTemplate);if(o)return o;i=i.parentElement}return null}removeFromTemplate(t){if(t.formTemplate){console.warn("FormController: Cannot remove a formTemplate element");return}if(t.hasAttribute("data-template-clone")){let o=this.findTemplate(t),n=o?this.templateLimit(o,"min")??1:1;if(o&&this.templateRowCount(o)<=n)return}let e=this.resolveTemplateGroup(t),r=t.parentElement,i=r?Array.prototype.indexOf.call(r.children,t):-1;t.remove(),this.refreshHMWCFormComponents(),this.updateData(),this.host.emit("hmwc-template-remove",{detail:{group:e,index:i}})}resolveTemplateGroup(t){let e=t.getAttribute("name");if(e)return e;let r=t.closest("[formGroup]");if(r){let i=r.getAttribute("name");if(i)return i}return null}removeTemplateRow(t){this.removeFromTemplate(t)}removeAllFromTemplates(){this.templates.forEach((t,e)=>{Array.from(e.children).forEach(r=>{r!==t&&r.hasAttribute("data-template-clone")&&r.remove()})}),this.refreshHMWCFormComponents(),this.updateData()}clearElementValues(t){if(this.FORM_COMPONENTS.includes(this.HMWCName(t))){let r=t;r.value="",r.checked=!1,r.removeAttribute("value"),r.removeAttribute("checked"),r.removeAttribute("invalid")}this.getFormComponentsInElement(t).forEach(r=>{r.value="",r.checked=!1,r.removeAttribute("value"),r.removeAttribute("checked"),r.removeAttribute("invalid")})}initializeTemplates(){this.templates.clear(),this.host.querySelectorAll("[formTemplate]").forEach(e=>{let r=e.parentElement;r&&this.templates.set(r,e)})}initializeAccordionGroups(){if(this.accordionGroups.clear(),!this.controls.some(r=>r.increment||r.decrement))return;this.host.querySelectorAll("hmwc-accordion-group").forEach(r=>{let i=r,o=Array.from(r.querySelectorAll("hmwc-accordion"));o.length!==0&&(o.forEach((n,l)=>{n.step===void 0&&(n.step=l+1)}),this.accordionGroups.set(i,o),this.steps=o.length,(this.step===void 0||this.step===0)&&(this.step=1),o.forEach(n=>{this.listenerMap.has(n)||(this.listenerMap.set(n,!0),n.addEventListener("hmwc-expand",()=>{if(n.step!==void 0){if(this.accordionStepLock&&n.step!==this.step){n.hide();return}if(n.step>this.step)for(let l=this.step;l<n.step;l++)this.updateAccordionErrorIndicator(l);this.changeStep(n.step)}}))}))}),this.accordionGroups.size>0&&this.updateAccordionStepUI()}guardStepperAccordionConflict(){this.warnedStepperAccordionConflict||this.stepper&&this.accordionGroups.size>0&&(console.warn("[FormController] Both <hmwc-stepper> and <hmwc-accordion-group> are wired to the same form container. Declare one or the other, never both. See FORM_BUTTON_BEHAVIORS \xA73.6."),this.warnedStepperAccordionConflict=!0)}getComponentsInAccordion(t){return this.components.filter(e=>e.hasAttribute("formGroup")||!this.FORM_COMPONENTS.includes(this.HMWCName(e))?!1:t.contains(e))}getOuterFormComponents(){return this.components.filter(t=>{if(t.hasAttribute("formGroup")||!this.FORM_COMPONENTS.includes(this.HMWCName(t)))return!1;for(let[e]of this.accordionGroups)if(e.contains(t))return!1;return!0})}validateStep(t){let e=this.getAccordionForStep(t);if(!e)return!0;let r=this.getComponentsInAccordion(e),i=!0;return r.forEach(o=>{o.checkValidity&&!o.checkValidity()&&(i=!1)}),i}getAccordionForStep(t){for(let[,e]of this.accordionGroups){let r=e.find(i=>i.step===t);if(r)return r}}isAccordionMultipleMode(){for(let[t]of this.accordionGroups)if(t.multiple)return!0;return!1}findNextInactiveStep(){for(let[,t]of this.accordionGroups){let e=[...t].sort((r,i)=>(r.step??0)-(i.step??0));for(let r of e)if(!r.active&&r.step!==void 0)return r.step}}updateAccordionErrorIndicator(t){let e=this.getAccordionForStep(t);if(!e)return;let r=this.validateStep(t),i=this.accordionErrorIndicators.get(e);if(!r&&!i){let o=document.createElement("hmwc-icon");o.setAttribute("src","exclamation-circle"),o.setAttribute("slot","controls"),o.setAttribute("tooltip","This step has validation errors"),o.setAttribute("style","color: var(--hmwc-color-danger-600); font-size: 1.1em;"),e.appendChild(o),this.accordionErrorIndicators.set(e,o)}else r&&i&&(i.remove(),this.accordionErrorIndicators.delete(e))}refreshAccordionErrorIndicators(){this.accordionGroups.forEach(t=>{t.forEach(e=>{e.step!==void 0&&this.updateAccordionErrorIndicator(e.step)})})}updateAccordionStepUI(){this.step!==void 0&&this.accordionGroups.forEach((t,e)=>{let r=e.multiple;t.forEach(i=>{i.step===this.step?(i.show(),i.disabled=!1):r?this.accordionStepLock&&i.step!==void 0&&i.step>this.step?i.disabled=!0:i.disabled=!1:(i.hide(),this.accordionStepLock&&i.step!==void 0&&i.step>this.step?i.disabled=!0:i.disabled=!1)})})}handleKeydown(t){if(t.key!=="Enter"||t.defaultPrevented||t.isComposing)return;let e=t.composedPath().filter(i=>i instanceof Element&&this.SUBMIT_ON_ENTER.includes(this.HMWCName(i))),r=e.find(i=>this.components.includes(i))??e[0];!r||r.textarea||this.submit(t)}updateData(){let t=this.getFormData();t&&(this.data=t)}HMWCName(t){return t?t.tagName.split("HMWC-")[1]?.toLowerCase()??"":""}updateButtonState(){let t=!0;if(this.accordionGroups.size>0){if(this.step!==void 0&&this.step>=this.steps){for(let r=1;r<=this.steps;r++)if(!this.validateStep(r)){t=!1;break}t&&this.getOuterFormComponents().forEach(r=>{r.checkValidity&&!r.checkValidity()&&(t=!1)})}else this.step!==void 0&&!this.validateStep(this.step)&&(t=!1);this.refreshAccordionErrorIndicators()}else this.components.forEach(e=>{e.hasAttribute("formGroup")||(this.stepComponents.length?e.step===this.step&&e.checkValidity&&!e.checkValidity()&&(t=!1):e.checkValidity&&!e.checkValidity()&&(t=!1))});t&&this.editing&&!this.isDirty()&&(t=!1),t?this.getControl()?.removeAttribute("disabled"):this.getControl()?.setAttribute("disabled","true"),this.actionControls.forEach(e=>e.refreshAutoDisable?.()),this.controls.forEach(e=>{if(!e.templateAdd&&!e.templateRemove)return;let r=e.hasAttribute(ni);if(e.hasAttribute("disabled")&&!r)return;let i=!this.canPerform(e.templateAdd?"add":"remove",e);e.toggleAttribute("disabled",i),e.toggleAttribute(ni,i)})}updateStepUI(){if(this.step===void 0)return;this.stepper&&(this.stepper.step=this.step),this.accordionGroups.size===0&&this.stepComponents.forEach(o=>{o.step===this.step?o.removeAttribute("hidden"):o.setAttribute("hidden","true")}),this.accordionGroups.size>0&&this.updateAccordionStepUI();let t=this.controls.find(o=>o.begin),e=this.controls.find(o=>o.increment),r=this.controls.find(o=>o.decrement),i=this.controls.find(o=>o.submit);this.accordionGroups.size>0?(t?.removeAttribute("hidden"),e?.removeAttribute("hidden"),r?.removeAttribute("hidden"),i?.removeAttribute("hidden"),t&&this.step===0?(t.removeAttribute("disabled"),e?.setAttribute("disabled","true"),r?.setAttribute("disabled","true"),i?.setAttribute("disabled","true")):this.step<this.steps?(t?.setAttribute("disabled","true"),e?.removeAttribute("disabled"),this.step===1?r?.setAttribute("disabled","true"):r?.removeAttribute("disabled"),i?.setAttribute("disabled","true")):this.step===this.steps&&(t?.setAttribute("disabled","true"),e?.setAttribute("disabled","true"),r?.removeAttribute("disabled"),i?.removeAttribute("disabled"))):t&&this.step===0?(t.removeAttribute("hidden"),e?.setAttribute("hidden","true"),r?.setAttribute("hidden","true"),i?.setAttribute("hidden","true")):this.step<this.steps?(t?.setAttribute("hidden","true"),e?.removeAttribute("hidden"),r?.removeAttribute("hidden"),i?.setAttribute("hidden","true")):this.step===this.steps&&(t?.setAttribute("hidden","true"),e?.setAttribute("hidden","true"),r?.removeAttribute("hidden"),i?.removeAttribute("hidden"))}getControl(){let t;return this.controls.forEach(e=>{this.step!==void 0&&this.step<this.steps?e.increment&&(t=e):e.submit&&(t=e)}),t}getHMWCFormComponents(){let t=[],e=[],r=[],i=[],o=n=>(n.forEach(l=>{let h=l,d=l;(l.hasAttribute("formGroup")||this.FORM_COMPONENTS.includes(this.HMWCName(l))&&!t.includes(h))&&t.push(h),this.HMWCName(l)==="button"&&((d.begin||d.submit||d.increment||d.decrement||d.templateAdd||d.templateRemove)&&!e.includes(d)&&e.push(d),d.action&&!r.includes(d)&&r.push(d)),h.step!==void 0&&(this.HMWCName(l)==="stepper"?this.stepper=l:this.HMWCName(l)!=="accordion"&&!i.includes(h)&&i.push(h));let g=l.querySelectorAll("*");g.length&&o(Array.from(g))}),{components:t,controls:e,actionControls:r,stepComponents:i});return o(Array.from(this.host.children))}addElementListeners(t){if(this.listenerMap.has(t))return;this.listenerMap.set(t,!0);let e=this.HMWCName(t),r=o=>{let n=o.target;if(n?.hasAttribute("formGroup"))return!1;if(!o.detail?.autoFocused)return!0;let l=n?.getAttribute("value");return!(o.detail?.autoFocused&&!l)},i=()=>{this.validateEl(t),this.updateData()};t.addEventListener("hmwc-input",i),e==="dropdown"?t.addEventListener("hmwc-change",i):(e==="combobox"&&t.addEventListener("hmwc-change",i),t.addEventListener("hmwc-blur",o=>r(o)&&this.validateEl(t)))}addControlListeners(t){if(this.listenerMap.has(t))return;this.listenerMap.set(t,!0);let e=t,r=i=>()=>{let o=Date.now(),n=this.lastActionTime.get(t)??0;this.cooldownMs>0&&o-n<this.cooldownMs||(this.lastActionTime.set(t,o),i())};e.begin?t.addEventListener("hmwc-click",r(()=>this.increment())):e.increment?t.addEventListener("hmwc-click",r(()=>this.increment())):e.decrement?t.addEventListener("hmwc-click",r(()=>this.decrement())):e.submit?t.addEventListener("hmwc-click",r(()=>this.submit())):e.templateAdd?t.addEventListener("hmwc-click",r(()=>this.handleTemplateAdd(t))):e.templateRemove&&t.addEventListener("hmwc-click",r(()=>this.handleTemplateRemove(t)))}handleTemplateAdd(t){if(!this.findTemplate(t)){console.warn("FormController: No template found for add button. Add formTemplate attribute to the element to clone.");return}this.addFromTemplate(t)}handleTemplateRemove(t){let e=this.findTemplateRow(t);e?this.removeFromTemplate(e):console.warn("FormController: Cannot determine which element to remove")}findTemplateRow(t){let e=t.parentElement;for(;e;){let i=e.parentElement;if(i?.hasAttribute("formGroup"))return e;e=i}let r=t.parentElement;return r&&r!==this.host?r:null}refreshHMWCFormComponents(){this.initializeTemplates();let{components:t,controls:e,actionControls:r,stepComponents:i}=this.getHMWCFormComponents();this.components=this.components.filter(o=>t.includes(o)),this.controls=this.controls.filter(o=>e.includes(o)),this.actionControls=this.actionControls.filter(o=>r.includes(o)),this.stepComponents=this.stepComponents.filter(o=>i.includes(o)),t.forEach(o=>{this.components.includes(o)||(this.components.push(o),this.addElementListeners(o))}),e.forEach(o=>{this.controls.includes(o)||(this.controls.push(o),this.addControlListeners(o))}),r.forEach(o=>{this.actionControls.includes(o)||this.actionControls.push(o)}),i.forEach(o=>{this.stepComponents.includes(o)||this.stepComponents.push(o)}),this.updateButtonState()}setupObserver(){if(this.observer)return;let t=e=>{let r=this.HMWCName(e),i=e;return this.FORM_COMPONENTS.includes(r)||r==="button"||e.hasAttribute("formGroup")||i.step!==void 0};this.observer=new MutationObserver(e=>{let r=!1;e.forEach(i=>{i.type==="childList"&&(i.addedNodes.forEach(o=>{if(o.nodeType===Node.ELEMENT_NODE){let n=o;t(n)&&(r=!0),n.querySelectorAll("*").forEach(h=>{t(h)&&(r=!0)})}}),i.removedNodes.forEach(o=>{if(o.nodeType===Node.ELEMENT_NODE){let n=o;t(n)&&(r=!0),n.querySelectorAll("*").forEach(h=>{t(h)&&(r=!0)})}}))}),r&&this.refreshHMWCFormComponents()}),this.observer.observe(this.host,{childList:!0,subtree:!0})}hostUpdated(){let t=this.host.getAttribute("form-cooldown");if(t!==null&&t!==""){let i=Number(t);this.cooldownMs=Number.isFinite(i)&&i>=0?i:s.ACTION_COOLDOWN_MS}else this.cooldownMs=s.ACTION_COOLDOWN_MS;if(this.refreshHMWCFormComponents(),this.stepComponents.length&&this.accordionGroups.size===0){let i=this.controls.find(o=>o.begin);this.step=i?0:1}if(this.initialized)return;this.initialized=!0;let e=this.root.querySelector("div");if(!e)return;let r=Object.assign(document.createElement("form"),{styleMap:new Map([["display","contents"]])});r.append(e),this.root.append(r),this.initializeTemplates(),this.initializeAccordionGroups(),this.guardStepperAccordionConflict(),this.updateStepUI(),this.host.addEventListener("keydown",this.boundKeydownHandler),this.setupObserver()}hostDisconnected(){this.observer&&(this.observer.disconnect(),this.observer=null),this.host.removeEventListener("keydown",this.boundKeydownHandler)}constructor(t){this.initialized=!1,this.binary=!1,this.FORM_COMPONENTS=["input","dropdown","checkbox","switch","radio-group","calendar","combobox"],this.SUBMIT_ON_ENTER=["input","combobox"],this.observer=null,this.listenerMap=new WeakMap,this.boundKeydownHandler=this.handleKeydown.bind(this),this.cooldownMs=s.ACTION_COOLDOWN_MS,this.lastActionTime=new WeakMap,this.warnedStepperAccordionConflict=!1,this.templates=new Map,this.accordionGroups=new Map,this.accordionStepLock=!1,this.accordionErrorIndicators=new WeakMap,this.editing=!1,this.snapshot=null,this.components=[],this.controls=[],this.actionControls=[],this.stepComponents=[],this.errors=[],this.data={},this.host=t,this.root=this.host.shadowRoot,this.step=this.host.step,this.steps=this.host.steps??1,t.addController(this)}};hr.ACTION_COOLDOWN_MS=500;var si=hr;var li=m`
+`;var Me=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o};function ji(s,e){let t=String(s??"").trim();if(!t)return null;if(e.getAttribute("type")==="date"||/^\d{1,4}[-/]\d{1,2}[-/]\d{1,4}$/.test(t)){let o=t.split(/[-/]/).map(Number),a=e.dateFormat??e.getAttribute("date-format")??"MM/DD/YYYY",l=t.split(/[-/]/)[0].length===4?["Y","M","D"]:a.split(/[-/]/).map(p=>p[0]),h=p=>o[l.indexOf(p)],d=new Date(h("Y"),h("M")-1,h("D")).getTime();if(!Number.isNaN(d))return{kind:"date",value:d}}let i=Number(t);return Number.isNaN(i)?{kind:"text",value:t}:{kind:"number",value:i}}var N=class extends g{static get styles(){let e=super.styles;return[...Array.isArray(e)?e:[e],Li]}static set styles(e){super.styles=e}get(){return this.toggleComponent?this.checked:this.value}set(e){this.toggleComponent?this.checked=!!e:this.value=e}get validity(){return{...this._validity}}_isEmpty(){return this.toggleComponent?!this.checked:!String(this.value??"").trim()}_focusableControl(){return this}_resolveError(){return this._validity.customError&&this._customError?this._customError:this._validity.valueMissing?"Please fill out this field.":this._validatorError?this._validatorError:"Invalid value."}validatorMessage(){return this._checkValidator().message}_checkValidator(){if(this.disabled)return{message:""};let e=this.get();for(let[t,r]of[[this.minField,"min"],[this.maxField,"max"]]){if(!t)continue;let i=this._findField(t),o=ji(e,this),a=i?ji(i.get?i.get():i.value,i):null;if(!o||!a||o.kind!==a.kind)continue;let l=String(i.value);if(r==="min"&&o.value<a.value)return{message:o.kind==="date"?`Must be on or after ${l}.`:`Must be ${l} or more.`,key:"rangeUnderflow"};if(r==="max"&&o.value>a.value)return{message:o.kind==="date"?`Must be on or before ${l}.`:`Must be ${l} or less.`,key:"rangeOverflow"}}if(!this.validator)return{message:""};try{let t=this.validator(e,this._formData())||"";return{message:t,key:t?"customError":void 0}}catch(t){return console.error("[hmwc] validator threw:",t),{message:""}}}_formData(){return this.closest("[form]")?.controllers?.form?.getFormData()??{}}_findField(e){let r=(this.closest("[form]")??this.getRootNode()).querySelector?.(`[name="${CSS.escape(e)}"]`);return r&&r!==this?r:null}_resetValidity(){this._validity={valid:!0,valueMissing:!1,tooShort:!1,tooLong:!1,patternMismatch:!1,rangeUnderflow:!1,rangeOverflow:!1,typeMismatch:!1,badInput:!1,customError:!1},this._validatorError=""}validate(){return this.reportValidity()}showValidity(){}checkValidity(){if(this._resetValidity(),this.disabled)return!0;if(this._customError!==null&&(this._validity.customError=!0),this.required&&this._isEmpty())this._validity.valueMissing=!0;else{let{message:e,key:t}=this._checkValidator();e&&t&&(this._validatorError=e,this._validity[t]=!0)}return this._validity.valid=!(this._validity.valueMissing||this._validity.tooShort||this._validity.tooLong||this._validity.patternMismatch||this._validity.rangeUnderflow||this._validity.rangeOverflow||this._validity.typeMismatch||this._validity.badInput||this._validity.customError),this._validity.valid}reportValidity(){let e=!!this.invalid;return this.checkValidity()?(e&&(this.invalid=!1,this.error=void 0,this._emitValid()),!0):(this.invalid=!0,this.error=this._resolveError(),this._focusableControl()?.focus(),this._emitInvalid(),!1)}setCustomError(e,t={}){this._customError=e,this._customErrorClearsOnInput=!!t.clearOnInput,this._validity.customError=!0,this._validity.valid=!1,this.invalid=!0,this.error=e,this._emitInvalid()}setCustomValidity(e){e?this.setCustomError(e):this.clearValidity()}clearValidity(){let e=!!this.invalid;this._customError=null,this._customErrorClearsOnInput=!1,this._resetValidity(),this.invalid=!1,this.error=void 0,e&&this._emitValid()}hideValidation(){}_clearCustomErrorOnInput(){this._customError!==null&&this._customErrorClearsOnInput&&this.clearValidity()}willUpdate(e){this._customError!==null&&(this.invalid=!0,this.error=this._customError),super.willUpdate(e)}_emitInvalid(){let e={field:this.name??this.id??"",value:this.toggleComponent?this.checked:this.value,error:this.error??"",validity:{...this._validity}};this.emit("hmwc-invalid",{detail:e})}_emitValid(){let e={field:this.name??this.id??"",value:this.toggleComponent?this.checked:this.value};this.emit("hmwc-valid",{detail:e})}_errorId(){return`${this.id||"hmwc-form"}-error`}_ariaInvalid(){return this.invalid?"true":"false"}_ariaErrorMessage(){if(this.invalid&&this.error)return this._errorId()}_renderError(){if(!this.invalid||!this.error)return x;let e=c`<hmwc-icon part="error-icon" class="hmwc-error__icon" src="exclamation-circle-fill" aria-hidden="true"></hmwc-icon>`;return c` <div part="error" class="hmwc-error" id=${this._errorId()} role="alert" aria-live="polite">${e}${this.error}</div> `}_renderRequiredIndicator(){return!this.required||!this.requiredIndicator?x:c`<span part="required-indicator" class="hmwc-required-indicator" aria-hidden="true">*</span>`}connectedCallback(){super.connectedCallback()}constructor(){super(),this.value="",this._validity={valid:!0,valueMissing:!1,tooShort:!1,tooLong:!1,patternMismatch:!1,rangeUnderflow:!1,rangeOverflow:!1,typeMismatch:!1,badInput:!1,customError:!1},this._customError=null,this._validatorError="",this._customErrorClearsOnInput=!1}};N.formComponent=!0;Me([n({type:String,reflect:!0})],N.prototype,"name",void 0);Me([n({type:String,reflect:!0})],N.prototype,"value",void 0);Me([n({type:Boolean,reflect:!0})],N.prototype,"checked",void 0);Me([n({type:Boolean,reflect:!0})],N.prototype,"required",void 0);Me([n({type:Boolean,reflect:!0,attribute:"required-indicator"})],N.prototype,"requiredIndicator",void 0);Me([n({type:Boolean,reflect:!0})],N.prototype,"disabled",void 0);Me([n({type:Boolean,reflect:!0})],N.prototype,"invalid",void 0);Me([n({type:String})],N.prototype,"error",void 0);Me([n({type:String})],N.prototype,"label",void 0);Me([n({type:String,reflect:!0,attribute:"label-pos"})],N.prototype,"labelPos",void 0);Me([n({type:Boolean,reflect:!0})],N.prototype,"sm",void 0);Me([n({type:Boolean,reflect:!0})],N.prototype,"md",void 0);Me([n({type:Boolean,reflect:!0})],N.prototype,"lg",void 0);Me([n({type:Boolean})],N.prototype,"autofocus",void 0);Me([n({type:String,reflect:!0,attribute:"min-field"})],N.prototype,"minField",void 0);Me([n({type:String,reflect:!0,attribute:"max-field"})],N.prototype,"maxField",void 0);Me([n({attribute:!1})],N.prototype,"validator",void 0);var Ui="data-auto-disabled",Rr=["checkbox","switch"];function ds(s){if(typeof s=="string"&&s)return s;let e=s?.message;return typeof e=="string"&&e?e:"Something went wrong. Please try again."}var Dr=class s{edit(e){this.setAll(e),this.editing=!0,this.accordionGroups.size>0&&this.accordionGroups.forEach(t=>{t.forEach(r=>r.hide())}),queueMicrotask(()=>{this.snapshot=this.getFormData()??null,this.updateButtonState()}),this.resetBaseline()}cancelEdit(){this.editing=!1,this.snapshot=null,this.updateButtonState(),this.host.emit("hmwc-cancel")}isDirty(){if(!this.editing||!this.snapshot)return!0;let e=this.getFormData();return e?JSON.stringify(e)!==JSON.stringify(this.snapshot):!1}set(e,t){let r=l=>this.components.find(h=>h.getAttribute("name")===l),i=r(e);if(!i)return;if(this.resetBaseline(),t==null||t===""){this.clearComponent(i);return}let o;try{o=JSON.parse(t)}catch{o=t}typeof o=="number"&&(o=t);let a=(l,h)=>{if(h&&typeof h=="object"&&!Array.isArray(h)&&l.hasAttribute("formGroup")&&Array.from(l.children).forEach(d=>{let p=d;if(!p.hasAttribute("name"))return;let m=p.getAttribute("name");m&&a(p,h[m])}),!this.FORM_COMPONENTS.includes(this.HMWCName(l))&&(typeof h!="object"||h===null)){this.getFormComponentsInElement(l).forEach(p=>a(p,h));return}if(this.FORM_COMPONENTS.includes(this.HMWCName(l))){if(h==null||h===""){this.clearComponent(l);return}Rr.includes(this.HMWCName(l))?h===!0||h==="true"||h===1||h==="1"?l.setAttribute("checked","true"):l.removeAttribute("checked"):Array.isArray(h)?l.value=[...h]:typeof h!="object"&&(this.HMWCName(l)==="input"&&l.getAttribute("type")==="date"&&(l.initialValueDateParsed=!1),l.setAttribute("value",String(h))),this.forgetError(l)}};if(i.hasAttribute("formGroup"))if(Array.isArray(o)){let l=Array.from(i.children).find(h=>h.formTemplate);l?(Array.from(i.children).forEach(h=>{!h.formTemplate&&this.HMWCName(h)!=="button"&&h.remove()}),o.length>0&&a(l,o[0]),o.length>1&&this.addFromTemplate(l,o.length-1).forEach((d,p)=>{a(d,o[p+1])})):Array.from(i.children).forEach((h,d)=>{a(h,o[d])})}else o&&typeof o=="object"&&Object.keys(o).forEach(l=>{let h=r(l);h&&a(h,o[l])});else a(i,o)}clearComponent(e){let t=this.HMWCName(e);if(!this.FORM_COMPONENTS.includes(t)){this.getFormComponentsInElement(e).forEach(r=>this.clearComponent(r));return}if(Rr.includes(t))e.checked=!1,e.removeAttribute("checked");else{let r=Array.isArray(e.value);e.removeAttribute("value"),e.value=r?[]:""}e.removeAttribute("invalid"),e.invalid=!1,this.forgetError(e)}forgetError(e){this.validatorErrors.delete(e),e.clearValidity?.()}setAll(e){let t={};Object.keys(e).forEach(r=>{t[r]=JSON.stringify(e[r])}),this.components.forEach(r=>{let i=r.name??r.id;i&&Object.keys(e).includes(i)&&this.set(i,t[i])}),this.resetBaseline()}validate(){let e=[];this.components.forEach(r=>{if(this.FORM_COMPONENTS.includes(this.HMWCName(r))&&r.checkValidity){if(this.fieldValid(r)){r.invalid=!1;return}this.reportField(r),e.push(r)}});let t=e.sort((r,i)=>r.compareDocumentPosition(i)&Node.DOCUMENT_POSITION_FOLLOWING?-1:1)[0];t&&(t.scrollIntoView({behavior:"smooth",block:"center",inline:"nearest"}),t.focus({preventScroll:!0})),e.length&&this.host.validationType==="alert"&&this.setError(`Please fix the ${e.length} highlighted field${e.length===1?"":"s"} and try again.`),this.updateButtonState()}validateEl(e){if(e?.checkValidity){let t=this.fieldValid(e);e.invalid=!t;let r=t||!e.checkValidity()?"":this.validatorMessageOf(e),i=this.validatorErrors.get(e);r?(e.error=r,this.validatorErrors.set(e,r)):i!==void 0&&(e.error===i&&(e.error=""),this.validatorErrors.delete(e))}this.updateButtonState()}fieldValid(e){return this.skipsField(e)?!0:e.checkValidity&&!e.checkValidity()?!1:!this.validatorMessageOf(e)}validatorMessageOf(e){return e.validatorMessage?.()??""}reportField(e){if(!e.checkValidity||!e.checkValidity()){e.reportValidity?.(),e.invalid=!0;return}let t=this.validatorMessageOf(e);e.invalid=!0,e.error=t,this.validatorErrors.set(e,t);let r=e.toggleComponent?e.checked:e.value;e.dispatchEvent(new CustomEvent("hmwc-invalid",{bubbles:!0,composed:!0,detail:{field:e.name??e.id??"",value:r,error:t,validity:{...e.validity,valid:!1,customError:!0}}}))}skipsField(e){if(this.host.hasAttribute("validate-hidden"))return!1;let t=e;for(;t&&t!==this.host;){if(t.hasAttribute("hidden")||t.hasAttribute("inert")||getComputedStyle(t).display==="none")return!0;t=t.parentElement}return!1}revalidateDependents(e){let t=e.name;t&&this.components.forEach(r=>{if(r===e||!this.FORM_COMPONENTS.includes(this.HMWCName(r)))return;let i=r.getAttribute("min-field")===t||r.getAttribute("max-field")===t,o=String(r.value??"").trim()!=="";(i&&o||r.invalid&&this.validatorErrors.has(r))&&this.validateEl(r)})}setError(e,t){if(t){let i=this.components.find(o=>o.getAttribute("name")===t);if(!i)return;i.setCustomError?i.setCustomError(e,{clearOnInput:!0}):(i.invalid=!0,i.error=e);return}let r=this.host.querySelector("hmwc-alert[form-error]");r||(r=document.createElement("hmwc-alert"),r.setAttribute("form-error",""),r.setAttribute("danger",""),r.setAttribute("icon","exclamation-octagon"),r.style.setProperty("flex-basis","100%"),r.style.setProperty("grid-column","1 / -1"),this.host.prepend(r)),r.setAttribute("label",e),r.label=e,r.removeAttribute("hidden"),r.setAttribute("active",""),r.active=!0}clearError(){let e=this.host.querySelector("hmwc-alert[form-error]");e&&(e.removeAttribute("active"),e.active=!1)}get dirty(){return this._dirty}setDirty(e){this._dirty=e,this.host.toggleAttribute("dirty",e),this.syncUnloadGuard()}updateDirty(){this.userEdited=!0,this.baseline!==null&&this.setDirty(JSON.stringify(this.getFormData()??{})!==this.baseline)}resetBaseline(){if(this.userEdited=!1,this.setDirty(!1),this.baselineQueued)return;this.baselineQueued=!0;let e=this.components.map(t=>t.updateComplete);Promise.all(e).then(()=>{this.baselineQueued=!1,this.baseline=JSON.stringify(this.getFormData()??{}),this.userEdited&&this.updateDirty()})}handleBeforeUnload(e){!this._dirty||!this.host.hasAttribute("guard-dirty")||(e.preventDefault(),e.returnValue="")}syncUnloadGuard(){this._dirty&&this.host.hasAttribute("guard-dirty")&&this.host.isConnected?window.addEventListener("beforeunload",this.boundBeforeUnload):window.removeEventListener("beforeunload",this.boundBeforeUnload)}clear(){this.editing=!1,this.snapshot=null,this.removeAllFromTemplates(),this.components.forEach(e=>{e.hasAttribute("formGroup")||this.clearComponent(e)}),this.clearError(),this.updateData(),this.resetBaseline(),this.host.emit("hmwc-reset")}submit(e){if(e&&e.key!=="Enter"||this.pending)return;let t=!0;if(this.accordionGroups.size>0){for(let p=1;p<=this.steps;p++)if(!this.validateStep(p)){t=!1;let m=this.getAccordionForStep(p);m&&this.getComponentsInAccordion(m).forEach(y=>{this.validateEl(y)}),this.updateAccordionErrorIndicator(p),this.changeStep(p);break}t&&this.getOuterFormComponents().forEach(p=>{this.fieldValid(p)||(t=!1,this.validateEl(p))})}else this.components.forEach(p=>{p.hasAttribute("formGroup")||(this.stepComponents.length?p.step===this.step&&(this.fieldValid(p)||(t=!1)):this.fieldValid(p)||(t=!1))});if(!t){this.validate();return}let r=this.getFormData(e);if(!r)return;this.clearError();let i=[],o=!0,a,l=new Promise(p=>a=p),h={data:r,settled:l,waitUntil:p=>{if(!o){console.warn("[FormController] waitUntil() must be called while hmwc-submit is dispatched, not after an await.");return}i.push(Promise.resolve(p))}};if(this.host.emit("submit",{detail:{value:r}}),this.host.emit("hmwc-submit",{detail:h}),o=!1,!i.length){try{this.submitSucceeded(!1)}finally{a(!0)}return r}this.setPending(!0),this.settling=l;let d=(p,m)=>{try{m()}catch(y){console.error("[FormController] finishing the submit failed:",y)}a(p)};return Promise.all(i).then(()=>d(!0,()=>{this.setPending(!1),this.submitSucceeded(!0)}),p=>d(!1,()=>{this.setPending(!1),this.setError(ds(p))})),l.then(()=>{this.settling===l&&(this.settling=null)}),r}submitSucceeded(e){this.editing=!1,this.snapshot=null;let t=this.host.getAttribute("success-message");t&&e?this.toast(t):t&&!this.warnedUnconfirmedToast&&(this.warnedUnconfirmedToast=!0,console.warn("[FormController] success-message is shown only after the promise passed to hmwc-submit detail.waitUntil() resolves.")),this.host.hasAttribute("reset-on-success")?this.clear():this.resetBaseline(),this.updateButtonState()}toast(e){let t=document.createElement("hmwc-alert");t.setAttribute("stack",""),t.setAttribute("success",""),t.setAttribute("dismissible",""),t.setAttribute("icon","check2-circle"),t.setAttribute("label",e),t.duration=5e3,(this.host.isConnected?this.host:document.body).append(t),t.updateComplete&&t.updateComplete.then(()=>t.show?.())}setPending(e){this.pending=e,this.host.toggleAttribute("pending",e),e?this.host.setAttribute("aria-busy","true"):this.host.removeAttribute("aria-busy"),e?this.submitButtons().forEach(t=>{this.pendingButtons.set(t,{loading:!!t.loading,disabled:!!t.disabled}),t.loading=!0,t.disabled=!0}):(this.pendingButtons.forEach((t,r)=>{r.loading=t.loading,r.disabled=t.disabled}),this.pendingButtons.clear()),this.updateButtonState()}submitButtons(){let e=[...this.controls,...this.actionControls,...this.linkedButtons()];return[...new Set(e)].filter(t=>t.action==="submit"||!t.action&&t.submit)}linkedButtons(){let e=this.host.id;if(!e||!this.host.isConnected)return[];let t=this.host.getRootNode();return Array.from(t.querySelectorAll(`hmwc-button[for="${CSS.escape(e)}"]`))}changeStep(e){let t=this.step??0;this.step=e,this.updateStepUI(),this.updateButtonState(),this.host.emit("hmwc-change",{detail:{value:this.getFormData()}}),this.host.emit("hmwc-step",{detail:{from:t,to:e}})}increment(){if(this.step!==void 0&&this.step<this.steps){if(this.accordionGroups.size>0){if(this.isAccordionMultipleMode()){let t=!0;if(this.accordionGroups.forEach(i=>{i.forEach(o=>{o.active&&o.step!==void 0&&(this.validateStep(o.step)||(t=!1,this.getComponentsInAccordion(o).forEach(a=>{this.validateEl(a)}),this.updateAccordionErrorIndicator(o.step)))})}),!t)return;let r=this.findNextInactiveStep();r!==void 0&&this.changeStep(r);return}if(!this.validateStep(this.step)){let t=this.getAccordionForStep(this.step);t&&this.getComponentsInAccordion(t).forEach(r=>{this.validateEl(r)}),this.updateAccordionErrorIndicator(this.step);return}}this.changeStep(this.step+1)}}decrement(){if(this.step===void 0)return;let e=this.accordionGroups.size>0?1:0;this.step>e&&this.changeStep(this.step-1)}canPerform(e,t){switch(e){case"submit":return!(this.pending||this.editing&&!this.isDirty());case"reset":return!(!this.data||Object.keys(this.data).length===0);case"cancel":return!0;case"next":return this.step===void 0?!1:this.step<this.steps;case"previous":{if(this.step===void 0)return!1;let r=this.accordionGroups.size>0?1:0;return this.step>r}case"add":{if(!t)return this.templates.size>0;let r=this.findTemplate(t);if(!r)return!1;let i=this.templateLimit(r,"max");return i===void 0||this.templateRowCount(r)<i}case"remove":{if(!t)return this.templates.size>0;let r=this.findTemplateRow(t);if(!r||r.formTemplate)return!1;let i=this.findTemplate(r);if(!i)return!0;let o=this.templateLimit(i,"min")??1;return this.templateRowCount(i)>o}default:return!1}}templateLimit(e,t){let r=e.parentElement?.getAttribute(`template-${t}`);if(r==null||r==="")return;let i=Number(r);return Number.isInteger(i)&&i>=1?i:void 0}templateRowCount(e){let t=e.parentElement;return t?1+Array.from(t.children).filter(r=>r.hasAttribute("data-template-clone")).length:1}async perform(e,t){if(!this.canPerform(e,t))return!1;if(t&&this.cooldownMs>0){let i=this.lastActionTime.get(t)??0;if(Date.now()-i<this.cooldownMs)return!1}let r=()=>t&&this.lastActionTime.set(t,Date.now());switch(e){case"submit":return this.submit()?(r(),this.settling??!0):!1;case"reset":return r(),this.clear(),!0;case"cancel":return r(),this.editing?this.cancelEdit():this.host.emit("hmwc-cancel"),!0;case"next":return r(),this.increment(),!0;case"previous":return r(),this.decrement(),!0;case"add":return t?(r(),this.handleTemplateAdd(t),!0):(console.warn('FormController.perform("add"): a source element is required.'),!1);case"remove":return t?(r(),this.handleTemplateRemove(t),!0):(console.warn('FormController.perform("remove"): a source element is required.'),!1);default:return!1}}getFormData(e){if(e&&e?.key!=="Enter"||e&&!this.SUBMIT_ON_ENTER.includes(this.HMWCName(document.activeElement||void 0)))return;e&&e.preventDefault();let t={},r=new Set;return this.components.forEach(i=>{if(i.hasAttribute("formGroup")){if(r.has(i)||this.findFormGroup(i))return;r.add(i);let l=i.name;l&&(t[l]=this.collectGroupData(i));return}if(!this.FORM_COMPONENTS.includes(this.HMWCName(i)))return;let o=this.findFormGroup(i);if(o){if(r.has(o))return;if(this.findFormGroup(o)){r.add(o);return}r.add(o);let l=this.collectGroupData(o),h=o.name;h&&(t[h]=l)}else{if(!i.name)return;let a=this.getComponentValue(i);if(this.submitsToggleValue(i)){if(this.components.filter(h=>h.name===i.name&&this.submitsToggleValue(h)).length>1){let h=Array.isArray(t[i.name])?t[i.name]:[];a!==void 0&&h.push(a),t[i.name]=h}else a!==void 0&&(t[i.name]=a);return}if(Object.keys(t).includes(i.name)){let l=t[i.name];t[i.name]=[...Array.isArray(l)?l:[l],a]}else t[i.name]=a}}),t}submitsToggleValue(e){if(!this.host.hasAttribute("checkbox-values")||!Rr.includes(this.HMWCName(e)))return!1;let t=e.value;return t!=null&&String(t)!==""}findFormGroup(e){let t=e.parentElement;for(;t&&t!==this.host;){if(t.hasAttribute("formGroup"))return t;t=t.parentElement}return null}getComponentValue(e){if(Rr.includes(this.HMWCName(e)))return this.submitsToggleValue(e)?e.checked?String(e.value):void 0:this.binary?e.checked?1:0:e.checked;if(Array.isArray(e.value))return[...e.value];let t=String(e.value??"");if(this.HMWCName(e)==="input"&&e.getAttribute("type")==="number"){if(t==="")return;let r=Number(t);return isNaN(r)?t:r}if(!(this.HMWCName(e)==="input"&&e.getAttribute("type")==="date"&&t===""))return t}collectGroupData(e){let t=Array.from(e.children);return this.shouldCollectAsArray(t)?t.map(i=>this.collectRowData(i)).filter(i=>!(i==null||typeof i=="object"&&!Array.isArray(i)&&Object.keys(i).length===0)):this.collectObjectData(e)}shouldCollectAsArray(e){if(e.length===0)return!1;let t=e[0];return this.FORM_COMPONENTS.includes(this.HMWCName(t))&&t.name?!1:this.FORM_COMPONENTS.includes(this.HMWCName(t))?e.every(o=>!o.name):!0}collectRowData(e){let t={};return this.FORM_COMPONENTS.includes(this.HMWCName(e))?this.getComponentValue(e):(this.getFormComponentsInElement(e).forEach(i=>{i.name&&(t[i.name]=this.getComponentValue(i))}),this.collectNestedFormGroups(e,t),t)}collectObjectData(e){let t={};return this.getFormComponentsInElement(e).forEach(i=>{i.name&&(t[i.name]=this.getComponentValue(i))}),this.collectNestedFormGroups(e,t),t}collectNestedFormGroups(e,t){let r=i=>{Array.from(i.children).forEach(o=>{if(o.hasAttribute("formGroup")){let a=o.name;a&&(t[a]=this.collectGroupData(o))}else this.FORM_COMPONENTS.includes(this.HMWCName(o))||r(o)})};r(e)}getFormComponentsInElement(e){let t=[],r=i=>{Array.from(i.children).forEach(o=>{o.hasAttribute("formGroup")||(this.FORM_COMPONENTS.includes(this.HMWCName(o))?t.push(o):r(o))})};return r(e),t}addFromTemplate(e,t=1,r=!1){let i=this.findTemplate(e);if(!i)return console.warn("FormController: No formTemplate found"),[];let o=i.parentElement;if(!o)return[];let a=this.templateLimit(i,"max");a!==void 0&&(t=Math.min(t,a-this.templateRowCount(i)));let l=[];for(let d=0;d<t;d++){let p=i.cloneNode(!0);p.removeAttribute("formTemplate"),p.formTemplate=!1,p.setAttribute("data-template-clone",""),p.style.display="",p.removeAttribute("hidden"),r||this.clearElementValues(p);let m=o.lastElementChild;m&&this.HMWCName(m)==="button"?o.insertBefore(p,m):o.appendChild(p),l.push(p)}this.refreshHMWCFormComponents(),this.updateData();let h=this.resolveTemplateGroup(i);return l.forEach(d=>{let p=d.parentElement,m=p?Array.prototype.indexOf.call(p.children,d):-1;this.host.emit("hmwc-template-add",{detail:{group:h,index:m}})}),l}addTemplateRow(e){let t=this.addFromTemplate(e);return t.length>0?t[0]:null}findTemplate(e){let t=e.parentElement;if(t){let o=Array.from(t.children).find(a=>a.formTemplate);if(o)return o}let r=e.closest("[formGroup]");if(r){let o=r.querySelector("[formTemplate]");if(o)return o}let i=t;for(;i&&i!==this.host;){let o=Array.from(i.children).find(a=>a.formTemplate);if(o)return o;i=i.parentElement}return null}removeFromTemplate(e){if(e.formTemplate){console.warn("FormController: Cannot remove a formTemplate element");return}if(e.hasAttribute("data-template-clone")){let o=this.findTemplate(e),a=o?this.templateLimit(o,"min")??1:1;if(o&&this.templateRowCount(o)<=a)return}let t=this.resolveTemplateGroup(e),r=e.parentElement,i=r?Array.prototype.indexOf.call(r.children,e):-1;e.remove(),this.refreshHMWCFormComponents(),this.updateData(),this.host.emit("hmwc-template-remove",{detail:{group:t,index:i}})}resolveTemplateGroup(e){let t=e.getAttribute("name");if(t)return t;let r=e.closest("[formGroup]");if(r){let i=r.getAttribute("name");if(i)return i}return null}removeTemplateRow(e){this.removeFromTemplate(e)}removeAllFromTemplates(){this.templates.forEach((e,t)=>{Array.from(t.children).forEach(r=>{r!==e&&r.hasAttribute("data-template-clone")&&r.remove()})}),this.refreshHMWCFormComponents(),this.updateData()}clearElementValues(e){if(this.FORM_COMPONENTS.includes(this.HMWCName(e))){let r=e;r.value="",r.checked=!1,r.removeAttribute("value"),r.removeAttribute("checked"),r.removeAttribute("invalid")}this.getFormComponentsInElement(e).forEach(r=>{r.value="",r.checked=!1,r.removeAttribute("value"),r.removeAttribute("checked"),r.removeAttribute("invalid")})}initializeTemplates(){this.templates.clear(),this.host.querySelectorAll("[formTemplate]").forEach(t=>{let r=t.parentElement;r&&this.templates.set(r,t)})}initializeAccordionGroups(){if(this.accordionGroups.clear(),!this.controls.some(r=>r.increment||r.decrement))return;this.host.querySelectorAll("hmwc-accordion-group").forEach(r=>{let i=r,o=Array.from(r.querySelectorAll("hmwc-accordion"));o.length!==0&&(o.forEach((a,l)=>{a.step===void 0&&(a.step=l+1)}),this.accordionGroups.set(i,o),this.steps=o.length,(this.step===void 0||this.step===0)&&(this.step=1),o.forEach(a=>{this.listenerMap.has(a)||(this.listenerMap.set(a,!0),a.addEventListener("hmwc-expand",()=>{if(a.step!==void 0){if(this.accordionStepLock&&a.step!==this.step){a.hide();return}if(a.step>this.step)for(let l=this.step;l<a.step;l++)this.updateAccordionErrorIndicator(l);this.changeStep(a.step)}}))}))}),this.accordionGroups.size>0&&this.updateAccordionStepUI()}guardStepperAccordionConflict(){this.warnedStepperAccordionConflict||this.stepper&&this.accordionGroups.size>0&&(console.warn("[FormController] Both <hmwc-stepper> and <hmwc-accordion-group> are wired to the same form container. Declare one or the other, never both. See FORM_BUTTON_BEHAVIORS \xA73.6."),this.warnedStepperAccordionConflict=!0)}getComponentsInAccordion(e){return this.components.filter(t=>t.hasAttribute("formGroup")||!this.FORM_COMPONENTS.includes(this.HMWCName(t))?!1:e.contains(t))}getOuterFormComponents(){return this.components.filter(e=>{if(e.hasAttribute("formGroup")||!this.FORM_COMPONENTS.includes(this.HMWCName(e)))return!1;for(let[t]of this.accordionGroups)if(t.contains(e))return!1;return!0})}validateStep(e){let t=this.getAccordionForStep(e);if(!t)return!0;let r=this.getComponentsInAccordion(t),i=!0;return r.forEach(o=>{this.fieldValid(o)||(i=!1)}),i}getAccordionForStep(e){for(let[,t]of this.accordionGroups){let r=t.find(i=>i.step===e);if(r)return r}}isAccordionMultipleMode(){for(let[e]of this.accordionGroups)if(e.multiple)return!0;return!1}findNextInactiveStep(){for(let[,e]of this.accordionGroups){let t=[...e].sort((r,i)=>(r.step??0)-(i.step??0));for(let r of t)if(!r.active&&r.step!==void 0)return r.step}}updateAccordionErrorIndicator(e){let t=this.getAccordionForStep(e);if(!t)return;let r=this.validateStep(e),i=this.accordionErrorIndicators.get(t);if(!r&&!i){let o=document.createElement("hmwc-icon");o.setAttribute("src","exclamation-circle"),o.setAttribute("slot","controls"),o.setAttribute("tooltip","This step has validation errors"),o.setAttribute("style","color: var(--hmwc-color-danger-600); font-size: 1.1em;"),t.appendChild(o),this.accordionErrorIndicators.set(t,o)}else r&&i&&(i.remove(),this.accordionErrorIndicators.delete(t))}refreshAccordionErrorIndicators(){this.accordionGroups.forEach(e=>{e.forEach(t=>{t.step!==void 0&&this.updateAccordionErrorIndicator(t.step)})})}updateAccordionStepUI(){this.step!==void 0&&this.accordionGroups.forEach((e,t)=>{let r=t.multiple;e.forEach(i=>{i.step===this.step?(i.show(),i.disabled=!1):r?this.accordionStepLock&&i.step!==void 0&&i.step>this.step?i.disabled=!0:i.disabled=!1:(i.hide(),this.accordionStepLock&&i.step!==void 0&&i.step>this.step?i.disabled=!0:i.disabled=!1)})})}handleKeydown(e){if(e.key!=="Enter"||e.defaultPrevented||e.isComposing)return;let t=e.composedPath().filter(i=>i instanceof Element&&this.SUBMIT_ON_ENTER.includes(this.HMWCName(i))),r=t.find(i=>this.components.includes(i))??t[0];!r||r.textarea||this.submit(e)}updateData(){let e=this.getFormData();e&&(this.data=e)}HMWCName(e){return e?e.tagName.split("HMWC-")[1]?.toLowerCase()??"":""}updateButtonState(){let e=!0;if(this.accordionGroups.size>0){if(this.step!==void 0&&this.step>=this.steps){for(let r=1;r<=this.steps;r++)if(!this.validateStep(r)){e=!1;break}e&&this.getOuterFormComponents().forEach(r=>{this.fieldValid(r)||(e=!1)})}else this.step!==void 0&&!this.validateStep(this.step)&&(e=!1);this.refreshAccordionErrorIndicators()}else this.components.forEach(t=>{t.hasAttribute("formGroup")||(this.stepComponents.length?t.step===this.step&&(this.fieldValid(t)||(e=!1)):this.fieldValid(t)||(e=!1))});e&&this.editing&&!this.isDirty()&&(e=!1),this.pending&&(e=!1),e?this.getControl()?.removeAttribute("disabled"):this.getControl()?.setAttribute("disabled","true"),new Set([...this.actionControls,...this.linkedButtons()]).forEach(t=>t.refreshAutoDisable?.()),this.controls.forEach(t=>{if(!t.templateAdd&&!t.templateRemove)return;let r=t.hasAttribute(Ui);if(t.hasAttribute("disabled")&&!r)return;let i=!this.canPerform(t.templateAdd?"add":"remove",t);t.toggleAttribute("disabled",i),t.toggleAttribute(Ui,i)})}updateStepUI(){if(this.step===void 0)return;this.stepper&&(this.stepper.step=this.step),this.accordionGroups.size===0&&this.stepComponents.forEach(o=>{o.step===this.step?o.removeAttribute("hidden"):o.setAttribute("hidden","true")}),this.accordionGroups.size>0&&this.updateAccordionStepUI();let e=this.controls.find(o=>o.begin),t=this.controls.find(o=>o.increment),r=this.controls.find(o=>o.decrement),i=this.controls.find(o=>o.submit);this.accordionGroups.size>0?(e?.removeAttribute("hidden"),t?.removeAttribute("hidden"),r?.removeAttribute("hidden"),i?.removeAttribute("hidden"),e&&this.step===0?(e.removeAttribute("disabled"),t?.setAttribute("disabled","true"),r?.setAttribute("disabled","true"),i?.setAttribute("disabled","true")):this.step<this.steps?(e?.setAttribute("disabled","true"),t?.removeAttribute("disabled"),this.step===1?r?.setAttribute("disabled","true"):r?.removeAttribute("disabled"),i?.setAttribute("disabled","true")):this.step===this.steps&&(e?.setAttribute("disabled","true"),t?.setAttribute("disabled","true"),r?.removeAttribute("disabled"),i?.removeAttribute("disabled"))):e&&this.step===0?(e.removeAttribute("hidden"),t?.setAttribute("hidden","true"),r?.setAttribute("hidden","true"),i?.setAttribute("hidden","true")):this.step<this.steps?(e?.setAttribute("hidden","true"),t?.removeAttribute("hidden"),r?.removeAttribute("hidden"),i?.setAttribute("hidden","true")):this.step===this.steps&&(e?.setAttribute("hidden","true"),t?.setAttribute("hidden","true"),r?.removeAttribute("hidden"),i?.removeAttribute("hidden"))}getControl(){let e;return this.controls.forEach(t=>{this.step!==void 0&&this.step<this.steps?t.increment&&(e=t):t.submit&&(e=t)}),e}getHMWCFormComponents(){let e=[],t=[],r=[],i=[],o=a=>(a.forEach(l=>{let h=l,d=l;(l.hasAttribute("formGroup")||this.FORM_COMPONENTS.includes(this.HMWCName(l))&&!this.inFieldGroup(l)&&!e.includes(h))&&e.push(h),this.HMWCName(l)==="button"&&((d.begin||d.submit||d.increment||d.decrement||d.templateAdd||d.templateRemove)&&!t.includes(d)&&t.push(d),d.action&&!r.includes(d)&&r.push(d)),h.step!==void 0&&(this.HMWCName(l)==="stepper"?this.stepper=l:this.HMWCName(l)!=="accordion"&&!i.includes(h)&&i.push(h));let p=l.querySelectorAll("*");p.length&&o(Array.from(p))}),{components:e,controls:t,actionControls:r,stepComponents:i});return o(Array.from(this.host.children))}inFieldGroup(e){let t=e.parentElement;for(;t&&t!==this.host;){if(this.FIELD_GROUPS.includes(this.HMWCName(t)))return!0;t=t.parentElement}return!1}addElementListeners(e){if(this.listenerMap.has(e))return;this.listenerMap.set(e,!0);let t=this.HMWCName(e),r=o=>{let a=o.target;if(a?.hasAttribute("formGroup"))return!1;if(!o.detail?.autoFocused)return!0;let l=a?.getAttribute("value");return!(o.detail?.autoFocused&&!l)},i=()=>{this.validateEl(e),this.revalidateDependents(e),this.updateData(),this.updateDirty()};e.addEventListener("hmwc-input",i),t==="dropdown"?e.addEventListener("hmwc-change",i):(t!=="input"&&e.addEventListener("hmwc-change",i),e.addEventListener("hmwc-blur",o=>r(o)&&this.validateEl(e)))}addControlListeners(e){if(this.listenerMap.has(e))return;this.listenerMap.set(e,!0);let t=e,r=i=>()=>{let o=Date.now(),a=this.lastActionTime.get(e)??0;this.cooldownMs>0&&o-a<this.cooldownMs||i()!==!1&&this.lastActionTime.set(e,o)};t.begin?e.addEventListener("hmwc-click",r(()=>this.increment())):t.increment?e.addEventListener("hmwc-click",r(()=>this.increment())):t.decrement?e.addEventListener("hmwc-click",r(()=>this.decrement())):t.submit?e.addEventListener("hmwc-click",r(()=>!!this.submit())):t.templateAdd?e.addEventListener("hmwc-click",r(()=>this.handleTemplateAdd(e))):t.templateRemove&&e.addEventListener("hmwc-click",r(()=>this.handleTemplateRemove(e)))}handleTemplateAdd(e){if(!this.findTemplate(e)){console.warn("FormController: No template found for add button. Add formTemplate attribute to the element to clone.");return}this.addFromTemplate(e)}handleTemplateRemove(e){let t=this.findTemplateRow(e);t?this.removeFromTemplate(t):console.warn("FormController: Cannot determine which element to remove")}findTemplateRow(e){let t=e.parentElement;for(;t;){let i=t.parentElement;if(i?.hasAttribute("formGroup"))return t;t=i}let r=e.parentElement;return r&&r!==this.host?r:null}refreshHMWCFormComponents(){this.initializeTemplates();let{components:e,controls:t,actionControls:r,stepComponents:i}=this.getHMWCFormComponents();this.components=this.components.filter(a=>e.includes(a)),this.controls=this.controls.filter(a=>t.includes(a)),this.actionControls=this.actionControls.filter(a=>r.includes(a)),this.stepComponents=this.stepComponents.filter(a=>i.includes(a));let o=!1;e.forEach(a=>{this.components.includes(a)||(this.components.push(a),this.addElementListeners(a),o=!0)}),o&&!this.userEdited&&this.resetBaseline(),t.forEach(a=>{this.controls.includes(a)||(this.controls.push(a),this.addControlListeners(a))}),r.forEach(a=>{this.actionControls.includes(a)||this.actionControls.push(a)}),i.forEach(a=>{this.stepComponents.includes(a)||this.stepComponents.push(a)}),this.updateButtonState()}setupObserver(){if(this.observer)return;let e=t=>{let r=this.HMWCName(t),i=t;return this.FORM_COMPONENTS.includes(r)||r==="button"||t.hasAttribute("formGroup")||i.step!==void 0};this.observer=new MutationObserver(t=>{let r=!1;t.forEach(i=>{i.type==="childList"&&(i.addedNodes.forEach(o=>{if(o.nodeType===Node.ELEMENT_NODE){let a=o;e(a)&&(r=!0),a.querySelectorAll("*").forEach(h=>{e(h)&&(r=!0)})}}),i.removedNodes.forEach(o=>{if(o.nodeType===Node.ELEMENT_NODE){let a=o;e(a)&&(r=!0),a.querySelectorAll("*").forEach(h=>{e(h)&&(r=!0)})}}))}),r&&this.refreshHMWCFormComponents()}),this.observer.observe(this.host,{childList:!0,subtree:!0})}hostUpdated(){let e=this.host.getAttribute("form-cooldown");if(e!==null&&e!==""){let r=Number(e);this.cooldownMs=Number.isFinite(r)&&r>=0?r:s.ACTION_COOLDOWN_MS}else this.cooldownMs=s.ACTION_COOLDOWN_MS;if(this.refreshHMWCFormComponents(),this.syncUnloadGuard(),!this.stepInitialized&&this.stepComponents.length&&this.accordionGroups.size===0){this.stepInitialized=!0;let r=this.controls.find(i=>i.begin);this.step=r?0:1}if(this.initialized)return;this.initialized=!0;let t=this.root.querySelector("div");if(t){if(!(t.parentNode instanceof HTMLFormElement)){let r=Object.assign(document.createElement("form"),{styleMap:new Map([["display","contents"]])});r.append(t),this.root.append(r)}this.initializeTemplates(),this.initializeAccordionGroups(),this.guardStepperAccordionConflict(),this.updateStepUI(),this.host.addEventListener("keydown",this.boundKeydownHandler),this.setupObserver(),this.resetBaseline()}}hostConnected(){this.refreshHMWCFormComponents(),this.setupObserver(),this.host.addEventListener("keydown",this.boundKeydownHandler),this.syncUnloadGuard()}hostDisconnected(){this.observer&&(this.observer.disconnect(),this.observer=null),this.host.removeEventListener("keydown",this.boundKeydownHandler),window.removeEventListener("beforeunload",this.boundBeforeUnload)}constructor(e){this.initialized=!1,this.warnedUnconfirmedToast=!1,this.stepInitialized=!1,this.binary=!1,this.FORM_COMPONENTS=["input","dropdown","checkbox","switch","radio-group","checkbox-group","calendar","combobox"],this.FIELD_GROUPS=["checkbox-group","radio-group"],this.SUBMIT_ON_ENTER=["input","combobox"],this.observer=null,this.listenerMap=new WeakMap,this.boundKeydownHandler=this.handleKeydown.bind(this),this.boundBeforeUnload=this.handleBeforeUnload.bind(this),this.pending=!1,this.settling=null,this.pendingButtons=new Map,this.validatorErrors=new WeakMap,this.baseline=null,this.baselineQueued=!1,this.userEdited=!1,this._dirty=!1,this.cooldownMs=s.ACTION_COOLDOWN_MS,this.lastActionTime=new WeakMap,this.warnedStepperAccordionConflict=!1,this.templates=new Map,this.accordionGroups=new Map,this.accordionStepLock=!1,this.accordionErrorIndicators=new WeakMap,this.editing=!1,this.snapshot=null,this.components=[],this.controls=[],this.actionControls=[],this.stepComponents=[],this.errors=[],this.data={},this.host=e,this.root=this.host.shadowRoot,this.step=this.host.step,this.steps=this.host.steps??1,e.addController(this)}};Dr.ACTION_COOLDOWN_MS=500;var Hi=Dr;var qi=f`
+  ${pt}
+
   :host {
     --container-alignment: none;
     --container-justification: none;
@@ -379,12 +432,32 @@
   :host([elevation='5']) {
     --container-shadow: var(--hmwc-shadow-2x-large);
   }
-`;var Mt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},I=class extends u{connectedCallback(){super.connectedCallback(),this.form&&(this.controllers.form=new si(this)),this.img&&this.style.setProperty("--image-url",`url(${this.img})`),this.label&&this.controllers.slot.insert(Object.assign(document.createElement("slot"),{name:"label",part:"label",innerHTML:this.label})),this.validationType==="alert"&&this.controllers.slot.prepend(Object.assign(document.createElement("hmwc-alert"),{label:`Submission failed with ${this.controllers.form?.errors.length} error(s).`,message:"Please fix all errors and try again.",danger:!0,open:!!this.controllers.form?.errors.length}))}disconnectedCallback(){super.disconnectedCallback(),delete this.controllers.form}constructor(){super(),this.validationType="outline"}};I.styles=li;Mt([a({type:String})],I.prototype,"label",void 0);Mt([a({type:Boolean,reflect:!0})],I.prototype,"fluid",void 0);Mt([a({type:Boolean,reflect:!0})],I.prototype,"scrollable",void 0);Mt([a({type:Boolean,reflect:!0})],I.prototype,"center",void 0);Mt([a({type:String,reflect:!0})],I.prototype,"align",void 0);Mt([a({type:String,reflect:!0})],I.prototype,"justify",void 0);Mt([a({type:String,reflect:!0})],I.prototype,"gap",void 0);Mt([a({type:String,reflect:!0})],I.prototype,"pad",void 0);Mt([a({type:String,reflect:!0})],I.prototype,"round",void 0);Mt([a({type:Number,reflect:!0})],I.prototype,"elevation",void 0);Mt([a({type:String,reflect:!0})],I.prototype,"img",void 0);Mt([a({type:Boolean,reflect:!0})],I.prototype,"square",void 0);Mt([a({type:Boolean,reflect:!0})],I.prototype,"form",void 0);Mt([a({type:Number})],I.prototype,"steps",void 0);Mt([a({type:String})],I.prototype,"validationType",void 0);var oe={ATTRIBUTE:1,CHILD:2,PROPERTY:3,BOOLEAN_ATTRIBUTE:4,EVENT:5,ELEMENT:6},Be=s=>(...t)=>({_$litDirective$:s,values:t}),ge=class{constructor(t){}get _$AU(){return this._$AM._$AU}_$AT(t,e,r){this._$Ct=t,this._$AM=e,this._$Ci=r}_$AS(t,e){return this.update(t,e)}update(t,e){return this.render(...e)}};var f=Be(class extends ge{constructor(s){if(super(s),s.type!==oe.ATTRIBUTE||s.name!=="class"||s.strings?.length>2)throw Error("`classMap()` can only be used in the `class` attribute and must be the only part in the attribute.")}render(s){return" "+Object.keys(s).filter(t=>s[t]).join(" ")+" "}update(s,[t]){if(this.st===void 0){this.st=new Set,s.strings!==void 0&&(this.nt=new Set(s.strings.join(" ").split(/\s/).filter(r=>r!=="")));for(let r in t)t[r]&&!this.nt?.has(r)&&this.st.add(r);return this.render(t)}let e=s.element.classList;for(let r of this.st)r in t||(e.remove(r),this.st.delete(r));for(let r in t){let i=!!t[r];i===this.st.has(r)||this.nt?.has(r)||(i?(e.add(r),this.st.add(r)):(e.remove(r),this.st.delete(r)))}return At}});var w=s=>s??A;var ci=m`
+`;var ke=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},L=class extends g{get pending(){return this.hasAttribute("pending")}get dirty(){return this.hasAttribute("dirty")}connectedCallback(){super.connectedCallback(),this.form&&(this.controllers.form??=new Hi(this)),this.img&&this.style.setProperty("--image-url",`url(${this.img})`),this.label&&!this.hasUpdated&&this.controllers.slot.insert(Object.assign(document.createElement("slot"),{name:"label",part:"label",innerHTML:this.label}))}constructor(){super(),this.validationType="outline"}};L.styles=qi;ke([n({type:String})],L.prototype,"label",void 0);ke([n({type:Boolean,reflect:!0})],L.prototype,"fluid",void 0);ke([n({type:Boolean,reflect:!0})],L.prototype,"scrollable",void 0);ke([n({type:Boolean,reflect:!0})],L.prototype,"center",void 0);ke([n({type:String,reflect:!0})],L.prototype,"align",void 0);ke([n({type:String,reflect:!0})],L.prototype,"justify",void 0);ke([n({type:String,reflect:!0})],L.prototype,"gap",void 0);ke([n({type:String,reflect:!0})],L.prototype,"pad",void 0);ke([n({type:String,reflect:!0})],L.prototype,"round",void 0);ke([n({type:Number,reflect:!0})],L.prototype,"elevation",void 0);ke([n({type:String,reflect:!0})],L.prototype,"img",void 0);ke([n({type:Boolean,reflect:!0})],L.prototype,"square",void 0);ke([n({type:Boolean,reflect:!0})],L.prototype,"form",void 0);ke([n({type:Number})],L.prototype,"steps",void 0);ke([n({type:String})],L.prototype,"validationType",void 0);ke([n({type:Boolean,reflect:!0,attribute:"validate-hidden"})],L.prototype,"validateHidden",void 0);ke([n({type:String,reflect:!0,attribute:"success-message"})],L.prototype,"successMessage",void 0);ke([n({type:Boolean,reflect:!0,attribute:"reset-on-success"})],L.prototype,"resetOnSuccess",void 0);ke([n({type:Boolean,reflect:!0,attribute:"guard-dirty"})],L.prototype,"guardDirty",void 0);ke([n({type:Boolean,reflect:!0,attribute:"checkbox-values"})],L.prototype,"checkboxValues",void 0);var nt={ATTRIBUTE:1,CHILD:2,PROPERTY:3,BOOLEAN_ATTRIBUTE:4,EVENT:5,ELEMENT:6},Tt=s=>(...e)=>({_$litDirective$:s,values:e}),xt=class{constructor(e){}get _$AU(){return this._$AM._$AU}_$AT(e,t,r){this._$Ct=e,this._$AM=t,this._$Ci=r}_$AS(e,t){return this.update(e,t)}update(e,t){return this.render(...t)}};var v=Tt(class extends xt{constructor(s){if(super(s),s.type!==nt.ATTRIBUTE||s.name!=="class"||s.strings?.length>2)throw Error("`classMap()` can only be used in the `class` attribute and must be the only part in the attribute.")}render(s){return" "+Object.keys(s).filter(e=>s[e]).join(" ")+" "}update(s,[e]){if(this.st===void 0){this.st=new Set,s.strings!==void 0&&(this.nt=new Set(s.strings.join(" ").split(/\s/).filter(r=>r!=="")));for(let r in e)e[r]&&!this.nt?.has(r)&&this.st.add(r);return this.render(e)}let t=s.element.classList;for(let r of this.st)r in e||(t.remove(r),this.st.delete(r));for(let r in e){let i=!!e[r];i===this.st.has(r)||this.nt?.has(r)||(i?(t.add(r),this.st.add(r)):(t.remove(r),this.st.delete(r)))}return Ee}});var w=s=>s??x;var Wi=f`
   :host {
     --icon-color: inherit;
     --icon-size: inherit;
 
     display: contents;
+  }
+
+  /* "box": a real box on the host, for margins, cursor and drag handles. */
+  :host([box]) {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+
+  /* An icon with a tooltip is focusable, so it needs a box: to take focus,
+     to show the focus ring, and to place the tooltip against. */
+  :host([tabindex]) {
+    display: inline-flex;
+    vertical-align: middle;
+    border-radius: var(--hmwc-border-radius-small);
+    cursor: default;
+  }
+
+  :host([tabindex]:focus-visible) {
+    outline: var(--hmwc-focus-ring);
+    outline-offset: var(--hmwc-focus-ring-offset);
   }
 
   .icon {
@@ -436,302 +509,7 @@
       --icon-size: calc(1.2 * var(--hmwc-font-size-2x-large));
     }
   }
-`;var qt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},aa="1.13.1",na=`https://cdn.jsdelivr.net/npm/bootstrap-icons@${aa}/font/bootstrap-icons.css`,_=class extends u{labelUpdate(){this.label?(this.setAttribute("role","img"),this.removeAttribute("aria-hidden"),this.setAttribute("aria-label",this.label)):(this.removeAttribute("role"),this.removeAttribute("aria-label"),this.setAttribute("aria-hidden","true"))}firstUpdated(){this.labelUpdate()}render(){if(!this.src)return A;let t=f({icon:!0,bi:!0,[`bi-${this.src}`]:!0,xs:!!this.xs,sm:!!this.sm,md:!!this.md,lg:!!this.lg,xl:!!this.xl,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger});return c`<link rel="stylesheet" href=${na} /><i part="base" class=${t}></i>`}};_.styles=ci;qt([a({type:String,reflect:!0})],_.prototype,"src",void 0);qt([a({type:String,reflect:!0})],_.prototype,"label",void 0);qt([a({type:Boolean,reflect:!0})],_.prototype,"primary",void 0);qt([a({type:Boolean,reflect:!0})],_.prototype,"success",void 0);qt([a({type:Boolean,reflect:!0})],_.prototype,"neutral",void 0);qt([a({type:Boolean,reflect:!0})],_.prototype,"warning",void 0);qt([a({type:Boolean,reflect:!0})],_.prototype,"danger",void 0);qt([a({type:Boolean,reflect:!0})],_.prototype,"xs",void 0);qt([a({type:Boolean,reflect:!0})],_.prototype,"sm",void 0);qt([a({type:Boolean,reflect:!0})],_.prototype,"md",void 0);qt([a({type:Boolean,reflect:!0})],_.prototype,"lg",void 0);qt([a({type:Boolean,reflect:!0})],_.prototype,"xl",void 0);qt([p("label")],_.prototype,"labelUpdate",null);_.define("hmwc-icon",_);var hi=m`
-  :host {
-    --accordion-background: var(--hmwc-panel-background-color);
-    --accordion-border-color: none;
-    --accordion-border-radius: none;
-    --accordion-font-color: var(--hmwc-color-neutral-750);
-    --accordion-font-size: var(--hmwc-font-size-medium);
-    --accordion-font-weight: var(--hmwc-font-weight-normal);
-    --accordion-icon-color: var(--hmwc-color-neutral-700);
-    --accordion-icon-size: var(--accordion-font-size);
-    /* Gap between the optional icon and the label. Matches the
-       prefix/label spacing used by button and menu-item. */
-    --accordion-icon-gap: var(--hmwc-spacing-small);
-    /* The chevron scales with the label so large/small accordions
-       stay visually balanced (previously a fixed 0.75rem). */
-    --accordion-trigger-size: calc(0.7 * var(--accordion-font-size));
-    --accordion-trigger-color: var(--hmwc-color-neutral-700);
-    --accordion-summary-padding: var(--hmwc-spacing-medium) var(--hmwc-spacing-large) var(--hmwc-spacing-small);
-    /* Expand runs longer than collapse on purpose — opening should feel
-       unhurried, closing immediate. Both are overridable. */
-    --accordion-expand-duration: var(--hmwc-transition-medium);
-    --accordion-collapse-duration: var(--hmwc-transition-fast);
-
-    --container-padding: var(--hmwc-spacing-large);
-    --container-width: 100%;
-
-    display: block;
-  }
-
-  .accordion {
-    display: block;
-    font-family: var(--hmwc-font-sans);
-    background: var(--accordion-background);
-    border: var(--hmwc-panel-border-width) solid var(--accordion-border-color);
-    border-top-left-radius: var(--accordion-border-top-left-radius, var(--accordion-border-radius));
-    border-top-right-radius: var(--accordion-border-top-right-radius, var(--accordion-border-radius));
-    border-bottom-left-radius: var(--accordion-border-bottom-left-radius, var(--accordion-border-radius));
-    border-bottom-right-radius: var(--accordion-border-bottom-right-radius, var(--accordion-border-radius));
-    overflow-anchor: none;
-
-    & .accordion__summary {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: var(--accordion-summary-padding);
-      color: var(--hmwc-color-neutral-750);
-      font-size: var(--accordion-font-size);
-      font-weight: var(--accordion-font-weight);
-      white-space: nowrap;
-      cursor: pointer;
-
-      &::-webkit-details-marker {
-        display: none;
-      }
-
-      &:focus {
-        outline: none;
-      }
-
-      &:focus-visible {
-        outline: var(--hmwc-focus-ring);
-        outline-offset: calc(1px + var(--hmwc-focus-ring-offset));
-      }
-
-      & .accordion__details {
-        display: flex;
-        align-items: center;
-        gap: var(--accordion-icon-gap);
-        color: var(--hmwc-color-neutral-750);
-        --icon-color: var(--accordion-icon-color);
-        --icon-size: var(--accordion-icon-size);
-
-        & .accordion__label {
-          color: var(--accordion-font-color);
-          font-size: var(--accordion-font-size);
-          font-weight: var(--accordion-font-weight);
-          letter-spacing: var(--hmwc-letter-spacing-dense);
-          transition: var(--hmwc-transition-fast) color ease;
-        }
-      }
-
-      & .accordion__controls {
-        display: flex;
-        justify-content: end;
-        width: 100%;
-        margin-right: var(--hmwc-spacing-x-large);
-
-        & hmwc-button {
-          --icon-size: 1.1rem;
-        }
-      }
-
-      & .accordion__trigger {
-        display: flex;
-        align-items: center;
-        font-size: var(--accordion-trigger-size);
-        color: var(--accordion-trigger-color);
-        /* The rotate settles with a slight overshoot rather than stopping
-           dead; colour and the hover nudge stay on the standard curve. */
-        transition: rotate var(--accordion-expand-duration) var(--hmwc-easing-overshoot),
-          color var(--hmwc-transition-fast) var(--hmwc-easing-standard),
-          translate var(--hmwc-transition-fast) var(--hmwc-easing-standard);
-        translate: 0;
-      }
-    }
-
-    /* trigger-placement="start" moves the chevron ahead of the icon and label,
-       for nav- and tree-shaped disclosure. The summary is already flex, so this
-       is ordering only — no template branch. */
-    &.trigger-start {
-      & .accordion__trigger {
-        order: -1;
-        margin-inline-end: var(--accordion-icon-gap);
-      }
-
-      & .accordion__controls {
-        margin-right: 0;
-      }
-    }
-
-    &:not(.disabled) .accordion__summary:hover {
-      & .accordion__details .accordion__label {
-        color: var(--hmwc-color-neutral-1000);
-      }
-
-      & .accordion__trigger {
-        color: var(--hmwc-color-neutral-900);
-        translate: var(--hmwc-spacing-2x-small);
-      }
-    }
-
-    &:not(.disabled).active .accordion__summary:hover {
-      & .accordion__trigger {
-        translate: 0 var(--hmwc-spacing-2x-small);
-      }
-    }
-
-    &.active {
-      & .accordion__trigger {
-        rotate: 90deg;
-      }
-    }
-
-    /* Collapse is the resting transition: it eases in and leaves quickly, so
-       dismissing feels immediate. Expand overrides it below with a longer,
-       decelerating curve — asymmetry is what stops a disclosure feeling mushy,
-       and both used to share one generic 250ms "ease". */
-    & .accordion__body {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows var(--accordion-collapse-duration) var(--hmwc-easing-accelerate);
-
-      & > slot {
-        display: block;
-        overflow: hidden;
-        padding-block: 0;
-        padding-inline: var(--container-padding);
-        /* The content used to be merely un-clipped by the row collapsing. It
-           now arrives: a short lift and fade behind the opening row. */
-        opacity: 0;
-        translate: 0 calc(-1 * var(--hmwc-spacing-2x-small));
-        transition: padding-block var(--accordion-collapse-duration) var(--hmwc-easing-accelerate),
-          opacity var(--hmwc-transition-x-fast) var(--hmwc-easing-accelerate),
-          translate var(--hmwc-transition-x-fast) var(--hmwc-easing-accelerate);
-      }
-    }
-
-    &.active > .accordion__body {
-      grid-template-rows: 1fr;
-      transition: grid-template-rows var(--accordion-expand-duration) var(--hmwc-easing-decelerate);
-
-      & > slot {
-        overflow: visible;
-        padding-block: var(--container-padding);
-        opacity: 1;
-        translate: 0;
-        /* Delayed just past the row opening so the content reads as arriving
-           into the space rather than being revealed by it. */
-        transition: padding-block var(--accordion-expand-duration) var(--hmwc-easing-decelerate),
-          opacity var(--hmwc-transition-fast) var(--hmwc-easing-standard) var(--hmwc-transition-x-fast),
-          translate var(--hmwc-transition-fast) var(--hmwc-easing-decelerate) var(--hmwc-transition-x-fast);
-      }
-    }
-
-    /* DoD §9. The accordion animates grid-template-rows, rotate, translate,
-       opacity and padding-block, and previously had no reduced-motion
-       companion at all. State changes still apply — only the motion stops. */
-    @media (prefers-reduced-motion: reduce) {
-      & .accordion__label,
-      & .accordion__trigger,
-      & .accordion__body,
-      & .accordion__body > slot,
-      &.active > .accordion__body,
-      &.active > .accordion__body > slot {
-        transition: none;
-      }
-
-      & .accordion__body > slot {
-        opacity: 1;
-        translate: none;
-      }
-
-      &:not(.disabled) .accordion__summary:hover .accordion__trigger,
-      &:not(.disabled).active .accordion__summary:hover .accordion__trigger {
-        translate: none;
-      }
-    }
-
-    & .accordion__body > slot {
-      display: block;
-      align-items: var(--container-alignment);
-      justify-content: var(--container-justification);
-      gap: var(--container-spacing);
-      border-radius: var(--container-border-radius);
-      aspect-ratio: var(--container-aspect-ratio);
-      width: var(--container-width);
-      box-shadow: var(--container-shadow);
-      background: var(--container-background);
-
-      /* Promote nested surface level so child panels (cards, etc.)
-         automatically contrast against the accordion background. */
-      --hmwc-panel-background-color: var(--hmwc-input-background-color);
-    }
-
-    &.disabled {
-      opacity: 0.5;
-
-      & .accordion__summary {
-        cursor: not-allowed;
-
-        &:focus-visible {
-          outline: none;
-          box-shadow: none;
-        }
-      }
-    }
-
-    &.icon {
-      & .accordion__details .accordion__icon {
-        display: block;
-        font-size: var(--accordion-icon-size);
-      }
-    }
-
-    &.solo {
-      --accordion-border-radius: var(--hmwc-border-radius-x-large);
-      --accordion-border-color: var(--hmwc-panel-border-color);
-    }
-
-    &.basic {
-      --accordion-background: none;
-      --accordion-border-color: none;
-      --accordion-trigger-size: calc(0.625 * var(--accordion-font-size));
-      --accordion-summary-padding: 0;
-      --container-padding: var(--hmwc-spacing-medium) 0;
-
-      /* With no summary padding the label/icon start at the host's
-         left edge — align the body content with them instead of
-         indenting it. */
-      & .accordion__body > slot {
-        padding-inline: 0;
-      }
-    }
-  }
-`;var Qt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Q=class extends I{constructor(){super(...arguments),this.triggerPlacement="end"}show(){this.disabled||(this.active=!0)}hide(){this.disabled||(this.active=!1)}toggle(t){t&&t.preventDefault(),this.active?this.hide():this.show()}focus(){this.summary.focus()}blur(){this.body?.blur(),this.summary.blur()}handleControlsClick(t){t.stopPropagation()}handleKeyboardInput(t){let e=["Enter"," "],r=["ArrowUp","ArrowLeft"],i=["ArrowDown","ArrowRight"];[...e,...r,...i].includes(t.key)&&(t.preventDefault(),e.includes(t.key)?this.active?this.hide():this.show():r.includes(t.key)?this.hide():i.includes(t.key)&&this.show())}iconUpdate(){this.icon&&this.icon instanceof Object&&(this.iconColor=this.icon.color,this.icon=this.icon.icon)}activityUpdate(){this.emit(`hmwc-${this.active?"expand":"collapse"}`)}firstUpdated(){this.solo=!(this.parentElement instanceof vt)}render(){let t=f({accordion:!0,active:!!this.active,disabled:!!this.disabled,basic:!!this.basic,solo:!!this.solo,icon:!!this.icon||this.controllers.slot.test("icon"),"trigger-start":this.triggerPlacement==="start"});return c`
-      <details part="base" class=${t} open>
-        <summary
-          part="summary"
-          id="summary"
-          class="accordion__summary"
-          role="button"
-          aria-expanded=${w(this.active)}
-          aria-controls="content"
-          aria-label=${w(this.label)}
-          aria-disabled=${this.disabled?"true":"false"}
-          tabindex=${this.disabled?"-1":"0"}
-          @keydown=${this.handleKeyboardInput}
-          @click=${this.toggle}
-          @focus=${()=>this.emit("hmwc-focus")}
-          @blur=${()=>this.emit("hmwc-blur")}
-          style="--accordion-icon-color: ${w(this.iconColor)}">
-          <div part="details" class="accordion__details">
-            <slot name="icon" part="icon" class="accordion__icon">${this.icon&&c`<hmwc-icon flex src=${this.icon}></hmwc-icon>`}</slot>
-            <slot name="label" part="label" class="accordion__label">${this.label}</slot>
-          </div>
-          <slot name="controls" part="controls" class="accordion__controls" @click=${this.handleControlsClick}></slot>
-          <slot name="trigger" part="trigger" class="accordion__trigger">
-            <hmwc-icon part="summary-icon" src="chevron-right"></hmwc-icon>
-          </slot>
-        </summary>
-        <div id="content" class="accordion__body" part="body" role="region" aria-labelledby="summary">
-          <slot></slot>
-        </div>
-      </details>
-    `}};Q.styles=hi;Q.dependencies=[_];Q.slots=["[default]","icon","label","controls","trigger"];Qt([v()],Q.prototype,"solo",void 0);Qt([a({type:Boolean,reflect:!0})],Q.prototype,"active",void 0);Qt([a({type:String,reflect:!0})],Q.prototype,"label",void 0);Qt([a({type:String,reflect:!0})],Q.prototype,"icon",void 0);Qt([a({type:Boolean,reflect:!0})],Q.prototype,"disabled",void 0);Qt([a({type:Boolean,reflect:!0})],Q.prototype,"basic",void 0);Qt([a({type:String,reflect:!0,attribute:"trigger-placement"})],Q.prototype,"triggerPlacement",void 0);Qt([R(".accordion__summary")],Q.prototype,"summary",void 0);Qt([R(".accordion__body")],Q.prototype,"body",void 0);Qt([v()],Q.prototype,"iconColor",void 0);Qt([p("icon")],Q.prototype,"iconUpdate",null);Qt([p("active")],Q.prototype,"activityUpdate",null);var pi=Symbol.for(""),sa=s=>{if(s?.r===pi)return s?._$litStatic$};var De=(s,...t)=>({_$litStatic$:t.reduce((e,r,i)=>e+(o=>{if(o._$litStatic$!==void 0)return o._$litStatic$;throw Error(`Value passed to 'literal' function must be a 'literal' result: ${o}. Use 'unsafeStatic' to pass non-literal values, but
-            take care to ensure page security.`)})(r)+s[i+1],s[0]),r:pi}),di=new Map,Cr=s=>(t,...e)=>{let r=e.length,i,o,n=[],l=[],h,d=0,g=!1;for(;d<r;){for(h=t[d];d<r&&(o=e[d],(i=sa(o))!==void 0);)h+=i+t[++d],g=!0;d!==r&&l.push(o),n.push(h),d++}if(d===r&&n.push(t[r]),g){let b=n.join("$$lit$$");(t=di.get(b))===void 0&&(n.raw=n,di.set(b,t=n)),e=l}return s(t,...e)},at=Cr(c),Gs=Cr(Jr),Ks=Cr(Qr);var mi=m`
+`;var Ze=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Zr="1.13.1",ps=`https://cdn.jsdelivr.net/npm/bootstrap-icons@${Zr}/font/bootstrap-icons.css`,Vi=`https://cdn.jsdelivr.net/npm/bootstrap-icons@${Zr}/font/fonts/bootstrap-icons`,Ki="__hmwcIconFont",ms=(s,e)=>{let t=s.split(".").map(Number),r=e.split(".").map(Number);for(let i=0;i<3;i++){let o=(t[i]||0)-(r[i]||0);if(o)return o}return 0};function Gi(s=typeof document>"u"?null:document){let e=s;if(!s||!e||e[Ki]||(e[Ki]=!0,Array.from(s.querySelectorAll('link[rel~="stylesheet"][href*="bootstrap-icons"]')).some(o=>{let a=/bootstrap-icons@(\d+(?:\.\d+){0,2})/.exec(o.getAttribute("href")??"")?.[1];return!a||ms(a,Zr)>=0}))||typeof CSSStyleSheet>"u"||!("adoptedStyleSheets"in s))return;let i=new CSSStyleSheet;i.replaceSync(`@font-face { font-display: block; font-family: "bootstrap-icons"; src: url("${Vi}.woff2") format("woff2"), url("${Vi}.woff") format("woff"); }`),s.adoptedStyleSheets=[...s.adoptedStyleSheets,i]}var $=class extends g{constructor(){super(...arguments),this._ownTabIndex=!1}labelUpdate(){let e=this.label||this.tooltip;e?(this.setAttribute("role","img"),this.removeAttribute("aria-hidden"),this.setAttribute("aria-label",e)):(this.removeAttribute("role"),this.removeAttribute("aria-label"),this.setAttribute("aria-hidden","true")),this.tooltip&&!this.hasAttribute("tabindex")?(this.setAttribute("tabindex","0"),this._ownTabIndex=!0):!this.tooltip&&this._ownTabIndex&&(this.removeAttribute("tabindex"),this._ownTabIndex=!1)}connectedCallback(){super.connectedCallback(),Gi()}firstUpdated(){this.labelUpdate()}render(){if(!this.src)return x;let e=v({icon:!0,bi:!0,[`bi-${this.src}`]:!0,xs:!!this.xs,sm:!!this.sm,md:!!this.md,lg:!!this.lg,xl:!!this.xl,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger});return c`<link rel="stylesheet" href=${ps} /><i part="base" class=${e}></i>`}};$.styles=Wi;Ze([n({type:String,reflect:!0})],$.prototype,"src",void 0);Ze([n({type:String,reflect:!0})],$.prototype,"label",void 0);Ze([n({type:Boolean,reflect:!0})],$.prototype,"primary",void 0);Ze([n({type:Boolean,reflect:!0})],$.prototype,"success",void 0);Ze([n({type:Boolean,reflect:!0})],$.prototype,"neutral",void 0);Ze([n({type:Boolean,reflect:!0})],$.prototype,"warning",void 0);Ze([n({type:Boolean,reflect:!0})],$.prototype,"danger",void 0);Ze([n({type:Boolean,reflect:!0})],$.prototype,"xs",void 0);Ze([n({type:Boolean,reflect:!0})],$.prototype,"sm",void 0);Ze([n({type:Boolean,reflect:!0})],$.prototype,"md",void 0);Ze([n({type:Boolean,reflect:!0})],$.prototype,"lg",void 0);Ze([n({type:Boolean,reflect:!0})],$.prototype,"xl",void 0);Ze([n({type:Boolean,reflect:!0})],$.prototype,"box",void 0);Ze([u(["label","tooltip"])],$.prototype,"labelUpdate",null);$.define("hmwc-icon",$);var Yi=f`
   :host {
     --badge-padding: var(--hmwc-spacing-2x-small) var(--hmwc-spacing-x-small);
     --badge-background: var(--hmwc-panel-background-color);
@@ -753,6 +531,18 @@
     --badge-animation: none;
     --badge-pulse-speed: 1.5s;
     display: contents;
+  }
+
+  /* No variant: when the page sets an accent colour (--hmwc-accent-color),
+     a soft tint of it; otherwise unchanged. The tint properties are invalid
+     while the accent is unset, so the fallbacks apply. */
+  :host(:not([primary]):not([success]):not([neutral]):not([warning]):not([danger])) {
+    --accent-soft: color-mix(in srgb, var(--hmwc-accent-color) 12%, var(--hmwc-panel-background-color));
+    --accent-ink: color-mix(in srgb, var(--hmwc-accent-color) 80%, var(--hmwc-color-neutral-1000));
+    --accent-line: color-mix(in srgb, var(--hmwc-accent-color) 24%, var(--hmwc-panel-background-color));
+    --badge-background: var(--accent-soft, var(--hmwc-panel-background-color));
+    --badge-label-color: var(--accent-ink, var(--hmwc-color-neutral-750));
+    --badge-border-color: var(--accent-line, var(--hmwc-panel-border-color));
   }
 
   .badge {
@@ -861,18 +651,19 @@
       box-shadow: 0 0 0 0 var(--badge-background);
     }
     70% {
-      box-shadow: 0 0 0 0.5rem transparent;
+      box-shadow: 0 0 0 calc(0.5 * var(--hmwc-rem, 1rem)) transparent;
     }
     100% {
       box-shadow: 0 0 0 0 transparent;
     }
   }
-`;var Gt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Y=class extends u{render(){let t=f({badge:!0,icon:!!this.icon||this.controllers.slot.test("icon"),pill:!!this.pill,pulse:!!this.pulse,selectable:!!this.selectable,sm:!!this.sm,md:!!this.md,lg:!!this.lg,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger});return c`
-      <div part="base" class=${t} role="status">
+`;var lt=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Q=class extends g{render(){let e=v({badge:!0,icon:!!this.icon||this.controllers.slot.test("icon"),pill:!!this.pill,pulse:!!this.pulse,selectable:!!this.selectable,sm:!!this.sm,md:!!this.md,lg:!!this.lg,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger});return c`
+      <div part="base" class=${e} role="status">
         <slot part="label" class="badge__label">${this.label?this.label:""}</slot>
         <slot name="icon" part="icon" class="badge__icon">${this.icon?c`<hmwc-icon src=${this.icon}></hmwc-icon>`:""}</slot>
       </div>
-    `}};Y.styles=mi;Y.dependencies=[_];Y.slots=["[default]","icon"];Gt([a({type:Boolean,reflect:!0})],Y.prototype,"selectable",void 0);Gt([a({type:Boolean,reflect:!0})],Y.prototype,"pulse",void 0);Gt([a({type:Boolean,reflect:!0})],Y.prototype,"primary",void 0);Gt([a({type:Boolean,reflect:!0})],Y.prototype,"success",void 0);Gt([a({type:Boolean,reflect:!0})],Y.prototype,"neutral",void 0);Gt([a({type:Boolean,reflect:!0})],Y.prototype,"warning",void 0);Gt([a({type:Boolean,reflect:!0})],Y.prototype,"danger",void 0);Gt([a({type:Boolean,reflect:!0})],Y.prototype,"sm",void 0);Gt([a({type:Boolean,reflect:!0})],Y.prototype,"md",void 0);Gt([a({type:Boolean,reflect:!0})],Y.prototype,"lg",void 0);Gt([a({type:Boolean,reflect:!0})],Y.prototype,"pill",void 0);Gt([a({type:String})],Y.prototype,"label",void 0);Gt([a({type:String,reflect:!0})],Y.prototype,"icon",void 0);var ui=m`
+    `}};Q.styles=Yi;Q.dependencies=[$];Q.slots=["[default]","icon"];lt([n({type:Boolean,reflect:!0})],Q.prototype,"selectable",void 0);lt([n({type:Boolean,reflect:!0})],Q.prototype,"pulse",void 0);lt([n({type:Boolean,reflect:!0})],Q.prototype,"primary",void 0);lt([n({type:Boolean,reflect:!0})],Q.prototype,"success",void 0);lt([n({type:Boolean,reflect:!0})],Q.prototype,"neutral",void 0);lt([n({type:Boolean,reflect:!0})],Q.prototype,"warning",void 0);lt([n({type:Boolean,reflect:!0})],Q.prototype,"danger",void 0);lt([n({type:Boolean,reflect:!0})],Q.prototype,"sm",void 0);lt([n({type:Boolean,reflect:!0})],Q.prototype,"md",void 0);lt([n({type:Boolean,reflect:!0})],Q.prototype,"lg",void 0);lt([n({type:Boolean,reflect:!0})],Q.prototype,"pill",void 0);lt([n({type:String})],Q.prototype,"label",void 0);lt([n({type:String,reflect:!0})],Q.prototype,"icon",void 0);Q.define("hmwc-badge",Q);var Qi=Symbol.for(""),us=s=>{if(s?.r===Qi)return s?._$litStatic$};var Gt=(s,...e)=>({_$litStatic$:e.reduce((t,r,i)=>t+(o=>{if(o._$litStatic$!==void 0)return o._$litStatic$;throw Error(`Value passed to 'literal' function must be a 'literal' result: ${o}. Use 'unsafeStatic' to pass non-literal values, but
+            take care to ensure page security.`)})(r)+s[i+1],s[0]),r:Qi}),Xi=new Map,ei=s=>(e,...t)=>{let r=t.length,i,o,a=[],l=[],h,d=0,p=!1;for(;d<r;){for(h=e[d];d<r&&(o=t[d],(i=us(o))!==void 0);)h+=i+e[++d],p=!0;d!==r&&l.push(o),a.push(h),d++}if(d===r&&a.push(e[r]),p){let m=a.join("$$lit$$");(e=Xi.get(m))===void 0&&(a.raw=a,Xi.set(m,e=a)),t=l}return s(e,...t)},ve=ei(c),Ac=ei(Mi),Ec=ei(Ri);var Ji=f`
   :host {
     --spinner-color: currentColor;
     --spinner-size: 1em;
@@ -931,13 +722,13 @@
     }
 
     &.sm {
-      --spinner-size: 1rem;
+      --spinner-size: calc(1 * var(--hmwc-rem, 1rem));
     }
     &.md {
-      --spinner-size: 1.5rem;
+      --spinner-size: calc(1.5 * var(--hmwc-rem, 1rem));
     }
     &.lg {
-      --spinner-size: 2.25rem;
+      --spinner-size: calc(2.25 * var(--hmwc-rem, 1rem));
     }
 
     &.primary {
@@ -998,12 +789,12 @@
       }
     }
   }
-`;var ae=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},X=class extends u{constructor(){super(...arguments),this.active=!0,this.label="Loading"}start(){this.active||(this.active=!0)}stop(){this.active&&(this.active=!1)}toggle(){this.active=!this.active}render(){let t=f({spinner:!0,active:!!this.active,"speed-slower":this.speed==="slower","speed-slow":this.speed==="slow","speed-fast":this.speed==="fast","speed-faster":this.speed==="faster",sm:!!this.sm,md:!!this.md,lg:!!this.lg,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger});return c`
-      <svg part="base" class=${t} role="progressbar" aria-label=${this.label}>
+`;var vt=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},ie=class extends g{constructor(){super(...arguments),this.active=!0,this.label="Loading"}start(){this.active||(this.active=!0)}stop(){this.active&&(this.active=!1)}toggle(){this.active=!this.active}render(){let e=v({spinner:!0,active:!!this.active,"speed-slower":this.speed==="slower","speed-slow":this.speed==="slow","speed-fast":this.speed==="fast","speed-faster":this.speed==="faster",sm:!!this.sm,md:!!this.md,lg:!!this.lg,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger});return c`
+      <svg part="base" class=${e} role="progressbar" aria-label=${this.label}>
         <circle part="track" class="spinner__track"></circle>
         <circle part="indicator" class="spinner__indicator"></circle>
       </svg>
-    `}};X.styles=ui;ae([a({type:Boolean,reflect:!0})],X.prototype,"active",void 0);ae([a({type:Boolean,reflect:!0})],X.prototype,"primary",void 0);ae([a({type:Boolean,reflect:!0})],X.prototype,"success",void 0);ae([a({type:Boolean,reflect:!0})],X.prototype,"neutral",void 0);ae([a({type:Boolean,reflect:!0})],X.prototype,"warning",void 0);ae([a({type:Boolean,reflect:!0})],X.prototype,"danger",void 0);ae([a({type:Boolean,reflect:!0})],X.prototype,"sm",void 0);ae([a({type:Boolean,reflect:!0})],X.prototype,"md",void 0);ae([a({type:Boolean,reflect:!0})],X.prototype,"lg",void 0);ae([a({type:String,reflect:!0})],X.prototype,"speed",void 0);ae([a({type:String})],X.prototype,"label",void 0);X.define("hmwc-spinner",X);var fi=m`
+    `}};ie.styles=Ji;vt([n({type:Boolean,reflect:!0})],ie.prototype,"active",void 0);vt([n({type:Boolean,reflect:!0})],ie.prototype,"primary",void 0);vt([n({type:Boolean,reflect:!0})],ie.prototype,"success",void 0);vt([n({type:Boolean,reflect:!0})],ie.prototype,"neutral",void 0);vt([n({type:Boolean,reflect:!0})],ie.prototype,"warning",void 0);vt([n({type:Boolean,reflect:!0})],ie.prototype,"danger",void 0);vt([n({type:Boolean,reflect:!0})],ie.prototype,"sm",void 0);vt([n({type:Boolean,reflect:!0})],ie.prototype,"md",void 0);vt([n({type:Boolean,reflect:!0})],ie.prototype,"lg",void 0);vt([n({type:String,reflect:!0})],ie.prototype,"speed",void 0);vt([n({type:String})],ie.prototype,"label",void 0);ie.define("hmwc-spinner",ie);var Zi=f`
   :host {
     --button-color: var(--hmwc-color-neutral-700);
     --button-background: var(--hmwc-input-background-color);
@@ -1059,7 +850,7 @@
       line-height: 0;
 
       img {
-        width: 1.25rem;
+        width: calc(1.25 * var(--hmwc-rem, 1rem));
       }
 
       hmwc-icon {
@@ -1420,11 +1211,14 @@
       --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-primary-500);
       --button-shadow: 0 2px 8px hsl(from var(--hmwc-color-primary-500) h s l / 0.25);
 
+      /* Filled buttons darken on hover. Lightening to 500 left white text at
+         under 3:1 (2.8:1 on primary-500); 700 keeps it above 5:1. No glow:
+         the colour change is the hover. */
       &.primary {
         --button-color: var(--hmwc-color-neutral-0);
-        --button-background: var(--hmwc-color-primary-500);
-        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-primary-500);
-        --button-shadow: 0 2px 8px hsl(from var(--hmwc-color-primary-500) h s l / 0.3);
+        --button-background: var(--hmwc-color-primary-700);
+        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-primary-700);
+        --button-shadow: none;
 
         &.outline {
           --button-color: var(--hmwc-color-neutral-0);
@@ -1436,9 +1230,9 @@
 
       &.success {
         --button-color: var(--hmwc-color-neutral-0);
-        --button-background: var(--hmwc-color-success-500);
-        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-success-500);
-        --button-shadow: 0 2px 8px hsl(from var(--hmwc-color-success-500) h s l / 0.3);
+        --button-background: var(--hmwc-color-success-700);
+        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-success-700);
+        --button-shadow: none;
 
         &.outline {
           --button-color: var(--hmwc-color-neutral-0);
@@ -1451,9 +1245,9 @@
 
       &.neutral {
         --button-color: var(--hmwc-color-neutral-0);
-        --button-background: var(--hmwc-color-neutral-500);
-        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-neutral-500);
-        --button-shadow: 0 2px 8px hsl(from var(--hmwc-color-neutral-500) h s l / 0.25);
+        --button-background: var(--hmwc-color-neutral-700);
+        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-neutral-700);
+        --button-shadow: none;
 
         &.outline {
           --button-color: var(--hmwc-color-neutral-0);
@@ -1481,9 +1275,9 @@
 
       &.danger {
         --button-color: var(--hmwc-color-neutral-0);
-        --button-background: var(--hmwc-color-danger-500);
-        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-danger-500);
-        --button-shadow: 0 2px 8px hsl(from var(--hmwc-color-danger-500) h s l / 0.3);
+        --button-background: var(--hmwc-color-danger-700);
+        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-danger-700);
+        --button-shadow: none;
 
         &.outline {
           --button-color: var(--hmwc-color-neutral-0);
@@ -1515,37 +1309,25 @@
       --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-primary-400);
       --button-shadow: var(--hmwc-shadow-x-small);
 
+      /* Filled (and outline, which fill on hover) go one step darker again
+         when pressed, rather than flipping to a pale fill. The outline case
+         used to put primary-700 text on a primary-700 fill. */
       &.primary {
-        --button-color: var(--hmwc-color-primary-700);
-        --button-background: var(--hmwc-color-primary-100);
-        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-primary-400);
-
-        &.outline {
-          --button-background: var(--hmwc-color-primary-700);
-          --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-primary-700);
-        }
+        --button-color: var(--hmwc-color-neutral-0);
+        --button-background: var(--hmwc-color-primary-800);
+        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-primary-800);
       }
 
       &.success {
-        --button-color: var(--hmwc-color-success-700);
-        --button-background: var(--hmwc-color-success-100);
-        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-success-400);
-
-        &.outline {
-          --button-background: var(--hmwc-color-success-700);
-          --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-success-700);
-        }
+        --button-color: var(--hmwc-color-neutral-0);
+        --button-background: var(--hmwc-color-success-800);
+        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-success-800);
       }
 
       &.neutral {
-        --button-color: var(--hmwc-color-neutral-700);
-        --button-background: var(--hmwc-color-neutral-100);
-        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-neutral-400);
-
-        &.outline {
-          --button-background: var(--hmwc-color-neutral-700);
-          --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-neutral-700);
-        }
+        --button-color: var(--hmwc-color-neutral-0);
+        --button-background: var(--hmwc-color-neutral-800);
+        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-neutral-800);
       }
 
       &.warning {
@@ -1560,14 +1342,9 @@
       }
 
       &.danger {
-        --button-color: var(--hmwc-color-danger-700);
-        --button-background: var(--hmwc-color-danger-100);
-        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-danger-400);
-
-        &.outline {
-          --button-background: var(--hmwc-color-danger-700);
-          --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-danger-700);
-        }
+        --button-color: var(--hmwc-color-neutral-0);
+        --button-background: var(--hmwc-color-danger-800);
+        --button-border: var(--hmwc-input-border-width) solid var(--hmwc-color-danger-800);
       }
 
       &.basic {
@@ -1583,10 +1360,10 @@
       }
     }
   }
-`;var B=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},dr="data-auto-disabled",y=class s extends u{constructor(){super(...arguments),this.target="_blank",this._autoDisabledLastValue=null}click(){this.button.click()}focus(t){this.button.focus(t)}blur(){this.button.blur()}isLink(){return!!this.href}findFormContainer(){return this.closest("[form]")}handleClick(){if(this.disabled){if(this.submit||this.action==="submit"){let t=this.findFormContainer();t&&t.controllers.form?.validate()}return}if(this.emit("hmwc-click"),this.action){let t=this.findFormContainer();if(t?.controllers.form){t.controllers.form.perform(this.action,this);return}this.action!=="submit"&&this.action!=="reset"&&s._warnNoContainer(this.action)}}static _warnNoContainer(t){s._warnedActions.has(t)||(s._warnedActions.add(t),console.warn(`[hmwc-button] action="${t}" but no surrounding <hmwc-* form> container or native <form> found.`))}refreshAutoDisable(){if(!this.action)return;let e=this.findFormContainer()?.controllers.form;if(!e||typeof e.canPerform!="function")return;let r=!e.canPerform(this.action,this);if(this._autoDisabledLastValue===null&&this.disabled&&this.hasAttribute(dr)&&(this._autoDisabledLastValue=!0),this._autoDisabledLastValue===null){if(r&&!this.disabled)this.disabled=!0,this.toggleAttribute(dr,!0);else if(!r&&this.disabled){this._autoDisabledLastValue=!1;return}this._autoDisabledLastValue=!!this.disabled;return}!!this.disabled===this._autoDisabledLastValue&&r!==this._autoDisabledLastValue&&(this.disabled=r,this.toggleAttribute(dr,r),this._autoDisabledLastValue=r)}handleActionChange(){this._autoDisabledLastValue!==null&&!!this.disabled===this._autoDisabledLastValue&&(this.disabled=!1,this.removeAttribute(dr)),this._autoDisabledLastValue=null,this.refreshAutoDisable()}handleFocus(){this.emit("hmwc-focus")}handleBlur(){this.emit("hmwc-blur")}handleMouseIn(){this.labelOnHover&&(this.label=this.labelOnHover)}handleMouseOut(){this.labelOnHover&&(this.label=this._label)}connectedCallback(){super.connectedCallback(),this._label=this.label||this.textContent||"",!this.sm&&!this.md&&!this.lg&&(this.md=!0)}render(){let t=this.isLink()?De`a`:De`button`,e=f({button:!0,icon:!!this.icon,prefix:!!this.prefix||!!this.img,suffix:!!this.suffix,invert:!!this.invert,basic:!!this.basic,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger,small:!!this.sm,medium:!!this.md,large:!!this.lg,loading:!!this.loading,circle:!!this.circle,pill:!!this.pill,outline:!!this.outline,disabled:!!this.disabled,fluid:!!this.fluid}),r=at`
-      <${t}
+`;var B=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Br="data-auto-disabled",k=class s extends g{constructor(){super(...arguments),this._autoDisabledLastValue=null}click(){this.button?this.button.click():this.updateComplete.then(()=>this.button?.click())}focus(e){this.button?this.button.focus(e):this.updateComplete.then(()=>this.button?.focus(e))}blur(){this.button?this.button.blur():this.updateComplete.then(()=>this.button?.blur())}isLink(){return!!this.href}findFormContainer(){return this.for?this.getRootNode().getElementById?.(this.for)??document.getElementById(this.for):this.closest("[form]")}handleClick(){if(this.disabled){if(this.submit||this.action==="submit"){let e=this.findFormContainer()?.controllers?.form;e&&!e.pending&&e.validate()}return}if(this.emit("hmwc-click"),this.action){let e=this.findFormContainer();if(e?.controllers?.form){e.controllers.form.perform(this.action,this);return}if(this.for&&s._warnForMissing(this.for),this.action==="cancel"){this.emit("hmwc-cancel");return}this.action!=="submit"&&this.action!=="reset"&&s._warnNoContainer(this.action)}}static _warnForMissing(e){s._warnedFor.has(e)||(s._warnedFor.add(e),console.warn(`[hmwc-button] for="${e}" but no <hmwc-* form> container with that id was found.`))}static _warnNoContainer(e){s._warnedActions.has(e)||(s._warnedActions.add(e),console.warn(`[hmwc-button] action="${e}" but no surrounding <hmwc-* form> container or native <form> found.`))}refreshAutoDisable(){if(!this.action)return;let t=this.findFormContainer()?.controllers?.form;if(!t||typeof t.canPerform!="function")return;let r=!t.canPerform(this.action,this);if(this._autoDisabledLastValue===null&&this.disabled&&this.hasAttribute(Br)&&(this._autoDisabledLastValue=!0),this._autoDisabledLastValue===null){if(r&&!this.disabled)this.disabled=!0,this.toggleAttribute(Br,!0);else if(!r&&this.disabled){this._autoDisabledLastValue=!1;return}this._autoDisabledLastValue=!!this.disabled;return}!!this.disabled===this._autoDisabledLastValue&&r!==this._autoDisabledLastValue&&(this.disabled=r,this.toggleAttribute(Br,r),this._autoDisabledLastValue=r)}handleActionChange(){this._autoDisabledLastValue!==null&&!!this.disabled===this._autoDisabledLastValue&&(this.disabled=!1,this.removeAttribute(Br)),this._autoDisabledLastValue=null,this.refreshAutoDisable()}handleFocus(){this.emit("hmwc-focus")}handleBlur(){this.emit("hmwc-blur")}handleMouseIn(){this.labelOnHover&&(this.label=this.labelOnHover)}handleMouseOut(){this.labelOnHover&&(this.label=this._label)}connectedCallback(){super.connectedCallback(),this._label=this.label||this.textContent||"",!this.sm&&!this.md&&!this.lg&&(this.md=!0)}render(){let e=this.isLink()?Gt`a`:Gt`button`,t=v({button:!0,icon:!!this.icon,prefix:!!this.prefix||!!this.img,suffix:!!this.suffix,invert:!!this.invert,basic:!!this.basic,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger,small:!!this.sm,medium:!!this.md,large:!!this.lg,loading:!!this.loading,circle:!!this.circle,pill:!!this.pill,outline:!!this.outline,disabled:!!this.disabled,fluid:!!this.fluid}),r=ve`
+      <${e}
         part='base'
-        class='${e}'
+        class='${t}'
         type=${this.submit||this.action==="submit"?"submit":this.reset||this.action==="reset"?"reset":"button"}
         title=${w(this.title||void 0)}
         target=${w(this.isLink()?this.target:void 0)}
@@ -1595,8 +1372,10 @@
         value=${w(this.isLink()?void 0:this.value)}
         role=${w(this.isLink()?void 0:"button")}
         aria-disabled=${w(this.disabled)}
-        aria-label=${w(this.label||void 0)}
-        tabindex=${w(this.disabled)?"-1":"0"}
+        aria-label=${w(this.label||this.accessibleLabel||void 0)}
+        aria-expanded=${w(this.isLink()?void 0:this.accessibleExpanded)}
+        aria-pressed=${w(this.isLink()?void 0:this.accessiblePressed)}
+        tabindex=${this.disabled?"-1":"0"}
         @click=${this.handleClick}
         @blur=${this.handleBlur}
         @focus=${this.handleFocus}
@@ -1605,25 +1384,466 @@
       >
 
         <slot name="prefix" part="prefix" class="button__prefix">
-          ${this.prefix?at`<hmwc-icon src=${this.prefix}></hmwc-icon>`:this.img?at`<img src=${this.img} alt="btn-img" />`:""}
+          ${this.prefix?ve`<hmwc-icon src=${this.prefix}></hmwc-icon>`:this.img?ve`<img src=${this.img} alt="btn-img" />`:""}
         </slot>
 
         <slot name='icon' class='button__icon'>
-          ${this.icon&&!this.loading?at`<hmwc-icon part="icon" src=${this.icon} ?flex=${this.basic}></hmwc-icon>`:""}
+          ${this.icon&&!this.loading?ve`<hmwc-icon part="icon" src=${this.icon} ?flex=${this.basic}></hmwc-icon>`:""}
         </slot>
 
-        ${this.icon?"":at`<slot name="label" part="label" class="button__label">${this.label}</slot>`}
+        ${this.icon?"":ve`<slot name="label" part="label" class="button__label">${this.label}</slot>`}
 
         <slot name="suffix" part="suffix" class="button__suffix">
-          ${this.suffix?at`<hmwc-icon src=${this.suffix}></hmwc-icon>`:""}
+          ${this.suffix?ve`<hmwc-icon src=${this.suffix}></hmwc-icon>`:""}
         </slot>
 
         <slot name="badge" part="badge" class="button__badge"></slot>
 
-        ${this.loading?at`<hmwc-spinner sm part="spinner"></hmwc-spinner>`:""}
+        ${this.loading?ve`<hmwc-spinner sm part="spinner"></hmwc-spinner>`:""}
 
-      </${t}>
-    `;return this.disabled&&this.disabledReason?at` <hmwc-tooltip label=${this.disabledReason} placement="top" ?fluid=${this.fluid}> ${r} </hmwc-tooltip> `:r}};y.styles=fi;y.dependencies=[_,X,Y];y.slots=["prefix"];y._warnedActions=new Set;B([a({type:String})],y.prototype,"label",void 0);B([a({type:String})],y.prototype,"labelOnHover",void 0);B([a({type:String})],y.prototype,"icon",void 0);B([a({type:String})],y.prototype,"prefix",void 0);B([a({type:String})],y.prototype,"suffix",void 0);B([a({type:String})],y.prototype,"img",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"primary",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"success",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"neutral",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"warning",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"danger",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"invert",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"basic",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"sm",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"md",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"lg",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"outline",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"pill",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"circle",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"fluid",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"disabled",void 0);B([a({type:String,attribute:"disabled-reason"})],y.prototype,"disabledReason",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"loading",void 0);B([a({type:String})],y.prototype,"value",void 0);B([a({type:String,reflect:!0})],y.prototype,"action",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"submit",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"begin",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"increment",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"decrement",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"templateAdd",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"templateRemove",void 0);B([a({type:Boolean,reflect:!0})],y.prototype,"reset",void 0);B([a({type:String,reflect:!1})],y.prototype,"href",void 0);B([a({type:String})],y.prototype,"target",void 0);B([a({type:String})],y.prototype,"download",void 0);B([R(".button")],y.prototype,"button",void 0);B([p("action")],y.prototype,"handleActionChange",null);var gi=m`
+      </${e}>
+    `;return this.disabled&&this.disabledReason?ve` <hmwc-tooltip label=${this.disabledReason} placement="top" ?fluid=${this.fluid}> ${r} </hmwc-tooltip> `:r}};k.styles=Zi;k.dependencies=[$,ie,Q];k.slots=["prefix"];k._warnedActions=new Set;k._warnedFor=new Set;B([n({type:String})],k.prototype,"label",void 0);B([n({type:String})],k.prototype,"labelOnHover",void 0);B([n({type:String})],k.prototype,"icon",void 0);B([n({type:String})],k.prototype,"prefix",void 0);B([n({type:String})],k.prototype,"suffix",void 0);B([n({type:String})],k.prototype,"img",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"primary",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"success",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"neutral",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"warning",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"danger",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"invert",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"basic",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"sm",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"md",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"lg",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"outline",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"pill",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"circle",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"fluid",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"disabled",void 0);B([n({type:String,attribute:"disabled-reason"})],k.prototype,"disabledReason",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"loading",void 0);B([n({type:String,attribute:"aria-label"})],k.prototype,"accessibleLabel",void 0);B([n({type:String,attribute:"aria-expanded"})],k.prototype,"accessibleExpanded",void 0);B([n({type:String,attribute:"aria-pressed"})],k.prototype,"accessiblePressed",void 0);B([n({type:String})],k.prototype,"value",void 0);B([n({type:String,reflect:!0})],k.prototype,"action",void 0);B([n({type:String,reflect:!0})],k.prototype,"for",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"submit",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"begin",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"increment",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"decrement",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"templateAdd",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"templateRemove",void 0);B([n({type:Boolean,reflect:!0})],k.prototype,"reset",void 0);B([n({type:String,reflect:!1})],k.prototype,"href",void 0);B([n({type:String})],k.prototype,"target",void 0);B([n({type:String})],k.prototype,"download",void 0);B([I(".button")],k.prototype,"button",void 0);B([u("action")],k.prototype,"handleActionChange",null);customElements.get("hmwc-button")||k.define("hmwc-button",k);var eo=f`
+  :host {
+    --accordion-background: var(--hmwc-panel-background-color);
+    --accordion-border-color: none;
+    --accordion-border-radius: none;
+    --accordion-font-color: var(--hmwc-color-neutral-750);
+    --accordion-font-size: var(--hmwc-font-size-medium);
+    --accordion-font-weight: var(--hmwc-font-weight-normal);
+    --accordion-icon-color: var(--hmwc-color-neutral-700);
+    --accordion-icon-size: var(--accordion-font-size);
+    /* Gap between the optional icon and the label. Matches the
+       prefix/label spacing used by button and menu-item. */
+    --accordion-icon-gap: var(--hmwc-spacing-small);
+    /* The chevron scales with the label so large/small accordions
+       stay visually balanced (previously a fixed 0.75rem). */
+    --accordion-trigger-size: calc(0.7 * var(--accordion-font-size));
+    --accordion-trigger-color: var(--hmwc-color-neutral-700);
+    --accordion-summary-padding: var(--hmwc-spacing-medium) var(--hmwc-spacing-large) var(--hmwc-spacing-small);
+    /* Expand runs longer than collapse on purpose — opening should feel
+       unhurried, closing immediate. Both are overridable. */
+    --accordion-expand-duration: var(--hmwc-transition-medium);
+    --accordion-collapse-duration: var(--hmwc-transition-fast);
+    --accordion-count-background: var(--hmwc-color-neutral-100);
+    --accordion-count-color: var(--hmwc-color-neutral-700);
+
+    --container-padding: var(--hmwc-spacing-large);
+    --container-width: 100%;
+
+    display: block;
+  }
+
+  .accordion {
+    position: relative;
+    display: block;
+    font-family: var(--hmwc-font-sans);
+    background: var(--accordion-background);
+    border: var(--hmwc-panel-border-width) solid var(--accordion-border-color);
+    border-top-left-radius: var(--accordion-border-top-left-radius, var(--accordion-border-radius));
+    border-top-right-radius: var(--accordion-border-top-right-radius, var(--accordion-border-radius));
+    border-bottom-left-radius: var(--accordion-border-bottom-left-radius, var(--accordion-border-radius));
+    border-bottom-right-radius: var(--accordion-border-bottom-right-radius, var(--accordion-border-radius));
+    overflow-anchor: none;
+
+    & .accordion__summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--accordion-summary-padding);
+      color: var(--hmwc-color-neutral-750);
+      font-size: var(--accordion-font-size);
+      font-weight: var(--accordion-font-weight);
+      white-space: nowrap;
+      cursor: pointer;
+      /* The summary's own background (hover, open) follows the accordion's
+         corners, so it doesn't square off a rounded group border. */
+      border-top-left-radius: var(--accordion-border-top-left-radius, var(--accordion-border-radius));
+      border-top-right-radius: var(--accordion-border-top-right-radius, var(--accordion-border-radius));
+      border-bottom-left-radius: var(--accordion-border-bottom-left-radius, var(--accordion-border-radius));
+      border-bottom-right-radius: var(--accordion-border-bottom-right-radius, var(--accordion-border-radius));
+      transition: background-color var(--hmwc-transition-fast) var(--hmwc-easing-standard);
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:focus-visible {
+        outline: var(--hmwc-focus-ring);
+        outline-offset: calc(1px + var(--hmwc-focus-ring-offset));
+      }
+
+      & .accordion__details {
+        display: flex;
+        align-items: center;
+        gap: var(--accordion-icon-gap);
+        color: var(--hmwc-color-neutral-750);
+        --icon-color: var(--accordion-icon-color);
+        --icon-size: var(--accordion-icon-size);
+
+        & .accordion__label {
+          color: var(--accordion-font-color);
+          font-size: var(--accordion-font-size);
+          font-weight: var(--accordion-font-weight);
+          letter-spacing: var(--hmwc-letter-spacing-dense);
+          transition: var(--hmwc-transition-fast) color ease;
+        }
+      }
+
+      & .accordion__controls {
+        display: flex;
+        justify-content: end;
+        width: 100%;
+        margin-right: var(--hmwc-spacing-x-large);
+
+        & hmwc-button {
+          --icon-size: calc(1.1 * var(--hmwc-rem, 1rem));
+        }
+      }
+
+      & .accordion__trigger {
+        display: flex;
+        align-items: center;
+        font-size: var(--accordion-trigger-size);
+        color: var(--accordion-trigger-color);
+        /* The rotate settles with a slight overshoot rather than stopping
+           dead; colour and the hover nudge stay on the standard curve. */
+        transition: rotate var(--accordion-expand-duration) var(--hmwc-easing-overshoot),
+          color var(--hmwc-transition-fast) var(--hmwc-easing-standard),
+          translate var(--hmwc-transition-fast) var(--hmwc-easing-standard);
+        translate: 0;
+      }
+    }
+
+    /* trigger-placement="start" moves the chevron ahead of the icon and label,
+       for nav- and tree-shaped disclosure. The summary is already flex, so this
+       is ordering only — no template branch. */
+    &.trigger-start {
+      & .accordion__trigger {
+        order: -1;
+        margin-inline-end: var(--accordion-icon-gap);
+      }
+
+      & .accordion__controls {
+        margin-right: 0;
+      }
+    }
+
+    &:not(.disabled) .accordion__summary:hover {
+      background: var(--accordion-summary-hover-background, none);
+
+      & .accordion__details .accordion__label {
+        color: var(--hmwc-color-neutral-1000);
+      }
+
+      & .accordion__trigger {
+        color: var(--hmwc-color-neutral-900);
+        translate: var(--hmwc-spacing-2x-small);
+      }
+    }
+
+    &:not(.disabled).active .accordion__summary:hover {
+      & .accordion__trigger {
+        translate: 0 var(--hmwc-spacing-2x-small);
+      }
+    }
+
+    &.active {
+      & .accordion__trigger {
+        rotate: 90deg;
+      }
+
+      /* An open accordion's icon takes the page's accent colour, when it
+         sets one (--hmwc-accent-color); otherwise it stays as it was. */
+      & .accordion__details {
+        --icon-color: var(--hmwc-accent-color, var(--accordion-icon-color));
+      }
+
+      & .accordion__summary {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        box-shadow: inset 0 calc(-1 * var(--hmwc-panel-border-width)) 0 var(--accordion-summary-active-border-color, transparent);
+        background: var(--accordion-summary-active-background, none);
+      }
+    }
+
+    /* The header's own controls: help, refresh and count, after any slotted
+       controls and before the chevron, each centred in the same small box. */
+    & .accordion__extras {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--hmwc-spacing-2x-small);
+      margin-inline-end: var(--hmwc-spacing-small);
+
+      & > * {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: var(--hmwc-input-height-small);
+      }
+    }
+
+    &.extras .accordion__controls {
+      margin-right: var(--hmwc-spacing-2x-small);
+    }
+
+    &.trigger-start .accordion__extras {
+      margin-inline-end: 0;
+    }
+
+    & .accordion__refresh-space {
+      width: var(--hmwc-input-height-small);
+      height: var(--hmwc-input-height-small);
+    }
+
+    /* Laid over its space in the header (placed by the component). */
+    & .accordion__refresh {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: var(--hmwc-input-height-small);
+      height: var(--hmwc-input-height-small);
+      z-index: 1;
+    }
+
+    & .accordion__help {
+      height: var(--hmwc-input-height-small);
+      color: var(--hmwc-color-neutral-500);
+      --icon-color: var(--hmwc-color-neutral-500);
+      font-size: var(--hmwc-font-size-large);
+      cursor: help;
+      transition: opacity var(--hmwc-transition-fast) var(--hmwc-easing-standard);
+    }
+
+    /* With a pointer, the help icon shows while it is over the header, so a
+       long list of sections isn't a column of icons. */
+    @media (hover: hover) {
+      & .accordion__help {
+        opacity: 0;
+      }
+
+      & .accordion__summary:hover .accordion__help,
+      & .accordion__summary:focus-visible .accordion__help {
+        opacity: 1;
+      }
+    }
+
+    /* The count: a soft tint of the page's accent colour when it sets one,
+       otherwise a quiet grey pill. Zero is muted. */
+    & .accordion__count {
+      --accent-soft: color-mix(in srgb, var(--hmwc-accent-color) 12%, var(--hmwc-panel-background-color));
+      --accent-ink: color-mix(in srgb, var(--hmwc-accent-color) 80%, var(--hmwc-color-neutral-1000));
+      --badge-background: var(--accent-soft, var(--accordion-count-background));
+      --badge-label-color: var(--accent-ink, var(--accordion-count-color));
+      --badge-border-color: transparent;
+      --badge-shadow: none;
+
+      &.muted {
+        --badge-background: var(--hmwc-color-neutral-100);
+        --badge-label-color: var(--hmwc-color-neutral-600);
+      }
+    }
+
+    & .accordion__sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    /* Collapse is the resting transition: it eases in and leaves quickly, so
+       dismissing feels immediate. Expand overrides it below with a longer,
+       decelerating curve — asymmetry is what stops a disclosure feeling mushy,
+       and both used to share one generic 250ms "ease". */
+    & .accordion__body {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows var(--accordion-collapse-duration) var(--hmwc-easing-accelerate);
+
+      & > slot {
+        display: block;
+        /* A grid item's automatic minimum width is its content's min-content
+           width once it stops clipping (open: overflow visible). Without this,
+           wide content (a data-table's nowrap rows) widened the column past
+           the accordion, so the content ran out of it and never scrolled. */
+        min-width: 0;
+        overflow: hidden;
+        padding-block: 0;
+        padding-inline: var(--container-padding);
+        /* The content used to be merely un-clipped by the row collapsing. It
+           now arrives: a short lift and fade behind the opening row. */
+        opacity: 0;
+        translate: 0 calc(-1 * var(--hmwc-spacing-2x-small));
+        transition: padding-block var(--accordion-collapse-duration) var(--hmwc-easing-accelerate),
+          opacity var(--hmwc-transition-x-fast) var(--hmwc-easing-accelerate),
+          translate var(--hmwc-transition-x-fast) var(--hmwc-easing-accelerate);
+      }
+    }
+
+    &.active > .accordion__body {
+      grid-template-rows: 1fr;
+      transition: grid-template-rows var(--accordion-expand-duration) var(--hmwc-easing-decelerate);
+
+      & > slot {
+        overflow: visible;
+        padding-block: var(--container-padding);
+        opacity: 1;
+        translate: 0;
+        /* Delayed just past the row opening so the content reads as arriving
+           into the space rather than being revealed by it. */
+        transition: padding-block var(--accordion-expand-duration) var(--hmwc-easing-decelerate),
+          opacity var(--hmwc-transition-fast) var(--hmwc-easing-standard) var(--hmwc-transition-x-fast),
+          translate var(--hmwc-transition-fast) var(--hmwc-easing-decelerate) var(--hmwc-transition-x-fast);
+      }
+    }
+
+    /* DoD §9. The accordion animates grid-template-rows, rotate, translate,
+       opacity and padding-block, and previously had no reduced-motion
+       companion at all. State changes still apply — only the motion stops. */
+    @media (prefers-reduced-motion: reduce) {
+      & .accordion__label,
+      & .accordion__trigger,
+      & .accordion__summary,
+      & .accordion__help,
+      & .accordion__body,
+      & .accordion__body > slot,
+      &.active > .accordion__body,
+      &.active > .accordion__body > slot {
+        transition: none;
+      }
+
+      & .accordion__body > slot {
+        opacity: 1;
+        translate: none;
+      }
+
+      &:not(.disabled) .accordion__summary:hover .accordion__trigger,
+      &:not(.disabled).active .accordion__summary:hover .accordion__trigger {
+        translate: none;
+      }
+    }
+
+    & .accordion__body > slot {
+      display: block;
+      align-items: var(--container-alignment);
+      justify-content: var(--container-justification);
+      gap: var(--container-spacing);
+      border-radius: var(--container-border-radius);
+      aspect-ratio: var(--container-aspect-ratio);
+      width: var(--container-width);
+      box-shadow: var(--container-shadow);
+      background: var(--container-background);
+
+      /* Promote nested surface level so child panels (cards, etc.)
+         automatically contrast against the accordion background. */
+      --hmwc-panel-background-color: var(--hmwc-input-background-color);
+    }
+
+    &.disabled {
+      opacity: 0.5;
+
+      & .accordion__summary {
+        cursor: not-allowed;
+
+        &:focus-visible {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+
+    &.icon {
+      & .accordion__details .accordion__icon {
+        display: block;
+        font-size: var(--accordion-icon-size);
+      }
+    }
+
+    &.solo {
+      --accordion-border-radius: var(--hmwc-border-radius-x-large);
+      --accordion-border-color: var(--hmwc-panel-border-color);
+    }
+
+    &.basic {
+      --accordion-background: none;
+      --accordion-border-color: none;
+      --accordion-trigger-size: calc(0.625 * var(--accordion-font-size));
+      --accordion-summary-padding: 0;
+      --container-padding: var(--hmwc-spacing-medium) 0;
+
+      /* With no summary padding the label/icon start at the host's
+         left edge — align the body content with them instead of
+         indenting it. */
+      & .accordion__body > slot {
+        padding-inline: 0;
+      }
+    }
+  }
+`;var He=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},J=class extends L{constructor(){super(...arguments),this.opened=!1,this.triggerPlacement="end",this.placeRefresh=()=>{let e=this.shadowRoot?.querySelector(".accordion__refresh-space"),t=this.shadowRoot?.querySelector(".accordion__refresh"),r=this.shadowRoot?.querySelector(".accordion");if(!e||!t||!r)return;let i=e.getBoundingClientRect(),o=r.getBoundingClientRect();t.style.top=`${i.top-o.top-r.clientTop}px`,t.style.left=`${i.left-o.left-r.clientLeft}px`}}show(){this.disabled||(this.active=!0)}hide(){this.disabled||(this.active=!1)}toggle(e){e&&e.preventDefault(),this.active?this.hide():this.show()}contextMenuItems(e){let t=this.parentElement;if(!t||t.tagName==="HMWC-ACCORDION-GROUP")return[];let r=Array.from(t.children).filter(i=>i.tagName==="HMWC-ACCORDION"&&!i.disabled);return r.length<2?[]:[{value:"expand-all",label:"Expand all",icon:"arrows-expand",disabled:r.every(i=>i.active),action:()=>r.forEach(i=>i.show())},{value:"collapse-all",label:"Collapse all",icon:"arrows-collapse",disabled:r.every(i=>!i.active),action:()=>r.forEach(i=>i.hide())}]}focus(){this.summary.focus()}blur(){this.body?.blur(),this.summary.blur()}handleControlsClick(e){if(e.target===e.currentTarget)return;e.stopPropagation(),e.composedPath().some(r=>r instanceof HTMLAnchorElement&&!!r.href)||e.preventDefault()}handleExtrasClick(e){e.target!==e.currentTarget&&(e.stopPropagation(),e.preventDefault())}handleRefresh(e){e.stopPropagation(),this.emit("hmwc-click",{detail:{action:"refresh"}})}handleKeyboardInput(e){let t=["Enter"," "],r=["ArrowUp","ArrowLeft"],i=["ArrowDown","ArrowRight"];[...t,...r,...i].includes(e.key)&&(e.preventDefault(),t.includes(e.key)?this.active?this.hide():this.show():r.includes(e.key)?this.hide():i.includes(e.key)&&this.show())}iconUpdate(){this.icon&&this.icon instanceof Object&&(this.iconColor=this.icon.color,this.icon=this.icon.icon)}activityUpdate(e){if(!this.active){e&&this.emit("hmwc-collapse");return}let t=!this.opened;this.opened=!0,this.emit("hmwc-expand",{detail:{first:t}})}firstUpdated(){this.solo=!(this.parentElement instanceof de)}hasCount(){return typeof this.count=="number"&&!Number.isNaN(this.count)}_renderExtras(){let e=this.refreshable&&this.active;return!this.help&&!e&&!this.hasCount()?x:c`
+      <span class="accordion__extras" @click=${this.handleExtrasClick}>
+        ${this.help?c`<hmwc-icon part="help" class="accordion__help" src="info-circle" tooltip=${this.help} aria-hidden="true"></hmwc-icon>`:x}
+        ${e?c`<span class="accordion__refresh-space" aria-hidden="true"></span>`:x}
+        ${this.hasCount()?c`<hmwc-badge
+              part="count"
+              id="count"
+              class=${v({accordion__count:!0,muted:this.count===0})}
+              pill
+              sm
+              label=${String(this.count)}></hmwc-badge>`:x}
+      </span>
+    `}_renderRefresh(){return!this.refreshable||!this.active?x:c`<hmwc-button
+      part="refresh"
+      class="accordion__refresh"
+      basic
+      sm
+      circle
+      icon="arrow-clockwise"
+      aria-label=${this.label?`Refresh ${this.label}`:"Refresh"}
+      tooltip="Refresh"
+      ?disabled=${this.disabled}
+      @hmwc-click=${this.handleRefresh}></hmwc-button>`}updated(){if(!(!!this.refreshable&&!!this.active)){this.headerObserver?.disconnect(),this.headerObserver=void 0;return}if(!this.headerObserver&&typeof ResizeObserver<"u"){this.headerObserver=new ResizeObserver(this.placeRefresh),this.headerObserver.observe(this.summary);let t=this.shadowRoot?.querySelector(".accordion__extras");t&&this.headerObserver.observe(t)}this.placeRefresh()}disconnectedCallback(){super.disconnectedCallback(),this.headerObserver?.disconnect(),this.headerObserver=void 0}render(){let e=[this.help?"help":"",this.hasCount()?"count":""].filter(Boolean).join(" "),t=v({accordion:!0,active:!!this.active,disabled:!!this.disabled,basic:!!this.basic,solo:!!this.solo,icon:!!this.icon||this.controllers.slot.test("icon"),"trigger-start":this.triggerPlacement==="start",extras:!!this.help||!!this.refreshable&&!!this.active||this.hasCount()});return c`
+      <details part="base" class=${t} open>
+        <summary
+          part="summary"
+          id="summary"
+          class="accordion__summary"
+          role="button"
+          aria-expanded=${w(this.active)}
+          aria-controls="content"
+          aria-label=${w(this.label)}
+          aria-describedby=${w(e||void 0)}
+          aria-disabled=${this.disabled?"true":"false"}
+          tabindex=${this.disabled?"-1":"0"}
+          @keydown=${this.handleKeyboardInput}
+          @click=${this.toggle}
+          @focus=${()=>this.emit("hmwc-focus")}
+          @blur=${()=>this.emit("hmwc-blur")}
+          style="--accordion-icon-color: ${w(this.iconColor)}">
+          <div part="details" class="accordion__details">
+            <slot name="icon" part="icon" class="accordion__icon">${this.icon&&c`<hmwc-icon flex src=${this.icon}></hmwc-icon>`}</slot>
+            <slot name="label" part="label" class="accordion__label">${this.label}</slot>
+          </div>
+          <slot name="controls" part="controls" class="accordion__controls" @click=${this.handleControlsClick}></slot>
+          ${this._renderExtras()}
+          <slot name="trigger" part="trigger" class="accordion__trigger">
+            <hmwc-icon part="summary-icon" src="chevron-right"></hmwc-icon>
+          </slot>
+        </summary>
+        ${this._renderRefresh()}
+        ${this.help?c`<span id="help" class="accordion__sr">${this.help}</span>`:x}
+        <div id="content" class="accordion__body" part="body" role="region" aria-labelledby="summary">
+          <slot></slot>
+        </div>
+      </details>
+    `}};J.styles=eo;J.dependencies=[$,Q,k];J.slots=["[default]","icon","label","controls","trigger"];He([b()],J.prototype,"solo",void 0);He([n({type:Boolean,reflect:!0})],J.prototype,"active",void 0);He([n({type:String,reflect:!0})],J.prototype,"label",void 0);He([n({type:String,reflect:!0})],J.prototype,"icon",void 0);He([n({type:Boolean,reflect:!0})],J.prototype,"disabled",void 0);He([n({type:Boolean,reflect:!0})],J.prototype,"basic",void 0);He([n({type:Boolean,reflect:!0})],J.prototype,"refreshable",void 0);He([n({type:String})],J.prototype,"help",void 0);He([n({type:String,reflect:!0,attribute:"trigger-placement"})],J.prototype,"triggerPlacement",void 0);He([n({type:Number,reflect:!0})],J.prototype,"count",void 0);He([I(".accordion__summary")],J.prototype,"summary",void 0);He([I(".accordion__body")],J.prototype,"body",void 0);He([b()],J.prototype,"iconColor",void 0);He([u("icon")],J.prototype,"iconUpdate",null);He([u("active")],J.prototype,"activityUpdate",null);var to=f`
   :host {
     --accordion-group-spacing: none;
     --accordion-group-background: var(--hmwc-panel-background-color);
@@ -1634,11 +1854,46 @@
     --accordion-group-font-weight: var(--hmwc-font-weight-normal);
     --accordion-group-icon-color: var(--hmwc-color-neutral-700);
     --accordion-group-icon-size: var(--accordion-font-size);
-    --accordion-group-trigger-size: 0.75rem;
+    --accordion-group-trigger-size: calc(0.75 * var(--hmwc-rem, 1rem));
     --accordion-group-trigger-color: var(--hmwc-color-neutral-700);
     --accordion-group-summary-padding: var(--hmwc-spacing-medium) var(--hmwc-spacing-large) var(--hmwc-spacing-small);
+    --accordion-group-heading-inset: calc(var(--hmwc-spacing-large) + var(--hmwc-panel-border-width));
 
     display: block;
+  }
+
+  /* No accordions (none rendered for this user, say): nothing to show, heading included. */
+  :host([empty]) {
+    display: none;
+  }
+
+  /* divided: the sections look. Even header padding, semibold labels and
+     quieter icons. */
+  :host([divided]) {
+    --accordion-group-summary-padding: var(--hmwc-spacing-small) var(--hmwc-spacing-large);
+    --accordion-group-font-weight: var(--hmwc-font-weight-semibold);
+    --accordion-group-font-color: var(--hmwc-color-neutral-900);
+    --accordion-group-icon-color: var(--hmwc-color-neutral-500);
+  }
+
+  /* A small heading over the group: its icon in the column of the accordions' icons. */
+  .accordion-group__heading {
+    display: flex;
+    align-items: center;
+    gap: var(--hmwc-spacing-x-small);
+    margin: 0 0 var(--hmwc-spacing-x-small) var(--accordion-group-heading-inset);
+    color: var(--hmwc-color-neutral-700);
+    font-family: var(--hmwc-font-sans);
+    font-size: var(--hmwc-font-size-small);
+    font-weight: var(--hmwc-font-weight-semibold);
+    letter-spacing: var(--hmwc-letter-spacing-loose);
+    text-transform: uppercase;
+    --icon-size: var(--hmwc-font-size-medium);
+    --icon-color: var(--hmwc-accent-color, var(--hmwc-color-neutral-500));
+  }
+
+  .accordion-group__heading-icon {
+    color: var(--hmwc-accent-color, var(--hmwc-color-neutral-500));
   }
 
   .accordion-group {
@@ -1660,21 +1915,47 @@
      without using overflow:hidden on the group (which clips
      dropdown menus that extend beyond the accordion).
      We set CSS custom properties so they propagate through the
-     shadow DOM boundary to the inner .accordion element. */
-  .accordion-group ::slotted(:first-child) {
+     shadow DOM boundary to the inner .accordion element.
+     First/last accordion, not first/last child: pages often slot scripts,
+     modals or hidden inputs alongside, and the end accordion then kept
+     square corners that covered the group's rounded border. */
+  .accordion-group ::slotted(hmwc-accordion:first-of-type) {
     --accordion-border-top-left-radius: calc(var(--accordion-group-border-radius) - var(--hmwc-panel-border-width, 1px));
     --accordion-border-top-right-radius: calc(var(--accordion-group-border-radius) - var(--hmwc-panel-border-width, 1px));
   }
 
-  .accordion-group ::slotted(:last-child) {
+  .accordion-group ::slotted(hmwc-accordion:last-of-type) {
     --accordion-border-bottom-left-radius: calc(var(--accordion-group-border-radius) - var(--hmwc-panel-border-width, 1px));
     --accordion-border-bottom-right-radius: calc(var(--accordion-group-border-radius) - var(--hmwc-panel-border-width, 1px));
   }
-`;var qe=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},vt=class extends I{constructor(){super(...arguments),this.index=-1,this.accordions=[],this.listeners=new Map}showAll(){this.accordions.forEach(t=>t.show())}hideAll(){this.accordions.forEach(t=>t.hide())}getAccordions(){return this.controllers.slot.get().filter(t=>t instanceof Q)}handleExpand(t){this.index=t,this.multiple||this.accordions.forEach((e,r)=>{r!==t&&e.hide()})}handleCollapse(t){this.index===t&&(this.index=-1)}indexUpdate(){this.emit("hmwc-change",{detail:{index:this.index,accordion:this.accordions[this.index]}})}accordionsUpdate(){let t={"--accordion-background":"var(--accordion-group-background)","--accordion-font-color":"var(--accordion-group-font-color)","--accordion-font-size":"var(--accordion-group-font-size)","--accordion-font-weight":"var(--accordion-group-font-weight)","--accordion-icon-color":"var(--accordion-group-icon-color)","--accordion-icon-size":"var(--accordion-group-icon-size)","--accordion-trigger-size":"var(--accordion-group-trigger-size)","--accordion-trigger-color":"var(--accordion-group-trigger-color)","--accordion-summary-padding":"var(--accordion-group-summary-padding)"},e=Object.keys(t).map(r=>`${r}: ${t[r]}`).join("; ");this.listeners.forEach((r,i)=>{i.removeEventListener("hmwc-expand",r.expand),i.removeEventListener("hmwc-collapse",r.collapse)}),this.listeners.clear(),this.accordions.forEach((r,i)=>{r.setAttribute("style",e);let o=()=>this.handleExpand(i),n=()=>this.handleCollapse(i);this.listeners.set(r,{expand:o,collapse:n}),r.addEventListener("hmwc-expand",o),r.addEventListener("hmwc-collapse",n)})}firstUpdated(){this.accordions=this.getAccordions()}render(){let t=f({"accordion-group":!0});return c`
-      <div part="base" class=${t}>
-        <slot></slot>
+
+  /* divided: a line between accordions (darker under an open one, so a long
+     open section has a visible end), and an open header tinted with a rule
+     under it. */
+  .accordion-group.divided ::slotted(hmwc-accordion) {
+    --accordion-summary-hover-background: var(--hmwc-color-neutral-50);
+    --accordion-summary-active-background: var(--hmwc-color-neutral-50);
+    --accordion-summary-active-border-color: var(--hmwc-color-neutral-200);
+  }
+
+  .accordion-group.divided ::slotted(hmwc-accordion:not(:last-of-type)) {
+    border-bottom: var(--hmwc-panel-border-width) solid var(--hmwc-color-neutral-100);
+  }
+
+  .accordion-group.divided ::slotted(hmwc-accordion[active]:not(:last-of-type)) {
+    border-bottom-color: var(--hmwc-color-neutral-200);
+  }
+`;var Et=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},de=class extends L{constructor(){super(...arguments),this.index=-1,this.accordions=[],this.empty=!1,this.restored=new WeakSet,this.listeners=new Map}showAll(){this.accordions.forEach(e=>e.show())}hideAll(){this.accordions.forEach(e=>e.hide())}contextMenuItems(e){let t=this.getAccordions().filter(i=>!i.disabled);if(t.length<2)return[];let r=[];return this.multiple&&r.push({value:"expand-all",label:"Expand all",icon:"arrows-expand",disabled:t.every(i=>i.active),action:()=>this.showAll()}),r.push({value:"collapse-all",label:"Collapse all",icon:"arrows-collapse",disabled:t.every(i=>!i.active),action:()=>this.hideAll()}),r}getAccordions(){return this.controllers.slot.get().filter(e=>e instanceof J)}handleSlotChange(){let e=this.getAccordions();e.length===this.accordions.length&&e.every((r,i)=>r===this.accordions[i])||(this.accordions=e),this.empty=!this.querySelector(":scope > hmwc-accordion")}storageKey(){return`hmwc-accordion-group:${this.persist}`}keyOf(e){return e.id||String(this.accordions.indexOf(e))}readRemembered(){if(this.persist)try{let e=JSON.parse(localStorage.getItem(this.storageKey())||"null");return Array.isArray(e)?new Set(e.map(String)):void 0}catch{return}}restore(){this.remembered&&this.accordions.forEach(e=>{this.restored.has(e)||(this.restored.add(e),this.remembered.has(this.keyOf(e))&&e.show())})}save(){if(!this.persist)return;let e=new Set(this.accordions.map(i=>this.keyOf(i))),t=[...this.remembered||[]].filter(i=>!e.has(i)),r=this.accordions.filter(i=>i.active).map(i=>this.keyOf(i));this.remembered=new Set([...t,...r]);try{localStorage.setItem(this.storageKey(),JSON.stringify([...this.remembered]))}catch{}}handleExpand(e){this.index=e,this.save(),this.multiple||this.accordions.forEach((t,r)=>{r!==e&&t.hide()})}handleCollapse(e){this.index===e&&(this.index=-1),this.save()}indexUpdate(){this.emit("hmwc-change",{detail:{index:this.index,accordion:this.accordions[this.index]}})}accordionsUpdate(){let e={"--accordion-background":"var(--accordion-group-background)","--accordion-font-color":"var(--accordion-group-font-color)","--accordion-font-size":"var(--accordion-group-font-size)","--accordion-font-weight":"var(--accordion-group-font-weight)","--accordion-icon-color":"var(--accordion-group-icon-color)","--accordion-icon-size":"var(--accordion-group-icon-size)","--accordion-trigger-size":"var(--accordion-group-trigger-size)","--accordion-trigger-color":"var(--accordion-group-trigger-color)","--accordion-summary-padding":"var(--accordion-group-summary-padding)"},t=Object.keys(e).map(r=>`${r}: ${e[r]}`).join("; ");this.listeners.forEach((r,i)=>{i.removeEventListener("hmwc-expand",r.expand),i.removeEventListener("hmwc-collapse",r.collapse)}),this.listeners.clear(),this.accordions.forEach((r,i)=>{r.setAttribute("style",t);let o=l=>{l.target===r&&this.handleExpand(i)},a=l=>{l.target===r&&this.handleCollapse(i)};this.listeners.set(r,{expand:o,collapse:a}),r.addEventListener("hmwc-expand",o),r.addEventListener("hmwc-collapse",a)})}connectedCallback(){super.connectedCallback(),this.remembered=this.readRemembered()}firstUpdated(){this.accordions=this.getAccordions(),this.empty=!this.querySelector(":scope > hmwc-accordion")}updated(){this.restore()}_renderHeading(){return this.label?c`
+      <div part="heading" class="accordion-group__heading" id="heading">
+        ${this.icon?c`<hmwc-icon part="heading-icon" class="accordion-group__heading-icon" src=${this.icon}></hmwc-icon>`:x}
+        <span class="accordion-group__heading-label">${this.label}</span>
       </div>
-    `}};vt.styles=gi;vt.dependencies=[y];vt.slots=["[default]"];qe([v()],vt.prototype,"index",void 0);qe([v()],vt.prototype,"accordions",void 0);qe([a({type:Boolean,reflect:!0})],vt.prototype,"multiple",void 0);qe([p("index",{waitUntilFirstUpdate:!0})],vt.prototype,"indexUpdate",null);qe([p("accordions")],vt.prototype,"accordionsUpdate",null);vt.define("hmwc-accordion-group",vt);Q.define("hmwc-accordion",Q);customElements.get("hmwc-button")||y.define("hmwc-button",y);var vi=m`
+    `:x}render(){let e=v({"accordion-group":!0,divided:!!this.divided});return c`
+      ${this._renderHeading()}
+      <div part="base" class=${e} role=${this.label?"group":x} aria-labelledby=${this.label?"heading":x}>
+        <slot @slotchange=${this.handleSlotChange}></slot>
+      </div>
+    `}};de.styles=to;de.dependencies=[k,$];de.slots=["[default]"];Et([b()],de.prototype,"index",void 0);Et([b()],de.prototype,"accordions",void 0);Et([n({type:Boolean,reflect:!0})],de.prototype,"multiple",void 0);Et([n({type:Boolean,reflect:!0})],de.prototype,"divided",void 0);Et([n({type:Boolean,reflect:!0})],de.prototype,"empty",void 0);Et([n({type:String,reflect:!0})],de.prototype,"icon",void 0);Et([n({type:String,reflect:!0})],de.prototype,"persist",void 0);Et([u("index",{waitUntilFirstUpdate:!0})],de.prototype,"indexUpdate",null);Et([u("accordions")],de.prototype,"accordionsUpdate",null);de.define("hmwc-accordion-group",de);J.define("hmwc-accordion",J);var ro=f`
   @keyframes alert-enter {
     from {
       opacity: 0;
@@ -1785,15 +2066,12 @@
     position: relative;
     display: flex;
     margin: inherit;
-    line-height: var(--hmwc-line-height-normal);
     color: var(--hmwc-color-neutral-700);
     background-color: var(--alert-background);
     border: solid var(--hmwc-panel-border-width) var(--hmwc-panel-border-color);
     border-top-width: var(--alert-border-width);
     border-top-color: var(--alert-border-color);
     border-radius: var(--alert-border-radius);
-    font-family: var(--hmwc-font-sans);
-    font-size: var(--hmwc-font-size-small);
     font-weight: var(--hmwc-font-weight-normal);
     overflow: auto;
 
@@ -1814,6 +2092,30 @@
       animation: alert-exit-stack 250ms cubic-bezier(0.3, 0, 1, 1) both;
     }
 
+    /* Content host: text slotted into the body takes the page typography
+       and can be selected (see contentStyles). The alert's own text keeps the
+       chrome typography; the title and label are the message, so they stay
+       selectable too. */
+    .alert__icon,
+    .alert__title,
+    .alert__label,
+    .alert__dismiss {
+      font-family: var(--hmwc-font-sans);
+      font-feature-settings: 'c2sc', 'smcp';
+      line-height: var(--hmwc-line-height-normal);
+      letter-spacing: var(--hmwc-letter-spacing-normal);
+    }
+
+    .alert__icon,
+    .alert__dismiss {
+      user-select: none;
+    }
+
+    .alert__title,
+    .alert__label {
+      user-select: text;
+    }
+
     .alert__icon {
       flex: 0 0 auto;
       display: flex;
@@ -1832,7 +2134,6 @@
       overflow: hidden;
       gap: var(--hmwc-spacing-3x-small);
       width: auto;
-      font-size: var(--hmwc-font-size-medium);
 
       & .alert__title {
         display: flex;
@@ -1891,24 +2192,45 @@
     &:not(.stack) {
       width: 100%;
     }
+
+    &.sm {
+      --alert-padding: var(--hmwc-spacing-small);
+      --alert-spacing: var(--hmwc-spacing-medium);
+      --alert-title-size: var(--hmwc-font-size-small);
+      --alert-label-size: var(--hmwc-font-size-small);
+      --alert-icon-size: var(--hmwc-font-size-medium);
+
+      & .alert__icon {
+        font-size: var(--alert-icon-size);
+      }
+
+      & .alert__body {
+        gap: 0;
+      }
+
+      & .alert__dismiss {
+        padding-inline-end: var(--hmwc-spacing-x-small);
+        --icon-size: var(--hmwc-font-size-small);
+      }
+    }
   }
-`,bi=`
+`,io=`
   display: flex;
   flex-direction: column;
-  gap: var(--hmwc-spacing-medium, 1rem);
+  gap: var(--hmwc-spacing-medium, calc(1 * var(--hmwc-rem, 1rem)));
   padding: var(--hmwc-spacing-small);
   position: fixed;
   top: var(--hmwc-navbar-width);
   inset-inline-end: 0;
   z-index: 950;
-  width: 28rem;
+  width: calc(28 * var(--hmwc-rem, 1rem));
   max-width: 100%;
   max-height: 100%;
   overflow: auto;
-`;var Sr={info:{variant:"primary",icon:"info-circle",dismissible:!0,duration:5e3},success:{variant:"success",icon:"check2-circle",dismissible:!0,duration:5e3},warning:{variant:"warning",icon:"exclamation-triangle",dismissible:!0,duration:8e3},error:{variant:"danger",icon:"exclamation-octagon",dismissible:!0,duration:1/0}};var lt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},la=250,H=class extends u{constructor(){super(...arguments),this.closing=!1,this.active=!1,this.duration=1/0}show(){if(this.active||(this.active=!0,!this.stack))return;yi(this).appendChild(this)}hide(){if(!this.active)return;this.closing=!0,setTimeout(()=>{this.closing=!1,this.active=!1,this.stack&&this.remove()},la)}cacheAlert(){let t=JSON.parse(localStorage.getItem("alerts")||"[]");localStorage.setItem("alerts",JSON.stringify(t.filter(e=>e!==this.id)))}removeCache(){if(!this.id)return;let t=[...JSON.parse(localStorage.getItem("alerts")||"[]"),this.id];localStorage.setItem("alerts",JSON.stringify(t))}activityUpdate(){this.resetTimeout(),this.emit(`hmwc-${this.active?"show":"hide"}`)}resetTimeout(){this.active&&(this.duration||0)<1/0&&(clearTimeout(this.timeout),this.timeout=window.setTimeout(()=>this.hide(),this.duration))}cacheUpdate(){this.cache&&(this.cached=JSON.parse(localStorage.getItem("alerts")||"[]").includes(this.id))}stackUpdate(){this.stack&&(this.duration=this.duration===1/0?5e3:this.duration)}connectedCallback(){super.connectedCallback(),!this.stack&&(this.active=this.active===void 0?!0:this.cached?!1:this.active)}render(){let t=f({alert:!0,active:!!this.active,closing:this.closing,dismissible:!!this.dismissible,stack:!!this.stack,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger});return c`
+`;var ti={info:{variant:"primary",icon:"info-circle",dismissible:!0,duration:5e3},success:{variant:"success",icon:"check2-circle",dismissible:!0,duration:5e3},warning:{variant:"warning",icon:"exclamation-triangle",dismissible:!0,duration:8e3},error:{variant:"danger",icon:"exclamation-octagon",dismissible:!0,duration:1/0}};var be=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},fs=250,U=class extends g{constructor(){super(...arguments),this.closing=!1,this.active=!1,this.duration=1/0}show(){if(this.active||(this.active=!0,!this.stack))return;ao(this).appendChild(this)}hide(){if(!this.active)return;this.closing=!0,setTimeout(()=>{this.closing=!1,this.active=!1,this.stack&&this.remove()},fs)}cacheAlert(){let e=JSON.parse(localStorage.getItem("alerts")||"[]");localStorage.setItem("alerts",JSON.stringify(e.filter(t=>t!==this.id)))}removeCache(){if(!this.id)return;let e=[...JSON.parse(localStorage.getItem("alerts")||"[]"),this.id];localStorage.setItem("alerts",JSON.stringify(e))}activityUpdate(){this.resetTimeout(),this.emit(`hmwc-${this.active?"show":"hide"}`)}resetTimeout(){this.active&&(this.duration||0)<1/0&&(clearTimeout(this.timeout),this.timeout=window.setTimeout(()=>this.hide(),this.duration))}cacheUpdate(){this.cache&&(this.cached=JSON.parse(localStorage.getItem("alerts")||"[]").includes(this.id))}stackUpdate(){this.stack&&(this.duration=this.duration===1/0?5e3:this.duration)}static get observedAttributes(){return[...super.observedAttributes,"hidden"]}attributeChangedCallback(e,t,r){super.attributeChangedCallback(e,t,r),!(e!=="hidden"||t===null==(r===null))&&(r===null?this.show():this.hasUpdated&&(this.active=!1))}connectedCallback(){super.connectedCallback(),!this.stack&&(this.cacheUpdate(),this.cached&&(this.active=!1))}render(){let e=v({alert:!0,active:!!this.active,closing:this.closing,dismissible:!!this.dismissible,stack:!!this.stack,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger,sm:!!this.sm});return c`
       <div
         part="base"
-        class=${t}
+        class=${e}
         role="alert"
         ?hidden=${!this.active}
         aria-hidden=${this.active?"false":"true"}
@@ -1929,7 +2251,7 @@
               </slot>
             `:""}
       </div>
-    `}};H.styles=vi;H.dependencies=[_,y];H.slots=["[default]","title","label","icon","dismiss"];lt([v()],H.prototype,"cached",void 0);lt([v()],H.prototype,"closing",void 0);lt([v()],H.prototype,"timeout",void 0);lt([a({type:Boolean,reflect:!0})],H.prototype,"active",void 0);lt([a({type:Number})],H.prototype,"duration",void 0);lt([a({type:String})],H.prototype,"title",void 0);lt([a({type:String})],H.prototype,"label",void 0);lt([a({type:String})],H.prototype,"icon",void 0);lt([a({type:Boolean,reflect:!0})],H.prototype,"dismissible",void 0);lt([a({type:Boolean,reflect:!0})],H.prototype,"cache",void 0);lt([a({type:Boolean,reflect:!0})],H.prototype,"stack",void 0);lt([a({type:Boolean,reflect:!0})],H.prototype,"primary",void 0);lt([a({type:Boolean,reflect:!0})],H.prototype,"success",void 0);lt([a({type:Boolean,reflect:!0})],H.prototype,"neutral",void 0);lt([a({type:Boolean,reflect:!0})],H.prototype,"warning",void 0);lt([a({type:Boolean,reflect:!0})],H.prototype,"danger",void 0);lt([p("active",{waitUntilFirstUpdate:!0})],H.prototype,"activityUpdate",null);lt([p("duration")],H.prototype,"resetTimeout",null);lt([p("cache")],H.prototype,"cacheUpdate",null);lt([p("stack")],H.prototype,"stackUpdate",null);var ze;function wi(){return ze||(ze=Object.assign(document.createElement("div"),{className:"hmwc-notification-stack"}),ze.style.cssText=bi,ze.style.position="fixed"),ze.parentElement||document.body.appendChild(ze),ze}function yi(s,t=!1){if(t){let e=document.querySelector("[notificationstack][global]");if(e?._stackContainer)return e._stackContainer;let r=document.querySelectorAll("[notificationstack]");if(r.length){let i=r[0];if(i._stackContainer)return i._stackContainer}return wi()}if(s){let e=s.closest("[notificationstack]");if(e?._stackContainer)return e._stackContainer}return wi()}function ca(s={}){let t=Object.fromEntries(Object.entries(s).filter(([,o])=>o!==void 0)),e=s.preset?{...Sr[s.preset],...t}:s,r=document.createElement("hmwc-alert"),i=yi(s.relativeTo,!!e.global);return r.stack=!0,i.appendChild(r),e.title&&(r.title=e.title),e.label&&(r.label=e.label),e.icon&&(r.icon=e.icon),e.dismissible&&(r.dismissible=!0),e.duration!==void 0&&(r.duration=e.duration),e.variant&&(r[e.variant]=!0),s.className&&(r.className+=` ${s.className}`),s.style&&(typeof s.style=="string"?r.setAttribute("style",s.style):Object.assign(r.style,s.style)),s.onShow&&r.addEventListener("hmwc-show",()=>s.onShow(r)),s.onHide&&r.addEventListener("hmwc-hide",()=>s.onHide(r)),r.updateComplete.then(()=>{r.active=!0}),{alert:r,close:()=>r.hide()}}H.define("hmwc-alert",H);var{I:bc}=ei;var _i=s=>s.strings===void 0;var ha={},xi=(s,t=ha)=>s._$AH=t;var Bt=Be(class extends ge{constructor(s){if(super(s),s.type!==oe.PROPERTY&&s.type!==oe.ATTRIBUTE&&s.type!==oe.BOOLEAN_ATTRIBUTE)throw Error("The `live` directive is not allowed on child or event bindings");if(!_i(s))throw Error("`live` bindings can only contain a single expression")}render(s){return s}update(s,[t]){if(t===At||t===A)return t;let e=s.element,r=s.name;if(s.type===oe.PROPERTY){if(t===e[r])return At}else if(s.type===oe.BOOLEAN_ATTRIBUTE){if(!!t===e.hasAttribute(r))return At}else if(s.type===oe.ATTRIBUTE&&e.getAttribute(r)===t+"")return At;return xi(s),t}});var ki=m`
+    `}};U.styles=[pt,ro];U.dependencies=[$,k];U.slots=["[default]","title","label","icon","dismiss"];be([b()],U.prototype,"cached",void 0);be([b()],U.prototype,"closing",void 0);be([b()],U.prototype,"timeout",void 0);be([n({type:Boolean,reflect:!0})],U.prototype,"active",void 0);be([n({type:Number})],U.prototype,"duration",void 0);be([n({type:String})],U.prototype,"title",void 0);be([n({type:String})],U.prototype,"label",void 0);be([n({type:String})],U.prototype,"icon",void 0);be([n({type:Boolean,reflect:!0})],U.prototype,"dismissible",void 0);be([n({type:Boolean,reflect:!0})],U.prototype,"cache",void 0);be([n({type:Boolean,reflect:!0})],U.prototype,"stack",void 0);be([n({type:Boolean,reflect:!0})],U.prototype,"primary",void 0);be([n({type:Boolean,reflect:!0})],U.prototype,"success",void 0);be([n({type:Boolean,reflect:!0})],U.prototype,"neutral",void 0);be([n({type:Boolean,reflect:!0})],U.prototype,"warning",void 0);be([n({type:Boolean,reflect:!0})],U.prototype,"danger",void 0);be([n({type:Boolean,reflect:!0})],U.prototype,"sm",void 0);be([u("active",{waitUntilFirstUpdate:!0})],U.prototype,"activityUpdate",null);be([u("duration")],U.prototype,"resetTimeout",null);be([u("cache")],U.prototype,"cacheUpdate",null);be([u("stack")],U.prototype,"stackUpdate",null);var Ut;function oo(){return Ut||(Ut=Object.assign(document.createElement("div"),{className:"hmwc-notification-stack"}),Ut.style.cssText=io,Ut.style.position="fixed"),Ut.parentElement||document.body.appendChild(Ut),Ut}function ao(s,e=!1){if(e){let t=document.querySelector("[notificationstack][global]");if(t?._stackContainer)return t._stackContainer;let r=document.querySelectorAll("[notificationstack]");if(r.length){let i=r[0];if(i._stackContainer)return i._stackContainer}return oo()}if(s){let t=s.closest("[notificationstack]");if(t?._stackContainer)return t._stackContainer}return oo()}function ri(s={}){let e=Object.fromEntries(Object.entries(s).filter(([,o])=>o!==void 0)),t=s.preset?{...ti[s.preset],...e}:s,r=document.createElement("hmwc-alert"),i=ao(s.relativeTo,!!t.global);return r.stack=!0,i.appendChild(r),t.title&&(r.title=t.title),t.label&&(r.label=t.label),t.icon&&(r.icon=t.icon),t.dismissible&&(r.dismissible=!0),t.duration!==void 0&&(r.duration=t.duration),t.variant&&(r[t.variant]=!0),s.className&&(r.className+=` ${s.className}`),s.style&&(typeof s.style=="string"?r.setAttribute("style",s.style):Object.assign(r.style,s.style)),s.onShow&&r.addEventListener("hmwc-show",o=>{o.target===r&&s.onShow(r)}),s.onHide&&r.addEventListener("hmwc-hide",o=>{o.target===r&&s.onHide(r)}),r.updateComplete.then(()=>{r.active=!0}),{alert:r,close:()=>r.hide()}}U.define("hmwc-alert",U);var{I:gs}=Pi,so=s=>s;var lo=s=>s.strings===void 0,no=()=>document.createComment(""),Yt=(s,e,t)=>{let r=s._$AA.parentNode,i=e===void 0?s._$AB:e._$AA;if(t===void 0){let o=r.insertBefore(no(),i),a=r.insertBefore(no(),i);t=new gs(o,a,s,s.options)}else{let o=t._$AB.nextSibling,a=t._$AM,l=a!==s;if(l){let h;t._$AQ?.(s),t._$AM=s,t._$AP!==void 0&&(h=s._$AU)!==a._$AU&&t._$AP(h)}if(o!==i||l){let h=t._$AA;for(;h!==o;){let d=so(h).nextSibling;so(r).insertBefore(h,i),h=d}}}return t},Ot=(s,e,t=s)=>(s._$AI(e,t),s),vs={},Pr=(s,e=vs)=>s._$AH=e,co=s=>s._$AH,Ir=s=>{s._$AR(),s._$AA.remove()};var et=Tt(class extends xt{constructor(s){if(super(s),s.type!==nt.PROPERTY&&s.type!==nt.ATTRIBUTE&&s.type!==nt.BOOLEAN_ATTRIBUTE)throw Error("The `live` directive is not allowed on child or event bindings");if(!lo(s))throw Error("`live` bindings can only contain a single expression")}render(s){return s}update(s,[e]){if(e===Ee||e===x)return e;let t=s.element,r=s.name;if(s.type===nt.PROPERTY){if(e===t[r])return Ee}else if(s.type===nt.BOOLEAN_ATTRIBUTE){if(!!e===t.hasAttribute(r))return Ee}else if(s.type===nt.ATTRIBUTE&&t.getAttribute(r)===e+"")return Ee;return Pr(s),e}});var ho=f`
   :host {
     display: flex;
     flex: 0 0 auto;
@@ -2086,7 +2408,7 @@
       }
     }
   }
-`,$i=c`
+`,po=c`
   <svg part="icon" viewBox="0 0 16 16">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
       <g stroke="currentColor">
@@ -2097,7 +2419,7 @@
       </g>
     </g>
   </svg>
-`,Ci=c`
+`,mo=c`
   <svg part="icon" viewBox="0 0 16 16">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
       <g stroke="currentColor" stroke-width="2">
@@ -2107,15 +2429,15 @@
       </g>
     </g>
   </svg>
-`;var Ar=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},ct=class extends P{handleStateChange(){this.input.checked=!!this.checked,this.input.indeterminate=this.indeterminate}click(){this.input.click()}focus(t){this.input.focus(t)}blur(){this.input.blur()}_isEmpty(){return!this.checked}_resolveError(){return this._validity.valueMissing&&!this._validity.customError?"Please check this box to continue.":super._resolveError()}handleClick(){this.checked=!this.checked,this.indeterminate=!1,this.invalid&&this.checkValidity()&&this.reportValidity(),this.emit("hmwc-change",{detail:{value:this.checked}})}handleBlur(){this.emit("hmwc-blur",{})}handleFocus(){this.emit("hmwc-focus",{})}handleInput(){this.emit("hmwc-input",{})}connectedCallback(){super.connectedCallback(),!this.sm&&!this.md&&!this.lg&&(this.md=!0)}render(){let t=!this.checked&&this.indeterminate,e=f({checkbox:!0,checked:this.checked,indeterminate:t,sm:!!this.sm,md:!!this.md,lg:!!this.lg,disabled:!!this.disabled,required:!!this.required});return c`
-      <label part="base" class=${e}>
+`;var ii=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},we=class extends N{handleStateChange(){this.input.checked=!!this.checked,this.input.indeterminate=this.indeterminate}click(){this.input.click()}focus(e){this.input.focus(e)}blur(){this.input.blur()}_isEmpty(){return!this.checked}_resolveError(){return this._validity.valueMissing&&!this._validity.customError?"Please check this box to continue.":super._resolveError()}handleClick(){this.checked=!this.checked,this.indeterminate=!1,this.invalid&&this.checkValidity()&&this.reportValidity(),this.emit("hmwc-change",{detail:{value:this.checked}})}handleBlur(){this.emit("hmwc-blur",{})}handleFocus(){this.emit("hmwc-focus",{})}handleInput(){this.emit("hmwc-input",{})}connectedCallback(){super.connectedCallback(),!this.sm&&!this.md&&!this.lg&&(this.md=!0)}render(){let e=!this.checked&&this.indeterminate,t=v({checkbox:!0,checked:this.checked,indeterminate:e,sm:!!this.sm,md:!!this.md,lg:!!this.lg,disabled:!!this.disabled,required:!!this.required});return c`
+      <label part="base" class=${t}>
         <input
           class="checkbox__input"
           type="checkbox"
           name=${w(this.name)}
           value=${w(this.value)}
-          .indeterminate=${Bt(this.indeterminate)}
-          .checked=${Bt(this.checked)}
+          .indeterminate=${et(this.indeterminate)}
+          .checked=${et(this.checked)}
           ?disabled=${this.disabled}
           ?required=${this.required}
           aria-checked=${this.checked}
@@ -2126,16 +2448,16 @@
           @focus=${this.handleFocus}
           @blur=${this.handleBlur} />
 
-        <span part="control" class="checkbox__control"> ${this.checked?$i:""} ${t?Ci:""} </span>
+        <span part="control" class="checkbox__control"> ${this.checked?po:""} ${e?mo:""} </span>
 
         <slot part="label" class="checkbox__label">${this.label}</slot>
       </label>
       ${this._renderError()}
-    `}};ct.styles=ki;ct.dependencies=[_];ct.toggle=!0;Ar([a({type:Boolean,reflect:!0})],ct.prototype,"indeterminate",void 0);Ar([R(".checkbox__input")],ct.prototype,"input",void 0);Ar([p(["checked","indeterminate"],{waitUntilFirstUpdate:!0})],ct.prototype,"handleStateChange",null);ct.define("hmwc-checkbox",ct);var Si=m`
+    `}};we.styles=ho;we.dependencies=[$];we.toggle=!0;ii([n({type:Boolean,reflect:!0})],we.prototype,"indeterminate",void 0);ii([I(".checkbox__input")],we.prototype,"input",void 0);ii([u(["checked","indeterminate"],{waitUntilFirstUpdate:!0})],we.prototype,"handleStateChange",null);we.define("hmwc-checkbox",we);var uo=f`
   :host {
     --divider-color: var(--hmwc-panel-border-color);
     --divider-size: var(--hmwc-panel-border-width);
-    --divider-radius: 3rem / 3rem;
+    --divider-radius: calc(3 * var(--hmwc-rem, 1rem)) / calc(3 * var(--hmwc-rem, 1rem));
     --divider-spacing-start: inherit;
     --divider-spacing-end: inherit;
 
@@ -2188,15 +2510,15 @@
 
     &.sm {
       --divider-size: calc(1.25 * var(--hmwc-panel-border-width));
-      --divider-radius: 2.25rem / 2.25rem;
+      --divider-radius: calc(2.25 * var(--hmwc-rem, 1rem)) / calc(2.25 * var(--hmwc-rem, 1rem));
     }
     &.md {
       --divider-size: calc(2.5 * var(--hmwc-panel-border-width));
-      --divider-radius: 2.5rem / 2.5rem;
+      --divider-radius: calc(2.5 * var(--hmwc-rem, 1rem)) / calc(2.5 * var(--hmwc-rem, 1rem));
     }
     &.lg {
       --divider-size: calc(4 * var(--hmwc-panel-border-width));
-      --divider-radius: 4rem / 4rem;
+      --divider-radius: calc(4 * var(--hmwc-rem, 1rem)) / calc(4 * var(--hmwc-rem, 1rem));
     }
 
     &.primary {
@@ -2215,7 +2537,252 @@
       --divider-color: var(--hmwc-color-danger-100);
     }
   }
-`;var Zt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},K=class extends u{constructor(){super(...arguments),this.horizontal=!0}orientationUpdate(){this.vertical&&(this.horizontal=!1)}render(){let t=f({divider:!0,horizontal:!!this.horizontal,vertical:!!this.vertical,"spacing-xs":this.spacing==="xs","spacing-sm":this.spacing==="sm","spacing-md":this.spacing==="md","spacing-lg":this.spacing==="lg","spacing-xl":this.spacing==="xl",sm:!!this.sm,md:!!this.md,lg:!!this.lg,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger});return c`<div part="base" class=${t} role="separator" aria-orientation=${this.vertical?"vertical":"horizontal"}></div>`}};K.styles=Si;Zt([a({type:Boolean,reflect:!0})],K.prototype,"horizontal",void 0);Zt([a({type:Boolean,reflect:!0})],K.prototype,"vertical",void 0);Zt([a({type:String,reflect:!0})],K.prototype,"spacing",void 0);Zt([a({type:Boolean,reflect:!0})],K.prototype,"sm",void 0);Zt([a({type:Boolean,reflect:!0})],K.prototype,"md",void 0);Zt([a({type:Boolean,reflect:!0})],K.prototype,"lg",void 0);Zt([a({type:Boolean,reflect:!0})],K.prototype,"primary",void 0);Zt([a({type:Boolean,reflect:!0})],K.prototype,"success",void 0);Zt([a({type:Boolean,reflect:!0})],K.prototype,"neutral",void 0);Zt([a({type:Boolean,reflect:!0})],K.prototype,"warning",void 0);Zt([a({type:Boolean,reflect:!0})],K.prototype,"danger",void 0);Zt([p("vertical")],K.prototype,"orientationUpdate",null);K.define("hmwc-divider",K);var Ai=m`
+`;var mt=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},H=class extends g{constructor(){super(...arguments),this.horizontal=!0}orientationUpdate(){this.vertical&&(this.horizontal=!1)}render(){let e=v({divider:!0,horizontal:!!this.horizontal,vertical:!!this.vertical,"spacing-xs":this.spacing==="xs","spacing-sm":this.spacing==="sm","spacing-md":this.spacing==="md","spacing-lg":this.spacing==="lg","spacing-xl":this.spacing==="xl",sm:!!this.sm,md:!!this.md,lg:!!this.lg,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger});return c`<div part="base" class=${e} role="separator" aria-orientation=${this.vertical?"vertical":"horizontal"}></div>`}};H.styles=uo;mt([n({type:Boolean,reflect:!0})],H.prototype,"horizontal",void 0);mt([n({type:Boolean,reflect:!0})],H.prototype,"vertical",void 0);mt([n({type:String,reflect:!0})],H.prototype,"spacing",void 0);mt([n({type:Boolean,reflect:!0})],H.prototype,"sm",void 0);mt([n({type:Boolean,reflect:!0})],H.prototype,"md",void 0);mt([n({type:Boolean,reflect:!0})],H.prototype,"lg",void 0);mt([n({type:Boolean,reflect:!0})],H.prototype,"primary",void 0);mt([n({type:Boolean,reflect:!0})],H.prototype,"success",void 0);mt([n({type:Boolean,reflect:!0})],H.prototype,"neutral",void 0);mt([n({type:Boolean,reflect:!0})],H.prototype,"warning",void 0);mt([n({type:Boolean,reflect:!0})],H.prototype,"danger",void 0);mt([u("vertical")],H.prototype,"orientationUpdate",null);H.define("hmwc-divider",H);var fo=f`
+  :host {
+    --submenu-offset: -2px;
+    --menu-item-spacing: var(--hmwc-spacing-2x-small) var(--hmwc-spacing-small) var(--hmwc-spacing-2x-small) var(--hmwc-spacing-x-small);
+    --menu-item-font-size: calc(1.05 * var(--hmwc-font-size-small));
+    --menu-item-letter-spacing: var(--hmwc-letter-spacing-normal);
+    --menu-item-background: var(--hmwc-color-neutral-0);
+
+    display: contents;
+  }
+
+  .menu-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: var(--hmwc-font-sans);
+    font-size: var(--menu-item-font-size);
+    font-weight: var(--hmwc-font-weight-semibold);
+    line-height: var(--hmwc-line-height-normal);
+    letter-spacing: var(--menu-item-letter-spacing);
+    color: var(--hmwc-color-neutral-900);
+    padding: var(--menu-item-spacing);
+    /* Was "var(--hmwc-transition-fast) fill" — that animates the SVG fill
+       property, which this element never sets, so the hover snapped instantly
+       while the menu's own toolbar controls faded. Animate what actually
+       changes, at the same x-fast timing the toolbar now uses. */
+    transition: background-color var(--hmwc-transition-x-fast) ease, color var(--hmwc-transition-x-fast) ease;
+    user-select: none;
+    -webkit-user-select: none;
+    white-space: nowrap;
+    cursor: pointer;
+    &:hover:not(.disabled, :focus-visible),
+    [aria-expanded='true'] {
+      background-color: var(--hmwc-color-neutral-100);
+      color: var(--hmwc-color-neutral-1000);
+    }
+
+    & .menu-item__label {
+      flex: 1 1 auto;
+      display: inline-block;
+      text-overflow: ellipsis;
+      color: var(--hmwc-color-neutral-750);
+      overflow: hidden;
+      letter-spacing: var(--menu-item-letter-spacing);
+    }
+
+    & .menu-item__prefix,
+    & .menu-item__suffix {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      --icon-color: var(--hmwc-color-neutral-700);
+    }
+
+    & .menu-item__check,
+    & .menu-item__chevron {
+      flex: 0 0 auto;
+      display: var(--menu-item-placeholder-display, flex);
+      align-items: center;
+      justify-content: center;
+      visibility: hidden;
+
+      hmwc-checkbox {
+        pointer-events: none;
+      }
+    }
+
+    & .menu-item__chevron {
+      width: calc(1.5 * var(--hmwc-rem, 1rem));
+      padding-inline-end: var(--hmwc-spacing-x-small);
+    }
+
+    & .menu-item__spinner {
+      position: absolute;
+      font-size: calc(0.8 * var(--hmwc-rem, 1rem));
+      top: calc(50% - 0.65 * var(--hmwc-rem, 1rem));
+      left: calc(0.5 * var(--hmwc-rem, 1rem));
+      opacity: 1;
+    }
+
+    &.loading {
+      outline: none;
+      cursor: wait;
+      opacity: 0.5;
+    }
+
+    &.checked {
+      & .menu-item__check {
+        visibility: visible;
+      }
+    }
+
+    /* Show the check area whenever a checkbox is present (checkable items) */
+    & .menu-item__check:has(hmwc-checkbox) {
+      visibility: visible;
+      margin-inline-end: var(--hmwc-spacing-2x-small);
+    }
+
+    &.prefix {
+      & .menu-item__prefix {
+        margin-inline-start: var(--hmwc-spacing-3x-small);
+        margin-inline-end: var(--hmwc-spacing-small);
+      }
+    }
+
+    &.suffix {
+      & .menu-item__suffix {
+        margin-inline-start: var(--hmwc-spacing-small);
+
+        &::slotted(hmwc-badge) {
+          margin-inline-start: var(--hmwc-spacing-3x-small);
+        }
+      }
+    }
+
+    &.disabled {
+      outline: none;
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: transparent;
+        color: var(--hmwc-color-neutral-700);
+      }
+    }
+
+    &.active {
+      background-color: var(--hmwc-color-primary-50, hsl(from var(--hmwc-color-primary-600) h s l / 0.08));
+      color: var(--hmwc-color-primary-700);
+
+      & .menu-item__label {
+        color: var(--hmwc-color-primary-700);
+        font-weight: var(--hmwc-font-weight-bold);
+      }
+
+      &:hover:not(.disabled, :focus-visible) {
+        background-color: var(--hmwc-color-primary-100, hsl(from var(--hmwc-color-primary-600) h s l / 0.14));
+      }
+    }
+
+    &.small {
+      --menu-item-spacing: var(--menu-item-spacing-override, var(--hmwc-spacing-3x-small));
+      --menu-item-letter-spacing: var(--hmwc-letter-spacing-normal);
+      --menu-item-font-size: var(--hmwc-font-size-small);
+    }
+
+    &.submenu {
+      & .menu-item__label {
+        margin-inline-end: 1.5em;
+      }
+
+      & .menu-item__chevron {
+        visibility: visible;
+        padding-left: var(--hmwc-spacing-small);
+      }
+
+      & .menu-item__submenu {
+        position: absolute;
+        left: 100%;
+        top: -20%;
+        box-shadow: var(--hmwc-shadow-large);
+        z-index: var(--hmwc-z-index-dropdown);
+        margin-left: var(--submenu-offset);
+      }
+    }
+
+    /* Group heading: a quiet label row above its items. It is not
+       interactive, so it keeps the default cursor and has no hover. It
+       keeps the items' inline padding, so it lines up with their start. */
+    &.heading {
+      cursor: default;
+      padding-block: var(--hmwc-spacing-x-small) var(--hmwc-spacing-3x-small);
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      & .menu-item__label {
+        font-size: var(--hmwc-font-size-x-small);
+        font-weight: var(--hmwc-font-weight-semibold);
+        letter-spacing: var(--hmwc-letter-spacing-loose);
+        text-transform: uppercase;
+        color: var(--hmwc-color-neutral-600);
+      }
+    }
+
+    &.center {
+      text-align: center;
+    }
+
+    &:focus-visible {
+      outline: none;
+      background-color: var(--hmwc-color-primary-600);
+      color: var(--hmwc-color-neutral-0);
+      opacity: 1;
+    }
+  }
+
+  @media (forced-colors: active) {
+    :host(:hover:not([aria-disabled='true'])) .menu-item,
+    :host(:focus-visible) .menu-item {
+      outline: dashed 1px SelectedItem;
+      outline-offset: -1px;
+    }
+  }
+`;var Ie=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},M=class extends g{constructor(){super(...arguments),this.expanded=!1,this.isExpanded=()=>{if(!this.item)return;let e=this.item.matches(":hover");return w(this.submenu)&&e},this.handleClick=e=>{if(this.disabled){e.preventDefault(),e.stopImmediatePropagation();return}this.emit("hmwc-select",{detail:{value:this.value}}),this.checkable&&(this.checked=!this.checked,this.emit("hmwc-change",{detail:{value:this}}))},this.handleMouseOver=e=>{e.stopPropagation(),this.closest("hmwc-menu")?.isTypeaheadActive||this.focus(),this.emit("hmwc-focus"),(this.submenu||this.controllers.slot.test("submenu"))&&(this.expanded=!0)},this.handleMouseOut=e=>{e.stopPropagation(),this.emit("hmwc-blur"),(this.submenu||this.controllers.slot.test("submenu"))&&(this.expanded=!1)}}handleExpandedChange(){if(!this.controllers.slot.test("submenu"))return;let e=this.controllers.slot.get("submenu")[0];e.active=this.expanded}_renderHeading(){return c`
+      <div part="base" class=${v({"menu-item":!0,heading:!0,small:!!this.sm})} role="presentation">
+        <span part="label" class="menu-item__label">${this.label}</span>
+      </div>
+    `}render(){if(this.heading)return this._renderHeading();let e=!!this.submenu||this.controllers.slot.test("submenu"),t=v({"menu-item":!0,expanded:this.expanded,checked:!!this.checked,loading:!!this.loading,center:!!this.center,disabled:!!this.disabled,active:!!this.active,prefix:!!this.prefix||this.controllers.slot.test("prefix"),suffix:!!this.suffix||this.controllers.slot.test("suffix"),submenu:e,small:!!this.sm});return c`
+      <div
+        part="base"
+        class=${t}
+        role="menuitem"
+        tabindex="-1"
+        aria-label=${w(this.label||void 0)}
+        aria-haspopup=${e?"true":"false"}
+        aria-expanded=${e&&this.isExpanded()?"true":"false"}
+        aria-disabled=${this.disabled?"true":"false"}
+        @click=${this.handleClick}
+        @mouseover=${this.handleMouseOver}
+        @mouseleave=${this.handleMouseOut}>
+        <slot name="check" part="check" class="menu-item__check">
+          ${this.checkable?c`<hmwc-checkbox sm ?checked=${this.checked} @hmwc-change=${r=>r.stopPropagation()} tabindex="-1"></hmwc-checkbox>`:""}
+        </slot>
+        <slot name="prefix" part="prefix" class="menu-item__prefix"> ${this.prefix&&c`<hmwc-icon src=${this.prefix}></hmwc-icon>`} </slot>
+
+        <span part="label" class="menu-item__label"> ${this.label} </span>
+
+        <slot name="suffix" part="suffix" class="menu-item__suffix"> ${this.suffix&&c`<hmwc-icon src=${this.suffix}></hmwc-icon>`} </slot>
+
+        <span part="chevron" class="menu-item__chevron">
+          <hmwc-icon flex src="chevron-right" aria-hidden="true"></hmwc-icon>
+        </span>
+
+        ${this.loading&&c`
+          <span class="menu-item__spinner">
+            <hmwc-spinner part="spinner"></hmwc-spinner>
+          </span>
+        `}
+
+        <slot name="submenu" part="submenu" class="menu-item__submenu">
+          ${this.submenu&&c`<hmwc-menu submenu slot="submenu" ?active=${this.expanded} .items=${this.submenu}></hmwc-menu>`}
+        </slot>
+      </div>
+    `}};M.styles=fo;M.dependencies=[$,ie,we];M.slots=["prefix","suffix","submenu"];Ie([b()],M.prototype,"expanded",void 0);Ie([n({type:String})],M.prototype,"value",void 0);Ie([n({type:String})],M.prototype,"label",void 0);Ie([n({type:Boolean,reflect:!0})],M.prototype,"checkable",void 0);Ie([n({type:Boolean,reflect:!0})],M.prototype,"checked",void 0);Ie([n({type:Boolean,reflect:!0})],M.prototype,"loading",void 0);Ie([n({type:String})],M.prototype,"prefix",void 0);Ie([n({type:String})],M.prototype,"suffix",void 0);Ie([n({type:Array})],M.prototype,"submenu",void 0);Ie([n({type:Boolean,reflect:!0})],M.prototype,"disabled",void 0);Ie([n({type:Boolean,reflect:!0})],M.prototype,"heading",void 0);Ie([n({type:Boolean,reflect:!0})],M.prototype,"sm",void 0);Ie([n({type:Boolean,reflect:!0})],M.prototype,"active",void 0);Ie([n({type:Boolean,reflect:!0})],M.prototype,"center",void 0);Ie([I(".menu-item")],M.prototype,"item",void 0);Ie([u("expanded")],M.prototype,"handleExpandedChange",null);M.define("hmwc-menu-item",M);var go=f`
   :host {
     --calendar-background: var(--hmwc-panel-background-color, var(--hmwc-color-neutral-0, #fff));
     --calendar-radius: var(--hmwc-border-radius-x-large);
@@ -2296,7 +2863,6 @@
       & .calendar__year-picker {
         & hmwc-menu {
           width: fit-content;
-          box-shadow: none;
           --menu-width: fit-content;
           --menu-padding: var(--hmwc-spacing-3x-small) 0;
           --menu-label-size: var(--hmwc-font-size-small);
@@ -2406,7 +2972,6 @@
         }
 
         &:not([current]) {
-          cursor: default;
           color: var(--calendar-date-inactive-color);
           font-weight: var(--hmwc-font-weight-normal);
           cursor: not-allowed;
@@ -2416,7 +2981,7 @@
 
     &.disabled {
       & .calendar__body .calendar__date {
-        cursor: default;
+        cursor: not-allowed;
         color: var(--calendar-date-disabled-color);
       }
     }
@@ -2440,8 +3005,8 @@
       }
     }
   }
-`;var bt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},G=class extends u{constructor(){super(...arguments),this.MONTHS=[...Array(12).keys()].map(t=>new Date(0,t).toLocaleString("en",{month:"long"})),this.DAYS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],this.dates=[],this.selection=[],this.dragAction="add",this.value=[],this.placeholder=[],this.month=new Date().getMonth(),this.year=new Date().getFullYear(),this.yearRange=100,this.yearRangeFuture=10,this.valueUpdate=()=>this.parseDates(),this.selectionUpdate=()=>this.emit("hmwc-change",{detail:{value:this.selection}}),this.dateUpdate=()=>this.dates=this.getDates(),this.multipleUpdate=()=>this.selection=this.selection.slice(0,1)}navigate(t,e=this.year){t!==void 0&&(e===this.year&&(t<0?(t=11,e--):t>11&&(t=0,e++)),this.month=t,this.year=e)}getYearOptions(){let t=new Date().getFullYear(),e=[],r=t-this.yearRange,i=t+this.yearRangeFuture;for(let o=r;o<=i;o++)e.push(o);return e}handleMonthSelect(t){let e=parseInt(t.detail?.value);isNaN(e)||(this.navigate(e,this.year),this.renderRoot.querySelector(".calendar__month-picker")?.hide())}handleYearSelect(t){let e=parseInt(t.detail?.value);isNaN(e)||(this.navigate(this.month,e),this.renderRoot.querySelector(".calendar__year-picker")?.hide())}closeSiblingPicker(t){let e=t==="month"?"calendar__year-picker":"calendar__month-picker",r=this.renderRoot.querySelector(`.${e}`);r?.active&&r.hide()}select(t){new Date(t).getMonth()===this.month&&(this.emit("hmwc-select",{detail:{value:t}}),this.selection.find(e=>+e==+t)?this.selection=this.selection.filter(e=>+e!=+t):this.selection=[...this.multiple?this.selection:[],t])}parseDates(){this.selection=this.value.map(t=>new Date(t))}getDates(){let t=[],e={start:new Date(this.year,this.month,1),end:new Date(this.year,this.month+1,0)};for(let n=e.start.getDay()-1;n>=0;n--){let l=new Date(e.start);l.setDate(l.getDate()-(n+1)),t.push(l)}for(let n=1;n<=e.end.getDate();n++)t.push(new Date(this.year,this.month,n));let r=42-t.length;for(let n=1;n<=r;n++)t.push(new Date(this.year,this.month+1,n));let i=[];for(let n=0;n<t.length;n+=7)i.push(t.slice(n,n+7));return i.filter(n=>n.some(l=>l.getMonth()===this.month)).flat()}getDate(t){return this.dates.find(e=>{let r=new Date(e);return[r.getDate()===parseInt(t.innerText),r.getMonth()===this.month,r.getFullYear()===this.year,t.hasAttribute("current")].every(o=>o)})}startDrag(t){if(this.disabled)return;this.dragTarget=t.target;let e=this.getDate(this.dragTarget);e&&this.select(e),this.dragAction=this.dragTarget?.hasAttribute("selected")?"remove":"add"}drag(t){if(!this.dragTarget)return;let e=t.target;if(document.activeElement,[e===this.dragTarget,e.className!=="calendar__date",this.dragAction==="add"&&e.hasAttribute("selected"),this.dragAction==="remove"&&!e.hasAttribute("selected")].some(o=>o))return;let i=this.getDate(e);i&&this.select(i)}stopDrag(){this.dragAction="add",this.dragTarget=void 0}render(){let t=f({calendar:!0,navigation:!!this.navigation,basic:!!this.basic,disabled:!!this.disabled});return c`
-      <div part="base" class=${t} @mouseup=${this.stopDrag} @mouseleave=${this.stopDrag} @mousemove=${this.drag}>
+`;var ze=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},re=class extends g{constructor(){super(...arguments),this.MONTHS=[...Array(12).keys()].map(e=>new Date(0,e).toLocaleString("en",{month:"long"})),this.DAYS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],this.dates=[],this.selection=[],this.dragAction="add",this.value=[],this.placeholder=[],this.month=new Date().getMonth(),this.year=new Date().getFullYear(),this.yearRange=100,this.yearRangeFuture=10,this.valueUpdate=()=>this.parseDates(),this.selectionUpdate=()=>this.emit("hmwc-change",{detail:{value:this.selection}}),this.dateUpdate=()=>this.dates=this.getDates(),this.multipleUpdate=()=>this.selection=this.selection.slice(0,1)}static get dependencies(){return[P,k,O,M]}navigate(e,t=this.year){e!==void 0&&(t===this.year&&(e<0?(e=11,t--):e>11&&(e=0,t++)),this.month=e,this.year=t)}getYearOptions(){let e=new Date().getFullYear(),t=[],r=e-this.yearRange,i=e+this.yearRangeFuture;for(let o=r;o<=i;o++)t.push(o);return t}handleMonthSelect(e){e.stopPropagation();let t=parseInt(e.detail?.value);isNaN(t)||(this.navigate(t,this.year),this.renderRoot.querySelector(".calendar__month-picker")?.hide())}handleYearSelect(e){e.stopPropagation();let t=parseInt(e.detail?.value);isNaN(t)||(this.navigate(this.month,t),this.renderRoot.querySelector(".calendar__year-picker")?.hide())}closeSiblingPicker(e){let t=e==="month"?"calendar__year-picker":"calendar__month-picker",r=this.renderRoot.querySelector(`.${t}`);r?.active&&r.hide()}select(e){new Date(e).getMonth()===this.month&&(this.emit("hmwc-select",{detail:{value:e}}),this.selection.find(t=>+t==+e)?this.selection=this.selection.filter(t=>+t!=+e):this.selection=[...this.multiple?this.selection:[],e])}parseDates(){this.selection=this.value.map(e=>new Date(e))}getDates(){let e=[],t={start:new Date(this.year,this.month,1),end:new Date(this.year,this.month+1,0)};for(let a=t.start.getDay()-1;a>=0;a--){let l=new Date(t.start);l.setDate(l.getDate()-(a+1)),e.push(l)}for(let a=1;a<=t.end.getDate();a++)e.push(new Date(this.year,this.month,a));let r=42-e.length;for(let a=1;a<=r;a++)e.push(new Date(this.year,this.month+1,a));let i=[];for(let a=0;a<e.length;a+=7)i.push(e.slice(a,a+7));return i.filter(a=>a.some(l=>l.getMonth()===this.month)).flat()}getDate(e){return this.dates.find(t=>{let r=new Date(t);return[r.getDate()===parseInt(e.innerText),r.getMonth()===this.month,r.getFullYear()===this.year,e.hasAttribute("current")].every(o=>o)})}startDrag(e){if(this.disabled)return;this.dragTarget=e.target;let t=this.getDate(this.dragTarget);t&&this.select(t),this.dragAction=this.dragTarget?.hasAttribute("selected")?"remove":"add"}drag(e){if(!this.dragTarget)return;let t=e.target;if(document.activeElement,[t===this.dragTarget,t.className!=="calendar__date",this.dragAction==="add"&&t.hasAttribute("selected"),this.dragAction==="remove"&&!t.hasAttribute("selected")].some(o=>o))return;let i=this.getDate(t);i&&this.select(i)}stopDrag(){this.dragAction="add",this.dragTarget=void 0}render(){let e=v({calendar:!0,navigation:!!this.navigation,basic:!!this.basic,disabled:!!this.disabled});return c`
+      <div part="base" class=${e} @mouseup=${this.stopDrag} @mouseleave=${this.stopDrag} @mousemove=${this.drag}>
         <div part="header" class="calendar__header">
           <hmwc-button
             slot="navigate-back"
@@ -2452,7 +3017,7 @@
             sm
             basic
             icon="chevron-left"
-            ?disabled=${!this.navigation}
+            ?disabled=${!this.navigation||!!this.disabled}
             @hmwc-click=${()=>this.navigate(this.month-1)}>
           </hmwc-button>
 
@@ -2462,36 +3027,38 @@
                     class="calendar__month-picker"
                     placement="bottom-start"
                     .distance=${4}
-                    @hmwc-select=${e=>this.handleMonthSelect(e)}>
+                    @hmwc-select=${t=>this.handleMonthSelect(t)}>
                     <hmwc-button
                       slot="anchor"
                       basic
                       sm
                       part="month"
                       class="calendar__label-month clickable"
+                      ?disabled=${this.disabled}
                       label=${this.MONTHS[this.month]}
                       @hmwc-click=${()=>this.closeSiblingPicker("month")}>
                     </hmwc-button>
                     <hmwc-menu active-value=${this.month}>
-                      ${this.MONTHS.map((e,r)=>c` <hmwc-menu-item sm label=${e} value=${r}> </hmwc-menu-item> `)}
+                      ${this.MONTHS.map((t,r)=>c` <hmwc-menu-item sm label=${t} value=${r}> </hmwc-menu-item> `)}
                     </hmwc-menu>
                   </hmwc-attachment>
                   <hmwc-attachment
                     class="calendar__year-picker"
                     placement="bottom-start"
                     .distance=${4}
-                    @hmwc-select=${e=>this.handleYearSelect(e)}>
+                    @hmwc-select=${t=>this.handleYearSelect(t)}>
                     <hmwc-button
                       slot="anchor"
                       basic
                       sm
                       part="year"
                       class="calendar__label-year clickable"
+                      ?disabled=${this.disabled}
                       label=${this.year}
                       @hmwc-click=${()=>this.closeSiblingPicker("year")}>
                     </hmwc-button>
                     <hmwc-menu active-value=${this.year} align="center">
-                      ${this.getYearOptions().map(e=>c` <hmwc-menu-item sm label=${e} value=${e}> </hmwc-menu-item> `)}
+                      ${this.getYearOptions().map(t=>c` <hmwc-menu-item sm label=${t} value=${t}> </hmwc-menu-item> `)}
                     </hmwc-menu>
                   </hmwc-attachment>
                 `:c`
@@ -2509,26 +3076,26 @@
             sm
             basic
             icon="chevron-right"
-            ?disabled=${!this.navigation}
+            ?disabled=${!this.navigation||!!this.disabled}
             @hmwc-click=${()=>this.navigate(this.month+1)}>
           </hmwc-button>
         </div>
 
         <div part="body" class="calendar__body" @mousedown=${this.startDrag}>
-          ${this.DAYS.map(e=>c` <div part="days" class="calendar__days">${e}</div> `)}
-          ${this.dates.map(e=>c`
+          ${this.DAYS.map(t=>c` <div part="days" class="calendar__days">${t}</div> `)}
+          ${this.dates.map(t=>c`
               <div
                 class="calendar__date"
                 part="date"
-                ?current=${e.getMonth()===this.month}
-                ?selected=${this.selection.find(r=>+r==+e)}
-                ?placeholder=${this.placeholder.find(r=>+e==+r)}>
-                ${e.getDate()}
+                ?current=${t.getMonth()===this.month}
+                ?selected=${this.selection.find(r=>+r==+t)}
+                ?placeholder=${this.placeholder.find(r=>+t==+r)}>
+                ${t.getDate()}
               </div>
             `)}
         </div>
       </div>
-    `}};G.styles=Ai;G.dependencies=[y];bt([v()],G.prototype,"dates",void 0);bt([v()],G.prototype,"selection",void 0);bt([v()],G.prototype,"dragAction",void 0);bt([v()],G.prototype,"dragTarget",void 0);bt([a({type:Array,reflect:!0})],G.prototype,"value",void 0);bt([a({type:Array,reflect:!0})],G.prototype,"placeholder",void 0);bt([a({type:Number,reflect:!0})],G.prototype,"month",void 0);bt([a({type:Number,reflect:!0})],G.prototype,"year",void 0);bt([a({type:Boolean,reflect:!0})],G.prototype,"navigation",void 0);bt([a({type:Boolean,reflect:!0})],G.prototype,"multiple",void 0);bt([a({type:Boolean,reflect:!0})],G.prototype,"disabled",void 0);bt([a({type:Boolean,reflect:!0})],G.prototype,"basic",void 0);bt([a({type:Number,attribute:"year-range"})],G.prototype,"yearRange",void 0);bt([a({type:Number,attribute:"year-range-future"})],G.prototype,"yearRangeFuture",void 0);bt([p("value")],G.prototype,"valueUpdate",void 0);bt([p("selection",{waitUntilFirstUpdate:!0})],G.prototype,"selectionUpdate",void 0);bt([p(["month","year"])],G.prototype,"dateUpdate",void 0);bt([p("multiple",{waitUntilFirstUpdate:!0})],G.prototype,"multipleUpdate",void 0);G.define("hmwc-calendar",G);var zi=m`
+    `}};re.styles=go;ze([b()],re.prototype,"dates",void 0);ze([b()],re.prototype,"selection",void 0);ze([b()],re.prototype,"dragAction",void 0);ze([b()],re.prototype,"dragTarget",void 0);ze([n({type:Array,reflect:!0})],re.prototype,"value",void 0);ze([n({type:Array,reflect:!0})],re.prototype,"placeholder",void 0);ze([n({type:Number,reflect:!0})],re.prototype,"month",void 0);ze([n({type:Number,reflect:!0})],re.prototype,"year",void 0);ze([n({type:Boolean,reflect:!0})],re.prototype,"navigation",void 0);ze([n({type:Boolean,reflect:!0})],re.prototype,"multiple",void 0);ze([n({type:Boolean,reflect:!0})],re.prototype,"disabled",void 0);ze([n({type:Boolean,reflect:!0})],re.prototype,"basic",void 0);ze([n({type:Number,attribute:"year-range"})],re.prototype,"yearRange",void 0);ze([n({type:Number,attribute:"year-range-future"})],re.prototype,"yearRangeFuture",void 0);ze([u("value")],re.prototype,"valueUpdate",void 0);ze([u("selection",{waitUntilFirstUpdate:!0})],re.prototype,"selectionUpdate",void 0);ze([u(["month","year"])],re.prototype,"dateUpdate",void 0);ze([u("multiple",{waitUntilFirstUpdate:!0})],re.prototype,"multipleUpdate",void 0);re.define("hmwc-calendar",re);var Xt=()=>typeof navigator<"u"&&/Mac|iPhone|iPad/.test(navigator.platform)?"\u2318":"Ctrl+";var vo=f`
   @keyframes icon-sheen {
     0%,
     100% {
@@ -2549,6 +3116,16 @@
     }
   }
 
+  /* While a date field's calendar is open, the field sits above the content
+     after it, so the calendar does too. The calendar's own z-index only ranks
+     it within the nearest stacking context; when each field is one (a reveal
+     animation, a transform or opacity on the field), later fields would
+     otherwise paint over it. */
+  :host([calendar-open]) {
+    position: relative;
+    z-index: var(--hmwc-z-index-dropdown);
+  }
+
   :host {
     --input-background: var(--hmwc-input-background-color);
     --input-color: var(--hmwc-input-color);
@@ -2560,8 +3137,11 @@
     --input-outline: none;
     --input-flex: 1 1 18ch;
     --input-min-width: 10ch;
+    --input-box-width: 100%;
+    --input-help-align: end;
+    --input-help-font-size: var(--hmwc-font-size-small);
 
-    --icon-size: 1rem;
+    --icon-size: calc(1 * var(--hmwc-rem, 1rem));
 
     display: block;
     flex: var(--input-flex);
@@ -2615,6 +3195,10 @@
 
   .input {
     display: grid;
+    /* An auto track won't go below the native <input>'s intrinsic width
+       (~20 characters), so a shrunk host let the field spill out over its
+       neighbours. minmax(0, 1fr) keeps the field inside the host. */
+    grid-template-columns: minmax(0, 1fr);
 
     /* Center content when no label is present,
        keeping the field aligned with sibling controls in a row. */
@@ -2629,8 +3213,10 @@
       font-weight: var(--hmwc-font-weight-normal);
       line-height: 1.4;
       padding-block: 0.15em;
-      display: flex;
-      align-items: center;
+      /* A block of text, not a flex box: the required indicator ("::after")
+         then follows the label's last word, however the label wraps, as on
+         the other form controls, and a cut-off label ends in an ellipsis. */
+      display: block;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -2640,6 +3226,14 @@
       }
     }
 
+    /* label-wrap: a long label (a survey question) wraps instead of being cut off. */
+    &.label-wrap .input__label {
+      overflow: visible;
+      text-overflow: clip;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
     & .input__wrapper {
       display: flex;
       flex-direction: column;
@@ -2647,11 +3241,16 @@
       position: relative;
       anchor-name: --wrapper;
 
+      /* Only a date field draws a box round the toggle and the field. */
+      & .input__box {
+        display: contents;
+      }
+
       & .input__help {
-        text-align: end;
+        text-align: var(--input-help-align);
         display: block;
         color: var(--hmwc-input-help-text-color);
-        font-size: var(--hmwc-font-size-small);
+        font-size: var(--input-help-font-size);
         font-family: var(--hmwc-font-sans);
         line-height: 2;
         width: 100%;
@@ -2667,7 +3266,9 @@
         align-items: stretch;
         justify-content: start;
         position: relative;
-        width: 100%;
+        width: var(--input-box-width);
+        max-width: 100%;
+        align-self: flex-start;
         background-color: var(--input-background);
         border: var(--input-border);
         border-radius: var(--input-radius);
@@ -2846,7 +3447,16 @@
     }
 
     &.date {
+      /* The calendar opens under the box, not under the help text. */
       & .input__wrapper {
+        anchor-name: none;
+      }
+
+      & .input__box {
+        anchor-name: --wrapper;
+        width: var(--input-box-width);
+        max-width: 100%;
+        align-self: flex-start;
         display: grid;
         grid-template-columns: auto 1fr;
         border: var(--input-border);
@@ -2877,19 +3487,17 @@
       }
 
       & .input__field {
+        width: 100%;
+        align-self: stretch;
         border: none;
         border-radius: 0;
         box-shadow: none;
-      }
-
-      & .input__help {
-        grid-column: 1 / -1;
       }
     }
 
     /** underline + date — strip wrapper chrome, keep only a bottom line */
     &.underline.date {
-      & .input__wrapper {
+      & .input__box {
         border: none;
         border-radius: 0;
         box-shadow: none;
@@ -2927,7 +3535,7 @@
           box-shadow: none;
         }
 
-        &.date .input__wrapper {
+        &.date .input__box {
           box-shadow: 0 4px 12px hsl(from var(--hmwc-color-primary-600) h s l / 0.2);
         }
 
@@ -2943,7 +3551,7 @@
         }
 
         &.underline.date {
-          & .input__wrapper {
+          & .input__box {
             box-shadow: none;
           }
 
@@ -2963,11 +3571,11 @@
         --input-border: var(--hmwc-input-border-width) solid var(--hmwc-input-border-color-focus);
         --input-border-color: var(--hmwc-input-border-color-focus);
         --input-color: var(--hmwc-input-color-focus);
-        --input-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color);
+        --input-shadow: 0 0 0 var(--hmwc-input-focus-ring-width) var(--hmwc-input-focus-ring-color);
         --input-outline: var(--hmwc-focus-ring-style) var(--hmwc-focus-ring-width) var(--hmwc-focus-ring-color);
 
         & .input__field {
-          box-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color);
+          box-shadow: 0 0 0 var(--hmwc-input-focus-ring-width) var(--hmwc-input-focus-ring-color);
         }
 
         & .input__prefix,
@@ -2983,8 +3591,8 @@
           box-shadow: none;
         }
 
-        &.date .input__wrapper {
-          box-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color);
+        &.date .input__box {
+          box-shadow: 0 0 0 var(--hmwc-input-focus-ring-width) var(--hmwc-input-focus-ring-color);
         }
 
         &.underline {
@@ -3000,7 +3608,7 @@
         }
 
         &.underline.date {
-          & .input__wrapper {
+          & .input__box {
             box-shadow: none;
           }
 
@@ -3107,7 +3715,7 @@
           height: auto;
         }
 
-        &.date .input__wrapper {
+        &.date .input__box {
           height: var(--hmwc-input-height-small);
           box-sizing: border-box;
         }
@@ -3130,10 +3738,10 @@
       }
 
       &.number {
-        --input-width: 6rem;
+        --input-width: calc(6 * var(--hmwc-rem, 1rem));
 
         &.units {
-          --input-width: 3rem;
+          --input-width: calc(3 * var(--hmwc-rem, 1rem));
         }
       }
 
@@ -3166,8 +3774,8 @@
           align-self: stretch;
 
           &::part(base) {
-            padding-top: 0.075rem;
-            padding-bottom: 0.075rem;
+            padding-top: calc(0.075 * var(--hmwc-rem, 1rem));
+            padding-bottom: calc(0.075 * var(--hmwc-rem, 1rem));
             height: 100%;
           }
         }
@@ -3190,7 +3798,7 @@
           height: auto;
         }
 
-        &.date .input__wrapper {
+        &.date .input__box {
           height: var(--hmwc-input-height-medium);
           box-sizing: border-box;
         }
@@ -3254,7 +3862,7 @@
           height: auto;
         }
 
-        &.date .input__wrapper {
+        &.date .input__box {
           height: var(--hmwc-input-height-large);
           box-sizing: border-box;
         }
@@ -3342,7 +3950,7 @@
     &.invalid:not(.disabled) {
       --input-border: var(--hmwc-input-border-width) solid var(--hmwc-input-border-color-invalid);
       --input-border-color: var(--hmwc-input-border-color-invalid);
-      --input-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
+      --input-shadow: 0 0 0 var(--hmwc-input-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
 
       /** invalid + hover (not focused) */
       &:not(:has(.input__field:focus-within)):has(.input__field:hover),
@@ -3358,7 +3966,7 @@
           box-shadow: none;
         }
 
-        &.date .input__wrapper {
+        &.date .input__box {
           box-shadow: 0 4px 12px hsl(from var(--hmwc-input-border-color-invalid) h s l / 0.2);
         }
 
@@ -3374,7 +3982,7 @@
         }
 
         &.underline.date {
-          & .input__wrapper {
+          & .input__box {
             box-shadow: none;
           }
 
@@ -3391,13 +3999,13 @@
       }
 
       &:has(.input__field:focus-within) {
-        --input-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
+        --input-shadow: 0 0 0 var(--hmwc-input-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
         --input-border: var(--hmwc-input-border-width) solid var(--hmwc-input-border-color-invalid);
         --input-border-color: var(--hmwc-input-border-color-invalid);
         --input-outline: var(--hmwc-focus-ring-style) var(--hmwc-focus-ring-width) var(--hmwc-focus-ring-color-invalid);
 
         & .input__field {
-          box-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
+          box-shadow: 0 0 0 var(--hmwc-input-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
         }
 
         & .input__prefix,
@@ -3413,8 +4021,8 @@
           box-shadow: none;
         }
 
-        &.date .input__wrapper {
-          box-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
+        &.date .input__box {
+          box-shadow: 0 0 0 var(--hmwc-input-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
         }
 
         &.underline .input__field {
@@ -3423,7 +4031,7 @@
         }
 
         &.underline.date {
-          & .input__wrapper {
+          & .input__box {
             box-shadow: none;
           }
 
@@ -3484,8 +4092,8 @@
       --input-border: var(--hmwc-input-border-width) solid var(--hmwc-input-border-color-focus);
       --input-border-color: var(--hmwc-input-border-color-focus);
 
-      & .input__wrapper {
-        box-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color);
+      & .input__box {
+        box-shadow: 0 0 0 var(--hmwc-input-focus-ring-width) var(--hmwc-input-focus-ring-color);
       }
 
       /* Keep the calendar icon in its active/hover color while
@@ -3498,27 +4106,31 @@
       }
     }
   }
-`;var C=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},x=class s extends P{constructor(){super(...arguments),this.initialValueDateParsed=!1,this.autoFocusLost=!1,this.isManuallyTyping=!1,this._isDeleting=!1,this.lockCalendarNavigation=!1,this.dates=[],this.type="text",this.dateFormat="MM/DD/YYYY",this.open=!1,this._calendarLoseFocus=null}handleValueChange(){if(this.type==="tel"){let t=this.value.toString().split("").filter(e=>e!=="-");t.length===3?this.value=`${t.slice(0,3).join("")}-`:t.length===6?this.value=`${t.slice(0,3).join("")}-${t.slice(3,6).join("")}-`:t.length===10?this.value=`${t.slice(0,3).join("")}-${t.slice(3,6).join("")}-${t.slice(6).join("")}`:t.length===11?this.value=`${t[0]}-${t.slice(1,4).join("")}-${t.slice(4,7).join("")}-${t.slice(7).join("")}`:this.value=this.value.toString()}if(this.type==="date"){if(!this.value){this.dates=[],this.initialValueDateParsed=!1;return}if(!this.isManuallyTyping&&!this.initialValueDateParsed&&(this.initialValueDateParsed=!0,!isNaN(Date.parse(this.value)))){let t=new Date(this.value);this.updateDates([t])}}}handleValueMaxLength(){this.type!=="date"&&(this.enforceMaxLength(),this.checkDesiredLength())}handleCalendarToggle(){this.type==="date"&&(this._calendarLoseFocus&&(document.removeEventListener("mousedown",this._calendarLoseFocus),this._calendarLoseFocus=null),this.open&&(this._calendarLoseFocus=t=>{t.composedPath().includes(this)||(this.open=!1,this.emit("hmwc-hide",{}))},document.addEventListener("mousedown",this._calendarLoseFocus)))}handleLabelChange(){this.toggleAttribute("no-label",!this.label)}focus(t){this.input.focus(t)}blur(){this.input.blur()}select(){this.input.select()}clear(){this.value=this.input.value="",this.dates=[],this.valid=!1,this.invalid=!1,this.error="",this.emit("hmwc-change"),this.emit("hmwc-input")}getDates(){return this.dates}checkValidity(){if(this.disabled)return!0;if(this._customError!==null)return!1;let t=String(this.value??"");return this.required&&!t.trim()||this.minlength!=null&&t.trim().length>0&&t.length<this.minlength?!1:this.input?.checkValidity()}reportValidity(){if(this.disabled)return!0;if(this._customError!==null)return this.invalid=!0,this.error=this._customError,this.emit("hmwc-invalid"),!1;let t=String(this.value??"");return this.required&&!t.trim()?(this.invalid=!0,this.error="Please fill out this field.",this.emit("hmwc-invalid"),!1):this.minlength!=null&&t.trim().length>0&&t.length<this.minlength?(this.invalid=!0,this.error=`Value must be at least ${this.minlength} characters`,this.emit("hmwc-invalid"),!1):this.input&&!this.input.checkValidity()?(this.invalid=!0,this.error=this.input.validationMessage,this.emit("hmwc-invalid"),!1):!0}get validationMessage(){return this.input.validationMessage}set validationMessage(t){this.input.setCustomValidity(t)}formatDate(t){let e=t.getFullYear().toString(),r=(t.getMonth()+1).toString().padStart(2,"0"),i=t.getDate().toString().padStart(2,"0");switch(this.dateFormat){case"YYYY-MM-DD":return`${e}-${r}-${i}`;case"YYYY/MM/DD":return`${e}/${r}/${i}`;case"DD/MM/YYYY":return`${i}/${r}/${e}`;case"DD-MM-YYYY":return`${i}-${r}-${e}`;case"MM-DD-YYYY":return`${r}-${i}-${e}`;case"MM/DD/YYYY":default:return`${r}/${i}/${e}`}}parseDate(t){if(!t||!t.trim())return null;let e=this.parseDateByFormat(t);if(e)return e;let r=Date.parse(t);if(!isNaN(r))return new Date(r);let i=[/^(\d{1,2})[\\-](\d{1,2})[\\-](\d{4})$/,/^(\d{4})[\\-](\d{1,2})[\\-](\d{1,2})$/,/^(\d{1,2})[\\-](\d{1,2})[\\-](\d{2})$/];for(let o of i){let n=t.match(o);if(n){let l,h,d;o===i[1]?[,l,h,d]=n.map(Number):o===i[2]?([,h,d,l]=n.map(Number),l+=2e3):[,h,d,l]=n.map(Number);let g=new Date(l,h-1,d);if(g.getFullYear()===l&&g.getMonth()===h-1&&g.getDate()===d)return g}}return null}parseDateByFormat(t){let e=this.dateFormat.includes("/")?"/":"-",r=t.split(e);if(r.length!==3)return null;let i=this.dateFormat.split(e),o=i.findIndex(j=>j==="YYYY"),n=i.findIndex(j=>j==="MM"),l=i.findIndex(j=>j==="DD");if(o===-1||n===-1||l===-1)return null;let h=parseInt(r[o],10),d=parseInt(r[n],10),g=parseInt(r[l],10);if(isNaN(h)||isNaN(d)||isNaN(g))return null;let b=new Date(h,d-1,g);return b.getFullYear()===h&&b.getMonth()===d-1&&b.getDate()===g?b:null}updateDates(t,e=!1){if(!t.length){e&&(this.dates=[]);return}t.length===0?this.value="":t.length===1?(t[0]instanceof Date||(t[0]=new Date(t[0])),e||(this.value=this.formatDate(t[0])),this.month=t[0].getMonth(),this.year=t[0].getFullYear()):t.length>1&&(e||(this.value=`Multiple Dates Selected (${t.length})`)),this.dates=t}handleFocus(){this.type==="date"&&(this.isManuallyTyping=!0),this.emit("hmwc-focus")}handleBlur(){if(this.type==="date"&&this.isManuallyTyping&&(this.parseAndUpdateDate(),this.isManuallyTyping=!1),this.type==="email"&&this.value){let e=String(this.value).trim();e!==this.value&&(this.value=e,this.input&&(this.input.value=e)),this.validateEmail()}this.type==="filepath"&&this.validateFilePath(),this.required&&!String(this.value??"").trim()?(this.invalid=!0,this.emit("hmwc-invalid")):this.required&&this.invalid&&(this.invalid=!1,this.error="");let t=String(this.value??"");this.minlength!=null&&t.trim().length>0&&t.length<this.minlength?(this.invalid=!0,this.error=`Value must be at least ${this.minlength} characters`,this.emit("hmwc-invalid")):this.minlength!=null&&this.invalid&&t.length>=this.minlength&&(this.invalid=!1,this.error=""),this.emit("hmwc-blur"),this.autoFocusLost=!0}handleInput(t){if(this.type==="date"&&this.isManuallyTyping){let r=this.input.value,i=this.input.selectionStart??r.length,o=this.countDigitsBefore(r,i),n=r.replace(/\D/g,""),l=!this._isDeleting,h=this.formatDateDigits(n,l);h!==r&&(this.input.value=h),this.value=h;let d=this.findCursorPosition(h,o);this.input.setSelectionRange(d,d)}else this.value=this.input.value;this.type==="number"&&this.input.validity?.badInput&&(this.input.value="",this.value="");let e=t?.inputType;if((e==="insertReplacementText"||e==="insertFromPaste")&&(this.sanitizeAutofill(),this.invalid)){this.emit("hmwc-input",{detail:{value:this.value}});return}if(this.enforceMaxLength(),this.checkDesiredLength(),this.invalid){let r=String(this.value??""),i=!this.required||r.trim().length>0,o=this.minlength==null||r.length>=this.minlength;i&&o&&(this.invalid=!1,this.error="")}this.emit("hmwc-input",{detail:{value:this.value}})}handleChange(){this.input.value&&(this.value=this.input.value),this.enforceMaxLength(),this.type==="date"&&this.parseAndUpdateDate(),this.type==="email"&&this.value&&this.validateEmail(),this.type==="filepath"&&this.value&&this.validateFilePath(),this.checkDesiredLength(),this.emit("hmwc-change")}handleKeyDown(t){this.type==="date"&&(t.key==="Backspace"||t.key==="Delete"?this._isDeleting=!0:this._isDeleting=!1,t.key==="Enter"&&(t.preventDefault(),this.parseAndUpdateDate(),this.blur()),t.key==="Escape"&&(t.preventDefault(),this.dates.length===1?this.value=this.formatDate(this.dates[0]):this.dates.length>1?this.value=`Multiple Dates Selected (${this.dates.length})`:this.value="",this.input.value=this.value,this.blur()),t.key.length===1&&!t.ctrlKey&&!t.metaKey&&!/\d/.test(t.key)&&t.preventDefault())}parseAndUpdateDate(){let t=this.input.value;if(!t||!t.trim()){this.updateDates([],!0);return}let e=this.parseDate(t);e?(this.updateDates([e],!0),this.value=this.formatDate(e),this.input.value=this.value,this.invalid=!1,this.error=""):(this.invalid=!0,this.error=`Invalid date format. Try ${this.dateFormat}`)}validateFilePath(){let t=this.value;if(!t||!t.trim()){this.invalid=!0,this.error="File path cannot be blank or whitespace only",this.emit("hmwc-invalid");return}let e=t.trim();if(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{FE00}-\u{FE0F}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{200D}\u{20E3}\u{E0020}-\u{E007F}]/u.test(e)){this.invalid=!0,this.error="File path cannot contain emojis",this.emit("hmwc-invalid");return}if(/[<>"|?*]/.test(e)||e.includes("\0")){this.invalid=!0,this.error='Path contains invalid characters: < > " | ? *',this.emit("hmwc-invalid");return}let o=e.replace(/\\/g,"/"),n=/^[a-zA-Z]:\//.test(o),l=o.startsWith("//"),h=o.startsWith("/")&&!l,d=/^\.{0,2}\//.test(o)||/^[^/]/.test(o);if(!(n||l||h||d)){this.invalid=!0,this.error="Please enter a valid file path",this.emit("hmwc-invalid");return}let g=l?o.slice(2):n?o.slice(3):h?o.slice(1):o;if(/\/{2,}/.test(g)){this.invalid=!0,this.error="Path contains empty segments",this.emit("hmwc-invalid");return}if(l&&o.slice(2).split("/").filter(Boolean).length<2){this.invalid=!0,this.error="UNC path must include a server and share name (e.g. \\\\server\\share)",this.emit("hmwc-invalid");return}this.invalid=!1,this.error=""}validateEmail(){let t=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,e=this.value.trim();e&&(t.test(e)?(this.invalid=!1,this.error=""):(this.invalid=!0,this.error="Please enter a valid email address",this.emit("hmwc-invalid")))}getEffectiveMaxLength(){return this.maxlength!=null?this.maxlength:s.MAX_LENGTH_BY_TYPE[this.type]??s.DEFAULT_MAX_LENGTH}enforceMaxLength(){let t=this.getEffectiveMaxLength(),e=String(this.value??"");if(e.length<=t)return!1;let r=e.slice(0,t);return this.value=r,this.input&&(this.input.value=r),this.invalid=!0,this.error=`Value exceeds maximum length of ${t} characters`,this.emit("hmwc-invalid"),!0}checkDesiredLength(){if(this.minlength==null||this.maxlength==null||this.minlength!==this.maxlength)return;String(this.value??"").length===this.minlength?(this.valid=!0,this.invalid=!1):this.valid=!1}sanitizeAutofill(){let t=String(this.value??"");if(t)switch(this.enforceMaxLength(),this.type){case"email":{/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(t.trim())||(this.value=this.input.value="",this.invalid=!0,this.error="Autofill value is not a valid email address",this.emit("hmwc-invalid"));break}case"tel":{/^[\d\s+().-]+$/.test(t)||(this.value=this.input.value="",this.invalid=!0,this.error="Autofill value is not a valid phone number",this.emit("hmwc-invalid"));break}case"number":{isNaN(Number(t))&&(this.value=this.input.value="",this.invalid=!0,this.error="Autofill value is not a valid number",this.emit("hmwc-invalid"));break}case"filepath":{this.validateFilePath(),this.invalid&&(this.value=this.input.value="");break}case"url":{try{new URL(t)}catch{this.value=this.input.value="",this.invalid=!0,this.error="Autofill value is not a valid URL",this.emit("hmwc-invalid")}break}default:break}}getDateFormatInfo(){let t=this.dateFormat.includes("/")?"/":"-",e=this.dateFormat.split(t).map(r=>r.length);return{separator:t,partLengths:e}}formatDateDigits(t,e=!1){let{separator:r,partLengths:i}=this.getDateFormatInfo(),o=i.reduce((d,g)=>d+g,0),n=t.slice(0,o),l="",h=0;for(let d=0;d<i.length&&h<n.length;d++){d>0&&(l+=r);let g=n.slice(h,h+i[d]);l+=g,h+=i[d]}if(e&&n.length>0&&n.length<o){let d=0;for(let g=0;g<i.length;g++)if(d+=i[g],n.length===d&&g<i.length-1){l+=r;break}}return l}countDigitsBefore(t,e){let r=0;for(let i=0;i<e&&i<t.length;i++)/\d/.test(t[i])&&r++;return r}findCursorPosition(t,e){let r=0;for(let i=0;i<t.length;i++){if(r===e){for(;i<t.length&&!/\d/.test(t[i]);)i++;return i}/\d/.test(t[i])&&r++}return t.length}handlePaste(t){if(this.type==="number"){let N=t.clipboardData?.getData("text");if(!N)return;t.preventDefault();let Ot=Number(N.trim());if(!isNaN(Ot)&&N.trim()!==""){let Nt=String(Ot);this.input.value=Nt,this.value=Nt,this.emit("hmwc-input",{detail:{value:this.value}});return}let jt="",fe=!1;for(let Nt of N.trim())Nt==="-"&&jt===""?jt+=Nt:Nt==="."&&!fe?(fe=!0,jt+=Nt):Nt>="0"&&Nt<="9"&&(jt+=Nt);jt&&!isNaN(Number(jt))&&jt!=="-"&&jt!=="."&&(this.input.value=jt,this.value=jt,this.emit("hmwc-input",{detail:{value:this.value}}));return}if(this.type!=="date")return;let e=t.clipboardData?.getData("text");if(!e)return;t.preventDefault();let r=this.parseDate(e);if(r){let N=this.formatDate(r);this.input.value=N,this.value=N,this.updateDates([r],!0),this.invalid=!1,this.error="",this.input.setSelectionRange(N.length,N.length),this.emit("hmwc-input",{detail:{value:this.value}});return}let i=this.input.value,o=this.input.selectionStart??i.length,n=this.input.selectionEnd??o,l=i.slice(0,o),h=i.slice(n),g=(l+e+h).replace(/\D/g,""),b=this.formatDateDigits(g,!0),j=e.replace(/\D/g,"").length,_t=this.countDigitsBefore(i,o),z=this.findCursorPosition(b,_t+j);this.input.value=b,this.value=b,this.input.setSelectionRange(z,z),this.emit("hmwc-input",{detail:{value:this.value}})}handleClick(){!this.disabled&&this.type!=="date"||this.type==="date"&&!this.isManuallyTyping&&(this.open=!this.open)}handleClear(){this.clear(),this.input.focus()}handleToggle(){this.visible=!this.visible}handleCalendarChange(t){let e=t.detail.value;this.updateDates(e),this.multiSelect||document.addEventListener("mouseup",()=>{this.open=!1},{once:!0,capture:!0}),this.emit("hmwc-change")}connectedCallback(){super.connectedCallback(),this.toggleAttribute("no-label",!this.label),this.updateDates(this.dates),this.type==="tel"&&(this.pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}|[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}"),this.type==="email"&&!this.pattern&&(this.pattern="[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}"),this.type==="filepath"&&!this.pattern&&(this.pattern='([a-zA-Z]:\\\\|\\\\\\\\|/|\\.\\.?/|[^<>"|?*\\x00])([^<>"|?*\\x00]*)'),this.type==="filepath"&&!this.placeholder&&(this.placeholder="C:\\folder\\file.txt or /path/to/file"),!this.sm&&!this.md&&!this.lg&&(this.md=!0),this.type==="password"&&this.minlength===void 0&&(this.minlength=8),this.autofocus||(this.autoFocusLost=!0),this.type==="date"&&!this.placeholder&&(this.placeholder=this.dateFormat),(this.month||this.month&&this.year)&&(this.lockCalendarNavigation=!0),this.maxlength==null&&(this.maxlength=s.MAX_LENGTH_BY_TYPE[this.type]??s.DEFAULT_MAX_LENGTH),this.autocomplete==null&&["filepath","number"].includes(this.type)&&(this.autocomplete="off")}disconnectedCallback(){super.disconnectedCallback(),this._calendarLoseFocus&&(document.removeEventListener("mousedown",this._calendarLoseFocus),this._calendarLoseFocus=null)}render(){let t=this.textarea?De`textarea`:De`input`,e=this.type==="password"&&this.visible||this.type==="date"||this.type==="filepath",r=f({input:!0,"no-label":!this.label,small:!!this.sm,medium:!!this.md,large:!!this.lg,filled:!!this.filled,underline:!!this.underline,prefix:!!this.prefix,suffix:!!this.suffix||!!this.toggle,units:!this.units,pill:!!this.pill,toggle:!!this.toggle,clearable:!!this.clearable,textarea:!!this.textarea,disabled:!!this.disabled,date:this.type==="date",number:this.type==="number","no-spin":this.type==="number"&&(!this.max||Number(this.max)>100)||this.minlength!=null&&this.maxlength!=null&&this.minlength===this.maxlength&&this.minlength>3,calendar:this.open,valid:!!this.valid,invalid:!!this.invalid});return at`
+`;var T=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},bs={phone:[3,3,4],ssn:[3,2,4]},ws={phone:"[0-9]{3}-[0-9]{3}-[0-9]{4}",ssn:"[0-9]{3}-[0-9]{2}-[0-9]{4}"},ys={phone:"Enter a 10-digit phone number.",ssn:"Enter a 9-digit Social Security number."},_s={digits:"numeric",phone:"tel",ssn:"numeric"},xs="[0-9]{3}-[0-9]{3}-[0-9]{4}|[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}",ks="([0-9]{1}-?)?[0-9]{3}-?[0-9]{3}-?[0-9]{4}",C=class s extends N{constructor(){super(...arguments),this.initialValueDateParsed=!1,this.autoFocusLost=!1,this.isManuallyTyping=!1,this._isDeleting=!1,this.lockCalendarNavigation=!1,this.dates=[],this.type="text",this.dateFormat="MM/DD/YYYY",this.open=!1,this._calendarLoseFocus=null}static get dependencies(){return[$,k,re,ie]}handleValueChange(){if(this.type==="tel"&&!this.noFormat&&!this.mask){let t=this.value.toString().split("").filter(r=>r!=="-");t.length===3?this.value=`${t.slice(0,3).join("")}-`:t.length===6?this.value=`${t.slice(0,3).join("")}-${t.slice(3,6).join("")}-`:t.length===10?this.value=`${t.slice(0,3).join("")}-${t.slice(3,6).join("")}-${t.slice(6).join("")}`:t.length===11?this.value=`${t[0]}-${t.slice(1,4).join("")}-${t.slice(4,7).join("")}-${t.slice(7).join("")}`:this.value=this.value.toString()}if(this.type!=="date")return;if(!this.value){this.dates=[],this.initialValueDateParsed=!1;return}if(this.isManuallyTyping||this.value===this._datesText())return;let e=this.parseDate(String(this.value));e&&(this.initialValueDateParsed=!0,this.updateDates([e]))}_datesText(){return this.dates.length===1?this.formatDate(new Date(this.dates[0])):this.dates.length>1?`Multiple Dates Selected (${this.dates.length})`:""}handleValueMaxLength(){this.type!=="date"&&(this.enforceMaxLength(),this.checkDesiredLength())}handleMaskChange(){if(!this.mask||this.type==="date"||this.textarea)return;let e=String(this.value??"");if(!e)return;let t=this.applyMask(e);t!==e&&(this.value=t)}handleCalendarToggle(){this.toggleAttribute("calendar-open",this.type==="date"&&this.open),this.type==="date"&&(this._calendarLoseFocus&&(document.removeEventListener("mousedown",this._calendarLoseFocus),this._calendarLoseFocus=null),this.open&&(this._calendarLoseFocus=e=>{e.composedPath().includes(this)||(this.open=!1,this.emit("hmwc-hide",{}))},document.addEventListener("mousedown",this._calendarLoseFocus)))}handleLabelChange(){this.toggleAttribute("no-label",!this.label)}focus(e){this.input.focus(e)}blur(){this.input.blur()}select(){this.input.select()}clear(){this.value=this.input.value="",this.dates=[],this.valid=!1,this.invalid=!1,this.error="",this.emit("hmwc-change"),this.emit("hmwc-input")}contextMenuItems(e){if(this.textarea)return null;let t=this.input;if(!t)return[];let r=t.value,i=t.selectionStart!==null&&t.selectionEnd!==null,o=i?t.selectionStart:0,a=i?t.selectionEnd:r.length,l=r.slice(o,a),h=this.type==="password"&&!this.visible,d=!this.disabled&&!this.readonly,p=Xt(),m=y=>{i?t.setRangeText(y,o,a,"end"):t.value=y,t.dispatchEvent(new Event("input",{bubbles:!0,composed:!0}))};return[{value:"cut",label:"Cut",icon:"scissors",shortcut:`${p}X`,disabled:!d||h||!l,action:async y=>{await y.copy(l)&&m("")}},{value:"copy",label:"Copy",icon:"copy",shortcut:`${p}C`,disabled:h||!r,action:async y=>{await y.copy(l||r)}},{value:"paste",label:"Paste",icon:"clipboard",shortcut:`${p}V`,disabled:!d,action:async y=>{let _=await y.paste();_!==null&&m(_)}},{value:"select-all",label:"Select all",icon:"cursor-text",shortcut:`${p}A`,disabled:!!this.disabled||!r,action:()=>{this.focus(),this.select()}},{value:"clear",label:"Clear",icon:"eraser",disabled:!d||!r,action:()=>this.clear()}]}getDates(){return this.dates}checkValidity(){if(this._resetValidity(),this.disabled)return!0;if(this._customError!==null)return this.failValidity("customError");let e=String(this.value??"");if(this.required&&!e.trim())return this.failValidity("valueMissing");if(this.minlength!=null&&e.trim().length>0&&e.length<this.minlength)return this.failValidity("tooShort");let t=this.input?.checkValidity();if(t===!1){let r=this.input.validity,i=["valueMissing","tooShort","tooLong","patternMismatch","rangeUnderflow","rangeOverflow","typeMismatch","badInput","customError"];for(let o of i)r[o]&&(this._validity[o]=!0);this._validity.valid=!1}return t}failValidity(e){return this._validity[e]=!0,this._validity.valid=!1,!1}nativeErrorMessage(){let e=this.input.validity;if(e.patternMismatch&&!e.customError){if(this.patternMessage)return this.patternMessage;let t=this.mask&&!this.pattern?ys[this.mask]:void 0;if(t)return t}return this.input.validationMessage}reportValidity(){if(this.disabled)return!0;if(this.checkValidity(),this._customError!==null)return this.invalid=!0,this.error=this._customError,this.emit("hmwc-invalid"),!1;let e=String(this.value??"");return this.required&&!e.trim()?(this.invalid=!0,this.error="Please fill out this field.",this.emit("hmwc-invalid"),!1):this.minlength!=null&&e.trim().length>0&&e.length<this.minlength?(this.invalid=!0,this.error=`Value must be at least ${this.minlength} characters`,this.emit("hmwc-invalid"),!1):this.input&&!this.input.checkValidity()?(this.invalid=!0,this.error=this.nativeErrorMessage(),this.emit("hmwc-invalid"),!1):(this.invalid&&(this.invalid=!1,this.error="",this._emitValid()),!0)}get validationMessage(){return this.input.validationMessage}set validationMessage(e){this.input.setCustomValidity(e)}formatDate(e){let t=e.getFullYear().toString(),r=(e.getMonth()+1).toString().padStart(2,"0"),i=e.getDate().toString().padStart(2,"0");switch(this.dateFormat){case"YYYY-MM-DD":return`${t}-${r}-${i}`;case"YYYY/MM/DD":return`${t}/${r}/${i}`;case"DD/MM/YYYY":return`${i}/${r}/${t}`;case"DD-MM-YYYY":return`${i}-${r}-${t}`;case"MM-DD-YYYY":return`${r}-${i}-${t}`;case"MM/DD/YYYY":default:return`${r}/${i}/${t}`}}parseDate(e){if(!e||!e.trim())return null;let t=this.parseDateByFormat(e);if(t)return t;let r=Date.parse(e);if(!isNaN(r))return new Date(r);let i=[/^(\d{1,2})[\\-](\d{1,2})[\\-](\d{4})$/,/^(\d{4})[\\-](\d{1,2})[\\-](\d{1,2})$/,/^(\d{1,2})[\\-](\d{1,2})[\\-](\d{2})$/];for(let o of i){let a=e.match(o);if(a){let l,h,d;o===i[1]?[,l,h,d]=a.map(Number):o===i[2]?([,h,d,l]=a.map(Number),l+=2e3):[,h,d,l]=a.map(Number);let p=new Date(l,h-1,d);if(p.getFullYear()===l&&p.getMonth()===h-1&&p.getDate()===d)return p}}return null}parseDateByFormat(e){let t=this.dateFormat.includes("/")?"/":"-",r=e.split(t);if(r.length!==3)return null;let i=this.dateFormat.split(t),o=i.findIndex(y=>y==="YYYY"),a=i.findIndex(y=>y==="MM"),l=i.findIndex(y=>y==="DD");if(o===-1||a===-1||l===-1)return null;let h=parseInt(r[o],10),d=parseInt(r[a],10),p=parseInt(r[l],10);if(isNaN(h)||isNaN(d)||isNaN(p))return null;let m=new Date(h,d-1,p);return m.getFullYear()===h&&m.getMonth()===d-1&&m.getDate()===p?m:null}updateDates(e,t=!1){if(!e.length){t&&(this.dates=[]);return}e.length===0?this.value="":e.length===1?(e[0]instanceof Date||(e[0]=new Date(e[0])),t||(this.value=this.formatDate(e[0])),this.month=e[0].getMonth(),this.year=e[0].getFullYear()):e.length>1&&(t||(this.value=`Multiple Dates Selected (${e.length})`)),this.dates=e}handleFocus(){this.type==="date"&&(this.isManuallyTyping=!0),this.emit("hmwc-focus")}handleBlur(){if(this.type==="date"&&this.isManuallyTyping&&(this.parseAndUpdateDate(),this.isManuallyTyping=!1),this.type==="email"&&this.value){let t=String(this.value).trim();t!==this.value&&(this.value=t,this.input&&(this.input.value=t)),this.validateEmail()}this.type==="filepath"&&this.validateFilePath(),this.required&&!String(this.value??"").trim()?(this.invalid=!0,this.emit("hmwc-invalid")):this.required&&this.invalid&&this._customError===null&&(this.invalid=!1,this.error="");let e=String(this.value??"");this.minlength!=null&&e.trim().length>0&&e.length<this.minlength?(this.invalid=!0,this.error=`Value must be at least ${this.minlength} characters`,this.emit("hmwc-invalid")):this.minlength!=null&&this.invalid&&this._customError===null&&e.length>=this.minlength&&(this.invalid=!1,this.error=""),this.emit("hmwc-blur"),this.autoFocusLost=!0}handleInput(e){if(this.mask&&!this.textarea&&e?.isComposing)return;if(this._clearCustomErrorOnInput(),this.type==="date"&&this.isManuallyTyping){let r=this.input.value,i=this.input.selectionStart??r.length,o=this.countDigitsBefore(r,i),a=r.replace(/\D/g,""),l=!this._isDeleting,h=this.formatDateDigits(a,l);h!==r&&(this.input.value=h),this.value=h;let d=this.findCursorPosition(h,o);this.input.setSelectionRange(d,d)}else this.mask&&!this.textarea?this.handleMaskedInput(e):this.value=this.input.value;this.type==="number"&&this.input.validity?.badInput&&(this.input.value="",this.value="");let t=e?.inputType;if(t==="insertReplacementText"||t==="insertFromPaste"){let r=this.invalid?this.error:null;if(this.sanitizeAutofill(),this.invalid&&this.error!==r){this.emit("hmwc-input",{detail:{value:this.value}});return}}if(this.enforceMaxLength(),this.checkDesiredLength(),this.invalid&&this._customError===null){let r=String(this.value??""),i=!this.required||r.trim().length>0,o=this.minlength==null||r.length>=this.minlength;i&&o&&(this.invalid=!1,this.error="")}this.emit("hmwc-input",{detail:{value:this.value}})}handleChange(){this.input.value&&(this.value=this.input.value),this.enforceMaxLength(),this.type==="date"&&this.parseAndUpdateDate(),this.type==="email"&&this.value&&this.validateEmail(),this.type==="filepath"&&this.value&&this.validateFilePath(),this.checkDesiredLength(),this.emit("hmwc-change")}handleKeyDown(e){this.type==="date"&&(e.key==="Backspace"||e.key==="Delete"?this._isDeleting=!0:this._isDeleting=!1,e.key==="Enter"&&(e.preventDefault(),this.parseAndUpdateDate(),this.blur()),e.key==="Escape"&&(e.preventDefault(),this.dates.length===1?this.value=this.formatDate(this.dates[0]):this.dates.length>1?this.value=`Multiple Dates Selected (${this.dates.length})`:this.value="",this.input.value=this.value,this.blur()),e.key.length===1&&!e.ctrlKey&&!e.metaKey&&!/\d/.test(e.key)&&e.preventDefault())}parseAndUpdateDate(){let e=this.input.value;if(!e||!e.trim()){this.updateDates([],!0);return}let t=this.parseDate(e);t?(this.updateDates([t],!0),this.value=this.formatDate(t),this.input.value=this.value,this.invalid=!1,this.error=""):(this.invalid=!0,this.error=`Invalid date format. Try ${this.dateFormat}`)}validateFilePath(){let e=this.value;if(!e||!e.trim()){this.invalid=!0,this.error="File path cannot be blank or whitespace only",this.emit("hmwc-invalid");return}let t=e.trim();if(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{FE00}-\u{FE0F}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{200D}\u{20E3}\u{E0020}-\u{E007F}]/u.test(t)){this.invalid=!0,this.error="File path cannot contain emojis",this.emit("hmwc-invalid");return}if(/[<>"|?*]/.test(t)||t.includes("\0")){this.invalid=!0,this.error='Path contains invalid characters: < > " | ? *',this.emit("hmwc-invalid");return}let o=t.replace(/\\/g,"/"),a=/^[a-zA-Z]:\//.test(o),l=o.startsWith("//"),h=o.startsWith("/")&&!l,d=/^\.{0,2}\//.test(o)||/^[^/]/.test(o);if(!(a||l||h||d)){this.invalid=!0,this.error="Please enter a valid file path",this.emit("hmwc-invalid");return}let p=l?o.slice(2):a?o.slice(3):h?o.slice(1):o;if(/\/{2,}/.test(p)){this.invalid=!0,this.error="Path contains empty segments",this.emit("hmwc-invalid");return}if(l&&o.slice(2).split("/").filter(Boolean).length<2){this.invalid=!0,this.error="UNC path must include a server and share name (e.g. \\\\server\\share)",this.emit("hmwc-invalid");return}this.invalid=!1,this.error=""}validateEmail(){let e=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,t=this.value.trim();t&&(e.test(t)?(this.invalid=!1,this.error=""):(this.invalid=!0,this.error="Please enter a valid email address",this.emit("hmwc-invalid")))}getEffectiveMaxLength(){return this.maxlength!=null?this.maxlength:s.MAX_LENGTH_BY_TYPE[this.type]??s.DEFAULT_MAX_LENGTH}enforceMaxLength(){let e=this.getEffectiveMaxLength(),t=String(this.value??"");if(t.length<=e)return!1;let r=t.slice(0,e);return this.value=r,this.input&&(this.input.value=r),this.invalid=!0,this.error=`Value exceeds maximum length of ${e} characters`,this.emit("hmwc-invalid"),!0}checkDesiredLength(){if(this.minlength==null||this.maxlength==null||this.minlength!==this.maxlength)return;String(this.value??"").length===this.minlength?(this.valid=!0,this.invalid=!1):this.valid=!1}sanitizeAutofill(){let e=String(this.value??"");if(e)switch(this.enforceMaxLength(),this.type){case"email":{/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(e.trim())||(this.value=this.input.value="",this.invalid=!0,this.error="Autofill value is not a valid email address",this.emit("hmwc-invalid"));break}case"tel":{/^[\d\s+().-]+$/.test(e)||(this.value=this.input.value="",this.invalid=!0,this.error="Autofill value is not a valid phone number",this.emit("hmwc-invalid"));break}case"number":{isNaN(Number(e))&&(this.value=this.input.value="",this.invalid=!0,this.error="Autofill value is not a valid number",this.emit("hmwc-invalid"));break}case"filepath":{this.validateFilePath(),this.invalid&&(this.value=this.input.value="");break}case"url":{try{new URL(e)}catch{this.value=this.input.value="",this.invalid=!0,this.error="Autofill value is not a valid URL",this.emit("hmwc-invalid")}break}default:break}}applyMask(e,t=!0){let r=e.replace(/\D/g,""),i=this.mask?bs[this.mask]:void 0;if(!i)return r.slice(0,this.getEffectiveMaxLength());let o=i.reduce((h,d)=>h+d,0);t&&this.mask==="phone"&&r.length===o+1&&r.startsWith("1")&&(r=r.slice(1)),r=r.slice(0,o);let a=[],l=0;for(let h of i){if(l>=r.length)break;a.push(r.slice(l,l+h)),l+=h}return a.join("-")}handleMaskedInput(e){let t=this.input,r=t.value,i=t.selectionStart??r.length,o=e?.inputType,a=this.countDigitsBefore(r,i),l=r,h=r.replace(/\D/g,""),d=h===String(this.value??"").replace(/\D/g,"");d&&o==="deleteContentBackward"&&a>0?(l=h.slice(0,a-1)+h.slice(a),a-=1):d&&o==="deleteContentForward"&&a<h.length&&(l=h.slice(0,a)+h.slice(a+1));let p=this.applyMask(l,o!=="insertText");p!==r&&(t.value=p),this.value=p;let m=this.findCaretAfterDigits(p,a);this.shadowRoot?.activeElement===t&&t.setSelectionRange(m,m)}handleCompositionEnd(){this.mask&&!this.textarea&&this.input.value!==String(this.value??"")&&this.handleInput()}findCaretAfterDigits(e,t){if(t<=0)return 0;let r=0;for(let i=0;i<e.length;i++)if(/\d/.test(e[i])&&r++,r===t)return i+1;return e.length}getDateFormatInfo(){let e=this.dateFormat.includes("/")?"/":"-",t=this.dateFormat.split(e).map(r=>r.length);return{separator:e,partLengths:t}}formatDateDigits(e,t=!1){let{separator:r,partLengths:i}=this.getDateFormatInfo(),o=i.reduce((d,p)=>d+p,0),a=e.slice(0,o),l="",h=0;for(let d=0;d<i.length&&h<a.length;d++){d>0&&(l+=r);let p=a.slice(h,h+i[d]);l+=p,h+=i[d]}if(t&&a.length>0&&a.length<o){let d=0;for(let p=0;p<i.length;p++)if(d+=i[p],a.length===d&&p<i.length-1){l+=r;break}}return l}countDigitsBefore(e,t){let r=0;for(let i=0;i<t&&i<e.length;i++)/\d/.test(e[i])&&r++;return r}findCursorPosition(e,t){let r=0;for(let i=0;i<e.length;i++){if(r===t){for(;i<e.length&&!/\d/.test(e[i]);)i++;return i}/\d/.test(e[i])&&r++}return e.length}handlePaste(e){if(this.type==="number"){let j=e.clipboardData?.getData("text");if(!j)return;e.preventDefault();let st=Number(j.trim());if(!isNaN(st)&&j.trim()!==""){let ge=String(st);this.input.value=ge,this.value=ge,this.emit("hmwc-input",{detail:{value:this.value}});return}let R="",te=!1;for(let ge of j.trim())ge==="-"&&R===""?R+=ge:ge==="."&&!te?(te=!0,R+=ge):ge>="0"&&ge<="9"&&(R+=ge);R&&!isNaN(Number(R))&&R!=="-"&&R!=="."&&(this.input.value=R,this.value=R,this.emit("hmwc-input",{detail:{value:this.value}}));return}if(this.type!=="date")return;let t=e.clipboardData?.getData("text");if(!t)return;e.preventDefault();let r=this.parseDate(t);if(r){let j=this.formatDate(r);this.input.value=j,this.value=j,this.updateDates([r],!0),this.invalid=!1,this.error="",this.input.setSelectionRange(j.length,j.length),this.emit("hmwc-input",{detail:{value:this.value}});return}let i=this.input.value,o=this.input.selectionStart??i.length,a=this.input.selectionEnd??o,l=i.slice(0,o),h=i.slice(a),p=(l+t+h).replace(/\D/g,""),m=this.formatDateDigits(p,!0),y=t.replace(/\D/g,"").length,_=this.countDigitsBefore(i,o),A=this.findCursorPosition(m,_+y);this.input.value=m,this.value=m,this.input.setSelectionRange(A,A),this.emit("hmwc-input",{detail:{value:this.value}})}get interactive(){return!this.disabled&&!this.readonly}toggleCalendar(){this.type!=="date"||!this.interactive||(this.open=!this.open)}handleClick(){this.isManuallyTyping||this.toggleCalendar()}handleClear(){this.clear(),this.input.focus()}handleToggle(){this.visible=!this.visible}handleCalendarChange(e){let t=e.detail.value;this.updateDates(t),this.multiSelect||document.addEventListener("mouseup",()=>{this.open=!1},{once:!0,capture:!0}),this.emit("hmwc-change")}connectedCallback(){super.connectedCallback(),this.toggleAttribute("no-label",!this.label),this.updateDates(this.dates),this.type==="tel"&&!this.pattern&&!this.mask&&(this.pattern=this.noFormat?ks:xs),this.type==="email"&&!this.pattern&&!this.mask&&(this.pattern="[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}"),this.type==="filepath"&&!this.pattern&&!this.mask&&(this.pattern='([a-zA-Z]:\\\\|\\\\\\\\|/|\\.\\.?/|[^<>"|?*\\x00])([^<>"|?*\\x00]*)'),this.type==="filepath"&&!this.placeholder&&(this.placeholder="C:\\folder\\file.txt or /path/to/file"),!this.sm&&!this.md&&!this.lg&&(this.md=!0),this.type==="password"&&this.minlength===void 0&&(this.minlength=8),this.autofocus||(this.autoFocusLost=!0),this.type==="date"&&!this.placeholder&&(this.placeholder=this.dateFormat),(this.month||this.month&&this.year)&&(this.lockCalendarNavigation=!0),this.maxlength==null&&(this.maxlength=s.MAX_LENGTH_BY_TYPE[this.type]??s.DEFAULT_MAX_LENGTH),this.autocomplete==null&&["filepath","number"].includes(this.type)&&(this.autocomplete="off")}disconnectedCallback(){super.disconnectedCallback(),this._calendarLoseFocus&&(document.removeEventListener("mousedown",this._calendarLoseFocus),this._calendarLoseFocus=null)}get fallbackAccessibleName(){if(!(this.label||this.controllers.slot.test()))return this.placeholder||this.name||void 0}get controlAccessibleName(){return this.accessibleLabel||this.fallbackAccessibleName}render(){let e=this.textarea?Gt`textarea`:Gt`input`,t=this.type==="password"&&this.visible||this.type==="date"||this.type==="filepath",r=v({input:!0,"no-label":!this.label,"label-wrap":!!this.labelWrap,small:!!this.sm,medium:!!this.md,large:!!this.lg,filled:!!this.filled,underline:!!this.underline,prefix:!!this.prefix,suffix:!!this.suffix||!!this.toggle,units:!this.units,pill:!!this.pill,toggle:!!this.toggle,clearable:!!this.clearable,textarea:!!this.textarea,disabled:!!this.disabled,date:this.type==="date",number:this.type==="number","no-spin":this.type==="number"&&(!this.max||Number(this.max)>100)||this.minlength!=null&&this.maxlength!=null&&this.minlength===this.maxlength&&this.minlength>3,calendar:this.open,valid:!!this.valid,invalid:!!this.invalid});return ve`
       <div part='base' class=${r}>
 
         <!-- Label -->
-        <label part="label" class="input__label" for='hmwc-input' aria-hidden=${!this.label}>
-          <slot>${this.label}</slot>
-        </label>
+        <!-- No whitespace after the slot: it would show as a space before the required indicator. -->
+        <label part="label" class="input__label" for='hmwc-input' aria-hidden=${!this.label}><slot>${this.label}</slot></label>
 
         <!-- Styling Wrappers -->
         <span class="input__wrapper">
 
+          <!-- Field box: the calendar toggle and the field. A date field draws
+               its border round both; for other types it is display: contents.
+               The help text stays outside it, below the box. -->
+          <span part="box" class="input__box">
+
             <!-- Calendar Toggle Button -->
-            ${this.type==="date"&&!this.suffix?at`
+            ${this.type==="date"&&!this.suffix?ve`
                     <slot name="calendar-toggle" part="calendar-toggle" class="input__calendar_toggle">
                       <hmwc-button
                         ?sm=${this.sm}
                         ?lg=${this.lg}
-                        ?disabled=${this.disabled}
+                        ?disabled=${!this.interactive}
                         fit
                         icon="calendar"
-                        @hmwc-click=${()=>this.open=!this.open}></hmwc-button>
+                        @hmwc-click=${this.toggleCalendar}></hmwc-button>
                     </slot>
                   `:""}
 
@@ -3527,25 +4139,26 @@
 
               <!-- Prefix Icon -->
               <slot name="prefix" part="prefix" class="input__prefix">
-                ${this.prefix?at`<hmwc-icon src=${this.prefix}></hmwc-icon>`:""}
+                ${this.prefix?ve`<hmwc-icon src=${this.prefix}></hmwc-icon>`:""}
               </slot>
 
               <!-- Input/Textarea Element -->
-              <${t}
+              <${e}
                 part="input"
                 id='hmwc-input'
                 class="input__control"
-                .value=${Bt(this.value)||""}
+                .value=${et(this.value)||""}
                 name=${w(this.name)}
                 title=${this.title}
-                type=${this.textarea?void 0:e?"text":this.type}
+                type=${this.textarea?void 0:t?"text":this.type}
                 placeholder=${w(this.placeholder)}
-                pattern=${w(this.pattern)}
+                pattern=${w(this.pattern??(this.mask?ws[this.mask]:void 0))}
                 ?readonly=${this.readonly}
+                ?disabled=${this.disabled}
                 ?required=${this.required}
                 ?autofocus=${this.autofocus}
                 minlength=${w(this.minlength)}
-                maxlength=${w(this.maxlength)}
+                maxlength=${w(this.mask?void 0:this.maxlength)}
                 min=${w(this.min)}
                 max=${w(this.max)}
                 rows=${w(this.rows)}
@@ -3553,8 +4166,9 @@
                 autocomplete=${w(this.autocomplete)}
                 autocorrect=${w(this.autocorrect)}
                 spellcheck=${w(this.spellcheck)}
+                inputmode=${w(this.inputmode??(this.mask?_s[this.mask]:void 0))}
                 aria-describedby="help"
-                aria-label="input"
+                aria-label=${w(this.controlAccessibleName)}
                 @focus=${this.handleFocus}
                 @blur=${this.handleBlur}
                 @input=${this.handleInput}
@@ -3562,42 +4176,44 @@
                 @click=${this.handleClick}
                 @keydown=${this.handleKeyDown}
                 @paste=${this.handlePaste}
-                /></${t}>
+                @compositionend=${this.handleCompositionEnd}
+                /></${e}>
 
               <!-- Suffix Icon -->
-               ${this.suffix||this.loading?at` <slot
+               ${this.suffix||this.loading?ve` <slot
                        name="suffix"
                        part="suffix"
                        class="input__suffix"
-                       @click=${this.type==="date"?()=>this.open=!this.open:void 0}
-                       style=${this.type==="date"?"cursor: pointer;":""}>
-                       ${this.suffix?at`<hmwc-icon src=${this.suffix}></hmwc-icon>`:""}
-                       ${!this.valid&&this.loading?at`<hmwc-spinner primary></hmwc-spinner>`:""}
+                       @click=${this.type==="date"?this.toggleCalendar:void 0}
+                       style=${this.type==="date"&&this.interactive?"cursor: pointer;":""}>
+                       ${this.suffix?ve`<hmwc-icon src=${this.suffix}></hmwc-icon>`:""}
+                       ${!this.valid&&this.loading?ve`<hmwc-spinner primary></hmwc-spinner>`:""}
                      </slot>`:""}
 
-             ${this.units?at`<div part="units" class="input__units">${this.units}</div>`:""}
+             ${this.units?ve`<div part="units" class="input__units">${this.units}</div>`:""}
 
               <!-- Clear Button -->
-               ${!this.loading&&this.clearable&&this.value&&!this.loading&&!this.valid?at` <slot name="clear" part="clear" class="input__clear">
+               ${!this.loading&&this.clearable&&this.interactive&&this.value&&!this.valid?ve` <slot name="clear" part="clear" class="input__clear">
                        <hmwc-button basic sm icon="x-circle-fill" @hmwc-click=${this.handleClear}></hmwc-button>
                      </slot>`:""}
 
               <!-- Password Visibility Toggle -->
               <slot name='toggle' part='toggle' class='input__toggle'>
-                ${this.toggle?at` <hmwc-button basic sm icon=${this.visible?"eye-slash":"eye"} @hmwc-click=${this.handleToggle}> </hmwc-button> `:""}
+                ${this.toggle?ve` <hmwc-button basic sm ?disabled=${this.disabled} icon=${this.visible?"eye-slash":"eye"} @hmwc-click=${this.handleToggle}> </hmwc-button> `:""}
               </slot>
             </div>
+          </span>
 
 
             <!-- Help Text -->
             <!-- The error replaces the help text, led by an icon so it reads as a status, not a button -->
             <slot name="help" part="help" id="help" class="input__help" aria-hidden=${!this.help&&!(this.invalid&&this.error)}>
-                ${this.invalid&&this.error?at`<span part="error" class="input__error"><hmwc-icon part="error-icon" class="input__error-icon" src="exclamation-circle-fill"></hmwc-icon>${this.error}</span>`:this.help}
+                ${this.invalid&&this.error?ve`<span part="error" class="input__error"><hmwc-icon part="error-icon" class="input__error-icon" src="exclamation-circle-fill"></hmwc-icon>${this.error}</span>`:this.help}
             </slot>
 
 
             <!-- Calendar -->
-            ${this.type==="date"?at` <div part="calendar" class="input__calendar" @mouseup=${i=>i.stopPropagation()}>
+            ${this.type==="date"?ve` <div part="calendar" class="input__calendar" @mouseup=${i=>i.stopPropagation()}>
                     <hmwc-calendar
                       ?multiple=${this.multiSelect}
                       .value=${this.dates instanceof Array?this.dates:[this.dates]}
@@ -3611,230 +4227,10 @@
         </span>
 
     </div>
-    `}};x.styles=zi;x.dependencies=[_,y,G,X];x.DEFAULT_MAX_LENGTH=2e3;x.MAX_LENGTH_BY_TYPE={email:254,tel:17,url:2083,filepath:4096,number:20,password:128};C([v()],x.prototype,"initialValueDateParsed",void 0);C([v()],x.prototype,"autoFocusLost",void 0);C([v()],x.prototype,"isManuallyTyping",void 0);C([v()],x.prototype,"_isDeleting",void 0);C([v()],x.prototype,"lockCalendarNavigation",void 0);C([a({type:Array,reflect:!0})],x.prototype,"dates",void 0);C([a({type:String,reflect:!0})],x.prototype,"type",void 0);C([a({type:Boolean,reflect:!0})],x.prototype,"fluid",void 0);C([a({type:Boolean,reflect:!0})],x.prototype,"filled",void 0);C([a({type:Boolean,reflect:!0})],x.prototype,"pill",void 0);C([a({type:Boolean,reflect:!0})],x.prototype,"underline",void 0);C([a({type:String})],x.prototype,"prefix",void 0);C([a({type:String})],x.prototype,"suffix",void 0);C([a({type:String})],x.prototype,"pattern",void 0);C([a({type:String,attribute:"date-format"})],x.prototype,"dateFormat",void 0);C([a({type:Boolean})],x.prototype,"multiSelect",void 0);C([a({type:String,reflect:!0})],x.prototype,"units",void 0);C([a({type:Boolean,reflect:!0})],x.prototype,"loading",void 0);C([a({type:Boolean})],x.prototype,"valid",void 0);C([a({type:String})],x.prototype,"help",void 0);C([a({type:Boolean,reflect:!0})],x.prototype,"clearable",void 0);C([a({type:Boolean,reflect:!0})],x.prototype,"textarea",void 0);C([a({type:String})],x.prototype,"placeholder",void 0);C([a({type:Boolean,reflect:!0})],x.prototype,"readonly",void 0);C([a({type:Boolean,reflect:!0})],x.prototype,"toggle",void 0);C([a({type:Boolean})],x.prototype,"visible",void 0);C([a({type:Number})],x.prototype,"rows",void 0);C([a({type:Number})],x.prototype,"minlength",void 0);C([a({type:Number})],x.prototype,"maxlength",void 0);C([a({type:String})],x.prototype,"min",void 0);C([a({type:String})],x.prototype,"max",void 0);C([a({type:Number})],x.prototype,"month",void 0);C([a({type:Number})],x.prototype,"year",void 0);C([a({type:String})],x.prototype,"autocapitalize",void 0);C([a({type:Boolean,reflect:!0})],x.prototype,"autocorrect",void 0);C([a({type:String})],x.prototype,"autocomplete",void 0);C([a({type:Boolean})],x.prototype,"spellcheck",void 0);C([a({type:String})],x.prototype,"inputmode",void 0);C([v()],x.prototype,"open",void 0);C([R(".input__control")],x.prototype,"input",void 0);C([R("hmwc-calendar")],x.prototype,"datepicker",void 0);C([p("value")],x.prototype,"handleValueChange",null);C([p("value")],x.prototype,"handleValueMaxLength",null);C([p("open")],x.prototype,"handleCalendarToggle",null);C([p("label")],x.prototype,"handleLabelChange",null);x.define("hmwc-input",x);var Ei=m`
-  :host {
-    --submenu-offset: -2px;
-    --menu-item-spacing: var(--hmwc-spacing-2x-small) var(--hmwc-spacing-small) var(--hmwc-spacing-2x-small) var(--hmwc-spacing-x-small);
-    --menu-item-font-size: calc(1.05 * var(--hmwc-font-size-small));
-    --menu-item-letter-spacing: var(--hmwc-letter-spacing-normal);
-    --menu-item-background: var(--hmwc-color-neutral-0);
-
-    display: contents;
-  }
-
-  .menu-item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    font-family: var(--hmwc-font-sans);
-    font-size: var(--menu-item-font-size);
-    font-weight: var(--hmwc-font-weight-semibold);
-    line-height: var(--hmwc-line-height-normal);
-    letter-spacing: var(--menu-item-letter-spacing);
-    color: var(--hmwc-color-neutral-900);
-    padding: var(--menu-item-spacing);
-    /* Was "var(--hmwc-transition-fast) fill" — that animates the SVG fill
-       property, which this element never sets, so the hover snapped instantly
-       while the menu's own toolbar controls faded. Animate what actually
-       changes, at the same x-fast timing the toolbar now uses. */
-    transition: background-color var(--hmwc-transition-x-fast) ease, color var(--hmwc-transition-x-fast) ease;
-    user-select: none;
-    -webkit-user-select: none;
-    white-space: nowrap;
-    cursor: pointer;
-    &:hover:not(.disabled, :focus-visible),
-    [aria-expanded='true'] {
-      background-color: var(--hmwc-color-neutral-100);
-      color: var(--hmwc-color-neutral-1000);
-    }
-
-    & .menu-item__label {
-      flex: 1 1 auto;
-      display: inline-block;
-      text-overflow: ellipsis;
-      color: var(--hmwc-color-neutral-750);
-      overflow: hidden;
-      letter-spacing: var(--menu-item-letter-spacing);
-    }
-
-    & .menu-item__prefix,
-    & .menu-item__suffix {
-      flex: 0 0 auto;
-      display: flex;
-      align-items: center;
-      --icon-color: var(--hmwc-color-neutral-700);
-    }
-
-    & .menu-item__check,
-    & .menu-item__chevron {
-      flex: 0 0 auto;
-      display: var(--menu-item-placeholder-display, flex);
-      align-items: center;
-      justify-content: center;
-      visibility: hidden;
-
-      hmwc-checkbox {
-        pointer-events: none;
-      }
-    }
-
-    & .menu-item__chevron {
-      width: 1.5rem;
-      padding-inline-end: var(--hmwc-spacing-x-small);
-    }
-
-    & .menu-item__spinner {
-      position: absolute;
-      font-size: 0.8rem;
-      top: calc(50% - 0.65rem);
-      left: 0.5rem;
-      opacity: 1;
-    }
-
-    &.loading {
-      outline: none;
-      cursor: wait;
-      opacity: 0.5;
-    }
-
-    &.checked {
-      & .menu-item__check {
-        visibility: visible;
-      }
-    }
-
-    /* Show the check area whenever a checkbox is present (checkable items) */
-    & .menu-item__check:has(hmwc-checkbox) {
-      visibility: visible;
-      margin-inline-end: var(--hmwc-spacing-2x-small);
-    }
-
-    &.prefix {
-      & .menu-item__prefix {
-        margin-inline-start: var(--hmwc-spacing-3x-small);
-        margin-inline-end: var(--hmwc-spacing-small);
-      }
-    }
-
-    &.suffix {
-      & .menu-item__suffix {
-        margin-inline-start: var(--hmwc-spacing-small);
-
-        &::slotted(hmwc-badge) {
-          margin-inline-start: var(--hmwc-spacing-3x-small);
-        }
-      }
-    }
-
-    &.disabled {
-      outline: none;
-      opacity: 0.5;
-      cursor: not-allowed;
-
-      &:hover {
-        background-color: transparent;
-        color: var(--hmwc-color-neutral-700);
-      }
-    }
-
-    &.active {
-      background-color: var(--hmwc-color-primary-50, hsl(from var(--hmwc-color-primary-600) h s l / 0.08));
-      color: var(--hmwc-color-primary-700);
-
-      & .menu-item__label {
-        color: var(--hmwc-color-primary-700);
-        font-weight: var(--hmwc-font-weight-bold);
-      }
-
-      &:hover:not(.disabled, :focus-visible) {
-        background-color: var(--hmwc-color-primary-100, hsl(from var(--hmwc-color-primary-600) h s l / 0.14));
-      }
-    }
-
-    &.small {
-      --menu-item-spacing: var(--menu-item-spacing-override, var(--hmwc-spacing-3x-small));
-      --menu-item-letter-spacing: var(--hmwc-letter-spacing-normal);
-      --menu-item-font-size: var(--hmwc-font-size-small);
-    }
-
-    &.submenu {
-      & .menu-item__label {
-        margin-inline-end: 1.5em;
-      }
-
-      & .menu-item__chevron {
-        visibility: visible;
-        padding-left: var(--hmwc-spacing-small);
-      }
-
-      & .menu-item__submenu {
-        position: absolute;
-        left: 100%;
-        top: -20%;
-        box-shadow: var(--hmwc-shadow-large);
-        z-index: var(--hmwc-z-index-dropdown);
-        margin-left: var(--submenu-offset);
-      }
-    }
-
-    &.center {
-      text-align: center;
-    }
-
-    &:focus-visible {
-      outline: none;
-      background-color: var(--hmwc-color-primary-600);
-      color: var(--hmwc-color-neutral-0);
-      opacity: 1;
-    }
-  }
-
-  @media (forced-colors: active) {
-    :host(:hover:not([aria-disabled='true'])) .menu-item,
-    :host(:focus-visible) .menu-item {
-      outline: dashed 1px SelectedItem;
-      outline-offset: -1px;
-    }
-  }
-`;var Dt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},E=class extends u{constructor(){super(...arguments),this.expanded=!1,this.isExpanded=()=>{if(!this.item)return;let t=this.item.matches(":hover");return w(this.submenu)&&t},this.handleClick=t=>{if(this.disabled){t.preventDefault(),t.stopImmediatePropagation();return}this.emit("hmwc-select",{detail:{value:this.value}}),this.checkable&&(this.checked=!this.checked,this.emit("hmwc-change",{detail:{value:this}}))},this.handleMouseOver=t=>{t.stopPropagation(),this.closest("hmwc-menu")?.isTypeaheadActive||this.focus(),this.emit("hmwc-focus"),(this.submenu||this.controllers.slot.test("submenu"))&&(this.expanded=!0)},this.handleMouseOut=t=>{t.stopPropagation(),this.emit("hmwc-blur"),(this.submenu||this.controllers.slot.test("submenu"))&&(this.expanded=!1)}}handleExpandedChange(){if(!this.controllers.slot.test("submenu"))return;let t=this.controllers.slot.get("submenu")[0];t.active=this.expanded}render(){let t=!!this.submenu||this.controllers.slot.test("submenu"),e=f({"menu-item":!0,expanded:this.expanded,checked:!!this.checked,loading:!!this.loading,center:!!this.center,disabled:!!this.disabled,active:!!this.active,prefix:!!this.prefix||this.controllers.slot.test("prefix"),suffix:!!this.suffix||this.controllers.slot.test("suffix"),submenu:t,small:!!this.sm});return c`
-      <div
-        part="base"
-        class=${e}
-        role="menuitem"
-        aria-label=${w(this.label||void 0)}
-        aria-haspopup=${t?"true":"false"}
-        aria-expanded=${t&&this.isExpanded()?"true":"false"}
-        aria-disabled=${this.disabled?"true":"false"}
-        @click=${this.handleClick}
-        @mouseover=${this.handleMouseOver}
-        @mouseleave=${this.handleMouseOut}>
-        <slot name="check" part="check" class="menu-item__check">
-          ${this.checkable?c`<hmwc-checkbox sm ?checked=${this.checked} @hmwc-change=${r=>r.stopPropagation()} tabindex="-1"></hmwc-checkbox>`:""}
-        </slot>
-        <slot name="prefix" part="prefix" class="menu-item__prefix"> ${this.prefix&&c`<hmwc-icon src=${this.prefix}></hmwc-icon>`} </slot>
-
-        <span part="label" class="menu-item__label"> ${this.label} </span>
-
-        <slot name="suffix" part="suffix" class="menu-item__suffix"> ${this.suffix&&c`<hmwc-icon src=${this.suffix}></hmwc-icon>`} </slot>
-
-        <span part="chevron" class="menu-item__chevron">
-          <hmwc-icon flex src="chevron-right" aria-hidden="true"></hmwc-icon>
-        </span>
-
-        ${this.loading&&c`
-          <span class="menu-item__spinner">
-            <hmwc-spinner part="spinner"></hmwc-spinner>
-          </span>
-        `}
-
-        <slot name="submenu" part="submenu" class="menu-item__submenu">
-          ${this.submenu&&c`<hmwc-menu submenu slot="submenu" ?active=${this.expanded} .items=${this.submenu}></hmwc-menu>`}
-        </slot>
-      </div>
-    `}};E.styles=Ei;E.dependencies=[_,X,ct];E.slots=["prefix","suffix","submenu"];Dt([v()],E.prototype,"expanded",void 0);Dt([a({type:String})],E.prototype,"value",void 0);Dt([a({type:String})],E.prototype,"label",void 0);Dt([a({type:Boolean,reflect:!0})],E.prototype,"checkable",void 0);Dt([a({type:Boolean,reflect:!0})],E.prototype,"checked",void 0);Dt([a({type:Boolean,reflect:!0})],E.prototype,"loading",void 0);Dt([a({type:String})],E.prototype,"prefix",void 0);Dt([a({type:String})],E.prototype,"suffix",void 0);Dt([a({type:Array})],E.prototype,"submenu",void 0);Dt([a({type:Boolean,reflect:!0})],E.prototype,"disabled",void 0);Dt([a({type:Boolean,reflect:!0})],E.prototype,"sm",void 0);Dt([a({type:Boolean,reflect:!0})],E.prototype,"active",void 0);Dt([a({type:Boolean,reflect:!0})],E.prototype,"center",void 0);Dt([R(".menu-item")],E.prototype,"item",void 0);Dt([p("expanded")],E.prototype,"handleExpandedChange",null);E.define("hmwc-menu-item",E);var Oi=m`
+    `}};C.styles=vo;C.DEFAULT_MAX_LENGTH=2e3;C.MAX_LENGTH_BY_TYPE={email:254,tel:17,url:2083,filepath:4096,number:20,password:128};T([b()],C.prototype,"initialValueDateParsed",void 0);T([b()],C.prototype,"autoFocusLost",void 0);T([b()],C.prototype,"isManuallyTyping",void 0);T([b()],C.prototype,"_isDeleting",void 0);T([b()],C.prototype,"lockCalendarNavigation",void 0);T([n({type:Array,reflect:!0})],C.prototype,"dates",void 0);T([n({type:String,reflect:!0})],C.prototype,"type",void 0);T([n({type:Boolean,reflect:!0})],C.prototype,"fluid",void 0);T([n({type:Boolean,reflect:!0})],C.prototype,"filled",void 0);T([n({type:Boolean,reflect:!0})],C.prototype,"pill",void 0);T([n({type:Boolean,reflect:!0})],C.prototype,"underline",void 0);T([n({type:String})],C.prototype,"prefix",void 0);T([n({type:String})],C.prototype,"suffix",void 0);T([n({type:Boolean,reflect:!0,attribute:"label-wrap"})],C.prototype,"labelWrap",void 0);T([n({type:Boolean,reflect:!0,attribute:"no-format"})],C.prototype,"noFormat",void 0);T([n({type:String})],C.prototype,"pattern",void 0);T([n({type:String,attribute:"pattern-message"})],C.prototype,"patternMessage",void 0);T([n({type:String,reflect:!0})],C.prototype,"mask",void 0);T([n({type:String,attribute:"aria-label"})],C.prototype,"accessibleLabel",void 0);T([n({type:String,attribute:"date-format"})],C.prototype,"dateFormat",void 0);T([n({type:Boolean})],C.prototype,"multiSelect",void 0);T([n({type:String,reflect:!0})],C.prototype,"units",void 0);T([n({type:Boolean,reflect:!0})],C.prototype,"loading",void 0);T([n({type:Boolean})],C.prototype,"valid",void 0);T([n({type:String})],C.prototype,"help",void 0);T([n({type:Boolean,reflect:!0})],C.prototype,"clearable",void 0);T([n({type:Boolean,reflect:!0})],C.prototype,"textarea",void 0);T([n({type:String})],C.prototype,"placeholder",void 0);T([n({type:Boolean,reflect:!0})],C.prototype,"readonly",void 0);T([n({type:Boolean,reflect:!0})],C.prototype,"toggle",void 0);T([n({type:Boolean})],C.prototype,"visible",void 0);T([n({type:Number})],C.prototype,"rows",void 0);T([n({type:Number})],C.prototype,"minlength",void 0);T([n({type:Number})],C.prototype,"maxlength",void 0);T([n({type:String})],C.prototype,"min",void 0);T([n({type:String})],C.prototype,"max",void 0);T([n({type:Number})],C.prototype,"month",void 0);T([n({type:Number})],C.prototype,"year",void 0);T([n({type:String})],C.prototype,"autocapitalize",void 0);T([n({type:Boolean,reflect:!0})],C.prototype,"autocorrect",void 0);T([n({type:String})],C.prototype,"autocomplete",void 0);T([n({type:Boolean})],C.prototype,"spellcheck",void 0);T([n({type:String})],C.prototype,"inputmode",void 0);T([b()],C.prototype,"open",void 0);T([I(".input__control")],C.prototype,"input",void 0);T([I("hmwc-calendar")],C.prototype,"datepicker",void 0);T([u("value")],C.prototype,"handleValueChange",null);T([u("value")],C.prototype,"handleValueMaxLength",null);T([u(["value","mask"])],C.prototype,"handleMaskChange",null);T([u("open")],C.prototype,"handleCalendarToggle",null);T([u("label")],C.prototype,"handleLabelChange",null);C.define("hmwc-input",C);var bo=f`
   :host {
     --menu-width: 100%;
-    --menu-max-height: 16rem;
+    --menu-max-height: calc(16 * var(--hmwc-rem, 1rem));
     --menu-padding: var(--hmwc-spacing-2x-small) 0;
     --menu-spacing: none;
     --menu-border: solid var(--hmwc-panel-border-width) var(--hmwc-panel-border-color);
@@ -3953,7 +4349,7 @@
       flex-shrink: 0;
 
       --input-width: 100%;
-      --input-height: 1.5rem;
+      --input-height: calc(1.5 * var(--hmwc-rem, 1rem));
       --input-font-size: var(--hmwc-font-size-x-small);
     }
 
@@ -3963,7 +4359,7 @@
       contain: inline-size;
 
       --input-width: 100%;
-      --input-height: var(--menu-search-height, 1.75rem);
+      --input-height: var(--menu-search-height, calc(1.75 * var(--hmwc-rem, 1rem)));
       --input-font-size: var(--menu-search-font-size, var(--hmwc-font-size-small));
       --input-radius: var(--menu-search-border-radius, var(--hmwc-border-radius-medium));
       --input-background: var(--menu-search-background, var(--hmwc-color-neutral-50));
@@ -3983,6 +4379,7 @@
       overflow-y: auto;
       scrollbar-width: thin;
       flex: 1;
+      outline: none;
     }
 
     & .menu__empty {
@@ -4041,11 +4438,11 @@
       position: absolute;
       top: 0;
       left: 100%;
-      transform: translateY(-0.55rem);
+      transform: translateY(calc(-0.55 * var(--hmwc-rem, 1rem)));
     }
   }
-`;var et=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},S=class extends u{constructor(){super(...arguments),this.filteredItems=[],this.menuItems=[],this._hasSlottedItems=!1,this._searchVisible=!1,this._typeaheadBuffer="",this._typeaheadMatchIndex=0,this._boundHandleTypeahead=this.handleTypeahead.bind(this),this._upgradeRequeued=!1,this.align="start"}get isTypeaheadActive(){return this._typeaheadBuffer.length>0}show(){this.active=!0}hide(){this.active=!1}toggle(){this.active=!this.active}select(t){this.menuItems.every(e=>!(e instanceof E)||e.value!==t)||this.emit("hmwc-select",{detail:{value:t}})}playAnimation(){window.requestAnimationFrame(()=>{let t=this.style.getPropertyValue("animation");this.style.setProperty("animation","none"),this.style.setProperty("animation",t)})}filterItems(){this.filteredItems=this.filter===""?this.menuItems:this.menuItems.filter(t=>t instanceof K?!0:(t.value||t.label)?.toLowerCase().includes(this.filter?.toLowerCase()||"")),this._hasSlottedItems&&this.menuItems.forEach(t=>{t instanceof K||(t.hidden=!this.filteredItems.includes(t))})}handleSearch(t){this.filter=t.target.value,this.filterItems()}getCheckableItems(){return this.menuItems.filter(t=>t instanceof E&&!!t.checkable)}areAllChecked(){let t=this.getCheckableItems();return t.length>0&&t.every(e=>e.checked)}areSomeChecked(){let t=this.getCheckableItems();return t.some(e=>e.checked)&&!t.every(e=>e.checked)}checkAll(){this.getCheckableItems().forEach(t=>{t.checked=!0}),this.requestUpdate(),this.emit("hmwc-change",{detail:{value:"all"}})}uncheckAll(){this.getCheckableItems().forEach(t=>{t.checked=!1}),this.requestUpdate(),this.emit("hmwc-change",{detail:{value:"none"}})}handleSelectAll(){this.areAllChecked()?this.uncheckAll():this.checkAll()}async toggleSearch(){this._searchVisible=!this._searchVisible,this._searchVisible?(await this.updateComplete,this.shadowRoot?.querySelector(".menu__search")?.focus()):(this.filter="",this.filterItems())}hideSearch(){this.filter||(this._searchVisible=!1)}applyActiveState(){this.menuItems.forEach(t=>{if(!(t instanceof E))return;let e=this.activeValue!==void 0&&String(t.value)===String(this.activeValue);t.active=e})}scrollToActive(){let t=0,e=20,r=()=>{let i=this.shadowRoot?.querySelector(".menu__items");if(!i)return;if(i.clientHeight===0&&t<e){t++,requestAnimationFrame(r);return}let o=this._hasSlottedItems?Array.from(this.querySelectorAll("hmwc-menu-item")):Array.from(i.querySelectorAll("hmwc-menu-item")),n=o.findIndex(l=>{let h=l;return this.activeValue!==void 0&&String(h.value)===String(this.activeValue)});if(n>=0&&o.length>0){let l=i.scrollHeight/o.length,h=n*l;i.scrollTop=h-i.clientHeight/2+l/2}};requestAnimationFrame(r)}handleTypeahead(t){if(this.filter!==void 0&&(this.searchOpen||this._searchVisible))return;if(t.key==="Escape"){this._typeaheadBuffer="",this._typeaheadMatchIndex=0,clearTimeout(this._typeaheadTimeout);return}if(t.key==="Tab"&&this._typeaheadBuffer){t.preventDefault();let r=this.getTypeaheadMatches(this._typeaheadBuffer.toLowerCase());r.length>1&&(this._typeaheadMatchIndex=t.shiftKey?(this._typeaheadMatchIndex-1+r.length)%r.length:(this._typeaheadMatchIndex+1)%r.length,this.selectTypeaheadMatch(r[this._typeaheadMatchIndex]),this.resetTypeaheadBufferTimer());return}if(t.key==="Backspace"){if(!this._typeaheadBuffer)return;if(t.preventDefault(),this._typeaheadBuffer=this._typeaheadBuffer.slice(0,-1),this._typeaheadMatchIndex=0,this._typeaheadBuffer){let r=this.getTypeaheadMatches(this._typeaheadBuffer.toLowerCase());r.length&&this.selectTypeaheadMatch(r[0])}this.resetTypeaheadBufferTimer();return}if(t.key===" "&&!this._typeaheadBuffer||t.key.length!==1||t.ctrlKey||t.metaKey||t.altKey)return;t.preventDefault(),this._typeaheadBuffer+=t.key,this._typeaheadMatchIndex=0;let e=this.getTypeaheadMatches(this._typeaheadBuffer.toLowerCase());e.length&&this.selectTypeaheadMatch(e[0]),this.resetTypeaheadBufferTimer()}getTypeaheadMatches(t){return(this._hasSlottedItems?Array.from(this.querySelectorAll("hmwc-menu-item")).filter(r=>!r.hidden):(this.filter!==void 0?this.filteredItems:this.menuItems).filter(r=>r instanceof E)).filter(r=>(r.label??r.value??"").toString().toLowerCase().startsWith(t))}selectTypeaheadMatch(t){this.menuItems.forEach(r=>{r instanceof E&&(r.active=!1)}),t.active=!0;let e=this.shadowRoot?.querySelector(".menu__items");if(e&&e.scrollHeight>e.clientHeight){let r=this._hasSlottedItems?Array.from(this.querySelectorAll("hmwc-menu-item")):Array.from(e.querySelectorAll("hmwc-menu-item")),i=r.indexOf(t);if(i>=0&&r.length>0){let o=e.scrollHeight/r.length,n=i*o;e.scrollTop=n-e.clientHeight/2+o/2}}requestAnimationFrame(()=>this._focusBase())}resetTypeaheadBufferTimer(){clearTimeout(this._typeaheadTimeout),this._typeaheadTimeout=setTimeout(()=>{this._typeaheadBuffer="",this._typeaheadMatchIndex=0,this.applyActiveState()},1e3)}handleSearchKeydown(t){t.key==="Enter"&&(t.preventDefault(),this.emit("hmwc-search-submit",{detail:{value:this.filter??""}}))}openUpdate(){this.playAnimation(),this.active||(this._typeaheadBuffer="",this._typeaheadMatchIndex=0,clearTimeout(this._typeaheadTimeout)),this.active&&this.searchOpen&&this.filter!==void 0&&this.updateComplete.then(()=>{this.shadowRoot?.querySelector(".menu__search")?.focus()})}activeValueUpdate(){this.applyActiveState()}itemsUpdate(){this.items&&!this.items.length||(this.menuItems=[],this.items?.forEach(t=>{let e=Object.assign(document.createElement("hmwc-menu-item"),{label:t,value:t});this.menuItems.push(e)}))}menuItemsUpdate(){let t=e=>this.select(e.target?.value||"");this.menuItems?.forEach(e=>e.removeEventListener("hmwc-select",t)),this.menuItems?.forEach(e=>e.addEventListener("hmwc-select",t)),this.activeValue!==void 0&&this.applyActiveState(),this.align&&this.align!=="start"&&this.alignUpdate()}prefixUpdate(){setTimeout(()=>{!this.prefix&&!this.suffix&&!this.sm||this.menuItems.forEach(t=>{t instanceof E&&(this.prefix&&(t.prefix=this.prefix),this.suffix&&(t.suffix=this.suffix),this.sm&&(t.sm=!0))})},1)}alignUpdate(){setTimeout(()=>{this.menuItems.forEach(t=>{t instanceof E&&(t.center=this.align==="center")})},1)}handleSlotChange(){let t=this.controllers.slot.get();t.some(i=>i.tagName==="HMWC-MENU-ITEM"&&!(i instanceof E)||i.tagName==="HMWC-DIVIDER"&&!(i instanceof K))&&!this._upgradeRequeued&&(this._upgradeRequeued=!0,Promise.all([customElements.whenDefined("hmwc-menu-item"),customElements.whenDefined("hmwc-divider")]).then(()=>{this._upgradeRequeued=!1,this.handleSlotChange()}));let r=t.filter(i=>i instanceof E||i instanceof K);t.length&&(this._hasSlottedItems=!0,this.menuItems=r,this.filterItems())}disconnectedCallback(){super.disconnectedCallback(),clearTimeout(this._typeaheadTimeout),this.removeEventListener("keydown",this._boundHandleTypeahead)}connectedCallback(){super.connectedCallback(),this.itemsUpdate(),this.handleSlotChange(),this.active===void 0&&!this.closest("hmwc-dropdown, hmwc-attachment")&&(this.active=!0),this.addEventListener("keydown",this._boundHandleTypeahead)}get _baseDiv(){return this.shadowRoot?.querySelector('[part="base"]')}_focusBase(){let t=this._baseDiv;t&&this.active&&t.focus({preventScroll:!0})}updated(t){super.updated(t),t.has("active")&&this.active&&(this.activeValue!==void 0&&this.scrollToActive(),requestAnimationFrame(()=>this._focusBase()))}render(){let t=f({menu:!0,active:!!this.active,submenu:this.slot==="submenu",filter:this.filter!==void 0,"select-all":!!this.selectAll}),e=this.filter!==void 0?this.filteredItems:this.menuItems,r=this.searchOpen&&this.filter!==void 0,i=this.selectAll||this.filter!==void 0&&!this.searchOpen,o=this.filter!==void 0&&!this.searchOpen,n=this.filter!==void 0&&(this._searchVisible||r);return c`
-      <div part="base" class=${t} role="menu" tabindex="-1" @focus=${()=>this.emit("hmwc-focus")} @blur=${()=>this.emit("hmwc-blur")}>
+`;var pe=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},O=class extends g{constructor(){super(...arguments),this.filteredItems=[],this.menuItems=[],this._hasSlottedItems=!1,this._searchVisible=!1,this._typeaheadBuffer="",this._typeaheadMatchIndex=0,this._boundHandleTypeahead=this.handleTypeahead.bind(this),this._upgradeRequeued=!1,this.align="start"}static get dependencies(){return[M,H,C,we,$]}get isTypeaheadActive(){return this._typeaheadBuffer.length>0}show(){this.active=!0}hide(){this.active=!1}toggle(){this.active=!this.active}select(e){this.menuItems.every(t=>!(t instanceof M)||t.heading||t.value!==e)||this.emit("hmwc-select",{detail:{value:e}})}focusItem(e="first"){let t=this._navigableItems(),r=e==="first"?t[0]:t[t.length-1];r&&this._focusItem(r)}_navigableItems(){return(this.filter!==void 0?this.filteredItems:this.menuItems).filter(t=>t instanceof M&&!t.heading&&!t.hidden&&t.isConnected)}_focusItem(e){e.item?.focus()}handleNavigation(e){if(!this.active||e.altKey||e.ctrlKey||e.metaKey||e.composedPath().some(o=>o instanceof C))return!1;let t=this._navigableItems();if(!t.length)return!1;let r=t.findIndex(o=>!!o.shadowRoot?.activeElement),i;switch(e.key){case"ArrowDown":i=r<0?0:(r+1)%t.length;break;case"ArrowUp":i=r<0?t.length-1:(r-1+t.length)%t.length;break;case"Home":i=0;break;case"End":i=t.length-1;break;case"Enter":case" ":{if(e.key===" "&&this._typeaheadBuffer)return!1;let o=r>=0?t[r]:this._typeaheadBuffer?t.find(a=>a.active):void 0;return o?(e.preventDefault(),o.item?.click(),!0):!1}default:return!1}return e.preventDefault(),this._focusItem(t[i]),!0}playAnimation(){window.requestAnimationFrame(()=>{let e=this.style.getPropertyValue("animation");this.style.setProperty("animation","none"),this.style.setProperty("animation",e)})}filterItems(){let e=this.filter?.toLowerCase()||"",t=i=>((i.value||i.label)??"").toString().toLowerCase().includes(e),r=i=>{for(let o of this.menuItems.slice(i+1)){if(o instanceof H||o instanceof M&&o.heading)return!1;if(o instanceof M&&t(o))return!0}return!1};this.filteredItems=this.filter===""?this.menuItems:this.menuItems.filter((i,o)=>i instanceof H?!0:i.heading?r(o):t(i)),this._hasSlottedItems&&this.menuItems.forEach(i=>{i instanceof H||(i.hidden=!this.filteredItems.includes(i))})}handleSearch(e){this.filter=e.target.value,this.filterItems()}getCheckableItems(){return this.menuItems.filter(e=>e instanceof M&&!!e.checkable&&!e.heading)}areAllChecked(){let e=this.getCheckableItems();return e.length>0&&e.every(t=>t.checked)}areSomeChecked(){let e=this.getCheckableItems();return e.some(t=>t.checked)&&!e.every(t=>t.checked)}checkAll(){this.getCheckableItems().forEach(e=>{e.checked=!0}),this.requestUpdate(),this.emit("hmwc-change",{detail:{value:"all"}})}uncheckAll(){this.getCheckableItems().forEach(e=>{e.checked=!1}),this.requestUpdate(),this.emit("hmwc-change",{detail:{value:"none"}})}handleSelectAll(){this.areAllChecked()?this.uncheckAll():this.checkAll()}async toggleSearch(){this._searchVisible=!this._searchVisible,this._searchVisible?(await this.updateComplete,this.shadowRoot?.querySelector(".menu__search")?.focus()):(this.filter="",this.filterItems())}hideSearch(){this.filter||(this._searchVisible=!1)}applyActiveState(){this.menuItems.forEach(e=>{if(!(e instanceof M))return;let t=this.activeValue!==void 0&&String(e.value)===String(this.activeValue);e.active=t})}scrollToActive(){let e=0,t=20,r=()=>{let i=this.shadowRoot?.querySelector(".menu__items");if(!i)return;if(i.clientHeight===0&&e<t){e++,requestAnimationFrame(r);return}let o=this._hasSlottedItems?Array.from(this.querySelectorAll("hmwc-menu-item")):Array.from(i.querySelectorAll("hmwc-menu-item")),a=o.findIndex(l=>{let h=l;return this.activeValue!==void 0&&String(h.value)===String(this.activeValue)});if(a>=0&&o.length>0){let l=i.scrollHeight/o.length,h=a*l;i.scrollTop=h-i.clientHeight/2+l/2}};requestAnimationFrame(r)}handleTypeahead(e){if(this.handleNavigation(e)||this.filter!==void 0&&(this.searchOpen||this._searchVisible))return;if(e.key==="Escape"){this._typeaheadBuffer="",this._typeaheadMatchIndex=0,clearTimeout(this._typeaheadTimeout);return}if(e.key==="Tab"&&this._typeaheadBuffer){e.preventDefault();let r=this.getTypeaheadMatches(this._typeaheadBuffer.toLowerCase());r.length>1&&(this._typeaheadMatchIndex=e.shiftKey?(this._typeaheadMatchIndex-1+r.length)%r.length:(this._typeaheadMatchIndex+1)%r.length,this.selectTypeaheadMatch(r[this._typeaheadMatchIndex]),this.resetTypeaheadBufferTimer());return}if(e.key==="Backspace"){if(!this._typeaheadBuffer)return;if(e.preventDefault(),this._typeaheadBuffer=this._typeaheadBuffer.slice(0,-1),this._typeaheadMatchIndex=0,this._typeaheadBuffer){let r=this.getTypeaheadMatches(this._typeaheadBuffer.toLowerCase());r.length&&this.selectTypeaheadMatch(r[0])}this.resetTypeaheadBufferTimer();return}if(e.key===" "&&!this._typeaheadBuffer||e.key.length!==1||e.ctrlKey||e.metaKey||e.altKey)return;e.preventDefault(),this._typeaheadBuffer+=e.key,this._typeaheadMatchIndex=0;let t=this.getTypeaheadMatches(this._typeaheadBuffer.toLowerCase());t.length&&this.selectTypeaheadMatch(t[0]),this.resetTypeaheadBufferTimer()}getTypeaheadMatches(e){return(this._hasSlottedItems?Array.from(this.querySelectorAll("hmwc-menu-item")).filter(r=>!r.hidden):(this.filter!==void 0?this.filteredItems:this.menuItems).filter(r=>r instanceof M)).filter(r=>r.heading?!1:(r.label??r.value??"").toString().toLowerCase().startsWith(e))}selectTypeaheadMatch(e){this.menuItems.forEach(i=>{i instanceof M&&(i.active=!1)}),e.active=!0;let t=this.shadowRoot?.querySelector(".menu__items");if(t&&t.scrollHeight>t.clientHeight){let i=this._hasSlottedItems?Array.from(this.querySelectorAll("hmwc-menu-item")):Array.from(t.querySelectorAll("hmwc-menu-item")),o=i.indexOf(e);if(o>=0&&i.length>0){let a=t.scrollHeight/i.length,l=o*a;t.scrollTop=l-t.clientHeight/2+a/2}}let r=this.menuItems.some(i=>i instanceof M&&!!i.shadowRoot?.activeElement);requestAnimationFrame(()=>r?this._focusItem(e):this._focusBase())}resetTypeaheadBufferTimer(){clearTimeout(this._typeaheadTimeout),this._typeaheadTimeout=setTimeout(()=>{this._typeaheadBuffer="",this._typeaheadMatchIndex=0,this.applyActiveState()},1e3)}handleSearchKeydown(e){e.key==="Enter"?(e.preventDefault(),this.emit("hmwc-search-submit",{detail:{value:this.filter??""}})):e.key==="ArrowDown"&&!e.altKey&&!e.ctrlKey&&!e.metaKey&&(e.preventDefault(),this.focusItem("first"))}openUpdate(){this.playAnimation(),this.active||(this._typeaheadBuffer="",this._typeaheadMatchIndex=0,clearTimeout(this._typeaheadTimeout)),this.active&&this.searchOpen&&this.filter!==void 0&&this.updateComplete.then(()=>{this.shadowRoot?.querySelector(".menu__search")?.focus()})}activeValueUpdate(){this.applyActiveState()}itemsUpdate(){this.items&&!this.items.length||(this.menuItems=[],this.items?.forEach(e=>{let t=Object.assign(document.createElement("hmwc-menu-item"),{label:e,value:e});this.menuItems.push(t)}))}menuItemsUpdate(){this.activeValue!==void 0&&this.applyActiveState(),this.align&&this.align!=="start"&&this.alignUpdate()}prefixUpdate(){setTimeout(()=>{!this.prefix&&!this.suffix&&!this.sm||this.menuItems.forEach(e=>{e instanceof M&&(this.prefix&&(e.prefix=this.prefix),this.suffix&&(e.suffix=this.suffix),this.sm&&(e.sm=!0))})},1)}alignUpdate(){setTimeout(()=>{this.menuItems.forEach(e=>{e instanceof M&&(e.center=this.align==="center")})},1)}handleSlotChange(){let e=this.controllers.slot.get();e.some(i=>i.tagName==="HMWC-MENU-ITEM"&&!(i instanceof M)||i.tagName==="HMWC-DIVIDER"&&!(i instanceof H))&&!this._upgradeRequeued&&(this._upgradeRequeued=!0,Promise.all([customElements.whenDefined("hmwc-menu-item"),customElements.whenDefined("hmwc-divider")]).then(()=>{this._upgradeRequeued=!1,this.handleSlotChange()}));let r=e.filter(i=>i instanceof M||i instanceof H);e.length&&(this._hasSlottedItems=!0,this.menuItems=r,this.filterItems(),this.prefixUpdate())}disconnectedCallback(){super.disconnectedCallback(),clearTimeout(this._typeaheadTimeout),this.removeEventListener("keydown",this._boundHandleTypeahead)}connectedCallback(){super.connectedCallback(),this.itemsUpdate(),this.handleSlotChange(),this.active===void 0&&!this.closest("hmwc-dropdown, hmwc-attachment")&&(this.active=!0),this.addEventListener("keydown",this._boundHandleTypeahead)}get _baseDiv(){return this.shadowRoot?.querySelector('[role="menu"]')}_focusBase(){let e=this._baseDiv;this.matches(":focus-within")||e&&this.active&&e.focus({preventScroll:!0})}updated(e){super.updated(e),e.has("active")&&this.active&&(this.activeValue!==void 0&&this.scrollToActive(),requestAnimationFrame(()=>this._focusBase()))}render(){let e=v({menu:!0,active:!!this.active,submenu:this.slot==="submenu",filter:this.filter!==void 0,"select-all":!!this.selectAll}),t=this.filter!==void 0?this.filteredItems:this.menuItems,r=this.searchOpen&&this.filter!==void 0,i=this.selectAll||this.filter!==void 0&&!this.searchOpen,o=this.filter!==void 0&&!this.searchOpen,a=this.filter!==void 0&&(this._searchVisible||r);return c`
+      <div part="base" class=${e}>
         ${r?c`
               <hmwc-input
                 part="search"
@@ -4062,7 +4459,11 @@
               <div class="menu__toolbar">
                 ${this.selectAll?c`
                       <div class="menu__select-all" @click=${this.handleSelectAll}>
-                        <hmwc-checkbox sm ?checked=${this.areAllChecked()} ?indeterminate=${this.areSomeChecked()}> </hmwc-checkbox>
+                        <hmwc-checkbox
+                          sm
+                          ?checked=${this.areAllChecked()}
+                          ?indeterminate=${this.areSomeChecked()}
+                          @hmwc-change=${l=>l.stopPropagation()}></hmwc-checkbox>
                         <span class="menu__select-all-label">${this.areAllChecked()?"Deselect All":"Select All"}</span>
                       </div>
                     `:""}
@@ -4073,7 +4474,7 @@
                         @click=${this.toggleSearch}></hmwc-icon>
                     `:""}
               </div>
-              ${n?c`
+              ${a?c`
                     <hmwc-input
                       part="search"
                       class="menu__search"
@@ -4087,13 +4488,19 @@
                   `:""}
               <hmwc-divider></hmwc-divider>
             `:""}
-        <div class="menu__items" part="items">
-          ${this._hasSlottedItems?"":e}
+        <div
+          class="menu__items"
+          part="items"
+          role="menu"
+          tabindex="-1"
+          @focus=${()=>this.emit("hmwc-focus")}
+          @blur=${()=>this.emit("hmwc-blur")}>
+          ${this._hasSlottedItems?"":t}
           <slot @slotchange=${()=>this.handleSlotChange()}></slot>
-          ${this.filter!==void 0&&this.filteredItems.length===0?c`<div class="menu__empty">No matches</div>`:""}
         </div>
+        ${this.filter!==void 0&&this.filteredItems.length===0?c`<div class="menu__empty">No matches</div>`:""}
       </div>
-    `}};S.styles=Oi;S.dependencies=[E,K,x,ct,_];et([v()],S.prototype,"filteredItems",void 0);et([v()],S.prototype,"menuItems",void 0);et([v()],S.prototype,"_hasSlottedItems",void 0);et([v()],S.prototype,"_searchVisible",void 0);et([a({type:Boolean,reflect:!0})],S.prototype,"active",void 0);et([a({type:Array})],S.prototype,"items",void 0);et([a({type:String,reflect:!0})],S.prototype,"filter",void 0);et([a({type:Boolean,attribute:"search-open",reflect:!0})],S.prototype,"searchOpen",void 0);et([a({type:String,attribute:"search-placeholder"})],S.prototype,"searchPlaceholder",void 0);et([a({attribute:"active-value"})],S.prototype,"activeValue",void 0);et([a({type:Boolean,reflect:!0})],S.prototype,"compact",void 0);et([a({type:Boolean,reflect:!0})],S.prototype,"selectAll",void 0);et([a({type:String,reflect:!0})],S.prototype,"prefix",void 0);et([a({type:String,reflect:!0})],S.prototype,"suffix",void 0);et([a({type:Boolean,reflect:!0})],S.prototype,"sm",void 0);et([a({type:String,reflect:!0})],S.prototype,"align",void 0);et([p("active")],S.prototype,"openUpdate",null);et([p("activeValue")],S.prototype,"activeValueUpdate",null);et([p("items")],S.prototype,"itemsUpdate",null);et([p("menuItems")],S.prototype,"menuItemsUpdate",null);et([p(["prefix","suffix","sm"])],S.prototype,"prefixUpdate",null);et([p("align")],S.prototype,"alignUpdate",null);S.define("hmwc-menu",S);var zr=m`
+    `}};O.styles=bo;pe([b()],O.prototype,"filteredItems",void 0);pe([b()],O.prototype,"menuItems",void 0);pe([b()],O.prototype,"_hasSlottedItems",void 0);pe([b()],O.prototype,"_searchVisible",void 0);pe([n({type:Boolean,reflect:!0})],O.prototype,"active",void 0);pe([n({type:Array})],O.prototype,"items",void 0);pe([n({type:String,reflect:!0})],O.prototype,"filter",void 0);pe([n({type:Boolean,attribute:"search-open",reflect:!0})],O.prototype,"searchOpen",void 0);pe([n({type:String,attribute:"search-placeholder"})],O.prototype,"searchPlaceholder",void 0);pe([n({attribute:"active-value"})],O.prototype,"activeValue",void 0);pe([n({type:Boolean,reflect:!0})],O.prototype,"compact",void 0);pe([n({type:Boolean,reflect:!0})],O.prototype,"selectAll",void 0);pe([n({type:String,reflect:!0})],O.prototype,"prefix",void 0);pe([n({type:String,reflect:!0})],O.prototype,"suffix",void 0);pe([n({type:Boolean,reflect:!0})],O.prototype,"sm",void 0);pe([n({type:String,reflect:!0})],O.prototype,"align",void 0);pe([u("active")],O.prototype,"openUpdate",null);pe([u("activeValue")],O.prototype,"activeValueUpdate",null);pe([u("items")],O.prototype,"itemsUpdate",null);pe([u("menuItems")],O.prototype,"menuItemsUpdate",null);pe([u(["prefix","suffix","sm"])],O.prototype,"prefixUpdate",null);pe([u("align")],O.prototype,"alignUpdate",null);O.define("hmwc-menu",O);var oi=f`
   .attachment__content {
     display: none;
     position: fixed;
@@ -4109,6 +4516,14 @@
 
   .attachment__content.active {
     display: block;
+  }
+
+  /* A menu draws its own border, background and shadow on its inner panel,
+     so its host must not paint a second one. The host is only the positioned
+     box and can be wider than the panel (a context menu's min-width), which
+     showed as a stray shadow beside the menu. */
+  hmwc-menu.attachment__content {
+    box-shadow: none;
   }
 
   .attachment__content.flip {
@@ -4174,7 +4589,7 @@
     right: calc(anchor(left) + var(--distance));
     bottom: calc(anchor(bottom) - var(--skidding));
   }
-`,Mi=m`
+`,wo=f`
   :host {
     --attachment-width: auto;
     --attachment-distance: 0px;
@@ -4222,16 +4637,16 @@
      \`contentStyles\` (adopted into the content's own root node),
      because ::slotted() cannot match content forwarded through
      nested slots — e.g. a <hmwc-menu> slotted into <hmwc-dropdown>. */
-`;var kt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Bi=new WeakSet;function da(s){let t=s;!("adoptedStyleSheets"in t)||Bi.has(t)||(t.adoptedStyleSheets=[...t.adoptedStyleSheets,zr.styleSheet??pa()],Bi.add(t))}var pr;function pa(){return pr||(pr=new CSSStyleSheet,pr.replaceSync(zr.cssText)),pr}var O=class extends u{constructor(){super(...arguments),this.trigger="click",this.placement="bottom",this.distance=2,this.skidding=0,this.flip=!0,this._forwardedSlots=new WeakSet,this._menuUpgradeQueued=!1,this._menuSelectHandler=t=>{let e=t.detail??{};this.emit("hmwc-select",{detail:e})},this._menuChangeHandler=t=>{let e=t.detail??{};this.emit("hmwc-change",{detail:e})}}show(){this.active=!0}hide(){this.active=!1}toggle(){this.content&&(this.active=!this.active,this.content instanceof S&&(this.content.active=this.active))}get _anchorId(){return this.name??this._uid??""}get _anchorNameCarrier(){let t=this.anchor instanceof HTMLElement?this.anchor:null;if(!t||!this.content)return t;let e=this.content.getRootNode(),r=t;for(;r.getRootNode()!==e;){let i=r.getRootNode();if(!(i instanceof ShadowRoot))return t;r=i.host}return r}register(){let t=this._anchorId;t&&(Te.includes(t)||Te.push(t))}unregister(){let t=this._anchorId;if(!t)return;let e=Te.indexOf(t);e>=0&&Te.splice(e,1)}retrieve(){let t=this.content;if(this.content=this.controllers.slot.get()[0],this.content?.tagName==="SLOT"){let e=this.content;this._forwardedSlots.has(e)||(this._forwardedSlots.add(e),e.addEventListener("slotchange",()=>this.handleSlotChange())),this.content=e.assignedElements({flatten:!0})[0]??e.children[0]}this.content&&this.content.tagName==="HMWC-MENU"&&!(this.content instanceof S)&&!this._menuUpgradeQueued&&(this._menuUpgradeQueued=!0,customElements.whenDefined("hmwc-menu").then(()=>{this._menuUpgradeQueued=!1,this.handleSlotChange()})),this.anchor||(this.anchor=this.controllers.slot.get("anchor")[0]),this.anchor instanceof String&&(this.anchor=document.querySelector(`#${this.anchor}`),this.append(this.anchor)),this.content&&(this.content.classList.add("attachment__content"),this.decorateContent()),t&&t!==this.content&&t instanceof S&&(t.removeEventListener("hmwc-select",this._menuSelectHandler),t.removeEventListener("hmwc-change",this._menuChangeHandler)),this.content instanceof S&&(this.content.removeEventListener("hmwc-select",this._menuSelectHandler),this.content.removeEventListener("hmwc-change",this._menuChangeHandler),this.content.addEventListener("hmwc-select",this._menuSelectHandler),this.content.addEventListener("hmwc-change",this._menuChangeHandler)),this.anchor&&(this.anchor.classList.add("attachment__anchor"),this.anchor.slot="anchor",this._anchorNameCarrier?.style.setProperty("anchor-name",`--${this._anchorId}`),this.content&&this.content.style.setProperty("position-anchor",`--${this._anchorId}`))}decorateContent(){if(!this.content)return;let t=this.content;t.dataset.placement=this.placement,t.classList.toggle("flip",!!this.flip),t.style.setProperty("--distance",`${this.distance}px`),t.style.setProperty("--skidding",`${this.skidding}px`),this.sync&&this.width&&t.style.setProperty("--attachment-popup-width",`${this.width}px`),da(t.getRootNode())}triggerOnClick(t){if(!this.anchor||!(this.anchor instanceof HTMLElement))return;if(this._clickHandler){let r=this.anchor instanceof u?"hmwc-click":"click";this.anchor.removeEventListener(r,this._clickHandler),this._clickHandler=void 0}if(this._documentHandler&&(document.removeEventListener("mousedown",this._documentHandler),this._documentHandler=void 0),!t)return;let e=this.anchor instanceof u?"hmwc-click":"click";this._clickHandler=()=>{this.toggle()},this._documentHandler=r=>{if(!this.content)return;let i=r.composedPath();if(!i.includes(this.anchor)){if(i.includes(this.content)){this.stayOpen||this.hide();return}this.hide()}},this.anchor.addEventListener(e,this._clickHandler),document.addEventListener("mouseup",this._documentHandler)}triggerOnHover(t){if(!this.anchor||!(this.anchor instanceof HTMLElement))return;t&&this.triggerOnHover(!1);let e=t?"add":"remove";this[`${e}EventListener`]("mouseover",this.show),this[`${e}EventListener`]("mouseout",this.hide)}nameUpdate(t){let e=(typeof t=="string"?t:void 0)??this._uid??"",r=Te.indexOf(e);r>=0&&Te.splice(r,1),this.register()}placementUpdate(){this.decorateContent()}activityUpdate(){this.emit(`hmwc-${this.active?"show":"hide"}`),this.trigger==="hover"&&this.emit(`hmwc-${this.active?"focus":"blur"}`),!(!this.anchor||!(this.anchor instanceof HTMLElement))&&(this.width=this.anchor.offsetWidth,this._anchorNameCarrier?.style.setProperty("anchor-name",`--${this._anchorId}`),this.content&&(this.content.classList.add("attachment__content"),this.content.classList.toggle("active",!!this.active),this.decorateContent(),this.content.style.setProperty("position-anchor",`--${this._anchorId}`),this.content instanceof S&&(this.content.active=this.active),this.arrow&&this.active&&requestAnimationFrame(()=>this.positionArrow())))}positionArrow(){let t=this.shadowRoot?.querySelector(".attachment__arrow");if(!t||!this.anchor||!(this.anchor instanceof HTMLElement))return;let e=this.anchor.getBoundingClientRect(),r=e.left+e.width/2;t.style.top="",t.style.bottom="",t.style.left="",t.style.right="",t.style.translate="",t.style.borderTop="",t.style.borderBottom="",t.style.borderLeft="",t.style.borderRight="",t.style.clipPath="",this.placement.startsWith("bottom")?(t.style.top=`${e.bottom+this.distance}px`,t.style.left=`${r}px`,t.style.translate="-50% -50%",t.style.borderRight="none",t.style.borderBottom="none",t.style.clipPath="polygon(0 0, 100% 0, 0 100%)"):this.placement.startsWith("top")&&(t.style.top=`${e.top-this.distance}px`,t.style.left=`${r}px`,t.style.translate="-50% -50%",t.style.borderLeft="none",t.style.borderTop="none",t.style.clipPath="polygon(100% 0, 100% 100%, 0 100%)")}triggerUpdate(){this.trigger==="click"?(this.triggerOnClick(!0),this.triggerOnHover(!1)):this.trigger==="hover"&&(this.triggerOnHover(!0),this.triggerOnClick(!1))}disconnectedCallback(){super.disconnectedCallback(),this.unregister(),this.triggerOnClick(!1),this.triggerOnHover(!1),this.content instanceof S&&(this.content.removeEventListener("hmwc-select",this._menuSelectHandler),this.content.removeEventListener("hmwc-change",this._menuChangeHandler))}connectedCallback(){if(super.connectedCallback(),!this._uid){let t=globalThis.crypto;this._uid=t?.randomUUID?.()??`a${Math.random().toString(36).slice(2,10)}`}this.register(),this.retrieve()}firstUpdated(){this.shadowRoot?.querySelectorAll("slot")?.forEach(e=>{e.addEventListener("slotchange",()=>this.handleSlotChange())})}handleSlotChange(){this.retrieve(),this.triggerUpdate(),this.content&&this.content.classList.toggle("active",!!this.active),this.content instanceof S&&(this.content.active=this.active)}render(){let t=f({attachment:!0,active:!!this.active,flip:!!this.flip,sync:!!this.sync,arrow:!!this.arrow,[`placement-${this.placement}`]:!0});return c`
+`;var Re=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},yo=new WeakSet;function $s(s){let e=s;!("adoptedStyleSheets"in e)||yo.has(e)||(e.adoptedStyleSheets=[...e.adoptedStyleSheets,oi.styleSheet??Cs()],yo.add(e))}var Fr;function Cs(){return Fr||(Fr=new CSSStyleSheet,Fr.replaceSync(oi.cssText)),Fr}var P=class extends g{constructor(){super(...arguments),this.trigger="click",this.placement="bottom",this.distance=2,this.skidding=0,this.flip=!0,this._forwardedSlots=new WeakSet,this._menuUpgradeQueued=!1,this._menuSelectHandler=e=>{e.stopPropagation();let t=e.detail??{};this.emit("hmwc-select",{detail:t})},this._menuChangeHandler=e=>{e.stopPropagation();let t=e.detail??{};this.emit("hmwc-change",{detail:t})}}static get dependencies(){return[O]}show(){this.active=!0}hide(){this.active=!1}toggle(){this.content&&(this.active=!this.active,this.content instanceof O&&(this.content.active=this.active))}get _anchorId(){return this.name??this._uid??""}get _anchorNameCarrier(){let e=this.anchor instanceof HTMLElement?this.anchor:null;if(!e||!this.content)return e;let t=this.content.getRootNode(),r=e;for(;r.getRootNode()!==t;){let i=r.getRootNode();if(!(i instanceof ShadowRoot))return e;r=i.host}return r}register(){let e=this._anchorId;e&&(Qt.includes(e)||Qt.push(e))}unregister(){let e=this._anchorId;if(!e)return;let t=Qt.indexOf(e);t>=0&&Qt.splice(t,1)}retrieve(){let e=this.content;if(this.content=this.controllers.slot.get()[0],this.content?.tagName==="SLOT"){let t=this.content;this._forwardedSlots.has(t)||(this._forwardedSlots.add(t),t.addEventListener("slotchange",()=>this.handleSlotChange())),this.content=t.assignedElements({flatten:!0})[0]??t.children[0]}this.content&&this.content.tagName==="HMWC-MENU"&&!(this.content instanceof O)&&!this._menuUpgradeQueued&&(this._menuUpgradeQueued=!0,customElements.whenDefined("hmwc-menu").then(()=>{this._menuUpgradeQueued=!1,this.handleSlotChange()})),this.anchor||(this.anchor=this.controllers.slot.get("anchor")[0]),this.anchor instanceof String&&(this.anchor=document.querySelector(`#${this.anchor}`),this.append(this.anchor)),this.content&&(this.content.classList.add("attachment__content"),this.decorateContent()),e&&e!==this.content&&e instanceof O&&(e.removeEventListener("hmwc-select",this._menuSelectHandler),e.removeEventListener("hmwc-change",this._menuChangeHandler)),this.content instanceof O&&(this.content.removeEventListener("hmwc-select",this._menuSelectHandler),this.content.removeEventListener("hmwc-change",this._menuChangeHandler),this.content.addEventListener("hmwc-select",this._menuSelectHandler),this.content.addEventListener("hmwc-change",this._menuChangeHandler)),this.anchor&&(this.anchor.classList.add("attachment__anchor"),this.anchor.slot="anchor",this._anchorNameCarrier?.style.setProperty("anchor-name",`--${this._anchorId}`),this.content&&this.content.style.setProperty("position-anchor",`--${this._anchorId}`))}decorateContent(){if(!this.content)return;let e=this.content;e.dataset.placement=this.placement,e.classList.toggle("flip",!!this.flip),e.style.setProperty("--distance",`${this.distance}px`),e.style.setProperty("--skidding",`${this.skidding}px`),this.sync&&this.width&&e.style.setProperty("--attachment-popup-width",`${this.width}px`),$s(e.getRootNode())}triggerOnClick(e){if(!this.anchor||!(this.anchor instanceof HTMLElement))return;if(this._clickHandler){let r=this.anchor instanceof g?"hmwc-click":"click";this.anchor.removeEventListener(r,this._clickHandler),this._clickHandler=void 0}if(this._documentHandler&&(document.removeEventListener("mouseup",this._documentHandler),this._documentHandler=void 0),!e)return;let t=this.anchor instanceof g?"hmwc-click":"click";this._clickHandler=()=>{this.toggle()},this._documentHandler=r=>{if(!this.content)return;let i=r.composedPath();if(!i.includes(this.anchor)){if(i.includes(this.content)){this.stayOpen||this.hide();return}this.hide()}},this.anchor.addEventListener(t,this._clickHandler),document.addEventListener("mouseup",this._documentHandler)}triggerOnHover(e){if(!this.anchor||!(this.anchor instanceof HTMLElement))return;e&&this.triggerOnHover(!1);let t=e?"add":"remove";this[`${t}EventListener`]("mouseover",this.show),this[`${t}EventListener`]("mouseout",this.hide)}nameUpdate(e){let t=(typeof e=="string"?e:void 0)??this._uid??"",r=Qt.indexOf(t);r>=0&&Qt.splice(r,1),this.register()}placementUpdate(){this.decorateContent()}activityUpdate(){this.emit(`hmwc-${this.active?"show":"hide"}`),this.trigger==="hover"&&this.emit(`hmwc-${this.active?"focus":"blur"}`),!(!this.anchor||!(this.anchor instanceof HTMLElement))&&(this.width=this.anchor.offsetWidth,this._anchorNameCarrier?.style.setProperty("anchor-name",`--${this._anchorId}`),this.content&&(this.content.classList.add("attachment__content"),this.content.classList.toggle("active",!!this.active),this.decorateContent(),this.content.style.setProperty("position-anchor",`--${this._anchorId}`),this.content instanceof O&&(this.content.active=this.active),this.arrow&&this.active&&requestAnimationFrame(()=>this.positionArrow())))}positionArrow(){let e=this.shadowRoot?.querySelector(".attachment__arrow");if(!e||!this.anchor||!(this.anchor instanceof HTMLElement))return;let t=this.anchor.getBoundingClientRect(),r=t.left+t.width/2;e.style.top="",e.style.bottom="",e.style.left="",e.style.right="",e.style.translate="",e.style.borderTop="",e.style.borderBottom="",e.style.borderLeft="",e.style.borderRight="",e.style.clipPath="",this.placement.startsWith("bottom")?(e.style.top=`${t.bottom+this.distance}px`,e.style.left=`${r}px`,e.style.translate="-50% -50%",e.style.borderRight="none",e.style.borderBottom="none",e.style.clipPath="polygon(0 0, 100% 0, 0 100%)"):this.placement.startsWith("top")&&(e.style.top=`${t.top-this.distance}px`,e.style.left=`${r}px`,e.style.translate="-50% -50%",e.style.borderLeft="none",e.style.borderTop="none",e.style.clipPath="polygon(100% 0, 100% 100%, 0 100%)")}triggerUpdate(){this.trigger==="click"?(this.triggerOnClick(!0),this.triggerOnHover(!1)):this.trigger==="hover"?(this.triggerOnHover(!0),this.triggerOnClick(!1)):this.trigger==="manual"&&(this.triggerOnClick(!1),this.triggerOnHover(!1))}disconnectedCallback(){super.disconnectedCallback(),this.unregister(),this.triggerOnClick(!1),this.triggerOnHover(!1),this.content instanceof O&&(this.content.removeEventListener("hmwc-select",this._menuSelectHandler),this.content.removeEventListener("hmwc-change",this._menuChangeHandler))}connectedCallback(){if(super.connectedCallback(),!this._uid){let e=globalThis.crypto;this._uid=e?.randomUUID?.()??`a${Math.random().toString(36).slice(2,10)}`}this.register(),this.retrieve(),this.hasUpdated&&this.triggerUpdate()}firstUpdated(){this.shadowRoot?.querySelectorAll("slot")?.forEach(t=>{t.addEventListener("slotchange",()=>this.handleSlotChange())})}handleSlotChange(){this.retrieve(),this.triggerUpdate(),this.content&&this.content.classList.toggle("active",!!this.active),this.content instanceof O&&(this.content.active=this.active)}render(){let e=v({attachment:!0,active:!!this.active,flip:!!this.flip,sync:!!this.sync,arrow:!!this.arrow,[`placement-${this.placement}`]:!0});return c`
       <div
         part="base"
-        class=${t}
+        class=${e}
         style=${`--attachment-width: ${this.width}px; --distance:${this.distance}px; --skidding:${this.skidding}px;`}>
         <slot name="anchor" part="anchor"></slot>
         ${this.arrow?c`<div part="arrow" class="attachment__arrow"></div>`:""}
         <slot part="content"> </slot>
       </div>
-    `}};O.styles=Mi;O.dependencies=[S];O.slots=["[default]","anchor"];kt([a({type:Boolean,reflect:!0})],O.prototype,"active",void 0);kt([a({type:String})],O.prototype,"name",void 0);kt([a({type:String})],O.prototype,"anchor",void 0);kt([a({type:String})],O.prototype,"trigger",void 0);kt([a({type:String,reflect:!0})],O.prototype,"placement",void 0);kt([a({type:Number})],O.prototype,"distance",void 0);kt([a({type:Number})],O.prototype,"skidding",void 0);kt([a({type:Boolean,reflect:!0})],O.prototype,"flip",void 0);kt([a({type:Boolean,reflect:!0})],O.prototype,"sync",void 0);kt([a({type:Boolean,reflect:!0})],O.prototype,"stayOpen",void 0);kt([a({type:Boolean,reflect:!0})],O.prototype,"arrow",void 0);kt([v()],O.prototype,"content",void 0);kt([v()],O.prototype,"width",void 0);kt([p("name",{waitUntilFirstUpdate:!0})],O.prototype,"nameUpdate",null);kt([p("placement",{waitUntilFirstUpdate:!0}),p("distance",{waitUntilFirstUpdate:!0}),p("skidding",{waitUntilFirstUpdate:!0}),p("flip",{waitUntilFirstUpdate:!0})],O.prototype,"placementUpdate",null);kt([p("active")],O.prototype,"activityUpdate",null);kt([p("trigger")],O.prototype,"triggerUpdate",null);var Te=[];O.define("hmwc-attachment",O);var Di=m`
+    `}};P.styles=wo;P.slots=["[default]","anchor"];Re([n({type:Boolean,reflect:!0})],P.prototype,"active",void 0);Re([n({type:String})],P.prototype,"name",void 0);Re([n({type:String})],P.prototype,"anchor",void 0);Re([n({type:String})],P.prototype,"trigger",void 0);Re([n({type:String,reflect:!0})],P.prototype,"placement",void 0);Re([n({type:Number})],P.prototype,"distance",void 0);Re([n({type:Number})],P.prototype,"skidding",void 0);Re([n({type:Boolean,reflect:!0})],P.prototype,"flip",void 0);Re([n({type:Boolean,reflect:!0})],P.prototype,"sync",void 0);Re([n({type:Boolean,reflect:!0})],P.prototype,"stayOpen",void 0);Re([n({type:Boolean,reflect:!0})],P.prototype,"arrow",void 0);Re([b()],P.prototype,"content",void 0);Re([b()],P.prototype,"width",void 0);Re([u("name",{waitUntilFirstUpdate:!0})],P.prototype,"nameUpdate",null);Re([u("placement",{waitUntilFirstUpdate:!0}),u("distance",{waitUntilFirstUpdate:!0}),u("skidding",{waitUntilFirstUpdate:!0}),u("flip",{waitUntilFirstUpdate:!0})],P.prototype,"placementUpdate",null);Re([u("active")],P.prototype,"activityUpdate",null);Re([u("trigger")],P.prototype,"triggerUpdate",null);var Qt=[];P.define("hmwc-attachment",P);var _o=f`
   :host {
     --avatar-size: 1em;
     --avatar-padding: 0;
@@ -4309,21 +4724,21 @@
 
     /* Sizes */
     &.sm {
-      --avatar-size: 1.5rem;
-      --avatar-label-size: calc(1.5rem * 0.42);
-      --avatar-icon-size: calc(1.5rem * 0.55);
+      --avatar-size: calc(1.5 * var(--hmwc-rem, 1rem));
+      --avatar-label-size: calc(1.5 * var(--hmwc-rem, 1rem) * 0.42);
+      --avatar-icon-size: calc(1.5 * var(--hmwc-rem, 1rem) * 0.55);
     }
 
     &.md {
-      --avatar-size: 3rem;
-      --avatar-label-size: calc(3rem * 0.42);
-      --avatar-icon-size: calc(3rem * 0.55);
+      --avatar-size: calc(3 * var(--hmwc-rem, 1rem));
+      --avatar-label-size: calc(3 * var(--hmwc-rem, 1rem) * 0.42);
+      --avatar-icon-size: calc(3 * var(--hmwc-rem, 1rem) * 0.55);
     }
 
     &.lg {
-      --avatar-size: 4.5rem;
-      --avatar-label-size: calc(4.5rem * 0.42);
-      --avatar-icon-size: calc(4.5rem * 0.55);
+      --avatar-size: calc(4.5 * var(--hmwc-rem, 1rem));
+      --avatar-label-size: calc(4.5 * var(--hmwc-rem, 1rem) * 0.42);
+      --avatar-icon-size: calc(4.5 * var(--hmwc-rem, 1rem) * 0.55);
     }
 
     /* Color variants */
@@ -4420,8 +4835,8 @@
       box-shadow: 0 0 0 0 var(--avatar-status-color);
     }
   }
-`;var ht=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},F=class s extends u{constructor(){super(...arguments),this._hasImageError=!1,this.icon="person-fill",this.shape="circle",this.loading="eager",this._handleClick=()=>{this.emit("hmwc-click",{})}}updateInitials(){this.name&&(this.initials=this.name.split(" ").map(t=>t[0]).join(""))}handleSrcChange(){this._hasImageError=!1}_handleImageError(){this._hasImageError=!0}_canShowImage(){return this.src&&!this._hasImageError}get _accessibleName(){return this.label||this.name||s.FALLBACK_LABEL}render(){let t=f({avatar:!0,circle:this.shape==="circle",square:this.shape==="square",[`status-${this.status}`]:!!this.status,selectable:!!this.selectable,sm:!!this.sm,md:!!this.md,lg:!!this.lg,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger});return c`
-      <div part="base" class=${t} role="img" aria-label=${this._accessibleName} @click=${this._handleClick}>
+`;var $e=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},W=class s extends g{constructor(){super(...arguments),this._hasImageError=!1,this.icon="person-fill",this.shape="circle",this.loading="eager",this._handleClick=()=>{this.emit("hmwc-click",{})}}updateInitials(){let e=(this.name||"").trim().split(/\s+/).filter(Boolean),t=i=>i?Array.from(i)[0]:"",r=e.length>1?t(e[0])+t(e[e.length-1]):t(e[0]);this.initials=r.toLocaleUpperCase()}handleSrcChange(){this._hasImageError=!1}_handleImageError(){this._hasImageError=!0}_canShowImage(){return this.src&&!this._hasImageError}get _accessibleName(){return this.label||this.name||s.FALLBACK_LABEL}render(){let e=v({avatar:!0,circle:this.shape==="circle",square:this.shape==="square",[`status-${this.status}`]:!!this.status,selectable:!!this.selectable,sm:!!this.sm,md:!!this.md,lg:!!this.lg,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger});return c`
+      <div part="base" class=${e} role="img" aria-label=${this._accessibleName} @click=${this._handleClick}>
         <slot>
           ${this._canShowImage()?c`<img
                 part="image"
@@ -4429,10 +4844,10 @@
                 src=${this.src}
                 alt=${this._accessibleName}
                 loading=${this.loading}
-                @error=${this._handleImageError} />`:this.name?c`<div part="label" class="avatar__label">${this.initials}</div>`:c`<hmwc-icon part="icon" class="avatar__icon" src=${this.icon}></hmwc-icon>`}
+                @error=${this._handleImageError} />`:this.initials?c`<div part="label" class="avatar__label">${this.initials}</div>`:c`<hmwc-icon part="icon" class="avatar__icon" src=${this.icon}></hmwc-icon>`}
         </slot>
       </div>
-    `}};F.styles=Di;F.dependencies=[_];F.slots=["[default]"];F.FALLBACK_LABEL="Avatar";ht([v()],F.prototype,"_hasImageError",void 0);ht([v()],F.prototype,"initials",void 0);ht([a({type:Boolean,reflect:!0})],F.prototype,"selectable",void 0);ht([a({type:Boolean,reflect:!0})],F.prototype,"primary",void 0);ht([a({type:Boolean,reflect:!0})],F.prototype,"success",void 0);ht([a({type:Boolean,reflect:!0})],F.prototype,"neutral",void 0);ht([a({type:Boolean,reflect:!0})],F.prototype,"warning",void 0);ht([a({type:Boolean,reflect:!0})],F.prototype,"danger",void 0);ht([a({type:Boolean,reflect:!0})],F.prototype,"sm",void 0);ht([a({type:Boolean,reflect:!0})],F.prototype,"md",void 0);ht([a({type:Boolean,reflect:!0})],F.prototype,"lg",void 0);ht([a({type:String})],F.prototype,"src",void 0);ht([a({type:String})],F.prototype,"name",void 0);ht([a({type:String})],F.prototype,"label",void 0);ht([a({type:String})],F.prototype,"icon",void 0);ht([a({type:String,reflect:!0})],F.prototype,"shape",void 0);ht([a({type:String,reflect:!0})],F.prototype,"status",void 0);ht([a({type:String})],F.prototype,"loading",void 0);ht([p("name")],F.prototype,"updateInitials",null);ht([p("src")],F.prototype,"handleSrcChange",null);F.define("hmwc-avatar",F);Y.define("hmwc-badge",Y);var Ti=m`
+    `}};W.styles=_o;W.dependencies=[$];W.slots=["[default]"];W.FALLBACK_LABEL="Avatar";$e([b()],W.prototype,"_hasImageError",void 0);$e([b()],W.prototype,"initials",void 0);$e([n({type:Boolean,reflect:!0})],W.prototype,"selectable",void 0);$e([n({type:Boolean,reflect:!0})],W.prototype,"primary",void 0);$e([n({type:Boolean,reflect:!0})],W.prototype,"success",void 0);$e([n({type:Boolean,reflect:!0})],W.prototype,"neutral",void 0);$e([n({type:Boolean,reflect:!0})],W.prototype,"warning",void 0);$e([n({type:Boolean,reflect:!0})],W.prototype,"danger",void 0);$e([n({type:Boolean,reflect:!0})],W.prototype,"sm",void 0);$e([n({type:Boolean,reflect:!0})],W.prototype,"md",void 0);$e([n({type:Boolean,reflect:!0})],W.prototype,"lg",void 0);$e([n({type:String})],W.prototype,"src",void 0);$e([n({type:String})],W.prototype,"name",void 0);$e([n({type:String})],W.prototype,"label",void 0);$e([n({type:String})],W.prototype,"icon",void 0);$e([n({type:String,reflect:!0})],W.prototype,"shape",void 0);$e([n({type:String,reflect:!0})],W.prototype,"status",void 0);$e([n({type:String})],W.prototype,"loading",void 0);$e([u("name")],W.prototype,"updateInitials",null);$e([u("src")],W.prototype,"handleSrcChange",null);W.define("hmwc-avatar",W);var xo=f`
   :host {
     /* The call-to-action colour used to be a literal "black" inline on the
        button, which breaks the no-hard-coded-colours rule and never adapted to
@@ -4454,7 +4869,7 @@
     --button-color: var(--banner-action-color);
     --button-background: var(--banner-action-background);
   }
-`;var Ri=m`
+`;var ko=f`
   :host {
     --col-max-width: var(--container-max-width);
     --col-padding: var(--container-padding);
@@ -4472,7 +4887,7 @@
 
     & .col__label {
       display: none;
-      color: var(--hmwc-color-text-secondary);
+      color: var(--hmwc-color-text-secondary, var(--hmwc-color-neutral-800));
       font-size: var(--hmwc-font-size-small);
       font-family: var(--hmwc-font-sans);
       line-height: 2;
@@ -4530,12 +4945,12 @@
       }
     }
   }
-`;var Ge=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Lt=class extends I{render(){let t=f({col:!0,wrap:!!this.wrap,min:!!this.min,max:!!this.max,outline:!!this.outline,fit:!!this.fit,label:!!this.label||this.controllers.slot.test("label"),scrollable:!!this.scrollable});return c`
-      <div part="base" class=${t}>
+`;var ur=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},tt=class extends L{render(){let e=v({col:!0,wrap:!!this.wrap,min:!!this.min,max:!!this.max,outline:!!this.outline,fit:!!this.fit,label:!!this.label||this.controllers.slot.test("label"),scrollable:!!this.scrollable});return c`
+      <div part="base" class=${e}>
         <slot name="label" part="label" class="col__label">${this.label}</slot>
         <slot part="content" class="col__content"></slot>
       </div>
-    `}};Lt.styles=Ri;Ge([a({type:Boolean,reflect:!0})],Lt.prototype,"wrap",void 0);Ge([a({type:Boolean,reflect:!0})],Lt.prototype,"fit",void 0);Ge([a({type:Boolean,reflect:!0})],Lt.prototype,"min",void 0);Ge([a({type:Boolean,reflect:!0})],Lt.prototype,"max",void 0);Ge([a({type:Boolean,reflect:!0})],Lt.prototype,"outline",void 0);Lt.define("hmwc-col",Lt);var Pi=m`
+    `}};tt.styles=ko;ur([n({type:Boolean,reflect:!0})],tt.prototype,"wrap",void 0);ur([n({type:Boolean,reflect:!0})],tt.prototype,"fit",void 0);ur([n({type:Boolean,reflect:!0})],tt.prototype,"min",void 0);ur([n({type:Boolean,reflect:!0})],tt.prototype,"max",void 0);ur([n({type:Boolean,reflect:!0})],tt.prototype,"outline",void 0);tt.define("hmwc-col",tt);var $o=f`
   :host {
     /*
      * Canonical, prefixed custom properties. The unprefixed legacy names
@@ -4555,7 +4970,7 @@
 
     width: 100%;
     height: 100%;
-    min-height: 1.8rem;
+    min-height: calc(1.8 * var(--hmwc-rem, 1rem));
     padding: var(--hmwc-spacing-x-small);
 
     .skeleton__indicator {
@@ -4618,11 +5033,11 @@
       opacity: 1;
     }
   }
-`;var Fi=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},$t=class extends u{constructor(){super(...arguments),this.sheen=!0}render(){let t=!!this.pulse,e=!!this.sheen&&!t,r=f({skeleton:!0,pulse:t,sheen:e});return c`
+`;var Co=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},oe=class extends g{constructor(){super(...arguments),this.sheen=!0}render(){let e=!!this.pulse,t=!!this.sheen&&!e,r=v({skeleton:!0,pulse:e,sheen:t});return c`
       <div part="base" class=${r} aria-hidden="true">
         <div part="indicator" class="skeleton__indicator"></div>
       </div>
-    `}};$t.styles=Pi;$t.dependencies=[];$t.slots=[];Fi([a({type:Boolean,reflect:!0})],$t.prototype,"sheen",void 0);Fi([a({type:Boolean,reflect:!0})],$t.prototype,"pulse",void 0);$t.define("hmwc-skeleton",$t);var ji=m`
+    `}};oe.styles=$o;oe.dependencies=[];oe.slots=[];Co([n({type:Boolean,reflect:!0})],oe.prototype,"sheen",void 0);Co([n({type:Boolean,reflect:!0})],oe.prototype,"pulse",void 0);oe.define("hmwc-skeleton",oe);var So=f`
   :host {
     --text-size: var(--hmwc-font-size-medium);
     --text-weight: var(--hmwc-font-weight-normal);
@@ -4632,6 +5047,12 @@
     --text-spacing: var(--hmwc-letter-spacing-normal);
     --text-icon-color: var(--hmwc-color-neutral-800);
     display: block;
+    user-select: text;
+  }
+
+  /* Ruled title: a rule under the text, a small step below it. */
+  .text__divider {
+    --divider-spacing-start: var(--hmwc-spacing-x-small);
   }
 
   hmwc-text {
@@ -4648,7 +5069,7 @@
     font-family: var(--text-family);
     letter-spacing: var(--text-spacing);
     white-space: nowrap;
-    --icon-size: 1rem;
+    --icon-size: calc(1 * var(--hmwc-rem, 1rem));
     font-variant: none;
     font-feature-settings: 'c2sc', 'smcp';
 
@@ -4683,7 +5104,7 @@
 
     & .text__suffix {
       margin-left: var(--hmwc-spacing-small);
-      --icon-size: 1rem;
+      --icon-size: calc(1 * var(--hmwc-rem, 1rem));
 
       hmwc-icon {
         display: flex;
@@ -4867,14 +5288,20 @@
       text-align: end;
     }
   }
-`;var D=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},k=class extends u{constructor(){super(...arguments),this.prefix=null}handleEnter(){this.emit("hmwc-enter",{detail:{value:this.value}})}handleLeave(){this.emit("hmwc-leave",{detail:{value:this.value}})}formatted(){if(!this.format||this.value==null)return this.value;let t=Number(this.value);return Number.isFinite(t)?Math.round(t).toLocaleString():this.value}resolveFamily(){return this.serif?"serif":this.monospace?"monospace":"sans"}_renderIcon(t){return c`<hmwc-icon
+`;var F=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},z=class extends g{constructor(){super(...arguments),this.prefix=null}handleEnter(){this.emit("hmwc-enter",{detail:{value:this.value}})}handleLeave(){this.emit("hmwc-leave",{detail:{value:this.value}})}formatted(){if(!this.format||this.value==null)return this.value;let e=Number(this.value);return Number.isFinite(e)?Math.round(e).toLocaleString():this.value}resolveFamily(){return this.serif?"serif":this.monospace?"monospace":"sans"}headingLevel(){let e=Number(this.level);return Number.isInteger(e)&&e>=1&&e<=6?e:void 0}_renderIcon(e){return c`<hmwc-icon
       ?primary=${this.primary}
       ?neutral=${this.neutral}
       ?warning=${this.warning}
       ?danger=${this.danger}
       ?invert=${this.invert}
-      src=${t}></hmwc-icon>`}_renderValue(){if(this.value==null)return c``;let t=this.formatted();return t===""||t==null?c`<hmwc-skeleton></hmwc-skeleton>`:c`${t}`}render(){let t=this.resolveFamily(),e=f({text:!0,xs:!!this.xs,sm:!!this.sm,md:!!this.md,lg:!!this.lg,xl:!!this.xl,xxl:!!this.xxl,flex:!!this.flex,heading:!!this.heading,subheading:!!this.subheading,label:!!this.label,subtitle:!!this.subtitle,caption:!!this.caption,sans:t==="sans",serif:t==="serif",monospace:t==="monospace",center:!!this.center||this.align==="center",light:!!this.light,semibold:!!this.semibold,bold:!!this.bold,primary:!!this.primary,secondary:!!this.secondary,tertiary:!!this.tertiary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger,uppercase:!!this.uppercase,lowercase:!!this.lowercase,capitalize:!!this.capitalize,wrap:!!this.wrap,invert:!!this.invert,"align-start":this.align==="start","align-end":this.align==="end"});return c`
-      <div part="base" class=${e} @mouseenter=${this.handleEnter} @mouseleave=${this.handleLeave}>
+      src=${e}></hmwc-icon>`}_renderValue(){if(this.value==null)return c``;let e=this.formatted();return e===""||e==null?c`<hmwc-skeleton></hmwc-skeleton>`:c`${e}`}render(){let e=this.resolveFamily(),t=this.headingLevel(),r=v({text:!0,xs:!!this.xs,sm:!!this.sm,md:!!this.md,lg:!!this.lg,xl:!!this.xl,xxl:!!this.xxl,flex:!!this.flex,heading:!!this.heading,subheading:!!this.subheading,label:!!this.label,subtitle:!!this.subtitle,caption:!!this.caption,sans:e==="sans",serif:e==="serif",monospace:e==="monospace",center:!!this.center||this.align==="center",light:!!this.light,semibold:!!this.semibold,bold:!!this.bold,primary:!!this.primary,secondary:!!this.secondary,tertiary:!!this.tertiary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger,uppercase:!!this.uppercase,lowercase:!!this.lowercase,capitalize:!!this.capitalize,wrap:!!this.wrap,invert:!!this.invert,"align-start":this.align==="start","align-end":this.align==="end"});return c`
+      <div
+        part="base"
+        class=${r}
+        role=${t?"heading":x}
+        aria-level=${t??x}
+        @mouseenter=${this.handleEnter}
+        @mouseleave=${this.handleLeave}>
         ${this.prefix?c`<slot name="prefix" class="text__prefix">${this._renderIcon(this.prefix)}</slot>`:null}
         <div part="content" class="text__content">
           ${this.label?c`<span class="text__label">${this.label}</span>`:null} ${this._renderValue()}
@@ -4883,7 +5310,8 @@
         </div>
         ${this.suffix?c`<slot name="suffix" class="text__suffix">${this._renderIcon(this.suffix)}</slot>`:null}
       </div>
-    `}};k.styles=ji;k.dependencies=[_,$t];k.slots=["prefix","suffix"];D([a({type:Boolean,reflect:!0})],k.prototype,"xs",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"sm",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"md",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"lg",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"xl",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"xxl",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"heading",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"subheading",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"subtitle",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"caption",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"sans",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"serif",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"monospace",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"light",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"semibold",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"bold",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"primary",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"secondary",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"tertiary",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"success",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"neutral",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"warning",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"danger",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"invert",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"uppercase",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"lowercase",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"capitalize",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"wrap",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"flex",void 0);D([a({type:Boolean,reflect:!0})],k.prototype,"center",void 0);D([a({type:Boolean})],k.prototype,"format",void 0);D([a({type:String})],k.prototype,"value",void 0);D([a({type:String})],k.prototype,"label",void 0);D([a({type:String})],k.prototype,"prefix",void 0);D([a({type:String})],k.prototype,"suffix",void 0);D([a({type:String})],k.prototype,"align",void 0);D([a({type:Number})],k.prototype,"amount",void 0);k.define("hmwc-text",k);var mr=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Ut=class s extends I{render(){return c`
+      ${this.divider?c`<hmwc-divider part="divider" class="text__divider" aria-hidden="true"></hmwc-divider>`:null}
+    `}};z.styles=So;z.dependencies=[H,$,oe];z.slots=["prefix","suffix"];F([n({type:Boolean,reflect:!0})],z.prototype,"xs",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"sm",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"md",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"lg",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"xl",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"xxl",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"heading",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"subheading",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"subtitle",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"caption",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"sans",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"serif",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"monospace",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"light",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"semibold",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"bold",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"primary",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"secondary",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"tertiary",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"success",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"neutral",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"warning",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"danger",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"invert",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"uppercase",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"lowercase",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"capitalize",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"wrap",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"flex",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"center",void 0);F([n({type:Boolean,reflect:!0})],z.prototype,"divider",void 0);F([n({type:Boolean})],z.prototype,"format",void 0);F([n({type:String})],z.prototype,"value",void 0);F([n({type:String})],z.prototype,"label",void 0);F([n({type:String})],z.prototype,"prefix",void 0);F([n({type:String})],z.prototype,"suffix",void 0);F([n({type:String})],z.prototype,"align",void 0);F([n({type:Number,reflect:!0})],z.prototype,"level",void 0);F([n({type:Number})],z.prototype,"amount",void 0);z.define("hmwc-text",z);var Nr=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},rt=class s extends L{render(){return c`
       <hmwc-col
         part="base"
         class="banner"
@@ -4911,9 +5339,9 @@
               `:""}
         </slot>
       </hmwc-col>
-    `}};Ut.styles=Ti;Ut.dependencies=[Lt,k,y];Ut.slots=["[default]","label","action"];Ut.DEFAULTS={pad:"lg",gap:"xxl",round:"xl",elevation:3};mr([a({type:Boolean,reflect:!0})],Ut.prototype,"invert",void 0);mr([a({type:String})],Ut.prototype,"message",void 0);mr([a({type:String})],Ut.prototype,"href",void 0);mr([a({type:String})],Ut.prototype,"action",void 0);Ut.define("hmwc-banner",Ut);var Ni=m`
+    `}};rt.styles=xo;rt.dependencies=[tt,z,k];rt.slots=["[default]","label","action"];rt.DEFAULTS={pad:"lg",gap:"xxl",round:"xl",elevation:3};Nr([n({type:Boolean,reflect:!0})],rt.prototype,"invert",void 0);Nr([n({type:String})],rt.prototype,"message",void 0);Nr([n({type:String})],rt.prototype,"href",void 0);Nr([n({type:String})],rt.prototype,"action",void 0);rt.define("hmwc-banner",rt);var Ao=f`
   :host {
-    --tooltip-max-width: 20rem;
+    --tooltip-max-width: calc(20 * var(--hmwc-rem, 1rem));
     --tooltip-background: var(--hmwc-tooltip-background-color);
     --tooltip-color: var(--hmwc-tooltip-color);
     --tooltip-padding: var(--hmwc-tooltip-padding);
@@ -4982,10 +5410,10 @@
   :host([disabled]) .tooltip__body {
     display: none !important;
   }
-`;var te=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},W=class extends u{constructor(){super(...arguments),this.trigger="hover",this.placement="top",this.arrow=!0,this.distance=6,this.skidding=0,this.delay=150,this.handleBlur=()=>{this.trigger==="focus"&&this.hide()},this.handleFocus=()=>{this.trigger==="focus"&&this.show()},this.handleClick=()=>{this.trigger==="click"&&this.toggle()},this.handleMouseEnter=()=>{if(this.trigger!=="hover")return;clearTimeout(this.timeout);let t=this.delay instanceof Object?this.delay.show:this.delay;this.timeout=window.setTimeout(()=>this.show(),t)},this.handleMouseLeave=()=>{if(this.trigger!=="hover")return;clearTimeout(this.timeout);let t=this.delay instanceof Object?this.delay.hide:this.delay;this.timeout=window.setTimeout(()=>this.hide(),t)},this.handleKeyDown=t=>{t.key==="Escape"&&(t.stopPropagation(),this.hide())}}handleActiveChange(){this.active?(this.emit("hmwc-show"),document.addEventListener("keydown",this.handleKeyDown)):(this.emit("hmwc-hide"),document.removeEventListener("keydown",this.handleKeyDown))}handleDisabledChange(){this.disabled&&this.active&&this.hide()}show(){this.active||this.disabled||(this.active=!0)}hide(){this.active&&(this.active=!1)}toggle(){this.active?this.hide():this.show()}disconnectedCallback(){super.disconnectedCallback(),clearTimeout(this.timeout),document.removeEventListener("keydown",this.handleKeyDown)}render(){let t=f({tooltip:!0,active:!!this.active,disabled:!!this.disabled,[this.placement]:!0});return c`
+`;var ut=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},K=class extends g{constructor(){super(...arguments),this.trigger="hover",this.placement="top",this.arrow=!0,this.distance=6,this.skidding=0,this.delay=150,this.handleBlur=()=>{this.trigger==="focus"&&this.hide()},this.handleFocus=()=>{this.trigger==="focus"&&this.show()},this.handleClick=()=>{this.trigger==="click"&&this.toggle()},this.handleMouseEnter=()=>{if(this.trigger!=="hover")return;clearTimeout(this.timeout);let e=this.delay instanceof Object?this.delay.show:this.delay;this.timeout=window.setTimeout(()=>this.show(),e)},this.handleMouseLeave=()=>{if(this.trigger!=="hover")return;clearTimeout(this.timeout);let e=this.delay instanceof Object?this.delay.hide:this.delay;this.timeout=window.setTimeout(()=>this.hide(),e)},this.handleKeyDown=e=>{e.key==="Escape"&&(e.stopPropagation(),this.hide())}}handleActiveChange(){this.active?(this.emit("hmwc-show"),document.addEventListener("keydown",this.handleKeyDown)):(this.emit("hmwc-hide"),document.removeEventListener("keydown",this.handleKeyDown))}handleDisabledChange(){this.disabled&&this.active&&this.hide()}show(){this.active||this.disabled||(this.active=!0)}hide(){this.active&&(this.active=!1)}toggle(){this.active?this.hide():this.show()}disconnectedCallback(){super.disconnectedCallback(),clearTimeout(this.timeout),document.removeEventListener("keydown",this.handleKeyDown)}render(){let e=v({tooltip:!0,active:!!this.active,disabled:!!this.disabled,[this.placement]:!0});return c`
       <div
         part="base"
-        class=${t}
+        class=${e}
         @focusin=${this.handleFocus}
         @focusout=${this.handleBlur}
         @click=${this.handleClick}
@@ -5006,7 +5434,7 @@
           </div>
         </hmwc-attachment>
       </div>
-    `}};W.styles=Ni;W.dependencies=[O];W.slots=["[default]","content"];te([a({type:String})],W.prototype,"label",void 0);te([a({type:String})],W.prototype,"trigger",void 0);te([a({type:String,reflect:!0})],W.prototype,"placement",void 0);te([a({type:Boolean,reflect:!0})],W.prototype,"active",void 0);te([a({type:Boolean,reflect:!0})],W.prototype,"disabled",void 0);te([a({type:Boolean,reflect:!0})],W.prototype,"arrow",void 0);te([a({type:Number})],W.prototype,"distance",void 0);te([a({type:Number})],W.prototype,"skidding",void 0);te([a({type:Number})],W.prototype,"delay",void 0);te([a({type:Boolean,reflect:!0})],W.prototype,"fluid",void 0);te([p("active")],W.prototype,"handleActiveChange",null);te([p("disabled")],W.prototype,"handleDisabledChange",null);W.define("hmwc-tooltip",W);var Ii=m`
+    `}};K.styles=Ao;K.dependencies=[P];K.slots=["[default]","content"];ut([n({type:String})],K.prototype,"label",void 0);ut([n({type:String})],K.prototype,"trigger",void 0);ut([n({type:String,reflect:!0})],K.prototype,"placement",void 0);ut([n({type:Boolean,reflect:!0})],K.prototype,"active",void 0);ut([n({type:Boolean,reflect:!0})],K.prototype,"disabled",void 0);ut([n({type:Boolean,reflect:!0})],K.prototype,"arrow",void 0);ut([n({type:Number})],K.prototype,"distance",void 0);ut([n({type:Number})],K.prototype,"skidding",void 0);ut([n({type:Number})],K.prototype,"delay",void 0);ut([n({type:Boolean,reflect:!0})],K.prototype,"fluid",void 0);ut([u("active")],K.prototype,"handleActiveChange",null);ut([u("disabled")],K.prototype,"handleDisabledChange",null);K.define("hmwc-tooltip",K);var Eo=f`
   :host {
     display: block;
     --hmwc-panel-transparency: 70%;
@@ -5044,7 +5472,7 @@
 
       &.home {
         color: var(--hmwc-color-cyan-50) !important;
-        --icon-size: 0.975rem;
+        --icon-size: calc(0.975 * var(--hmwc-rem, 1rem));
         position: relative;
         top: 1px;
         &:hover {
@@ -5083,7 +5511,7 @@
 
       & .breadcrumb__prefix,
       & .breadcrumb__suffix {
-        --icon-size: 0.95rem;
+        --icon-size: calc(0.95 * var(--hmwc-rem, 1rem));
       }
 
       & .breadcrumb__label {
@@ -5092,7 +5520,7 @@
 
       & .breadcrumb__dropdown-arrow {
         --icon-color: var(--hmwc-color-neutral-600);
-        --icon-size: 0.66rem;
+        --icon-size: calc(0.66 * var(--hmwc-rem, 1rem));
         position: relative;
         top: 1px;
       }
@@ -5104,7 +5532,7 @@
       --icon-color: var(--hmwc-color-neutral-600);
     }
   }
-`;var Tt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Li=!1,U=class extends u{valueUpdate(){this.emit("hmwc-change",{detail:{value:this.value}})}itemsDeprecation(){this.items!==void 0&&(Li||(Li=!0,console.warn("[hmwc-breadcrumb] `items` is deprecated; use `options` instead. See docs/v2/specs/BREADCRUMB_CONSOLIDATION.md \xA73.2.")))}select(){this.route!==!1&&(this.options!==void 0||this.items!==void 0||this.emit("hmwc-navigate",{detail:{route:this.path}}))}setValue(t){t instanceof CustomEvent&&(t=t.detail.value),this.value=t}render(){let t=this.options??this.items,e=f({breadcrumb__crumb:!0,active:!!this.active,route:this.route!==!1,home:!!this.home});return c`
+`;var qe=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},zo=!1,Y=class extends g{constructor(){super(...arguments),this._onOptionSelect=e=>{e.stopPropagation(),this.setValue(e)},this._onActionSelect=e=>{e.stopPropagation(),this.emit("hmwc-select",{detail:{value:e.detail.value}})}}valueUpdate(){this.emit("hmwc-change",{detail:{value:this.value}})}itemsDeprecation(){this.items!==void 0&&(zo||(zo=!0,console.warn("[hmwc-breadcrumb] `items` is deprecated; use `options` instead. See docs/v2/specs/BREADCRUMB_CONSOLIDATION.md \xA73.2.")))}select(){this.route!==!1&&(this.options!==void 0||this.items!==void 0||this.emit("hmwc-navigate",{detail:{route:this.path}}))}setValue(e){e instanceof CustomEvent&&(e=e.detail.value),this.value=e}render(){let e=this.options??this.items,t=v({breadcrumb__crumb:!0,active:!!this.active,route:this.route!==!1,home:!!this.home});return c`
       <div part="base" class="breadcrumb">
         <hmwc-tooltip
           ?disabled=${this.route===!1}
@@ -5112,30 +5540,32 @@
           sm
           delay="700"
           placement="top-start">
-          <hmwc-attachment
-            distance="8"
-            ?search=${this.search||!1}
-            prefix=${w(this.prefix)}
-            .items=${t}
-            placement="bottom-end"
-            @hmwc-select=${this.setValue}>
-            <div part="content" class=${e} slot="anchor" @click=${this.select}>
+          <hmwc-attachment distance="8" placement="bottom-end" @hmwc-select=${this._onOptionSelect}>
+            <div part="content" class=${t} slot="anchor" @click=${this.select}>
               ${this.prefix?c`<div class="breadcrumb__prefix"><hmwc-icon flex src=${this.prefix}></hmwc-icon></div>`:""}
               ${this.icon?c`<div class="breadcrumb__icon"><hmwc-icon flex src=${this.icon}></hmwc-icon></div>`:""}
               ${this.label?c`<div class="breadcrumb__label">${this.value||this.label}</div>`:""}
               ${this.suffix?c`<div class="breadcrumb__suffix"><hmwc-icon flex src=${this.suffix}></hmwc-icon></div>`:""}
-              ${t?c`<div class="breadcrumb__dropdown-arrow"><hmwc-icon flex src="caret-down"></hmwc-icon></div>`:""}
+              ${e?c`<div class="breadcrumb__dropdown-arrow"><hmwc-icon flex src="caret-down"></hmwc-icon></div>`:""}
             </div>
+            ${e?c`<hmwc-menu part="options" class="breadcrumb__options" .items=${e} .filter=${this.search?"":void 0}></hmwc-menu>`:""}
           </hmwc-attachment>
         </hmwc-tooltip>
         <slot name="actions" part="actions" class="breadcrumb__actions">
-          ${this.actions?c`<hmwc-attachment
-                icon="three-dots-vertical"
-                .items=${this.actions}
-                @hmwc-select=${r=>this.emit("hmwc-select",{detail:{value:r.detail.value}})}></hmwc-attachment>`:""}
+          ${this.actions?c`<hmwc-attachment distance="4" placement="bottom-end" @hmwc-select=${this._onActionSelect}>
+                <hmwc-button
+                  slot="anchor"
+                  part="action-trigger"
+                  class="breadcrumb__action"
+                  basic
+                  sm
+                  icon="three-dots-vertical"
+                  label="Actions"></hmwc-button>
+                <hmwc-menu part="action-menu" .items=${this.actions}></hmwc-menu>
+              </hmwc-attachment>`:""}
         </slot>
       </div>
-    `}};U.styles=Ii;U.dependencies=[_,W,O];U.slots=["actions"];Tt([a({type:String,reflect:!0})],U.prototype,"prefix",void 0);Tt([a({type:String,reflect:!0})],U.prototype,"suffix",void 0);Tt([a({type:String,reflect:!0})],U.prototype,"icon",void 0);Tt([a({type:String,reflect:!0})],U.prototype,"label",void 0);Tt([a({type:String,reflect:!0})],U.prototype,"path",void 0);Tt([a({type:Boolean,reflect:!0})],U.prototype,"active",void 0);Tt([a({type:Array,reflect:!0})],U.prototype,"options",void 0);Tt([a({type:Array,reflect:!0})],U.prototype,"items",void 0);Tt([a({type:String,reflect:!0})],U.prototype,"value",void 0);Tt([a({type:Boolean,reflect:!0})],U.prototype,"search",void 0);Tt([a({type:Boolean,reflect:!0})],U.prototype,"home",void 0);Tt([a({type:Boolean,reflect:!0})],U.prototype,"route",void 0);Tt([a({type:Array})],U.prototype,"actions",void 0);Tt([p("value",{waitUntilFirstUpdate:!0})],U.prototype,"valueUpdate",null);Tt([p("items",{waitUntilFirstUpdate:!0})],U.prototype,"itemsDeprecation",null);U.define("hmwc-breadcrumb",U);var Ui=(s,t,e)=>{if(!s||!t||t.length===0)return[];let r=s.path.split("/"),i=[];return r.forEach((o,n)=>{let l=o===""?"/":t.find(b=>b.path===r.slice(0,n+1).join("/"))?.path||o,h=t.find(b=>b.path===r.slice(0,n+1).join("/")),d=e?.find(b=>b.path===l),g=d?{...d,path:l,home:n===0}:{path:l,label:l==="/"?void 0:h?.title||"",icon:l==="/"?"house-door-fill":void 0,home:n===0};i.push(g)}),i};var Hi=m`
+    `}};Y.styles=Eo;Y.dependencies=[$,K,P,k,O];Y.slots=["actions"];qe([n({type:String,reflect:!0})],Y.prototype,"prefix",void 0);qe([n({type:String,reflect:!0})],Y.prototype,"suffix",void 0);qe([n({type:String,reflect:!0})],Y.prototype,"icon",void 0);qe([n({type:String,reflect:!0})],Y.prototype,"label",void 0);qe([n({type:String,reflect:!0})],Y.prototype,"path",void 0);qe([n({type:Boolean,reflect:!0})],Y.prototype,"active",void 0);qe([n({type:Array,reflect:!0})],Y.prototype,"options",void 0);qe([n({type:Array,reflect:!0})],Y.prototype,"items",void 0);qe([n({type:String,reflect:!0})],Y.prototype,"value",void 0);qe([n({type:Boolean,reflect:!0})],Y.prototype,"search",void 0);qe([n({type:Boolean,reflect:!0})],Y.prototype,"home",void 0);qe([n({type:Boolean,reflect:!0})],Y.prototype,"route",void 0);qe([n({type:Array})],Y.prototype,"actions",void 0);qe([u("value",{waitUntilFirstUpdate:!0})],Y.prototype,"valueUpdate",null);qe([u("items",{waitUntilFirstUpdate:!0})],Y.prototype,"itemsDeprecation",null);Y.define("hmwc-breadcrumb",Y);var To=(s,e,t)=>{if(!s||!e||e.length===0)return[];let r=s.path.split("/"),i=[];return r.forEach((o,a)=>{let l=o===""?"/":e.find(m=>m.path===r.slice(0,a+1).join("/"))?.path||o,h=e.find(m=>m.path===r.slice(0,a+1).join("/")),d=t?.find(m=>m.path===l),p=d?{...d,path:l,home:a===0}:{path:l,label:l==="/"?void 0:h?.title||"",icon:l==="/"?"house-door-fill":void 0,home:a===0};i.push(p)}),i};var Oo=f`
   :host {
     display: block;
     font-family: var(--hmwc-font-sans);
@@ -5147,7 +5577,7 @@
     width: 100%;
     gap: calc(0.5 * var(--hmwc-spacing-3x-small));
     position: relative;
-    left: -0.25rem;
+    left: calc(-0.25 * var(--hmwc-rem, 1rem));
 
     & .breadcrumbs__seperator {
       hmwc-icon {
@@ -5155,24 +5585,24 @@
       }
     }
   }
-`;var ve=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Wi=!1,Vi=!1,ma=s=>({label:s.label,path:s.path,icon:s.icon??void 0,prefix:s.prefix??void 0,suffix:s.suffix??void 0,home:s.home,options:s.options??s.items,actions:s.actions}),mt=class extends u{constructor(){super(...arguments),this.routes=[],this.separator="chevron-right",this._onNavigate=t=>{let e=t;t.stopPropagation(),this.emit("hmwc-navigate",{detail:e.detail})},this._onChange=t=>{let e=t;t.stopPropagation(),this.emit("hmwc-change",{detail:e.detail})},this._onSelect=t=>{let e=t;t.stopPropagation(),this.emit("hmwc-select",{detail:e.detail})}}seperatorDeprecation(){this.seperator!==void 0&&(Wi||(Wi=!0,console.warn("[hmwc-breadcrumbs] `seperator` is misspelled and deprecated; use `separator`. See docs/v2/specs/BREADCRUMB_CONSOLIDATION.md \xA73.3.")),this.separator=this.seperator)}overridesDeprecation(){this.overrides!==void 0&&(Vi||(Vi=!0,console.warn("[hmwc-breadcrumbs] `overrides` is deprecated; pass plain-object `crumbs: BreadcrumbDescriptor[]` instead. See docs/v2/specs/BREADCRUMB_CONSOLIDATION.md \xA73.2 + \xA74.2.")))}_resolveCrumbs(){let t=this.crumbs??this.overrides?.map(ma);return this.route?Ui(this.route,this.routes,t):this.crumbs&&this.crumbs.length>0?this.crumbs:t??[]}_renderSeparator(){return c`<slot name="separator" part="separator" class="breadcrumbs__separator"><hmwc-icon flex src=${this.separator}></hmwc-icon></slot>`}render(){let t=this._resolveCrumbs();return c`
+`;var Mt=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Mo=!1,Ro=!1,Ss=s=>({label:s.label,path:s.path,icon:s.icon??void 0,prefix:s.prefix??void 0,suffix:s.suffix??void 0,home:s.home,options:s.options??s.items,actions:s.actions}),Ae=class extends g{constructor(){super(...arguments),this.routes=[],this.separator="chevron-right",this._onNavigate=e=>{let t=e;e.stopPropagation(),this.emit("hmwc-navigate",{detail:t.detail})},this._onChange=e=>{let t=e;e.stopPropagation(),this.emit("hmwc-change",{detail:t.detail})},this._onSelect=e=>{let t=e;e.stopPropagation(),this.emit("hmwc-select",{detail:t.detail})}}seperatorDeprecation(){this.seperator!==void 0&&(Mo||(Mo=!0,console.warn("[hmwc-breadcrumbs] `seperator` is misspelled and deprecated; use `separator`. See docs/v2/specs/BREADCRUMB_CONSOLIDATION.md \xA73.3.")),this.separator=this.seperator)}overridesDeprecation(){this.overrides!==void 0&&(Ro||(Ro=!0,console.warn("[hmwc-breadcrumbs] `overrides` is deprecated; pass plain-object `crumbs: BreadcrumbDescriptor[]` instead. See docs/v2/specs/BREADCRUMB_CONSOLIDATION.md \xA73.2 + \xA74.2.")))}_resolveCrumbs(){let e=this.crumbs??this.overrides?.map(Ss);return this.route?To(this.route,this.routes,e):this.crumbs&&this.crumbs.length>0?this.crumbs:e??[]}_renderSeparator(){return c`<slot name="separator" part="separator" class="breadcrumbs__separator"><hmwc-icon flex src=${this.separator}></hmwc-icon></slot>`}render(){let e=this._resolveCrumbs();return c`
       <div part="base" class="breadcrumbs" @hmwc-navigate=${this._onNavigate} @hmwc-change=${this._onChange} @hmwc-select=${this._onSelect}>
-        ${t.map((e,r)=>c`
+        ${e.map((t,r)=>c`
             <hmwc-breadcrumb
-              .label=${e.label}
-              .path=${e.path}
-              .icon=${e.icon}
-              .prefix=${e.prefix}
-              .suffix=${e.suffix}
-              ?home=${!!e.home}
-              ?active=${r===t.length-1}
-              .options=${e.options}
-              .actions=${e.actions}></hmwc-breadcrumb>
-            ${r<t.length-1?this._renderSeparator():""}
+              .label=${t.label}
+              .path=${t.path}
+              .icon=${t.icon}
+              .prefix=${t.prefix}
+              .suffix=${t.suffix}
+              ?home=${!!t.home}
+              ?active=${r===e.length-1}
+              .options=${t.options}
+              .actions=${t.actions}></hmwc-breadcrumb>
+            ${r<e.length-1?this._renderSeparator():""}
           `)}
         <slot></slot>
       </div>
-    `}};mt.styles=Hi;mt.dependencies=[_,U];mt.slots=["separator"];ve([a({type:Array})],mt.prototype,"crumbs",void 0);ve([a({type:Array})],mt.prototype,"overrides",void 0);ve([a({type:String,reflect:!0})],mt.prototype,"route",void 0);ve([a({type:Array})],mt.prototype,"routes",void 0);ve([a({type:String,reflect:!0})],mt.prototype,"separator",void 0);ve([a({type:String,attribute:"seperator"})],mt.prototype,"seperator",void 0);ve([p("seperator",{waitUntilFirstUpdate:!1})],mt.prototype,"seperatorDeprecation",null);ve([p("overrides",{waitUntilFirstUpdate:!1})],mt.prototype,"overridesDeprecation",null);mt.define("hmwc-breadcrumbs",mt);var qi=m`
+    `}};Ae.styles=Oo;Ae.dependencies=[$,Y];Ae.slots=["separator"];Mt([n({type:Array})],Ae.prototype,"crumbs",void 0);Mt([n({type:Array})],Ae.prototype,"overrides",void 0);Mt([n({type:String,reflect:!0})],Ae.prototype,"route",void 0);Mt([n({type:Array})],Ae.prototype,"routes",void 0);Mt([n({type:String,reflect:!0})],Ae.prototype,"separator",void 0);Mt([n({type:String,attribute:"seperator"})],Ae.prototype,"seperator",void 0);Mt([u("seperator",{waitUntilFirstUpdate:!1})],Ae.prototype,"seperatorDeprecation",null);Mt([u("overrides",{waitUntilFirstUpdate:!1})],Ae.prototype,"overridesDeprecation",null);Ae.define("hmwc-breadcrumbs",Ae);var Do=f`
   :host {
     --card-height: auto;
     --card-padding: var(--hmwc-spacing-medium) var(--hmwc-spacing-large);
@@ -5181,7 +5611,7 @@
     --card-icon-color: var(--hmwc-color-neutral-400);
     --card-border: var(--hmwc-panel-border-color);
     --card-background: var(--hmwc-panel-background-color);
-    --card-prefix-icon-size: 0.88rem;
+    --card-prefix-icon-size: calc(0.88 * var(--hmwc-rem, 1rem));
 
     --container-height: fit-content;
     --alert-background: var(--hmwc-color-neutral-100);
@@ -5369,6 +5799,59 @@
       height: 100%;
     }
 
+    /* An outlined panel: the border and panel background stay, the shadow goes. */
+    &.flat {
+      box-shadow: none;
+      --card-background: var(--hmwc-panel-background-color);
+    }
+
+    /* Stretched link: the link wraps the header (or label, or body) text and
+       its ::after covers the whole card, so any point of the card navigates.
+       Controls are raised above it (below) so they stay clickable. */
+    &.link {
+      cursor: pointer;
+      transition: border-color var(--hmwc-transition-fast) var(--hmwc-easing-standard);
+
+      &:hover {
+        --card-border: var(--hmwc-input-border-color-hover);
+      }
+
+      &:has(.card__link:focus-visible) {
+        outline: var(--hmwc-focus-ring);
+        outline-offset: var(--hmwc-focus-ring-offset);
+      }
+
+      & .card__link {
+        color: inherit;
+        text-decoration: none;
+        outline: none;
+
+        &::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: var(--card-radius);
+        }
+      }
+
+      /* Controls stay above the overlay so they keep their own clicks: the
+         control slot, the footer, and controls slotted directly into the
+         body. A control nested deeper in the body is covered by the link. */
+      & .card__header-control,
+      & .card__footer,
+      & .card__body
+        ::slotted(:is(a[href], [tabindex], hmwc-button, hmwc-checkbox, hmwc-combobox, hmwc-dropdown, hmwc-input, hmwc-radio-group, hmwc-switch)) {
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      &.link {
+        transition: none;
+      }
+    }
+
     &:not(.blue):not(.purple):not(.green):not(.yellow):not(.orange):not(.red) {
       & .card__body {
         & .card__label hmwc-accordion {
@@ -5423,14 +5906,14 @@
       min-width: 200px;
       --card-radius: var(--hmwc-border-radius-medium);
       --card-padding: 0;
-      --card-prefix-icon-size: 0.75rem;
+      --card-prefix-icon-size: calc(0.75 * var(--hmwc-rem, 1rem));
     }
 
     &.sm {
       min-width: 200px;
       --card-radius: var(--hmwc-border-radius-medium);
       --card-padding: var(--hmwc-spacing-small) calc(1.5 * var(--hmwc-spacing-x-small));
-      --card-prefix-icon-size: 0.8rem;
+      --card-prefix-icon-size: calc(0.8 * var(--hmwc-rem, 1rem));
 
       & .card__header {
         padding: calc(var(--hmwc-spacing-x-small) / 2) var(--hmwc-spacing-x-small);
@@ -5446,7 +5929,7 @@
       max-width: 500px;
       --card-radius: calc(0.95 * var(--hmwc-border-radius-x-large));
       --card-padding: var(--hmwc-spacing-medium) calc(1.5 * var(--hmwc-spacing-medium));
-      --card-prefix-icon-size: 0.95rem;
+      --card-prefix-icon-size: calc(0.95 * var(--hmwc-rem, 1rem));
 
       & .card__body {
         gap: var(--hmwc-spacing-x-large);
@@ -5459,38 +5942,38 @@
       box-shadow: var(--hmwc-shadow-x-large);
       --card-padding: calc(1.33 * var(--hmwc-spacing-x-large)) calc(1.5 * var(--hmwc-spacing-x-large));
       --card-radius: var(--hmwc-border-radius-x-large);
-      --card-prefix-icon-size: 1.1rem;
+      --card-prefix-icon-size: calc(1.1 * var(--hmwc-rem, 1rem));
 
       & .card__header {
         padding: calc(var(--hmwc-spacing-x-large) / 2) var(--hmwc-spacing-x-large);
       }
 
       & .card__body {
-        gap: calc(0.25rem + var(--hmwc-spacing-x-large));
+        gap: calc(var(--hmwc-spacing-2x-small) + var(--hmwc-spacing-x-large));
       }
     }
 
     &.gap-xs {
-      --card-spacing: 0.25rem;
+      --card-spacing: var(--hmwc-spacing-2x-small);
     }
     &.gap-sm {
-      --card-spacing: 0.5rem;
+      --card-spacing: var(--hmwc-spacing-x-small);
     }
 
     &.gap-md {
-      --card-spacing: 1rem;
+      --card-spacing: var(--hmwc-spacing-medium);
     }
 
     &.gap-lg {
-      --card-spacing: 2rem;
+      --card-spacing: calc(2 * var(--hmwc-rem, 1rem));
     }
 
     &.gap-xl {
-      --card-spacing: 4rem;
+      --card-spacing: calc(4 * var(--hmwc-rem, 1rem));
     }
 
     &.gap-xxl {
-      --card-spacing: 12rem;
+      --card-spacing: calc(12 * var(--hmwc-rem, 1rem));
     }
 
     &.elevation-x-small {
@@ -5588,14 +6071,14 @@
       }
     }
   }
-`;var Kt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},rt=class extends I{handleClick(){this.emit("hmwc-click",{})}render(){let t=f({card:!0,fluid:!!this.fluid,header:this.header||this.controllers.slot.test("header"),footer:this.footer||this.controllers.slot.test("footer"),image:this.img||this.controllers.slot.test("image"),primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger,alt:!!this.alt});return c`
-      <div part="base" class=${t} @click=${this.handleClick}>
+`;var We=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},se=class extends L{handleClick(){this.emit("hmwc-click",{})}_link(e){return c`<a part="link" class="card__link" href=${this.href}>${e}</a>`}render(){let e=!!this.header||this.controllers.slot.test("header"),t=this.href?e?"header":this.label?"label":"body":"",r=c`${this.header}<slot name="header"></slot>`,i=v({card:!0,flat:!!this.flat,link:!!this.href,fluid:!!this.fluid,header:this.header||this.controllers.slot.test("header"),footer:this.footer||this.controllers.slot.test("footer"),image:this.img||this.controllers.slot.test("image"),primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger,alt:!!this.alt});return c`
+      <div part="base" class=${i} @click=${this.handleClick}>
         <slot name="image" part="image" class="card__image"> ${this.img&&c`<img src=${this.img} alt="Card Image" />`} </slot>
 
         <div part="header" class="card__header">
-          ${this.prefix&&this.header?c`<span class="card__prefix"> <hmwc-icon src=${this.prefix}></hmwc-icon> </span>`:""} ${this.header}
+          ${this.prefix&&this.header?c`<span class="card__prefix"> <hmwc-icon src=${this.prefix}></hmwc-icon> </span>`:""}
+          ${t==="header"?this._link(r):r}
           ${this.suffix&&this.header?c`<span class="card__suffix"> <hmwc-icon src=${this.suffix}></hmwc-icon> </span>`:""}
-          <slot name="header"></slot>
           <div part="header-control" class="card__header-control">
             <slot name="control"></slot>
           </div>
@@ -5604,16 +6087,17 @@
         <div part="body" class="card__body">
           ${this.label?c`
                 <div part="label" class="card__label">
-                  ${this.prefix?c`<span class="card__prefix"> <hmwc-icon src=${this.prefix}></hmwc-icon> </span>`:""} ${this.label}
+                  ${this.prefix?c`<span class="card__prefix"> <hmwc-icon src=${this.prefix}></hmwc-icon> </span>`:""}
+                  ${t==="label"?this._link(this.label):this.label}
                   ${this.suffix?c`<span class="card__suffix"> <hmwc-icon src=${this.suffix}></hmwc-icon> </span>`:""}
                 </div>
               `:""}
-          <slot></slot>
+          ${t==="body"?this._link(c`<slot></slot>`):c`<slot></slot>`}
         </div>
 
         <slot name="footer" part="footer" class="card__footer"> ${this.footer} </slot>
       </div>
-    `}};rt.styles=qi;rt.dependencies=[_];rt.slots=["header","control","footer","image"];Kt([a({type:Boolean,reflect:!0})],rt.prototype,"primary",void 0);Kt([a({type:Boolean,reflect:!0})],rt.prototype,"success",void 0);Kt([a({type:Boolean,reflect:!0})],rt.prototype,"neutral",void 0);Kt([a({type:Boolean,reflect:!0})],rt.prototype,"warning",void 0);Kt([a({type:Boolean,reflect:!0})],rt.prototype,"danger",void 0);Kt([a({type:Boolean,reflect:!0})],rt.prototype,"alt",void 0);Kt([a({type:String})],rt.prototype,"label",void 0);Kt([a({type:String})],rt.prototype,"header",void 0);Kt([a({type:String})],rt.prototype,"footer",void 0);Kt([a({type:String})],rt.prototype,"img",void 0);Kt([a({type:String})],rt.prototype,"prefix",void 0);Kt([a({type:String})],rt.prototype,"suffix",void 0);Kt([a({type:String})],rt.prototype,"shadow",void 0);rt.define("hmwc-card",rt);var Gi=m`
+    `}};se.styles=Do;se.dependencies=[$];se.slots=["header","control","footer","image"];We([n({type:Boolean,reflect:!0})],se.prototype,"primary",void 0);We([n({type:Boolean,reflect:!0})],se.prototype,"success",void 0);We([n({type:Boolean,reflect:!0})],se.prototype,"neutral",void 0);We([n({type:Boolean,reflect:!0})],se.prototype,"warning",void 0);We([n({type:Boolean,reflect:!0})],se.prototype,"danger",void 0);We([n({type:Boolean,reflect:!0})],se.prototype,"alt",void 0);We([n({type:Boolean,reflect:!0})],se.prototype,"flat",void 0);We([n({type:String})],se.prototype,"label",void 0);We([n({type:String})],se.prototype,"header",void 0);We([n({type:String})],se.prototype,"footer",void 0);We([n({type:String})],se.prototype,"img",void 0);We([n({type:String})],se.prototype,"prefix",void 0);We([n({type:String})],se.prototype,"suffix",void 0);We([n({type:String,reflect:!0})],se.prototype,"href",void 0);We([n({type:String})],se.prototype,"shadow",void 0);se.define("hmwc-card",se);var Bo=f`
   :host {
     display: inline-block;
     height: 100%;
@@ -5656,7 +6140,7 @@
       justify-content: space-between;
       gap: var(--hmwc-spacing-x-small);
       margin-top: auto;
-      margin-left: 2.25rem;
+      margin-left: var(--hmwc-spacing-2x-large);
       overflow: hidden;
       animation: animation 500ms ease-out;
       z-index: 1;
@@ -5693,7 +6177,7 @@
 
       & .chart__indicator-label {
         display: flex;
-        min-width: 1.25rem;
+        min-width: calc(1.25 * var(--hmwc-rem, 1rem));
         justify-content: end;
       }
 
@@ -5703,7 +6187,7 @@
         width: 100%;
         height: 0;
         border-bottom: 0.1px solid var(--hmwc-color-neutral-300);
-        margin-left: 1rem;
+        margin-left: var(--hmwc-spacing-medium);
         opacity: 0.5;
       }
     }
@@ -5730,26 +6214,131 @@
       height: 100%;
     }
   }
-`;var Ki=Object.freeze(["primary","success","warning","danger","alt","neutral"]),ua=s=>`var(--hmwc-color-${s}-600)`,fa=(s,t)=>s||Ki[t%Ki.length],Yi=(s,t)=>ua(fa(s,t));var Er="var(--hmwc-color-neutral-200)",ga=s=>Number.isFinite(s)?s<0?0:s:0,Xi=s=>`${Math.max(0,Math.min(100,s)).toFixed(4).replace(/\.?0+$/,"")}%`,Ji=s=>{if(!s||s.length===0)return`conic-gradient(${Er} 0% 100%)`;let t=[...s].map(o=>({...o,value:ga(o.value)})).filter(o=>o.value>0).sort((o,n)=>n.value-o.value);if(t.length===0)return`conic-gradient(${Er} 0% 100%)`;let e=t.reduce((o,n)=>o+n.value,0);if(e===0)return`conic-gradient(${Er} 0% 100%)`;let r=[],i=0;return t.forEach((o,n)=>{let l=o.value/e*100,h=i,d=n===t.length-1?100:i+l;i=d;let g=Yi(o.color,n);r.push(`${g} ${Xi(h)} ${Xi(d)}`)}),`conic-gradient(${r.join(", ")})`};var ur=s=>{let t=s.kind==="donut",e=Ji(s.data);return c`<div part="pie" class="chart__pie ${t?"chart__pie--donut":""}" style="background: ${e}"></div>`};var be=s=>{let{parentHeight:t,indicators:e,data:r,labeled:i}=s;return c`${e?.map(({value:o,label:n})=>c`
-        <div class="chart__indicator" style="top: ${t-t*(o/100)}px">
-          <span class="chart__indicator-label">${n}</span>
+`;var Po=Object.freeze(["primary","success","warning","danger","alt","neutral"]),As=s=>`var(--hmwc-color-${s}-600)`,Es=(s,e)=>s||Po[e%Po.length],Io=(s,e)=>As(Es(s,e));var ai="var(--hmwc-color-neutral-200)",zs=s=>Number.isFinite(s)?s<0?0:s:0,Fo=s=>`${Math.max(0,Math.min(100,s)).toFixed(4).replace(/\.?0+$/,"")}%`,No=s=>{if(!s||s.length===0)return`conic-gradient(${ai} 0% 100%)`;let e=[...s].map(o=>({...o,value:zs(o.value)})).filter(o=>o.value>0).sort((o,a)=>a.value-o.value);if(e.length===0)return`conic-gradient(${ai} 0% 100%)`;let t=e.reduce((o,a)=>o+a.value,0);if(t===0)return`conic-gradient(${ai} 0% 100%)`;let r=[],i=0;return e.forEach((o,a)=>{let l=o.value/t*100,h=i,d=a===e.length-1?100:i+l;i=d;let p=Io(o.color,a);r.push(`${p} ${Fo(h)} ${Fo(d)}`)}),`conic-gradient(${r.join(", ")})`};var Lr=s=>{let e=s.kind==="donut",t=No(s.data);return c`<div part="pie" class="chart__pie ${e?"chart__pie--donut":""}" style="background: ${t}"></div>`};var Rt=s=>{let{parentHeight:e,indicators:t,data:r,labeled:i}=s;return c`${t?.map(({value:o,label:a})=>c`
+        <div class="chart__indicator" style="top: ${e-e*(o/100)}px">
+          <span class="chart__indicator-label">${a}</span>
           <div class="chart__indicator-line"></div>
         </div>
       `)}
     <div part="chart" class="chart__chart">
-      ${r?.map(({label:o,value:n})=>c`
+      ${r?.map(({label:o,value:a})=>c`
           <hmwc-tooltip label=${o} arrow placement="right" delay="200">
             <div class="chart__item">
-              <div class="chart__item-progress ${n?"":"null"}" style="height: ${t*(n/100)}px"></div>
+              <div class="chart__item-progress ${a?"":"null"}" style="height: ${e*(a/100)}px"></div>
               ${i?c`<div class="chart__item-label">${o}</div>`:""}
             </div>
           </hmwc-tooltip>
         `)}
 
       <slot></slot>
-    </div>`};var Qi=new Set(["line","area","progress","gauge","sparkline"]),Or=Object.freeze({pie:ur,donut:ur,bar:be,line:be,area:be,progress:be,gauge:be,sparkline:be});var Yt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Zi=!1,to=!1,eo=!1,nt=class extends u{constructor(){super(...arguments),this.kind="bar"}pieDeprecation(){this.pie&&(this.kind="pie",!Zi&&(Zi=!0,console.warn('[hmwc-chart] `pie` is deprecated; use `kind="pie"` instead. See docs/v2/specs/CHART_EXPANSION.md \xA7PR4.')))}donutDeprecation(){this.donut&&(this.kind="donut",!eo&&(eo=!0,console.warn('[hmwc-chart] `donut` is deprecated; use `kind="donut"` instead. See docs/v2/specs/CHART_EXPANSION.md \xA7PR4.')))}barDeprecation(){this.bar&&(this.kind="bar",!to&&(to=!0,console.warn('[hmwc-chart] `bar` is deprecated; use `kind="bar"` instead (default). See docs/v2/specs/CHART_EXPANSION.md \xA7PR4.')))}connectedCallback(){super.connectedCallback(),this.animation="scale-in",this.indicators||(this.indicators=[{value:25,label:"25%"},{value:50,label:"50%"},{value:75,label:"75%"}])}renderContext(){return{kind:this.kind,data:this.data,indicators:this.indicators,labeled:this.labeled,parentHeight:this.parentElement?.clientHeight||this.clientHeight}}render(){let t=this.renderContext(),e=t.kind==="pie"||t.kind==="donut",r=t.kind==="donut",i=t.kind==="bar"||Qi.has(t.kind),o=f({chart:!0,pie:e,donut:r,bar:i,small:!!this.sm,medium:!!this.md,large:!!this.lg}),n=Or[t.kind]??Or.bar;return c`<div part="base" class=${o}>${n(t)}</div>`}};nt.styles=Gi;nt.dependencies=[W];Yt([a({type:String,reflect:!0})],nt.prototype,"kind",void 0);Yt([a({type:Array})],nt.prototype,"data",void 0);Yt([a({type:Boolean})],nt.prototype,"pie",void 0);Yt([a({type:Boolean})],nt.prototype,"donut",void 0);Yt([a({type:Array})],nt.prototype,"indicators",void 0);Yt([a({type:Boolean})],nt.prototype,"bar",void 0);Yt([a({type:Boolean})],nt.prototype,"labeled",void 0);Yt([a({type:Boolean})],nt.prototype,"sm",void 0);Yt([a({type:Boolean})],nt.prototype,"md",void 0);Yt([a({type:Boolean})],nt.prototype,"lg",void 0);Yt([p("pie")],nt.prototype,"pieDeprecation",null);Yt([p("donut")],nt.prototype,"donutDeprecation",null);Yt([p("bar")],nt.prototype,"barDeprecation",null);nt.define("hmwc-chart",nt);var ro=m`
+    </div>`};var Lo=new Set(["line","area","progress","gauge","sparkline"]),si=Object.freeze({pie:Lr,donut:Lr,bar:Rt,line:Rt,area:Rt,progress:Rt,gauge:Rt,sparkline:Rt});var ct=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},jo=!1,Uo=!1,Ho=!1,ye=class extends g{constructor(){super(...arguments),this.kind="bar"}pieDeprecation(){this.pie&&(this.kind="pie",!jo&&(jo=!0,console.warn('[hmwc-chart] `pie` is deprecated; use `kind="pie"` instead. See docs/v2/specs/CHART_EXPANSION.md \xA7PR4.')))}donutDeprecation(){this.donut&&(this.kind="donut",!Ho&&(Ho=!0,console.warn('[hmwc-chart] `donut` is deprecated; use `kind="donut"` instead. See docs/v2/specs/CHART_EXPANSION.md \xA7PR4.')))}barDeprecation(){this.bar&&(this.kind="bar",!Uo&&(Uo=!0,console.warn('[hmwc-chart] `bar` is deprecated; use `kind="bar"` instead (default). See docs/v2/specs/CHART_EXPANSION.md \xA7PR4.')))}connectedCallback(){super.connectedCallback(),this.animation="scale-in",this.indicators||(this.indicators=[{value:25,label:"25%"},{value:50,label:"50%"},{value:75,label:"75%"}])}renderContext(){return{kind:this.kind,data:this.data,indicators:this.indicators,labeled:this.labeled,parentHeight:this.parentElement?.clientHeight||this.clientHeight}}render(){let e=this.renderContext(),t=e.kind==="pie"||e.kind==="donut",r=e.kind==="donut",i=e.kind==="bar"||Lo.has(e.kind),o=v({chart:!0,pie:t,donut:r,bar:i,small:!!this.sm,medium:!!this.md,large:!!this.lg}),a=si[e.kind]??si.bar;return c`<div part="base" class=${o}>${a(e)}</div>`}};ye.styles=Bo;ye.dependencies=[K];ct([n({type:String,reflect:!0})],ye.prototype,"kind",void 0);ct([n({type:Array})],ye.prototype,"data",void 0);ct([n({type:Boolean})],ye.prototype,"pie",void 0);ct([n({type:Boolean})],ye.prototype,"donut",void 0);ct([n({type:Array})],ye.prototype,"indicators",void 0);ct([n({type:Boolean})],ye.prototype,"bar",void 0);ct([n({type:Boolean})],ye.prototype,"labeled",void 0);ct([n({type:Boolean})],ye.prototype,"sm",void 0);ct([n({type:Boolean})],ye.prototype,"md",void 0);ct([n({type:Boolean})],ye.prototype,"lg",void 0);ct([u("pie")],ye.prototype,"pieDeprecation",null);ct([u("donut")],ye.prototype,"donutDeprecation",null);ct([u("bar")],ye.prototype,"barDeprecation",null);ye.define("hmwc-chart",ye);var qo=f`
   :host {
-    --combobox-max-height: 16rem;
+    --checkbox-group-gap: var(--hmwc-spacing-2x-small);
+    --checkbox-group-inline-gap: var(--hmwc-spacing-medium);
+    --font-size: inherit;
+    display: block;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  .checkboxgroup {
+    display: block;
+
+    &.small {
+      --font-size: var(--hmwc-font-size-small);
+      --checkbox-group-inline-gap: var(--hmwc-spacing-small);
+    }
+
+    &.medium {
+      --font-size: var(--hmwc-font-size-medium);
+    }
+
+    &.large {
+      --font-size: var(--hmwc-font-size-large);
+      --checkbox-group-inline-gap: var(--hmwc-spacing-large);
+    }
+
+    .checkboxgroup__control {
+      position: relative;
+      min-inline-size: 0;
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .checkboxgroup__input {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--checkbox-group-gap);
+    }
+
+    /* Inline: checkboxes sit in a row at their natural width and wrap when
+       they run out of room. */
+    &.row .checkboxgroup__input {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      column-gap: var(--checkbox-group-inline-gap);
+    }
+
+    .checkboxgroup__label {
+      padding: 0;
+      line-height: 2;
+      font-family: var(--hmwc-font-sans);
+      font-size: var(--font-size);
+      color: var(--hmwc-input-label-color);
+    }
+
+    .checkboxgroup__help {
+      color: var(--hmwc-input-help-text-color);
+      font-size: var(--hmwc-font-size-small);
+      font-family: var(--hmwc-font-sans);
+      line-height: 2;
+    }
+  }
+`;var Ht=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},ni={fromAttribute:s=>{let e=(s??"").trim();if(!e)return[];if(e.startsWith("["))try{let t=JSON.parse(e);if(Array.isArray(t))return t.map(String)}catch{}return e.split(",").map(t=>t.trim()).filter(Boolean)}},De=class s extends N{constructor(){super(...arguments),this._ownDisabled=new WeakMap,this.value=[]}handleDisabledChange(){this._syncCheckboxes()}set(e){this.value=Array.isArray(e)?e.map(String):ni.fromAttribute(e==null?"":String(e))}focus(e){this._focusTarget()?.focus(e)}getCheckboxes(){return this.items?Array.from(this.shadowRoot?.querySelectorAll("hmwc-checkbox")??[]):Array.from(this.querySelectorAll("hmwc-checkbox")).filter(e=>e.closest("hmwc-checkbox-group")===this)}get _values(){return Array.isArray(this.value)?this.value.map(String):ni.fromAttribute(this.value==null?"":String(this.value))}_focusTarget(){let e=this.getCheckboxes().filter(t=>!t.disabled);return e.find(t=>t.checked)??e[0]}_syncCheckboxes(){let e=this._values;this.getCheckboxes().forEach(t=>{t.checked=e.includes(String(t.value)),t.sm=!!this.sm,t.md=!!this.md,t.lg=!!this.lg,this.disabled?(this._ownDisabled.has(t)||this._ownDisabled.set(t,!!t.disabled),t.disabled=!0):this._ownDisabled.has(t)&&(t.disabled=this._ownDisabled.get(t),this._ownDisabled.delete(t))})}handleBoxChange(e){let t=e.composedPath()[0];t instanceof we&&(t.getRootNode()!==this.shadowRoot&&t.closest("hmwc-checkbox-group")!==this||(e.stopPropagation(),this.value=this.getCheckboxes().filter(r=>r.checked).map(r=>String(r.value)),this._clearCustomErrorOnInput(),this.invalid&&this.reportValidity(),this.emit("hmwc-input"),this.emit("hmwc-change",{detail:{value:[...this.value]}})))}stopBoxEvent(e){e.stopPropagation()}handleFocusIn(e){e.relatedTarget instanceof Node&&this._contains(e.relatedTarget)||this.emit("hmwc-focus")}handleFocusOut(e){e.relatedTarget instanceof Node&&this._contains(e.relatedTarget)||this.emit("hmwc-blur")}_contains(e){let t=e;for(;t;){if(t===this)return!0;t=t.parentNode??(t instanceof ShadowRoot?t.host:null)}return!1}get _checkedCount(){return this._values.length}_isEmpty(){return this._checkedCount===0}checkValidity(){if(super.checkValidity(),this.disabled)return!0;let e=this._checkedCount;return this.min!==void 0&&this.min!==null&&e<this.min&&(e>0||this.required)&&!this._validity.valueMissing&&(this._validity.rangeUnderflow=!0),this.max!==void 0&&this.max!==null&&e>this.max&&(this._validity.rangeOverflow=!0),this._validity.valid=this._validity.valid&&!this._validity.rangeUnderflow&&!this._validity.rangeOverflow,this._validity.valid}_resolveError(){if(this._validity.customError&&this._customError)return this._customError;let e=this.min&&this.min>1?`Choose at least ${this.min} options.`:"Choose at least one option.";return this._validity.valueMissing||this._validity.rangeUnderflow?e:this._validity.rangeOverflow?`Choose no more than ${this.max} ${this.max===1?"option":"options"}.`:super._resolveError()}_focusableControl(){return this._focusTarget()??null}connectedCallback(){super.connectedCallback(),!this.sm&&!this.md&&!this.lg&&(this.md=!0)}firstUpdated(e){super.firstUpdated(e),!(s._warnedNoName||this.name||!this.closest("[form]"))&&(s._warnedNoName=!0,console.warn('[hmwc-checkbox-group] inside a [form] container without a name: its value is left out of the form data. Add name="\u2026".'))}willUpdate(e){super.willUpdate(e),Array.isArray(this.value)||(this.value=this._values)}updated(e){super.updated(e),this._syncCheckboxes()}render(){let e=!!this.label||this.controllers.slot.test("label"),t=!!this.help||this.controllers.slot.test("help"),r=v({checkboxgroup:!0,small:!!this.sm,medium:!!this.md,large:!!this.lg,required:!!this.required,row:!!this.inline});return c`
+      <div part="base" class=${r}>
+        <!-- No whitespace after the slot: it would show as a space before the required indicator. -->
+        <div part="label" id="label" class="checkboxgroup__label" ?hidden=${!e}><slot name="label">${this.label}</slot></div>
+        <fieldset
+          part="control"
+          class="checkboxgroup__control"
+          role="group"
+          aria-labelledby=${w(e?"label":void 0)}
+          aria-describedby=${w(t?"help":void 0)}
+          aria-invalid=${this._ariaInvalid()}
+          aria-errormessage=${w(this._ariaErrorMessage())}
+          @hmwc-change=${this.handleBoxChange}
+          @hmwc-input=${this.stopBoxEvent}
+          @hmwc-focus=${this.stopBoxEvent}
+          @hmwc-blur=${this.stopBoxEvent}
+          @focusin=${this.handleFocusIn}
+          @focusout=${this.handleFocusOut}>
+          <div part="input" class="checkboxgroup__input">
+            <slot @slotchange=${()=>this.requestUpdate()}>
+              ${this.items?.map(i=>{let o=String(typeof i=="string"?i:i.value);return c`
+                  <hmwc-checkbox
+                    value=${o}
+                    label=${typeof i=="string"?i:i.label}
+                    ?disabled=${typeof i!="string"&&!!i.disabled}
+                    ?sm=${!!this.sm}
+                    ?md=${!!this.md}
+                    ?lg=${!!this.lg}></hmwc-checkbox>
+                `})}
+            </slot>
+          </div>
+          <div part="help" id="help" class="checkboxgroup__help" ?hidden=${!t}>
+            <slot name="help">${this.help}</slot>
+          </div>
+        </fieldset>
+        ${this._renderError()}
+      </div>
+    `}};De.styles=qo;De.dependencies=[we,$];De.slots=["label","help"];De._warnedNoName=!1;Ht([n({type:Boolean,reflect:!0})],De.prototype,"inline",void 0);Ht([n({type:String})],De.prototype,"help",void 0);Ht([n({type:Number})],De.prototype,"min",void 0);Ht([n({type:Number})],De.prototype,"max",void 0);Ht([n({converter:ni})],De.prototype,"value",void 0);Ht([n({type:Array})],De.prototype,"items",void 0);Ht([u("disabled",{waitUntilFirstUpdate:!0})],De.prototype,"handleDisabledChange",null);De.define("hmwc-checkbox-group",De);var Wo=f`
+  :host {
+    --combobox-max-height: calc(16 * var(--hmwc-rem, 1rem));
     --combobox-option-padding: var(--hmwc-spacing-x-small) var(--hmwc-spacing-small);
     --combobox-option-background-active: var(--hmwc-color-neutral-100);
 
@@ -5817,10 +6406,17 @@
     rotate: 180deg;
   }
 
+  /* The chevron follows the toggle rule: not-allowed when disabled, plain
+     default when readonly (there is nothing to open, but nothing is
+     forbidden either). */
   :host([disabled]) .combobox__trigger,
   :host([readonly]) .combobox__trigger {
     cursor: default;
     opacity: 0.5;
+  }
+
+  :host([disabled]) .combobox__trigger {
+    cursor: not-allowed;
   }
 
   /* The panel is the attachment's content: the attachment shows, hides and
@@ -5898,25 +6494,25 @@
       transition: none;
     }
   }
-`;var it=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},va=48,ba={fromAttribute(s){if(!s)return[];try{let t=JSON.parse(s);return Array.isArray(t)?t:[]}catch{return console.warn("[hmwc-combobox] The options attribute is not valid JSON; ignoring it."),[]}}},L=class extends P{constructor(){super(...arguments),this._activeIndex=-1,this._renderCount=0,this._query="",this.emptyText="No matches",this.loadMoreText="Load more",this.loadingText="Loading\u2026",this.renderBatch=50,this.options=[],this._uid=`hmwc-combobox-${Math.random().toString(36).slice(2,10)}`,this._wantOpen=!1,this._programmaticFocus=!1,this._focused=!1,this._typedValue=null,this._loadMoreRequested=!1,this._edited=!1,this._handleKeydown=t=>{if(!(t.isComposing||!this._interactive))switch(t.key){case"ArrowDown":{t.preventDefault(),this.active?this._move(1):(this.show(),this._activeIndex=t.altKey||!this._rowCount?-1:0);break}case"ArrowUp":{t.preventDefault(),this.active?this._move(-1):(this.show(),this._activeIndex=this._rowCount-1);break}case"Enter":{let e=this.active?this._rowAt(this._activeIndex):void 0;e?(t.preventDefault(),this._activate(e)):this.active&&this.hide();break}case"Escape":{this.active?(t.preventDefault(),t.stopPropagation(),this.hide()):String(this.value??"")!==""&&(t.preventDefault(),t.stopPropagation(),this._typedValue="",this._query="",this.value="",this.emit("hmwc-input",{detail:{value:""}}),this.emit("hmwc-change",{detail:{value:""}}));break}case"Tab":{this.active&&this.hide();break}}},this._handleInnerInput=t=>{t.stopPropagation();let e=String(this._inner?.value??t.detail?.value??"");this._typedValue=e,this._edited=!0,this._query=e,this.value=e,this._activeIndex=-1,this._renderCount=this.renderBatch,this._clearRequiredError(),this.emit("hmwc-input",{detail:{value:e}}),this._requestOpen()},this._handleInnerChange=t=>{t.stopPropagation(),this.emit("hmwc-change",{detail:{value:String(this.value??"")}})},this._handleInnerFocus=t=>{t.stopPropagation(),this._focused=!0,this.emit("hmwc-focus"),this._programmaticFocus||this._requestOpen()},this._handleInnerBlur=t=>{t.stopPropagation(),this._focused=!1,this.hide(),this._edited&&!this.disabled&&this.required&&!String(this.value??"").trim()&&(this.checkValidity(),this.invalid=!0,this.error=this._resolveError(),this._emitInvalid()),this.emit("hmwc-blur")},this._swallow=t=>{t.stopPropagation()},this._handleAttachmentToggle=t=>{if(t.target!==t.currentTarget)return;t.stopPropagation(),!(t.type==="hmwc-show")&&this.active&&this.hide()},this._handleTriggerMousedown=t=>{t.preventDefault()},this._handleTriggerClick=t=>{t.stopPropagation(),this._interactive&&(this._focused||this.focus(),this.toggle())},this._handlePanelMousedown=t=>{t.preventDefault()},this._handlePanelClick=t=>{let e=this._rowAt(this._rowIndexFromEvent(t));e&&this._activate(e)},this._handlePanelMouseover=t=>{let e=this._rowIndexFromEvent(t);e>=0&&e!==this._activeIndex&&(this._activeIndex=e)},this._handlePanelScroll=()=>{let t=this._panel;t&&(t.scrollTop+t.clientHeight<t.scrollHeight-va||this._extendOrRequestMore())}}get _options(){let t=Array.isArray(this.options)?this.options:[];if(this._normalized?.source===t)return this._normalized.result;let e=t.filter(r=>r!=null).map(r=>typeof r=="object"?r:{value:String(r)});return this._normalized={source:t,result:e},e}get filteredOptions(){let t=this._options,e=this._query.trim().toLowerCase(),r=!!this.noFilter,i=this._filtered;if(i&&i.source===t&&i.query===e&&i.noFilter===r)return i.result;let o=r||!e?t:t.filter(n=>[n.value,n.label,n.description].some(l=>l!==void 0&&String(l).toLowerCase().includes(e)));return this._filtered={source:t,query:e,noFilter:r,result:o},o}get _visibleOptions(){return this.filteredOptions.slice(0,Math.max(this._renderCount,this.renderBatch>0?this.renderBatch:1))}get _showLoadMore(){return!!this.hasMore&&!this.loading&&this._visibleOptions.length>=this.filteredOptions.length}get _rowCount(){return this._visibleOptions.length+(this._showLoadMore?1:0)}get _hasContent(){return this._options.length>0||!!this.loading||!!this.hasMore}get _interactive(){return!this.disabled&&!this.readonly}handleActiveChange(){this.active||(this._activeIndex=-1),this.emit(`hmwc-${this.active?"show":"hide"}`)}handleInteractiveChange(){this._interactive||this.hide()}handleLabelChange(){this.toggleAttribute("no-label",!this.label)}connectedCallback(){super.connectedCallback(),this.toggleAttribute("no-label",!this.label)}willUpdate(t){t.has("value")&&String(this.value??"")!==this._typedValue&&(this._query="",this._typedValue=null),(t.has("options")||t.has("hasMore")||t.has("loading")&&!this.loading)&&(this._loadMoreRequested=!1),t.has("renderBatch")&&this._renderCount<this.renderBatch&&(this._renderCount=this.renderBatch),this._activeIndex>=this._rowCount&&(this._activeIndex=-1),this._wantOpen&&this._focused&&!this.active&&this._hasContent&&this._interactive&&(this.active=!0),super.willUpdate(t)}updated(t){super.updated(t),t.has("_query")&&this._panel&&(this._panel.scrollTop=0),t.has("_activeIndex")&&this._scrollActiveIntoView(),this._inner?.updateComplete.then(()=>this._syncAria())}disconnectedCallback(){super.disconnectedCallback(),this._wantOpen=!1,this._focused=!1}show(){this._interactive&&(this._wantOpen=!0,this.active=!0)}hide(){this._wantOpen=!1,this.active=!1}toggle(){this.active?this.hide():this.show()}appendOptions(t){this.options=[...Array.isArray(this.options)?this.options:[],...Array.isArray(t)?t:[]]}focus(t){if(this._inner?.input){this._programmaticFocus=!0;try{this._inner.focus(t)}finally{this._programmaticFocus=!1}}}blur(){this._inner?.input?.blur()}_emitInvalid(){this.emit("hmwc-invalid",{detail:{field:this.name??this.id??"",value:String(this.value??""),error:this.error??"",validity:this.validity}})}_emitValid(){this.emit("hmwc-valid",{detail:{field:this.name??this.id??"",value:String(this.value??"")}})}_requestOpen(){this._interactive&&(this._wantOpen=!0,this._hasContent&&(this.active=!0))}_select(t){let e=String(t.value??"");this._typedValue=null,this._query="",this.value=e,this.hide(),this._clearRequiredError(),this.emit("hmwc-select",{detail:{value:e,option:t}}),this.emit("hmwc-change",{detail:{value:e}})}_requestMore(t){!this.hasMore||this.loading||!t&&this._loadMoreRequested||(this._loadMoreRequested=!0,this.emit("hmwc-load-more",{detail:{query:this._query,count:this._options.length}}))}_extendOrRequestMore(){return this._visibleOptions.length<this.filteredOptions.length?(this._renderCount=this._visibleOptions.length+Math.max(1,this.renderBatch),!0):(this._requestMore(!1),!1)}_clearRequiredError(){!this.invalid||this._customError!==null||(!this.required||String(this.value??"").trim())&&(this.invalid=!1,this.error=void 0)}_activate(t){t==="load-more"?this._requestMore(!0):this._select(t)}_rowAt(t){let e=this._visibleOptions;if(t>=0&&t<e.length)return e[t];if(t===e.length&&this._showLoadMore)return"load-more"}_move(t){let e=this._rowCount;if(!e)return;let r=this._activeIndex+t;if(t>0&&r>=this._visibleOptions.length&&this._visibleOptions.length<this.filteredOptions.length){this._extendOrRequestMore(),this._activeIndex=this._visibleOptions.length>r?r:this._activeIndex;return}r>=e&&(r=e-1),r<-1&&(r=-1),this._activeIndex=r}_rowIndexFromEvent(t){let e=t.composedPath().find(r=>r instanceof HTMLElement&&r.dataset.index!==void 0);return e?Number(e.dataset.index):-1}_scrollActiveIntoView(){let t=this._panel,e=this._activeRowElement();if(!t||!e)return;let r=e.offsetTop,i=r+e.offsetHeight;r<t.scrollTop?t.scrollTop=r:i>t.scrollTop+t.clientHeight&&(t.scrollTop=i-t.clientHeight)}_activeRowElement(){return this._activeIndex<0?null:this.shadowRoot?.querySelector(`[data-index="${this._activeIndex}"]`)??null}_syncAria(){let t=this._inner?.input;t&&(t.setAttribute("role","combobox"),t.setAttribute("aria-autocomplete","list"),t.setAttribute("aria-haspopup","listbox"),t.setAttribute("aria-expanded",this.active?"true":"false"),t.setAttribute("aria-label",this.label||this.placeholder||this.name||"Combobox"),t.setAttribute("aria-invalid",this._ariaInvalid()),this.required?t.setAttribute("aria-required","true"):t.removeAttribute("aria-required"),"ariaControlsElements"in t&&(t.ariaControlsElements=this._listbox?[this._listbox]:null),"ariaActiveDescendantElement"in t&&(t.ariaActiveDescendantElement=this.active?this._activeRowElement():null))}_renderTrigger(){return c`<hmwc-icon
+`;var le=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Ts=48,Os={fromAttribute(s){if(!s)return[];try{let e=JSON.parse(s);return Array.isArray(e)?e:[]}catch{return console.warn("[hmwc-combobox] The options attribute is not valid JSON; ignoring it."),[]}}},V=class extends N{constructor(){super(...arguments),this._activeIndex=-1,this._renderCount=0,this._query="",this.emptyText="No matches",this.loadMoreText="Load more",this.loadingText="Loading\u2026",this.renderBatch=50,this.options=[],this._uid=`hmwc-combobox-${Math.random().toString(36).slice(2,10)}`,this._wantOpen=!1,this._programmaticFocus=!1,this._focused=!1,this._typedValue=null,this._loadMoreRequested=!1,this._edited=!1,this._handleKeydown=e=>{if(!(e.isComposing||!this._interactive))switch(e.key){case"ArrowDown":{e.preventDefault(),this.active?this._move(1):(this.show(),this._activeIndex=e.altKey||!this._rowCount?-1:0);break}case"ArrowUp":{e.preventDefault(),this.active?this._move(-1):(this.show(),this._activeIndex=this._rowCount-1);break}case"Enter":{let t=this.active?this._rowAt(this._activeIndex):void 0;t?(e.preventDefault(),this._activate(t)):this.active&&this.hide();break}case"Escape":{this.active?(e.preventDefault(),e.stopPropagation(),this.hide()):String(this.value??"")!==""&&(e.preventDefault(),e.stopPropagation(),this._typedValue="",this._query="",this.value="",this.emit("hmwc-input",{detail:{value:""}}),this.emit("hmwc-change",{detail:{value:""}}));break}case"Tab":{this.active&&this.hide();break}}},this._handleInnerInput=e=>{e.stopPropagation();let t=String(this._inner?.value??e.detail?.value??"");this._typedValue=t,this._edited=!0,this._query=t,this.value=t,this._activeIndex=-1,this._renderCount=this.renderBatch,this._clearCustomErrorOnInput(),this._clearRequiredError(),this.emit("hmwc-input",{detail:{value:t}}),this._requestOpen()},this._handleInnerChange=e=>{e.stopPropagation(),this.emit("hmwc-change",{detail:{value:String(this.value??"")}})},this._handleInnerFocus=e=>{e.stopPropagation(),this._focused=!0,this.emit("hmwc-focus"),this._programmaticFocus||this._requestOpen()},this._handleInnerBlur=e=>{e.stopPropagation(),this._focused=!1,this.hide(),this._edited&&!this.disabled&&this.required&&!String(this.value??"").trim()&&(this.checkValidity(),this.invalid=!0,this.error=this._resolveError(),this._emitInvalid()),this.emit("hmwc-blur")},this._swallow=e=>{e.stopPropagation()},this._handleAttachmentToggle=e=>{if(e.target!==e.currentTarget)return;e.stopPropagation(),!(e.type==="hmwc-show")&&this.active&&this.hide()},this._handleTriggerMousedown=e=>{e.preventDefault()},this._handleTriggerClick=e=>{e.stopPropagation(),this._interactive&&(this._focused||this.focus(),this.toggle())},this._handlePanelMousedown=e=>{e.preventDefault()},this._handlePanelClick=e=>{let t=this._rowAt(this._rowIndexFromEvent(e));t&&this._activate(t)},this._handlePanelMouseover=e=>{let t=this._rowIndexFromEvent(e);t>=0&&t!==this._activeIndex&&(this._activeIndex=t)},this._handlePanelScroll=()=>{let e=this._panel;e&&(e.scrollTop+e.clientHeight<e.scrollHeight-Ts||this._extendOrRequestMore())}}get _options(){let e=Array.isArray(this.options)?this.options:[];if(this._normalized?.source===e)return this._normalized.result;let t=e.filter(r=>r!=null).map(r=>typeof r=="object"?r:{value:String(r)});return this._normalized={source:e,result:t},t}get filteredOptions(){let e=this._options,t=this._query.trim().toLowerCase(),r=!!this.noFilter,i=this._filtered;if(i&&i.source===e&&i.query===t&&i.noFilter===r)return i.result;let o=r||!t?e:e.filter(a=>[a.value,a.label,a.description].some(l=>l!==void 0&&String(l).toLowerCase().includes(t)));return this._filtered={source:e,query:t,noFilter:r,result:o},o}get _visibleOptions(){return this.filteredOptions.slice(0,Math.max(this._renderCount,this.renderBatch>0?this.renderBatch:1))}get _showLoadMore(){return!!this.hasMore&&!this.loading&&this._visibleOptions.length>=this.filteredOptions.length}get _rowCount(){return this._visibleOptions.length+(this._showLoadMore?1:0)}get _hasContent(){return this._options.length>0||!!this.loading||!!this.hasMore}get _interactive(){return!this.disabled&&!this.readonly}handleActiveChange(){this.active||(this._activeIndex=-1),this.emit(`hmwc-${this.active?"show":"hide"}`)}handleInteractiveChange(){this._interactive||this.hide()}handleLabelChange(){this.toggleAttribute("no-label",!this.label)}connectedCallback(){super.connectedCallback(),this.toggleAttribute("no-label",!this.label)}willUpdate(e){e.has("value")&&String(this.value??"")!==this._typedValue&&(this._query="",this._typedValue=null),(e.has("options")||e.has("hasMore")||e.has("loading")&&!this.loading)&&(this._loadMoreRequested=!1),e.has("renderBatch")&&this._renderCount<this.renderBatch&&(this._renderCount=this.renderBatch),this._activeIndex>=this._rowCount&&(this._activeIndex=-1),this._wantOpen&&this._focused&&!this.active&&this._hasContent&&this._interactive&&(this.active=!0),super.willUpdate(e)}updated(e){super.updated(e),e.has("_query")&&this._panel&&(this._panel.scrollTop=0),e.has("_activeIndex")&&this._scrollActiveIntoView(),this._inner?.updateComplete.then(()=>this._syncAria())}disconnectedCallback(){super.disconnectedCallback(),this._wantOpen=!1,this._focused=!1}show(){this._interactive&&(this._wantOpen=!0,this.active=!0)}hide(){this._wantOpen=!1,this.active=!1}toggle(){this.active?this.hide():this.show()}appendOptions(e){this.options=[...Array.isArray(this.options)?this.options:[],...Array.isArray(e)?e:[]]}focus(e){if(this._inner?.input){this._programmaticFocus=!0;try{this._inner.focus(e)}finally{this._programmaticFocus=!1}}}blur(){this._inner?.input?.blur()}_emitInvalid(){this.emit("hmwc-invalid",{detail:{field:this.name??this.id??"",value:String(this.value??""),error:this.error??"",validity:this.validity}})}_emitValid(){this.emit("hmwc-valid",{detail:{field:this.name??this.id??"",value:String(this.value??"")}})}_requestOpen(){this._interactive&&(this._wantOpen=!0,this._hasContent&&(this.active=!0))}_select(e){let t=String(e.value??"");this._typedValue=null,this._query="",this.value=t,this.hide(),this._clearRequiredError(),this.emit("hmwc-select",{detail:{value:t,option:e}}),this.emit("hmwc-change",{detail:{value:t}})}_requestMore(e){!this.hasMore||this.loading||!e&&this._loadMoreRequested||(this._loadMoreRequested=!0,this.emit("hmwc-load-more",{detail:{query:this._query,count:this._options.length}}))}_extendOrRequestMore(){return this._visibleOptions.length<this.filteredOptions.length?(this._renderCount=this._visibleOptions.length+Math.max(1,this.renderBatch),!0):(this._requestMore(!1),!1)}_clearRequiredError(){!this.invalid||this._customError!==null||(!this.required||String(this.value??"").trim())&&(this.invalid=!1,this.error=void 0)}_activate(e){e==="load-more"?this._requestMore(!0):this._select(e)}_rowAt(e){let t=this._visibleOptions;if(e>=0&&e<t.length)return t[e];if(e===t.length&&this._showLoadMore)return"load-more"}_move(e){let t=this._rowCount;if(!t)return;let r=this._activeIndex+e;if(e>0&&r>=this._visibleOptions.length&&this._visibleOptions.length<this.filteredOptions.length){this._extendOrRequestMore(),this._activeIndex=this._visibleOptions.length>r?r:this._activeIndex;return}r>=t&&(r=t-1),r<-1&&(r=-1),this._activeIndex=r}_rowIndexFromEvent(e){let t=e.composedPath().find(r=>r instanceof HTMLElement&&r.dataset.index!==void 0);return t?Number(t.dataset.index):-1}_scrollActiveIntoView(){let e=this._panel,t=this._activeRowElement();if(!e||!t)return;let r=t.offsetTop,i=r+t.offsetHeight;r<e.scrollTop?e.scrollTop=r:i>e.scrollTop+e.clientHeight&&(e.scrollTop=i-e.clientHeight)}_activeRowElement(){return this._activeIndex<0?null:this.shadowRoot?.querySelector(`[data-index="${this._activeIndex}"]`)??null}_syncAria(){let e=this._inner?.input;e&&(e.setAttribute("role","combobox"),e.setAttribute("aria-autocomplete","list"),e.setAttribute("aria-haspopup","listbox"),e.setAttribute("aria-expanded",this.active?"true":"false"),e.setAttribute("aria-label",this.accessibleLabel||this.label||this.placeholder||this.name||"Combobox"),e.setAttribute("aria-invalid",this._ariaInvalid()),this.required?e.setAttribute("aria-required","true"):e.removeAttribute("aria-required"),"ariaControlsElements"in e&&(e.ariaControlsElements=this._listbox?[this._listbox]:null),"ariaActiveDescendantElement"in e&&(e.ariaActiveDescendantElement=this.active?this._activeRowElement():null))}_renderTrigger(){return c`<hmwc-icon
       slot="toggle"
       part="trigger"
       class="combobox__trigger"
       src="chevron-down"
       aria-hidden="true"
       @mousedown=${this._handleTriggerMousedown}
-      @click=${this._handleTriggerClick}></hmwc-icon>`}_renderOption(t,e){let r=e===this._activeIndex;return c`
+      @click=${this._handleTriggerClick}></hmwc-icon>`}_renderOption(e,t){let r=t===this._activeIndex;return c`
       <div
         part="option"
-        class=${f({combobox__option:!0,active:r})}
+        class=${v({combobox__option:!0,active:r})}
         role="option"
-        id=${`${this._uid}-option-${e}`}
-        data-index=${e}
+        id=${`${this._uid}-option-${t}`}
+        data-index=${t}
         aria-selected=${r?"true":"false"}>
-        <span part="option-label" class="combobox__option-label">${t.label??t.value}</span>
-        ${t.description?c`<span part="option-description" class="combobox__option-description">${t.description}</span>`:A}
+        <span part="option-label" class="combobox__option-label">${e.label??e.value}</span>
+        ${e.description?c`<span part="option-description" class="combobox__option-description">${e.description}</span>`:x}
       </div>
-    `}_renderPanel(){let t=this._visibleOptions,e=t.length,r=!this.loading&&this.filteredOptions.length===0;return c`
+    `}_renderPanel(){let e=this._visibleOptions,t=e.length,r=!this.loading&&this.filteredOptions.length===0;return c`
       <div
         part="panel"
         class="combobox__panel"
@@ -5929,27 +6525,27 @@
           class="combobox__listbox"
           role="listbox"
           id=${`${this._uid}-listbox`}
-          aria-label=${this.label||this.placeholder||this.name||"Suggestions"}
+          aria-label=${this.accessibleLabel||this.label||this.placeholder||this.name||"Suggestions"}
           ?hidden=${!this._rowCount}>
-          ${t.map((i,o)=>this._renderOption(i,o))}
+          ${e.map((i,o)=>this._renderOption(i,o))}
           ${this._showLoadMore?c`
                 <div
                   part="load-more"
-                  class=${f({combobox__option:!0,"combobox__load-more":!0,active:this._activeIndex===e})}
+                  class=${v({combobox__option:!0,"combobox__load-more":!0,active:this._activeIndex===t})}
                   role="option"
                   id=${`${this._uid}-load-more`}
-                  data-index=${e}
-                  aria-selected=${this._activeIndex===e?"true":"false"}>
+                  data-index=${t}
+                  aria-selected=${this._activeIndex===t?"true":"false"}>
                   ${this.loadMoreText}
                 </div>
-              `:A}
+              `:x}
         </div>
         <div part="status" class="combobox__status" role="status" aria-live="polite" ?hidden=${!this.loading&&!r}>
-          ${this.loading?c`<hmwc-spinner class="combobox__spinner"></hmwc-spinner><span>${this.loadingText}</span>`:r?c`<span>${this.emptyText}</span>`:A}
+          ${this.loading?c`<hmwc-spinner class="combobox__spinner"></hmwc-spinner><span>${this.loadingText}</span>`:r?c`<span>${this.emptyText}</span>`:x}
         </div>
       </div>
-    `}render(){let t=f({combobox:!0,active:!!this.active,disabled:!!this.disabled,invalid:!!this.invalid});return c`
-      <div part="base" class=${t}>
+    `}render(){let e=v({combobox:!0,active:!!this.active,disabled:!!this.disabled,invalid:!!this.invalid});return c`
+      <div part="base" class=${e}>
         <hmwc-attachment
           .placement=${"bottom-start"}
           .distance=${2}
@@ -5965,13 +6561,13 @@
             class="combobox__input"
             fluid
             autocomplete="off"
-            .value=${Bt(String(this.value??""))}
+            .value=${et(String(this.value??""))}
             label=${w(this.label)}
             label-pos=${w(this.labelPos)}
             placeholder=${w(this.placeholder)}
             .help=${this.help}
-            .invalid=${Bt(!!this.invalid)}
-            .error=${Bt(this.error??"")}
+            .invalid=${et(!!this.invalid)}
+            .error=${et(this.error??"")}
             ?disabled=${this.disabled}
             ?readonly=${this.readonly}
             ?sm=${this.sm}
@@ -5989,7 +6585,132 @@
             @hmwc-hide=${this._swallow}>${this._renderTrigger()}</hmwc-input>
         </hmwc-attachment>
       </div>
-    `}};L.styles=ro;L.dependencies=[O,_,x,X];L.slots=[];it([v()],L.prototype,"_activeIndex",void 0);it([v()],L.prototype,"_renderCount",void 0);it([v()],L.prototype,"_query",void 0);it([a({type:Boolean,reflect:!0})],L.prototype,"active",void 0);it([a({type:Boolean,reflect:!0})],L.prototype,"fluid",void 0);it([a({type:Boolean,reflect:!0,attribute:"has-more"})],L.prototype,"hasMore",void 0);it([a({type:Boolean,reflect:!0})],L.prototype,"loading",void 0);it([a({type:Boolean,reflect:!0,attribute:"no-filter"})],L.prototype,"noFilter",void 0);it([a({type:Boolean,reflect:!0})],L.prototype,"readonly",void 0);it([a({type:String,attribute:"empty-text"})],L.prototype,"emptyText",void 0);it([a({type:String})],L.prototype,"help",void 0);it([a({type:String,attribute:"load-more-text"})],L.prototype,"loadMoreText",void 0);it([a({type:String,attribute:"loading-text"})],L.prototype,"loadingText",void 0);it([a({type:String})],L.prototype,"placeholder",void 0);it([a({type:Number,attribute:"render-batch"})],L.prototype,"renderBatch",void 0);it([a({converter:ba})],L.prototype,"options",void 0);it([R(".combobox__input")],L.prototype,"_inner",void 0);it([R(".combobox__panel")],L.prototype,"_panel",void 0);it([R(".combobox__listbox")],L.prototype,"_listbox",void 0);it([p("active",{waitUntilFirstUpdate:!0})],L.prototype,"handleActiveChange",null);it([p(["disabled","readonly"],{waitUntilFirstUpdate:!0})],L.prototype,"handleInteractiveChange",null);it([p("label")],L.prototype,"handleLabelChange",null);L.define("hmwc-combobox",L);var io=m`
+    `}};V.styles=Wo;V.dependencies=[P,$,C,ie];V.slots=[];le([b()],V.prototype,"_activeIndex",void 0);le([b()],V.prototype,"_renderCount",void 0);le([b()],V.prototype,"_query",void 0);le([n({type:Boolean,reflect:!0})],V.prototype,"active",void 0);le([n({type:Boolean,reflect:!0})],V.prototype,"fluid",void 0);le([n({type:Boolean,reflect:!0,attribute:"has-more"})],V.prototype,"hasMore",void 0);le([n({type:Boolean,reflect:!0})],V.prototype,"loading",void 0);le([n({type:Boolean,reflect:!0,attribute:"no-filter"})],V.prototype,"noFilter",void 0);le([n({type:Boolean,reflect:!0})],V.prototype,"readonly",void 0);le([n({type:String,attribute:"empty-text"})],V.prototype,"emptyText",void 0);le([n({type:String})],V.prototype,"help",void 0);le([n({type:String,attribute:"load-more-text"})],V.prototype,"loadMoreText",void 0);le([n({type:String,attribute:"loading-text"})],V.prototype,"loadingText",void 0);le([n({type:String})],V.prototype,"placeholder",void 0);le([n({type:String,attribute:"aria-label"})],V.prototype,"accessibleLabel",void 0);le([n({type:Number,attribute:"render-batch"})],V.prototype,"renderBatch",void 0);le([n({converter:Os})],V.prototype,"options",void 0);le([I(".combobox__input")],V.prototype,"_inner",void 0);le([I(".combobox__panel")],V.prototype,"_panel",void 0);le([I(".combobox__listbox")],V.prototype,"_listbox",void 0);le([u("active",{waitUntilFirstUpdate:!0})],V.prototype,"handleActiveChange",null);le([u(["disabled","readonly"],{waitUntilFirstUpdate:!0})],V.prototype,"handleInteractiveChange",null);le([u("label")],V.prototype,"handleLabelChange",null);V.define("hmwc-combobox",V);var Vo="important",Ms=" !"+Vo,Jt=Tt(class extends xt{constructor(s){if(super(s),s.type!==nt.ATTRIBUTE||s.name!=="style"||s.strings?.length>2)throw Error("The `styleMap` directive must be used in the `style` attribute and must be the only part in the attribute.")}render(s){return Object.keys(s).reduce((e,t)=>{let r=s[t];return r==null?e:e+`${t=t.includes("-")?t:t.replace(/(?:^(webkit|moz|ms|o)|)(?=[A-Z])/g,"-$&").toLowerCase()}:${r};`},"")}update(s,[e]){let{style:t}=s.element;if(this.ft===void 0)return this.ft=new Set(Object.keys(e)),this.render(e);for(let r of this.ft)e[r]==null&&(this.ft.delete(r),r.includes("-")?t.removeProperty(r):t[r]=null);for(let r in e){let i=e[r];if(i!=null){this.ft.add(r);let o=typeof i=="string"&&i.endsWith(Ms);r.includes("-")||o?t.setProperty(r,o?i.slice(0,-11):i,o?Vo:""):t[r]=i}}return Ee}});var Ko=f`
+  :host {
+    --context-menu-min-width: calc(10 * var(--hmwc-rem, 1rem));
+    --context-menu-max-height: calc(24 * var(--hmwc-rem, 1rem));
+    --context-menu-shortcut-color: var(--hmwc-color-neutral-500);
+
+    display: contents;
+  }
+
+  /* The zero-size point the attachment anchors the menu to: the pointer,
+     or the bottom-left corner of the focused element. */
+  .context-menu__anchor {
+    position: fixed;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+
+  /* Shown as a popover (top layer) so a transformed or clipped ancestor
+     cannot offset it. Reset the user-agent popover box; the menu draws its
+     own border, background and shadow. The host is the sized box (min and
+     max width, shrink-to-fit otherwise), so the panel fills it: a narrower
+     panel left the host's extra width as an empty box beside the menu.
+     Small (sm) rows keep their usual inline padding. */
+  .context-menu__menu {
+    --menu-width: 100%;
+    --menu-max-height: var(--context-menu-max-height);
+    --menu-item-spacing-override: var(--hmwc-spacing-3x-small) var(--hmwc-spacing-small);
+    --icon-size: var(--hmwc-font-size-small);
+
+    min-width: var(--context-menu-min-width);
+    max-width: calc(100vw - 2 * var(--hmwc-spacing-small));
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: inherit;
+    overflow: visible;
+  }
+
+  .context-menu__menu.active {
+    animation: context-menu-in var(--hmwc-transition-fast) var(--hmwc-easing-decelerate);
+    transform-origin: top left;
+  }
+
+  /* Shortcut hints read as quiet keycaps: mono, small, hairline-bordered,
+     never competing with the label. */
+  .context-menu__shortcut {
+    margin-inline-start: var(--hmwc-spacing-large);
+    padding: 0 var(--hmwc-spacing-3x-small);
+    border: solid var(--hmwc-panel-border-width) var(--hmwc-panel-border-color);
+    border-radius: var(--hmwc-border-radius-medium);
+    font-family: var(--hmwc-font-mono);
+    font-size: var(--hmwc-font-size-x-small);
+    font-weight: var(--hmwc-font-weight-normal);
+    line-height: var(--hmwc-line-height-dense);
+    letter-spacing: var(--hmwc-letter-spacing-dense);
+    color: var(--context-menu-shortcut-color);
+    white-space: nowrap;
+  }
+
+  @keyframes context-menu-in {
+    from {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes context-menu-fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .context-menu__menu.active {
+      animation-name: context-menu-fade;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .context-menu__shortcut {
+      border-color: CanvasText;
+      color: CanvasText;
+    }
+  }
+`;var Zt=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},fr=new Set,kt,Rs=new Set(["text","search","email","url","tel","password","number","date","datetime-local","month","time","week"]),li=()=>{let s=document.activeElement;for(;s?.shadowRoot?.activeElement;)s=s.shadowRoot.activeElement;return s},Ds=s=>{let e=[],t=s;for(;t;)e.push(t),t=t instanceof ShadowRoot?t.host:t.assignedSlot??t.parentNode;return e.push(window),e},Go=s=>typeof s.showPopover=="function"&&s.matches(":popover-open"),ci=s=>s instanceof HTMLElement,Bs=s=>s instanceof HTMLTextAreaElement||s instanceof HTMLInputElement&&Rs.has(s.type)||s.isContentEditable,Qo=s=>s.filter(e=>ci(e)&&e.tagName.startsWith("HMWC-")&&typeof e.contextMenuItems=="function"),Ps=(s,e)=>{if(s.global)return Qo(e).some(r=>!(r instanceof Fe))?e.length:-1;let t=s.for?document.getElementById(s.for):s;return t?e.indexOf(t):-1},Jo=s=>{let e,t=1/0;return fr.forEach(r=>{let i=Ps(r,s);i>=0&&i<t&&(e=r,t=i)}),e},Yo=s=>{if(s.defaultPrevented)return;let e=s.composedPath();if(kt?.ownsPath(e)){s.preventDefault();return}if(s.button!==2&&kt?.openedByKeyboard&&performance.now()-kt.openedAt<1e3){s.preventDefault();return}if(s.shiftKey)return;let t=Jo(e),r=e.find(i=>i instanceof Element);!t||!r||t.openFor({target:r,path:e,x:s.clientX,y:s.clientY,keyboard:!1})&&s.preventDefault()},Xo=s=>{if(!(s.key==="ContextMenu"||s.key==="F10"&&s.shiftKey&&!s.ctrlKey&&!s.altKey&&!s.metaKey)||s.defaultPrevented)return;let t=s.composedPath();if(kt?.ownsPath(t))return;let r=li()??t.find(a=>a instanceof Element),i=Jo(t);if(!i||!r||r===document.body)return;let o=r.getBoundingClientRect();i.openFor({target:r,path:t,x:o.left,y:o.bottom,keyboard:!0})&&s.preventDefault()},Fe=class extends g{constructor(){super(...arguments),this._items=[],this._point={x:0,y:0},this.openedAt=0,this.openedByKeyboard=!1,this._onPointerDown=e=>{this.ownsPath(e.composedPath())||this.hide(!1)},this._onKeyDown=e=>{e.key==="Escape"?(e.preventDefault(),e.stopPropagation(),this.hide()):e.key==="Tab"&&this.hide()},this._onViewportChange=e=>{this.ownsPath(e.composedPath())||this.hide(!1)},this._onBlur=()=>this.hide(!1),this._handleSelect=async e=>{let t=e.target;if(t.tagName!=="HMWC-MENU-ITEM")return;let r=this._items[Number(t.dataset.index)],i=this._context;if(!r||r.disabled||!i)return;let o=this.emit("hmwc-select",{cancelable:!0,detail:{value:r.value,option:r,context:i}});if(this.hide(),!(o.defaultPrevented||!r.action))try{await r.action(i)}catch(a){console.error(a),this._toast(`\u201C${r.label}\u201D didn\u2019t work. Please try again.`,i.target)}},this._stop=e=>e.stopPropagation()}connectedCallback(){super.connectedCallback(),fr.size||(document.addEventListener("contextmenu",Yo),document.addEventListener("keydown",Xo)),fr.add(this)}disconnectedCallback(){super.disconnectedCallback(),this.hide(!1),fr.delete(this),fr.size||(document.removeEventListener("contextmenu",Yo),document.removeEventListener("keydown",Xo))}show(e,t,r){let i=r??document.elementFromPoint(e,t);return i?this.openFor({target:i,path:Ds(i),x:e,y:t,keyboard:!1}):!1}hide(e=!0){if(!this.active)return;this.active=!1,kt===this&&(kt=void 0),this._removeDismissListeners();let t=this._menu;t&&Go(t)&&t.hidePopover?.(),e&&this._returnFocus?.focus?.(),this._returnFocus=void 0,this.emit("hmwc-hide")}ownsPath(e){return!!this.active&&!!this._menu&&e.includes(this._menu)}openFor({target:e,path:t,x:r,y:i,keyboard:o}){let a={target:e,path:t,x:r,y:i,keyboard:o,selection:window.getSelection()?.toString()??"",copy:m=>this._copy(m),paste:()=>this._paste(),download:(m,y,_)=>this._download(m,y,_)},l=this._collectItems(a);if(!l)return!1;let h=this.emit("hmwc-show",{cancelable:!0,detail:{items:l,context:a}}),d=h.detail.items??[];if(h.defaultPrevented||!d.length)return!1;kt&&kt!==this&&kt.hide(!1);let p=this.active?this._returnFocus:li();return this._context=a,this._items=d,this._point={x:r,y:i},this._returnFocus=p instanceof HTMLElement&&p!==document.body?p:void 0,this.openedAt=performance.now(),this.openedByKeyboard=o,kt=this,this.active||(this.active=!0,this._addDismissListeners()),this._present(o),!0}_collectItems(e){let{path:t,target:r}=e,i=t.filter(ci);if(i.some(_=>_.hasAttribute("nocontextmenu"))||Bs(r)&&!i.some(_=>_.tagName==="HMWC-INPUT"))return null;let o=[],a=i.find(_=>_ instanceof HTMLAnchorElement&&!!_.href);a&&o.push(this._linkItems(a.href));let l=[];for(let _ of Qo(t)){if(_===this)continue;let A=_.contextMenuItems(e);if(A===null)return null;A.length&&l.push(A)}let h=new Set(l.flat().map(_=>_.value)),d=Xt();e.selection.trim()&&!h.has("copy")&&o.push([{value:"copy",label:"Copy",icon:"copy",shortcut:`${d}C`,action:_=>_.copy(_.selection).then(()=>{})}]),o.push(...l);let p=this._declaredItems();if(p.length&&o.push(p),!o.length){let _=this._textOf(t);_&&o.push([{value:"copy-text",label:"Copy text",icon:"copy",action:A=>A.copy(_).then(()=>{})}])}let m=new Set,y=[];return o.forEach(_=>{let A=!0;_.forEach(j=>{m.has(j.value)||(m.add(j.value),y.push(A&&y.length?{...j,divider:!0}:j),A=!1)})}),y}_linkItems(e){return[{value:"open-link",label:"Open link in new tab",icon:"box-arrow-up-right",action:()=>void window.open(e,"_blank","noopener")},{value:"copy-link",label:"Copy link address",icon:"link-45deg",action:t=>t.copy(e).then(()=>{})}]}_declaredItems(){let e=[],t=!1;return Array.from(this.children).forEach(r=>{if(r.slot!=="items")return;if(r.tagName==="HMWC-DIVIDER"){t=!0;return}if(r.tagName!=="HMWC-MENU-ITEM")return;let i=r,o=i.label??r.getAttribute("label")??r.textContent?.trim()??"";e.push({value:i.value??r.getAttribute("value")??o,label:o,icon:i.prefix||r.getAttribute("prefix")||void 0,shortcut:r.getAttribute("shortcut")??void 0,disabled:i.disabled??r.hasAttribute("disabled"),divider:t&&e.length>0}),t=!1}),e}_textOf(e){for(let t of e){if(!ci(t)||t===document.body||t===document.documentElement)continue;let r=t.innerText?.trim();if(r)return r}return""}async _present(e){await this.updateComplete,await this._attachment?.updateComplete;let t=this._menu;!t||!this.active||(await t.updateComplete,t.showPopover&&!Go(t)&&t.showPopover(),this._placeWithoutAnchorPositioning(t),requestAnimationFrame(()=>{this.active&&e&&t.focusItem("first")}))}_placeWithoutAnchorPositioning(e){if(typeof CSS<"u"&&CSS.supports?.("anchor-name","--a"))return;let{width:t,height:r}=e.getBoundingClientRect(),{x:i,y:o}=this._point,a=i+t>window.innerWidth?Math.max(0,i-t):i,l=o+r>window.innerHeight?Math.max(0,o-r):o;e.style.setProperty("left",`${a}px`),e.style.setProperty("top",`${l}px`)}_addDismissListeners(){document.addEventListener("pointerdown",this._onPointerDown,!0),document.addEventListener("keydown",this._onKeyDown,!0),window.addEventListener("scroll",this._onViewportChange,!0),window.addEventListener("resize",this._onViewportChange),window.addEventListener("blur",this._onBlur)}_removeDismissListeners(){document.removeEventListener("pointerdown",this._onPointerDown,!0),document.removeEventListener("keydown",this._onKeyDown,!0),window.removeEventListener("scroll",this._onViewportChange,!0),window.removeEventListener("resize",this._onViewportChange),window.removeEventListener("blur",this._onBlur)}async _copy(e){try{return await navigator.clipboard.writeText(e),!0}catch{return this._copyWithSelection(e)?!0:(this._toast("Couldn\u2019t copy to the clipboard. Select the text and press Ctrl+C instead.",this._context?.target),!1)}}_copyWithSelection(e){let t=li(),r=document.createElement("textarea");r.value=e,r.setAttribute("readonly",""),r.setAttribute("aria-hidden","true"),Object.assign(r.style,{position:"fixed",top:"0",left:"0",opacity:"0",pointerEvents:"none"}),document.body.appendChild(r),r.select();let i=!1;try{i=document.execCommand("copy")}catch{i=!1}return r.remove(),t?.focus?.(),i}async _paste(){try{return await navigator.clipboard.readText()}catch{return this._toast("Your browser didn\u2019t allow pasting from this menu. Press Ctrl+V instead.",this._context?.target),null}}_download(e,t,r="text/plain"){let i=URL.createObjectURL(new Blob([t],{type:r})),o=Object.assign(document.createElement("a"),{href:i,download:e});o.style.display="none",document.body.appendChild(o),o.click(),o.remove(),setTimeout(()=>URL.revokeObjectURL(i),1e3)}_toast(e,t){ri({preset:"error",label:e,duration:6e3,relativeTo:t})}_renderItem(e,t){return c`
+      ${e.divider?c`<hmwc-divider></hmwc-divider>`:x}
+      <hmwc-menu-item
+        part="item"
+        data-index=${t}
+        value=${e.value}
+        label=${e.label}
+        prefix=${w(e.icon)}
+        ?disabled=${!!e.disabled}>
+        ${e.shortcut?c`<span slot="suffix" part="shortcut" class="context-menu__shortcut" aria-hidden="true">${e.shortcut}</span>`:x}
+      </hmwc-menu-item>
+    `}render(){return c`
+      <slot></slot>
+      <!-- Declared items are definitions, read when the menu opens; never shown in place. -->
+      <slot name="items" hidden></slot>
+      <hmwc-attachment
+        part="attachment"
+        trigger="manual"
+        placement="bottom-start"
+        .distance=${0}
+        ?flip=${!0}
+        ?active=${!!this.active}
+        @hmwc-show=${this._stop}
+        @hmwc-hide=${this._stop}
+        @hmwc-select=${this._stop}
+        @hmwc-change=${this._stop}
+        @hmwc-focus=${this._stop}
+        @hmwc-blur=${this._stop}>
+        <span slot="anchor" class="context-menu__anchor" style=${Jt({left:`${this._point.x}px`,top:`${this._point.y}px`})}></span>
+        <hmwc-menu part="menu" class="context-menu__menu" compact sm popover="manual" @hmwc-select=${this._handleSelect}>
+          ${this._items.map((e,t)=>this._renderItem(e,t))}
+        </hmwc-menu>
+      </hmwc-attachment>
+    `}};Fe.styles=Ko;Fe.dependencies=[U,P,H,$,O,M];Fe.slots=["items"];Zt([b()],Fe.prototype,"_items",void 0);Zt([b()],Fe.prototype,"_point",void 0);Zt([n({type:Boolean,reflect:!0})],Fe.prototype,"active",void 0);Zt([n({type:String})],Fe.prototype,"for",void 0);Zt([I("hmwc-attachment")],Fe.prototype,"_attachment",void 0);Zt([I("hmwc-menu")],Fe.prototype,"_menu",void 0);Fe.define("hmwc-context-menu",Fe);var Zo=f`
   :host {
     --dropdown-width: initial;
     /* The input-family token, not the generic one — same value today, but it
@@ -6005,6 +6726,17 @@
     width: fit-content;
   }
 
+  /* Size and shape defaults live on :host so a page can still override
+     --dropdown-radius on the element (e.g. to join it to an adjacent input).
+     The radii match <hmwc-input> at each size. */
+  :host([sm]) {
+    --dropdown-radius: calc(1.15 * var(--hmwc-input-border-radius-medium));
+  }
+
+  :host([pill]) {
+    --dropdown-radius: var(--hmwc-border-radius-pill);
+  }
+
   /* When the dropdown has no label, center-align in the row
      so the trigger lines up with checkboxes / other controls. */
   :host([no-label]) {
@@ -6015,6 +6747,14 @@
     width: 100%;
   }
 
+  /* While open, the field sits above the content after it, so its menu does
+     too. The menu's own z-index only ranks it within the nearest stacking
+     context; when each field is one (a reveal animation, a transform or
+     opacity on the field), later fields would otherwise paint over it. */
+  :host([active]) {
+    z-index: var(--hmwc-z-index-dropdown);
+  }
+
   /* Active state — input-like focus ring */
   :host([active]:not([disabled])) .dropdown {
     --dropdown-border: var(--hmwc-input-border-width) solid var(--hmwc-input-border-color-focus);
@@ -6023,7 +6763,7 @@
 
   :host([active]:not([disabled])) .dropdown .dropdown__trigger::part(base) {
     border-color: var(--hmwc-input-border-color-focus);
-    box-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color);
+    box-shadow: 0 0 0 var(--hmwc-input-focus-ring-width) var(--hmwc-input-focus-ring-color);
     transform: none;
   }
 
@@ -6042,7 +6782,7 @@
 
   :host([active]:not([disabled])) .dropdown.invalid .dropdown__trigger::part(base) {
     border-color: var(--hmwc-input-border-color-invalid);
-    box-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
+    box-shadow: 0 0 0 var(--hmwc-input-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
   }
 
   .dropdown {
@@ -6072,6 +6812,8 @@
       line-height: 1.4;
       font-family: var(--hmwc-font-sans);
       white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     & .dropdown__help {
@@ -6097,17 +6839,25 @@
       --button-radius: var(--dropdown-radius);
       --button-border: var(--dropdown-border);
       --button-outline: var(--dropdown-outline);
-      --button-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color);
+      --button-shadow: 0 0 0 var(--hmwc-input-focus-ring-width) var(--hmwc-input-focus-ring-color);
 
       --icon-color: var(--hmwc-color-neutral-500);
-      --icon-size: 0.75rem;
+      --icon-size: calc(0.75 * var(--hmwc-rem, 1rem));
 
+      /* Radius and shadow are set on the part, not through --button-radius:
+         the button's size classes redeclare that inside its own shadow root,
+         which used to override --dropdown-radius. */
+      /* Border on the part too: the button's own :hover redeclares
+         --button-border (primary blue) inside its shadow root, which turned
+         the trigger's border blue on hover instead of the input hover grey. */
       &::part(base) {
+        border: var(--dropdown-border);
         font-family: var(--hmwc-font-sans);
         color: var(--hmwc-input-color);
         font-weight: var(--hmwc-font-weight-normal);
         width: var(--dropdown-width);
-        box-shadow: var(--hmwc-shadow-x-small);
+        border-radius: var(--dropdown-radius);
+        box-shadow: var(--dropdown-shadow);
         background-color: var(--dropdown-background);
         transition: var(--hmwc-transition-fast) color, var(--hmwc-transition-fast) border, var(--hmwc-transition-fast) box-shadow,
           var(--hmwc-transition-fast) background-color, var(--hmwc-transition-fast) transform ease;
@@ -6124,16 +6874,24 @@
 
       &::part(suffix) {
         --icon-color: var(--hmwc-color-neutral-500);
-        --icon-size: 0.8rem;
+        --icon-size: calc(0.8 * var(--hmwc-rem, 1rem));
         height: fit-content;
         transition: transform var(--hmwc-transition-fast) ease;
       }
     }
 
+    /* A block of text, as on <hmwc-input> and the groups, so the required
+       indicator follows the label's last word, however it wraps. */
+    &.label-wrap .dropdown__label {
+      overflow: visible;
+      text-overflow: clip;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
     &.label {
       & .dropdown__label {
-        display: flex;
-        align-items: center;
+        display: block;
         /* Same token <hmwc-input> uses for its label — was neutral-600, which
            read a shade lighter than the input label beside it. */
         color: var(--hmwc-input-color);
@@ -6141,13 +6899,25 @@
       }
     }
 
+    /* Hover is the border alone, like <hmwc-input>. (It used to add a blue
+       glow the input didn't have.) */
     &:hover:not(.disabled):not(:focus-within) {
       --dropdown-border: var(--hmwc-input-border-width) solid var(--hmwc-input-border-color-hover);
       --dropdown-background: var(--hmwc-input-background-color-hover);
+    }
 
-      & .dropdown__trigger::part(base) {
-        box-shadow: 0 2px 8px hsl(from var(--hmwc-color-primary-600) h s l / 0.2);
-      }
+    /* Focused with the menu closed (tabbed to, or after choosing): the same
+       border and halo as a focused <hmwc-input>, in place of the button's own
+       dark outline. Set on the part so a page's --dropdown-shadow can't hide it. */
+    &:not(.disabled):focus-within .dropdown__trigger::part(base) {
+      border-color: var(--hmwc-input-border-color-focus);
+      box-shadow: 0 0 0 var(--hmwc-input-focus-ring-width) var(--hmwc-input-focus-ring-color);
+      outline: none;
+    }
+
+    &.invalid:not(.disabled):focus-within .dropdown__trigger::part(base) {
+      border-color: var(--hmwc-input-border-color-invalid);
+      box-shadow: 0 0 0 var(--hmwc-input-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
     }
 
     /** filled */
@@ -6172,11 +6942,13 @@
 
       &:focus-within {
         --dropdown-border: var(--hmwc-input-border-width) solid var(--hmwc-input-border-color-invalid);
-        --dropdown-outline: var(--hmwc-focus-ring-style) var(--hmwc-focus-ring-width) var(--hmwc-focus-ring-color-invalid);
-        --dropdown-shadow: 0 0 0 var(--hmwc-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
+        --dropdown-shadow: 0 0 0 var(--hmwc-input-focus-ring-width) var(--hmwc-input-focus-ring-color-invalid);
       }
 
-      & .input__help {
+      /* The error under an invalid dropdown, in the error colour. (This
+         targeted .input__help, a class the dropdown doesn't have, so its
+         errors showed in the grey of help text.) */
+      & .dropdown__help {
         color: var(--hmwc-input-border-color-invalid);
       }
     }
@@ -6207,8 +6979,8 @@
       }
     }
   }
-`;var wt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},V=class extends P{constructor(){super(...arguments),this.active=!1,this.items=[],this.placeholder="",this.placement="bottom-start",this.sync=!0,this.distance=1,this.skidding=0,this._menuSelectHandler=t=>{this.select(t.detail.value),this.hide()},this._documentMousedownHandler=t=>{let e=t.target;this.contains(e)||this.hide()},this._baseClickHandler=t=>{let e=this._menu;e&&t.composedPath().includes(e)||(this.active=!this.active)}}show(){this.disabled||(this.active=!0)}hide(){this.disabled||(this.active=!1)}toggle(){this.disabled||(this.active=!this.active)}select(t){this.value=t,this.emit("hmwc-select",{detail:{value:t}})}get _menu(){return this.menu??this.querySelector("hmwc-menu")}get _displayLabel(){let t=this.value;if(t==null||t==="")return this.placeholder||"";let e=Array.from(this.querySelectorAll("hmwc-menu-item"));for(let r of e){let i=r.getAttribute("value");if(i!==null&&i===String(t))return r.getAttribute("label")??String(t)}return String(t)}listen(t){t==="add"&&this.listen("remove"),this._menu?.[`${t}EventListener`]("hmwc-select",this._menuSelectHandler),document[`${t}EventListener`]("mousedown",this._documentMousedownHandler)}_handleSlotChange(){this.querySelector("hmwc-menu")?.toggleAttribute("compact",!0),this.listen("add")}handleValueChange(){this.emit("hmwc-change",{detail:{value:this.value}})}async handleItemsChange(){await this.updateComplete,this.listen("add")}handleOpenChange(){this.emit(`hmwc-${this.active?"show":"hide"}`)}handleLabelChange(){this.toggleAttribute("no-label",!this.label)}disconnectedCallback(){super.disconnectedCallback(),this.listen("remove")}firstUpdated(){super.connectedCallback(),this.listen("add"),this.toggleAttribute("no-label",!this.label)}render(){let t=f({dropdown:!0,disabled:!!this.disabled,small:!!this.sm,medium:!!this.md,large:!!this.lg,filled:!!this.filled,label:!!this.label,pill:!!this.pill,invalid:!!this.invalid});return c`
-      <div part="base" class=${t} @click=${this._baseClickHandler}>
+`;var me=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},q=class extends N{constructor(){super(...arguments),this.active=!1,this.items=[],this.placeholder="",this.placement="bottom-start",this.sync=!0,this.distance=1,this.skidding=0,this._menuSelectHandler=e=>{let t=this.matches(":focus-within");this.select(e.detail.value),this.hide(),t&&this.trigger?.focus()},this._stopInnerEvent=e=>e.stopPropagation(),this._reEmitTrigger=e=>{e.stopPropagation(),this.emit(`hmwc-${e.type==="hmwc-focus"?"focus":"blur"}`)},this._keydownHandler=e=>{if(!(this.disabled||e.ctrlKey||e.metaKey)){if(e.key==="Escape"){if(!this.active)return;e.preventDefault(),e.stopPropagation(),this.hide(),this.trigger?.focus();return}if(!(!this.trigger||!e.composedPath().includes(this.trigger))&&["ArrowDown","ArrowUp","Enter"," "].includes(e.key)){if(e.preventDefault(),this.active&&(e.key==="Enter"||e.key===" ")){this.hide();return}this._openAndFocus(e.key==="ArrowUp"?"last":"first")}}},this._documentMousedownHandler=e=>{let t=e.target;this.contains(t)||this.hide()},this._baseClickHandler=e=>{let t=this._menu;t&&e.composedPath().includes(t)||this.toggle()}}show(){this.disabled||(this.active=!0)}hide(){this.disabled||(this.active=!1)}toggle(){this.disabled||(this.active=!this.active)}select(e){this.value=e,this.emit("hmwc-select",{detail:{value:e}})}async _openAndFocus(e){this.show(),await this.updateComplete;let t=this._menu;t&&(await t.updateComplete,await new Promise(r=>requestAnimationFrame(r)),!(!this.active||!this.isConnected)&&(t.searchOpen&&t.filter!==void 0||t.focusItem(e)))}_forwardToMenu(){if(this.menu)return;let e=this.querySelector("hmwc-menu");e&&(this.filter!==void 0&&this.filter!==null&&(e.filter=this.filter),this.searchOpen!==void 0&&(e.searchOpen=this.searchOpen),this.searchPlaceholder!==void 0&&(e.searchPlaceholder=this.searchPlaceholder))}handleSearchOptionsChange(){this._forwardToMenu()}get _menu(){return this.menu??this.querySelector("hmwc-menu")}get _triggerName(){return this.label?[this.label,this._displayLabel].filter(Boolean).join(", "):this.name||void 0}get _displayLabel(){let e=this.value;if(e==null||e==="")return this.placeholder||"";let t=Array.from(this.querySelectorAll("hmwc-menu-item"));for(let r of t){let i=r.getAttribute("value");if(i!==null&&i===String(e))return r.getAttribute("label")??String(e)}return String(e)}listen(e){e==="add"&&this.listen("remove"),this._menu?.[`${e}EventListener`]("hmwc-select",this._menuSelectHandler),document[`${e}EventListener`]("mousedown",this._documentMousedownHandler)}_handleSlotChange(){this.querySelector("hmwc-menu")?.toggleAttribute("compact",!0),this._forwardToMenu(),this.listen("add")}handleValueChange(){this.emit("hmwc-change",{detail:{value:this.value}})}async handleItemsChange(){await this.updateComplete,this.listen("add")}handleOpenChange(){this.emit(`hmwc-${this.active?"show":"hide"}`)}handleLabelChange(){this.toggleAttribute("no-label",!this.label)}connectedCallback(){super.connectedCallback(),this.hasUpdated&&this.listen("add"),typeof MutationObserver<"u"&&(this._itemObserver??=new MutationObserver(()=>{this.listen("add"),this.requestUpdate()}),this._itemObserver.observe(this,{childList:!0,subtree:!0,attributes:!0,attributeFilter:["label","value"]}))}disconnectedCallback(){super.disconnectedCallback(),this.listen("remove"),this._itemObserver?.disconnect()}firstUpdated(){super.connectedCallback(),this.listen("add"),this.toggleAttribute("no-label",!this.label)}render(){let e=v({dropdown:!0,disabled:!!this.disabled,small:!!this.sm,medium:!!this.md,large:!!this.lg,filled:!!this.filled,label:!!this.label,"label-wrap":!!this.labelWrap,pill:!!this.pill,invalid:!!this.invalid});return c`
+      <div part="base" class=${e} @click=${this._baseClickHandler} @keydown=${this._keydownHandler}>
         <slot name="label" part="label" class="dropdown__label">${this.label}</slot>
 
         <hmwc-attachment
@@ -6216,14 +6988,25 @@
           .distance=${this.distance??2}
           .skidding=${this.skidding??0}
           ?sync=${this.sync}
-          ?active=${this.active}>
-          ${this.items.length?c` <hmwc-menu compact part="anchor" class="dropdown__menu" .filter=${this.filter} .items=${this.items}></hmwc-menu>`:c`<slot @slotchange=${()=>this._handleSlotChange()}></slot>`}
+          ?active=${this.active}
+          @hmwc-select=${this._stopInnerEvent}
+          @hmwc-change=${this._stopInnerEvent}
+          @hmwc-show=${this._stopInnerEvent}
+          @hmwc-hide=${this._stopInnerEvent}>
+          ${this.items.length?c` <hmwc-menu
+                compact
+                part="anchor"
+                class="dropdown__menu"
+                .filter=${this.filter}
+                .searchOpen=${this.searchOpen}
+                .searchPlaceholder=${this.searchPlaceholder}
+                .items=${this.items}></hmwc-menu>`:c`<slot @slotchange=${()=>this._handleSlotChange()}></slot>`}
 
           <hmwc-button
             slot="anchor"
             part="trigger"
             class="dropdown__trigger"
-            aria-label=${w(this.name)}
+            aria-label=${w(this._triggerName)}
             ?fluid=${this.fluid}
             ?disabled=${this.disabled}
             ?pill=${this.pill}
@@ -6232,16 +7015,16 @@
             ?lg=${this.lg}
             label=${this._displayLabel}
             suffix="chevron-down"
-            @hmwc-focus=${()=>this.emit("hmwc-focus")}
-            @hmwc-blur=${()=>this.emit("hmwc-blur")}></hmwc-button>
+            @hmwc-focus=${this._reEmitTrigger}
+            @hmwc-blur=${this._reEmitTrigger}></hmwc-button>
         </hmwc-attachment>
 
         <!-- Help Text -->
         <slot name="help" part="help" class="dropdown__help" aria-hidden=${!this.help}> ${this.invalid&&this.error||this.help} </slot>
       </div>
-    `}};V.styles=io;V.slots=["menu"];V.dependencies=[O,y,S];wt([a({type:Boolean,reflect:!0})],V.prototype,"active",void 0);wt([a({type:Array})],V.prototype,"items",void 0);wt([a({type:String})],V.prototype,"placeholder",void 0);wt([a({type:String})],V.prototype,"placement",void 0);wt([a({type:String,reflect:!0})],V.prototype,"filter",void 0);wt([a({type:String})],V.prototype,"help",void 0);wt([a({type:Boolean})],V.prototype,"sync",void 0);wt([a({type:Boolean,reflect:!0})],V.prototype,"pill",void 0);wt([a({type:Boolean,reflect:!0})],V.prototype,"filled",void 0);wt([a({type:Number})],V.prototype,"distance",void 0);wt([a({type:Number})],V.prototype,"skidding",void 0);wt([a({type:Boolean,reflect:!0})],V.prototype,"fluid",void 0);wt([R(".dropdown__trigger")],V.prototype,"trigger",void 0);wt([R(".dropdown__menu")],V.prototype,"menu",void 0);wt([p("value",{waitUntilFirstUpdate:!0})],V.prototype,"handleValueChange",null);wt([p("items",{waitUntilFirstUpdate:!0})],V.prototype,"handleItemsChange",null);wt([p("active",{waitUntilFirstUpdate:!0})],V.prototype,"handleOpenChange",null);wt([p("label")],V.prototype,"handleLabelChange",null);V.define("hmwc-dropdown",V);var oo=m`
+    `}};q.styles=Zo;q.slots=["menu"];q.dependencies=[P,k,O];me([n({type:Boolean,reflect:!0})],q.prototype,"active",void 0);me([n({type:Array})],q.prototype,"items",void 0);me([n({type:String})],q.prototype,"placeholder",void 0);me([n({type:String})],q.prototype,"placement",void 0);me([n({type:String,reflect:!0})],q.prototype,"filter",void 0);me([n({type:Boolean,reflect:!0,attribute:"search-open"})],q.prototype,"searchOpen",void 0);me([n({type:String,attribute:"search-placeholder"})],q.prototype,"searchPlaceholder",void 0);me([n({type:String})],q.prototype,"help",void 0);me([n({type:Boolean})],q.prototype,"sync",void 0);me([n({type:Boolean,reflect:!0})],q.prototype,"pill",void 0);me([n({type:Boolean,reflect:!0})],q.prototype,"filled",void 0);me([n({type:Number})],q.prototype,"distance",void 0);me([n({type:Number})],q.prototype,"skidding",void 0);me([n({type:Boolean,reflect:!0})],q.prototype,"fluid",void 0);me([n({type:Boolean,reflect:!0,attribute:"label-wrap"})],q.prototype,"labelWrap",void 0);me([I(".dropdown__trigger")],q.prototype,"trigger",void 0);me([I(".dropdown__menu")],q.prototype,"menu",void 0);me([u(["filter","searchOpen","searchPlaceholder"],{waitUntilFirstUpdate:!0})],q.prototype,"handleSearchOptionsChange",null);me([u("value",{waitUntilFirstUpdate:!0})],q.prototype,"handleValueChange",null);me([u("items",{waitUntilFirstUpdate:!0})],q.prototype,"handleItemsChange",null);me([u("active",{waitUntilFirstUpdate:!0})],q.prototype,"handleOpenChange",null);me([u("label")],q.prototype,"handleLabelChange",null);q.define("hmwc-dropdown",q);var ea=f`
   :host {
-    --pagination-color: var(--hmwc-color-primary-600);
+    --pagination-color: var(--hmwc-accent-color, var(--hmwc-color-primary-600));
 
     display: block;
   }
@@ -6261,7 +7044,7 @@
 
       &.nav {
         margin: 0 var(--hmwc-spacing-small);
-        --icon-size: 0.8rem;
+        --icon-size: calc(0.8 * var(--hmwc-rem, 1rem));
         transition: var(--hmwc-transition-fast) scale ease;
 
         &:hover:not([disabled]) {
@@ -6306,7 +7089,7 @@
     }
 
     &.sm {
-      --hmwc-input-height-small: 2rem;
+      --hmwc-input-height-small: calc(2 * var(--hmwc-rem, 1rem));
       --hmwc-button-font-size-small: var(--hmwc-font-size-small);
       gap: var(--hmwc-spacing-2x-small);
 
@@ -6315,7 +7098,7 @@
 
         &.nav {
           margin: 0 var(--hmwc-spacing-x-small);
-          --icon-size: 0.75rem;
+          --icon-size: calc(0.75 * var(--hmwc-rem, 1rem));
         }
 
         &.elipsis {
@@ -6344,8 +7127,8 @@
       --pagination-color: var(--hmwc-color-danger-600);
     }
   }
-`;var Rt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},wa=s=>s.toLocaleString("en-US",{maximumFractionDigits:0}),Z=class extends u{constructor(){super(...arguments),this.range=[],this.page=1,this.siblings=1,this.boundary=1}updateRange(){let t=(r,i)=>Array.from({length:i-r+1},(o,n)=>r+n),e=(this.siblings+this.boundary)*2;if(this.count>e+3){let r=Math.max(2,this.page-this.siblings),i=Math.min(this.count-1,this.page+this.siblings),o=t(r,i),n=r>2,l=this.count-i>1,h=e-o.length;n&&!l?o=[-1,...t(r-h,r-1),...o]:!n&&l?o=[...o,...t(i+1,i+h),-1]:o=[-1,...o,-1],this.range=[1,...o,this.count]}else this.range=t(1,this.count)}handlePageChange(){this.updateRange(),this.emit("hmwc-change",{detail:{page:this.page}})}handleCountChange(){this.updateRange()}render(){let t=f({pagination:!0,sm:!!this.sm,md:!!this.md,lg:!!this.lg,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger});return c`
-      <nav part="base" class=${t} aria-label="Pagination">
+`;var Ve=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Is=s=>s.toLocaleString("en-US",{maximumFractionDigits:0}),ae=class extends g{constructor(){super(...arguments),this.range=[],this.page=1,this.siblings=1,this.boundary=1}updateRange(){let e=(r,i)=>Array.from({length:i-r+1},(o,a)=>r+a),t=(this.siblings+this.boundary)*2;if(this.count>t+3){let r=Math.max(2,this.page-this.siblings),i=Math.min(this.count-1,this.page+this.siblings),o=e(r,i),a=r>2,l=this.count-i>1,h=t-o.length;a&&!l?o=[-1,...e(r-h,r-1),...o]:!a&&l?o=[...o,...e(i+1,i+h),-1]:o=[-1,...o,-1],this.range=[1,...o,this.count]}else this.range=e(1,this.count)}handlePageChange(){this.updateRange(),this.emit("hmwc-change",{detail:{page:this.page}})}handleCountChange(){this.updateRange()}render(){let e=v({pagination:!0,sm:!!this.sm,md:!!this.md,lg:!!this.lg,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger});return c`
+      <nav part="base" class=${e} aria-label="Pagination">
         <div class="pagination-page nav">
           <slot name="nav-back" part="nav">
             <hmwc-button
@@ -6366,21 +7149,21 @@
           </slot>
         </div>
 
-        ${this.range.map(e=>e===-1?c`<div class="pagination-page elipsis"><hmwc-icon sm part="elipsis" src="three-dots"></hmwc-icon></div>`:c`
-                <div class="pagination-page ${this.page===e?"active":""}">
+        ${this.range.map(t=>t===-1?c`<div class="pagination-page elipsis"><hmwc-icon sm part="elipsis" src="three-dots"></hmwc-icon></div>`:c`
+                <div class="pagination-page ${this.page===t?"active":""}">
                   <hmwc-button
-                    part="page page-${this.page===e?"active":"inactive"}"
+                    part="page page-${this.page===t?"active":"inactive"}"
                     circle
                     ?sm=${!!this.sm}
                     ?md=${!!this.md}
                     ?lg=${!!this.lg}
-                    ?primary=${!!this.primary&&e===this.page}
-                    ?success=${!!this.success&&e===this.page}
-                    ?neutral=${!!this.neutral&&e===this.page}
-                    ?warning=${!!this.warning&&e===this.page}
-                    ?danger=${!!this.danger&&e===this.page}
-                    label=${wa(e)}
-                    @hmwc-click=${()=>this.page=e}></hmwc-button>
+                    ?primary=${!!this.primary&&t===this.page}
+                    ?success=${!!this.success&&t===this.page}
+                    ?neutral=${!!this.neutral&&t===this.page}
+                    ?warning=${!!this.warning&&t===this.page}
+                    ?danger=${!!this.danger&&t===this.page}
+                    label=${Is(t)}
+                    @hmwc-click=${()=>this.page=t}></hmwc-button>
                 </div>
               `)}
 
@@ -6404,7 +7187,7 @@
           </slot>
         </div>
       </nav>
-    `}};Z.styles=oo;Z.dependencies=[_,y];Rt([v()],Z.prototype,"range",void 0);Rt([a({type:Number})],Z.prototype,"page",void 0);Rt([a({type:Number})],Z.prototype,"count",void 0);Rt([a({type:Number})],Z.prototype,"siblings",void 0);Rt([a({type:Number})],Z.prototype,"boundary",void 0);Rt([a({type:Boolean,reflect:!0})],Z.prototype,"sm",void 0);Rt([a({type:Boolean,reflect:!0})],Z.prototype,"md",void 0);Rt([a({type:Boolean,reflect:!0})],Z.prototype,"lg",void 0);Rt([a({type:Boolean,reflect:!0})],Z.prototype,"primary",void 0);Rt([a({type:Boolean,reflect:!0})],Z.prototype,"success",void 0);Rt([a({type:Boolean,reflect:!0})],Z.prototype,"neutral",void 0);Rt([a({type:Boolean,reflect:!0})],Z.prototype,"warning",void 0);Rt([a({type:Boolean,reflect:!0})],Z.prototype,"danger",void 0);Rt([p("page",{waitUntilFirstUpdate:!0})],Z.prototype,"handlePageChange",null);Rt([p(["count","siblings","boundary"])],Z.prototype,"handleCountChange",null);Z.define("hmwc-pagination",Z);var ao=m`
+    `}};ae.styles=ea;ae.dependencies=[$,k];Ve([b()],ae.prototype,"range",void 0);Ve([n({type:Number})],ae.prototype,"page",void 0);Ve([n({type:Number})],ae.prototype,"count",void 0);Ve([n({type:Number})],ae.prototype,"siblings",void 0);Ve([n({type:Number})],ae.prototype,"boundary",void 0);Ve([n({type:Boolean,reflect:!0})],ae.prototype,"sm",void 0);Ve([n({type:Boolean,reflect:!0})],ae.prototype,"md",void 0);Ve([n({type:Boolean,reflect:!0})],ae.prototype,"lg",void 0);Ve([n({type:Boolean,reflect:!0})],ae.prototype,"primary",void 0);Ve([n({type:Boolean,reflect:!0})],ae.prototype,"success",void 0);Ve([n({type:Boolean,reflect:!0})],ae.prototype,"neutral",void 0);Ve([n({type:Boolean,reflect:!0})],ae.prototype,"warning",void 0);Ve([n({type:Boolean,reflect:!0})],ae.prototype,"danger",void 0);Ve([u("page",{waitUntilFirstUpdate:!0})],ae.prototype,"handlePageChange",null);Ve([u(["count","siblings","boundary"])],ae.prototype,"handleCountChange",null);ae.define("hmwc-pagination",ae);var ta=f`
   .visually-hidden {
     position: absolute;
     width: 1px;
@@ -6429,22 +7212,86 @@
     --data-table-background-alt: var(--hmwc-color-neutral-100);
     --data-table-color: var(--hmwc-color-neutral-500);
     --data-table-color-alt: var(--hmwc-color-neutral-700);
-    --data-table-header-color: var(--hmwc-color-neutral-700);
-    --data-table-header-background: var(--hmwc-color-neutral-50);
-    --data-table-header-border-color: var(--hmwc-color-primary-400);
-    --data-table-header-active-background: var(--hmwc-color-neutral-100);
+    /* The header, its rule, the action buttons and the current row take the
+       inherited --hmwc-accent-color (a group's colour) when a page sets it.
+       Each mix falls back to its own neutral, so with no accent the result
+       is exactly the plain look: neutral header, primary rule. */
+    /* Secondary to the section label above the table (neutral-900). */
+    --data-table-header-color: color-mix(in srgb, var(--hmwc-accent-color, var(--hmwc-color-neutral-600)) 55%, var(--hmwc-color-neutral-600));
+    --data-table-header-background: color-mix(in srgb, var(--hmwc-accent-color, var(--hmwc-color-neutral-50)) 7%, var(--hmwc-color-neutral-50));
+    --data-table-header-border-color: var(--hmwc-accent-color, var(--hmwc-color-primary-400));
+    --data-table-header-active-background: color-mix(in srgb, var(--hmwc-accent-color, var(--hmwc-color-neutral-100)) 12%, var(--hmwc-color-neutral-100));
+    --data-table-current-background: color-mix(in srgb, var(--hmwc-accent-color, var(--hmwc-color-primary-600)) 10%, transparent);
     --data-table-sort-icon-color: var(--hmwc-color-neutral-750);
     --data-table-progress-color: var(--hmwc-color-neutral-200);
     --data-table-alt-progress-color: var(--hmwc-color-primary-300);
     --data-table-pagination-color: var(--hmwc-color-neutral-200);
+    /* Icon and label colour of plain ("alt") row action buttons. */
+    --data-table-action-color: color-mix(in srgb, var(--hmwc-accent-color, var(--hmwc-color-neutral-700)) 55%, var(--hmwc-color-neutral-700));
+    /* Height the body scrolls within when "scrollable" is set. */
+    --data-table-max-height: calc(20 * var(--hmwc-rem, 1rem));
 
     display: block;
     width: 100%;
   }
 
+  /* Content host (contentStyles): the host takes the page typography, so the
+     slotted empty and error content reads like the page and can be selected.
+     The table's own chrome (toolbar, rows, footer) keeps the library look;
+     the header row is a "header" part and gets it from contentStyles. */
+  .data-table__toolbar,
+  .data-table__table-row:not(.empty),
+  .data-table__footer {
+    font-size: var(--settings-font-size, 16px);
+    font-family: var(--hmwc-font-sans);
+    font-feature-settings: 'c2sc', 'smcp';
+    line-height: var(--hmwc-line-height-normal);
+    letter-spacing: var(--hmwc-letter-spacing-normal);
+    user-select: none;
+  }
+
   .data-table {
     display: flex;
     flex-direction: column;
+
+    /* The caption (a hint) and the search box share one line above the
+       table, the box pushed to the end; they wrap on a narrow host. */
+    & .data-table__toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--hmwc-spacing-x-small) var(--hmwc-spacing-small);
+      margin-bottom: var(--hmwc-spacing-small);
+    }
+
+    & .data-table__caption {
+      flex: 1 1 calc(12 * var(--hmwc-rem, 1rem));
+      margin: 0;
+      color: var(--hmwc-color-neutral-600);
+      font-family: var(--hmwc-font-sans);
+      font-size: var(--hmwc-font-size-small);
+      line-height: var(--hmwc-line-height-normal);
+    }
+
+    & .data-table__search {
+      flex: 0 1 calc(20 * var(--hmwc-rem, 1rem));
+      min-width: calc(12 * var(--hmwc-rem, 1rem));
+      margin-left: auto;
+    }
+
+    & .data-table__error {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--hmwc-spacing-x-small);
+      color: var(--hmwc-color-danger-700);
+      user-select: text;
+
+      & hmwc-icon {
+        flex-shrink: 0;
+        --icon-size: var(--hmwc-font-size-medium);
+      }
+    }
 
     /* ── Horizontal overflow ─────────────────────────────
        The scroll container lets wide tables scroll sideways
@@ -6467,11 +7314,20 @@
          shadow-preservation trick rounding scrollWidth up. */
       overflow-x: hidden;
       scrollbar-width: thin;
-      padding: var(--hmwc-spacing-x-small);
-      margin: calc(-1 * var(--hmwc-spacing-x-small));
+      /* Top and bottom only: sideways, a negative margin reached past the
+         host, so any scrolling ancestor (a tab panel, a popup body) showed a
+         scrollbar under every table. The shadow is cast downward, so the
+         sides lose next to nothing. */
+      padding: var(--hmwc-spacing-x-small) 0;
+      margin: calc(-1 * var(--hmwc-spacing-x-small)) 0;
 
       &.scrollable {
         overflow-x: auto;
+        /* Room between the table's bottom edge and the horizontal scrollbar,
+           which otherwise sat right on the last row, and none of the pull-up
+           below it, which laid the next content over the scrollbar. */
+        padding-bottom: var(--hmwc-spacing-small);
+        margin-bottom: 0;
       }
 
       /* When the footer has been moved inside the scroll container
@@ -6507,14 +7363,19 @@
           padding: var(--hmwc-spacing-x-small) var(--hmwc-spacing-small);
           color: var(--data-table-header-color);
           font-family: var(--hmwc-font-sans);
+          /* The form-label scale (as "hmwc-input" labels): small, with the
+             normal letter spacing, labels as written. Was bold, uppercase and
+             loosely tracked, which read a size larger than the labels around
+             the table. Semibold keeps the header distinct from the rows; no
+             small caps from the base host style's font features. */
           font-size: var(--hmwc-font-size-small);
-          font-weight: var(--hmwc-font-weight-bold);
-          letter-spacing: var(--hmwc-letter-spacing-loose);
-          text-transform: uppercase;
+          font-weight: var(--hmwc-font-weight-semibold);
+          letter-spacing: var(--hmwc-letter-spacing-normal);
+          font-feature-settings: normal;
           text-align: left;
           white-space: nowrap;
           cursor: pointer;
-          border-bottom: 0.125rem solid var(--data-table-header-border-color);
+          border-bottom: calc(0.125 * var(--hmwc-rem, 1rem)) solid var(--data-table-header-border-color);
           border-right: 1px solid var(--hmwc-color-neutral-200);
           transition: background-color var(--hmwc-transition-fast) ease;
 
@@ -6530,6 +7391,19 @@
             text-align: center;
           }
 
+          /* "no-sort", or a "sortable: false" column: clicking does nothing. */
+          &[sortable='false'] {
+            cursor: default;
+          }
+
+          &[action='true'] {
+            text-align: center;
+
+            & .data-table__col-head-content {
+              justify-content: center;
+            }
+          }
+
           &[active='true'],
           &:hover {
             & .data-table__col-head-content .data-table__col-sort hmwc-icon {
@@ -6541,6 +7415,9 @@
             background-color: var(--data-table-header-active-background);
           }
 
+          /* The caret is an up chevron: up for ascending (and for the hover
+             preview, since the first click sorts ascending), turned down for
+             descending. */
           &[active='true'][descending='true'] .data-table__col-head-content .data-table__col-sort {
             transform: rotate(180deg);
           }
@@ -6549,6 +7426,22 @@
             display: flex;
             align-items: center;
             gap: var(--hmwc-spacing-x-small);
+
+            /* Resizing never takes a column below its label (see
+               "measureColumnMin"), so the label only ellipsizes when the
+               consumer's "sizing" makes the column narrower; the icons keep
+               their size either way. */
+            & .data-table__col-label {
+              min-width: 0;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+
+            & .data-table__col-sort,
+            & .data-table__col-filter {
+              flex-shrink: 0;
+            }
 
             & .data-table__col-sort {
               display: inline-flex;
@@ -6589,8 +7482,8 @@
               }
 
               hmwc-menu {
-                --menu-width: 13.75rem;
-                --menu-max-height: 17.5rem;
+                --menu-width: calc(13.75 * var(--hmwc-rem, 1rem));
+                --menu-max-height: calc(17.5 * var(--hmwc-rem, 1rem));
                 --menu-padding: var(--hmwc-spacing-3x-small) 0;
                 --menu-label-size: var(--hmwc-font-size-small);
                 --menu-label-weight: var(--hmwc-font-weight-normal);
@@ -6645,7 +7538,7 @@
                 color: var(--hmwc-color-neutral-400);
                 font-weight: var(--hmwc-font-weight-medium);
                 flex-shrink: 0;
-                min-width: 2rem;
+                min-width: calc(2 * var(--hmwc-rem, 1rem));
               }
 
               & .data-table__filter-toolbar {
@@ -6725,8 +7618,8 @@
           & .data-table__col-resize {
             position: absolute;
             top: 0;
-            right: -0.1875rem;
-            width: 0.375rem;
+            right: calc(-0.1875 * var(--hmwc-rem, 1rem));
+            width: calc(0.375 * var(--hmwc-rem, 1rem));
             height: 100%;
             cursor: ew-resize;
             z-index: 1;
@@ -6744,8 +7637,16 @@
               transition: background-color var(--hmwc-transition-fast) ease;
             }
 
-            &:hover::after {
+            &:hover::after,
+            &:focus-visible::after {
               background-color: var(--data-table-header-border-color);
+            }
+
+            /* The border is a focusable separator: Left / Right resize. */
+            &:focus-visible {
+              outline: var(--hmwc-focus-ring);
+              outline-offset: calc(-1 * var(--hmwc-focus-ring-width));
+              border-radius: var(--hmwc-border-radius-small);
             }
           }
         }
@@ -6782,6 +7683,18 @@
                hmwc-click — see _rowPointerDown / _wasDrag. */
             user-select: text;
             -webkit-user-select: text;
+            /* Cell values are data, not labels: no small caps (as the header). */
+            font-feature-settings: normal;
+
+            /* The empty state is the page's own content (the "empty" slot or
+               its default text): page typography, like any other text. */
+            &.empty {
+              font-family: inherit;
+              font-size: inherit;
+              line-height: inherit;
+              letter-spacing: inherit;
+              font-feature-settings: inherit;
+            }
 
             /* Control cells hold widgets, not data — dragging across them
                should not start a selection. */
@@ -6802,23 +7715,79 @@
               text-align: center;
             }
 
+            /* sizing "wrap": the value wraps within the column. With a line
+               count, it stops after that many lines and ends in an ellipsis. */
+            &.wrap {
+              white-space: normal;
+              overflow-wrap: break-word;
+            }
+
+            & .data-table__lines {
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: var(--data-table-lines);
+              line-clamp: var(--data-table-lines);
+              overflow: hidden;
+            }
+
             &.action {
               width: 0px;
               overflow: visible;
               line-height: 0;
+              text-align: center;
+              vertical-align: middle;
+
+              /* A flex box round the button centres it in the cell. Inline, the
+                 tooltip round an icon-only button put it on a line of the
+                 attachment's own height (its base host style), about a third
+                 of a line below the middle: the row's text read as off centre
+                 beside it, and the row grew taller than its text. The tooltip's anchor
+                 is a flex box too, so the button isn't set on its line either. */
+              & .data-table__action-box,
+              & .data-table__action-box > hmwc-tooltip::part(anchor) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+
               & hmwc-button::part(base) {
                 height: calc(0.8 * var(--hmwc-input-height-small)) !important;
                 min-height: calc(0.8 * var(--hmwc-input-height-small)) !important;
                 --button-padding: 0 calc(0.75 * var(--hmwc-spacing-small));
               }
+
+              /* Plain ("alt") action buttons take their icon and label colour
+                 from the table, so a page can tint them with its theme. The
+                 coloured variants keep their own. */
+              & hmwc-button[alt] {
+                --button-color: var(--data-table-action-color);
+              }
+
+              /* While loading, a placeholder the size of the button. */
+              & .data-table__action-skeleton {
+                --skeleton-radius: calc(1.25 * var(--hmwc-input-border-radius-small));
+
+                &::part(base) {
+                  box-sizing: border-box;
+                  width: calc(0.8 * var(--hmwc-input-height-small));
+                  height: calc(0.8 * var(--hmwc-input-height-small));
+                  min-height: 0;
+                  padding: 0;
+                  margin-inline: auto;
+                }
+
+                &.label::part(base) {
+                  width: calc(2.4 * var(--hmwc-input-height-small));
+                }
+              }
             }
 
             &[percent='true'] {
               & hmwc-progress {
-                --progress-track: 0.25rem;
+                --progress-track: calc(0.25 * var(--hmwc-rem, 1rem));
 
                 &::part(base) {
-                  height: 0.625rem;
+                  height: calc(0.625 * var(--hmwc-rem, 1rem));
                   background-color: var(--hmwc-color-neutral-50);
                 }
               }
@@ -6845,10 +7814,21 @@
 
           &:hover:not(.filler):not(.empty) {
             filter: brightness(0.96);
-            box-shadow: inset 0.1875rem 0 0 0 var(--data-table-header-border-color);
+            box-shadow: inset calc(0.1875 * var(--hmwc-rem, 1rem)) 0 0 0 var(--data-table-header-border-color);
 
             & .data-table__item:not(.action) {
               color: var(--hmwc-color-neutral-700);
+            }
+          }
+
+          /* The "current" row: tinted, with the hover rule kept on. After the
+             stripe rule so it wins on even rows too. */
+          &.current {
+            background-image: linear-gradient(var(--data-table-current-background), var(--data-table-current-background));
+            box-shadow: inset calc(0.1875 * var(--hmwc-rem, 1rem)) 0 0 0 var(--data-table-header-border-color);
+
+            & .data-table__item:not(.action) {
+              color: var(--hmwc-color-neutral-800);
             }
           }
         }
@@ -6882,7 +7862,6 @@
           & .data-table__col-head {
             padding: var(--hmwc-spacing-3x-small) var(--hmwc-spacing-x-small);
             font-size: var(--hmwc-font-size-x-small);
-            letter-spacing: var(--hmwc-letter-spacing-loose);
           }
         }
       }
@@ -6891,7 +7870,7 @@
 
         &.percent {
           & hmwc-progress {
-            --progress-track: 0.1875rem;
+            --progress-track: calc(0.1875 * var(--hmwc-rem, 1rem));
           }
         }
       }
@@ -6966,6 +7945,65 @@
       --data-table-header-border-color: var(--hmwc-color-neutral-300);
     }
 
+    /* "scrollable": every row, in a body that scrolls within
+       --data-table-max-height, with the header row kept in view. The scroll
+       container drops its top padding (kept elsewhere for the table's
+       shadow) so rows don't show through above the stuck header, and the
+       table clips instead of hiding overflow — "hidden" would make the
+       table its own scroll container and the header would not stick. */
+    &.scroll-body {
+      & .data-table__scroll {
+        max-height: var(--data-table-max-height);
+        overflow-y: auto;
+        padding-top: 0;
+        margin-top: 0;
+        /* Room between the table's end edge and the vertical scrollbar, which
+           otherwise sat right on the rows. The gutter is kept while the rows
+           fit too, so the columns don't shift when the scrollbar comes. */
+        padding-inline-end: var(--hmwc-spacing-x-small);
+        scrollbar-gutter: stable;
+      }
+
+      & .data-table__table {
+        overflow: clip;
+
+        & .data-table__table-head .data-table__col-head {
+          position: sticky;
+          top: 0;
+          z-index: 2;
+        }
+      }
+    }
+
+    /* No rows at all: just the empty slot, without the table's frame, so a
+       "nothing on record" line reads like any other text. */
+    &.no-data .data-table__table {
+      box-shadow: none;
+      border-radius: 0;
+      background: transparent;
+
+      & .data-table__table-row.empty,
+      & .data-table__item.empty {
+        background: transparent;
+        padding: 0;
+        border: 0;
+        text-align: start;
+      }
+
+      /* The empty text is prose: it wraps rather than running past the
+         host, which made the empty state scroll sideways. */
+      & .data-table__item.empty {
+        white-space: normal;
+      }
+    }
+
+    /* ... and never scrolls: no scrollbar either way, and no "scrollable"
+       height limit, whatever the table held before. */
+    &.no-data .data-table__scroll {
+      overflow: hidden;
+      max-height: none;
+    }
+
     &.fluid-width {
       width: 100%;
 
@@ -6975,34 +8013,36 @@
       }
     }
   }
-`;function so(s,t=[]){return s==null?t.map(e=>({key:e,label:e})):Array.isArray(s)?s.length===0?t.map(e=>({key:e,label:e})):typeof s[0]=="object"&&s[0]!==null?no(s[0]):s.filter(e=>typeof e=="string").map(e=>({key:e,label:e})):typeof s=="object"?no(s):t.map(e=>({key:e,label:e}))}function no(s){return Object.keys(s).map(t=>({key:t,label:typeof s[t]=="string"&&s[t].length>0?s[t]:t}))}var M=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Mr=s=>s.toLocaleString("en-US",{maximumFractionDigits:0}),$=class extends u{constructor(){super(...arguments),this.selections=[],this._fillerRows=new WeakSet,this._readyEmitted=!1,this._sizingId=0,this._tableIsSized=!1,this._resizing=null,this._didResize=!1,this._columnWidths={},this._boundResizeMove=null,this._boundResizeEnd=null,this._filterableFields={},this._columnFilters={},this.fieldKeys=[],this._normalizedFields=[],this.ready=!1,this.results=[],this.entries=[],this.total=0,this.data=[],this.fields=[],this.page=1,this.amount=10,this.label="",this.sizing={},this.filter="",this.sort="",this.order="ascending",this.pagination=!0,this.actions=[],this.dataUpdate=()=>this.parseData(),this.entriesUpdate=()=>this.entries=this.getEntries(),this._rowPointerOrigin=null,this._rowPointerDown=t=>{this._rowPointerOrigin={x:t.clientX,y:t.clientY}},this._footerInScroll=!1,this._scrollable=!1,this._measureFooter=()=>{let t=this.shadowRoot?.querySelector(".data-table__scroll");if(t){let n=t.scrollWidth>t.clientWidth+1;n!==this._scrollable&&(this._scrollable=n)}let e=this.shadowRoot?.querySelector(".data-table__footer");if(!e)return;let r=e.scrollWidth,i=this.clientWidth,o=r>i;o!==this._footerInScroll&&(this._footerInScroll=o)}}getColumnStyle(t){return this._columnWidths[t]?`width: ${this._columnWidths[t]}px`:this.sizing&&this.sizing[t]?`width: ${this.sizing[t]}`:""}hasFields(){return this.fields==null?!1:Array.isArray(this.fields)?this.fields.length>0:typeof this.fields=="object"?Object.keys(this.fields).length>0:!1}getDisplayName(t){let e=this._normalizedFields.find(r=>r.key===t);return e?e.label:t}computeFilterableFields(){let e={};for(let r of this.fieldKeys){if(this.isSkeletonField(r))continue;let i=[];for(let l of this.data){let h=l[r];h!=null&&h!==""&&i.push(h)}if(i.length===0)continue;let o=new Set(i.map(String));if(o.size<=1)continue;let n=this.detectColumnType(i);if(n==="categorical"){let l=Array.from(o).sort((h,d)=>h.localeCompare(d));l.length<10&&(e[r]={type:"categorical",values:l})}else if(n==="numeric"){let l=i.map(h=>this.parseNumericValue(h)).filter(h=>h!=null).sort((h,d)=>h-d);if(l.length>0){let h=(d,g)=>{let b=(d.length-1)*g,j=Math.floor(b),_t=Math.ceil(b);return j===_t?d[j]:d[j]*(_t-b)+d[_t]*(b-j)};e[r]={type:"numeric",values:[],numericStats:{min:l[0],max:l[l.length-1],q1:h(l,.25),median:h(l,.5),q3:h(l,.75)}}}}else e[r]={type:n,values:[]}}this._filterableFields=e}detectColumnType(t){let e=0,r=0;for(let o of t){let n=String(o),l=n.replace(/[$,%k]/gi,"").replace(/,/g,"").trim();if(l!==""&&!isNaN(Number(l))){e++;continue}if(this.isValidDate(n)){r++;continue}}let i=t.length;return e/i>=.8?"numeric":r/i>=.8?"date":"categorical"}parseNumericValue(t){if(typeof t=="number")return t;let r=String(t).trim().replace(/[$,%k]/gi,"").replace(/,/g,""),i=Number(r);return isNaN(i)?null:i}isColumnFilterActive(t){let e=this._columnFilters[t];if(!e)return!1;let r=this._filterableFields[t];if(!r)return!1;switch(e.type){case"categorical":return e.selected.size<r.values.length;case"numeric":return e.min!=null||e.max!=null;case"date":return e.from!=null||e.to!=null;case"text":return e.query.length>0}}getColumnFilterIcon(t){let e=this.isColumnFilterActive(t);return this._filterableFields[t]?.type==="date"?e?"calendar-range-fill":"calendar-range":e?"funnel-fill":"funnel"}isFilterValueSelected(t,e){let r=this._columnFilters[t];return!r||r.type!=="categorical"?!0:r.selected.has(e)}handleCategoricalFilterChange(t,e){let r=e.detail?.value,i=this._filterableFields[t];if(i){if(r==="all"){delete this._columnFilters[t],this._columnFilters={...this._columnFilters},this.page=1,this.parseData();return}if(r==="none"){this._columnFilters[t]={type:"categorical",selected:new Set},this._columnFilters={...this._columnFilters},this.page=1,this.parseData();return}if(r instanceof E){let o=r.value;if(!o)return;let n=this._columnFilters[t];(!n||n.type!=="categorical")&&(n={type:"categorical",selected:new Set(i.values)},this._columnFilters[t]=n),r.checked?n.selected.add(o):n.selected.delete(o),n.selected.size===i.values.length&&delete this._columnFilters[t],this._columnFilters={...this._columnFilters},this.page=1,this.parseData()}}}handleNumericFilterChange(t,e,r){let i=r.target,o=String(i.value??"").trim(),n=this._columnFilters[t];(!n||n.type!=="numeric")&&(n={type:"numeric"},this._columnFilters[t]=n),!o||o===""?delete n[e]:n[e]=Number(o),n.min==null&&n.max==null&&delete this._columnFilters[t],this._columnFilters={...this._columnFilters},this.page=1,this.parseData()}handleDateFilterChange(t,e,r){let i=r.target,o=String(i.value??"").trim(),n=this._columnFilters[t];(!n||n.type!=="date")&&(n={type:"date"},this._columnFilters[t]=n),!o||o===""?delete n[e]:n[e]=o,n.from==null&&n.to==null&&delete this._columnFilters[t],this._columnFilters={...this._columnFilters},this.page=1,this.parseData()}handleTextFilterChange(t,e){let r=e.target,i=String(r.value??"").trim();i?this._columnFilters[t]={type:"text",query:i}:delete this._columnFilters[t],this._columnFilters={...this._columnFilters},this.page=1,this.parseData()}clearColumnFilter(t){delete this._columnFilters[t],this._columnFilters={...this._columnFilters},this.page=1,this.parseData()}applyNumericPreset(t,e,r){let i={type:"numeric"};e!=null&&(i.min=e),r!=null&&(i.max=r),this._columnFilters[t]=i,this._columnFilters={...this._columnFilters},this.page=1,this.parseData()}formatPresetValue(t){return Math.abs(t)>=1e6?`${(t/1e6).toFixed(1).replace(/\.0$/,"")}M`:Math.abs(t)>=1e4?`${(t/1e3).toFixed(1).replace(/\.0$/,"")}k`:t.toLocaleString("en-US",{maximumFractionDigits:0})}parseData(){this.fieldKeys=this.resolveFieldKeys(),this.computeFilterableFields();let t=this.filterData(),e=[];t.forEach(()=>e.push(!1)),this.selections=e,this.results=this.sortData(t),this.amount===1/0&&(this.amount=this.results.length);let r=Math.max(1,Math.ceil(this.results.length/this.amount));this.page>r&&(this.page=1),this.entries=this.getEntries(this.results),this.total=this.results.length,t.length&&(this.ready=!0),this.ready&&!this._readyEmitted&&(this._readyEmitted=!0,this.emit("hmwc-ready")),this.setTableSizing()}filterData(t=this.data){t=structuredClone(t);let e=Object.keys(this._columnFilters);if(e.length>0&&(t=t.filter(i=>e.every(o=>{let n=this._columnFilters[o],l=i[o];if(l==null)return!1;switch(n.type){case"categorical":return n.selected.has(String(l));case"numeric":{let h=this.parseNumericValue(l);return!(h==null||n.min!=null&&h<n.min||n.max!=null&&h>n.max)}case"date":{let h=new Date(String(l));return!(isNaN(h.getTime())||n.from!=null&&h<new Date(n.from)||n.to!=null&&h>new Date(n.to))}case"text":return n.query?String(l).toLowerCase().includes(n.query.toLowerCase()):!0;default:return!0}}))),!this.filter.length)return t;let r=this.filter.toLowerCase();return t.filter(i=>Object.values(i).some(o=>{if(!o)return!1;let n=o.toString().toLowerCase();return!!(n.includes(r)||this.isValidDate(n)&&new Date(n).toLocaleDateString().toLowerCase().includes(r))}))}sortData(t=this.filterData()){let e={month:{trigger:()=>this.sort.toLowerCase()==="month",value:r=>new Date(`${r[this.sort]} ${r.Year||r.year||2025}`)},year:{trigger:()=>this.sort.toLowerCase()==="year",value:r=>new Date(`${r.Month||r.month||"January"} ${r[this.sort]}`)},percentage:{trigger:r=>r[this.sort]!=null&&r[this.sort]?.toString().includes("%"),value:r=>Number(r[this.sort].toString().split("%")[0])},money:{trigger:r=>{let i=r[this.sort];return i!=null&&typeof i=="string"&&i[i.length-1]==="k"&&!isNaN(Number(i.slice(0,-1)))},value:r=>Number(r[this.sort].toString().split("k")[0])},number:{trigger:r=>r[this.sort]!=null&&r[this.sort].toString()[0]==="$",value:r=>parseInt(r[this.sort].toString().split("$")[1])},other:{trigger:()=>!0,value:r=>r[this.sort]}};return this.sort?t.sort((r,i)=>{let o,n;if(Object.keys(e).some(h=>{if(e[h].trigger(r))return o=e[h].value(r),n=e[h].value(i),!0}),o==null&&n==null)return 0;if(o==null)return 1;if(n==null)return-1;let l=this.order==="descending";return o>n?l?-1:1:n>o?l?1:-1:0}):t}sortByField(t){if(this._didResize){this._didResize=!1;return}this.fieldKeys.includes(t)&&(this.sort===t?this.order=this.order==="ascending"?"descending":"ascending":(this.sort=t,this.order="ascending"),this.parseData())}selectAll(){this.selectable&&(this.selections=this.selections.map(()=>!0),this.emitSelectionChange())}deselectAll(){this.selectable&&(this.selections=this.selections.map(()=>!1),this.emitSelectionChange())}getSelectedRows(){if(!this.selectable)return[];let t=[];for(let e=0;e<this.selections.length;e++)this.selections[e]&&this.results[e]&&t.push(this.results[e]);return t}emitSelectionChange(){this.emit("hmwc-select",{detail:{rows:this.getSelectedRows()}})}resolveFieldKeys(){if(!this.hasFields()&&!this.data.length)return this._normalizedFields=[],[...Array(5).keys()].map((i,o)=>`#SKELETON-${o}`);let e=this.hasFields()?[]:Object.keys(this.data[0]??{}),r=so(this.fields,e);return this._normalizedFields=r,r.map(i=>i.key)}getEntries(t=this.results){this._fillerRows=new WeakSet;let e=()=>{let r=this.fieldKeys.reduce((i,o)=>({...i,[o]:"\u200E "}),{});return this._fillerRows.add(r),r};if(this.isLoading)return Array.from({length:this.amount===1/0?5:this.amount},()=>(this.fieldKeys.length?this.fieldKeys:["#SKELETON-0"]).reduce((i,o)=>({...i,[o]:"#SKELETON"}),{}));{let r=this.amount-t.length;if(r>0)return[...t,...Array.from({length:r},e)];{let i=(this.page-1)*this.amount,o=this.page*this.amount,n=t.slice(i,o),l=this.amount-n.length;return l>0?[...n,...Array.from({length:l},e)]:n}}}isValidDate(t){let e=new Date(t);return!isNaN(e.getTime())}setTableSizing(){if(this._tableIsSized)return;let t=++this._sizingId;this.updateComplete.then(()=>{if(t!==this._sizingId)return;let e=this.shadowRoot?.querySelector("table");if(!e||this.isSkeletonField(this.fieldKeys[0]))return;let r=e.querySelector("tbody");if(!r)return;let i=Array.from(e.querySelectorAll("th.data-table__col-head"));if(!i.length)return;let o=[...this.fieldKeys,...this.getActionFields()],n=this.selectable?1:0;i.forEach((z,N)=>{let Ot=o[N-n];Ot&&(this.sizing?.[Ot]||this._columnWidths[Ot])||z.style.removeProperty("width")}),e.style.tableLayout="auto";let l={};for(let z of this.fieldKeys){l[z]="";for(let N of this.results){let Ot=N[z]?.toString()??"";Ot.length>l[z].length&&(l[z]=Ot)}}let h=document.createElement("tr");if(h.className="data-table__table-row",h.setAttribute("aria-hidden","true"),h.style.cssText="visibility:hidden;height:0;overflow:hidden;",this.selectable){let z=document.createElement("td");z.className="data-table__item checkbox",z.style.cssText="height:0;line-height:0;border:none;",h.appendChild(z)}for(let z of this.fieldKeys){let N=document.createElement("td");N.className="data-table__item",N.style.cssText="white-space:nowrap;height:0;line-height:0;border:none;",N.textContent=l[z],h.appendChild(N)}let d=this.getActions().length;for(let z=0;z<d;z++){let N=document.createElement("td");N.className="data-table__item action",N.style.cssText="height:0;line-height:0;border:none;",h.appendChild(N)}r.appendChild(h),e.style.width="max-content";let g=i.map(z=>z.offsetWidth);h.querySelectorAll("td").forEach(z=>z.style.whiteSpace="normal"),e.style.width="min-content";let b=i.map(z=>z.offsetWidth);h.remove(),e.style.removeProperty("width");let j=g.reduce((z,N)=>z+N,0)||1,_t=b.reduce((z,N)=>z+N,0);i.forEach((z,N)=>{let Ot=o[N-n];Ot&&(this.sizing?.[Ot]||this._columnWidths[Ot])||(z.style.width=`${(g[N]/j*100).toFixed(4)}%`)}),e.style.tableLayout="fixed",e.style.minWidth=`${Math.ceil(_t)}px`,this._tableIsSized=!0})}_wasDrag(t){let e=this._rowPointerOrigin;return this._rowPointerOrigin=null,e?Math.abs(t.clientX-e.x)>4||Math.abs(t.clientY-e.y)>4:!1}getSelectionStatus(t){return this.selections[(this.page-1)*this.amount+t]}isSkeletonField(t){return typeof t=="string"&&t.includes("#SKELETON")}getActions(){let t=[];return Array.isArray(this.actions)&&t.push(...this.actions),this.action&&t.push(this.action),t}getActionFields(){return this.getActions().map(t=>t.field)}isActionField(t){return this.getActionFields().includes(t)}get isLoading(){return!!this.loading||!this.ready}getTotalColumnCount(){return this.fieldKeys.length+(this.selectable?1:0)+this.getActions().length}getStorageKey(){return`hmwc-data-table-col-widths:${this.label||this.fieldKeys.join(",")}`}loadColumnWidths(){if(this.cache)try{let t=localStorage.getItem(this.getStorageKey());t&&(this._columnWidths=JSON.parse(t))}catch{}}saveColumnWidths(){if(this.cache)try{localStorage.setItem(this.getStorageKey(),JSON.stringify(this._columnWidths))}catch{}}handleResizeStart(t,e){t.preventDefault(),t.stopPropagation();let r=t.target.parentElement;if(!r)return;let i=this.shadowRoot?.querySelector("table");i&&(this._resizing={field:e,startX:t.clientX,startWidth:r.offsetWidth,minWidth:40,maxWidth:1/0,th:r,table:i,activated:!1},this._boundResizeMove=this.handleResizeMove.bind(this),this._boundResizeEnd=this.handleResizeEnd.bind(this),document.addEventListener("mousemove",this._boundResizeMove),document.addEventListener("mouseup",this._boundResizeEnd))}activateResize(){if(!this._resizing||this._resizing.activated)return;this._resizing.activated=!0;let{table:t,th:e}=this._resizing,r=Array.from(t.querySelectorAll("th.data-table__col-head")),i=[...this.fieldKeys,...this.getActionFields()],o=this.selectable?1:0,n=0,l=0;for(let g=0;g<r.length;g++){let b=r[g],j=i[g-o];if(j&&this._columnWidths[j]&&b!==e){n+=b.offsetWidth;continue}let z=getComputedStyle(b),N=parseFloat(z.paddingLeft)+parseFloat(z.paddingRight),Ot=parseFloat(z.borderLeftWidth)+parseFloat(z.borderRightWidth),jt=40,fe=b.querySelector(".data-table__col-head-content");if(fe){let Nt=fe.querySelector(".data-table__col-filter"),Ro=Nt?Nt.offsetWidth:0,Po=Nt?parseFloat(getComputedStyle(fe).gap||"0"):0,Pe=fe.cloneNode(!0);Pe.style.cssText="position:absolute;visibility:hidden;width:min-content;pointer-events:none;";let Rr=Pe.querySelector(".data-table__col-filter");Rr&&Rr.remove(),fe.parentElement.appendChild(Pe);let Pr=b.querySelector(".data-table__col-resize"),Fo=Pr?Pr.offsetWidth*2:0;jt=Pe.offsetWidth+Ro+Po+N+Ot+Fo,Pe.remove()}b===e?this._resizing.minWidth=jt:l+=jt}let h=Array.from(t.querySelectorAll("th:not(.data-table__col-head)"));for(let g of h)n+=g.offsetWidth;let d=t.offsetWidth;this._resizing.maxWidth=Math.max(this._resizing.minWidth,d-n-l);for(let g=0;g<r.length;g++){let b=r[g];if(b===e)continue;let j=i[g-o];j&&this._columnWidths[j]||b.style.removeProperty("width")}t.style.width=`${d}px`,e.style.width=`${e.offsetWidth}px`,t.style.tableLayout="fixed",this._resizing.startWidth=e.offsetWidth,document.body.style.cursor="col-resize",document.body.style.userSelect="none"}handleResizeMove(t){if(!this._resizing)return;let e=t.clientX-this._resizing.startX;if(!this._resizing.activated){if(Math.abs(e)<5)return;this.activateResize()}let r=Math.min(this._resizing.maxWidth,Math.max(this._resizing.minWidth,this._resizing.startWidth+e));this._resizing.th.style.width=`${r}px`}handleResizeEnd(){if(this._resizing){if(this._resizing.activated){let{table:t}=this._resizing;this._didResize=!0,this._columnWidths[this._resizing.field]=this._resizing.th.offsetWidth,this.saveColumnWidths();let e=Array.from(t.querySelectorAll("th.data-table__col-head"));for(let r of e)r.style.width=`${r.offsetWidth}px`;t.style.width=""}this._boundResizeMove&&document.removeEventListener("mousemove",this._boundResizeMove),this._boundResizeEnd&&document.removeEventListener("mouseup",this._boundResizeEnd),document.body.style.cursor="",document.body.style.userSelect="",this._resizing=null,this._boundResizeMove=null,this._boundResizeEnd=null}}connectedCallback(){super.connectedCallback(),this.parseData(),this.loadColumnWidths()}disconnectedCallback(){super.disconnectedCallback(),this._boundResizeMove&&document.removeEventListener("mousemove",this._boundResizeMove),this._boundResizeEnd&&document.removeEventListener("mouseup",this._boundResizeEnd),this._footerResizeObserver?.disconnect(),this._footerResizeObserver=void 0,this._readyEmitted=!1}firstUpdated(){typeof ResizeObserver<"u"&&(this._footerResizeObserver=new ResizeObserver(()=>this._measureFooter()),this._footerResizeObserver.observe(this)),this._measureFooter()}updated(){this._measureFooter()}renderFilterToolbar(t){return this.isColumnFilterActive(t)?c`
+`;function ia(s,e=[]){return s==null?e.map(t=>({key:t,label:t})):Array.isArray(s)?s.length===0?e.map(t=>({key:t,label:t})):typeof s[0]=="object"&&s[0]!==null?ra(s[0]):s.filter(t=>typeof t=="string").map(t=>({key:t,label:t})):typeof s=="object"?ra(s):e.map(t=>({key:t,label:t}))}var Fs=["text","number","date","percent"];function ra(s){return Object.keys(s).map(e=>{let t=s[e];if(t!=null&&typeof t=="object"){let r=t,i={key:e,label:typeof r.label=="string"&&r.label.length>0?r.label:e};return r.type&&Fs.includes(r.type)&&(i.type=r.type),r.sortable===!1&&(i.sortable=!1),i}return{key:e,label:typeof t=="string"&&t.length>0?t:e}})}var E=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Ns=s=>{let e=/^[=+\-@\t\r]/.test(s)&&Number.isNaN(Number(s))?`'${s}`:s;return/[",\r\n]/.test(e)?`"${e.replace(/"/g,'""')}"`:e},hi=s=>s.toLocaleString("en-US",{maximumFractionDigits:0}),Ls=(s,e,t)=>{let r=URL.createObjectURL(new Blob([e],{type:t})),i=Object.assign(document.createElement("a"),{href:r,download:s});i.style.display="none",document.body.appendChild(i),i.click(),i.remove(),setTimeout(()=>URL.revokeObjectURL(r),1e3)},gr=(s,e,t)=>typeof s=="function"?s(e,t):s,di=s=>{let e=String(s).trim();return/^\d+(\.\d+)?$/.test(e)?`${e}px`:e},js=300,oa=/^(\d{4}-\d{2}-\d{2}([T ]\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:?\d{2})?)?|\d{4}\/\d{1,2}\/\d{1,2}|\d{1,2}\/\d{1,2}\/\d{4}( \d{1,2}:\d{2}(:\d{2})?( ?[AP]M)?)?|\/Date\(-?\d+([+-]\d{4})?\)\/)$/i,Us=/^\d+(\.\d+)?%$/,vr=s=>{if(s==null||s===""||typeof s=="boolean")return null;let e=String(s).trim(),t=/^\/Date\((-?\d+)([+-]\d{4})?\)\/$/.exec(e),r=/^(\d{4})-(\d{2})-(\d{2})$/.exec(e),i=t?new Date(Number(t[1])):r?new Date(Number(r[1]),Number(r[2])-1,Number(r[3])):new Date(typeof s=="number"?s:e);return isNaN(i.getTime())?null:i},S=class s extends g{constructor(){super(...arguments),this.selections=[],this._fillerRows=new WeakSet,this._readyEmitted=!1,this._sizingId=0,this._tableIsSized=!1,this._resizing=null,this._didResize=!1,this._columnWidths={},this._boundResizeMove=null,this._boundResizeEnd=null,this._filterableFields={},this._columnFilters={},this.fieldKeys=[],this._normalizedFields=[],this.ready=!1,this.results=[],this.entries=[],this._awaiting=!1,this._selectedSources=new Set,this._applySelected=!1,this._sources=new WeakMap,this._data=[],this._dataSet=!1,this.fields=[],this.page=1,this.amount=10,this.label="",this.sizing={},this.filter="",this.sort="",this.order="ascending",this.pagination=!0,this.actions=[],this.searchPlaceholder="Search",this.total=0,this.dataUpdate=()=>this.parseData(),this.selectedUpdate=()=>{this._applySelected=!0,this.parseData()},this.errorUpdate=()=>{this._awaiting&&(this._awaiting=!1,this.entries=this.getEntries())},this.entriesUpdate=()=>this.entries=this.getEntries(),this.loadingUpdate=(e,t)=>{e&&!t&&(this._dataSet=!0,this.parseData())},this.sizingUpdate=()=>{this._resetTableSizing(),this.setTableSizing()},this._rowPointerOrigin=null,this._rowPointerDown=e=>{this._rowPointerOrigin={x:e.clientX,y:e.clientY}},this._footerInScroll=!1,this._scrollable=!1,this._resizeFrame=0,this._measureFooter=()=>{let e=this.shadowRoot?.querySelector(".data-table__scroll");if(e){let a=!this._isNoData&&e.scrollWidth>e.clientWidth+1;a!==this._scrollable&&(this._scrollable=a)}let t=this.shadowRoot?.querySelector(".data-table__footer");if(!t)return;let r=t.scrollWidth,i=this.clientWidth,o=r>i;o!==this._footerInScroll&&(this._footerInScroll=o)},this.titleCutOffCell=e=>{let t=e.target.closest?.("td.data-table__item");if(!t||t.matches(".action, .checkbox, .percent, .skeleton, .empty"))return;let r=t.querySelector(".data-table__lines"),i=r?r.scrollHeight>r.clientHeight+1:t.scrollWidth>t.clientWidth+1,o=t.textContent?.trim()??"";i&&o?t.title=o:t.removeAttribute("title")}}get data(){return this._data}set data(e){this._data=e??[],this._dataSet=!0,this._awaiting=!1,this._applySelected=!0}getColumnStyle(e){if(this._columnWidths[e])return`width: ${this._columnWidths[e]}px`;let{width:t}=this.columnSizing(e);return t?`width: ${di(t)}`:""}columnSizing(e){let t=e?this.sizing?.[e]:void 0;return t==null||t===""?{}:typeof t=="object"?t:{width:t}}isPinnedColumn(e){return!!e&&(!!this._columnWidths[e]||!!this.columnSizing(e).width)}lengthToPx(e,t){if(e==null||e==="")return;let r=document.createElement("div");if(r.style.cssText="flex:none;visibility:hidden;height:0;margin:0;padding:0;border:0;",r.style.width=di(e),!r.style.width)return;t.appendChild(r);let i=r.getBoundingClientRect().width;return r.remove(),i}hasFields(){return this.fields==null?!1:Array.isArray(this.fields)?this.fields.length>0:typeof this.fields=="object"?Object.keys(this.fields).length>0:!1}getDisplayName(e){let t=this._normalizedFields.find(r=>r.key===e);return t?t.label:e}computeFilterableFields(){let t={};for(let r of this.fieldKeys){if(this.isSkeletonField(r))continue;let i=[];for(let l of this.data){let h=l[r];h!=null&&h!==""&&i.push(h)}if(i.length===0)continue;let o=new Set(i.map(String));if(o.size<=1)continue;let a=this.detectColumnType(i,r);if(a==="categorical"){let l=Array.from(o).sort((h,d)=>h.localeCompare(d));l.length<10&&(t[r]={type:"categorical",values:l})}else if(a==="numeric"){let l=i.map(h=>this.parseNumericValue(h)).filter(h=>h!=null).sort((h,d)=>h-d);if(l.length>0){let h=(d,p)=>{let m=(d.length-1)*p,y=Math.floor(m),_=Math.ceil(m);return y===_?d[y]:d[y]*(_-m)+d[_]*(m-y)};t[r]={type:"numeric",values:[],numericStats:{min:l[0],max:l[l.length-1],q1:h(l,.25),median:h(l,.5),q3:h(l,.75)}}}}else t[r]={type:a,values:[]}}this._filterableFields=t}detectColumnType(e,t){let r=t?this.getFieldType(t):void 0;if(r==="date")return"date";if(r==="number"||r==="percent")return"numeric";let i=0,o=0;for(let l of e){let h=String(l),d=h.replace(/[$,%k]/gi,"").replace(/,/g,"").trim();if(d!==""&&!isNaN(Number(d))){i++;continue}if(r!=="text"&&oa.test(h.trim())){o++;continue}}let a=e.length;return i/a>=.8?"numeric":o/a>=.8?"date":"categorical"}parseNumericValue(e){if(typeof e=="number")return e;let r=String(e).trim().replace(/[$,%k]/gi,"").replace(/,/g,""),i=Number(r);return isNaN(i)?null:i}isColumnFilterActive(e){let t=this._columnFilters[e];if(!t)return!1;let r=this._filterableFields[e];if(!r)return!1;switch(t.type){case"categorical":return t.selected.size<r.values.length;case"numeric":return t.min!=null||t.max!=null;case"date":return t.from!=null||t.to!=null;case"text":return t.query.length>0}}getColumnFilterIcon(e){let t=this.isColumnFilterActive(e);return this._filterableFields[e]?.type==="date"?t?"calendar-range-fill":"calendar-range":t?"funnel-fill":"funnel"}isFilterValueSelected(e,t){let r=this._columnFilters[e];return!r||r.type!=="categorical"?!0:r.selected.has(t)}handleCategoricalFilterChange(e,t){let r=t.detail?.value,i=this._filterableFields[e];if(i){if(r==="all"){delete this._columnFilters[e],this._columnFilters={...this._columnFilters},this.page=1,this.parseData();return}if(r==="none"){this._columnFilters[e]={type:"categorical",selected:new Set},this._columnFilters={...this._columnFilters},this.page=1,this.parseData();return}if(r instanceof M){let o=r.value;if(!o)return;let a=this._columnFilters[e];(!a||a.type!=="categorical")&&(a={type:"categorical",selected:new Set(i.values)},this._columnFilters[e]=a),r.checked?a.selected.add(o):a.selected.delete(o),a.selected.size===i.values.length&&delete this._columnFilters[e],this._columnFilters={...this._columnFilters},this.page=1,this.parseData()}}}handleNumericFilterChange(e,t,r){let i=r.target,o=String(i.value??"").trim(),a=this._columnFilters[e];(!a||a.type!=="numeric")&&(a={type:"numeric"},this._columnFilters[e]=a),!o||o===""?delete a[t]:a[t]=Number(o),a.min==null&&a.max==null&&delete this._columnFilters[e],this._columnFilters={...this._columnFilters},this.page=1,this.parseData()}handleDateFilterChange(e,t,r){let i=r.target,o=String(i.value??"").trim(),a=this._columnFilters[e];(!a||a.type!=="date")&&(a={type:"date"},this._columnFilters[e]=a),!o||o===""?delete a[t]:a[t]=o,a.from==null&&a.to==null&&delete this._columnFilters[e],this._columnFilters={...this._columnFilters},this.page=1,this.parseData()}handleTextFilterChange(e,t){let r=t.target,i=String(r.value??"").trim();i?this._columnFilters[e]={type:"text",query:i}:delete this._columnFilters[e],this._columnFilters={...this._columnFilters},this.page=1,this.parseData()}clearColumnFilter(e){delete this._columnFilters[e],this._columnFilters={...this._columnFilters},this.page=1,this.parseData()}applyNumericPreset(e,t,r){let i={type:"numeric"};t!=null&&(i.min=t),r!=null&&(i.max=r),this._columnFilters[e]=i,this._columnFilters={...this._columnFilters},this.page=1,this.parseData()}formatPresetValue(e){return Math.abs(e)>=1e6?`${(e/1e6).toFixed(1).replace(/\.0$/,"")}M`:Math.abs(e)>=1e4?`${(e/1e3).toFixed(1).replace(/\.0$/,"")}k`:e.toLocaleString("en-US",{maximumFractionDigits:0})}parseData(){let e=(this.fieldKeys??[]).join("\0");this.fieldKeys=this.resolveFieldKeys(),(e!==this.fieldKeys.join("\0")||!this.loading&&!this.data?.length)&&this._resetTableSizing(),this.server?this._filterableFields={}:this.computeFilterableFields();let t=this.filterData();this.results=this.server?t:this.sortData(t),this.selections=this.resolveSelections(this.results),this.amount===1/0&&(this.amount=this.results.length);let r=Math.max(1,Math.ceil(this.results.length/this.amount));!this.server&&this.page>r&&(this.page=1),(t.length||this._dataSet)&&(this.ready=!0),this.entries=this.getEntries(this.results),this.ready&&!this._readyEmitted&&(this._readyEmitted=!0,this.emit("hmwc-ready")),this.setTableSizing()}filterData(e=this.data){if(e=e.map((i,o)=>{let a=structuredClone(i);return this._sources.set(a,{source:i,index:o}),a}),this.server)return e;let t=Object.keys(this._columnFilters);if(t.length>0&&(e=e.filter(i=>t.every(o=>{let a=this._columnFilters[o],l=i[o];if(l==null)return!1;switch(a.type){case"categorical":return a.selected.has(String(l));case"numeric":{let h=this.parseNumericValue(l);return!(h==null||a.min!=null&&h<a.min||a.max!=null&&h>a.max)}case"date":{let h=vr(l);return!(!h||a.from!=null&&h<(vr(a.from)??new Date(a.from))||a.to!=null&&h>(vr(a.to)??new Date(a.to)))}case"text":return a.query?String(l).toLowerCase().includes(a.query.toLowerCase()):!0;default:return!0}}))),!this.filter.length)return e;let r=this.filter.toLowerCase();return e.filter(i=>Object.entries(i).some(([o,a])=>{if(!a)return!1;if(a.toString().toLowerCase().includes(r))return!0;let h=this.getCellDate(a,o);return!!(h&&this.formatDate(h).toLowerCase().includes(r))}))}sortData(e=this.filterData()){let t={month:{trigger:()=>this.sort.toLowerCase()==="month",value:r=>new Date(`${r[this.sort]} ${r.Year||r.year||2025}`)},year:{trigger:()=>this.sort.toLowerCase()==="year",value:r=>new Date(`${r.Month||r.month||"January"} ${r[this.sort]}`)},percentage:{trigger:r=>r[this.sort]!=null&&r[this.sort]?.toString().includes("%"),value:r=>Number(r[this.sort].toString().split("%")[0])},money:{trigger:r=>{let i=r[this.sort];return i!=null&&typeof i=="string"&&i[i.length-1]==="k"&&!isNaN(Number(i.slice(0,-1)))},value:r=>Number(r[this.sort].toString().split("k")[0])},number:{trigger:r=>r[this.sort]!=null&&r[this.sort].toString()[0]==="$",value:r=>parseInt(r[this.sort].toString().split("$")[1])},other:{trigger:()=>!0,value:r=>r[this.sort]}};return this.sort?e.sort((r,i)=>{let o,a;if(Object.keys(t).some(h=>{if(t[h].trigger(r))return o=t[h].value(r),a=t[h].value(i),!0}),o==null&&a==null)return 0;if(o==null)return 1;if(a==null)return-1;let l=this.order==="descending";return o>a?l?-1:1:a>o?l?1:-1:0}):e}contextMenuItems(e){if(this.isLoading||!this.results.length)return[];let t=this.shadowRoot?.querySelector("tbody"),r=e.path.find(p=>p instanceof HTMLTableRowElement&&p.parentElement===t),i=r&&t?this.entries[Array.from(t.rows).indexOf(r)]:void 0,o=!!i&&!this._fillerRows.has(i),a=r&&e.path.find(p=>p instanceof HTMLTableCellElement&&p.parentElement===r),l=a?this.fieldKeys[a.cellIndex-(this.selectable?1:0)]:void 0,h=p=>p.map(m=>m.replace(/[\t\r\n]+/g," ")).join("	"),d=[];return o&&i&&(l&&d.push({value:"copy-cell",label:"Copy cell",icon:"copy",action:async p=>{await p.copy(this.cellText(i,l))}}),d.push({value:"copy-row",label:"Copy row",icon:"distribute-vertical",action:async p=>{await p.copy(h(this.fieldKeys.map(m=>this.cellText(i,m))))}})),d.push({value:"copy-table",label:"Copy table",icon:"table",action:async p=>{await p.copy(this.tableCells().map(h).join(`
+`))}},{value:"export-csv",label:"Export CSV",icon:"download",action:p=>p.download(this.csvFilename(),`\uFEFF${this.toCSV()}`,"text/csv;charset=utf-8")}),d}toCSV(){return this.tableCells().map(e=>e.map(Ns).join(",")).join(`\r
+`)}exportCSV(e=this.csvFilename()){Ls(e,`\uFEFF${this.toCSV()}`,"text/csv;charset=utf-8")}tableCells(){let e=this.fieldKeys.map(r=>this.getDisplayName(r)),t=this.results.filter(r=>!this._fillerRows.has(r)).map(r=>this.fieldKeys.map(i=>this.cellText(r,i)));return[e,...t]}csvFilename(){return`${(this.label||"table").trim().replace(/[^\w-]+/g,"-").toLowerCase()||"table"}.csv`}cellText(e,t){let r=e[t];if(r===!0)return"Yes";if(r===!1)return"No";if(r==null)return"";let i=this.getCellDate(r,t);return i?this.formatDate(i):String(r)}sortByField(e){if(this._didResize){this._didResize=!1;return}!this.fieldKeys.includes(e)||!this.isSortable(e)||(this.sort===e?this.order=this.order==="ascending"?"descending":"ascending":(this.sort=e,this.order="ascending"),this.server&&(this.page=1,this.requestQuery()),this.parseData())}isSortable(e){return!this.noSort&&this._normalizedFields.find(t=>t.key===e)?.sortable!==!1}requestQuery(){clearTimeout(this._searchTimer);let e={page:this.page,amount:this.amount,sort:this.sort,order:this.order,filter:this.filter};this._awaiting=!0,this.emit("hmwc-query",{detail:e})}handleSearch(e){let t=String(e.target.value??"");t!==this.filter&&(this.filter=t,this.page=1,this.server&&(clearTimeout(this._searchTimer),this._searchTimer=setTimeout(()=>this.requestQuery(),js)))}handlePage(e){!e||e===this.page||(this.page=e,this.server&&this.requestQuery())}resolveSelections(e){let t=new Set(this.data);this._selectedSources.forEach(i=>!t.has(i)&&this._selectedSources.delete(i));let r=this.selected;if(this._applySelected&&r){let i=typeof r=="function"?null:new Set(r);this.data.forEach((o,a)=>{(i?i.has(o)||i.has(a):r(o,a))&&this._selectedSources.add(o)})}return this._applySelected=!1,e.map(i=>{let o=this._sources.get(i)?.source;return!!o&&this._selectedSources.has(o)})}setRowSelected(e,t){this.selections[e]=t;let r=this._sources.get(this.results[e])?.source;r&&(t?this._selectedSources.add(r):this._selectedSources.delete(r))}selectAll(){this.selectable&&(this.results.forEach((e,t)=>this.setRowSelected(t,!0)),this.selections=[...this.selections],this.emitSelectionChange())}deselectAll(){this.selectable&&(this.results.forEach((e,t)=>this.setRowSelected(t,!1)),this.selections=[...this.selections],this.emitSelectionChange())}getSelectedRows(){if(!this.selectable)return[];let e=[];for(let t=0;t<this.selections.length;t++)this.selections[t]&&this.results[t]&&e.push(this.results[t]);return e}emitSelectionChange(){let e=this.getSelectedRows(),t=e.map(r=>this._sources.get(r));this.emit("hmwc-select",{detail:{rows:e,sources:t.map(r=>r?.source),indexes:t.map(r=>r?.index)}})}getRowSource(e){let t=this._sources.get(e);return{source:t?.source,index:t?.index}}resolveFieldKeys(){if(!this.hasFields()&&!this.data.length)return this._normalizedFields=[],this._dataSet&&!this.loading?[]:[...Array(5).keys()].map((i,o)=>`#SKELETON-${o}`);let t=this.hasFields()?[]:Object.keys(this.data[0]??{}),r=ia(this.fields,t);return this._normalizedFields=r,r.map(i=>i.key)}getEntries(e=this.results){this._fillerRows=new WeakSet;let t=()=>{let r=this.fieldKeys.reduce((i,o)=>({...i,[o]:"\u200E "}),{});return this._fillerRows.add(r),r};if(this.isLoading)return Array.from({length:this.amount===1/0?5:this.amount},()=>(this.fieldKeys.length?this.fieldKeys:["#SKELETON-0"]).reduce((i,o)=>({...i,[o]:"#SKELETON"}),{}));{if(!this.isPaged||this.fitsOnePage)return[...e];if(this.server){let i=this.amount-e.length;return i>0?[...e,...Array.from({length:i},t)]:[...e]}let r=this.amount-e.length;if(r>0)return[...e,...Array.from({length:r},t)];{let i=(this.page-1)*this.amount,o=this.page*this.amount,a=e.slice(i,o),l=this.amount-a.length;return l>0?[...a,...Array.from({length:l},t)]:a}}}formatDate(e){return this.dateStyle?e.toLocaleDateString("en-US",{dateStyle:this.dateStyle}):e.toLocaleDateString()}getFieldType(e){return this._normalizedFields.find(t=>t.key===e)?.type}getCellDate(e,t){let r=this.getFieldType(t);return r==="date"?vr(e):r||typeof e!="string"||!oa.test(e.trim())?null:vr(e)}getCellPercent(e,t){let r=this.getFieldType(t);return r==="percent"?e==null||e===""||typeof e=="boolean"?null:this.parseNumericValue(e):r||typeof e!="string"||!Us.test(e)?null:parseFloat(e)}setTableSizing(){if(this._tableIsSized)return;let e=++this._sizingId;this.updateComplete.then(()=>{if(e!==this._sizingId||!this.offsetWidth)return;let t=this.shadowRoot?.querySelector("table");if(!t||this.isSkeletonField(this.fieldKeys[0]))return;let r=t.querySelector("tbody");if(!r)return;let i=Array.from(t.querySelectorAll("th.data-table__col-head"));if(!i.length)return;let o=[...this.fieldKeys,...this.getActionFields()],a=this.selectable?1:0;i.forEach((R,te)=>{this.isPinnedColumn(o[te-a])||R.style.removeProperty("width")}),t.style.tableLayout="auto";let l={};for(let R of this.fieldKeys){l[R]="";for(let te of this.results){let ge=te[R]?.toString()??"";ge.length>l[R].length&&(l[R]=ge)}}let h=document.createElement("tr");if(h.className="data-table__table-row",h.setAttribute("aria-hidden","true"),h.style.cssText="visibility:hidden;height:0;overflow:hidden;",this.selectable){let R=document.createElement("td");R.className="data-table__item checkbox",R.style.cssText="height:0;line-height:0;border:none;",h.appendChild(R)}for(let R of this.fieldKeys){let te=document.createElement("td");te.className="data-table__item",te.style.cssText="white-space:nowrap;height:0;line-height:0;border:none;",te.textContent=l[R],h.appendChild(te)}let d=this.getActions().length;for(let R=0;R<d;R++){let te=document.createElement("td");te.className="data-table__item action",te.style.cssText="height:0;line-height:0;border:none;",h.appendChild(te)}r.appendChild(h),t.style.width="max-content";let p=i.map(R=>R.offsetWidth);h.remove(),t.style.removeProperty("width");let m=t.parentElement,y=0,_=[],A=p.map((R,te)=>{let ge=o[te-a],{width:yr,minWidth:ja,maxWidth:Ua}=this.columnSizing(ge);if(ge&&this._columnWidths[ge])return this._columnWidths[ge];if(ge&&yr)return di(yr).endsWith("%")&&(y+=parseFloat(yr)),this.lengthToPx(yr,m)??Math.min(R,s.MAX_COLUMN_FLOOR);let Ha=this.lengthToPx(ja,m)??0,vi=this.lengthToPx(Ua,m);return _[te]=vi==null,Math.max(Math.min(R,vi??s.MAX_COLUMN_FLOOR),Ha)}),j=A.reduce((R,te)=>R+te,0),st=A.reduce((R,te,ge)=>_[ge]?R+te:R,0)||1;i.forEach((R,te)=>{this.isPinnedColumn(o[te-a])||(R.style.width=_[te]?`${(A[te]/st*(100-y)).toFixed(4)}%`:`${A[te]}px`)}),t.style.tableLayout="fixed",t.style.minWidth=`${Math.ceil(j)}px`,this._tableIsSized=!0,this._measureFooter()})}_resetTableSizing(){if(!this._tableIsSized)return;this._tableIsSized=!1;let e=this.shadowRoot?.querySelector("table");e&&(e.style.removeProperty("min-width"),e.style.removeProperty("table-layout"))}_wasDrag(e){let t=this._rowPointerOrigin;return this._rowPointerOrigin=null,t?Math.abs(e.clientX-t.x)>4||Math.abs(e.clientY-t.y)>4:!1}get isPaged(){return!!this.pagination&&!this.scrollable}get fitsOnePage(){return!this.fixedHeight&&!this.isLoading&&(this.server?this._count:this.data.length)<=this.amount}get _count(){return this.server?Math.max(this.total||0,this.results.length):this.results.length}getPageOffset(){return this.isPaged&&!this.server?(this.page-1)*this.amount:0}getSelectionStatus(e){return this.selections[this.getPageOffset()+e]}isSkeletonField(e){return typeof e=="string"&&e.includes("#SKELETON")}getActions(){let e=[];return Array.isArray(this.actions)&&e.push(...this.actions),this.action&&e.push(this.action),e}getActionFields(){return this.getActions().map(e=>e.field)}isActionField(e){return this.getActionFields().includes(e)}get isLoading(){return!!this.loading||!this.ready||this._awaiting}get _isNoData(){return!this.isLoading&&this.data.length===0&&!(this.server&&(this.filter||this.total>0))}getTotalColumnCount(){return this.fieldKeys.length+(this.selectable?1:0)+this.getActions().length}getStorageKey(){return`hmwc-data-table-col-widths:${this.label||this.fieldKeys.join(",")}`}loadColumnWidths(){if(this.cache)try{let e=localStorage.getItem(this.getStorageKey());e&&(this._columnWidths=JSON.parse(e))}catch{}}saveColumnWidths(){if(this.cache)try{localStorage.setItem(this.getStorageKey(),JSON.stringify(this._columnWidths))}catch{}}handleResizeStart(e,t){e.preventDefault(),e.stopPropagation();let r=e.target.parentElement;!r||!this.beginResize(t,r,e.clientX)||(this._boundResizeMove=this.handleResizeMove.bind(this),this._boundResizeEnd=this.handleResizeEnd.bind(this),document.addEventListener("mousemove",this._boundResizeMove),document.addEventListener("mouseup",this._boundResizeEnd))}beginResize(e,t,r){let i=this.shadowRoot?.querySelector("table");return i?(this._resizing={field:e,startX:r,startWidth:t.offsetWidth,minWidth:40,maxWidth:1/0,th:t,table:i,activated:!1,flex:[],shared:0,fixed:0},!0):!1}handleResizeKey(e,t){let r=e.key==="ArrowRight"?s.RESIZE_STEP:e.key==="ArrowLeft"?-s.RESIZE_STEP:0;if(!r)return;e.preventDefault(),e.stopPropagation();let i=e.currentTarget;this.beginResize(t,i.parentElement,0)&&(this.activateResize(),this.applyResize(r),this.finishResize(),this.describeResizeHandle(i))}describeResizeHandle(e){let t=Math.round(e.parentElement.offsetWidth);e.setAttribute("aria-valuenow",String(t)),e.setAttribute("aria-valuetext",`${t} pixels`)}measureColumnMin(e,t){let r=getComputedStyle(e),i=parseFloat(r.paddingLeft)+parseFloat(r.paddingRight),o=parseFloat(r.borderLeftWidth)+parseFloat(r.borderRightWidth),a=0,l=e.querySelector(".data-table__col-head-content");if(l){let m=l.style.width;l.style.width="max-content",a=l.getBoundingClientRect().width,l.style.width=m}else a=Array.from(e.children).reduce((m,y)=>m+y.getBoundingClientRect().width,0);let h=e.querySelector(".data-table__col-resize"),d=h?h.offsetWidth:0,p=a+i+o+d;if(e.getAttribute("action")==="true"){let m=this.shadowRoot?.querySelector("tbody")?.rows??[];for(let y of Array.from(m)){let _=y.cells[t],A=_?.querySelector("hmwc-button");if(!_||!A)continue;let j=getComputedStyle(_),st=parseFloat(j.paddingLeft)+parseFloat(j.paddingRight);p=Math.max(p,A.getBoundingClientRect().width+st)}}return Math.ceil(p)+1}activateResize(){if(!this._resizing||this._resizing.activated)return;this._resizing.activated=!0;let{table:e,th:t}=this._resizing,r=Array.from(e.querySelectorAll("th.data-table__col-head")),i=[...this.fieldKeys,...this.getActionFields()],o=this.selectable?1:0,a=0,l=0,h=e.parentElement;for(let y=0;y<r.length;y++){let _=r[y],A=i[y-o],{minWidth:j,maxWidth:st}=this.columnSizing(A);if(_!==t&&A&&(this._columnWidths[A]||this.lengthToPx(st,h)!=null)){a+=_.offsetWidth;continue}let R=Math.max(this.measureColumnMin(_,y),this.lengthToPx(j,h)??0);_===t?(this._resizing.minWidth=R,this._resizing.maxWidth=Math.max(R,this.lengthToPx(st,h)??1/0)):(l+=R,this._resizing.flex.push({th:_,min:R,start:_.offsetWidth}))}let d=Array.from(e.querySelectorAll("th:not(.data-table__col-head)"));for(let y of d)a+=y.offsetWidth;let p=e.offsetWidth,m=Math.max(h.clientWidth,parseFloat(e.style.minWidth)||0);this._resizing.shared=m-a,this._resizing.fixed=a;for(let y=0;y<r.length;y++){let _=r[y];if(_===t)continue;let A=i[y-o];A&&this._columnWidths[A]||this.lengthToPx(this.columnSizing(A).maxWidth,h)==null&&_.style.removeProperty("width")}e.style.width=`${p}px`,t.style.width=`${t.offsetWidth}px`,e.style.tableLayout="fixed",this._resizing.startWidth=t.offsetWidth,document.body.style.cursor="col-resize",document.body.style.userSelect="none"}handleResizeMove(e){if(!this._resizing)return;let t=e.clientX-this._resizing.startX;if(!this._resizing.activated){if(Math.abs(t)<5)return;this.activateResize()}this.applyResize(t)}applyResize(e){let t=this._resizing,r=Math.min(t.maxWidth,Math.max(t.minWidth,t.startWidth+e));t.th.style.width=`${r}px`;let{flex:i,shared:o,fixed:a}=t,l=0;if(i.length){let h=Math.max(0,o-r-i.reduce((m,y)=>m+y.min,0)),d=i.map(m=>Math.max(0,m.start-m.min)),p=d.reduce((m,y)=>m+y,0);i.forEach((m,y)=>{let _=p?d[y]/p:1/i.length,A=m.min+h*_;m.th.style.width=`${A}px`,l+=A})}t.table.style.width=`${Math.max(a+r+l,a+o)}px`,this._measureFooter()}handleResizeEnd(){this._resizing&&(this._resizing.activated&&(this._didResize=!0),this.finishResize(),this._boundResizeMove&&document.removeEventListener("mousemove",this._boundResizeMove),this._boundResizeEnd&&document.removeEventListener("mouseup",this._boundResizeEnd),this._boundResizeMove=null,this._boundResizeEnd=null)}finishResize(){if(this._resizing){if(this._resizing.activated){let{table:e}=this._resizing;this._columnWidths[this._resizing.field]=this._resizing.th.offsetWidth,this.saveColumnWidths();let t=Array.from(e.querySelectorAll("th.data-table__col-head"));for(let r of t)r.style.width=`${r.offsetWidth}px`;e.style.width="",this._measureFooter()}document.body.style.cursor="",document.body.style.userSelect="",this._resizing=null}}connectedCallback(){super.connectedCallback(),this.parseData(),this.loadColumnWidths()}disconnectedCallback(){super.disconnectedCallback(),this._boundResizeMove&&document.removeEventListener("mousemove",this._boundResizeMove),this._boundResizeEnd&&document.removeEventListener("mouseup",this._boundResizeEnd),this._footerResizeObserver?.disconnect(),cancelAnimationFrame(this._resizeFrame),this._footerResizeObserver=void 0,clearTimeout(this._searchTimer),this._readyEmitted=!1}firstUpdated(){typeof ResizeObserver<"u"&&(this._footerResizeObserver=new ResizeObserver(()=>{cancelAnimationFrame(this._resizeFrame),this._resizeFrame=requestAnimationFrame(()=>{this._measureFooter(),this._tableIsSized||this.setTableSizing()})}),this._footerResizeObserver.observe(this)),this._measureFooter()}updated(){this._measureFooter()}renderFilterToolbar(e){return this.isColumnFilterActive(e)?c`
       <div class="data-table__filter-toolbar">
         <span class="data-table__filter-toolbar-label">Clear filter</span>
-        <hmwc-icon src="x-lg" class="data-table__filter-clear" @click=${()=>this.clearColumnFilter(t)}> </hmwc-icon>
+        <hmwc-icon src="x-lg" class="data-table__filter-clear" @click=${()=>this.clearColumnFilter(e)}> </hmwc-icon>
       </div>
-    `:""}renderNumericPresets(t){let e=this._filterableFields[t];if(!e?.numericStats)return"";let r=e.numericStats,i=this._columnFilters[t],o=(h,d)=>!i||i.type!=="numeric"?!1:i.min===h&&i.max===d,n=h=>this.formatPresetValue(h),l=[{label:`\u2264 ${n(r.median)}`,max:r.median},{label:`${n(r.q1)} \u2013 ${n(r.q3)}`,min:r.q1,max:r.q3},{label:`\u2265 ${n(r.median)}`,min:r.median}];return c`
+    `:""}renderNumericPresets(e){let t=this._filterableFields[e];if(!t?.numericStats)return"";let r=t.numericStats,i=this._columnFilters[e],o=(h,d)=>!i||i.type!=="numeric"?!1:i.min===h&&i.max===d,a=h=>this.formatPresetValue(h),l=[{label:`\u2264 ${a(r.median)}`,max:r.median},{label:`${a(r.q1)} \u2013 ${a(r.q3)}`,min:r.q1,max:r.q3},{label:`\u2265 ${a(r.median)}`,min:r.median}];return c`
       <div class="data-table__filter-presets">
         <span class="data-table__filter-presets-label">Quick filters</span>
         <div class="data-table__filter-presets-list">
           ${l.map(h=>c`
               <button
                 class="data-table__filter-preset ${o(h.min,h.max)?"active":""}"
-                @click=${()=>o(h.min,h.max)?this.clearColumnFilter(t):this.applyNumericPreset(t,h.min,h.max)}>
+                @click=${()=>o(h.min,h.max)?this.clearColumnFilter(e):this.applyNumericPreset(e,h.min,h.max)}>
                 ${h.label}
               </button>
             `)}
         </div>
       </div>
-    `}renderColumnFilter(t){let e=this._filterableFields[t];if(!e)return"";let r=this._columnFilters[t];switch(e.type){case"categorical":return c`
-          <hmwc-menu filter="" selectAll @hmwc-change=${i=>this.handleCategoricalFilterChange(t,i)}>
-            ${e.values.map(i=>c`
-                <hmwc-menu-item checkable ?checked=${this.isFilterValueSelected(t,i)} label=${i} value=${i}> </hmwc-menu-item>
+    `}renderColumnFilter(e){let t=this._filterableFields[e];if(!t)return"";let r=this._columnFilters[e];switch(t.type){case"categorical":return c`
+          <hmwc-menu filter="" selectAll @hmwc-change=${i=>this.handleCategoricalFilterChange(e,i)}>
+            ${t.values.map(i=>c`
+                <hmwc-menu-item checkable ?checked=${this.isFilterValueSelected(e,i)} label=${i} value=${i}> </hmwc-menu-item>
               `)}
           </hmwc-menu>
         `;case"numeric":return c`
           <hmwc-menu>
             <div class="data-table__range-filter">
-              ${this.renderFilterToolbar(t)}
+              ${this.renderFilterToolbar(e)}
               <div class="data-table__range-inputs">
                 <hmwc-input
                   underline
@@ -7011,7 +8051,7 @@
                   type="number"
                   placeholder="Min"
                   .value=${r?.type==="numeric"&&r.min!=null?String(r.min):""}
-                  @hmwc-change=${i=>this.handleNumericFilterChange(t,"min",i)}>
+                  @hmwc-change=${i=>this.handleNumericFilterChange(e,"min",i)}>
                 </hmwc-input>
                 <span class="data-table__range-separator">–</span>
                 <hmwc-input
@@ -7021,16 +8061,16 @@
                   type="number"
                   placeholder="Max"
                   .value=${r?.type==="numeric"&&r.max!=null?String(r.max):""}
-                  @hmwc-change=${i=>this.handleNumericFilterChange(t,"max",i)}>
+                  @hmwc-change=${i=>this.handleNumericFilterChange(e,"max",i)}>
                 </hmwc-input>
               </div>
-              ${this.renderNumericPresets(t)}
+              ${this.renderNumericPresets(e)}
             </div>
           </hmwc-menu>
         `;case"date":return c`
           <hmwc-menu>
             <div class="data-table__range-filter">
-              ${this.renderFilterToolbar(t)}
+              ${this.renderFilterToolbar(e)}
               <div class="data-table__range-group">
                 <label class="data-table__range-label">From</label>
                 <hmwc-input
@@ -7041,7 +8081,7 @@
                   suffix="calendar"
                   placeholder="MM/DD/YYYY"
                   .value=${r?.type==="date"&&r.from!=null?r.from:""}
-                  @hmwc-change=${i=>this.handleDateFilterChange(t,"from",i)}>
+                  @hmwc-change=${i=>this.handleDateFilterChange(e,"from",i)}>
                 </hmwc-input>
               </div>
               <div class="data-table__range-group">
@@ -7054,7 +8094,7 @@
                   suffix="calendar"
                   placeholder="MM/DD/YYYY"
                   .value=${r?.type==="date"&&r.to!=null?r.to:""}
-                  @hmwc-change=${i=>this.handleDateFilterChange(t,"to",i)}>
+                  @hmwc-change=${i=>this.handleDateFilterChange(e,"to",i)}>
                 </hmwc-input>
               </div>
             </div>
@@ -7062,18 +8102,18 @@
         `;case"text":default:return c`
           <hmwc-menu>
             <div class="data-table__range-filter">
-              ${this.renderFilterToolbar(t)}
+              ${this.renderFilterToolbar(e)}
               <hmwc-input
                 underline
                 sm
                 fluid
                 placeholder="Search..."
                 .value=${r?.type==="text"&&r.query?r.query:""}
-                @hmwc-input=${i=>this.handleTextFilterChange(t,i)}>
+                @hmwc-input=${i=>this.handleTextFilterChange(e,i)}>
               </hmwc-input>
             </div>
           </hmwc-menu>
-        `}}_renderBaseClasses(){return{"data-table":!0,search:!1,pagination:!!this.pagination,fluid:this.amount===1/0,"fluid-width":!!this.fluid,small:!!this.sm,loading:this.isLoading,primary:!!this.primary,alt:!!this.alt,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger}}_renderHeaderSkeletonCell(){return c`
+        `}}_renderBaseClasses(){return{"data-table":!0,search:!1,pagination:this.isPaged,"scroll-body":!!this.scrollable,"no-data":this._isNoData,fluid:this.amount===1/0,"fluid-width":!!this.fluid,small:!!this.sm,loading:this.isLoading,primary:!!this.primary,alt:!!this.alt,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger}}_renderHeaderSkeletonCell(){return c`
       <th part="field" colspan=${this.fieldKeys.length} class="data-table__col-head skeleton">
         <span class="visually-hidden">Loading data</span>
         <hmwc-skeleton></hmwc-skeleton>
@@ -7083,24 +8123,26 @@
         <hmwc-checkbox
           part="field-checkbox"
           small
-          @hmwc-change=${t=>t.detail.value?this.selectAll():this.deselectAll()}></hmwc-checkbox>
+          @hmwc-change=${e=>e.detail.value?this.selectAll():this.deselectAll()}></hmwc-checkbox>
       </th>
-    `:""}_renderHeaderCell(t){let e=this.isActionField(t);return c`
+    `:""}_renderActionHeaderLabel(e){let t=this.getActions().find(i=>i.field===e);return(t?.headerLabel??(typeof t?.label=="string"?t.label:""))||c`<span class="visually-hidden">Actions</span>`}_renderHeaderCell(e){let t=this.isActionField(e),r=!t&&this.isSortable(e),i=r&&this.sort===e,o=!t&&!this.isSkeletonField(e)&&this.sort===e;return c`
       <th
         part="field"
         class="data-table__col-head"
-        active=${this.sort===t}
-        descending=${this.sort===t&&this.order==="descending"}
+        active=${i}
+        descending=${i&&this.order==="descending"}
         skeleton=${this.isSkeletonField(this.fieldKeys[0])}
-        action=${e}
-        style=${this.getColumnStyle(t)}
-        @click=${()=>this.sortByField(t)}>
+        action=${t}
+        sortable=${r}
+        aria-sort=${w(o?this.order:void 0)}
+        style=${this.getColumnStyle(e)}
+        @click=${()=>this.sortByField(e)}>
         <div class="data-table__col-head-content">
-          ${this.getDisplayName(t)}
-          ${e?"":c`<span class="data-table__col-sort">
-                <hmwc-icon flex part="sort-icon" src="chevron-down"></hmwc-icon>
-              </span>`}
-          ${!e&&this._filterableFields[t]?c`
+          <span class="data-table__col-label">${t?this._renderActionHeaderLabel(e):this.getDisplayName(e)}</span>
+          ${r?c`<span class="data-table__col-sort">
+                <hmwc-icon part="sort-icon" src="chevron-up"></hmwc-icon>
+              </span>`:""}
+          ${!t&&this._filterableFields[e]?c`
                 <hmwc-attachment
                   class="data-table__col-filter"
                   placement="bottom-end"
@@ -7108,26 +8150,36 @@
                   .skidding=${8}
                   arrow
                   stayOpen
-                  @click=${r=>r.stopPropagation()}>
+                  @click=${a=>a.stopPropagation()}>
                   <hmwc-button
                     slot="anchor"
                     basic
                     sm
-                    icon=${this.getColumnFilterIcon(t)}
+                    icon=${this.getColumnFilterIcon(e)}
+                    .accessibleLabel=${`Filter ${this.getDisplayName(e)}`}
                     part="filter-icon"
-                    class="data-table__col-filter-icon ${this.isColumnFilterActive(t)?"active":""}">
+                    class="data-table__col-filter-icon ${this.isColumnFilterActive(e)?"active":""}">
                   </hmwc-button>
-                  ${this.renderColumnFilter(t)}
+                  ${this.renderColumnFilter(e)}
                 </hmwc-attachment>
               `:""}
         </div>
-        ${e?"":c`<div class="data-table__col-resize" @mousedown=${r=>this.handleResizeStart(r,t)}></div>`}
+        ${t?"":c`<div
+              class="data-table__col-resize"
+              role="separator"
+              aria-orientation="vertical"
+              aria-label=${`Resize ${this.getDisplayName(e)}`}
+              aria-valuenow=${Math.round(this._columnWidths[e]??0)}
+              tabindex="0"
+              @focus=${a=>this.describeResizeHandle(a.currentTarget)}
+              @keydown=${a=>this.handleResizeKey(a,e)}
+              @mousedown=${a=>this.handleResizeStart(a,e)}></div>`}
       </th>
-    `}_renderHeader(){let t=this.fieldKeys.length&&this.isSkeletonField(this.fieldKeys[0]);return c`
+    `}_renderHeader(){if(this._isNoData)return"";let e=this.fieldKeys.length&&this.isSkeletonField(this.fieldKeys[0]);return c`
       <thead>
         <tr part="header" role="row" class="data-table__table-head">
           ${this._renderSelectionHeaderCell()}
-          ${t?this._renderHeaderSkeletonCell():[...this.fieldKeys,...this.getActionFields()].map(e=>this._renderHeaderCell(e))}
+          ${e?this._renderHeaderSkeletonCell():[...this.fieldKeys,...this.getActionFields()].map(t=>this._renderHeaderCell(t))}
         </tr>
       </thead>
     `}_renderEmptyRow(){return c`
@@ -7136,16 +8188,16 @@
           <slot name="empty">No entries found.</slot>
         </td>
       </tr>
-    `}_renderSelectionRowCell(t,e){return this.selectable?c`
+    `}_renderSelectionRowCell(e,t){return this.selectable?c`
       <td class="data-table__item checkbox">
         <hmwc-checkbox
           part="row-checkbox"
           small
-          ?disabled=${this._fillerRows.has(t)}
-          ?checked=${Bt(this.getSelectionStatus(e))}
-          @hmwc-change=${r=>{this._fillerRows.has(t)||(this.selections[(this.page-1)*this.amount+e]=r.detail.value,this.emitSelectionChange())}}></hmwc-checkbox>
+          ?disabled=${this._fillerRows.has(e)}
+          ?checked=${et(this.getSelectionStatus(t))}
+          @hmwc-change=${r=>{this._fillerRows.has(e)||(this.setRowSelected(this.getPageOffset()+t,!!r.detail.value),this.emitSelectionChange())}}></hmwc-checkbox>
       </td>
-    `:""}_renderDataCell(t,e){let r=t[e];return/^\d+(\.\d+)?%$/.test(r)?c`
+    `:""}_renderDataCell(e,t){let r=e[t];if(r==="#SKELETON")return c`<td class="data-table__item skeleton"><hmwc-skeleton></hmwc-skeleton></td>`;let i=this._fillerRows.has(e)?null:this.getCellPercent(r,t);if(i!=null)return c`
         <td class="data-table__item percent">
           <hmwc-progress
             part="progress"
@@ -7155,41 +8207,50 @@
             ?neutral=${this.neutral}
             ?warning=${this.warning}
             ?danger=${this.danger}
-            value=${parseInt(r.split("%")[0])}>
+            value=${i}>
           </hmwc-progress>
         </td>
-      `:r==="#SKELETON"?c`<td class="data-table__item skeleton"><hmwc-skeleton></hmwc-skeleton></td>`:c`<td class="data-table__item">
-      ${r===!0?c`<hmwc-icon src="check" success></hmwc-icon>`:r===!1?c`<hmwc-icon src="x" danger></hmwc-icon>`:r&&this.isValidDate(r)?new Date(r).toLocaleDateString():r}
-    </td>`}_renderActionCell(t,e){return c`<td class="data-table__item action">
-      <hmwc-button
-        sm
-        label=${e.label}
-        icon=${e.icon??""}
-        ?primary=${!e.variant||e.variant==="primary"}
-        ?alt=${e.variant==="alt"}
-        ?success=${e.variant==="success"}
-        ?warning=${e.variant==="warning"}
-        ?neutral=${e.variant==="neutral"}
-        ?danger=${e.variant==="danger"}
-        @hmwc-click=${()=>this.emit("hmwc-action",{detail:{value:t,action:e.field}})}></hmwc-button>
-    </td>`}_renderRow(t,e){let r=this._fillerRows.has(t);return c`
+      `;let o=this._fillerRows.has(e)?null:this.getCellDate(r,t),a=r===!0?c`<hmwc-icon src="check" success></hmwc-icon>`:r===!1?c`<hmwc-icon src="x" danger></hmwc-icon>`:o?this.formatDate(o):r,{wrap:l}=this.columnSizing(t),h=typeof l=="number"&&l>0?Math.floor(l):0;return c`<td class=${v({"data-table__item":!0,wrap:!!l})}>
+      ${h?c`<span class="data-table__lines" style=${`--data-table-lines: ${h}`}>${a}</span>`:a}
+    </td>`}_renderActionCell(e,t){if(this.isLoading){let j=t.icon?t.display??"icon":"label";return c`<td class="data-table__item action skeleton">
+        <hmwc-skeleton class=${v({"data-table__action-skeleton":!0,label:j!=="icon"})}></hmwc-skeleton>
+      </td>`}let{source:r,index:i}=this.getRowSource(e),o=r??e,a=i??-1,l=j=>j.stopPropagation();if(gr(t.hidden,o,a))return c`<td class="data-table__item action" @click=${l}></td>`;let h=String(gr(t.label,o,a)??""),d=gr(t.icon,o,a)||"",p=gr(t.variant,o,a)||"primary",m=d?t.display??"icon":"label",y=gr(t.disabled,o,a),_=typeof y=="string"?y:"",A=c`<hmwc-button
+      class="data-table__action"
+      sm
+      label=${h}
+      icon=${m==="icon"?d:""}
+      prefix=${m==="both"?d:""}
+      ?disabled=${!!y}
+      disabled-reason=${_}
+      ?primary=${p==="primary"}
+      ?alt=${p==="alt"}
+      ?success=${p==="success"}
+      ?warning=${p==="warning"}
+      ?neutral=${p==="neutral"}
+      ?danger=${p==="danger"}
+      @hmwc-click=${()=>this.emit("hmwc-action",{detail:{value:e,action:t.field,source:r,index:i}})}></hmwc-button>`;return c`<td class="data-table__item action" @click=${l}>
+      <span class="data-table__action-box"
+        >${m==="icon"&&!_?c`<hmwc-tooltip label=${h} placement="top">${A}</hmwc-tooltip>`:A}</span
+      >
+    </td>`}_renderRow(e,t){let r=this._fillerRows.has(e),i=!r&&this.isCurrentRow(e);return c`
       <tr
-        part="row"
-        class=${f({"data-table__table-row":!0,filler:r})}
+        part=${i?"row current":"row"}
+        class=${v({"data-table__table-row":!0,filler:r,current:i})}
         role="row"
+        aria-current=${w(i?"true":void 0)}
         @mousedown=${this._rowPointerDown}
-        @click=${i=>!r&&!this._wasDrag(i)&&this.emit("hmwc-click",{detail:{value:t}})}>
-        ${this._renderSelectionRowCell(t,e)} ${this.fieldKeys.map(i=>this._renderDataCell(t,i))}
-        ${this.getActions().map(i=>this._renderActionCell(t,i))}
+        @click=${o=>!r&&!this._wasDrag(o)&&this.emit("hmwc-click",{detail:{value:e,...this.getRowSource(e)}})}>
+        ${this._renderSelectionRowCell(e,t)} ${this.fieldKeys.map(o=>this._renderDataCell(e,o))}
+        ${this.getActions().map(o=>r?c`<td class="data-table__item action"></td>`:this._renderActionCell(e,o))}
       </tr>
-    `}_renderBody(){return c`
-      <tbody part="data" class="data-table__body">
-        ${!this.isLoading&&this.results.length===0?this._renderEmptyRow():this.entries.map((t,e)=>this._renderRow(t,e))}
+    `}isCurrentRow(e){if(this.current==null)return!1;let{source:t,index:r}=this.getRowSource(e);return typeof this.current=="number"?r===this.current:t===this.current}_renderBody(){return c`
+      <tbody part="data" class="data-table__body" @mouseover=${this.titleCutOffCell}>
+        ${!this.isLoading&&this.results.length===0?this._renderEmptyRow():this.entries.map((e,t)=>this._renderRow(e,t))}
       </tbody>
-    `}_renderFooter(){return this.pagination?c`
+    `}_renderFooter(){if(!this.isPaged||this.fitsOnePage)return"";let e=this._count;if(!this.isLoading&&e===0)return"";let t=!this.isLoading&&this.results.length===0;return c`
       <div class="data-table__footer">
         <div part="entries" class="data-table__info">
-          ${this.total!==0||this.isSkeletonField(this.fieldKeys[0])?`Showing ${Mr((this.page-1)*this.amount+1)} to ${Mr(this.total<this.page*this.amount?this.total||this.amount:this.page*this.entries.length)} of ${Mr(this.results.length)} entries.`:"No entries found!"}
+          ${!t&&(e!==0||this.isSkeletonField(this.fieldKeys[0]))?`Showing ${hi((this.page-1)*this.amount+1)} to ${hi(e<this.page*this.amount?e||this.amount:this.page*this.entries.length)} of ${hi(e)} entries.`:"No entries found."}
         </div>
 
         <hmwc-pagination
@@ -7198,14 +8259,33 @@
           class="data-table__pagination"
           primary
           page=${this.page}
-          count=${Math.ceil(this.results.length/this.amount)||1}
-          @hmwc-change=${t=>this.page=t.detail.page}
-          @hmwc-click=${t=>t.stopImmediatePropagation()}
+          count=${Math.ceil(e/this.amount)||1}
+          @hmwc-change=${r=>this.handlePage(r.detail.page)}
+          @hmwc-click=${r=>r.stopImmediatePropagation()}
           siblings=${this.sm?0:1}></hmwc-pagination>
       </div>
-    `:""}render(){return c`
-      <div part="base" class=${f(this._renderBaseClasses())}>
-        <div part="scroll" class=${f({"data-table__scroll":!0,scrollable:this._scrollable})}>
+    `}_renderToolbar(){let e=this.searchable&&(!this._isNoData||!!this.filter);return!this.caption&&!e?"":c`
+      <div part="toolbar" class="data-table__toolbar">
+        ${this.caption?c`<p part="caption" class="data-table__caption">${this.caption}</p>`:""}
+        ${e?c`<hmwc-input
+              part="search"
+              class="data-table__search"
+              sm
+              clearable
+              prefix="search"
+              label=${this.searchLabel??""}
+              placeholder=${this.searchPlaceholder}
+              .value=${et(this.filter)}
+              @hmwc-input=${this.handleSearch}></hmwc-input>`:""}
+      </div>
+    `}_renderError(){return c`
+      <div part="error" class="data-table__error" role="alert">
+        <slot name="error"><hmwc-icon src="exclamation-triangle" danger></hmwc-icon><span>${this.error}</span></slot>
+      </div>
+    `}render(){return this.error&&!this.loading?c`<div part="base" class=${v(this._renderBaseClasses())}>${this._renderToolbar()} ${this._renderError()}</div>`:c`
+      <div part="base" class=${v(this._renderBaseClasses())}>
+        ${this._renderToolbar()}
+        <div part="scroll" class=${v({"data-table__scroll":!0,scrollable:this._scrollable&&!this._isNoData})}>
           <table part="table" class="data-table__table" rules="none">
             ${this._renderHeader()} ${this._renderBody()}
           </table>
@@ -7213,10 +8293,703 @@
         </div>
         ${this._footerInScroll?"":this._renderFooter()}
       </div>
-    `}};$.styles=ao;$.dependencies=[O,_,x,y,$t,V,ct,S,E,Z];$.slots=["empty"];M([v()],$.prototype,"selections",void 0);M([v()],$.prototype,"_filterableFields",void 0);M([v()],$.prototype,"_columnFilters",void 0);M([v()],$.prototype,"fieldKeys",void 0);M([v()],$.prototype,"_normalizedFields",void 0);M([v()],$.prototype,"ready",void 0);M([v()],$.prototype,"results",void 0);M([v()],$.prototype,"entries",void 0);M([v()],$.prototype,"total",void 0);M([a({type:Array})],$.prototype,"data",void 0);M([a({type:Object})],$.prototype,"fields",void 0);M([a({type:Number,reflect:!0})],$.prototype,"page",void 0);M([a({type:Number,reflect:!0})],$.prototype,"amount",void 0);M([a({type:String})],$.prototype,"label",void 0);M([a({type:Object})],$.prototype,"sizing",void 0);M([a({type:String})],$.prototype,"filter",void 0);M([a({type:String})],$.prototype,"sort",void 0);M([a({type:String})],$.prototype,"order",void 0);M([a({type:Boolean})],$.prototype,"pagination",void 0);M([a({type:Boolean,reflect:!0})],$.prototype,"selectable",void 0);M([a({type:Boolean,reflect:!0})],$.prototype,"sm",void 0);M([a({type:Boolean,reflect:!0})],$.prototype,"md",void 0);M([a({type:Boolean,reflect:!0})],$.prototype,"lg",void 0);M([a({type:Boolean,reflect:!0})],$.prototype,"fluid",void 0);M([a({type:Boolean,reflect:!0})],$.prototype,"loading",void 0);M([a({type:Object})],$.prototype,"action",void 0);M([a({type:Array})],$.prototype,"actions",void 0);M([a({type:Boolean,reflect:!0})],$.prototype,"cache",void 0);M([a({type:Boolean,reflect:!0})],$.prototype,"primary",void 0);M([a({type:Boolean,reflect:!0})],$.prototype,"alt",void 0);M([a({type:Boolean,reflect:!0})],$.prototype,"success",void 0);M([a({type:Boolean,reflect:!0})],$.prototype,"neutral",void 0);M([a({type:Boolean,reflect:!0})],$.prototype,"warning",void 0);M([a({type:Boolean,reflect:!0})],$.prototype,"danger",void 0);M([p(["data","filter","order","fields"])],$.prototype,"dataUpdate",void 0);M([p(["amount","page","loading"],{waitUntilFirstUpdate:!0})],$.prototype,"entriesUpdate",void 0);M([v()],$.prototype,"_footerInScroll",void 0);M([v()],$.prototype,"_scrollable",void 0);$.define("hmwc-data-table",$);var lo=m`
+    `}};S.styles=[pt,ta];S.dependencies=[P,$,C,k,oe,q,we,O,M,ae,K];S.slots=["empty","error"];S.MAX_COLUMN_FLOOR=280;S.RESIZE_STEP=16;E([b()],S.prototype,"selections",void 0);E([b()],S.prototype,"_filterableFields",void 0);E([b()],S.prototype,"_columnFilters",void 0);E([b()],S.prototype,"fieldKeys",void 0);E([b()],S.prototype,"_normalizedFields",void 0);E([b()],S.prototype,"ready",void 0);E([b()],S.prototype,"results",void 0);E([b()],S.prototype,"entries",void 0);E([b()],S.prototype,"_awaiting",void 0);E([n({type:Array})],S.prototype,"data",null);E([n({type:Object})],S.prototype,"fields",void 0);E([n({type:Number,reflect:!0})],S.prototype,"page",void 0);E([n({type:Number,reflect:!0})],S.prototype,"amount",void 0);E([n({type:String})],S.prototype,"label",void 0);E([n({type:Object})],S.prototype,"sizing",void 0);E([n({type:String})],S.prototype,"filter",void 0);E([n({type:String})],S.prototype,"sort",void 0);E([n({type:String})],S.prototype,"order",void 0);E([n({type:String,attribute:"date-style"})],S.prototype,"dateStyle",void 0);E([n({type:Boolean})],S.prototype,"pagination",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"scrollable",void 0);E([n({type:Boolean,reflect:!0,attribute:"fixed-height"})],S.prototype,"fixedHeight",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"selectable",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"sm",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"md",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"lg",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"fluid",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"loading",void 0);E([n({type:Object})],S.prototype,"action",void 0);E([n({type:Array})],S.prototype,"actions",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"cache",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"primary",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"alt",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"success",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"neutral",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"warning",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"danger",void 0);E([n({type:Boolean,reflect:!0,attribute:"no-sort"})],S.prototype,"noSort",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"searchable",void 0);E([n({type:String,attribute:"search-label"})],S.prototype,"searchLabel",void 0);E([n({type:String,attribute:"search-placeholder"})],S.prototype,"searchPlaceholder",void 0);E([n({type:String})],S.prototype,"caption",void 0);E([n({type:String})],S.prototype,"error",void 0);E([n({attribute:!1})],S.prototype,"selected",void 0);E([n({converter:{fromAttribute:s=>s==null||s===""?void 0:Number(s)}})],S.prototype,"current",void 0);E([n({type:Boolean,reflect:!0})],S.prototype,"server",void 0);E([n({type:Number})],S.prototype,"total",void 0);E([u(["data","filter","order","fields","server"])],S.prototype,"dataUpdate",void 0);E([u("selected")],S.prototype,"selectedUpdate",void 0);E([u("error")],S.prototype,"errorUpdate",void 0);E([u(["amount","page","loading","pagination","scrollable","fixedHeight","total","_awaiting"],{waitUntilFirstUpdate:!0})],S.prototype,"entriesUpdate",void 0);E([u("loading")],S.prototype,"loadingUpdate",void 0);E([u("sizing",{waitUntilFirstUpdate:!0})],S.prototype,"sizingUpdate",void 0);E([b()],S.prototype,"_footerInScroll",void 0);E([b()],S.prototype,"_scrollable",void 0);S.define("hmwc-data-table",S);var aa=(s,e,t)=>{let r=new Map;for(let i=e;i<=t;i++)r.set(s[i],i);return r},sa=Tt(class extends xt{constructor(s){if(super(s),s.type!==nt.CHILD)throw Error("repeat() can only be used in text expressions")}dt(s,e,t){let r;t===void 0?t=e:e!==void 0&&(r=e);let i=[],o=[],a=0;for(let l of s)i[a]=r?r(l,a):a,o[a]=t(l,a),a++;return{values:o,keys:i}}render(s,e,t){return this.dt(s,e,t).values}update(s,[e,t,r]){let i=co(s),{values:o,keys:a}=this.dt(e,t,r);if(!Array.isArray(i))return this.ut=a,o;let l=this.ut??=[],h=[],d,p,m=0,y=i.length-1,_=0,A=o.length-1;for(;m<=y&&_<=A;)if(i[m]===null)m++;else if(i[y]===null)y--;else if(l[m]===a[_])h[_]=Ot(i[m],o[_]),m++,_++;else if(l[y]===a[A])h[A]=Ot(i[y],o[A]),y--,A--;else if(l[m]===a[A])h[A]=Ot(i[m],o[A]),Yt(s,h[A+1],i[m]),m++,A--;else if(l[y]===a[_])h[_]=Ot(i[y],o[_]),Yt(s,i[m],i[y]),y--,_++;else if(d===void 0&&(d=aa(a,_,A),p=aa(l,m,y)),d.has(l[m]))if(d.has(l[y])){let j=p.get(a[_]),st=j!==void 0?i[j]:null;if(st===null){let R=Yt(s,i[m]);Ot(R,o[_]),h[_]=R}else h[_]=Ot(st,o[_]),Yt(s,i[m],st),i[j]=null;_++}else Ir(i[y]),y--;else Ir(i[m]),m++;for(;_<=A;){let j=Yt(s,h[A+1]);Ot(j,o[_]),h[_++]=j}for(;m<=y;){let j=i[m++];j!==null&&Ir(j)}return this.ut=a,Pr(s,h),Ee}});var pi=f`
+  .term {
+    overflow-wrap: anywhere;
+  }
+
+  .help {
+    vertical-align: middle;
+    margin-block: calc(-1 * var(--hmwc-spacing-2x-small));
+    margin-inline-start: var(--hmwc-spacing-3x-small);
+  }
+
+  .help::part(base) {
+    width: 1.5em;
+    height: 1.5em;
+    padding: 0;
+  }
+`,na=f`
   :host {
-    --grid-row-gap: none;
-    --grid-col-gap: none;
+    --description-label-color: var(--hmwc-color-neutral-600);
+    --description-value-color: var(--hmwc-color-neutral-900);
+    --description-value-weight: var(--hmwc-font-weight-semibold);
+    --description-empty-color: var(--hmwc-color-neutral-600);
+    --description-skeleton-width: 8em;
+    display: block;
+    min-width: 0;
+    line-height: var(--hmwc-line-height-normal);
+  }
+
+  /* Standalone: a one-entry list, label beside value. */
+  .description {
+    margin: 0;
+  }
+
+  .group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--hmwc-spacing-3x-small) var(--hmwc-spacing-medium);
+  }
+
+  .label {
+    color: var(--description-label-color);
+    font-weight: var(--hmwc-font-weight-normal);
+  }
+
+  .definition {
+    flex: 1 1 calc(12 * var(--hmwc-rem, 1rem));
+    min-width: 0;
+    margin: 0;
+  }
+
+  /* The value, its empty, loading and error states, and the copy button on one line. */
+  .value {
+    display: flex;
+    align-items: center;
+    gap: var(--hmwc-spacing-2x-small);
+    min-width: 0;
+    color: var(--description-value-color);
+    font-weight: var(--description-value-weight);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Lists set the white-space through "--description-white-space": tiles use nowrap to truncate. */
+  .text {
+    min-width: 0;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    text-overflow: ellipsis;
+    white-space: var(--description-white-space, pre-line);
+  }
+
+  .slot {
+    display: contents;
+  }
+
+  .slot--hidden {
+    display: none;
+  }
+
+  .empty {
+    color: var(--description-empty-color);
+    font-weight: var(--hmwc-font-weight-normal);
+  }
+
+  /* Data that couldn't be loaded: amber, so it isn't read as "none". */
+  .error {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--hmwc-spacing-2x-small);
+    color: var(--hmwc-color-warning-700);
+    font-weight: var(--hmwc-font-weight-normal);
+  }
+
+  .skeleton {
+    width: var(--description-skeleton-width);
+    max-width: 100%;
+    height: 0.9em;
+  }
+
+  /* Sized to the text it sits next to, and overhanging so every value sits at the same height. */
+  .copy {
+    flex: none;
+    margin-block: calc(-1 * var(--hmwc-spacing-x-small));
+  }
+
+  .copy::part(base) {
+    width: 1.75em;
+    height: 1.75em;
+    padding: 0;
+    cursor: copy;
+  }
+
+  .copy--done {
+    --button-color: var(--hmwc-color-success-600);
+  }
+
+  /* Copy buttons appear when you point at the value they copy; always shown on touch and while focused. */
+  @media (hover: hover) {
+    .copy:not(.copy--done) {
+      opacity: 0;
+      transition: opacity var(--hmwc-transition-fast) var(--hmwc-easing-standard);
+    }
+
+    :host(:hover) .copy,
+    .copy:focus-within {
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .copy {
+      transition: none;
+    }
+  }
+
+  .status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  ${pi}
+`;var zt=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Hs=1500,ue=class s extends g{constructor(){super(...arguments),this._copyResult=null}connectedCallback(){super.connectedCallback(),this.requestUpdate()}updated(e){super.updated(e),(e.has("label")||e.has("help"))&&this._list()?.requestUpdate?.()}disconnectedCallback(){super.disconnectedCallback(),clearTimeout(this._copyTimer)}async copy(){let e=this._copySource();this._copyResult&&(this._copyResult=null,await this.updateComplete);let t;try{await navigator.clipboard.writeText(e),t=!0}catch{t=this._copyWithSelection(e)}return this._copyResult=t?"copied":"failed",clearTimeout(this._copyTimer),this._copyTimer=window.setTimeout(()=>this._copyResult=null,Hs),t}static renderTerm(e,t){let r=t?c`<hmwc-button part="help" class="help" basic circle sm icon="info-circle" .accessibleLabel=${t} tooltip=${t}></hmwc-button>`:x;return c`<span class="term">${e??""}</span>${r}`}_list(){let e=this.parentElement;return e?.tagName==="HMWC-DESCRIPTION-LIST"?e:null}_embedded(){return!!this._list()||this.parentElement?.tagName==="DD"}_isLoading(){let e=this._list();return!!(this.loading||e?.loading||e&&!("loading"in e)&&e.hasAttribute("loading"))}_hasValue(){return this.value!=null&&String(this.value).trim()!==""}_hasSlotted(){return this.controllers.slot.test()}_copySource(){return this.copyText?this.copyText:this._hasValue()?String(this.value):(this.textContent||"").trim()}_copyWithSelection(e){let t=this.shadowRoot??document.body,r=document.createElement("textarea");r.value=e,r.setAttribute("readonly",""),r.setAttribute("aria-hidden","true"),r.tabIndex=-1,Object.assign(r.style,{position:"fixed",insetBlockStart:"0",opacity:"0",pointerEvents:"none"}),t.appendChild(r),r.focus({preventScroll:!0}),r.select();let i=!1;try{i=document.execCommand("copy")}catch{i=!1}return r.remove(),this.shadowRoot?.querySelector('[part~="copy"]')?.focus({preventScroll:!0}),i}_handleCopy(){this.copy()}_renderState(){if(this._isLoading())return c`<hmwc-skeleton part="skeleton" class="skeleton"></hmwc-skeleton>`;if(this.error!=null)return c`<span part="error" class="error"
+        ><hmwc-icon src="exclamation-triangle" warning label="Warning"></hmwc-icon>${this.error||"Couldn\u2019t be loaded"}</span
+      >`;if(this._hasValue())return c`<span class="text">${this.value}</span>`;if(this._hasSlotted())return x;let e=this.emptyText??this._list()?.emptyText??"Not recorded";return c`<span part="empty" class="empty">${e}</span>`}_renderCopy(){if(!this.copyable||this._isLoading()||this.error!=null)return x;if(!this._hasValue()&&!this._hasSlotted()&&!this.copyText)return x;let e=this.label?`Copy ${this.label}`:"Copy",t=this._copyResult==="copied"?"check2":this._copyResult==="failed"?"x-lg":"copy",r=this._copyResult==="copied"?"Copied":this._copyResult==="failed"?"Couldn\u2019t copy":e;return c`<hmwc-button
+      part="copy"
+      class=${v({copy:!0,"copy--done":!!this._copyResult})}
+      basic
+      circle
+      sm
+      icon=${t}
+      .accessibleLabel=${e}
+      tooltip=${r}
+      @hmwc-click=${this._handleCopy}></hmwc-button>`}_renderValue(){let e=this._isLoading(),t=this._hasValue()||e||this.error!=null,r=this._copyResult==="copied"?"Copied":this._copyResult==="failed"?"Couldn\u2019t copy":"";return c`
+      <span part="value" class="value" aria-busy=${e?"true":"false"}>
+        ${this._renderState()}
+        <slot class=${v({slot:!0,"slot--hidden":t})}></slot>
+        ${this._renderCopy()}
+      </span>
+      ${this.copyable?c`<span class="status" role="status">${r}</span>`:x}
+    `}render(){return this._embedded()?this._renderValue():c`
+      <dl part="base" class="description">
+        <div class="group">
+          <dt part="label" class="label">${s.renderTerm(this.label,this.help)}</dt>
+          <dd class="definition">${this._renderValue()}</dd>
+        </div>
+      </dl>
+    `}};ue.styles=na;ue.dependencies=[k,$,oe];ue.slots=["[default]"];zt([b()],ue.prototype,"_copyResult",void 0);zt([n({type:Boolean,reflect:!0})],ue.prototype,"copyable",void 0);zt([n({type:Boolean,reflect:!0})],ue.prototype,"loading",void 0);zt([n({type:String,reflect:!0})],ue.prototype,"label",void 0);zt([n({type:String})],ue.prototype,"value",void 0);zt([n({type:String,attribute:"empty-text"})],ue.prototype,"emptyText",void 0);zt([n({type:String,reflect:!0})],ue.prototype,"help",void 0);zt([n({type:String,attribute:"copy-text"})],ue.prototype,"copyText",void 0);zt([n({type:String})],ue.prototype,"error",void 0);ue.define("hmwc-description",ue);var la=f`
+  :host {
+    --description-list-label-width: fit-content(40%);
+    --description-list-label-color: var(--hmwc-color-neutral-600);
+    --description-list-tile-width: calc(9.5 * var(--hmwc-rem, 1rem));
+    --description-list-row-gap: var(--hmwc-spacing-x-small);
+    --description-list-column-gap: var(--hmwc-spacing-medium);
+    display: block;
+    container-type: inline-size;
+    line-height: var(--hmwc-line-height-normal);
+  }
+
+  .list {
+    margin: 0;
+    padding: 0;
+  }
+
+  .sm {
+    font-size: var(--hmwc-font-size-small);
+  }
+
+  .label,
+  .definition {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .label {
+    color: var(--description-list-label-color);
+    font-weight: var(--hmwc-font-weight-normal);
+  }
+
+  /* Columns: label beside value, every label in one column. */
+  .columns {
+    display: grid;
+    grid-template-columns: var(--description-list-label-width) minmax(0, 1fr);
+    gap: var(--description-list-row-gap) var(--description-list-column-gap);
+    align-items: baseline;
+  }
+
+  .columns .group {
+    display: contents;
+  }
+
+  /* Too narrow for two columns: the label goes over its value. */
+  @container (max-width: 30rem) {
+    .columns {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 0;
+    }
+
+    .columns .definition {
+      margin-block-end: var(--description-list-row-gap);
+    }
+  }
+
+  /* Stacked: label over value, one entry per row (questions and answers). */
+  .stacked {
+    display: flex;
+    flex-direction: column;
+    gap: var(--hmwc-spacing-small);
+  }
+
+  .stacked .group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--hmwc-spacing-3x-small);
+  }
+
+  /* Tiles: label over value, in columns that wrap whole at any width. */
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(var(--description-list-tile-width), 100%), 1fr));
+    gap: var(--hmwc-spacing-small) var(--hmwc-spacing-large);
+  }
+
+  .tiles .group {
+    --description-white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    gap: var(--hmwc-spacing-3x-small);
+    min-width: 0;
+  }
+
+  .tiles .label {
+    overflow: hidden;
+    font-size: var(--hmwc-font-size-small);
+    line-height: var(--hmwc-line-height-dense);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  ${pi}
+`;var er=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},qs=["hidden","label","help"],Ne=class extends g{constructor(){super(...arguments),this.layout="columns",this.items=[]}connectedCallback(){super.connectedCallback(),this._observer=new MutationObserver(e=>{e.some(r=>r.type==="childList"?r.target===this:r.target.parentNode===this)&&this.requestUpdate()}),this._observer.observe(this,{childList:!0,subtree:!0,attributes:!0,attributeFilter:qs})}updated(e){super.updated(e),this._assignSlots(),(e.has("loading")||e.has("emptyText"))&&this._entries().forEach(t=>t.requestUpdate?.())}disconnectedCallback(){super.disconnectedCallback(),this._observer?.disconnect(),this._observer=void 0}_entries(){return Array.from(this.children).filter(e=>e.tagName==="HMWC-DESCRIPTION"&&!e.hidden)}_assignSlots(){let e=Array.from(this.shadowRoot?.querySelectorAll("slot[data-entry]")??[]),t=this.items.length?[]:this._entries();e.forEach((r,i)=>t[i]?r.assign(t[i]):r.assign())}_read(e,t){return e[t]??e.getAttribute(t)??void 0}_renderEntries(){return sa(this._entries(),e=>e,e=>c`
+        <div part="item" class="group">
+          <dt part="label" class="label">${ue.renderTerm(this._read(e,"label"),this._read(e,"help"))}</dt>
+          <dd part="definition" class="definition"><slot data-entry></slot></dd>
+        </div>
+      `)}_renderItems(){return this.items.map(e=>c`
+        <div part="item" class="group">
+          <dt part="label" class="label">${ue.renderTerm(e.label,e.help)}</dt>
+          <dd part="definition" class="definition">
+            <hmwc-description
+              label=${e.label}
+              .value=${e.value}
+              .emptyText=${e.emptyText??this.emptyText}
+              .copyText=${e.copyText}
+              .error=${e.error}
+              ?copyable=${e.copyable}
+              ?loading=${e.loading||this.loading}></hmwc-description>
+          </dd>
+        </div>
+      `)}render(){let e=["columns","stacked","tiles"].includes(this.layout)?this.layout:"columns",t=v({list:!0,[e]:!0,sm:!!this.sm}),r=Jt({"--description-list-label-width":this.labelWidth});return c`
+      <dl part="base" class=${t} style=${r} aria-busy=${this.loading?"true":"false"}>
+        ${this.items.length?this._renderItems():this._renderEntries()}
+      </dl>
+    `}};Ne.styles=la;Ne.dependencies=[ue];Ne.slots=["[default]"];Ne.shadowRootOptions={...g.shadowRootOptions,slotAssignment:"manual"};er([n({type:Boolean,reflect:!0})],Ne.prototype,"loading",void 0);er([n({type:Boolean,reflect:!0})],Ne.prototype,"sm",void 0);er([n({type:String,reflect:!0})],Ne.prototype,"layout",void 0);er([n({type:String,attribute:"label-width"})],Ne.prototype,"labelWidth",void 0);er([n({type:String,attribute:"empty-text"})],Ne.prototype,"emptyText",void 0);er([n({type:Array})],Ne.prototype,"items",void 0);Ne.define("hmwc-description-list",Ne);var ca=f`
+  :host {
+    --empty-state-color: var(--hmwc-color-neutral-700);
+    --empty-state-label-color: var(--hmwc-color-neutral-800);
+    --empty-state-icon-color: var(--hmwc-color-neutral-400);
+    --empty-state-icon-size: var(--hmwc-font-size-x-large);
+    --empty-state-border-color: var(--hmwc-color-neutral-300);
+    display: block;
+  }
+
+  /* The small variant's quieter colours are defaults, so a page can still set its own. */
+  :host([sm]) {
+    --empty-state-color: var(--hmwc-color-neutral-600);
+    --empty-state-label-color: var(--hmwc-color-neutral-700);
+  }
+
+  .empty-state {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--hmwc-spacing-medium);
+    color: var(--empty-state-color);
+    line-height: var(--hmwc-line-height-normal);
+  }
+
+  .icon {
+    --icon-color: var(--empty-state-icon-color);
+    --icon-size: var(--empty-state-icon-size);
+    flex: none;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--hmwc-spacing-2x-small);
+    min-width: 0;
+  }
+
+  .label {
+    --text-color: var(--empty-state-label-color);
+  }
+
+  .content {
+    overflow-wrap: anywhere;
+  }
+
+  .content ::slotted(:is(p, ol, ul)) {
+    margin: 0;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--hmwc-spacing-x-small);
+    margin-block-start: var(--hmwc-spacing-x-small);
+  }
+
+  .actions--empty {
+    display: none;
+  }
+
+  /* A placeholder box where content will appear. */
+  .dashed {
+    padding: var(--hmwc-spacing-medium);
+    border: var(--hmwc-panel-border-width) dashed var(--empty-state-border-color);
+    border-radius: var(--hmwc-border-radius-large);
+  }
+
+  /* One muted line inside a section: icon and text side by side. */
+  .sm {
+    align-items: center;
+    gap: var(--hmwc-spacing-x-small);
+    font-size: var(--hmwc-font-size-small);
+
+    .icon {
+      --icon-size: var(--hmwc-font-size-medium);
+    }
+
+    .body {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0 var(--hmwc-spacing-x-small);
+    }
+
+    .label {
+      --text-size: var(--hmwc-font-size-small);
+    }
+
+    .actions {
+      margin-block-start: 0;
+    }
+  }
+
+  .sm.dashed {
+    padding: var(--hmwc-spacing-x-small) var(--hmwc-spacing-small);
+  }
+`;var jr=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Ke=class extends g{render(){let e=this.controllers.slot.test("actions"),t=v({"empty-state":!0,dashed:!!this.dashed,sm:!!this.sm});return c`
+      <div part="base" class=${t}>
+        ${this.icon?c`<hmwc-icon part="icon" class="icon" src=${this.icon}></hmwc-icon>`:x}
+        <div part="body" class="body">
+          ${this.label?c`<hmwc-text part="label" class="label" semibold wrap>${this.label}</hmwc-text>`:x}
+          <div class="content"><slot></slot></div>
+          <div part="actions" class=${v({actions:!0,"actions--empty":!e})}><slot name="actions"></slot></div>
+        </div>
+      </div>
+    `}};Ke.styles=ca;Ke.dependencies=[$,z];Ke.slots=["[default]","actions"];jr([n({type:Boolean,reflect:!0})],Ke.prototype,"dashed",void 0);jr([n({type:Boolean,reflect:!0})],Ke.prototype,"sm",void 0);jr([n({type:String,reflect:!0})],Ke.prototype,"icon",void 0);jr([n({type:String})],Ke.prototype,"label",void 0);Ke.define("hmwc-empty-state",Ke);var ha=f`
+  :host {
+    --feed-item-color: var(--hmwc-accent-color, var(--hmwc-color-primary-600));
+    --feed-item-label-color: var(--hmwc-color-neutral-900);
+    --feed-item-muted-color: var(--hmwc-color-neutral-600);
+    --feed-item-hover-background: var(--hmwc-color-neutral-50);
+    --feed-item-reply-border-color: var(--hmwc-color-neutral-200);
+    display: block;
+    min-width: 0;
+  }
+
+  .feed-item {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--hmwc-spacing-small);
+    padding-block: var(--hmwc-spacing-2x-small);
+    line-height: var(--hmwc-line-height-normal);
+  }
+
+  /* Status variants colour the marker; without one it takes the inherited accent. */
+  .primary {
+    --feed-item-color: var(--hmwc-color-primary-500);
+  }
+
+  .success {
+    --feed-item-color: var(--hmwc-color-success-600);
+  }
+
+  .neutral {
+    --feed-item-color: var(--hmwc-color-neutral-400);
+  }
+
+  .warning {
+    --feed-item-color: var(--hmwc-color-warning-500);
+  }
+
+  .danger {
+    --feed-item-color: var(--hmwc-color-danger-600);
+  }
+
+  .loading {
+    --feed-item-color: var(--hmwc-color-neutral-200);
+  }
+
+  .icon {
+    --icon-color: var(--feed-item-color);
+    flex: none;
+    margin-block-start: var(--hmwc-spacing-3x-small);
+  }
+
+  /* With a status and no icon: a level stripe the height of the entry. */
+  .stripe {
+    flex: none;
+    align-self: stretch;
+    width: var(--hmwc-spacing-2x-small);
+    border-radius: var(--hmwc-border-radius-pill);
+    background: var(--feed-item-color);
+  }
+
+  .body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: var(--hmwc-spacing-3x-small);
+    min-width: 0;
+  }
+
+  .label {
+    color: var(--feed-item-label-color);
+    font-weight: var(--hmwc-font-weight-semibold);
+    line-height: var(--hmwc-line-height-dense);
+    overflow-wrap: anywhere;
+  }
+
+  .meta,
+  .time {
+    color: var(--feed-item-muted-color);
+    font-size: var(--hmwc-font-size-small);
+  }
+
+  .meta {
+    overflow-wrap: anywhere;
+  }
+
+  .time {
+    flex: none;
+    white-space: nowrap;
+  }
+
+  .content {
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+  }
+
+  .content--empty,
+  .actions--empty {
+    display: none;
+  }
+
+  .actions {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex: none;
+    gap: var(--hmwc-spacing-3x-small);
+    margin-block: calc(-1 * var(--hmwc-spacing-2x-small));
+  }
+
+  .skeleton--label {
+    width: 70%;
+    height: 0.9em;
+  }
+
+  .skeleton--meta {
+    width: 40%;
+    height: 0.75em;
+  }
+
+  /* A linked entry: the link covers the whole entry; the hover tint sits behind the content. */
+  .link {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+  }
+
+  .link::after {
+    content: '';
+    position: absolute;
+    inset: 0 calc(-1 * var(--hmwc-spacing-x-small));
+    border-radius: var(--hmwc-border-radius-medium);
+  }
+
+  .link:focus-visible::after {
+    outline: var(--hmwc-focus-ring);
+    outline-offset: calc(-1 * var(--hmwc-focus-ring-width));
+  }
+
+  .is-link::before {
+    content: '';
+    position: absolute;
+    inset: 0 calc(-1 * var(--hmwc-spacing-x-small));
+    z-index: -1;
+    border-radius: var(--hmwc-border-radius-medium);
+    transition: background-color var(--hmwc-transition-fast) var(--hmwc-easing-standard);
+  }
+
+  .is-link {
+    cursor: pointer;
+  }
+
+  .is-link:hover::before,
+  .is-link:focus-within::before {
+    background: var(--feed-item-hover-background);
+  }
+
+  .is-link:hover .link {
+    text-decoration: underline;
+  }
+
+  /* A reply: indented on a rule under the entry it answers. */
+  :host([reply]) {
+    margin-inline-start: var(--hmwc-spacing-x-small);
+    padding-inline-start: var(--hmwc-spacing-medium);
+    border-inline-start: calc(2 * var(--hmwc-panel-border-width)) solid var(--feed-item-reply-border-color);
+  }
+
+  .sm {
+    gap: var(--hmwc-spacing-x-small);
+    font-size: var(--hmwc-font-size-small);
+
+    .meta,
+    .time {
+      font-size: var(--hmwc-font-size-x-small);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .is-link::before {
+      transition: none;
+    }
+  }
+`;var Ge=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Ws=24*60*60*1e3,Vs=30,Ks=/^\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}(:\d{2}(\.\d+)?)?(Z|[+-]\d{2}:?\d{2})?$/i,Gs=/^(\d{1,2})\/(\d{1,2})\/(\d{4})(?:\s+(\d{1,2}):(\d{2})(?::(\d{2}))?\s*([AP]M)?)?$/i;function Ys(s){if(s==null||s==="")return null;if(s instanceof Date)return isNaN(s.getTime())?null:{date:s,hasTime:!0};let e=String(s).trim(),t=(l,h)=>isNaN(l.getTime())?null:{date:l,hasTime:h},r=(l,h,d,p=0,m=0,y=0,_=!1)=>{let A=new Date(l,h-1,d,p,m,y);return A.getMonth()===h-1&&A.getDate()===d?t(A,_):null},i=/^(\d{4})-(\d{2})-(\d{2})$/.exec(e);if(i)return r(+i[1],+i[2],+i[3]);let o=/^\/Date\((-?\d+)(?:[+-]\d{4})?\)\/$/.exec(e);if(o)return t(new Date(+o[1]),!0);if(Ks.test(e))return t(new Date(e.replace(" ","T")),!0);let a=Gs.exec(e);if(a){let[,l,h,d,p,m,y,_]=a,A=p?+p%12:0;return p&&!_?A=+p:_?.toUpperCase()==="PM"&&(A+=12),r(+d,+l,+h,A,m?+m:0,y?+y:0,!!p)}return null}function Xs(){let s=document.documentElement.lang;if(s)try{return Intl.getCanonicalLocales(s)[0]}catch{return}}function da(s,e,t=new Date,r){let{date:i,hasTime:o}=s,a=i.toLocaleDateString(r,{month:"short",day:"numeric",year:"numeric"}),l=i.toLocaleTimeString(r,{hour:"numeric",minute:"2-digit"});if(e==="datetime")return o?`${a}, ${l}`:a;if(e==="date")return a;let h=p=>new Date(p.getFullYear(),p.getMonth(),p.getDate()).getTime(),d=Math.round((h(i)-h(t))/Ws);return Math.abs(d)>=Vs?a:new Intl.RelativeTimeFormat(r,{numeric:"auto"}).format(d,"day")}var ne=class extends g{constructor(){super(...arguments),this.timeStyle="relative",this._ownRole=!1}connectedCallback(){super.connectedCallback(),this._applyRole()}updated(e){super.updated(e),e.has("reply")&&this._applyRole()}_applyRole(){let e=this.parentElement?.tagName==="HMWC-FEED";e&&(this._ownRole||!this.hasAttribute("role"))?(this.setAttribute("role","listitem"),this._ownRole=!0):!e&&this._ownRole&&(this.removeAttribute("role"),this._ownRole=!1),this._ownRole&&this.reply?this.setAttribute("aria-level","2"):this._ownRole&&this.removeAttribute("aria-level")}_variant(){for(let e of["primary","success","neutral","warning","danger"])if(this[e])return e;return null}_renderMarker(e){return this.icon?c`<hmwc-icon part="marker" class="marker icon" src=${this.icon}></hmwc-icon>`:e||this.loading?c`<span part="marker" class="marker stripe"></span>`:x}_renderTime(){if(!this.time)return x;let e=Ys(this.time);if(!e)return c`<span part="time" class="time">${this.time}</span>`;let t=Xs(),r=e.hasTime?e.date.toISOString():this._dateOnlyIso(e.date),i=da(e,"datetime",void 0,t);return c`<time part="time" class="time" datetime=${r} title=${i}>${da(e,this.timeStyle,void 0,t)}</time>`}_dateOnlyIso(e){let t=r=>String(r).padStart(2,"0");return`${e.getFullYear()}-${t(e.getMonth()+1)}-${t(e.getDate())}`}_renderLabel(){return this.label?this.href?c`<a
+        part="label"
+        class="label link"
+        href=${this.href}
+        target=${w(this.target)}
+        rel=${w(this.target==="_blank"?"noopener":void 0)}
+        >${this.label}</a
+      >`:c`<span part="label" class="label">${this.label}</span>`:x}render(){let e=this._variant(),t=this.controllers.slot.test(),r=this.controllers.slot.test("actions"),i=v({"feed-item":!0,[e??"accent"]:!0,"is-link":!!this.href&&!!this.label&&!this.loading,loading:!!this.loading,reply:!!this.reply,sm:!!this.sm});return c`
+      <div part="base" class=${i} aria-busy=${this.loading?"true":"false"}>
+        ${this._renderMarker(e)}
+        <div part="body" class="body">
+          ${this.loading?c`<hmwc-skeleton class="skeleton skeleton--label"></hmwc-skeleton><hmwc-skeleton class="skeleton skeleton--meta"></hmwc-skeleton>`:c`${this._renderLabel()} ${this.meta?c`<span part="meta" class="meta">${this.meta}</span>`:x}`}
+          <div part="content" class=${v({content:!0,"content--empty":!t||!!this.loading})}><slot></slot></div>
+        </div>
+        ${this.loading?x:this._renderTime()}
+        <div part="actions" class=${v({actions:!0,"actions--empty":!r||!!this.loading})}><slot name="actions"></slot></div>
+      </div>
+    `}};ne.styles=ha;ne.dependencies=[$,oe];ne.slots=["[default]","actions"];Ge([n({type:Boolean,reflect:!0})],ne.prototype,"loading",void 0);Ge([n({type:Boolean,reflect:!0})],ne.prototype,"primary",void 0);Ge([n({type:Boolean,reflect:!0})],ne.prototype,"success",void 0);Ge([n({type:Boolean,reflect:!0})],ne.prototype,"neutral",void 0);Ge([n({type:Boolean,reflect:!0})],ne.prototype,"warning",void 0);Ge([n({type:Boolean,reflect:!0})],ne.prototype,"danger",void 0);Ge([n({type:Boolean,reflect:!0})],ne.prototype,"sm",void 0);Ge([n({type:Boolean,reflect:!0})],ne.prototype,"reply",void 0);Ge([n({type:String,reflect:!0})],ne.prototype,"icon",void 0);Ge([n({type:String})],ne.prototype,"label",void 0);Ge([n({type:String})],ne.prototype,"meta",void 0);Ge([n({type:String})],ne.prototype,"time",void 0);Ge([n({type:String,attribute:"time-style"})],ne.prototype,"timeStyle",void 0);Ge([n({type:String})],ne.prototype,"href",void 0);Ge([n({type:String})],ne.prototype,"target",void 0);ne.define("hmwc-feed-item",ne);var pa=f`
+  :host {
+    --feed-gap: var(--hmwc-spacing-x-small);
+    --feed-divider-color: var(--hmwc-color-neutral-200);
+    --feed-max-height: none;
+    display: block;
+  }
+
+  /* Room either side for a linked entry's hover tint, which overhangs the content. */
+  .feed {
+    margin-inline: calc(-1 * var(--hmwc-spacing-x-small));
+    padding-inline: var(--hmwc-spacing-x-small);
+    max-height: var(--feed-max-height);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--hmwc-color-neutral-300) transparent;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--feed-gap);
+  }
+
+  .list--hidden,
+  .empty--hidden {
+    display: none;
+  }
+
+  /* Divided: a rule above every entry but the first, never between an entry and its reply. */
+  .divided .list {
+    --feed-gap: var(--hmwc-spacing-small);
+  }
+
+  .divided ::slotted(hmwc-feed-item:not(:first-child):not([reply])) {
+    padding-block-start: var(--hmwc-spacing-small);
+    border-block-start: var(--hmwc-panel-border-width) solid var(--feed-divider-color);
+  }
+
+  .sm {
+    --feed-gap: var(--hmwc-spacing-2x-small);
+    font-size: var(--hmwc-font-size-small);
+  }
+
+  .loading {
+    display: flex;
+    flex-direction: column;
+    gap: var(--feed-gap);
+  }
+
+  .loading__row {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--hmwc-spacing-small);
+    padding-block: var(--hmwc-spacing-2x-small);
+  }
+
+  .loading__marker {
+    flex: none;
+    width: 1em;
+    height: 1em;
+    --skeleton-radius: var(--hmwc-border-radius-circle);
+  }
+
+  .loading__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: var(--hmwc-spacing-2x-small);
+  }
+
+  .loading__label {
+    width: 70%;
+    height: 0.9em;
+  }
+
+  .loading__meta {
+    width: 40%;
+    height: 0.75em;
+  }
+`;var tr=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Qs=3,Ye=class extends g{constructor(){super(...arguments),this._count=0}connectedCallback(){super.connectedCallback(),this._countEntries(),this._observer=new MutationObserver(()=>this._countEntries()),this._observer.observe(this,{childList:!0,subtree:!0,attributes:!0,attributeFilter:["hidden"]})}disconnectedCallback(){super.disconnectedCallback(),this._observer?.disconnect(),this._observer=void 0}_countEntries(){this._count=Array.from(this.children).filter(e=>e.tagName==="HMWC-FEED-ITEM"&&!e.hidden).length}_renderLoading(){return c`<div part="loading" class="loading" aria-hidden="true">
+      ${Array.from({length:Qs},()=>c`<div class="loading__row">
+            <hmwc-skeleton class="loading__marker"></hmwc-skeleton>
+            <div class="loading__body">
+              <hmwc-skeleton class="loading__label"></hmwc-skeleton>
+              <hmwc-skeleton class="loading__meta"></hmwc-skeleton>
+            </div>
+          </div>`)}
+    </div>`}render(){let e=!this.loading&&this._count===0;return c`
+      <div part="base" class=${v({feed:!0,divided:!!this.divided,sm:!!this.sm})} aria-busy=${this.loading?"true":"false"}>
+        ${this.loading?this._renderLoading():x}
+        <div
+          part="list"
+          class=${v({list:!0,"list--hidden":!!this.loading||e})}
+          role=${w(e?void 0:"list")}
+          aria-label=${w(e?void 0:this.label)}>
+          <slot @slotchange=${this._countEntries}></slot>
+        </div>
+        <div part="empty" class=${v({empty:!0,"empty--hidden":!e})}>
+          <slot name="empty">${this.emptyText?c`<hmwc-empty-state sm>${this.emptyText}</hmwc-empty-state>`:x}</slot>
+        </div>
+      </div>
+    `}};Ye.styles=pa;Ye.dependencies=[Ke,oe];Ye.slots=["[default]","empty"];tr([b()],Ye.prototype,"_count",void 0);tr([n({type:Boolean,reflect:!0})],Ye.prototype,"divided",void 0);tr([n({type:Boolean,reflect:!0})],Ye.prototype,"loading",void 0);tr([n({type:Boolean,reflect:!0})],Ye.prototype,"sm",void 0);tr([n({type:String})],Ye.prototype,"label",void 0);tr([n({type:String,attribute:"empty-text"})],Ye.prototype,"emptyText",void 0);Ye.define("hmwc-feed",Ye);var ma=f`
+  :host {
+    --grid-row-gap: 0px;
+    --grid-col-gap: 0px;
     --grid-justification: initial;
     --grid-alignment: initial;
 
@@ -7240,13 +9013,18 @@
 
     & .grid__label {
       display: block;
-      color: var(--hmwc-color-text-secondary);
+      color: var(--hmwc-color-text-secondary, var(--hmwc-color-neutral-800));
       font-size: var(--hmwc-font-size-small);
       font-family: var(--hmwc-font-sans);
       line-height: 2;
     }
 
+    & [part~='label'] {
+      color: var(--hmwc-color-neutral-800);
+    }
+
     & .grid__content {
+      position: relative;
       display: grid;
       grid-template-columns: var(--template-col, repeat(var(--cols, 1), auto));
       grid-template-rows: var(--template-row, repeat(var(--rows, 1), min-content));
@@ -7276,6 +9054,21 @@
       }
       @media (min-width: 1800px) {
         max-width: 1700px;
+      }
+    }
+
+    /* Column rules for "divided": a layer over the content, out of the grid
+       flow, holding one vertical divider per gap. Offsets are measured from
+       the resolved column tracks. */
+    & .grid__dividers {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      & hmwc-divider {
+        position: absolute;
+        top: 0;
+        bottom: 0;
       }
     }
 
@@ -7388,21 +9181,22 @@
       --grid-alignment: center;
     }
   }
-`;var le=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},ut=class extends u{constructor(){super(...arguments),this.align="center"}connectedCallback(){super.connectedCallback(),this.page&&(this.animation="scale-in");let t=this.controllers.slot.get();this.rows||(this.rows=Math.ceil(t.length/(this.cols||1))),t.forEach((e,r)=>{e.style.setProperty("z-index",`${t.length-(r+1)}`)})}render(){let t=f({grid:!0,"gap-xs":this.gap==="xs","gap-sm":this.gap==="sm","gap-md":this.gap==="md","gap-lg":this.gap==="lg","gap-xl":this.gap==="xl","gap-row-xs":this.gap?.includes("/")&&this.gap?.split("/")[0]==="xs"||!1,"gap-row-sm":this.gap?.includes("/")&&this.gap?.split("/")[0]==="sm"||!1,"gap-row-md":this.gap?.includes("/")&&this.gap?.split("/")[0]==="md"||!1,"gap-row-lg":this.gap?.includes("/")&&this.gap?.split("/")[0]==="lg"||!1,"gap-row-xl":this.gap?.includes("/")&&this.gap?.split("/")[0]==="xl"||!1,"gap-col-xs":this.gap?.includes("/")&&this.gap?.split("/")[1]==="xs"||!1,"gap-col-sm":this.gap?.includes("/")&&this.gap?.split("/")[1]==="sm"||!1,"gap-col-md":this.gap?.includes("/")&&this.gap?.split("/")[1]==="md"||!1,"gap-col-lg":this.gap?.includes("/")&&this.gap?.split("/")[1]==="lg"||!1,"gap-col-xl":this.gap?.includes("/")&&this.gap?.split("/")[1]==="xl"||!1,"justify-start":this.justify==="start","justify-end":this.justify==="end","justify-center":this.justify==="center","justify-stretch":this.justify==="stretch","justify-around":this.justify==="around","justify-between":this.justify==="between","justify-even":this.justify==="even","align-start":this.align==="start","align-end":this.align==="end","align-center":this.align==="center",fluid:!!this.fit,page:!!this.page});return c`
-      <div part="base" class=${t}>
+`;var it=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},ce=class extends g{constructor(){super(...arguments),this._rules=[],this.align="center"}connectedCallback(){super.connectedCallback(),this.page&&(this.animation="scale-in");let e=this.controllers.slot.get();this.rows||(this.rows=Math.ceil(e.length/(this.cols||1))),e.forEach((t,r)=>{t.style.setProperty("z-index",`${e.length-(r+1)}`)}),this.hasUpdated&&this.divided&&this._observe()}updated(e){super.updated?.(e),(e.has("divided")||e.has("cols")||e.has("minCol")||e.has("gap")||e.has("template"))&&this._observe()}disconnectedCallback(){super.disconnectedCallback(),this._resizeObserver?.disconnect(),this._resizeObserver=void 0}_observe(){if(!this.divided){this._resizeObserver?.disconnect(),this._resizeObserver=void 0,this._rules.length&&(this._rules=[]);return}!this._resizeObserver&&this._content&&(this._resizeObserver=new ResizeObserver(()=>this._measureRules()),this._resizeObserver.observe(this._content)),this._measureRules()}_measureRules(){if(!this._content)return;let e=getComputedStyle(this._content),t=parseFloat(e.columnGap)||0,r=e.gridTemplateColumns.split(" ").map(a=>parseFloat(a)).filter(a=>a>0),i=[],o=0;r.slice(0,-1).forEach(a=>{o+=a,i.push(Math.round((o+t/2)*100)/100),o+=t}),i.join()!==this._rules.join()&&(this._rules=i)}_minColTemplate(){return`repeat(auto-fit, minmax(min(100%, ${this.cols?`max(${this.minCol}, calc((100% - ${this.cols-1} * var(--grid-col-gap)) / ${this.cols}))`:this.minCol}), 1fr))`}_contentStyle(){return this.template?this.template instanceof Object?`--template-col: ${this.template.col}; --template-row: ${this.template.row}`:`--template-col: ${this.template}`:this.minCol?`--template-col: ${this._minColTemplate()}; --template-row: none`:""}render(){let e=v({grid:!0,"gap-xs":this.gap==="xs","gap-sm":this.gap==="sm","gap-md":this.gap==="md","gap-lg":this.gap==="lg","gap-xl":this.gap==="xl","gap-row-xs":this.gap?.includes("/")&&this.gap?.split("/")[0]==="xs"||!1,"gap-row-sm":this.gap?.includes("/")&&this.gap?.split("/")[0]==="sm"||!1,"gap-row-md":this.gap?.includes("/")&&this.gap?.split("/")[0]==="md"||!1,"gap-row-lg":this.gap?.includes("/")&&this.gap?.split("/")[0]==="lg"||!1,"gap-row-xl":this.gap?.includes("/")&&this.gap?.split("/")[0]==="xl"||!1,"gap-col-xs":this.gap?.includes("/")&&this.gap?.split("/")[1]==="xs"||!1,"gap-col-sm":this.gap?.includes("/")&&this.gap?.split("/")[1]==="sm"||!1,"gap-col-md":this.gap?.includes("/")&&this.gap?.split("/")[1]==="md"||!1,"gap-col-lg":this.gap?.includes("/")&&this.gap?.split("/")[1]==="lg"||!1,"gap-col-xl":this.gap?.includes("/")&&this.gap?.split("/")[1]==="xl"||!1,"justify-start":this.justify==="start","justify-end":this.justify==="end","justify-center":this.justify==="center","justify-stretch":this.justify==="stretch","justify-around":this.justify==="around","justify-between":this.justify==="between","justify-even":this.justify==="even","align-start":this.align==="start","align-end":this.align==="end","align-center":this.align==="center",fluid:!!this.fit,page:!!this.page,divided:!!this.divided});return c`
+      <div part="base" class=${e}>
         ${this.label?c`<slot name="label" part="label">${this.label}</slot>`:""}
 
-        <div
-          part="content"
-          class="grid__content"
-          style="--rows: ${this.rows-1||1}; --cols: ${this.cols||1}; ${this.template?this.template instanceof Object?`--template-col: ${this.template.col}; --template-row: ${this.template.row}`:`--template-col: ${this.template}`:""}">
-          <slot></slot>
+        <div part="content" class="grid__content" style="--rows: ${this.rows-1||1}; --cols: ${this.cols||1}; ${this._contentStyle()}">
+          <slot @slotchange=${()=>this.divided&&this._measureRules()}></slot>
+          ${this.divided?c`<div part="dividers" class="grid__dividers" aria-hidden="true">
+                ${this._rules.map(t=>c`<hmwc-divider vertical style="inset-inline-start: ${t}px"></hmwc-divider>`)}
+              </div>`:""}
         </div>
       </div>
-    `}};ut.styles=lo;ut.dependencies=[];ut.slots=["label"];le([a({type:Boolean})],ut.prototype,"form",void 0);le([a({type:Boolean,reflect:!0})],ut.prototype,"fit",void 0);le([a({type:Boolean,reflect:!0})],ut.prototype,"page",void 0);le([a({type:String})],ut.prototype,"gap",void 0);le([a({type:String})],ut.prototype,"label",void 0);le([a({type:String})],ut.prototype,"template",void 0);le([a({type:String})],ut.prototype,"justify",void 0);le([a({type:String})],ut.prototype,"align",void 0);le([a({type:Number,reflect:!0})],ut.prototype,"rows",void 0);le([a({type:Number,reflect:!0})],ut.prototype,"cols",void 0);ut.define("hmwc-grid",ut);var co=m`
+    `}};ce.styles=[pt,ma];ce.dependencies=[H];ce.slots=["label"];it([b()],ce.prototype,"_rules",void 0);it([n({type:Boolean,reflect:!0})],ce.prototype,"divided",void 0);it([n({type:Boolean})],ce.prototype,"form",void 0);it([n({type:Boolean,reflect:!0})],ce.prototype,"fit",void 0);it([n({type:Boolean,reflect:!0})],ce.prototype,"page",void 0);it([n({type:String})],ce.prototype,"gap",void 0);it([n({type:String})],ce.prototype,"label",void 0);it([n({type:String})],ce.prototype,"template",void 0);it([n({type:String})],ce.prototype,"justify",void 0);it([n({type:String,attribute:"min-col",reflect:!0})],ce.prototype,"minCol",void 0);it([n({type:String})],ce.prototype,"align",void 0);it([n({type:Number,reflect:!0})],ce.prototype,"rows",void 0);it([n({type:Number,reflect:!0})],ce.prototype,"cols",void 0);it([I(".grid__content")],ce.prototype,"_content",void 0);ce.define("hmwc-grid",ce);var ua=f`
   :host {
-    --popup-width: 31rem;
-    --popup-height: auto;
+    --popup-width: calc(31 * var(--hmwc-rem, 1rem));
+    /* --popup-height is not defined here, so a value the consumer sets on
+       the host wins over the size class's --popup-size-height below. */
     --popup-radius: var(--hmwc-border-radius-x-large);
     --popup-spacing: var(--hmwc-spacing-x-large);
     --popup-background: var(--hmwc-panel-background-color);
@@ -7477,7 +9271,6 @@
       display: none;
       align-items: center;
       justify-content: center;
-      font-family: var(--hmwc-font-sans);
       position: fixed;
       top: 0;
       right: 0;
@@ -7497,7 +9290,13 @@
     }
 
     & .popup__panel {
-      min-height: fit-content;
+      /* Grows with its content from --popup-height up to the window, then
+         the content scrolls. "min-height: fit-content" let a tall popup grow
+         past the window, since a min-height wins over max-height; min() keeps
+         the floor under the cap. With --popup-height: auto the min() is
+         invalid, min-height falls back to its initial auto, and the panel is
+         sized to its content. */
+      min-height: min(var(--popup-height, var(--popup-size-height, auto)), calc(100% - var(--hmwc-spacing-2x-large)));
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
@@ -7506,7 +9305,7 @@
       width: var(--popup-width);
       max-width: calc(100% - var(--hmwc-spacing-2x-large));
       max-height: calc(100% - var(--hmwc-spacing-2x-large));
-      height: var(--popup-height);
+      height: auto;
       background-color: var(--popup-background);
       border-radius: var(--popup-radius);
       box-shadow: var(--hmwc-shadow-x-large);
@@ -7550,6 +9349,9 @@
 
       & .popup__content {
         flex: 1 1 auto;
+        /* Lets the content shrink below its height and scroll, rather than
+           pushing the panel past its max-height. */
+        min-height: 0;
         padding: 0 var(--popup-spacing) var(--popup-spacing);
         overflow: hidden auto;
         -webkit-overflow-scrolling: touch;
@@ -7558,6 +9360,30 @@
         height: 100%;
         box-sizing: border-box;
         color: var(--hmwc-color-neutral-700);
+
+        &[hidden] {
+          display: none;
+        }
+      }
+
+      & .popup__skeleton {
+        display: flex;
+        flex-direction: column;
+        gap: var(--hmwc-spacing-small);
+        padding: 0 var(--popup-spacing) var(--popup-spacing);
+
+        & hmwc-skeleton {
+          height: var(--hmwc-font-size-large);
+        }
+
+        & .popup__skeleton-short {
+          width: 60%;
+        }
+      }
+
+      & .popup__error {
+        flex: 0 0 auto;
+        margin: 0 var(--popup-spacing);
       }
 
       & .popup__footer {
@@ -7576,8 +9402,19 @@
           justify-content: flex-end;
         }
 
-        &::slotted(*),
-        & ::slotted(*) {
+        /* Start-of-footer content sits opposite the actions. */
+        & .popup__footer-start {
+          display: flex;
+          flex: 1 1 auto;
+          align-items: center;
+          gap: var(--hmwc-spacing-x-small);
+          margin-inline-end: auto;
+        }
+
+        /* A wrapper element lays out its buttons at the end. Buttons slotted
+           directly are laid out by the slot itself: stretched to full width
+           like a wrapper, two of them split to opposite ends of the footer. */
+        & ::slotted(:not(hmwc-button)) {
           display: flex;
           align-items: center;
           gap: var(--hmwc-spacing-x-small);
@@ -7587,66 +9424,113 @@
       }
     }
 
+    /* ── Header ───────────────────────────────────
+       The title is on the library's subtitle scale (as hmwc-text "subtitle"):
+       large, semibold, dense tracking, on a dense line. The icon and the
+       controls are each centred on the title's first line, so a title that
+       wraps keeps them at the top beside it. The close button is the
+       library's quiet icon button: the alert's dismiss glyph, in a square the
+       height of a small button, neutral at rest, darker on a neutral fill on
+       hover (200: the 100 step is the panel's own shade in dark). */
+    & .popup__header {
+      --popup-title-line: calc(var(--hmwc-font-size-large) * var(--hmwc-line-height-dense));
+      flex: 0 0 auto;
+      display: flex;
+      align-items: flex-start;
+      gap: var(--hmwc-spacing-small);
+
+      & .popup__header-content {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: flex-start;
+        gap: var(--hmwc-spacing-x-small);
+        min-width: 0;
+      }
+
+      & .popup__icon {
+        --icon-size: var(--hmwc-font-size-x-large);
+        --icon-color: var(--hmwc-color-neutral-600);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        height: var(--popup-title-line);
+        font-size: var(--hmwc-font-size-x-large);
+        color: var(--icon-color);
+
+        &.icon-primary {
+          --icon-color: var(--hmwc-color-primary-600);
+        }
+        &.icon-success {
+          --icon-color: var(--hmwc-color-success-600);
+        }
+        &.icon-warning {
+          --icon-color: var(--hmwc-color-warning-600);
+        }
+        &.icon-danger {
+          --icon-color: var(--hmwc-color-danger-600);
+        }
+        &.icon-neutral {
+          --icon-color: var(--hmwc-color-neutral-600);
+        }
+      }
+
+      & .popup__title {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        min-height: var(--popup-title-line);
+        margin: 0;
+        font: inherit;
+        font-size: var(--hmwc-font-size-large);
+        font-weight: var(--hmwc-font-weight-semibold);
+        line-height: var(--hmwc-line-height-dense);
+        letter-spacing: var(--hmwc-letter-spacing-dense);
+        overflow-wrap: anywhere;
+        color: var(--hmwc-color-neutral-900);
+      }
+
+      & .popup__controls {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: var(--hmwc-spacing-2x-small);
+        height: var(--popup-title-line);
+      }
+
+      & .popup__close {
+        --icon-size: var(--hmwc-font-size-medium);
+        /* The glyph, not the square, lines up with the content's edge. */
+        margin-inline-end: calc((var(--hmwc-font-size-medium) - var(--hmwc-input-height-small)) / 2);
+
+        &::part(base) {
+          width: var(--hmwc-input-height-small);
+          height: var(--hmwc-input-height-small);
+          border-radius: var(--hmwc-border-radius-medium);
+          --button-color: var(--hmwc-color-neutral-600);
+        }
+
+        &:not([disabled])::part(base):hover {
+          --button-color: var(--hmwc-color-neutral-900);
+          background-color: var(--hmwc-color-neutral-200);
+        }
+
+        &:not([disabled])::part(base):active {
+          --button-color: var(--hmwc-color-neutral-900);
+          background-color: var(--hmwc-color-neutral-300);
+        }
+      }
+    }
+
     &.header,
     &.confirmation {
       & .popup__panel {
         & .popup__header {
-          flex: 0 0 auto;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: var(--hmwc-spacing-medium) calc(1.1 * var(--hmwc-spacing-large)) var(--hmwc-spacing-small);
-
-          & .popup__header-content {
-            flex: 1 1 auto;
-            display: flex;
-            align-items: center;
-            gap: var(--hmwc-spacing-small);
-            min-width: 0;
-          }
-
-          & .popup__icon {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            font-size: var(--hmwc-font-size-x-large);
-
-            &.icon-primary {
-              color: var(--hmwc-color-primary-600);
-            }
-            &.icon-success {
-              color: var(--hmwc-color-success-600);
-            }
-            &.icon-warning {
-              color: var(--hmwc-color-warning-600);
-            }
-            &.icon-danger {
-              color: var(--hmwc-color-danger-600);
-            }
-            &.icon-neutral {
-              color: var(--hmwc-color-neutral-600);
-            }
-          }
-
-          & .popup__title {
-            flex: 1 1 auto;
-            font: inherit;
-            font-size: calc(0.05rem + var(--hmwc-font-size-large));
-            font-weight: var(--hmwc-font-weight-semibold);
-            letter-spacing: -0.2px;
-            display: flex;
-            align-items: center;
-            line-height: 1rem;
-            margin: 0 auto 0 0;
-            color: var(--hmwc-color-neutral-900);
-          }
-
-          & .popup__controls {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            gap: var(--hmwc-spacing-2x-small);
-          }
+          /* The title's text, not its line box, sits --popup-spacing in from
+             the panel's top edge and lines up with the content's left edge.
+             The title line's own leading makes up the rest of the gap below. */
+          padding: calc(var(--popup-spacing) - (var(--popup-title-line) - var(--hmwc-font-size-large)) / 2) var(--popup-spacing)
+            var(--hmwc-spacing-x-small);
         }
       }
     }
@@ -7684,6 +9568,10 @@
       }
     }
 
+    &.footer-start .popup__footer .popup__footer-actions {
+      width: auto;
+    }
+
     &.open {
       display: flex;
     }
@@ -7691,58 +9579,54 @@
     /* ── Sizes ────────────────────────────────── */
 
     &.sm {
-      --popup-width: 30rem;
+      --popup-width: calc(30 * var(--hmwc-rem, 1rem));
       --popup-spacing: var(--hmwc-spacing-large);
       --popup-radius: calc(1.15 * var(--hmwc-border-radius-large));
 
       &.drawer {
-        --popup-width: 20rem;
+        --popup-width: calc(20 * var(--hmwc-rem, 1rem));
         --popup-spacing: calc(1.5 * var(--hmwc-spacing-large));
       }
     }
 
     &.md {
-      --popup-width: 42rem;
-      --popup-height: min(42rem, 65%);
+      --popup-width: calc(42 * var(--hmwc-rem, 1rem));
       --popup-spacing: calc(1.25 * var(--hmwc-spacing-large));
 
       &.drawer {
-        --popup-width: 26rem;
+        --popup-width: calc(26 * var(--hmwc-rem, 1rem));
         --popup-spacing: calc(1.5 * var(--hmwc-spacing-large));
       }
     }
 
     &.lg {
-      --popup-width: 45rem;
-      --popup-height: 65%;
+      --popup-width: calc(45 * var(--hmwc-rem, 1rem));
       --popup-spacing: calc(1.25 * var(--hmwc-spacing-large));
 
       &.drawer {
-        --popup-width: 32rem;
+        --popup-width: calc(32 * var(--hmwc-rem, 1rem));
         --popup-spacing: calc(1.5 * var(--hmwc-spacing-large));
       }
     }
 
     &.xl {
-      --popup-width: 60rem;
-      --popup-height: 75%;
+      --popup-width: calc(60 * var(--hmwc-rem, 1rem));
       --popup-spacing: calc(1.25 * var(--hmwc-spacing-large));
 
       &.drawer {
-        --popup-width: 42rem;
+        --popup-width: calc(42 * var(--hmwc-rem, 1rem));
         --popup-spacing: calc(1.5 * var(--hmwc-spacing-large));
       }
     }
 
     &.full {
       --popup-width: calc(100% - var(--hmwc-spacing-2x-large));
-      --popup-height: calc(100% - var(--hmwc-spacing-2x-large));
+      --popup-size-height: calc(100% - var(--hmwc-spacing-2x-large));
       --popup-spacing: calc(1.25 * var(--hmwc-spacing-large));
     }
 
     &.drawer {
       display: none;
-      font-family: var(--hmwc-font-sans);
       position: fixed;
       top: 0;
       right: 0;
@@ -7780,64 +9664,9 @@
         }
 
         & .popup__header {
-          flex: 0 0 auto;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
           padding: var(--popup-spacing);
           padding-bottom: var(--hmwc-spacing-small);
           border-bottom: 1px solid var(--hmwc-panel-border-color);
-
-          & .popup__header-content {
-            flex: 1 1 auto;
-            display: flex;
-            align-items: center;
-            gap: var(--hmwc-spacing-small);
-            min-width: 0;
-          }
-
-          & .popup__icon {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            font-size: var(--hmwc-font-size-x-large);
-
-            &.icon-primary {
-              color: var(--hmwc-color-primary-600);
-            }
-            &.icon-success {
-              color: var(--hmwc-color-success-600);
-            }
-            &.icon-warning {
-              color: var(--hmwc-color-warning-600);
-            }
-            &.icon-danger {
-              color: var(--hmwc-color-danger-600);
-            }
-            &.icon-neutral {
-              color: var(--hmwc-color-neutral-600);
-            }
-          }
-
-          & .popup__title {
-            flex: 1 1 auto;
-            font: inherit;
-            font-size: calc(0.05rem + var(--hmwc-font-size-large));
-            font-weight: var(--hmwc-font-weight-semibold);
-            letter-spacing: -0.2px;
-            display: flex;
-            align-items: center;
-            line-height: 1rem;
-            margin: 0;
-            color: var(--hmwc-color-neutral-900);
-          }
-
-          & .popup__controls {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            gap: var(--hmwc-spacing-2x-small);
-          }
         }
 
         & .popup__content {
@@ -7898,28 +9727,39 @@
       }
     }
   }
-`;var Br={info:{icon:"info-circle-fill",iconVariant:"primary",variant:"primary",fluid:!0,size:"sm",confirmLabel:"OK",hideCancel:!0,confirmation:!0},success:{icon:"check-circle-fill",iconVariant:"success",variant:"success",fluid:!0,size:"sm",confirmLabel:"OK",confirmVariant:"success",hideCancel:!0,confirmation:!0},warning:{icon:"exclamation-triangle-fill",iconVariant:"warning",variant:"warning",fluid:!0,size:"sm",confirmLabel:"OK",confirmVariant:"warning",hideCancel:!0,confirmation:!0},error:{icon:"x-circle-fill",iconVariant:"danger",variant:"danger",fluid:!0,size:"sm",confirmLabel:"OK",confirmVariant:"danger",hideCancel:!0,confirmation:!0},confirm:{icon:"question-circle-fill",iconVariant:"primary",variant:"primary",fluid:!0,size:"sm",confirmLabel:"Confirm",cancelLabel:"Cancel",confirmVariant:"primary",confirmation:!0},delete:{icon:"exclamation-triangle-fill",iconVariant:"danger",variant:"danger",fluid:!0,size:"sm",confirmLabel:"Delete",cancelLabel:"Cancel",confirmVariant:"danger",confirmation:!0},retry:{icon:"x-circle-fill",variant:"danger",fluid:!0,size:"sm",confirmLabel:"Retry",cancelLabel:"Cancel",confirmVariant:"danger",confirmation:!0}};var J=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},T=class extends u{constructor(){super(...arguments),this.variant="default",this.confirmLabel="Confirm",this.cancelLabel="Cancel",this.confirmVariant="primary",this.dismissible=!0,this.overlayDismiss=!0,this.escapeDismiss=!0,this.overlay=!0,this._keydownHandler=this._handleKeyDown.bind(this),this._autoDestroy=!1}connectedCallback(){super.connectedCallback(),this.route&&this._enableRouting(),!this.id&&this.title&&(this.id=this.title.toLowerCase().replace(/\s+/g,"-"))}firstUpdated(){if(this._popup.hidden=!this.active,this.active){let t=this._popup.querySelector(".popup__overlay");t&&t.style.setProperty("opacity","1"),this._panel.style.setProperty("opacity","1"),this._panel.style.setProperty("transform",this.drawer?"translateX(0)":"translateY(0) scale(1)"),this._addListeners(),this.controllers.scroll.lockBodyScrolling(this)}}disconnectedCallback(){super.disconnectedCallback(),this._removeListeners(),this.controllers.scroll.unlockBodyScrolling(this)}handleOpenChange(){let t=this._popup.querySelector(".popup__overlay");this.active?(this._popup.hidden=!1,this._panel.focus(),requestAnimationFrame(()=>{t&&t.style.setProperty("opacity","1"),this._panel.style.setProperty("opacity","1"),this._panel.style.setProperty("transform",this.drawer?"translateX(0)":"translateY(0) scale(1)")}),this._addListeners(),this.controllers.scroll.lockBodyScrolling(this),this.emit("hmwc-show")):(requestAnimationFrame(()=>{t&&t.style.setProperty("opacity","0"),this._panel.style.setProperty("opacity",this.drawer?"1":"0"),this._panel.style.setProperty("transform",this.drawer?"translateX(100%)":"translateY(8px) scale(0.96)")}),setTimeout(()=>{this.active||(this._popup.hidden=!0,this._autoDestroy&&this.remove())},350),this._removeListeners(),this.controllers.scroll.unlockBodyScrolling(this),this.emit("hmwc-hide"))}show(){this.active||(this._syncRoute(!0),this.active=!0)}hide(){this.active&&(this._syncRoute(!1),this.active=!1,this._resultResolver?.(!1),this._resultResolver=void 0)}async confirm(){this.emit("hmwc-submit",{cancelable:!0}).defaultPrevented||(this._resultResolver?.(!0),this._resultResolver=void 0,this.hide())}getResult(){return new Promise(t=>{this._resultResolver=t})}_addListeners(){document.addEventListener("keydown",this._keydownHandler)}_removeListeners(){document.removeEventListener("keydown",this._keydownHandler)}_handleKeyDown(t){t.key==="Escape"&&this.active&&(t.stopPropagation(),this.escapeDismiss&&this.hide())}_handleOverlayClick(){this.overlayDismiss&&this.hide()}_handleCancel(){this.emit("hmwc-cancel"),this.hide()}_syncRoute(t){if(!this.route)return;let e=window.location.pathname;window.location.href.includes("?")&&(e+=`?${window.location.href.split("?")[1].split("#")[0]}`),window.history.replaceState(null,"",t?`${e}#${this.route}`:e)}_enableRouting(){window.addEventListener("popstate",()=>{window.location.hash===`#${this.route}`?this.show():this.hide()})}_renderHeader(){return this.title||this.controllers.slot.test("header")||this.controllers.slot.test("title")?c`
+`;var mi={info:{icon:"info-circle-fill",iconVariant:"primary",variant:"primary",fluid:!0,size:"sm",confirmLabel:"OK",hideCancel:!0,confirmation:!0},success:{icon:"check-circle-fill",iconVariant:"success",variant:"success",fluid:!0,size:"sm",confirmLabel:"OK",confirmVariant:"success",hideCancel:!0,confirmation:!0},warning:{icon:"exclamation-triangle-fill",iconVariant:"warning",variant:"warning",fluid:!0,size:"sm",confirmLabel:"OK",confirmVariant:"warning",hideCancel:!0,confirmation:!0},error:{icon:"x-circle-fill",iconVariant:"danger",variant:"danger",fluid:!0,size:"sm",confirmLabel:"OK",confirmVariant:"danger",hideCancel:!0,confirmation:!0},confirm:{icon:"question-circle-fill",iconVariant:"primary",variant:"primary",fluid:!0,size:"sm",confirmLabel:"Confirm",cancelLabel:"Cancel",confirmVariant:"primary",confirmation:!0},delete:{icon:"exclamation-triangle-fill",iconVariant:"danger",variant:"danger",fluid:!0,size:"sm",confirmLabel:"Delete",cancelLabel:"Cancel",confirmVariant:"danger",confirmation:!0},retry:{icon:"x-circle-fill",variant:"danger",fluid:!0,size:"sm",confirmLabel:"Retry",cancelLabel:"Cancel",confirmVariant:"danger",confirmation:!0}};var G=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},rr=[],fa=new WeakSet;function ga(){let s=document.activeElement;for(;s?.shadowRoot?.activeElement;)s=s.shadowRoot.activeElement;return s}function Js(s){let e=[],t=r=>{if(!(r instanceof HTMLElement&&(r.hidden||r.inert))){if(r instanceof HTMLSlotElement){let i=r.assignedElements({flatten:!0});(i.length?i:Array.from(r.children)).forEach(t);return}r instanceof HTMLElement&&r.tabIndex>=0&&!r.hasAttribute("disabled")&&r.checkVisibility?.()!==!1&&e.push(r),Array.from((r.shadowRoot??r).children).forEach(t)}};return t(s),e}function Zs(s){if(typeof s=="string"&&s)return s;let e=s?.message;return typeof e=="string"&&e?e:"Something went wrong. Please try again."}var D=class extends g{constructor(){super(),this.variant="default",this.confirmLabel="Confirm",this.cancelLabel="Cancel",this.confirmVariant="primary",this.dismissible=!0,this.overlayDismiss=!0,this.escapeDismiss=!0,this.overlay=!0,this._keydownHandler=this._handleKeyDown.bind(this),this._busy=!1,this._error="",this._opener=null,this._autoDestroy=!1,this.addEventListener("hmwc-cancel",e=>{let t=e.target;t===this||t.closest("hmwc-popup")!==this||!this.active||this._requestClose()}),this.addEventListener("hmwc-submit",e=>{let t=e.target;if(t===this||!this.closeOnSubmit||t.closest("hmwc-popup")!==this)return;let r=e.detail?.settled;Promise.resolve(r??!0).then(i=>i&&this.hide(!0))})}connectedCallback(){super.connectedCallback(),this.route&&this._enableRouting(),!this.id&&this.title&&(this.id=this.title.toLowerCase().replace(/\s+/g,"-"))}firstUpdated(){if(this._popup.hidden=!this.active,this.active){let e=this._popup.querySelector(".popup__overlay");e&&e.style.setProperty("opacity","1"),this._panel.style.setProperty("opacity","1"),this._panel.style.setProperty("transform","none"),this._addListeners(),this.controllers.scroll.lockBodyScrolling(this)}}disconnectedCallback(){super.disconnectedCallback(),this._removeListeners(),this.controllers.scroll.unlockBodyScrolling(this)}handleOpenChange(){let e=this._popup.querySelector(".popup__overlay");if(this.active){this._popup.hidden=!1;let t=ga();this._opener=t&&!this.contains(t)&&!this.shadowRoot.contains(t)?t:null,this.updateComplete.then(()=>this.active&&this._panel.focus()),requestAnimationFrame(()=>{e&&e.style.setProperty("opacity","1"),this._panel.style.setProperty("opacity","1"),this._panel.style.setProperty("transform","none")}),this._addListeners(),this.controllers.scroll.lockBodyScrolling(this),this.emit("hmwc-show")}else{requestAnimationFrame(()=>{e&&e.style.setProperty("opacity","0"),this._panel.style.setProperty("opacity",this.drawer?"1":"0"),this._panel.style.setProperty("transform",this.drawer?"translateX(100%)":"translateY(8px) scale(0.96)")}),setTimeout(()=>{this.active||(this._popup.hidden=!0,this._autoDestroy&&this.remove())},350),this._removeListeners(),this.controllers.scroll.unlockBodyScrolling(this),this._error="";let t=this._opener;this._opener=null,t?.isConnected&&t.focus(),this.emit("hmwc-hide")}}show(){this.active||(this._syncRoute(!0),this.active=!0)}hide(e=!1){this.active&&(this._syncRoute(!1),this.active=!1,this._resultResolver?.(e),this._resultResolver=void 0)}async confirm(){if(this._busy)return;let e=[],t=!0,r=this.emit("hmwc-submit",{cancelable:!0,detail:{waitUntil:i=>{t?e.push(Promise.resolve(i)):console.warn("[hmwc-popup] waitUntil() must be called while hmwc-submit is dispatched, not after an await.")}}});if(t=!1,!r.defaultPrevented){if(e.length){this._error="",this._busy=!0;try{if((await Promise.all(e)).includes(!1))return}catch(i){this._error=Zs(i);return}finally{this._busy=!1}}this.hide(!0)}}getResult(){return new Promise(e=>{this._resultResolver=e})}_addListeners(){document.addEventListener("keydown",this._keydownHandler);let e=rr.indexOf(this);e!==-1&&rr.splice(e,1),rr.push(this)}_removeListeners(){document.removeEventListener("keydown",this._keydownHandler);let e=rr.indexOf(this);e!==-1&&rr.splice(e,1)}_isTopmost(){return rr.filter(e=>e.isConnected&&e.active).pop()===this}_handleKeyDown(e){if(this.active){if(e.key==="Tab"){this._isTopmost()&&this._trapFocus(e);return}e.key==="Escape"&&(fa.has(e)||!this._isTopmost()||(fa.add(e),e.stopPropagation(),this.escapeDismiss&&this._requestClose()))}}_trapFocus(e){let t=Js(this._panel);if(!t.length){e.preventDefault(),this._panel.focus();return}let r=t.indexOf(ga());e.shiftKey&&r<=0?(e.preventDefault(),t[t.length-1].focus()):!e.shiftKey&&(r===-1||r===t.length-1)&&(e.preventDefault(),t[0].focus())}async _requestClose(){if(this._busy)return!1;if(this.guardDirty&&this.querySelector("[form][dirty]")){let{result:e}=va({preset:"confirm",title:"Discard changes?",message:"You have unsaved changes. Close without saving them?",confirmLabel:"Discard",cancelLabel:"Keep editing",confirmVariant:"danger"});if(!await e)return!1}return this.hide(),!0}_handleOverlayClick(){this.overlayDismiss&&this._requestClose()}async _handleCancel(){this._busy||await this._requestClose()&&this.emit("hmwc-cancel")}_syncRoute(e){if(!this.route)return;let t=window.location.pathname;window.location.href.includes("?")&&(t+=`?${window.location.href.split("?")[1].split("#")[0]}`),window.history.replaceState(null,"",e?`${t}#${this.route}`:t)}_enableRouting(){window.addEventListener("popstate",()=>{window.location.hash===`#${this.route}`?this.show():this.hide()})}_renderHeader(){return this.title||this.controllers.slot.test("header")||this.controllers.slot.test("title")?c`
       <slot name="header" part="header" class="popup__header">
         <div class="popup__header-content">
           ${this.icon||this.controllers.slot.test("icon")?c`
                 <slot name="icon" part="icon" class="popup__icon ${this.iconVariant?`icon-${this.iconVariant}`:""}">
                   <hmwc-icon src=${w(this.icon)}></hmwc-icon>
                 </slot>
-              `:A}
-          <slot name="title" part="title" class="popup__title"> ${this.title} </slot>
+              `:x}
+          <slot name="title" part="title" id="title" class="popup__title"> ${this.title} </slot>
         </div>
         <div part="controls" class="popup__controls">
           <slot name="controls"></slot>
-          ${this.dismissible?c`<hmwc-button sm basic icon="x-lg" @hmwc-click=${()=>this.hide()}></hmwc-button>`:A}
+          ${this.dismissible?c`<hmwc-button
+                class="popup__close"
+                sm
+                basic
+                icon="x"
+                aria-label="Close"
+                ?disabled=${this._busy}
+                @hmwc-click=${()=>this._requestClose()}></hmwc-button>`:x}
         </div>
       </slot>
-    `:A}_renderFooter(){return this.controllers.slot.test("footer")||this.confirmation?c`
+    `:x}_renderFooter(){let e=this.controllers.slot.test("footer"),t=this.controllers.slot.test("footer-start");return e||t||this.confirmation?c`
+      ${this._error?c`<hmwc-alert part="error" class="popup__error" danger active icon="exclamation-octagon" label=${this._error}></hmwc-alert>`:x}
       <div part="footer" class="popup__footer">
+        ${t?c`<slot name="footer-start" part="footer-start" class="popup__footer-start"></slot>`:x}
         <slot name="footer" class="popup__footer-actions">
           ${this.confirmation?c`
-                ${this.hideCancel?A:c`<hmwc-button sm neutral label=${this.cancelLabel} @hmwc-click=${()=>this._handleCancel()}></hmwc-button>`}
+                ${this.hideCancel?x:c`<hmwc-button sm neutral label=${this.cancelLabel} ?disabled=${this._busy} @hmwc-click=${()=>this._handleCancel()}></hmwc-button>`}
                 <hmwc-button
                   sm
+                  ?loading=${this._busy}
+                  ?disabled=${this._busy}
                   ?primary=${this.confirmVariant==="primary"}
                   ?success=${this.confirmVariant==="success"}
                   ?warning=${this.confirmVariant==="warning"}
@@ -7927,12 +9767,12 @@
                   ?neutral=${this.confirmVariant==="neutral"}
                   label=${this.confirmLabel}
                   @hmwc-click=${()=>this.confirm()}></hmwc-button>
-              `:A}
+              `:x}
         </slot>
       </div>
-    `:A}render(){let t=f({popup:!0,open:!!this.active,drawer:!!this.drawer,confirmation:!!this.confirmation,fluid:!!this.fluid,sm:!!this.sm,md:!!this.md||!this.sm&&!this.lg&&!this.xl&&!this.full,lg:!!this.lg,xl:!!this.xl,full:!!this.full,[`variant-${this.variant}`]:this.variant!=="default",header:!!this.title||this.controllers.slot.test("header")||this.controllers.slot.test("title"),footer:!!this.confirmation||this.controllers.slot.test("footer")});return c`
-      <div part="base" class=${t}>
-        ${this.overlay?c`<div part="overlay" class="popup__overlay" @click=${()=>this._handleOverlayClick()}></div>`:A}
+    `:x}render(){let e=v({popup:!0,open:!!this.active,drawer:!!this.drawer,confirmation:!!this.confirmation,fluid:!!this.fluid,sm:!!this.sm,md:!!this.md||!this.sm&&!this.lg&&!this.xl&&!this.full,lg:!!this.lg,xl:!!this.xl,full:!!this.full,[`variant-${this.variant}`]:this.variant!=="default",header:!!this.title||this.controllers.slot.test("header")||this.controllers.slot.test("title"),footer:!!this.confirmation||this.controllers.slot.test("footer")||this.controllers.slot.test("footer-start"),"footer-start":this.controllers.slot.test("footer-start"),loading:!!this.loading});return c`
+      <div part="base" class=${e}>
+        ${this.overlay?c`<div part="overlay" class="popup__overlay" @click=${()=>this._handleOverlayClick()}></div>`:x}
         <div
           part="panel"
           class="popup__panel"
@@ -7940,16 +9780,24 @@
           aria-modal="true"
           aria-hidden=${this.active?"false":"true"}
           aria-label=${w(this.title||void 0)}
-          aria-labelledby=${w(this.title?"title":void 0)}
+          aria-labelledby=${w(this.title||this.controllers.slot.test("title")?"title":void 0)}
+          aria-busy=${this.loading||this._busy?"true":"false"}
           tabindex="-1">
           ${this._renderHeader()}
 
-          <slot part="content" class="popup__content" tabindex="-1"> ${this.message} </slot>
+          ${this.loading?c`
+                <div part="skeleton" class="popup__skeleton">
+                  <hmwc-skeleton></hmwc-skeleton>
+                  <hmwc-skeleton></hmwc-skeleton>
+                  <hmwc-skeleton class="popup__skeleton-short"></hmwc-skeleton>
+                </div>
+              `:x}
+          <slot part="content" class="popup__content" tabindex="-1" ?hidden=${!!this.loading}> ${this.message} </slot>
 
           ${this._renderFooter()}
         </div>
       </div>
-    `}};T.styles=co;T.dependencies=[y,_];T.slots=["title","icon","controls","header","footer"];J([a({type:Boolean,reflect:!0})],T.prototype,"active",void 0);J([a({type:String})],T.prototype,"title",void 0);J([a({type:String})],T.prototype,"message",void 0);J([a({type:String})],T.prototype,"icon",void 0);J([a({type:String,attribute:"icon-variant"})],T.prototype,"iconVariant",void 0);J([a({type:Boolean,reflect:!0})],T.prototype,"sm",void 0);J([a({type:Boolean,reflect:!0})],T.prototype,"md",void 0);J([a({type:Boolean,reflect:!0})],T.prototype,"lg",void 0);J([a({type:Boolean,reflect:!0})],T.prototype,"xl",void 0);J([a({type:Boolean,reflect:!0})],T.prototype,"full",void 0);J([a({type:String,reflect:!0})],T.prototype,"variant",void 0);J([a({type:Boolean,reflect:!0})],T.prototype,"drawer",void 0);J([a({type:Boolean,reflect:!0})],T.prototype,"confirmation",void 0);J([a({type:Boolean,attribute:"hide-cancel"})],T.prototype,"hideCancel",void 0);J([a({type:String,attribute:"confirm-label"})],T.prototype,"confirmLabel",void 0);J([a({type:String,attribute:"cancel-label"})],T.prototype,"cancelLabel",void 0);J([a({type:String,attribute:"confirm-variant"})],T.prototype,"confirmVariant",void 0);J([a({type:Boolean,reflect:!0})],T.prototype,"fluid",void 0);J([a({type:Boolean,reflect:!0})],T.prototype,"dismissible",void 0);J([a({type:Boolean,attribute:"overlay-dismiss"})],T.prototype,"overlayDismiss",void 0);J([a({type:Boolean,attribute:"escape-dismiss"})],T.prototype,"escapeDismiss",void 0);J([a({type:Boolean,reflect:!0})],T.prototype,"overlay",void 0);J([a({type:String})],T.prototype,"route",void 0);J([R(".popup")],T.prototype,"_popup",void 0);J([R(".popup__panel")],T.prototype,"_panel",void 0);J([p("active",{waitUntilFirstUpdate:!0})],T.prototype,"handleOpenChange",null);function ya(s={}){let t=Object.fromEntries(Object.entries(s).filter(([,o])=>o!==void 0)),e=s.preset?{...Br[s.preset],...t}:s,r=document.createElement("hmwc-popup");if(s.content&&(typeof s.content=="string"?r.innerHTML=s.content:r.appendChild(s.content)),s.buttons?.length){let o=document.createElement("div");o.slot="footer";for(let n of s.buttons){let l=document.createElement("hmwc-button");l.sm=!0,l.label=n.label,n.variant&&(l[n.variant]=!0),n.icon&&(l.icon=n.icon),n.basic&&(l.basic=!0),n.action&&l.addEventListener("hmwc-click",()=>n.action(r)),o.appendChild(l)}r.appendChild(o)}s.className&&(r.className=s.className),s.style&&(typeof s.style=="string"?r.setAttribute("style",s.style):Object.assign(r.style,s.style)),s.onShow&&r.addEventListener("hmwc-show",()=>s.onShow(r)),s.onHide&&r.addEventListener("hmwc-hide",()=>s.onHide(r)),s.onCancel&&r.addEventListener("hmwc-cancel",()=>s.onCancel(r)),s.onSubmit&&r.addEventListener("hmwc-submit",async o=>{await s.onSubmit(r)===!1&&o.preventDefault()}),document.body.appendChild(r),e.title&&(r.title=e.title),e.message&&(r.message=e.message),e.icon&&(r.icon=e.icon),e.iconVariant&&(r.iconVariant=e.iconVariant),e.size?r[e.size]=!0:r.sm=!0,e.variant&&(r.variant=e.variant),e.drawer&&(r.drawer=!0),e.confirmation&&(r.confirmation=!0),e.hideCancel&&(r.hideCancel=!0),e.confirmLabel&&(r.confirmLabel=e.confirmLabel),e.cancelLabel&&(r.cancelLabel=e.cancelLabel),e.confirmVariant&&(r.confirmVariant=e.confirmVariant),e.fluid&&(r.fluid=!0),e.dismissible===!1&&(r.dismissible=!1),e.overlayDismiss===!1&&(r.overlayDismiss=!1),e.escapeDismiss===!1&&(r.escapeDismiss=!1),e.overlay===!1&&(r.overlay=!1),r._autoDestroy=s.autoDestroy!==!1;let i=r.getResult();return requestAnimationFrame(()=>r.show()),{popup:r,result:i,close:()=>r.hide()}}T.define("hmwc-popup",T);var ho=m`
+    `}};D.styles=[pt,ua];D.dependencies=[U,k,$,oe];D.slots=["title","icon","controls","header","footer","footer-start"];G([n({type:Boolean,reflect:!0})],D.prototype,"active",void 0);G([n({type:String})],D.prototype,"title",void 0);G([n({type:String})],D.prototype,"message",void 0);G([n({type:String})],D.prototype,"icon",void 0);G([n({type:String,attribute:"icon-variant"})],D.prototype,"iconVariant",void 0);G([n({type:Boolean,reflect:!0})],D.prototype,"sm",void 0);G([n({type:Boolean,reflect:!0})],D.prototype,"md",void 0);G([n({type:Boolean,reflect:!0})],D.prototype,"lg",void 0);G([n({type:Boolean,reflect:!0})],D.prototype,"xl",void 0);G([n({type:Boolean,reflect:!0})],D.prototype,"full",void 0);G([n({type:String,reflect:!0})],D.prototype,"variant",void 0);G([n({type:Boolean,reflect:!0})],D.prototype,"drawer",void 0);G([n({type:Boolean,reflect:!0})],D.prototype,"confirmation",void 0);G([n({type:Boolean,attribute:"hide-cancel"})],D.prototype,"hideCancel",void 0);G([n({type:String,attribute:"confirm-label"})],D.prototype,"confirmLabel",void 0);G([n({type:String,attribute:"cancel-label"})],D.prototype,"cancelLabel",void 0);G([n({type:String,attribute:"confirm-variant"})],D.prototype,"confirmVariant",void 0);G([n({type:Boolean,reflect:!0})],D.prototype,"fluid",void 0);G([n({type:Boolean,reflect:!0})],D.prototype,"loading",void 0);G([n({type:Boolean,reflect:!0,attribute:"close-on-submit"})],D.prototype,"closeOnSubmit",void 0);G([n({type:Boolean,reflect:!0,attribute:"guard-dirty"})],D.prototype,"guardDirty",void 0);G([n({type:Boolean,reflect:!0})],D.prototype,"dismissible",void 0);G([n({type:Boolean,attribute:"overlay-dismiss"})],D.prototype,"overlayDismiss",void 0);G([n({type:Boolean,attribute:"escape-dismiss"})],D.prototype,"escapeDismiss",void 0);G([n({type:Boolean,reflect:!0})],D.prototype,"overlay",void 0);G([n({type:String})],D.prototype,"route",void 0);G([I(".popup")],D.prototype,"_popup",void 0);G([I(".popup__panel")],D.prototype,"_panel",void 0);G([b()],D.prototype,"_busy",void 0);G([b()],D.prototype,"_error",void 0);G([u("active",{waitUntilFirstUpdate:!0})],D.prototype,"handleOpenChange",null);function va(s={}){let e=Object.fromEntries(Object.entries(s).filter(([,o])=>o!==void 0)),t=s.preset?{...mi[s.preset],...e}:s,r=document.createElement("hmwc-popup");if(s.content&&(typeof s.content=="string"?r.innerHTML=s.content:r.appendChild(s.content)),s.buttons?.length){let o=document.createElement("div");o.slot="footer";for(let a of s.buttons){let l=document.createElement("hmwc-button");l.sm=!0,l.label=a.label,a.variant&&(l[a.variant]=!0),a.icon&&(l.icon=a.icon),a.basic&&(l.basic=!0),a.action&&l.addEventListener("hmwc-click",()=>a.action(r)),o.appendChild(l)}r.appendChild(o)}s.className&&(r.className=s.className),s.style&&(typeof s.style=="string"?r.setAttribute("style",s.style):Object.assign(r.style,s.style)),s.onShow&&r.addEventListener("hmwc-show",o=>o.target===r&&s.onShow(r)),s.onHide&&r.addEventListener("hmwc-hide",o=>o.target===r&&s.onHide(r)),s.onCancel&&r.addEventListener("hmwc-cancel",o=>o.target===r&&s.onCancel(r)),(s.onSubmit||s.action)&&r.addEventListener("hmwc-submit",o=>{if(o.target!==r)return;let a=o.detail;s.onSubmit&&a.waitUntil(Promise.resolve(s.onSubmit(r))),s.action&&a.waitUntil(Promise.resolve().then(()=>s.action(r)))}),document.body.appendChild(r),t.title&&(r.title=t.title),t.message&&(r.message=t.message),t.icon&&(r.icon=t.icon),t.iconVariant&&(r.iconVariant=t.iconVariant),t.size?r[t.size]=!0:r.sm=!0,t.variant&&(r.variant=t.variant),t.drawer&&(r.drawer=!0),t.confirmation&&(r.confirmation=!0),t.hideCancel&&(r.hideCancel=!0),t.confirmLabel&&(r.confirmLabel=t.confirmLabel),t.cancelLabel&&(r.cancelLabel=t.cancelLabel),t.confirmVariant&&(r.confirmVariant=t.confirmVariant),t.fluid&&(r.fluid=!0),t.dismissible===!1&&(r.dismissible=!1),t.overlayDismiss===!1&&(r.overlayDismiss=!1),t.escapeDismiss===!1&&(r.escapeDismiss=!1),t.overlay===!1&&(r.overlay=!1),r._autoDestroy=s.autoDestroy!==!1;let i=r.getResult();return requestAnimationFrame(()=>r.show()),{popup:r,result:i,close:()=>r.hide()}}D.define("hmwc-popup",D);var ba=f`
   :host {
     --hmwc-panel-transparency: 70%;
 
@@ -7970,7 +9818,7 @@
       text-align: center;
 
       & hmwc-icon {
-        --icon-size: 0.5rem;
+        --icon-size: calc(0.5 * var(--hmwc-rem, 1rem));
       }
 
       & .header__proxy-name {
@@ -8006,7 +9854,7 @@
           }
 
           & img {
-            height: 2rem;
+            height: calc(2 * var(--hmwc-rem, 1rem));
           }
         }
 
@@ -8054,7 +9902,7 @@
           }
 
           & hmwc-icon {
-            --icon-size: 0.7rem;
+            --icon-size: calc(0.7 * var(--hmwc-rem, 1rem));
             position: relative;
             top: 1px;
             --icon-color: var(--hmwc-color-neutral-700);
@@ -8076,7 +9924,7 @@
       }
     }
   }
-`;var ce=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},yt=class extends u{constructor(){super(...arguments),this.userUpdate=()=>this.updateProxyUser(),this.logoUpdate=()=>this._logo=this.getLogoVariant()}return(){this.emit("hmwc-navigate",{detail:{route:"/"}})}handleSettingsClick(){window.location.hash="#settings"}handleMenuSelection(t){t.detail.value==="account"?(t.stopImmediatePropagation(),window.location.hash="#settings"):t.detail.value==="logout"&&this.emit("hmwc-navigate",{detail:{route:"/logout"}})}updateProxyUser(){this.proxyUser=this.user?.proxyHost?.firstName?this.user:{}}observeTheme(){new MutationObserver(t=>{t.forEach(e=>{e.type!=="attributes"&&e.attributeName!=="class"||(this._logo=this.getLogoVariant())})}).observe(document.documentElement,{attributes:!0})}getLogoVariant(){let t=document.documentElement.className.includes("theme-dark")?"dark":"light";return this.logo instanceof String?this.logo:!(this.logo instanceof Object)||!this.logo[t]?"":this.logo[t]}navigateFAQ(){this.emit("hmwc-navigate",{detail:{route:"/help-support/faq"}})}setDefaultHMWCLogo(){this.logo||(this.logo={light:"/src/assets/images/hmwc-dark.png",dark:"/src/assets/images/hmwc-light.png"})}connectedCallback(){super.connectedCallback(),this.setDefaultHMWCLogo(),this.observeTheme()}render(){let t=[{value:"account",label:"My Account"},{value:"logout",label:"Logout"}],e=this.user?(this.user.proxyHost?.firstName||this.user.firstName)+" "+(this.user.proxyHost?.lastName||this.user.lastName):"";return c`
+`;var $t=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Te=class extends g{constructor(){super(...arguments),this.userUpdate=()=>this.updateProxyUser(),this.logoUpdate=()=>this._logo=this.getLogoVariant()}return(){this.emit("hmwc-navigate",{detail:{route:"/"}})}handleSettingsClick(){window.location.hash="#settings"}handleMenuSelection(e){e.detail.value==="account"?(e.stopImmediatePropagation(),window.location.hash="#settings"):e.detail.value==="logout"&&this.emit("hmwc-navigate",{detail:{route:"/logout"}})}updateProxyUser(){this.proxyUser=this.user?.proxyHost?.firstName?this.user:{}}observeTheme(){new MutationObserver(e=>{e.forEach(t=>{t.type!=="attributes"&&t.attributeName!=="class"||(this._logo=this.getLogoVariant())})}).observe(document.documentElement,{attributes:!0})}getLogoVariant(){let e=document.documentElement.className.includes("theme-dark")?"dark":"light";return this.logo instanceof String?this.logo:!(this.logo instanceof Object)||!this.logo[e]?"":this.logo[e]}navigateFAQ(){this.emit("hmwc-navigate",{detail:{route:"/help-support/faq"}})}setDefaultHMWCLogo(){this.logo||(this.logo={light:"/src/assets/images/hmwc-dark.png",dark:"/src/assets/images/hmwc-light.png"})}connectedCallback(){super.connectedCallback(),this.setDefaultHMWCLogo(),this.observeTheme()}render(){let e=[{value:"account",label:"My Account"},{value:"logout",label:"Logout"}],t=this.user?(this.user.proxyHost?.firstName||this.user.firstName)+" "+(this.user.proxyHost?.lastName||this.user.lastName):"";return c`
       <div part="base" class="header">
         <slot></slot>
 
@@ -8096,12 +9944,15 @@
           </div>
 
           <div class="header__user">
-            <hmwc-attachment distance="8" placement="bottom" .items=${t} @hmwc-select=${this.handleMenuSelection}>
+            <hmwc-attachment distance="8" placement="bottom" @hmwc-select=${this.handleMenuSelection}>
               <div part="user" class="header__avatar" slot="anchor">
-                <hmwc-avatar small status="active" name=${e}></hmwc-avatar>
-                <span part="user-name" class="header__user-name">${e}</span>
+                <hmwc-avatar small status="active" name=${t}></hmwc-avatar>
+                <span part="user-name" class="header__user-name">${t}</span>
                 <hmwc-icon flex src="caret-down-fill"></hmwc-icon>
               </div>
+              <hmwc-menu>
+                ${e.map(r=>c`<hmwc-menu-item value=${r.value} label=${r.label}></hmwc-menu-item>`)}
+              </hmwc-menu>
             </hmwc-attachment>
           </div>
 
@@ -8140,7 +9991,7 @@
           </div>
         </div>
       </div>
-    `}};yt.styles=ho;yt.dependencies=[O,F,Y,y,x,T,W];ce([v()],yt.prototype,"_logo",void 0);ce([v()],yt.prototype,"proxyUser",void 0);ce([a({type:String,reflect:!0})],yt.prototype,"title",void 0);ce([a()],yt.prototype,"logo",void 0);ce([a({type:Object})],yt.prototype,"user",void 0);ce([a({type:Boolean,reflect:!0})],yt.prototype,"beta",void 0);ce([R("#search")],yt.prototype,"popup",void 0);ce([R("hmwc-menu")],yt.prototype,"menu",void 0);ce([p("user")],yt.prototype,"userUpdate",void 0);ce([p("logo")],yt.prototype,"logoUpdate",void 0);yt.define("hmwc-header",yt);var po="important",_a=" !"+po,mo=Be(class extends ge{constructor(s){if(super(s),s.type!==oe.ATTRIBUTE||s.name!=="style"||s.strings?.length>2)throw Error("The `styleMap` directive must be used in the `style` attribute and must be the only part in the attribute.")}render(s){return Object.keys(s).reduce((t,e)=>{let r=s[e];return r==null?t:t+`${e=e.includes("-")?e:e.replace(/(?:^(webkit|moz|ms|o)|)(?=[A-Z])/g,"-$&").toLowerCase()}:${r};`},"")}update(s,[t]){let{style:e}=s.element;if(this.ft===void 0)return this.ft=new Set(Object.keys(t)),this.render(t);for(let r of this.ft)t[r]==null&&(this.ft.delete(r),r.includes("-")?e.removeProperty(r):e[r]=null);for(let r in t){let i=t[r];if(i!=null){this.ft.add(r);let o=typeof i=="string"&&i.endsWith(_a);r.includes("-")||o?e.setProperty(r,o?i.slice(0,-11):i,o?po:""):e[r]=i}}return At}});var uo=m`
+    `}};Te.styles=ba;Te.dependencies=[P,W,Q,k,$,C,O,M,D,K];$t([b()],Te.prototype,"_logo",void 0);$t([b()],Te.prototype,"proxyUser",void 0);$t([n({type:String,reflect:!0})],Te.prototype,"title",void 0);$t([n()],Te.prototype,"logo",void 0);$t([n({type:Object})],Te.prototype,"user",void 0);$t([n({type:Boolean,reflect:!0})],Te.prototype,"beta",void 0);$t([I("#search")],Te.prototype,"popup",void 0);$t([I("hmwc-menu")],Te.prototype,"menu",void 0);$t([u("user")],Te.prototype,"userUpdate",void 0);$t([u("logo")],Te.prototype,"logoUpdate",void 0);Te.define("hmwc-header",Te);var wa=f`
   :host {
     --image-width: 100%;
     --image-height: 100%;
@@ -8197,27 +10048,27 @@
     }
 
     &.xs {
-      --image-height: 1.25rem;
+      --image-height: calc(1.25 * var(--hmwc-rem, 1rem));
     }
 
     &.sm {
-      --image-height: 2.5rem;
+      --image-height: calc(2.5 * var(--hmwc-rem, 1rem));
     }
 
     &.md {
-      --image-height: 5rem;
+      --image-height: calc(5 * var(--hmwc-rem, 1rem));
     }
 
     &.lg {
-      --image-height: 10rem;
+      --image-height: calc(10 * var(--hmwc-rem, 1rem));
     }
 
     &.xl {
-      --image-height: 20rem;
+      --image-height: calc(20 * var(--hmwc-rem, 1rem));
     }
   }
-`;var Ht=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},ot=class extends u{constructor(){super(...arguments),this.errored=!1,this.loading="lazy",this.fit="cover",this.radius="none"}handleSrcChange(){this.errored=!1}handleLoad(){this.errored=!1,this.emit("hmwc-ready",{detail:{src:this.src??""}})}handleError(){this.errored=!0}dimension(t){if(!(t==null||t===""))return typeof t=="number"||/^\d+$/.test(t)?`${t}px`:t}dimensionAttribute(t){if(t==null||t==="")return;let e=typeof t=="number"?t:/^\d+$/.test(t)?Number(t):NaN;return Number.isNaN(e)?void 0:`${e}`}render(){let t=f({image:!0,xs:!!this.xs,sm:!!this.sm,md:!!this.md,lg:!!this.lg,xl:!!this.xl}),e=this.dimension(this.width),r=this.dimension(this.height),i=mo({...e?{"--image-width":e}:{},...r?{"--image-height":r}:{}}),o=this.errored&&this.controllers.slot.test("fallback");return c`
-      <div part="base" class=${t} data-fit=${this.fit} data-radius=${this.radius} style=${i}>
+`;var ot=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},fe=class extends g{constructor(){super(...arguments),this.errored=!1,this.loading="lazy",this.fit="cover",this.radius="none"}handleSrcChange(){this.errored=!1}handleLoad(){this.errored=!1,this.emit("hmwc-ready",{detail:{src:this.src??""}})}handleError(){this.errored=!0}dimension(e){if(!(e==null||e===""))return typeof e=="number"||/^\d+$/.test(e)?`${e}px`:e}dimensionAttribute(e){if(e==null||e==="")return;let t=typeof e=="number"?e:/^\d+$/.test(e)?Number(e):NaN;return Number.isNaN(t)?void 0:`${t}`}render(){let e=v({image:!0,xs:!!this.xs,sm:!!this.sm,md:!!this.md,lg:!!this.lg,xl:!!this.xl}),t=this.dimension(this.width),r=this.dimension(this.height),i=Jt({...t?{"--image-width":t}:{},...r?{"--image-height":r}:{}}),o=this.errored&&this.controllers.slot.test("fallback");return c`
+      <div part="base" class=${e} data-fit=${this.fit} data-radius=${this.radius} style=${i}>
         ${o?c`<slot name="fallback"></slot>`:c`
               <img
                 part="image"
@@ -8230,7 +10081,7 @@
                 @error=${this.handleError} />
             `}
       </div>
-    `}};ot.styles=uo;ot.slots=["fallback"];Ht([v()],ot.prototype,"errored",void 0);Ht([a({type:Boolean,reflect:!0})],ot.prototype,"xs",void 0);Ht([a({type:Boolean,reflect:!0})],ot.prototype,"sm",void 0);Ht([a({type:Boolean,reflect:!0})],ot.prototype,"md",void 0);Ht([a({type:Boolean,reflect:!0})],ot.prototype,"lg",void 0);Ht([a({type:Boolean,reflect:!0})],ot.prototype,"xl",void 0);Ht([a({type:String})],ot.prototype,"src",void 0);Ht([a({type:String})],ot.prototype,"alt",void 0);Ht([a({type:String,reflect:!0})],ot.prototype,"loading",void 0);Ht([a({type:String,reflect:!0})],ot.prototype,"fit",void 0);Ht([a({type:String,reflect:!0})],ot.prototype,"radius",void 0);Ht([a()],ot.prototype,"width",void 0);Ht([a()],ot.prototype,"height",void 0);Ht([p("src",{waitUntilFirstUpdate:!0})],ot.prototype,"handleSrcChange",null);ot.define("hmwc-image",ot);var fo=m`
+    `}};fe.styles=wa;fe.slots=["fallback"];ot([b()],fe.prototype,"errored",void 0);ot([n({type:Boolean,reflect:!0})],fe.prototype,"xs",void 0);ot([n({type:Boolean,reflect:!0})],fe.prototype,"sm",void 0);ot([n({type:Boolean,reflect:!0})],fe.prototype,"md",void 0);ot([n({type:Boolean,reflect:!0})],fe.prototype,"lg",void 0);ot([n({type:Boolean,reflect:!0})],fe.prototype,"xl",void 0);ot([n({type:String})],fe.prototype,"src",void 0);ot([n({type:String})],fe.prototype,"alt",void 0);ot([n({type:String,reflect:!0})],fe.prototype,"loading",void 0);ot([n({type:String,reflect:!0})],fe.prototype,"fit",void 0);ot([n({type:String,reflect:!0})],fe.prototype,"radius",void 0);ot([n()],fe.prototype,"width",void 0);ot([n()],fe.prototype,"height",void 0);ot([u("src",{waitUntilFirstUpdate:!0})],fe.prototype,"handleSrcChange",null);fe.define("hmwc-image",fe);var ya=f`
   :host {
     display: flex;
     width: 100%;
@@ -8259,13 +10110,13 @@
       }
     }
   }
-`;var go=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},ne=class extends u{constructor(){super(...arguments),this._items=[],this.items=[]}getItems(){return this.items.length?this.items:this.controllers.slot.get()}connectedCallback(){super.connectedCallback(),this.items.length||(this._items=this.getItems())}render(){return c`
+`;var _a=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},bt=class extends g{constructor(){super(...arguments),this._items=[],this.items=[]}getItems(){return this.items.length?this.items:this.controllers.slot.get()}connectedCallback(){super.connectedCallback(),this.items.length||(this._items=this.getItems())}render(){return c`
       <div part="base" class="list">
         <ul part="list" class="list__list">
-          <slot> ${this._items.map(t=>c` <li part="item" class="list__item">${t}</li> `)} </slot>
+          <slot> ${this._items.map(e=>c` <li part="item" class="list__item">${e}</li> `)} </slot>
         </ul>
       </div>
-    `}};ne.styles=fo;ne.dependencies=[];ne.slots=[];go([v()],ne.prototype,"_items",void 0);go([a({type:String})],ne.prototype,"items",void 0);ne.define("hmwc-list",ne);var vo=m`
+    `}};bt.styles=ya;bt.dependencies=[];bt.slots=[];_a([b()],bt.prototype,"_items",void 0);_a([n({type:String})],bt.prototype,"items",void 0);bt.define("hmwc-list",bt);var xa=f`
   :host {
     --navbar-width: var(--hmwc-navbar-width);
     --hmwc-panel-transparency: 70%;
@@ -8308,7 +10159,7 @@
       }
       & hmwc-divider {
         position: relative;
-        top: 0.1rem;
+        top: calc(0.1 * var(--hmwc-rem, 1rem));
         --divider-color: var(--hmwc-color-neutral-50);
         margin: calc(3.5px + var(--hmwc-spacing-medium)) 0;
       }
@@ -8324,7 +10175,7 @@
       // display: flex;
       // width: 100%;
       opacity: 1;
-      height: 1rem;
+      height: calc(1 * var(--hmwc-rem, 1rem));
     }
 
     & .navbar__item:not(:first-of-type) {
@@ -8335,7 +10186,7 @@
       hmwc-button {
         --button-padding: 0 var(--hmwc-spacing-2x-small);
         --button-border: transparent;
-        --icon-size: 0.64rem;
+        --icon-size: calc(0.64 * var(--hmwc-rem, 1rem));
         --icon-color: var(--hmwc-color-neutral-500);
       }
 
@@ -8358,7 +10209,7 @@
         color: var(--hmwc-color-neutral-700);
         font-weight: var(--hmwc-font-weight-bold);
         gap: calc(1.2 * var(--hmwc-spacing-small));
-        --icon-size: 1rem;
+        --icon-size: calc(1 * var(--hmwc-rem, 1rem));
         --icon-color: var(--hmwc-color-neutral-700);
         color: var(--hmwc-color-neutral-800);
         font-size: calc(1.16 * var(--hmwc-font-size-small));
@@ -8370,10 +10221,10 @@
         width: 100%;
         border-radius: var(--hmwc-border-radius-large);
         box-sizing: border-box;
-        --icon-size: 0.8rem;
+        --icon-size: calc(0.8 * var(--hmwc-rem, 1rem));
         --icon-color: var(--hmwc-color-neutral-500);
 
-        font-size: 0.94rem;
+        font-size: calc(0.94 * var(--hmwc-rem, 1rem));
         font-weight: var(--hmwc-font-weight-semibold);
         letter-spacing: -0.35px;
         color: var(--hmwc-color-neutral-800);
@@ -8473,7 +10324,7 @@
         --button-background: var(--hmwc-color-primary-200);
         --button-color: var(--hmwc-color-primary-800);
         --button-shadow: var(--hmwc-shadow-large);
-        --icon-size: 0.75rem;
+        --icon-size: calc(0.75 * var(--hmwc-rem, 1rem));
         &::part(icon) {
           right: -1px;
           position: relative;
@@ -8504,28 +10355,29 @@
       }
     }
   }
-`;var we=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},zt=class extends u{constructor(){super(...arguments),this.groups=[]}open(){this.active=!0}close(){this.active=!1}toggle(){this.active=!this.active}openGroup(){this.active=!0}autoClose(){document.querySelector("#root")?.addEventListener("click",t=>{if(!["HMWC-NAVBAR","HMWC-HEADER"].includes(t.target.tagName)){if(document.body.classList.contains("hmwc-scroll-lock"))return;this.active=!1}})}enableKeyboardInteraction(){document.addEventListener("keypress",t=>{document.activeElement?.tagName!=="HMWC-INPUT"&&(t.preventDefault(),t.key==="s"&&(this.active=!this.active))})}handleOpenChange(){this.active||this.group?.hideAll()}handleRouteChange(){this.active=!1}handleRoutesChange(){if(!this.routes)return;let t=[];this.routes.forEach(e=>{let r=this.routes?.filter(i=>!(!i.path.startsWith(e.path)||i.path===e.path||i.path.split("/").length-1!==e.path.split("/").length));e.path.split("/").length<3&&(e.path!=="/"&&(e.routes=r),t.push(e))}),this.groups=t}connectedCallback(){super.connectedCallback(),this.autoClose(),this.enableKeyboardInteraction()}render(){let t=f({navbar:!0,open:!!this.active});return c`
-      <div part="base" class=${t}>
+`;var Dt=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Le=class extends g{constructor(){super(...arguments),this.groups=[]}open(){this.active=!0}close(){this.active=!1}toggle(){this.active=!this.active}openGroup(){this.active=!0}autoClose(){document.querySelector("#root")?.addEventListener("click",e=>{if(!["HMWC-NAVBAR","HMWC-HEADER"].includes(e.target.tagName)){if(document.body.classList.contains("hmwc-scroll-lock"))return;this.active=!1}})}enableKeyboardInteraction(){document.addEventListener("keypress",e=>{document.activeElement?.tagName!=="HMWC-INPUT"&&(e.preventDefault(),e.key==="s"&&(this.active=!this.active))})}handleOpenChange(){this.active||this.group?.hideAll()}handleRouteChange(){this.active=!1}handleRoutesChange(){if(!this.routes)return;let e=[];this.routes.forEach(t=>{let r=this.routes?.filter(i=>!(!i.path.startsWith(t.path)||i.path===t.path||i.path.split("/").length-1!==t.path.split("/").length));t.path.split("/").length<3&&(t.path!=="/"&&(t.routes=r),e.push(t))}),this.groups=e}connectedCallback(){super.connectedCallback(),this.autoClose(),this.enableKeyboardInteraction()}render(){let e=v({navbar:!0,open:!!this.active});return c`
+      <div part="base" class=${e}>
         <hmwc-accordion-group class="navbar__group" part="group">
-          ${this.groups?.map((e,r)=>c` ${r===1?c`
+          ${this.groups?.map((t,r)=>c` ${r===1?c`
                       ${this.active?c` <span class="navbar__section">Applications</span> `:c`<hmwc-divider spacing="md"></hmwc-divider>`}
                     `:""}
                 <hmwc-accordion
                   basic
-                  class=${`navbar__item ${e.path===this.route?.path||e.path!=="/"&&this.route?.path.includes(e.path)?"active":""}`}
-                  label=${this.active?e.title:""}
-                  icon=${e.icon||""}
-                  @click=${i=>!e.routes?.length&&(i.target.hide(),this.emit("hmwc-navigate",{detail:{route:e.path}}))}
-                  @hmwc-expand=${()=>e.routes?.length&&(this.active=!0)}>
+                  class=${`navbar__item ${t.path===this.route?.path||t.path!=="/"&&this.route?.path.includes(t.path)?"active":""}`}
+                  label=${this.active?t.title:""}
+                  icon=${t.icon||""}
+                  @click=${i=>!t.routes?.length&&(i.target.hide(),this.emit("hmwc-navigate",{detail:{route:t.path}}))}
+                  @hmwc-expand=${()=>t.routes?.length&&(this.active=!0)}>
                   <span slot="trigger" style="display: flex;">
-                    ${e.routes?.length?c`<hmwc-button
+                    ${t.routes?.length?c`<hmwc-button
                           sm
                           basic
                           icon="chevron-right"
+                          label="Show routes"
                           style="--button-padding: 0 var(--hmwc-spacing-2x-small); --button-border:transparent;"></hmwc-button>`:""}
                   </span>
-                  ${e.routes?.length?c` <ul class="navbar__pages">
-                        ${e.routes.map(i=>c`
+                  ${t.routes?.length?c` <ul class="navbar__pages">
+                        ${t.routes.map(i=>c`
                             <li
                               class=${`navbar__page ${i.path===this.route?.path?"active":""}`}
                               @click=${()=>(this.group?.hideAll(),this.emit("hmwc-navigate",{detail:{route:i.path}}))}>
@@ -8536,10 +10388,15 @@
                 </hmwc-accordion>`)}
         </hmwc-accordion-group>
         <div class="navbar__toggle">
-          <hmwc-button circle sm icon=${`chevron-${this.active?"left":"right"}`} @hmwc-click=${this.toggle}></hmwc-button>
+          <hmwc-button
+            circle
+            sm
+            icon=${`chevron-${this.active?"left":"right"}`}
+            label=${this.active?"Collapse navigation":"Expand navigation"}
+            @hmwc-click=${this.toggle}></hmwc-button>
         </div>
       </div>
-    `}};zt.styles=vo;zt.dependencies=[vt,Q,K];we([v()],zt.prototype,"groups",void 0);we([v()],zt.prototype,"route",void 0);we([a({type:Array})],zt.prototype,"routes",void 0);we([a({type:Boolean,reflect:!0})],zt.prototype,"active",void 0);we([R(".navbar__group")],zt.prototype,"group",void 0);we([p("open")],zt.prototype,"handleOpenChange",null);we([p("route",{waitUntilFirstUpdate:!0})],zt.prototype,"handleRouteChange",null);we([p("routes")],zt.prototype,"handleRoutesChange",null);zt.define("hmwc-navbar",zt);var bo=m`
+    `}};Le.styles=xa;Le.dependencies=[de,J,H];Dt([b()],Le.prototype,"groups",void 0);Dt([b()],Le.prototype,"route",void 0);Dt([n({type:Array})],Le.prototype,"routes",void 0);Dt([n({type:Boolean,reflect:!0})],Le.prototype,"active",void 0);Dt([I(".navbar__group")],Le.prototype,"group",void 0);Dt([u("open")],Le.prototype,"handleOpenChange",null);Dt([u("route",{waitUntilFirstUpdate:!0})],Le.prototype,"handleRouteChange",null);Dt([u("routes")],Le.prototype,"handleRoutesChange",null);Le.define("hmwc-navbar",Le);var ka=f`
   :host {
     display: inline-flex;
   }
@@ -8667,8 +10524,8 @@
       transition: none;
     }
   }
-`;var ee=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},tt=class extends u{handleClick(){this.emit("hmwc-click",{})}handleRemove(){this.emit("hmwc-remove",{detail:{value:this.label}})}connectedCallback(){super.connectedCallback(),!this.sm&&!this.md&&!this.lg&&(this.md=!0),!this.primary&&!this.success&&!this.neutral&&!this.warning&&!this.danger&&(this.primary=!0)}render(){let t=f({tag:!0,icon:!!this.icon,sm:!!this.sm,md:!!this.md,lg:!!this.lg,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger,pill:!!this.pill,removable:!!this.removable});return c`
-      <div part="base" class=${t} role="status" @click=${this.handleClick}>
+`;var ft=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},he=class extends g{handleClick(){this.emit("hmwc-click",{})}handleRemove(){this.emit("hmwc-remove",{detail:{value:this.label}})}connectedCallback(){super.connectedCallback(),!this.sm&&!this.md&&!this.lg&&(this.md=!0),!this.primary&&!this.success&&!this.neutral&&!this.warning&&!this.danger&&(this.primary=!0)}render(){let e=v({tag:!0,icon:!!this.icon,sm:!!this.sm,md:!!this.md,lg:!!this.lg,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger,pill:!!this.pill,removable:!!this.removable});return c`
+      <div part="base" class=${e} role="status" @click=${this.handleClick}>
         <slot class="tag__label" part="label"> ${this.icon&&c` <hmwc-icon src=${this.icon}></hmwc-icon> `} ${this.label} </slot>
         <div part="remove" class="tag__remove">
           ${this.removable&&c`
@@ -8681,7 +10538,7 @@
           `}
         </div>
       </div>
-    `}};tt.styles=bo;tt.dependencies=[_,y];tt.slots=["[default]"];ee([a({type:Boolean,reflect:!0})],tt.prototype,"removable",void 0);ee([a({type:Boolean,reflect:!0})],tt.prototype,"primary",void 0);ee([a({type:Boolean,reflect:!0})],tt.prototype,"success",void 0);ee([a({type:Boolean,reflect:!0})],tt.prototype,"neutral",void 0);ee([a({type:Boolean,reflect:!0})],tt.prototype,"warning",void 0);ee([a({type:Boolean,reflect:!0})],tt.prototype,"danger",void 0);ee([a({type:Boolean,reflect:!0})],tt.prototype,"sm",void 0);ee([a({type:Boolean,reflect:!0})],tt.prototype,"md",void 0);ee([a({type:Boolean,reflect:!0})],tt.prototype,"lg",void 0);ee([a({type:Boolean,reflect:!0})],tt.prototype,"pill",void 0);ee([a({type:String})],tt.prototype,"label",void 0);ee([a({type:String})],tt.prototype,"icon",void 0);tt.define("hmwc-tag",tt);var wo=m`
+    `}};he.styles=ka;he.dependencies=[$,k];he.slots=["[default]"];ft([n({type:Boolean,reflect:!0})],he.prototype,"removable",void 0);ft([n({type:Boolean,reflect:!0})],he.prototype,"primary",void 0);ft([n({type:Boolean,reflect:!0})],he.prototype,"success",void 0);ft([n({type:Boolean,reflect:!0})],he.prototype,"neutral",void 0);ft([n({type:Boolean,reflect:!0})],he.prototype,"warning",void 0);ft([n({type:Boolean,reflect:!0})],he.prototype,"danger",void 0);ft([n({type:Boolean,reflect:!0})],he.prototype,"sm",void 0);ft([n({type:Boolean,reflect:!0})],he.prototype,"md",void 0);ft([n({type:Boolean,reflect:!0})],he.prototype,"lg",void 0);ft([n({type:Boolean,reflect:!0})],he.prototype,"pill",void 0);ft([n({type:String})],he.prototype,"label",void 0);ft([n({type:String})],he.prototype,"icon",void 0);he.define("hmwc-tag",he);var $a=f`
   :host {
     --page-max-width: 1800px;
     display: flex;
@@ -8780,8 +10637,8 @@
       --page-max-width: 1600px;
     }
   }
-`;var Ee=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Et=class extends u{constructor(){super(...arguments),this.overrides=[],this.breadcrumbs=!0,this._breadcrumbUpgradeQueued=!1,this.handleBreadcrumbNavigate=t=>{t.stopPropagation(),this.emit("hmwc-navigate",{detail:{route:t.detail.route}})}}updateOverrides(){let t=Array.from(this.children);this.overrides=t.filter(e=>e instanceof U).map(e=>({label:e.label,path:e.path,icon:e.icon??void 0,prefix:e.prefix??void 0,suffix:e.suffix??void 0,home:e.home,options:e.options??e.items,actions:e.actions}))}connectedCallback(){super.connectedCallback(),this.updateOverrides()}handleSlotChange(){this.updateOverrides(),Array.from(this.children).some(e=>e.tagName==="HMWC-BREADCRUMB"&&!(e instanceof U))&&!this._breadcrumbUpgradeQueued&&(this._breadcrumbUpgradeQueued=!0,customElements.whenDefined("hmwc-breadcrumb").then(()=>{this._breadcrumbUpgradeQueued=!1,this.updateOverrides()}))}render(){let t=f({page:!0,title:!!this.title||this.controllers.slot.test("title")});return c`
-      <div part="base" class=${t}>
+`;var qt=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},je=class extends g{constructor(){super(...arguments),this.overrides=[],this.breadcrumbs=!0,this._breadcrumbUpgradeQueued=!1,this.handleBreadcrumbNavigate=e=>{e.stopPropagation(),this.emit("hmwc-navigate",{detail:{route:e.detail.route}})}}updateOverrides(){let e=Array.from(this.children);this.overrides=e.filter(t=>t instanceof Y).map(t=>({label:t.label,path:t.path,icon:t.icon??void 0,prefix:t.prefix??void 0,suffix:t.suffix??void 0,home:t.home,options:t.options??t.items,actions:t.actions}))}connectedCallback(){super.connectedCallback(),this.updateOverrides()}handleSlotChange(){this.updateOverrides(),Array.from(this.children).some(t=>t.tagName==="HMWC-BREADCRUMB"&&!(t instanceof Y))&&!this._breadcrumbUpgradeQueued&&(this._breadcrumbUpgradeQueued=!0,customElements.whenDefined("hmwc-breadcrumb").then(()=>{this._breadcrumbUpgradeQueued=!1,this.updateOverrides()}))}render(){let e=v({page:!0,title:!!this.title||this.controllers.slot.test("title")});return c`
+      <div part="base" class=${e}>
         ${this.route?c`<hmwc-breadcrumbs
               part="breadcrumbs"
               class="page__breadcrumbs"
@@ -8806,7 +10663,7 @@
           <slot @slotchange=${()=>this.handleSlotChange()}></slot>
         </div>
       </div>
-    `}};Et.styles=wo;Et.dependencies=[mt,U,tt,_];Et.slots=["title","group","controls"];Ee([v()],Et.prototype,"overrides",void 0);Ee([a({type:Boolean,reflect:!0})],Et.prototype,"breadcrumbs",void 0);Ee([a({type:String})],Et.prototype,"title",void 0);Ee([a({type:String})],Et.prototype,"group",void 0);Ee([a({type:String})],Et.prototype,"icon",void 0);Ee([a({type:Object})],Et.prototype,"route",void 0);Ee([a({type:Array})],Et.prototype,"routes",void 0);Et.define("hmwc-page",Et);var yo=m`
+    `}};je.styles=$a;je.dependencies=[Ae,Y,he,$];je.slots=["title","group","controls"];qt([b()],je.prototype,"overrides",void 0);qt([n({type:Boolean,reflect:!0})],je.prototype,"breadcrumbs",void 0);qt([n({type:String})],je.prototype,"title",void 0);qt([n({type:String})],je.prototype,"group",void 0);qt([n({type:String})],je.prototype,"icon",void 0);qt([n({type:Object})],je.prototype,"route",void 0);qt([n({type:Array})],je.prototype,"routes",void 0);je.define("hmwc-page",je);var Ca=f`
   :host {
     --progress-size: 64px;
     --progress-track: 6px;
@@ -8835,15 +10692,15 @@
       overflow: hidden;
 
       &.small {
-        --progress-track: 0.55rem;
+        --progress-track: calc(0.55 * var(--hmwc-rem, 1rem));
       }
 
       &.medium {
-        --progress-track: 1rem;
+        --progress-track: calc(1 * var(--hmwc-rem, 1rem));
       }
 
       &.large {
-        --progress-track: 1.3rem;
+        --progress-track: calc(1.3 * var(--hmwc-rem, 1rem));
       }
 
       &.indeterminate {
@@ -8865,7 +10722,7 @@
         background-color: var(--progress-color);
         color: var(--hmwc-color-neutral-0);
         text-align: center;
-        line-height: 1rem;
+        line-height: calc(1 * var(--hmwc-rem, 1rem));
         white-space: nowrap;
         overflow: hidden;
         transition: width var(--hmwc-transition-slow) ease, background-color var(--hmwc-transition-slow) ease;
@@ -9087,7 +10944,7 @@
       opacity: 0;
     }
   }
-`;var dt=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},q=class extends u{constructor(){super(...arguments),this.value=0,this.hasAnimatedIn=!1}get clampedValue(){return Math.max(0,Math.min(100,this.value))}get displayValue(){return this.hasAnimatedIn?this.clampedValue:0}handleValueChange(){this.emit("hmwc-change",{detail:{value:this.clampedValue,complete:this.clampedValue>=100}})}connectedCallback(){super.connectedCallback(),!this.bar&&!this.ring&&(this.bar=!0),(this.small||this.medium||this.large)&&console.warn("[hmwc-progress] The `small`, `medium`, and `large` size attributes are deprecated. Use `sm`, `md`, and `lg` instead."),!this.sm&&!this.md&&!this.lg&&!this.xl&&!this.small&&!this.medium&&!this.large&&(this.sm=!0)}firstUpdated(){requestAnimationFrame(()=>{requestAnimationFrame(()=>{this.hasAnimatedIn=!0})})}render(){let t=this.clampedValue,e=this.indeterminate?50:this.displayValue,r=f({progress:!0,bar:!!this.bar,ring:!!this.ring,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger,small:!!this.sm||!!this.small,medium:!!this.md||!!this.medium,large:!!this.lg||!!this.large,xl:!!this.xl,indeterminate:!!this.indeterminate,status:!!this.status});return c`
+`;var Ce=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},X=class extends g{constructor(){super(...arguments),this.value=0,this.hasAnimatedIn=!1}get clampedValue(){return Math.max(0,Math.min(100,this.value))}get displayValue(){return this.hasAnimatedIn?this.clampedValue:0}handleValueChange(){this.emit("hmwc-change",{detail:{value:this.clampedValue,complete:this.clampedValue>=100}})}connectedCallback(){super.connectedCallback(),!this.bar&&!this.ring&&(this.bar=!0),(this.small||this.medium||this.large)&&console.warn("[hmwc-progress] The `small`, `medium`, and `large` size attributes are deprecated. Use `sm`, `md`, and `lg` instead."),!this.sm&&!this.md&&!this.lg&&!this.xl&&!this.small&&!this.medium&&!this.large&&(this.sm=!0)}firstUpdated(){requestAnimationFrame(()=>{requestAnimationFrame(()=>{this.hasAnimatedIn=!0})})}render(){let e=this.clampedValue,t=this.indeterminate?50:this.displayValue,r=v({progress:!0,bar:!!this.bar,ring:!!this.ring,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger,small:!!this.sm||!!this.small,medium:!!this.md||!!this.medium,large:!!this.lg||!!this.large,xl:!!this.xl,indeterminate:!!this.indeterminate,status:!!this.status});return c`
       <div
         part="base"
         class=${r}
@@ -9096,23 +10953,23 @@
         aria-label=${this.label?this.label:"progress"}
         aria-valuemin="0"
         aria-valuemax="100"
-        aria-valuenow=${w(this.indeterminate?void 0:t)}
-        style="--percentage: ${e/100}">
+        aria-valuenow=${w(this.indeterminate?void 0:e)}
+        style="--percentage: ${t/100}">
         ${this.bar?c`
-              <div part="indicator" class="progress__indicator" style="width: ${e}%">
-                ${this.indeterminate?"":c` <slot part="label" class="progress__label"> ${this.status?`${t}%`:""} </slot> `}
+              <div part="indicator" class="progress__indicator" style="width: ${t}%">
+                ${this.indeterminate?"":c` <slot part="label" class="progress__label"> ${this.status?`${e}%`:""} </slot> `}
               </div>
             `:this.ring?c`
               <svg class="progress__ring">
                 <circle class="progress__track"></circle>
                 <circle class="progress__indicator"></circle>
-                ${!this.indeterminate&&t>0?c`<circle class="progress__indicator progress__glimmer" pathLength="100"></circle>`:""}
+                ${!this.indeterminate&&e>0?c`<circle class="progress__indicator progress__glimmer" pathLength="100"></circle>`:""}
               </svg>
 
-              <slot id="label" part="label" class="progress__label"> ${this.status?`${t}%`:""} </slot>
+              <slot id="label" part="label" class="progress__label"> ${this.status?`${e}%`:""} </slot>
             `:""}
       </div>
-    `}};q.styles=yo;dt([a({type:Boolean,reflect:!0})],q.prototype,"bar",void 0);dt([a({type:Boolean,reflect:!0})],q.prototype,"ring",void 0);dt([a({type:Boolean,reflect:!0})],q.prototype,"primary",void 0);dt([a({type:Boolean,reflect:!0})],q.prototype,"success",void 0);dt([a({type:Boolean,reflect:!0})],q.prototype,"neutral",void 0);dt([a({type:Boolean,reflect:!0})],q.prototype,"warning",void 0);dt([a({type:Boolean,reflect:!0})],q.prototype,"danger",void 0);dt([a({type:Boolean,reflect:!0})],q.prototype,"sm",void 0);dt([a({type:Boolean,reflect:!0})],q.prototype,"md",void 0);dt([a({type:Boolean,reflect:!0})],q.prototype,"lg",void 0);dt([a({type:Boolean,reflect:!0})],q.prototype,"xl",void 0);dt([a({type:Boolean,reflect:!0})],q.prototype,"small",void 0);dt([a({type:Boolean,reflect:!0})],q.prototype,"medium",void 0);dt([a({type:Boolean,reflect:!0})],q.prototype,"large",void 0);dt([a({type:Boolean})],q.prototype,"status",void 0);dt([a({type:Boolean,reflect:!0})],q.prototype,"indeterminate",void 0);dt([a({type:String})],q.prototype,"label",void 0);dt([a({type:Number,reflect:!0})],q.prototype,"value",void 0);dt([v()],q.prototype,"hasAnimatedIn",void 0);dt([p("value",{waitUntilFirstUpdate:!0})],q.prototype,"handleValueChange",null);q.define("hmwc-progress",q);var _o=m`
+    `}};X.styles=Ca;Ce([n({type:Boolean,reflect:!0})],X.prototype,"bar",void 0);Ce([n({type:Boolean,reflect:!0})],X.prototype,"ring",void 0);Ce([n({type:Boolean,reflect:!0})],X.prototype,"primary",void 0);Ce([n({type:Boolean,reflect:!0})],X.prototype,"success",void 0);Ce([n({type:Boolean,reflect:!0})],X.prototype,"neutral",void 0);Ce([n({type:Boolean,reflect:!0})],X.prototype,"warning",void 0);Ce([n({type:Boolean,reflect:!0})],X.prototype,"danger",void 0);Ce([n({type:Boolean,reflect:!0})],X.prototype,"sm",void 0);Ce([n({type:Boolean,reflect:!0})],X.prototype,"md",void 0);Ce([n({type:Boolean,reflect:!0})],X.prototype,"lg",void 0);Ce([n({type:Boolean,reflect:!0})],X.prototype,"xl",void 0);Ce([n({type:Boolean,reflect:!0})],X.prototype,"small",void 0);Ce([n({type:Boolean,reflect:!0})],X.prototype,"medium",void 0);Ce([n({type:Boolean,reflect:!0})],X.prototype,"large",void 0);Ce([n({type:Boolean})],X.prototype,"status",void 0);Ce([n({type:Boolean,reflect:!0})],X.prototype,"indeterminate",void 0);Ce([n({type:String})],X.prototype,"label",void 0);Ce([n({type:Number,reflect:!0})],X.prototype,"value",void 0);Ce([b()],X.prototype,"hasAnimatedIn",void 0);Ce([u("value",{waitUntilFirstUpdate:!0})],X.prototype,"handleValueChange",null);X.define("hmwc-progress",X);var Sa=f`
   :host {
     display: block;
     flex: 0 0 auto;
@@ -9287,6 +11144,75 @@
       }
     }
 
+    /* Pill: a rounded button the height of a field of the same size, so a
+       row of pills sits level with the inputs beside it. Quiet (the field's
+       border and text) until checked; checked, it takes a primary tint, a
+       primary border and a tick, so the choice doesn't rest on color alone.
+       Only colors transition, which reduced motion keeps. */
+    &.pill {
+      --pill-height: var(--hmwc-input-height-medium);
+      --pill-padding: var(--hmwc-spacing-medium);
+      box-sizing: border-box;
+      align-items: center;
+      height: var(--pill-height);
+      margin: 0;
+      padding: 0 var(--pill-padding);
+      border: var(--hmwc-input-border-width) solid var(--hmwc-input-border-color);
+      border-radius: var(--hmwc-border-radius-pill);
+      background-color: var(--hmwc-input-background-color);
+      color: var(--hmwc-input-color);
+      white-space: nowrap;
+      transition: var(--hmwc-transition-fast) border-color, var(--hmwc-transition-fast) background-color, var(--hmwc-transition-fast) color;
+
+      .radio__control {
+        padding: 0;
+        gap: var(--hmwc-spacing-2x-small);
+      }
+
+      .radio__radio {
+        display: none;
+      }
+
+      .radio__label {
+        margin: 0;
+        color: inherit;
+        line-height: 1;
+      }
+
+      .radio__check {
+        --icon-size: 1em;
+        flex: 0 0 auto;
+      }
+
+      &.sm {
+        --pill-height: var(--hmwc-input-height-small);
+        --pill-padding: var(--hmwc-spacing-small);
+      }
+
+      &.lg {
+        --pill-height: var(--hmwc-input-height-large);
+        --pill-padding: var(--hmwc-spacing-large);
+      }
+
+      &:not(.checked):not(.disabled):hover {
+        border-color: var(--hmwc-input-border-color-hover);
+        background-color: var(--hmwc-color-neutral-50);
+        color: var(--hmwc-color-neutral-900);
+      }
+
+      &.checked {
+        border-color: var(--hmwc-color-primary-600);
+        background-color: var(--hmwc-color-primary-50);
+        color: var(--hmwc-color-primary-800);
+      }
+
+      /* The ring sits just outside the pill, clear of its own border. */
+      &:focus-visible {
+        outline: var(--hmwc-focus-ring);
+        outline-offset: var(--hmwc-spacing-3x-small);
+      }
+    }
+
     &.disabled {
       opacity: 0.5;
       cursor: not-allowed;
@@ -9297,20 +11223,22 @@
       outline-offset: var(--hmwc-focus-ring-offset);
     }
   }
-`;var Dr=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Xt=class extends P{handleCheckedChange(){this.emit("hmwc-select",{detail:{value:this.checked}})}handleClick(){this.disabled||(this.checked=!0)}handleBlur(){this.emit("hmwc-blur")}handleFocus(){this.emit("hmwc-focus")}connectedCallback(){super.connectedCallback(),!this.sm&&!this.md&&!this.lg&&(this.md=!0)}render(){let t=f({radio:!0,checked:!!this.checked,sm:!!this.sm,md:!!this.md,lg:!!this.lg,disabled:!!this.disabled,img:!!this.img});return c`
+`;var br=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Xe=class extends N{handleCheckedChange(){this.emit("hmwc-select",{detail:{value:this.checked}}),this.hasUpdated&&this.emit("hmwc-change",{detail:{value:this.value,checked:!!this.checked}})}focus(e){this.shadowRoot?.querySelector('[part="base"]')?.focus(e)}blur(){this.shadowRoot?.querySelector('[part="base"]')?.blur()}get isDisabled(){if(this.disabled)return!0;let e=this.getRootNode(),t=this.closest("hmwc-radio-group")??(e instanceof ShadowRoot?e.host:null);return t?.localName!=="hmwc-radio-group"?!1:t.disabled??t.hasAttribute("disabled")}handleClick(){this.isDisabled||(this.checked=!0)}handleKeyDown(e){e.key!==" "&&!(e.key==="Enter"&&this.pill)||(e.preventDefault(),!this.isDisabled&&e.currentTarget.click())}handleBlur(){this.emit("hmwc-blur")}handleFocus(){this.emit("hmwc-focus")}connectedCallback(){super.connectedCallback(),!this.sm&&!this.md&&!this.lg&&(this.md=!0)}render(){let e=v({radio:!0,checked:!!this.checked,sm:!!this.sm,md:!!this.md,lg:!!this.lg,disabled:this.isDisabled,img:!!this.img,pill:!!this.pill}),t=this.tabStop??!!this.checked;return c`
       <span
         part="base"
-        class=${t}
+        class=${e}
         role="radio"
-        tabindex=${this.checked?"0":"-1"}
+        tabindex=${t?"0":"-1"}
         aria-checked="${this.checked?"true":"false"}"
-        aria-disabled="${w(this.disabled)}"
+        aria-disabled=${w(this.isDisabled||void 0)}
         aria-label="${w(this.label||this.value||void 0)}"
         @click=${this.handleClick}
+        @keydown=${this.handleKeyDown}
         @focus=${this.handleFocus}
         @blur=${this.handleBlur}>
         ${this.img?c`<div class="radio__image"><img src="${this.img}" class="radio__image" /></div>`:""}
         <div class="radio__control">
+          ${this.pill&&this.checked?c`<hmwc-icon part="check" class="radio__check" src="check2"></hmwc-icon>`:""}
           <span part="control" class="radio__radio">
             <slot name="icon" part="icon" class="radio__icon"> ${this.checked?c` <span class="radio__indicator"></span> `:""} </slot>
           </span>
@@ -9318,45 +11246,80 @@
           <slot part="label" class="radio__label"> ${this.label?this.label:this.value} </slot>
         </div>
       </span>
-    `}};Xt.styles=_o;Xt.dependencies=[_];Dr([a({type:Boolean,reflect:!0})],Xt.prototype,"checked",void 0);Dr([a({type:String,reflect:!0})],Xt.prototype,"img",void 0);Dr([p("checked")],Xt.prototype,"handleCheckedChange",null);Xt.define("hmwc-radio",Xt);var xo=m`
+    `}};Xe.styles=Sa;Xe.dependencies=[$];br([n({type:Boolean,reflect:!0})],Xe.prototype,"checked",void 0);br([n({type:Boolean,reflect:!0})],Xe.prototype,"pill",void 0);br([n({type:String,reflect:!0})],Xe.prototype,"img",void 0);br([n({attribute:!1})],Xe.prototype,"tabStop",void 0);br([u("checked")],Xe.prototype,"handleCheckedChange",null);Xe.define("hmwc-radio",Xe);var Aa=f`
   :host {
     --font-size: inherit;
     display: block;
   }
 
+  [hidden] {
+    display: none !important;
+  }
+
   .radiogroup {
     display: block;
+
+    /* Inline: radios sit in a row at their natural width and wrap when they
+       run out of room (they used to be stretched across the whole row). */
     &.row {
-      .radiogroup__control {
+      .radiogroup__input {
         display: flex;
-        width: 100%;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        column-gap: var(--hmwc-spacing-medium);
       }
     }
 
     &.small {
       --font-size: var(--hmwc-font-size-small);
-      .radiogroup__control {
-        gap: var(--hmwc-spacing-small);
+      &.row .radiogroup__input {
+        column-gap: var(--hmwc-spacing-small);
       }
     }
 
     &.medium {
       --font-size: var(--hmwc-font-size-medium);
-      .radiogroup__control {
-        gap: var(--hmwc-spacing-medium);
-      }
     }
 
     &.large {
       --font-size: var(--hmwc-font-size-large);
-      .radiogroup__control {
-        gap: var(--hmwc-spacing-medium);
+      &.row .radiogroup__input {
+        column-gap: var(--hmwc-spacing-large);
+      }
+    }
+
+    /* Pills: a wrapping row, close together, with or without "inline". The
+       label takes a field label's size and spacing (see "input__label" in the
+       input styles), so pills beside a field line up with its box. */
+    &.pill {
+      .radiogroup__input {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      &:is(.small, .medium, .large) .radiogroup__input {
+        gap: var(--hmwc-spacing-x-small);
+      }
+
+      .radiogroup__label {
+        color: var(--hmwc-input-color);
+        line-height: 1.4;
+        padding-block: 0.15em;
+      }
+
+      &.small .radiogroup__label {
+        font-size: var(--hmwc-input-font-size-small);
+      }
+
+      &.medium .radiogroup__label {
+        font-size: calc(0.95 * var(--hmwc-button-font-size-medium));
       }
     }
 
     .radiogroup__control {
       position: relative;
+      min-inline-size: 0;
       border: none;
       padding: 0;
       margin: 0;
@@ -9376,38 +11339,43 @@
       line-height: 2;
     }
   }
-`;var Ke=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Wt=class extends P{handleValueChange(){this.emit("hmwc-change",{detail:{value:this.value}}),this.getRadios()?.forEach(t=>{t.checked=t.value===this.value})}getRadios(){return this.items?this.shadowRoot?.querySelectorAll("hmwc-radio"):this.controllers.slot.get()}handleClick(t){let e=t.target.closest("hmwc-radio");e.disabled||e.value&&(this.value=e.value,this.invalid&&this.reportValidity(),this.emit("hmwc-input"))}_resolveError(){return this._validity.valueMissing&&!this._validity.customError?"Please select an option.":super._resolveError()}connectedCallback(){super.connectedCallback(),!this.sm&&!this.md&&!this.lg&&(this.md=!0);let t=this.getRadios();t?.length&&(this.inline&&t.forEach(e=>e.style.setProperty("width","100%")),this.sm?t.forEach(e=>e.sm=!0):this.md?t.forEach(e=>e.md=!0):this.lg&&t.forEach(e=>e.lg=!0))}render(){let t=this.label||this.controllers.slot.test("label"),e=this.help||this.controllers.slot.test("help"),r=f({radiogroup:!0,small:!!this.sm,medium:!!this.md,large:!!this.lg,required:!!this.required,row:!!this.inline});return c`
+`;var Wt=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},en=["ArrowDown","ArrowRight","ArrowUp","ArrowLeft","Home","End"],Ue=class extends N{handleValueChange(){this.emit("hmwc-change",{detail:{value:this.value}}),this.getRadios().forEach(e=>{e.checked=e.value===this.value})}handleDisabledChange(){this.getRadios().forEach(e=>e.requestUpdate?.())}focus(e){this._tabStop()?.focus(e)}getRadios(){return this.items?Array.from(this.shadowRoot?.querySelectorAll("hmwc-radio")??[]):Array.from(this.querySelectorAll("hmwc-radio")).filter(e=>e.closest("hmwc-radio-group")===this)}_enabledRadios(){return this.disabled?[]:this.getRadios().filter(e=>!e.disabled&&!this._isHidden(e))}_isHidden(e){let t=e.closest("[hidden]");return!!t&&(t===e||this.contains(t))}_tabStop(){let e=this._enabledRadios();return e.find(t=>t.checked)??e[0]}_syncRadios(){let e=this.getRadios();this.value!==""&&this.value!==void 0&&this.value!==null&&e.forEach(r=>r.checked=r.value===this.value);let t=this._tabStop();e.forEach(r=>{r.sm=!!this.sm,r.md=!!this.md,r.lg=!!this.lg,r.pill=!!this.pill,r.tabStop=r===t})}_choose(e){this.disabled||e.disabled||e.value&&(this.value=e.value,this._clearCustomErrorOnInput(),this.invalid&&this.reportValidity(),this.emit("hmwc-input"))}handleClick(e){let t=e.target.closest("hmwc-radio");t&&this._choose(t)}handleKeyDown(e){if(e.defaultPrevented||!en.includes(e.key)||e.altKey||e.ctrlKey||e.metaKey)return;let t=this._enabledRadios();if(!t.length)return;let r=e.composedPath(),i=t.findIndex(l=>r.includes(l));i<0&&(i=t.findIndex(l=>l.checked));let o;switch(e.key){case"ArrowDown":case"ArrowRight":o=(i+1)%t.length;break;case"ArrowUp":case"ArrowLeft":o=i<0?t.length-1:(i-1+t.length)%t.length;break;case"Home":o=0;break;default:o=t.length-1}e.preventDefault();let a=t[o];this._choose(a),a.focus()}stopRadioChange(e){e.stopPropagation()}_focusableControl(){return this._tabStop()??null}_resolveError(){return this._validity.valueMissing&&!this._validity.customError?"Please select an option.":super._resolveError()}connectedCallback(){super.connectedCallback(),!this.sm&&!this.md&&!this.lg&&(this.md=!0),this._radioObserver??=new MutationObserver(()=>this.requestUpdate()),this._radioObserver.observe(this,{attributes:!0,attributeFilter:["disabled","hidden"],subtree:!0})}disconnectedCallback(){super.disconnectedCallback(),this._radioObserver?.disconnect()}updated(e){super.updated(e),this._syncRadios()}render(){let e=!!this.label||this.controllers.slot.test("label"),t=!!this.help||this.controllers.slot.test("help"),r=v({radiogroup:!0,small:!!this.sm,medium:!!this.md,large:!!this.lg,required:!!this.required,row:!!this.inline,pill:!!this.pill});return c`
       <div part="base" class=${r}>
-        ${this.label?c` <label part="label" class="radiogroup__label" aria-hidden="${!t}">
-              <slot name="label">${this.label}</slot>
-            </label>`:""}
+        <!-- No whitespace after the slot: it would show as a space before the required indicator. -->
+        <div part="label" id="label" class="radiogroup__label" ?hidden=${!e}><slot name="label">${this.label}</slot></div>
         <fieldset
           part="control"
           class="radiogroup__control"
           role="radiogroup"
-          aria-labelledby="label"
-          aria-describedby="help"
+          aria-labelledby=${w(e?"label":void 0)}
+          aria-describedby=${w(t?"help":void 0)}
+          aria-required=${this.required?"true":"false"}
           aria-invalid=${this._ariaInvalid()}
-          aria-errormessage=${w(this._ariaErrorMessage())}>
-          <slot @click=${this.handleClick}>
-            ${this.items?.map(i=>c`
-                <hmwc-radio
-                  value=${typeof i=="string"?i:i.value}
-                  label=${typeof i=="string"?i:i.label}
-                  ?disabled=${typeof i!="string"&&i.disabled}
-                  ?checked=${(typeof i=="string"?i:i.value)===Bt(this.value)}
-                  ?small=${this.sm}
-                  ?medium=${this.md}
-                  ?large=${this.lg}></hmwc-radio>
-              `)}
-          </slot>
-          ${this.help?c` <div part="help" class="radiogroup__help" aria-hidden="${!e}">
-                <slot name="help">${this.help}</slot>
-              </div>`:""}
+          aria-errormessage=${w(this._ariaErrorMessage())}
+          @keydown=${this.handleKeyDown}
+          @hmwc-change=${this.stopRadioChange}>
+          <div part="input" class="radiogroup__input">
+            <slot @click=${this.handleClick} @slotchange=${()=>this.requestUpdate()}>
+              ${this.items?.map(i=>{let o=typeof i=="string"?i:i.value;return c`
+                  <hmwc-radio
+                    value=${String(o)}
+                    label=${typeof i=="string"?i:i.label}
+                    ?disabled=${typeof i!="string"&&!!i.disabled}
+                    ?checked=${String(o)===String(this.value)}
+                    ?sm=${!!this.sm}
+                    ?md=${!!this.md}
+                    ?lg=${!!this.lg}
+                    ?pill=${!!this.pill}></hmwc-radio>
+                `})}
+            </slot>
+          </div>
+          <div part="help" id="help" class="radiogroup__help" ?hidden=${!t}>
+            <slot name="help">${this.help}</slot>
+          </div>
         </fieldset>
         ${this._renderError()}
       </div>
-    `}};Wt.styles=xo;Wt.dependencies=[Xt,_];Wt.slots=["label","help"];Ke([a({type:String})],Wt.prototype,"label",void 0);Ke([a({type:Array})],Wt.prototype,"items",void 0);Ke([a({type:String})],Wt.prototype,"help",void 0);Ke([a({type:Boolean,reflect:!0})],Wt.prototype,"inline",void 0);Ke([p("value")],Wt.prototype,"handleValueChange",null);Wt.define("hmwc-radio-group",Wt);var ko=m`
+    `}};Ue.styles=Aa;Ue.dependencies=[Xe,$];Ue.slots=["label","help"];Wt([n({type:String})],Ue.prototype,"label",void 0);Wt([n({type:Array})],Ue.prototype,"items",void 0);Wt([n({type:String})],Ue.prototype,"help",void 0);Wt([n({type:Boolean,reflect:!0})],Ue.prototype,"inline",void 0);Wt([n({type:Boolean,reflect:!0})],Ue.prototype,"pill",void 0);Wt([u("value")],Ue.prototype,"handleValueChange",null);Wt([u("disabled",{waitUntilFirstUpdate:!0})],Ue.prototype,"handleDisabledChange",null);Ue.define("hmwc-radio-group",Ue);var Ea=f`
   :host {
     display: block;
   }
@@ -9417,7 +11385,7 @@
 
     & .row__label {
       display: none;
-      color: var(--hmwc-color-text-secondary);
+      color: var(--hmwc-color-text-secondary, var(--hmwc-color-neutral-800));
       font-size: var(--hmwc-font-size-small);
       font-family: var(--hmwc-font-sans);
       line-height: 2;
@@ -9475,13 +11443,76 @@
         border: 1px solid var(--hmwc-panel-border-color);
       }
     }
+
+    /* Input group. Inputs and dropdowns take their corner radius from a
+       custom property on their host (--input-radius, --dropdown-radius); a
+       multi-value radius rounds only the outer corners. Other children (the
+       button) square their inner corners from --hmwc-attached, a style query
+       in the shared base styles.
+       Neighbours overlap by one border width so the shared edge is a single
+       line, and the focused (or hovered) child is raised so its whole border
+       shows. */
+    &.attached {
+      --row-attached-radius: var(--hmwc-input-border-radius-large);
+
+      .row__content {
+        gap: 0;
+      }
+
+      .row__content::slotted(*) {
+        --hmwc-attached: middle;
+        --input-radius: 0;
+        --dropdown-radius: 0;
+      }
+
+      .row__content::slotted(:not(:first-child)) {
+        margin-inline-start: calc(-1 * var(--hmwc-input-border-width));
+      }
+
+      .row__content::slotted(:first-child:not(:last-child)) {
+        --hmwc-attached: first;
+        --input-radius: var(--row-attached-radius) 0 0 var(--row-attached-radius);
+        --dropdown-radius: var(--row-attached-radius) 0 0 var(--row-attached-radius);
+      }
+
+      .row__content::slotted(:last-child:not(:first-child)) {
+        --hmwc-attached: last;
+        --input-radius: 0 var(--row-attached-radius) var(--row-attached-radius) 0;
+        --dropdown-radius: 0 var(--row-attached-radius) var(--row-attached-radius) 0;
+      }
+
+      .row__content::slotted(:only-child) {
+        --hmwc-attached: none;
+        --input-radius: var(--row-attached-radius);
+        --dropdown-radius: var(--row-attached-radius);
+      }
+
+      .row__content::slotted(:hover),
+      .row__content::slotted(:focus-within) {
+        position: relative;
+        z-index: 1;
+      }
+    }
   }
-`;var Ye=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},re=class extends I{connectedCallback(){if(super.connectedCallback(),this.wrap){let t=this.controllers.slot.get(),e=t.length,r=e,i=100/e;t.forEach(o=>{let n=`calc(${i}% - calc(var(--container-spacing) / ${r}))`;o.style.setProperty("max-width",n)})}}render(){let t=f({row:!0,wrap:!!this.wrap,min:!!this.min,max:!!this.max,outline:!!this.outline,fit:!!this.fit,label:!!this.label||this.controllers.slot.test("label"),scrollable:!!this.scrollable});return c`
-      <div part="base" class=${t}>
+
+  /* Right to left the first child sits on the right. The input and dropdown
+     radii above are physical (top-left first), so mirror them; buttons square
+     logical corners and need nothing. */
+  :host(:dir(rtl)) .row.attached .row__content::slotted(:first-child:not(:last-child)) {
+    --input-radius: 0 var(--row-attached-radius) var(--row-attached-radius) 0;
+    --dropdown-radius: 0 var(--row-attached-radius) var(--row-attached-radius) 0;
+  }
+
+  :host(:dir(rtl)) .row.attached .row__content::slotted(:last-child:not(:first-child)) {
+    --input-radius: var(--row-attached-radius) 0 0 var(--row-attached-radius);
+    --dropdown-radius: var(--row-attached-radius) 0 0 var(--row-attached-radius);
+  }
+`;var ir=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},ht=class extends L{connectedCallback(){if(super.connectedCallback(),this.wrap){let e=this.controllers.slot.get(),t=e.length,r=t,i=100/t;e.forEach(o=>{let a=`calc(${i}% - calc(var(--container-spacing) / ${r}))`;o.style.setProperty("max-width",a)})}}render(){let e=v({row:!0,wrap:!!this.wrap,min:!!this.min,max:!!this.max,outline:!!this.outline,attached:!!this.attached,fit:!!this.fit,label:!!this.label||this.controllers.slot.test("label"),scrollable:!!this.scrollable});return c`
+      <div part="base" class=${e}>
         <slot name="label" part="label" class="row__label">${this.label}</slot>
         <slot part="content" class="row__content"></slot>
       </div>
-    `}};re.styles=ko;Ye([a({type:Boolean,reflect:!0})],re.prototype,"wrap",void 0);Ye([a({type:Boolean,reflect:!0})],re.prototype,"fit",void 0);Ye([a({type:Boolean,reflect:!0})],re.prototype,"min",void 0);Ye([a({type:Boolean,reflect:!0})],re.prototype,"max",void 0);Ye([a({type:Boolean,reflect:!0})],re.prototype,"outline",void 0);re.define("hmwc-row",re);var $o=m`
+    `}};ht.styles=Ea;ir([n({type:Boolean,reflect:!0})],ht.prototype,"wrap",void 0);ir([n({type:Boolean,reflect:!0})],ht.prototype,"fit",void 0);ir([n({type:Boolean,reflect:!0})],ht.prototype,"min",void 0);ir([n({type:Boolean,reflect:!0})],ht.prototype,"max",void 0);ir([n({type:Boolean,reflect:!0})],ht.prototype,"outline",void 0);ir([n({type:Boolean,reflect:!0})],ht.prototype,"attached",void 0);ht.define("hmwc-row",ht);var za=f`
   :host {
     display: block;
   }
@@ -9506,7 +11537,7 @@
 
       &:last-of-type {
         width: fit-content !important;
-        max-width: 1.75rem;
+        max-width: calc(1.75 * var(--hmwc-rem, 1rem));
 
         & .stepper__info {
           align-items: end;
@@ -9520,7 +11551,7 @@
 
         & .stepper__progress {
           width: 100%;
-          min-width: 3rem;
+          min-width: calc(3 * var(--hmwc-rem, 1rem));
           border-radius: var(--hmwc-border-radius-pill);
           height: 1.5px;
           margin: 0 10px;
@@ -9534,8 +11565,8 @@
         }
 
         & .stepper__circle {
-          width: 1.75rem;
-          height: 1.75rem;
+          width: calc(1.75 * var(--hmwc-rem, 1rem));
+          height: calc(1.75 * var(--hmwc-rem, 1rem));
           aspect-ratio: 1;
           border-radius: 50%;
           display: flex;
@@ -9549,13 +11580,13 @@
 
           &.check {
             & hmwc-icon {
-              --icon-size: 1rem;
+              --icon-size: calc(1 * var(--hmwc-rem, 1rem));
               --icon-color: var(--hmwc-color-neutral-0);
             }
           }
 
           & hmwc-icon {
-            --icon-size: 0.75rem;
+            --icon-size: calc(0.75 * var(--hmwc-rem, 1rem));
           }
         }
       }
@@ -9590,7 +11621,7 @@
           color: var(--hmwc-color-neutral-600);
           font-weight: var(--hmwc-font-weight-semibold);
           letter-spacing: -0px;
-          padding-top: 0.125rem;
+          padding-top: var(--hmwc-spacing-3x-small);
           white-space: nowrap;
         }
       }
@@ -9656,7 +11687,7 @@
     }
 
     &.fluid {
-      gap: 2.5rem;
+      gap: calc(2.5 * var(--hmwc-rem, 1rem));
       width: 100%;
 
       & .stepper__step {
@@ -9717,30 +11748,30 @@
       opacity: 0.85;
     }
   }
-`;var Oe=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Pt=class extends u{constructor(){super(...arguments),this.step=1,this.value=[],this.placement="bottom"}updateSteps(){this.current=this.value.map((t,e)=>{let r="pending",i="Pending",o=t.progress||0,n=t.icon;return e===this.step-1&&(r="active",i="In Progress"),e<this.step-1&&(r="complete",i="Completed",o||(o=50),n="check2-circle"),{...t,progress:o,state:r,status:i,icon:n}}),this.emit("hmwc-change",{detail:{value:this.current}})}render(){let t=f({stepper:!0,fluid:!!this.fluid,status:!!this.status,"placement-top":this.placement==="top","placement-bottom":this.placement==="bottom","placement-left":this.placement==="left","placement-right":this.placement==="right"});return c`
-      <div part="base" class=${t}>
-        ${this.current.map((e,r)=>c`
-            <div part="step" class="stepper__step ${e.state}">
+`;var Vt=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Qe=class extends g{constructor(){super(...arguments),this.step=1,this.value=[],this.placement="bottom"}updateSteps(){this.current=this.value.map((e,t)=>{let r="pending",i="Pending",o=e.progress||0,a=e.icon;return t===this.step-1&&(r="active",i="In Progress"),t<this.step-1&&(r="complete",i="Completed",o||(o=50),a="check2-circle"),{...e,progress:o,state:r,status:i,icon:a}}),this.emit("hmwc-change",{detail:{value:this.current}})}render(){let e=v({stepper:!0,fluid:!!this.fluid,status:!!this.status,"placement-top":this.placement==="top","placement-bottom":this.placement==="bottom","placement-left":this.placement==="left","placement-right":this.placement==="right"});return c`
+      <div part="base" class=${e}>
+        ${this.current.map((t,r)=>c`
+            <div part="step" class="stepper__step ${t.state}">
               <div class="stepper__status">
-                <span class="stepper__circle ${e.icon==="check2-circle"?"check":""}">
-                  ${e.icon?c`<hmwc-icon src=${e.icon} />`:r+1}
+                <span class="stepper__circle ${t.icon==="check2-circle"?"check":""}">
+                  ${t.icon?c`<hmwc-icon src=${t.icon} />`:r+1}
                 </span>
                 ${r!==this.current.length-1?c`
                       <div class="stepper__progress">
-                        <span class="stepper__progress-indicator" style="width: ${e.progress}%"></span>
+                        <span class="stepper__progress-indicator" style="width: ${t.progress}%"></span>
                       </div>
                     `:""}
               </div>
 
               <div class="stepper__info">
                 <span class="stepper__index">STEP ${r+1}</span>
-                <span class="stepper__description">${e.label}</span>
-                ${this.status?c`<span class="stepper__status">${e.status}</span>`:""}
+                <span class="stepper__description">${t.label}</span>
+                ${this.status?c`<span class="stepper__status">${t.status}</span>`:""}
               </div>
             </div>
           `)}
       </div>
-    `}};Pt.styles=$o;Pt.dependencies=[_];Oe([v()],Pt.prototype,"current",void 0);Oe([a({type:Number,reflect:!0})],Pt.prototype,"step",void 0);Oe([a({type:Array})],Pt.prototype,"value",void 0);Oe([a({type:Boolean,reflect:!0})],Pt.prototype,"fluid",void 0);Oe([a({type:Boolean,reflect:!0})],Pt.prototype,"status",void 0);Oe([a({type:String})],Pt.prototype,"placement",void 0);Oe([p(["steps","step"])],Pt.prototype,"updateSteps",null);Pt.define("hmwc-stepper",Pt);var Co=m`
+    `}};Qe.styles=za;Qe.dependencies=[$];Vt([b()],Qe.prototype,"current",void 0);Vt([n({type:Number,reflect:!0})],Qe.prototype,"step",void 0);Vt([n({type:Array})],Qe.prototype,"value",void 0);Vt([n({type:Boolean,reflect:!0})],Qe.prototype,"fluid",void 0);Vt([n({type:Boolean,reflect:!0})],Qe.prototype,"status",void 0);Vt([n({type:String})],Qe.prototype,"placement",void 0);Vt([u(["steps","step"])],Qe.prototype,"updateSteps",null);Qe.define("hmwc-stepper",Qe);var Ta=f`
   :host {
     --switch-size: inherit;
 
@@ -9781,6 +11812,19 @@
     }
 
     &.checked {
+      /* The resting checked look applies to disabled switches too, so a
+         read-only switch still shows whether it is on. Hover and focus
+         feedback below stay limited to enabled switches. */
+      .switch__control {
+        background-color: var(--hmwc-color-primary-600);
+        border-color: var(--hmwc-color-primary-600);
+        .switch__thumb {
+          background-color: var(--hmwc-color-neutral-0);
+          border-color: var(--hmwc-color-primary-600);
+          translate: calc((var(--width) - var(--height)) / 2);
+        }
+      }
+
       &:not(.disabled) {
         .switch__control:hover {
           background-color: var(--hmwc-color-primary-600);
@@ -9800,15 +11844,6 @@
             border-color: var(--hmwc-color-primary-600);
             outline: var(--hmwc-focus-ring);
             outline-offset: var(--hmwc-focus-ring-offset);
-          }
-        }
-        .switch__control {
-          background-color: var(--hmwc-color-primary-600);
-          border-color: var(--hmwc-color-primary-600);
-          .switch__thumb {
-            background-color: var(--hmwc-color-neutral-0);
-            border-color: var(--hmwc-color-primary-600);
-            translate: calc((var(--width) - var(--height)) / 2);
           }
         }
       }
@@ -9895,17 +11930,19 @@
       background-color: ButtonText;
     }
   }
-`;var xa=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},he=class extends P{click(){this.input.click()}focus(t){this.input.focus(t)}blur(){this.input.blur()}checkValidity(){return this.input?.checkValidity()}reportValidity(){return this.input?.reportValidity()}handleClick(){this.checked=!this.checked,this.emit("hmwc-change")}handleInput(){this.emit("hmwc-input")}handleFocus(){this.emit("hmwc-focus")}handleBlur(){this.emit("hmwc-blur")}handleKeyDown(t){["ArrowLeft","ArrowRight"].includes(t.key)&&(t.preventDefault(),this.checked=t.key==="ArrowRight",this.emit("hmwc-change",{detail:{value:this.checked}}),this.emit("hmwc-input"))}connectedCallback(){super.connectedCallback(),!this.sm&&!this.md&&!this.lg&&(this.md=!0)}render(){let t=f({switch:!0,checked:!!this.checked,sm:!!this.sm,md:!!this.md,lg:!!this.lg,disabled:!!this.disabled,required:!!this.required,label:!!this.label||this.controllers.slot.test("label")});return c`
-      <label part="base" class=${t}>
+`;var ui=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},gt=class extends N{get forwardedName(){if(!(this.label||this.textContent?.trim())){if(this.accessibleLabelledBy){let e=this.getRootNode(),t=this.accessibleLabelledBy.split(/\s+/).map(r=>r?e.getElementById?.(r)?.textContent??"":"").join(" ").replace(/\s+/g," ").trim();if(t)return t}return this.accessibleLabel||void 0}}click(){this.input.click()}focus(e){this.input.focus(e)}blur(){this.input.blur()}checkValidity(){return this.input?.checkValidity()}reportValidity(){return this.input?.reportValidity()}handleClick(){this.checked=!this.checked,this.emit("hmwc-change")}handleInput(){this.emit("hmwc-input")}handleFocus(){this.emit("hmwc-focus")}handleBlur(){this.emit("hmwc-blur")}handleKeyDown(e){this.disabled||!["ArrowLeft","ArrowRight"].includes(e.key)||(e.preventDefault(),this.checked=e.key==="ArrowRight",this.emit("hmwc-change",{detail:{value:this.checked}}),this.emit("hmwc-input"))}connectedCallback(){super.connectedCallback(),!this.sm&&!this.md&&!this.lg&&(this.md=!0)}render(){let e=v({switch:!0,checked:!!this.checked,sm:!!this.sm,md:!!this.md,lg:!!this.lg,disabled:!!this.disabled,required:!!this.required,label:!!this.label||this.controllers.slot.test("label")});return c`
+      <label part="base" class=${e}>
         <input
           class="switch__input"
           type="checkbox"
           title=${this.label||""}
           name=${w(this.name)}
           value=${w(this.value)}
-          ?checked=${Bt(this.checked)}
+          ?checked=${et(this.checked)}
           ?required=${this.required}
+          ?disabled=${this.disabled}
           role="switch"
+          aria-label=${w(this.forwardedName)}
           aria-checked=${this.checked?"true":"false"}
           @click=${this.handleClick}
           @input=${this.handleInput}
@@ -9919,7 +11956,7 @@
 
         <slot part="label" class="switch__label">${this.label}</slot>
       </label>
-    `}};he.styles=Co;he.slots=["label"];he.toggle=!0;xa([R(".switch__input")],he.prototype,"input",void 0);he.define("hmwc-switch",he);var So=m`
+    `}};gt.styles=Ta;gt.slots=["label"];gt.toggle=!0;ui([n({type:String,attribute:"aria-label"})],gt.prototype,"accessibleLabel",void 0);ui([n({type:String,attribute:"aria-labelledby"})],gt.prototype,"accessibleLabelledBy",void 0);ui([I(".switch__input")],gt.prototype,"input",void 0);gt.define("hmwc-switch",gt);var Oa=f`
   :host {
     display: block;
     overflow-y: auto;
@@ -9927,6 +11964,12 @@
 
   :host([aria-hidden='false']) {
     height: 100%;
+  }
+
+  /* An inactive panel takes no space, so padding, margins or gaps a page sets
+     on the panels don't stack up under the open one. */
+  :host([aria-hidden='true']) {
+    display: none;
   }
 
   .tab-content {
@@ -9940,15 +11983,57 @@
       width: 100%;
       height: 100%;
       gap: var(--hmwc-spacing-medium);
+      animation: tab-content-in var(--hmwc-transition-medium) var(--hmwc-easing-decelerate);
     }
   }
-`;var Tr=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Ft=class extends u{handleActiveChange(){this.setAttribute("aria-hidden",this.active?"false":"true")}connectedCallback(){super.connectedCallback(),this.setAttribute("role","tabpanel")}render(){let t=f({"tab-content":!0,active:this.active});return c` <slot part="base" class=${t}></slot> `}};Ft.styles=So;Ft.dependencies=[];Tr([v()],Ft.prototype,"active",void 0);Tr([a({type:String,reflect:!0})],Ft.prototype,"name",void 0);Tr([p("active")],Ft.prototype,"handleActiveChange",null);Ft.define("hmwc-tab-content",Ft);var Ao=m`
+
+  /* The panel being shown fades up into place. */
+  @keyframes tab-content-in {
+    from {
+      opacity: 0;
+      translate: 0 4px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tab-content.active {
+      animation: none;
+    }
+  }
+`;var fi=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Je=class extends g{handleActiveChange(){this.setAttribute("aria-hidden",this.active?"false":"true")}connectedCallback(){super.connectedCallback(),this.setAttribute("role","tabpanel")}render(){let e=v({"tab-content":!0,active:this.active});return c` <slot part="base" class=${e}></slot> `}};Je.styles=[pt,Oa];Je.dependencies=[];fi([b()],Je.prototype,"active",void 0);fi([n({type:String,reflect:!0})],Je.prototype,"name",void 0);fi([u("active")],Je.prototype,"handleActiveChange",null);Je.define("hmwc-tab-content",Je);var Ma=f`
   :host {
+    /* The icon's colour, at rest and on the active tab. Set --tab-icon-color
+       alone to colour both (a section's accent, say). */
+    --tab-icon-color: var(--hmwc-color-neutral-400);
+    --tab-icon-color-active: var(--tab-icon-color);
+
     display: inline-block;
+    transition: background-color var(--hmwc-transition-fast) var(--hmwc-easing-standard);
   }
 
   :host([active]) {
     background: var(--hmwc-color-primary-100);
+  }
+
+  :host(:hover:not([active]):not([disabled])) {
+    background: var(--hmwc-color-neutral-100);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :host {
+      transition: none;
+    }
+  }
+
+  /* A heading: a small muted title over a run of side tabs, not a tab. */
+  :host([heading]) {
+    display: block;
+    background: none;
+    pointer-events: none;
+  }
+
+  :host([heading]:not(:first-child)) {
+    margin-block-start: var(--hmwc-spacing-medium);
   }
 
   .tab {
@@ -9970,6 +12055,10 @@
     box-sizing: border-box;
     transition: var(--transition-speed) box-shadow, var(--transition-speed) color;
 
+    .tab__icon {
+      transition: color var(--hmwc-transition-fast) var(--hmwc-easing-standard);
+    }
+
     .tab__label {
       display: inline-block;
     }
@@ -9984,25 +12073,32 @@
       }
 
       & hmwc-button {
-        --icon-size: 1.2rem;
+        --icon-size: calc(1.2 * var(--hmwc-rem, 1rem));
         position: relative;
         top: -1px;
       }
     }
 
+    /* No icon: drop its slot, or the gap after the empty slot put extra
+       space before the label and the text sat off centre. */
+    &:not(.icon) .tab__icon {
+      display: none;
+    }
+
     .tab__icon {
-      --icon-size: 1.15rem;
+      --icon-size: calc(1.15 * var(--hmwc-rem, 1rem));
       display: flex;
       align-items: center;
-      color: var(--hmwc-color-neutral-400);
-      --icon-color: var(--hmwc-color-neutral-400);
+      color: var(--tab-icon-color);
+      --icon-color: var(--tab-icon-color);
     }
 
     &.active:not(.disabled) {
       color: var(--hmwc-color-primary-700);
 
       .tab__icon {
-        color: var(--hmwc-color-primary-400);
+        color: var(--tab-icon-color-active);
+        --icon-color: var(--tab-icon-color-active);
       }
     }
 
@@ -10013,6 +12109,21 @@
     &.disabled {
       opacity: 0.5;
       cursor: not-allowed;
+    }
+
+    &.heading {
+      display: flex;
+      color: var(--hmwc-color-neutral-600);
+      font-size: var(--hmwc-font-size-x-small);
+      letter-spacing: var(--hmwc-letter-spacing-loose);
+      text-transform: uppercase;
+      line-height: var(--hmwc-line-height-normal);
+      padding-block: var(--hmwc-spacing-x-small) var(--hmwc-spacing-2x-small);
+      cursor: default;
+
+      .tab__icon {
+        --icon-size: 1em;
+      }
     }
 
     &:hover:not(.disabled) {
@@ -10039,19 +12150,47 @@
       outline-offset: -3px;
     }
   }
-`;var ue=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},ft=class extends u{constructor(){super(...arguments),this.name=Math.random().toString(36).substr(2,9)}handleActiveChange(){this.setAttribute("aria-selected",this.active?"true":"false")}handleDisabledChange(){this.setAttribute("aria-disabled",this.disabled?"true":"false")}focus(t){this.tab.focus(t)}blur(){this.tab.blur()}handleClose(t){t.stopPropagation(),this.emit("hmwc-close")}updateContent(){let t=this.closest("hmwc-tab-group"),e=this.children;if(!e||!t||Array.from(t.children).find(i=>i instanceof Ft&&i.name===this.name))return;let r=Object.assign(document.createElement("hmwc-tab-content"),{name:this.name,active:this.active});e instanceof Element?r.appendChild(e):Array.from(e).forEach(i=>{r.appendChild(i)}),t?.appendChild(r)}connectedCallback(){super.connectedCallback(),this.setAttribute("role","tab"),this.setAttribute("slot","tab"),this.updateContent()}render(){let t=f({tab:!0,active:!!this.active,closable:!!this.closeable,disabled:!!this.disabled});return c`
-      <div part="base" class=${t} tabindex=${this.disabled?"-1":"0"}>
+`;var wt=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},_e=class extends g{constructor(){super(...arguments),this.name=Math.random().toString(36).substr(2,9)}handleActiveChange(){this.heading||this.setAttribute("aria-selected",this.active?"true":"false")}handleHeadingChange(){this.setAttribute("role",this.heading?"presentation":"tab"),this.heading?(this.removeAttribute("aria-selected"),this.removeAttribute("aria-disabled")):this.setAttribute("aria-selected",this.active?"true":"false")}handleDisabledChange(){this.heading||this.setAttribute("aria-disabled",this.disabled?"true":"false")}focus(e){this.tab.focus(e)}blur(){this.tab.blur()}handleClose(e){e.stopPropagation(),this.emit("hmwc-close")}updateContent(){let e=this.closest("hmwc-tab-group"),t=Array.from(this.children).filter(i=>!i.hasAttribute("slot"));if(!t.length||!e||this.hasAttribute("heading")||Array.from(e.children).find(i=>i instanceof Je&&i.name===this.name))return;let r=Object.assign(document.createElement("hmwc-tab-content"),{name:this.name,active:this.active});t.forEach(i=>{r.appendChild(i)}),e?.appendChild(r)}connectedCallback(){super.connectedCallback(),this.setAttribute("role",this.hasAttribute("heading")?"presentation":"tab"),this.setAttribute("slot","tab"),this.updateContent()}render(){let e=v({tab:!0,icon:!!this.icon||this.controllers.slot.test("icon"),active:!!this.active,closable:!!this.closeable,disabled:!!this.disabled,heading:!!this.heading});return c`
+      <div part="base" class=${e} tabindex=${w(this.heading?void 0:this.disabled?"-1":"0")}>
         <slot name="icon" class="tab__icon">${this.icon?c`<hmwc-icon src=${this.icon}></hmwc-icon>`:""}</slot>
         <slot>${this.label}</slot>
-        ${this.closeable?c`<span class="tab__close"><hmwc-button part="close" basic medium icon="x" @hmwc-click=${this.handleClose}> </hmwc-button></span>`:""}
+        ${this.closeable&&!this.heading?c`<span class="tab__close"><hmwc-button part="close" basic medium icon="x" ?disabled=${this.disabled} @hmwc-click=${this.handleClose}> </hmwc-button></span>`:""}
       </div>
-    `}};ft.styles=Ao;ft.dependencies=[y];ue([a({type:String})],ft.prototype,"name",void 0);ue([a({type:String})],ft.prototype,"label",void 0);ue([a({type:Boolean,reflect:!0})],ft.prototype,"active",void 0);ue([a({type:Boolean,reflect:!0})],ft.prototype,"closeable",void 0);ue([a({type:Boolean,reflect:!0})],ft.prototype,"disabled",void 0);ue([a({type:String})],ft.prototype,"icon",void 0);ue([R(".tab")],ft.prototype,"tab",void 0);ue([p("active")],ft.prototype,"handleActiveChange",null);ue([p("disabled")],ft.prototype,"handleDisabledChange",null);ft.define("hmwc-tab",ft);var zo=m`
+    `}};_e.styles=Ma;_e.dependencies=[k];wt([n({type:String})],_e.prototype,"name",void 0);wt([n({type:String})],_e.prototype,"label",void 0);wt([n({type:Boolean,reflect:!0})],_e.prototype,"active",void 0);wt([n({type:Boolean,reflect:!0})],_e.prototype,"closeable",void 0);wt([n({type:Boolean,reflect:!0})],_e.prototype,"disabled",void 0);wt([n({type:Boolean,reflect:!0})],_e.prototype,"heading",void 0);wt([n({type:String})],_e.prototype,"icon",void 0);wt([I(".tab")],_e.prototype,"tab",void 0);wt([u("active")],_e.prototype,"handleActiveChange",null);wt([u("heading")],_e.prototype,"handleHeadingChange",null);wt([u("disabled")],_e.prototype,"handleDisabledChange",null);_e.define("hmwc-tab",_e);var Ra=f`
   :host {
-    --tabgroup-color: var(--hmwc-color-primary-600);
+    --tabgroup-color: var(--hmwc-accent-color, var(--hmwc-color-primary-600));
     --tabgroup-spacing: calc(1.2 * var(--hmwc-spacing-medium));
+    --tabgroup-flush-inset: var(--hmwc-spacing-large);
+    --tabgroup-content-spacing: var(--hmwc-spacing-x-large);
+    /* The fallbacks keep the bar drawn under a theme stylesheet older than the bundle. */
+    --tabgroup-indicator-width: var(--hmwc-tab-indicator-width, 3px);
+    --tabgroup-track-width: var(--hmwc-tab-track-width, 2px);
 
     display: block;
     overflow: hidden;
+  }
+
+  /* The panels are page content: they take the page's text size and stay
+     selectable (the base host rule sets 16px, small caps and no selection). */
+  :host {
+    font-size: inherit;
+    font-feature-settings: normal;
+    user-select: auto;
+  }
+
+  /* flush: the tab bar spans the padded panel the group is the first thing in,
+     on a tinted strip; the panels keep the panel's side padding. */
+  :host([flush][placement='top']),
+  :host([flush][collapsed]) {
+    margin: calc(-1 * var(--tabgroup-flush-inset)) calc(-1 * var(--tabgroup-flush-inset)) var(--hmwc-spacing-medium);
+    --tabgroup-spacing: var(--hmwc-spacing-medium);
+    --tabgroup-track-width: var(--hmwc-panel-border-width, 1px);
+  }
+
+  /* Heading tabs title a run of side tabs; a tab bar along the top has no room for them. */
+  .tab-group[placement='top'] ::slotted(hmwc-tab[heading]),
+  .tab-group[placement='bottom'] ::slotted(hmwc-tab[heading]) {
+    display: none;
   }
 
   :host([placement='start']) {
@@ -10077,9 +12216,20 @@
           position: relative;
         }
 
+        /* The indicator is moved with transform (see repositionIndicator), so
+           that is what transitions; it used to name translate and never animated. */
         .tab-group__indicator {
           position: absolute;
-          transition: var(--hmwc-transition-fast) translate ease, var(--hmwc-transition-fast) width ease;
+          left: 0;
+          top: 0;
+          transition:
+            transform var(--hmwc-transition-medium) var(--hmwc-easing-standard),
+            width var(--hmwc-transition-medium) var(--hmwc-easing-standard),
+            height var(--hmwc-transition-medium) var(--hmwc-easing-standard);
+
+          @media (prefers-reduced-motion: reduce) {
+            transition: none;
+          }
         }
       }
 
@@ -10129,7 +12279,7 @@
 
     &[placement='top'] {
       --padding: 0 var(--tabgroup-spacing);
-      --tab-content-padding: var(--tabgroup-spacing) 0;
+      --tab-content-padding: var(--tabgroup-content-spacing) 0 var(--tabgroup-spacing);
 
       flex-direction: column;
 
@@ -10142,11 +12292,12 @@
           .tab-group__tabs {
             flex: 1 1 auto;
             flex-direction: row;
-            border-bottom: solid 2px var(--hmwc-color-neutral-200);
+            border-bottom: solid var(--tabgroup-track-width) var(--hmwc-color-neutral-200);
 
+            /* Sits on the rule, covering it, and stands above it. */
             .tab-group__indicator {
-              bottom: -1px;
-              border-bottom: solid 2px var(--tabgroup-color);
+              bottom: calc(-1 * var(--tabgroup-track-width));
+              border-bottom: solid var(--tabgroup-indicator-width) var(--tabgroup-color);
             }
           }
         }
@@ -10159,7 +12310,7 @@
 
     &[placement='bottom'] {
       --padding: var(--tabgroup-spacing) 0;
-      --tab-content-padding: var(--tabgroup-spacing) 0;
+      --tab-content-padding: var(--tabgroup-spacing) 0 var(--tabgroup-content-spacing);
       flex-direction: column;
 
       .tab-group__navigation {
@@ -10171,11 +12322,11 @@
           .tab-group__tabs {
             flex: 1 1 auto;
             flex-direction: row;
-            border-top: solid 2px var(--hmwc-color-neutral-200);
+            border-top: solid var(--tabgroup-track-width) var(--hmwc-color-neutral-200);
 
             .tab-group__indicator {
-              top: -2px;
-              border-top: solid 2px var(--tabgroup-color);
+              top: calc(-1 * var(--tabgroup-track-width));
+              border-top: solid var(--tabgroup-indicator-width) var(--tabgroup-color);
             }
           }
         }
@@ -10200,17 +12351,17 @@
           height: 100%;
           flex-direction: column;
           overflow-y: auto;
-          min-width: 11rem;
+          min-width: calc(11 * var(--hmwc-rem, 1rem));
 
           .tab-group__tabs {
             height: 100%;
             flex: 0 0 auto;
             flex-direction: column;
-            border-inline-end: solid 2px var(--hmwc-color-neutral-200);
+            border-inline-end: solid var(--tabgroup-track-width) var(--hmwc-color-neutral-200);
 
             .tab-group__indicator {
-              right: -2px;
-              border-right: solid 2px var(--tabgroup-color);
+              right: calc(-1 * var(--tabgroup-track-width));
+              border-right: solid var(--tabgroup-indicator-width) var(--tabgroup-color);
             }
           }
         }
@@ -10223,7 +12374,7 @@
 
     &[placement='end'] {
       --padding: 0 var(--tabgroup-spacing);
-      --tab-content-padding: 0 var(--tabgroup-spacing);
+      --tab-content-padding: var(--hmwc-spacing-x-small) calc(var(--tabgroup-spacing) + var(--hmwc-spacing-3x-small));
 
       flex-direction: row;
 
@@ -10237,11 +12388,11 @@
           .tab-group__tabs {
             flex: 0 0 auto;
             flex-direction: column;
-            border-inline-start: solid 2px var(--hmwc-color-neutral-200);
+            border-inline-start: solid var(--tabgroup-track-width) var(--hmwc-color-neutral-200);
 
             .tab-group__indicator {
-              left: -2px;
-              border-left: solid 2px var(--tabgroup-color);
+              left: calc(-1 * var(--tabgroup-track-width));
+              border-left: solid var(--tabgroup-indicator-width) var(--tabgroup-color);
             }
           }
         }
@@ -10252,17 +12403,35 @@
       }
     }
   }
-`;var ie=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},pt=class extends u{constructor(){super(...arguments),this.scrollable=!1,this.tabs=[],this.content=[],this.placement="top",this.active=""}handlePlacementChange(){this.indicator&&(this.getCurrentTab()?(this.indicator.style.display="block",this.repositionIndicator()):this.indicator.style.display="none")}handleTabsChange(){this.getTabs().find(e=>e.active)||this.setCurrentTab(this.getCurrentTab())}show(t){setTimeout(()=>{let e=this.tabs.find(r=>r.name===t);e&&this.setCurrentTab(e)},1)}getTabs(){let t=this.querySelectorAll("hmwc-tab");return Array.from(t)}getContent(){let t=this.querySelectorAll("hmwc-tab-content");return Array.from(t)}getCurrentTab(){return this.getTabs().find(t=>t.active)||this.tabs[0]}setAria(){this.tabs.forEach(t=>{let e=this.content.find(r=>r.name===t.name);e&&(t.setAttribute("aria-controls",e.id),e.setAttribute("aria-labelledby",t.id))})}setCurrentTab(t){if(t===this.current||t.disabled)return;let e=this.current;this.current=t,this.active=t.name||"";let r=i=>i.active=i.name===t.name;this.tabs.forEach(r),this.content.forEach(r),this.handlePlacementChange(),!(!this.current||!this.tabsEl)&&(["top","bottom"].includes(this.placement)&&this.autoScroll&&this.controllers.scroll.scrollIntoView(this.current,this.tabsEl,"horizontal"),e?this.emit("hmwc-hide",{bubbles:!1}):this.emit("hmwc-show"))}repositionIndicator(){if(!this.current)return;let t=this.indicator.style,e=this.current.clientWidth,r=this.current.clientHeight,i=this.tabs.indexOf(this.current),n=this.tabs.slice(0,i).reduce((l,h)=>({left:l.left+h.clientWidth,top:l.top+h.clientHeight}),{left:0,top:0});["top","bottom"].includes(this.placement)?(t.width=`${e}px`,t.height="auto",t.transform=`translateX(${n.left}px)`):["start","end"].includes(this.placement)&&(t.width="auto",t.height=`${r}px`,t.transform=`translateY(${n.top}px)`)}handleClick(t){let r=t.target.closest("hmwc-tab");r?.closest("hmwc-tab-group")!==this||!r||this.setCurrentTab(r)}handleKeyDown(t){let r=t.target.closest("hmwc-tab"),i=r?.closest("hmwc-tab-group"),o=["ArrowLeft","ArrowRight","ArrowUp","ArrowDown","Home","End"];if(!(i!==this||!r)&&o.includes(t.key)){let n=["top","bottom"].includes(this.placement),l=["start","end"].includes(this.placement),h=this.tabs.find(g=>g.matches(":focus"));if(!h)return;let d=this.tabs.indexOf(h);if(t.key==="Home"?d=0:t.key==="End"?d=this.tabs.length-1:t.key==="ArrowLeft"&&n||t.key==="ArrowUp"&&l?d--:(t.key==="ArrowRight"&&n||t.key==="ArrowDown"&&l)&&d++,d<0?d=this.tabs.length-1:d>this.tabs.length-1&&(d=0),this.tabs[d].focus({preventScroll:!0}),this.setCurrentTab(this.tabs[d]),!this.current||!this.tabsEl)return;n&&this.controllers.scroll.scrollIntoView(this.current,this.tabsEl,"horizontal")}}handleScroll(t){let e=0;t==="left"?e=this.nav.scrollLeft-this.nav.clientWidth:t==="right"&&(e=this.nav.scrollLeft+this.nav.clientWidth),this.nav.scroll({left:e,behavior:"smooth"})}handleSlotChange(){this.handlePlacementChange(),this.tabs=this.getTabs(),this.content=this.getContent()}reset(){this.setCurrentTab(this.tabs[0])}connectedCallback(){if(super.connectedCallback(),this.setAttribute("role","tablist"),this.tabs=this.getTabs(),this.content=this.getContent(),!this.tabs&&!this.content||(this.setCurrentTab(this.getCurrentTab()),this.setAria(),!this.nav))return;let t=["top","bottom"].includes(this.placement),e=this.nav.scrollWidth>this.nav.clientWidth;this.scrollable=t&&e}render(){let t=f({"tab-group":!0,scrollable:this.scrollable,fluid:!!this.fluid});return c`
-      <div part="base" class=${t} placement=${this.placement} @click=${this.handleClick} @keydown=${this.handleKeyDown}>
+
+  /* After the placement rules, which it refines. */
+  .tab-group.flush[placement='top'] {
+    & .tab-group__navigation .tab-group__nav .tab-group__tabs {
+      padding-inline: var(--hmwc-spacing-small);
+      background: var(--hmwc-color-neutral-50);
+      border-bottom: var(--tabgroup-track-width) solid var(--hmwc-panel-border-color);
+    }
+
+    & .tab-group__content {
+      padding-inline: var(--tabgroup-flush-inset);
+      box-sizing: border-box;
+    }
+  }
+`;var Se=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Z=class extends g{constructor(){super(...arguments),this.scrollable=!1,this.tabs=[],this.content=[],this.narrow=!1,this.collapsed=!1,this.placement="top",this.active="",this.handleHashChange=()=>{let e=this.readHash(),t=e?this.tabs.find(r=>r.name===e):void 0;t&&(this.restoring=void 0,this.setCurrentTab(t))},this.indicatorPlaced=!1}get effectivePlacement(){return this.collapsed?"top":this.placement}handlePlacementChange(){this.indicator&&(this.getCurrentTab()?(this.indicator.style.display="block",this.repositionIndicator()):this.indicator.style.display="none")}updateCollapsed(){this.collapsed=this.narrow&&["start","end"].includes(this.placement)}handleCollapseAtChange(){this.measureWidth()}handleTabsChange(){this.observeTabs(),this.setCurrentTab(this.getCurrentTab()),this.setAria()}show(e){this.restoring=void 0,setTimeout(()=>{let t=this.tabs.find(r=>r.name===e);t&&this.setCurrentTab(t)},1)}getTabs(){let e=this.querySelectorAll("hmwc-tab:not([heading])");return Array.from(e)}getContent(){let e=this.querySelectorAll("hmwc-tab-content");return Array.from(e)}getCurrentTab(){let e=this.getTabs(),t=this.restoring?e.find(r=>r.name===this.restoring&&!r.disabled):void 0;return t||e.find(r=>r.active&&r!==this.current)||e.find(r=>r.active)||this.tabs[0]}setAria(){this.tabs.forEach(e=>{let t=this.content.find(i=>i.name===e.name);if(!t)return;let r=`hmwc-tab-${e.name}`;e.id||(e.id=r),t.id||(t.id=`${r}-panel`),e.setAttribute("aria-controls",t.id),t.setAttribute("aria-labelledby",e.id)})}setCurrentTab(e){if(!e||e.disabled)return;if(e===this.current){this.content.forEach(o=>o.active=o.name===e.name);return}let t=e.name===this.restoring;t&&(this.restoring=void 0);let r=this.current;r&&this.emit("hmwc-hide",{detail:{name:r.name||""}}),this.current=e,this.active=e.name||"";let i=o=>o.active=o.name===e.name;this.tabs.forEach(i),this.content.forEach(i),this.handlePlacementChange(),this.remember(e.name,!!r&&!t),this.emit("hmwc-show",{detail:{name:e.name||""}}),!(!this.current||!this.tabsEl)&&["top","bottom"].includes(this.effectivePlacement)&&this.autoScroll&&this.controllers.scroll.scrollIntoView(this.current,this.tabsEl,"horizontal")}storageKey(){return`hmwc-tab-group:${this.persist}`}readRemembered(){if(this.syncHash){let e=this.readHash();if(e)return e}if(this.persist)try{return localStorage.getItem(this.storageKey())||void 0}catch{return}}readHash(){let e=location.hash.replace(/^#/,"");try{return decodeURIComponent(e)}catch{return e}}remember(e,t=!0){if(!(!e||this.restoring)){if(this.persist)try{localStorage.setItem(this.storageKey(),e)}catch{}t&&this.syncHash&&this.readHash()!==e&&history.replaceState(history.state,"",`#${encodeURIComponent(e)}`)}}measureWidth(){if(!this.collapseAt){this.narrow=!1,this.widthObserver?.disconnect(),this.widthObserver=void 0;return}if(typeof ResizeObserver>"u")return;this.widthObserver||(this.widthObserver=new ResizeObserver(t=>{let r=t[t.length-1].contentRect.width;r&&requestAnimationFrame(()=>{this.widthObserver&&(this.narrow=r<(this.collapseAt||0))})}),this.widthObserver.observe(this));let e=this.getBoundingClientRect().width;e&&(this.narrow=e<this.collapseAt)}repositionIndicator(){if(!this.current||!this.indicator)return;let e=this.indicator.style,t=this.indicator.offsetParent;if(!t)return;let r=this.current.getBoundingClientRect(),i=t.getBoundingClientRect(),o=r.left-i.left-t.clientLeft,a=r.top-i.top-t.clientTop,l=r.width,h=r.height;!l&&!h||(this.indicatorPlaced||(e.transition="none"),["top","bottom"].includes(this.effectivePlacement)?(e.width=`${l}px`,e.height="auto",e.transform=`translateX(${o}px)`):["start","end"].includes(this.effectivePlacement)&&(e.width="auto",e.height=`${h}px`,e.transform=`translateY(${a}px)`),this.indicatorPlaced||(this.indicatorPlaced=!0,this.indicator.offsetWidth,e.transition=""))}observeTabs(){typeof ResizeObserver>"u"||(this.resizeObserver?.disconnect(),this.resizeObserver=new ResizeObserver(()=>this.repositionIndicator()),this.tabs.forEach(e=>this.resizeObserver.observe(e,{box:"border-box"})))}firstUpdated(e){super.firstUpdated(e),this.observeTabs(),this.repositionIndicator(),document.fonts?.ready.then(()=>this.repositionIndicator())}disconnectedCallback(){super.disconnectedCallback(),this.resizeObserver?.disconnect(),this.widthObserver?.disconnect(),this.widthObserver=void 0,window.removeEventListener("hashchange",this.handleHashChange)}handleClick(e){let r=e.target.closest("hmwc-tab");r?.closest("hmwc-tab-group")!==this||!r||r.hasAttribute("heading")||(this.restoring=void 0,this.setCurrentTab(r))}handleKeyDown(e){let r=e.target.closest("hmwc-tab"),i=r?.closest("hmwc-tab-group"),o=["ArrowLeft","ArrowRight","ArrowUp","ArrowDown","Home","End"];if(!(i!==this||!r)&&o.includes(e.key)){let a=["top","bottom"].includes(this.effectivePlacement),l=["start","end"].includes(this.effectivePlacement),h=this.tabs.find(p=>p.matches(":focus"));if(!h)return;this.restoring=void 0;let d=this.tabs.indexOf(h);if(e.key==="Home"?d=0:e.key==="End"?d=this.tabs.length-1:e.key==="ArrowLeft"&&a||e.key==="ArrowUp"&&l?d--:(e.key==="ArrowRight"&&a||e.key==="ArrowDown"&&l)&&d++,d<0?d=this.tabs.length-1:d>this.tabs.length-1&&(d=0),this.tabs[d].focus({preventScroll:!0}),this.setCurrentTab(this.tabs[d]),!this.current||!this.tabsEl)return;a&&this.controllers.scroll.scrollIntoView(this.current,this.tabsEl,"horizontal")}}handleScroll(e){let t=0;e==="left"?t=this.nav.scrollLeft-this.nav.clientWidth:e==="right"&&(t=this.nav.scrollLeft+this.nav.clientWidth),this.nav.scroll({left:t,behavior:"smooth"})}handleSlotChange(){this.handlePlacementChange(),this.tabs=this.getTabs(),this.content=this.getContent()}reset(){this.restoring=void 0,this.setCurrentTab(this.tabs[0])}connectedCallback(){if(super.connectedCallback(),this.restoring=this.readRemembered(),this.syncHash&&window.addEventListener("hashchange",this.handleHashChange),this.measureWidth(),this.tabs=this.getTabs(),this.content=this.getContent(),!this.tabs&&!this.content||(this.setCurrentTab(this.getCurrentTab()),this.setAria(),!this.nav))return;let e=["top","bottom"].includes(this.effectivePlacement),t=this.nav.scrollWidth>this.nav.clientWidth;this.scrollable=e&&t}render(){let e=v({"tab-group":!0,scrollable:this.scrollable,fluid:!!this.fluid,flush:!!this.flush});return c`
+      <div part="base" class=${e} placement=${this.effectivePlacement} @click=${this.handleClick} @keydown=${this.handleKeyDown}>
         <div class="tab-group__navigation">
           ${this.scrollable?c`
                 <hmwc-button class="tab-group__scroll start" basic small icon="chevron-left" @hmwc-click=${()=>this.handleScroll("left")}>
                 </hmwc-button>
               `:""}
           <div part="navigation" class="tab-group__nav">
-            <div part="tabs" class="tab-group__tabs">
+            <div
+              part="tabs"
+              class="tab-group__tabs"
+              role="tablist"
+              aria-orientation=${["start","end"].includes(this.effectivePlacement)?"vertical":"horizontal"}>
               <div part="indicator" class="tab-group__indicator"></div>
-              <slot name="tab" @slotchange=${this.handlePlacementChange}></slot>
+              <slot name="tab" @slotchange=${this.handleSlotChange}></slot>
             </div>
           </div>
           ${this.scrollable?c`
@@ -10274,7 +12443,7 @@
           <slot @slotchange=${this.handleSlotChange}></slot>
         </div>
       </div>
-    `}};pt.styles=zo;pt.dependencies=[ft,Ft,y];ie([v()],pt.prototype,"scrollable",void 0);ie([v()],pt.prototype,"tabs",void 0);ie([v()],pt.prototype,"content",void 0);ie([a({type:String,reflect:!0})],pt.prototype,"placement",void 0);ie([a({type:Boolean})],pt.prototype,"autoScroll",void 0);ie([a({type:String,reflect:!0})],pt.prototype,"active",void 0);ie([a({type:Boolean,reflect:!0})],pt.prototype,"fluid",void 0);ie([R(".tab-group__tabs")],pt.prototype,"tabsEl",void 0);ie([R(".tab-group__nav")],pt.prototype,"nav",void 0);ie([R(".tab-group__indicator")],pt.prototype,"indicator",void 0);ie([p("placement",{waitUntilFirstUpdate:!0})],pt.prototype,"handlePlacementChange",null);ie([p("tabs",{waitUntilFirstUpdate:!0})],pt.prototype,"handleTabsChange",null);pt.define("hmwc-tab-group",pt);var Eo=m`
+    `}};Z.styles=Ra;Z.dependencies=[_e,Je,k];Se([b()],Z.prototype,"scrollable",void 0);Se([b()],Z.prototype,"tabs",void 0);Se([b()],Z.prototype,"content",void 0);Se([b()],Z.prototype,"narrow",void 0);Se([n({type:Boolean})],Z.prototype,"autoScroll",void 0);Se([n({type:Boolean,reflect:!0})],Z.prototype,"fluid",void 0);Se([n({type:Boolean,reflect:!0})],Z.prototype,"flush",void 0);Se([n({type:Boolean,reflect:!0,attribute:"sync-hash"})],Z.prototype,"syncHash",void 0);Se([n({type:Boolean,reflect:!0})],Z.prototype,"collapsed",void 0);Se([n({type:String,reflect:!0})],Z.prototype,"placement",void 0);Se([n({type:String,reflect:!0})],Z.prototype,"active",void 0);Se([n({type:String,reflect:!0})],Z.prototype,"persist",void 0);Se([n({type:Number,attribute:"collapse-at"})],Z.prototype,"collapseAt",void 0);Se([I(".tab-group__tabs")],Z.prototype,"tabsEl",void 0);Se([I(".tab-group__nav")],Z.prototype,"nav",void 0);Se([I(".tab-group__indicator")],Z.prototype,"indicator",void 0);Se([u(["collapsed","placement"],{waitUntilFirstUpdate:!0})],Z.prototype,"handlePlacementChange",null);Se([u(["narrow","placement"])],Z.prototype,"updateCollapsed",null);Se([u("collapseAt",{waitUntilFirstUpdate:!0})],Z.prototype,"handleCollapseAtChange",null);Se([u("tabs",{waitUntilFirstUpdate:!0})],Z.prototype,"handleTabsChange",null);Z.define("hmwc-tab-group",Z);var Da=f`
   :host {
     --table-cell-width: fit-content;
     --table-cell-padding: var(--hmwc-spacing-x-small) var(--hmwc-spacing-small);
@@ -10357,8 +12526,8 @@
       --table-cell-font-color: var(--hmwc-color-danger-600);
     }
   }
-`;var se=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},st=class extends u{constructor(){super(...arguments),this.alignment="start"}valueUpdated(){this.hasUpdated&&this.emit("hmwc-change",{detail:{value:this.label}})}connectedCallback(){super.connectedCallback(),this.hasAttribute("role")||this.setAttribute("role","cell")}firstUpdated(){if(!this.label){let r=(this.shadowRoot?.querySelector("slot.table-cell__body")?.assignedNodes({flatten:!0})??[]).map(i=>i.nodeType===Node.TEXT_NODE?i.nodeValue:i.textContent).join("").trim();r&&(this.label=r)}}render(){let t=f({"table-cell":!0,"align-start":this.alignment==="start","align-center":this.alignment==="center","align-end":this.alignment==="end",icon:!!this.icon,progress:!!this.progress,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger});return c`
-      <div part="base" class=${t} @mouseenter=${()=>this.emit("hmwc-hover")}>
+`;var yt=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},xe=class extends g{constructor(){super(...arguments),this.alignment="start"}valueUpdated(){this.hasUpdated&&this.emit("hmwc-change",{detail:{value:this.label}})}connectedCallback(){super.connectedCallback(),this.hasAttribute("role")||this.setAttribute("role","cell")}firstUpdated(){if(!this.label){let r=(this.shadowRoot?.querySelector("slot.table-cell__body")?.assignedNodes({flatten:!0})??[]).map(i=>i.nodeType===Node.TEXT_NODE?i.nodeValue:i.textContent).join("").trim();r&&(this.label=r)}}render(){let e=v({"table-cell":!0,"align-start":this.alignment==="start","align-center":this.alignment==="center","align-end":this.alignment==="end",icon:!!this.icon,progress:!!this.progress,primary:!!this.primary,success:!!this.success,neutral:!!this.neutral,warning:!!this.warning,danger:!!this.danger});return c`
+      <div part="base" class=${e} @mouseenter=${()=>this.emit("hmwc-hover")}>
         <slot part="body" class="table-cell__body">
           ${this.icon?c`<hmwc-icon part="icon" class="table-cell__icon" src=${this.icon}></hmwc-icon>`:this.label?c`<div part="label" class="table-cell__label">${this.label}</div>`:this.progress?c`
                 <hmwc-progress
@@ -10370,11 +12539,11 @@
                   ?neutral=${this.neutral}
                   ?warning=${this.warning}
                   ?danger=${this.danger}
-                  @hmwc-change=${e=>this.progress=e.detail.value}></hmwc-progress>
+                  @hmwc-change=${t=>this.progress=t.detail.value}></hmwc-progress>
               `:c`<hmwc-skeleton></hmwc-skeleton>`}
         </slot>
       </div>
-    `}};st.styles=Eo;st.dependencies=[_,W,q,$t];se([a({type:String,reflect:!0})],st.prototype,"label",void 0);se([a({type:String,reflect:!0})],st.prototype,"icon",void 0);se([a({type:Number,reflect:!0})],st.prototype,"progress",void 0);se([a({type:String,reflect:!0})],st.prototype,"alignment",void 0);se([a({type:Number,reflect:!0})],st.prototype,"index",void 0);se([a({type:Boolean,reflect:!0})],st.prototype,"primary",void 0);se([a({type:Boolean,reflect:!0})],st.prototype,"success",void 0);se([a({type:Boolean,reflect:!0})],st.prototype,"neutral",void 0);se([a({type:Boolean,reflect:!0})],st.prototype,"warning",void 0);se([a({type:Boolean,reflect:!0})],st.prototype,"danger",void 0);se([p(["label","progress"])],st.prototype,"valueUpdated",null);st.define("hmwc-table-cell",st);var Oo=m`
+    `}};xe.styles=Da;xe.dependencies=[$,K,X,oe];yt([n({type:String,reflect:!0})],xe.prototype,"label",void 0);yt([n({type:String,reflect:!0})],xe.prototype,"icon",void 0);yt([n({type:Number,reflect:!0})],xe.prototype,"progress",void 0);yt([n({type:String,reflect:!0})],xe.prototype,"alignment",void 0);yt([n({type:Number,reflect:!0})],xe.prototype,"index",void 0);yt([n({type:Boolean,reflect:!0})],xe.prototype,"primary",void 0);yt([n({type:Boolean,reflect:!0})],xe.prototype,"success",void 0);yt([n({type:Boolean,reflect:!0})],xe.prototype,"neutral",void 0);yt([n({type:Boolean,reflect:!0})],xe.prototype,"warning",void 0);yt([n({type:Boolean,reflect:!0})],xe.prototype,"danger",void 0);yt([u(["label","progress"])],xe.prototype,"valueUpdated",null);xe.define("hmwc-table-cell",xe);var Ba=f`
   :host {
     /*
      * <hmwc-table-field> is a configuration-only primitive — it
@@ -10384,7 +12553,7 @@
      */
     display: none;
   }
-`;var ye=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Ct=class extends u{handleConfigChange(){this.hasUpdated&&this.emit("hmwc-change",{detail:{field:this.prop,config:this.toConfig()}})}toConfig(){let t={prop:this.prop};return this.label!==void 0&&(t.label=this.label),this.width!==void 0&&(t.width=this.width),this.alignment!==void 0&&(t.alignment=this.alignment),this.sortable!==void 0&&(t.sortable=this.sortable),this.filterable!==void 0&&(t.filterable=this.filterable),this.template!==void 0&&(t.template=this.template),t}render(){return A}};Ct.styles=Oo;Ct.dependencies=[];Ct.slots=[];ye([a({type:String,reflect:!0})],Ct.prototype,"prop",void 0);ye([a({type:String,reflect:!0})],Ct.prototype,"label",void 0);ye([a({type:String,reflect:!0})],Ct.prototype,"width",void 0);ye([a({type:String,reflect:!0})],Ct.prototype,"alignment",void 0);ye([a({type:Boolean,reflect:!0})],Ct.prototype,"sortable",void 0);ye([a({type:Boolean,reflect:!0})],Ct.prototype,"filterable",void 0);ye([a({type:String,reflect:!0})],Ct.prototype,"template",void 0);ye([p(["prop","label","width","alignment","sortable","filterable","template"])],Ct.prototype,"handleConfigChange",null);Ct.define("hmwc-table-field",Ct);var Mo=m`
+`;var Bt=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Be=class extends g{handleConfigChange(){this.hasUpdated&&this.emit("hmwc-change",{detail:{field:this.prop,config:this.toConfig()}})}toConfig(){let e={prop:this.prop};return this.label!==void 0&&(e.label=this.label),this.width!==void 0&&(e.width=this.width),this.alignment!==void 0&&(e.alignment=this.alignment),this.sortable!==void 0&&(e.sortable=this.sortable),this.filterable!==void 0&&(e.filterable=this.filterable),this.template!==void 0&&(e.template=this.template),e}render(){return x}};Be.styles=Ba;Be.dependencies=[];Be.slots=[];Bt([n({type:String,reflect:!0})],Be.prototype,"prop",void 0);Bt([n({type:String,reflect:!0})],Be.prototype,"label",void 0);Bt([n({type:String,reflect:!0})],Be.prototype,"width",void 0);Bt([n({type:String,reflect:!0})],Be.prototype,"alignment",void 0);Bt([n({type:Boolean,reflect:!0})],Be.prototype,"sortable",void 0);Bt([n({type:Boolean,reflect:!0})],Be.prototype,"filterable",void 0);Bt([n({type:String,reflect:!0})],Be.prototype,"template",void 0);Bt([u(["prop","label","width","alignment","sortable","filterable","template"])],Be.prototype,"handleConfigChange",null);Be.define("hmwc-table-field",Be);var Pa=f`
   :host {
     --table-row-background: none;
 
@@ -10401,10 +12570,10 @@
       --table-cell-font-color: var(--hmwc-color-neutral-500);
     }
   }
-`;var Re=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},St=class extends u{constructor(){super(...arguments),this.hover=!0,this.cells=[]}cellsUpdate(){let t=this.cells.filter(e=>e.index);t.length?this.cells.filter(r=>r.index===void 0).forEach((r,i)=>{t.find(o=>o.index===i)||(r.index=i),i++}):this.cells.map((e,r)=>e.index=r),this.cells=this.cells.sort((e,r)=>e.index-r.index)}firstUpdated(){this.cells=this.controllers.slot.get().filter(t=>t instanceof st)}render(){let t=f({"table-row":!0,alt:this.index%2!==0});return c`<div part="base" class=${t}>
+`;var or=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Pe=class extends g{constructor(){super(...arguments),this.hover=!0,this.cells=[]}cellsUpdate(){let e=this.cells.filter(t=>t.index);e.length?this.cells.filter(r=>r.index===void 0).forEach((r,i)=>{e.find(o=>o.index===i)||(r.index=i),i++}):this.cells.map((t,r)=>t.index=r),this.cells=this.cells.sort((t,r)=>t.index-r.index)}firstUpdated(){this.cells=this.controllers.slot.get().filter(e=>e instanceof xe)}render(){let e=v({"table-row":!0,alt:this.index%2!==0});return c`<div part="base" class=${e}>
         ${this.selectable?c`<hmwc-checkbox></hmwc-checkbox>`:""}${this.cells}${this.removable?c`<hmwc-button basic danger icon="x"></hmwc-button>`:""}
       </div>
-      <slot></slot>`}};St.styles=Mo;St.dependencies=[];St.slots=[];Re([a({type:Number,reflect:!0})],St.prototype,"index",void 0);Re([a({type:Boolean,reflect:!0})],St.prototype,"hover",void 0);Re([a({type:Boolean,reflect:!0})],St.prototype,"selectable",void 0);Re([a({type:Boolean,reflect:!0})],St.prototype,"removable",void 0);Re([v()],St.prototype,"cells",void 0);Re([p("cells",{waitUntilFirstUpdate:!0})],St.prototype,"cellsUpdate",null);St.define("hmwc-table-row",St);var Bo=m`
+      <slot></slot>`}};Pe.styles=Pa;Pe.dependencies=[];Pe.slots=[];or([n({type:Number,reflect:!0})],Pe.prototype,"index",void 0);or([n({type:Boolean,reflect:!0})],Pe.prototype,"hover",void 0);or([n({type:Boolean,reflect:!0})],Pe.prototype,"selectable",void 0);or([n({type:Boolean,reflect:!0})],Pe.prototype,"removable",void 0);or([b()],Pe.prototype,"cells",void 0);or([u("cells",{waitUntilFirstUpdate:!0})],Pe.prototype,"cellsUpdate",null);Pe.define("hmwc-table-row",Pe);var Ia=f`
   :host {
     --table-width: auto;
     --table-item-padding: var(--hmwc-spacing-x-small) var(--hmwc-spacing-small);
@@ -10469,259 +12638,360 @@
       --table-width: 100%;
     }
   }
-`;var Xe=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Vt=class extends u{constructor(){super(...arguments),this.rows=[],this.fields=[]}rowsUpdate(){let t=this.rows.filter(e=>e.index);t.length?this.rows.filter(e=>e.index===void 0).forEach((e,r)=>{t.find(i=>i.index===r)||(e.index=r),r++}):this.rows.map((e,r)=>e.index=r),this.rows=this.rows.sort((e,r)=>e.index-r.index),this.rows[0]?.cells&&(this.fields.length||(this.fields=Array.from(Array(this.rows[0]?.cells.length).keys()).map(()=>""))),this.rows.find(e=>e.selectable)&&(this.fields=["",...this.fields]),this.rows.find(e=>e.removable)&&(this.fields=[...this.fields,""])}fieldsUpdate(){}firstUpdated(){this.rows=this.controllers.slot.get().filter(t=>t instanceof St)}render(){let t=f({table:!0,fluid:!!this.fluid,fields:this.fields.some(e=>e!=="")});return c`
-      <div part="base" class=${t}>
+`;var wr=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},at=class extends g{constructor(){super(...arguments),this.rows=[],this.fields=[]}rowsUpdate(){let e=this.rows.filter(t=>t.index);e.length?this.rows.filter(t=>t.index===void 0).forEach((t,r)=>{e.find(i=>i.index===r)||(t.index=r),r++}):this.rows.map((t,r)=>t.index=r),this.rows=this.rows.sort((t,r)=>t.index-r.index),this.rows[0]?.cells&&(this.fields.length||(this.fields=Array.from(Array(this.rows[0]?.cells.length).keys()).map(()=>""))),this.rows.find(t=>t.selectable)&&(this.fields=["",...this.fields]),this.rows.find(t=>t.removable)&&(this.fields=[...this.fields,""])}fieldsUpdate(){}firstUpdated(){this.rows=this.controllers.slot.get().filter(e=>e instanceof Pe)}render(){let e=v({table:!0,fluid:!!this.fluid,fields:this.fields.some(t=>t!=="")});return c`
+      <div part="base" class=${e}>
         <div part="head" class="table__head">
-          <div class="table__head-row">${this.fields?.map(e=>c`<div part="col-head" class="table__head-item">${e}</div>`)}</div>
+          <div class="table__head-row">${this.fields?.map(t=>c`<div part="col-head" class="table__head-item">${t}</div>`)}</div>
         </div>
-        ${this.rows.map(e=>e)}
+        ${this.rows.map(t=>t)}
         <slot></slot>
       </div>
-    `}};Vt.styles=Bo;Vt.dependencies=[];Vt.slots=["[Default]"];Xe([v()],Vt.prototype,"rows",void 0);Xe([a({type:Array})],Vt.prototype,"fields",void 0);Xe([a({type:Boolean,reflect:!0})],Vt.prototype,"fluid",void 0);Xe([p("rows")],Vt.prototype,"rowsUpdate",null);Xe([p("fields")],Vt.prototype,"fieldsUpdate",null);Vt.define("hmwc-table",Vt);var Do=m`
+    `}};at.styles=Ia;at.dependencies=[];at.slots=["[Default]"];wr([b()],at.prototype,"rows",void 0);wr([n({type:Array})],at.prototype,"fields",void 0);wr([n({type:Boolean,reflect:!0})],at.prototype,"fluid",void 0);wr([u("rows")],at.prototype,"rowsUpdate",null);wr([u("fields")],at.prototype,"fieldsUpdate",null);at.define("hmwc-table",at);var Fa=f`
   :host {
     display: block;
-    outline: 0;
-    z-index: 0;
-    width: 100%;
-  }
-
-  :host(:focus) {
     outline: none;
-  }
-
-  :host(:focus-visible) .tree-item__item {
-    outline: var(--hmwc-focus-ring);
-    outline-offset: var(--hmwc-focus-ring-offset);
-    z-index: 2;
+    min-width: 0;
   }
 
   .tree-item {
-    position: relative;
+    /* The public --tree-* properties are declared on hmwc-tree and inherited.
+       The fallbacks repeat the tree's defaults so an item rendered on its own
+       (in a story, say) still looks right. */
+    --item-padding-block: var(--tree-item-padding-block, var(--hmwc-spacing-2x-small));
+    --item-padding-inline: var(--tree-item-padding-inline, var(--hmwc-spacing-x-small));
+    --item-gap: var(--tree-item-gap, var(--hmwc-spacing-x-small));
+    --item-toggle-size: var(--tree-item-toggle-size, var(--hmwc-spacing-medium));
+    --item-indent: var(--tree-indent, calc(var(--item-toggle-size) + var(--item-gap)));
+    --item-guide-width: var(--tree-guide-width, var(--hmwc-panel-border-width));
+    --item-guide-color: var(--tree-guide-color, var(--hmwc-color-neutral-200));
+    --item-expand-duration: var(--tree-expand-duration, var(--hmwc-transition-medium));
+    --item-collapse-duration: var(--tree-collapse-duration, var(--hmwc-transition-fast));
+
     display: flex;
-    align-items: stretch;
-    width: 100%;
     flex-direction: column;
-    color: var(--hmwc-color-neutral-700);
+    min-width: 0;
+    /* The base host style turns on small caps (font-feature-settings) for
+       every component. In a tree it set labels in small caps beside
+       full-height digits ("MAR 2026") and body text in small caps. Items
+       reset it so labels, meta and body read as ordinary text; slotted
+       content inherits from here. */
+    font-feature-settings: normal;
+    font-variant: normal;
+  }
+
+  /* ---- Row ------------------------------------------------------------ */
+
+  .tree-item__row {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--item-gap);
+    min-width: 0;
+    padding: var(--item-padding-block) var(--item-padding-inline);
+    border-radius: var(--tree-item-border-radius, var(--hmwc-border-radius-medium));
+    color: var(--tree-item-color, var(--hmwc-color-neutral-800));
+    font-size: var(--tree-item-font-size, var(--hmwc-font-size-medium));
+    line-height: var(--hmwc-line-height-dense);
     cursor: pointer;
-    user-select: none;
-    -webkit-user-select: none;
+    transition: background-color var(--hmwc-transition-fast) var(--hmwc-easing-standard),
+      box-shadow var(--hmwc-transition-fast) var(--hmwc-easing-standard);
+  }
 
-    & .tree-item__item {
+  .tree-item:not(.disabled) > .tree-item__row:hover {
+    background-color: var(--tree-item-background-hover, var(--hmwc-color-neutral-100));
+  }
+
+  /* Keyboard focus uses the form-control focus style: a primary-600 border
+     (which carries the 3:1 contrast) and a soft halo. The border is inset so
+     it never shifts the row. */
+  :host(:focus-visible) .tree-item__row {
+    box-shadow: inset 0 0 0 var(--hmwc-input-border-width) var(--hmwc-input-border-color-focus),
+      0 0 0 var(--hmwc-input-focus-ring-width) var(--hmwc-input-focus-ring-color);
+  }
+
+  /* The chevron column is always reserved, so labels line up whether or not
+     an item can expand. Its height is one line of the label, which keeps the
+     chevron on the first line when a long label wraps. */
+  .tree-item__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 var(--item-toggle-size);
+    width: var(--item-toggle-size);
+    height: 1lh;
+    color: var(--hmwc-color-neutral-500);
+    --icon-size: var(--hmwc-font-size-x-small);
+    transition: rotate var(--item-expand-duration) var(--hmwc-easing-overshoot), color var(--hmwc-transition-fast) var(--hmwc-easing-standard);
+
+    & hmwc-icon {
       display: flex;
-      align-items: center;
-      border-inline-start: solid 3px transparent;
-      padding-right: var(--hmwc-spacing-medium);
+    }
+  }
 
-      & .tree-item__expand,
-      & .tree-item__checkbox,
-      & .tree-item__label {
-        font-family: var(--hmwc-font-sans);
-        font-size: var(--hmwc-font-size-medium);
-        font-weight: var(--hmwc-font-weight-normal);
-        line-height: var(--hmwc-line-height-dense);
-        letter-spacing: var(--hmwc-letter-spacing-normal);
-      }
+  .tree-item:not(.disabled) > .tree-item__row:hover .tree-item__toggle {
+    color: var(--hmwc-color-neutral-800);
+  }
 
-      & .tree-item__checkbox,
-      & .tree-item__indentation {
-        display: block;
-        width: 1em;
-        flex-shrink: 0;
-      }
+  .tree-item.expanded > .tree-item__row .tree-item__toggle {
+    rotate: 90deg;
+  }
 
-      & .tree-item__label {
-        display: flex;
-        align-items: center;
-        transition: var(--hmwc-transition-fast) color;
-      }
+  .tree-item__prefix {
+    display: none;
+    align-items: center;
+    flex: 0 0 auto;
+    height: 1lh;
+    color: var(--hmwc-color-neutral-600);
+    --icon-size: 1em;
+  }
 
-      & .tree-item__expand {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: content-box;
-        color: var(--hmwc-color-neutral-500);
-        padding: var(--hmwc-spacing-x-small);
-        opacity: 0;
-        width: 1rem;
-        height: 1rem;
-        flex-shrink: 0;
-        cursor: pointer;
-        transition: var(--hmwc-transition-medium) rotate ease;
+  .tree-item.has-prefix .tree-item__prefix {
+    display: flex;
+  }
 
-        hmwc-icon {
-          display: flex;
-          height: fit-content;
-          &::part(base) {
-            display: flex;
-            height: fit-content;
-          }
-        }
-      }
+  /* Label and meta share a wrapping line. The label grows, which pushes the
+     meta to the end of the row; when the row is too narrow for both, the
+     meta wraps and starts under the label, reading as a subtitle. */
+  .tree-item__text {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: var(--item-gap);
+    min-width: 0;
+  }
 
-      & .tree-item__checkbox {
-        pointer-events: none;
-        margin-inline-end: var(--hmwc-spacing-small);
+  .tree-item__label {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    letter-spacing: var(--hmwc-letter-spacing-dense);
+  }
 
-        hmwc-checkbox::part(base) {
-          display: flex;
-          align-items: center;
-        }
-      }
+  .tree-item.branch > .tree-item__row .tree-item__label {
+    font-weight: var(--tree-item-branch-font-weight, var(--hmwc-font-weight-semibold));
+  }
 
-      & .tree-item__icon {
-        display: block;
+  .tree-item__meta {
+    display: none;
+    flex: 0 0 auto;
+    color: var(--tree-item-meta-color, var(--hmwc-color-neutral-600));
+    font-size: var(--tree-item-meta-font-size, var(--hmwc-font-size-small));
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
 
-        &:has(hmwc-icon) {
-          margin-inline-end: var(--hmwc-spacing-x-small);
-        }
-      }
+  .tree-item.has-meta .tree-item__meta {
+    display: block;
+  }
+
+  .tree-item.selected > .tree-item__row {
+    background-color: var(--tree-item-background-selected, var(--hmwc-color-primary-50));
+    color: var(--tree-item-color-selected, var(--hmwc-color-primary-800));
+
+    & .tree-item__toggle {
+      color: var(--tree-item-color-selected, var(--hmwc-color-primary-800));
+    }
+  }
+
+  .tree-item.disabled > .tree-item__row {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* ---- Children: body + nested items ------------------------------------ */
+
+  /* Collapse is the resting transition: it accelerates away quickly, and
+     visibility flips only once the row has closed, so collapsed content is
+     out of the accessibility tree and the tab order. Expand overrides it
+     below with a longer, decelerating curve. */
+  .tree-item__children {
+    display: grid;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    transition: grid-template-rows var(--item-collapse-duration) var(--hmwc-easing-accelerate),
+      visibility 0s linear var(--item-collapse-duration);
+  }
+
+  .tree-item__clip {
+    position: relative;
+    min-height: 0;
+    overflow: hidden;
+    padding-inline-start: var(--item-indent);
+    opacity: 0;
+    translate: 0 calc(-1 * var(--hmwc-spacing-2x-small));
+    transition: opacity var(--hmwc-transition-x-fast) var(--hmwc-easing-accelerate),
+      translate var(--hmwc-transition-x-fast) var(--hmwc-easing-accelerate);
+
+    /* The guide runs down the toggle column, beside the children. */
+    &::before {
+      content: '';
+      position: absolute;
+      inset-block: 0;
+      inset-inline-start: calc(var(--item-padding-inline) + (var(--item-toggle-size) - var(--item-guide-width)) / 2);
+      border-inline-start: var(--item-guide-width) solid var(--item-guide-color);
+      transition: border-color var(--hmwc-transition-fast) var(--hmwc-easing-standard);
+    }
+  }
+
+  .tree-item.expanded > .tree-item__children {
+    grid-template-rows: 1fr;
+    visibility: visible;
+    transition: grid-template-rows var(--item-expand-duration) var(--hmwc-easing-decelerate), visibility 0s;
+
+    & > .tree-item__clip {
+      /* Leave room for a focused child's halo, which would otherwise be
+         clipped at the region's edge. */
+      overflow: clip;
+      overflow-clip-margin: var(--hmwc-input-focus-ring-width);
+      opacity: 1;
+      translate: 0;
+      /* Content arrives just behind the opening row, rather than being
+         uncovered by it. */
+      transition: opacity var(--hmwc-transition-fast) var(--hmwc-easing-standard) var(--hmwc-transition-x-fast),
+        translate var(--hmwc-transition-fast) var(--hmwc-easing-decelerate) var(--hmwc-transition-x-fast);
+    }
+  }
+
+  /* The guides along the path to the focused item darken, so a deep focus
+     position reads as a trail back to the top. */
+  :host(:focus-within) .tree-item.expanded > .tree-item__children > .tree-item__clip::before {
+    border-color: var(--tree-guide-color-active, var(--hmwc-color-neutral-400));
+  }
+
+  /* Body content is running text, not a label: it is selectable, and set at
+     the body size and weight whatever the row above it uses. */
+  .tree-item__body {
+    display: none;
+    padding: 0 var(--item-padding-inline) var(--hmwc-spacing-x-small);
+    color: var(--tree-item-body-color, var(--hmwc-color-neutral-700));
+    font-size: var(--tree-item-body-font-size, var(--hmwc-font-size-medium));
+    font-weight: var(--hmwc-font-weight-normal);
+    line-height: var(--hmwc-line-height-dense);
+    letter-spacing: var(--hmwc-letter-spacing-normal);
+    cursor: auto;
+    user-select: text;
+    -webkit-user-select: text;
+  }
+
+  .tree-item.has-body .tree-item__body {
+    display: block;
+  }
+
+  slot[name='body']::slotted(ul),
+  slot[name='body']::slotted(ol) {
+    margin: 0;
+    padding-inline-start: var(--hmwc-spacing-medium);
+  }
+
+  slot[name='body']::slotted(p) {
+    margin: 0;
+  }
+
+  /* DoD §9. State changes still apply — only the motion stops. */
+  @media (prefers-reduced-motion: reduce) {
+    .tree-item__row,
+    .tree-item__toggle,
+    .tree-item__children,
+    .tree-item__clip,
+    .tree-item__clip::before,
+    .tree-item.expanded > .tree-item__children,
+    .tree-item.expanded > .tree-item__children > .tree-item__clip {
+      transition: none;
     }
 
-    & .tree-item__items {
-      display: block;
-      position: relative;
-      font-size: calc(1em + var(--indent-size, var(--hmwc-spacing-medium)));
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: var(--indent-guide-offset);
-        bottom: var(--indent-guide-offset);
-        left: calc(1em - (var(--indent-guide-width) / 2) - 1px);
-        border-inline-end: var(--indent-guide-width) var(--indent-guide-style) var(--indent-guide-color);
-        z-index: 1;
-      }
-    }
-
-    &.expanded {
-      & .tree-item__item {
-        .tree-item__expand {
-          rotate: 90deg;
-        }
-      }
-    }
-
-    &.disabled {
-      & .tree-item__item {
-        opacity: 0.5;
-        outline: none;
-        cursor: not-allowed;
-      }
-    }
-
-    &.items {
-      & .tree-item__item {
-        & .tree-item__expand {
-          opacity: 1;
-        }
-      }
-    }
-
-    &.selected:not(.disabled) {
-      & .tree-item__item {
-        background-color: var(--hmwc-color-neutral-100);
-        border-inline-start-color: var(--hmwc-color-primary-600);
-      }
-
-      & .tree-item__expand {
-        color: var(--hmwc-color-primary-600);
-      }
+    .tree-item__clip {
+      translate: none;
     }
   }
 
   @media (forced-colors: active) {
-    .tree-item.selected .tree-item__item {
-      outline: dashed 1px SelectedItem;
+    :host(:focus-visible) .tree-item__row {
+      outline: var(--hmwc-focus-ring-width) solid Highlight;
+    }
+
+    .tree-item.selected > .tree-item__row {
+      outline: var(--hmwc-panel-border-width) dashed SelectedItem;
     }
   }
-`;var _e=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},gt=class s extends u{constructor(){super(...arguments),this.selection="single",this.checked=!1,this.items=[]}getTreeItems(){return this.items.length||this.controllers.slot.get().forEach(t=>{t instanceof s&&this.items.push({label:t.controllers.slot.get("label")[0].textContent||"",icon:t.controllers.slot.get("icon")[0].src,selected:t.selected,expanded:t.expanded,items:t.getTreeItems()})}),this.items}handleClick(){this.selected=!this.selected,this.selection==="multiple"&&(this.checked=this.selected),this.emit("hmwc-select",{detail:{value:this}}),this.items&&(this.expanded=this.selected)}connectedCallback(){super.connectedCallback()}render(){let t=f({"tree-item":!0,items:!!this.items.length,expanded:!!this.expanded,disabled:!!this.disabled,selected:!!this.selected&&!this.disabled});return c`
+`;var _t=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},Na=s=>(s?.assignedNodes({flatten:!0})??[]).map(e=>e.textContent??"").join("").replace(/\s+/g," ").trim(),gi=s=>s.assignedNodes({flatten:!0}).some(e=>e.nodeType===Node.ELEMENT_NODE||!!e.textContent?.trim()),ee=class s extends g{constructor(){super(...arguments),this.hasItems=!1,this.hasBody=!1,this.hasPrefix=!1,this.hasMeta=!1}handleExpandedChange(){this.emit(`hmwc-${this.expanded?"expand":"collapse"}`)}connectedCallback(){super.connectedCallback(),this.hasAttribute("tabindex")||(this.tabIndex=-1)}updated(){this.syncHostAttributes()}get expandable(){return this.hasItems||this.hasBody}get labelText(){return this.label??Na(this.renderRoot?.querySelector('slot[name="label"]'))}expand(){this.disabled||!this.expandable||(this.expanded=!0)}collapse(){this.disabled||(this.expanded=!1)}toggle(){this.expanded?this.collapse():this.expand()}get tree(){return this.closest("hmwc-tree")}get level(){let e=1;for(let t=this.parentElement;t&&t.tagName!=="HMWC-TREE";t=t.parentElement)t instanceof s&&e++;return e}get siblings(){return Array.from(this.parentElement?.children??[]).filter(e=>e instanceof s&&!e.hidden)}syncHostAttributes(){let e=(this.tree?.selection??"none")!=="none",t=this.siblings,r=[this.labelText,this.meta??Na(this.renderRoot.querySelector('slot[name="meta"]'))].filter(Boolean).join(", "),i=(o,a)=>a===null?this.removeAttribute(o):this.getAttribute(o)!==a&&this.setAttribute(o,a);i("role","treeitem"),i("aria-level",String(this.level)),i("aria-setsize",String(Math.max(t.length,1))),i("aria-posinset",String(Math.max(t.indexOf(this)+1,1))),i("aria-expanded",this.expandable?String(!!this.expanded):null),i("aria-selected",e?String(!!this.selected):null),i("aria-disabled",this.disabled?"true":null),i("aria-label",r||null)}handleItemsSlotChange(e){this.hasItems=e.target.assignedElements().some(t=>t.tagName==="HMWC-TREE-ITEM")}handleBodySlotChange(e){this.hasBody=gi(e.target)}handlePrefixSlotChange(e){this.hasPrefix=gi(e.target)}handleMetaSlotChange(e){this.hasMeta=gi(e.target)}render(){let e=(this.tree?.selection??"none")!=="none",t=v({"tree-item":!0,expandable:this.expandable,expanded:!!this.expanded&&this.expandable,branch:this.hasItems,disabled:!!this.disabled,selected:!!this.selected&&e,"has-prefix":!!this.icon||this.hasPrefix,"has-meta":!!this.meta||this.hasMeta,"has-body":this.hasBody});return c`
       <div part="base" class=${t}>
-        <div part="item" class="tree-item__item" @click=${this.handleClick}>
-          <div class="tree-item__indentation" part="indentation"></div>
-          <slot name="${this.expanded?"collapse":"expand"}-icon" part="icon" class="tree-item__expand">
-            ${this.items?c`<hmwc-icon src="chevron-right"></hmwc-icon>`:""}
-          </slot>
-
-          ${this.selection==="multiple"?c`<div part="checkbox" class="tree-item__checkbox">
-                <hmwc-checkbox ?checked=${this.checked} @hmwc-change=${this.handleClick}></hmwc-checkbox>
-              </div>`:""}
-          <slot name="icon" part="icon" class="tree-item__icon">
-            ${this.icon?c`<hmwc-icon sm src=${this.icon}></hmwc-icon>`:""}
-          </slot>
-          <slot name="label" part="label" class="tree-item__label">${this.label}</slot>
+        <div part="row" class="tree-item__row">
+          <span part="toggle" class="tree-item__toggle" aria-hidden="true">
+            ${this.expandable?c`<hmwc-icon src="chevron-right"></hmwc-icon>`:x}
+          </span>
+          <span part="prefix" class="tree-item__prefix">
+            <slot name="prefix" @slotchange=${this.handlePrefixSlotChange}>${this.icon?c`<hmwc-icon src=${this.icon}></hmwc-icon>`:x}</slot>
+          </span>
+          <span class="tree-item__text">
+            <span part="label" class="tree-item__label"><slot name="label" @slotchange=${()=>this.requestUpdate()}>${this.label}</slot></span>
+            <span part="meta" class="tree-item__meta"><slot name="meta" @slotchange=${this.handleMetaSlotChange}>${this.meta}</slot></span>
+          </span>
         </div>
-        ${this.expanded?c`<div part="items" class="tree-item__items">
-              <slot>
-                ${this.items.map(e=>c`
-                    <hmwc-tree-item
-                      label=${e.label}
-                      icon=${w(e.icon)}
-                      ?selected=${e.selected}
-                      ?expanded=${e.expanded}
-                      ?checked=${e.checked}
-                      selection=${this.selection}
-                      .items=${e.items||[]}></hmwc-tree-item>
-                  `)}
-              </slot>
-            </div>`:""}
+        <div part="children" class="tree-item__children">
+          <div class="tree-item__clip">
+            <div part="body" class="tree-item__body"><slot name="body" @slotchange=${this.handleBodySlotChange}></slot></div>
+            <div part="group" class="tree-item__group" role=${w(this.hasItems?"group":void 0)}>
+              <slot @slotchange=${this.handleItemsSlotChange}></slot>
+            </div>
+          </div>
+        </div>
       </div>
-    `}};gt.styles=Do;gt.dependencies=[_,ct];gt.slots=["label","icon"];_e([a({type:String})],gt.prototype,"selection",void 0);_e([a({type:String})],gt.prototype,"label",void 0);_e([a({type:String})],gt.prototype,"icon",void 0);_e([a({type:Boolean,reflect:!0})],gt.prototype,"selected",void 0);_e([a({type:Boolean,reflect:!0})],gt.prototype,"checked",void 0);_e([a({type:Boolean,reflect:!0})],gt.prototype,"expanded",void 0);_e([a({type:Boolean,reflect:!0})],gt.prototype,"disabled",void 0);_e([a({type:Array})],gt.prototype,"items",void 0);gt.define("hmwc-tree-item",gt);var To=m`
+    `}};ee.styles=Fa;ee.dependencies=[$];ee.slots=["[default]","label","prefix","meta","body"];_t([b()],ee.prototype,"hasItems",void 0);_t([b()],ee.prototype,"hasBody",void 0);_t([b()],ee.prototype,"hasPrefix",void 0);_t([b()],ee.prototype,"hasMeta",void 0);_t([n({type:Boolean,reflect:!0})],ee.prototype,"expanded",void 0);_t([n({type:Boolean,reflect:!0})],ee.prototype,"disabled",void 0);_t([n({type:Boolean,reflect:!0})],ee.prototype,"selected",void 0);_t([n({type:String,reflect:!0})],ee.prototype,"label",void 0);_t([n({type:String,reflect:!0})],ee.prototype,"meta",void 0);_t([n({type:String,reflect:!0})],ee.prototype,"icon",void 0);_t([u("expanded",{waitUntilFirstUpdate:!0})],ee.prototype,"handleExpandedChange",null);ee.define("hmwc-tree-item",ee);var La=f`
   :host {
-    --indent-guide-color: var(--sl-color-neutral-200);
-    --indent-guide-offset: 0;
-    --indent-guide-style: solid;
-    --indent-guide-width: 0;
-    --indent-size: var(--sl-spacing-large);
+    /* Every item reads these, so they are set once here and inherited by the
+       nested items. Set any of them on a single item to restyle that branch. */
+    --tree-item-padding-block: var(--hmwc-spacing-2x-small);
+    --tree-item-padding-inline: var(--hmwc-spacing-x-small);
+    --tree-item-gap: var(--hmwc-spacing-x-small);
+    --tree-item-toggle-size: var(--hmwc-spacing-medium);
+    --tree-item-border-radius: var(--hmwc-border-radius-medium);
+    --tree-item-font-size: var(--hmwc-font-size-medium);
+    --tree-item-color: var(--hmwc-color-neutral-800);
+    --tree-item-branch-font-weight: var(--hmwc-font-weight-semibold);
+    --tree-item-meta-font-size: var(--hmwc-font-size-small);
+    --tree-item-meta-color: var(--hmwc-color-neutral-600);
+    --tree-item-body-font-size: var(--hmwc-font-size-medium);
+    --tree-item-body-color: var(--hmwc-color-neutral-700);
+    --tree-item-background-hover: var(--hmwc-color-neutral-100);
+    --tree-item-background-selected: var(--hmwc-color-primary-50);
+    --tree-item-color-selected: var(--hmwc-color-primary-800);
+    /* A child's chevron lines up under its parent's label. */
+    --tree-indent: calc(var(--tree-item-toggle-size) + var(--tree-item-gap));
+    --tree-guide-color: var(--hmwc-color-neutral-200);
+    --tree-guide-color-active: var(--hmwc-color-neutral-400);
+    --tree-guide-width: var(--hmwc-panel-border-width);
+    /* Opening is unhurried, closing immediate — the same asymmetry as
+       hmwc-accordion, so disclosures feel alike across the library. */
+    --tree-expand-duration: var(--hmwc-transition-medium);
+    --tree-collapse-duration: var(--hmwc-transition-fast);
 
-    display: flex;
-    isolation: isolate;
+    display: block;
     width: 100%;
-    /*
-     * Tree item indentation uses the "em" unit to increment its width on each level, so setting the font size to zero
-     * here removes the indentation for all the nodes on the first level.
-     */
-    font-size: 0;
+    min-width: 0;
   }
 
   .tree {
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-width: 0;
 
     & .tree__label {
-      display: none;
-      color: var(--hmwc-color-text-secondary);
-      font-size: var(--hmwc-font-size-small);
-      font-family: var(--hmwc-font-sans);
-      line-height: 2;
+      /* Aligned with the item labels, not the row edge. */
+      padding-inline: calc(var(--tree-item-padding-inline) + var(--tree-item-toggle-size) + var(--tree-item-gap));
       margin-bottom: var(--hmwc-spacing-2x-small);
-    }
-
-    &.label {
-      & .tree__label {
-        display: flex;
-      }
+      color: var(--hmwc-color-neutral-600);
+      font-size: var(--hmwc-font-size-small);
+      font-weight: var(--hmwc-font-weight-semibold);
+      line-height: var(--hmwc-line-height-dense);
     }
   }
-`;var Je=function(s,t,e,r){var i=arguments.length,o=i<3?t:r===null?r=Object.getOwnPropertyDescriptor(t,e):r,n;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,t,e,r);else for(var l=s.length-1;l>=0;l--)(n=s[l])&&(o=(i<3?n(o):i>3?n(t,e,o):n(t,e))||o);return i>3&&o&&Object.defineProperty(t,e,o),o},Jt=class extends u{constructor(){super(...arguments),this.selection="single",this.items=[]}handleSelectionChange(){this.controllers.slot.get().forEach(t=>{t.selection=this.selection})}singleSelect(t,e){return e.map(r=>(r.label===t.label?(r.selected=!0,r.items&&(r.expanded=!0)):r.selected=!1,r.items&&(r.items=this.singleSelect(t,r.items),r.items.some(i=>i.selected)&&(r.expanded=!0)),r))}multiSelect(t,e){return e.map(r=>(r.label===t.label&&(r.selected=!0,r.checked=!0,r.items&&(r.expanded=!0)),r.items&&(r.items=this.multiSelect(t,r.items),r.items.some(i=>i.selected)&&(r.expanded=!0)),r))}handleSelection(t){let e=t.detail.value;this.selection==="single"?this.items=this.singleSelect(e,this.items):this.selection==="multiple"&&(this.items=this.multiSelect(e,this.items))}connectedCallback(){super.connectedCallback(),this.controllers.slot.get().forEach(t=>{t.selection=this.selection})}render(){let t=f({tree:!0,label:!!this.label||this.controllers.slot.test("label")});return c`
-      <div part="base" class=${t}>
-        <slot name="label" part="label" class="tree__label">${this.label}</slot>
-        <slot>
-          ${this.items.map(e=>c`
-              <hmwc-tree-item
-                label=${e.label}
-                icon=${w(e.icon)}
-                ?selected=${e.selected}
-                ?expanded=${e.expanded}
-                ?checked=${e.checked}
-                .items=${e.items||[]}
-                selection=${this.selection}
-                @hmwc-select=${this.handleSelection}></hmwc-tree-item>
-            `)}
-        </slot>
+`;var Ur=function(s,e,t,r){var i=arguments.length,o=i<3?e:r===null?r=Object.getOwnPropertyDescriptor(e,t):r,a;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")o=Reflect.decorate(s,e,t,r);else for(var l=s.length-1;l>=0;l--)(a=s[l])&&(o=(i<3?a(o):i>3?a(e,t,o):a(e,t))||o);return i>3&&o&&Object.defineProperty(e,t,o),o},tn=500,dt=class extends g{constructor(){super(...arguments),this.selection="none",this.typeahead="",this.observer=new MutationObserver(()=>this.sync()),this.handleClick=e=>{let t=e.composedPath(),r=t.findIndex(a=>a instanceof HTMLElement&&a.classList.contains("tree-item__row"));if(r===-1)return;let i=t.slice(r).find(a=>a instanceof ee);if(!i)return;t.slice(0,r).some(a=>a instanceof HTMLElement&&a.classList.contains("tree-item__toggle"))&&!i.disabled?i.toggle():this.activate(i)},this.handleFocusIn=e=>{e.target instanceof ee&&e.target!==this.current&&this.updateTabStop(e.target)},this.handleExpandedChange=e=>{let t=e.target;if(!(t instanceof ee))return;let r=document.activeElement;!t.expanded&&r&&r!==t&&t.contains(r)?this.focusItem(t):this.updateTabStop()},this.handleKeyDown=e=>{let t=e.target;if(!(t instanceof ee)||e.altKey||e.ctrlKey||e.metaKey)return;let r=this.getVisibleItems(),i=r.indexOf(t);switch(e.key){case"ArrowDown":this.focusItem(r[i+1]);break;case"ArrowUp":this.focusItem(r[i-1]);break;case"Home":this.focusItem(r[0]);break;case"End":this.focusItem(r[r.length-1]);break;case"ArrowRight":if(t.expandable&&!t.expanded)t.expand();else if(t.expanded){let o=r[i+1];o&&this.getParentItem(o)===t&&this.focusItem(o)}break;case"ArrowLeft":t.expandable&&t.expanded&&!t.disabled?t.collapse():this.focusItem(this.getParentItem(t));break;case"Enter":case" ":this.activate(t);break;case"*":Array.from(t.parentElement?.children??[]).filter(o=>o instanceof ee).forEach(o=>o.expand());break;default:if(e.key.length!==1||!this.handleTypeahead(e.key,r,i))return}e.preventDefault()}}get selectedItems(){return this.getItems().filter(e=>e.selected)}handleSelectionChange(){this.selection==="single"&&this.selectedItems.slice(1).forEach(e=>e.selected=!1),this.sync()}connectedCallback(){super.connectedCallback(),this.setAttribute("role","tree"),this.addEventListener("click",this.handleClick),this.addEventListener("keydown",this.handleKeyDown),this.addEventListener("focusin",this.handleFocusIn),this.addEventListener("hmwc-expand",this.handleExpandedChange),this.addEventListener("hmwc-collapse",this.handleExpandedChange),this.observer.observe(this,{childList:!0,subtree:!0,attributes:!0,attributeFilter:["hidden"]})}updated(){let e=(t,r)=>r===null?this.removeAttribute(t):this.setAttribute(t,r);e("aria-label",this.label||null),e("aria-multiselectable",this.selection==="multiple"?"true":null)}disconnectedCallback(){super.disconnectedCallback(),this.removeEventListener("click",this.handleClick),this.removeEventListener("keydown",this.handleKeyDown),this.removeEventListener("focusin",this.handleFocusIn),this.removeEventListener("hmwc-expand",this.handleExpandedChange),this.removeEventListener("hmwc-collapse",this.handleExpandedChange),this.observer.disconnect(),clearTimeout(this.typeaheadTimer)}expandAll(){this.getItems().forEach(e=>e.expand())}collapseAll(){this.getItems().forEach(e=>e.collapse())}getItems(){return Array.from(this.querySelectorAll("hmwc-tree-item"))}getVisibleItems(){return this.getItems().filter(e=>{if(e.hidden)return!1;for(let t=e.parentElement;t&&t!==this;t=t.parentElement)if(t instanceof ee&&(!t.expanded||t.hidden))return!1;return!0})}getParentItem(e){return e.parentElement?.closest("hmwc-tree-item")??void 0}sync(){this.getItems().forEach(e=>e.requestUpdate?.()),this.updateTabStop()}updateTabStop(e=this.current){let t=this.getVisibleItems(),r=e&&t.includes(e)&&e||t.find(i=>i.selected)||t[0];this.current=r,this.getItems().forEach(i=>i.tabIndex=i===r?0:-1)}focusItem(e){e&&(this.updateTabStop(e),e.focus())}select(e){if(!(e.disabled||this.selection==="none")){if(this.selection==="single"){if(e.selected)return;this.getItems().forEach(t=>t.selected=t===e)}else e.selected=!e.selected;this.emit("hmwc-select",{detail:{value:e}})}}activate(e){e.disabled||(this.selection==="none"?e.toggle():this.select(e))}handleTypeahead(e,t,r){clearTimeout(this.typeaheadTimer),this.typeaheadTimer=window.setTimeout(()=>this.typeahead="",tn),this.typeahead+=e.toLowerCase();let i=this.typeahead.length===1?r+1:r,a=[...t.slice(i),...t.slice(0,i)].find(l=>l.labelText.toLowerCase().startsWith(this.typeahead));return this.focusItem(a),!!a}render(){return c`
+      <div part="base" class="tree">
+        ${this.label&&!this.hideLabel?c`<div part="label" class="tree__label" aria-hidden="true">${this.label}</div>`:x}
+        <slot @slotchange=${()=>this.sync()}></slot>
       </div>
-    `}};Jt.styles=To;Jt.dependencies=[gt];Je([a()],Jt.prototype,"selection",void 0);Je([a({type:Boolean,reflect:!0})],Jt.prototype,"expanded",void 0);Je([a({type:Array})],Jt.prototype,"items",void 0);Je([a({type:String,reflect:!0})],Jt.prototype,"label",void 0);Je([p("selection")],Jt.prototype,"handleSelectionChange",null);Jt.define("hmwc-tree",Jt);return Ho(ka);})();
+    `}};dt.styles=La;dt.dependencies=[ee];dt.slots=["[default]"];Ur([n({type:Boolean,reflect:!0,attribute:"hide-label"})],dt.prototype,"hideLabel",void 0);Ur([n({type:String,reflect:!0})],dt.prototype,"label",void 0);Ur([n({type:String,reflect:!0})],dt.prototype,"selection",void 0);Ur([u("selection")],dt.prototype,"handleSelectionChange",null);dt.define("hmwc-tree",dt);return Ya(rn);})();
 
 // Expose imperative functions globally
 if (typeof window !== 'undefined') {
