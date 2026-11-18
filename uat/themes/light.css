@@ -314,6 +314,10 @@
     var(--hmwc-focus-ring-color);
   --hmwc-focus-ring-offset: 0px;
 
+  --hmwc-focus-ring-color-invalid: var(--hmwc-color-danger-600);
+
+  --hmwc-toggle-focus-ring-offset: 2px;
+
   --hmwc-navbar-width: calc(3.5 * var(--hmwc-rem, 1rem));
   --hmwc-navbar-width-open: calc(18 * var(--hmwc-rem, 1rem));
 
